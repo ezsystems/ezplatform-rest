@@ -8,7 +8,7 @@
  */
 namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 
-use eZ\Publish\Core\REST\Server\View\AcceptHeaderVisitorDispatcher;
+use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;

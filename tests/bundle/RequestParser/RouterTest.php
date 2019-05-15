@@ -47,7 +47,7 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\InvalidArgumentException
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException
      * @expectedExceptionMessage No route matched '/api/test/v1/nomatch'
      */
     public function testParseNoMatch()
@@ -64,7 +64,7 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\InvalidArgumentException
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException
      * @expectedExceptionMessage No route matched '/no/prefix'
      */
     public function testParseNoPrefix()
@@ -99,7 +99,7 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\InvalidArgumentException
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException
      * @expectedExceptionMessage No such attribute 'badAttribute' in route matched from /api/test/v1/content/no-attribute
      */
     public function testParseHrefAttributeNotFound()

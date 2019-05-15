@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\Criterion;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserMetadata as UserMetadataCriterion;
 use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserMetadata;
-use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
 
 class UserMetadataTest extends BaseTest
 {

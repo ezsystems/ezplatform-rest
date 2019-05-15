@@ -2,10 +2,10 @@
 /**
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\Limitation;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Limitation;
 
 use EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser;
-use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
 
 class PathStringRouteBasedLimitationParserTest extends BaseTest
 {

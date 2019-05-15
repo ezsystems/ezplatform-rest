@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use EzSystems\EzPlatformRest\Input\Parser;
 
@@ -40,7 +40,7 @@ class ContentObjectStatesTest extends BaseTest
         );
 
         $this->assertInstanceOf(
-            '\\eZ\\Publish\\Core\\REST\\Common\\Values\\RestObjectState',
+            '\\EzSystems\\EzPlatformRest\\Values\\RestObjectState',
             $result[0],
             'ObjectState not created correctly.'
         );

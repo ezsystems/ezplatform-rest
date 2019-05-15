@@ -1,6 +1,6 @@
 <?php
 
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\FacetBuilder;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\FacetBuilder;
 
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\Content\Query;

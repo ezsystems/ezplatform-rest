@@ -9,7 +9,7 @@
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
-use eZ\Publish\Core\REST\Common\Tests\AssertXmlTagTrait;
+use EzSystems\EzPlatformRest\Tests\AssertXmlTagTrait;
 
 class RootTest extends RESTFunctionalTestCase
 {

@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\LocationCreateStruct;
 use eZ\Publish\Core\Repository\ContentService;
@@ -58,7 +58,7 @@ class ContentCreateTest extends BaseTest
         $result = $contentCreate->parse($inputArray, $this->getParsingDispatcherMock());
 
         $this->assertInstanceOf(
-            '\\eZ\\Publish\\Core\\REST\\Server\\Values\\RestContentCreateStruct',
+            '\\EzSystems\\EzPlatformRest\\Server\\Values\\RestContentCreateStruct',
             $result,
             'ContentCreate not created correctly.'
         );

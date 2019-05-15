@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use EzSystems\EzPlatformRest\Input;
-use EzSystems\EzPlatformRest\Server\Tests\BaseTest as ParentBaseTest;
+use EzSystems\EzPlatformRest\Tests\Server\BaseTest as ParentBaseTest;
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use EzSystems\EzPlatformRest\RequestParser;
 

@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
 use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
@@ -38,7 +38,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
         $this->fieldTypeSerializerMock->expects($this->once())
             ->method('serializeFieldDefaultValue')
             ->with(
-                $this->isInstanceOf('eZ\\Publish\\Core\\REST\\Common\\Output\\Generator'),
+                $this->isInstanceOf('\\EzSystems\\EzPlatformRest\\Output\\Generator'),
                 $this->equalTo('my-field-type'),
                 $this->equalTo(
                     'my default value text'

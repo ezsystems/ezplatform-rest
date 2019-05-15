@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ObjectStateService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateGroupUpdate;

@@ -10,7 +10,7 @@ namespace EzSystems\EzPlatformRest\Tests;
 
 use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
 use EzSystems\EzPlatformRest\FieldTypeProcessor;
-use EzSystems\EzPlatformRest\Server\Tests\BaseTest;
+use EzSystems\EzPlatformRest\Tests\Server\BaseTest;
 
 class FieldTypeProcessorRegistryTest extends BaseTest
 {

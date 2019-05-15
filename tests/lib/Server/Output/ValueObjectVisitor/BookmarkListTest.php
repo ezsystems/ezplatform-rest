@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use DOMDocument;
 use DOMXPath;

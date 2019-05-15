@@ -1,6 +1,6 @@
 <?php
 
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\FacetBuilder;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\FacetBuilder;
 
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ContentQuery as QueryParser;
@@ -13,7 +13,7 @@ use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\LocationParser;
 use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\SectionParser;
 use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\TermParser;
 use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\UserParser;
-use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
 
 abstract class FacetBuilderBaseTest extends BaseTest
 {

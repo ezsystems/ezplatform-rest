@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\SortClause;
+namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SortClause;
 
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished;
 use EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass;
-use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
 
 class DataKeyValueObjectClassTest extends BaseTest
 {

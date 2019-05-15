@@ -9,14 +9,14 @@
 namespace EzSystems\EzPlatformRest\Tests\Output;
 
 use EzSystems\EzPlatformRest\Tests\AssertXmlTagTrait;
-use EzSystems\EzPlatformRest\Server\Tests;
+use EzSystems\EzPlatformRest\Tests\Server;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\RequestParser;
 use EzSystems\EzPlatformRest\Output\Visitor;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RouterInterface;
 
-abstract class ValueObjectVisitorBaseTest extends Tests\BaseTest
+abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
 {
     use AssertXmlTagTrait;
 

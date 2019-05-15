@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Tests\Security;
+namespace EzSystems\EzPlatformRest\Tests\Server\Security;
 
 use eZ\Publish\API\Repository\Values\User\User;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
