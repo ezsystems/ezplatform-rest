@@ -1,6 +1,6 @@
 <?php
 
-namespace eZ\Bundle\EzPublishRestBundle\ApiLoader;
+namespace EzSystems\EzPlatformRestBundle\ApiLoader;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\RequestStackAware;

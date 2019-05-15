@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\Tests\Functional;
+namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use DOMDocument;
 use DOMElement;
-use eZ\Bundle\EzPublishRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
+use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 
 class SearchViewTest extends RESTFunctionalTestCase

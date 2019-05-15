@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace eZ\Bundle\EzPublishRestBundle\Tests\Functional;
+namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 /**
  * Test sending OPTIONS header for REST routes.

@@ -5,7 +5,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\DependencyInjection;
+namespace EzSystems\EzPlatformRestBundle\DependencyInjection;
 
 use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\ConfigurationProcessor;
 use Symfony\Component\Config\FileLocator;
@@ -21,7 +21,7 @@ use Symfony\Component\Yaml\Yaml;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class EzPublishRestExtension extends Extension implements PrependExtensionInterface
+class EzPlatformRestExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}

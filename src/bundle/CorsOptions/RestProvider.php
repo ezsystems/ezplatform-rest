@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\CorsOptions;
+namespace EzSystems\EzPlatformRestBundle\CorsOptions;
 
 use Nelmio\CorsBundle\Options\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;

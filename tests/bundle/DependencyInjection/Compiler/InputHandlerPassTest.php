@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\Tests\DependencyInjection\Compiler;
+namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
 
-use eZ\Bundle\EzPublishRestBundle\DependencyInjection\Compiler\InputHandlerPass;
+use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\InputHandlerPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use PHPUnit\Framework\TestCase;

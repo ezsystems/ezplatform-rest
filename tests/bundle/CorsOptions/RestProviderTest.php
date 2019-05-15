@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\Tests\CorsOptions;
+namespace EzSystems\EzPlatformRestBundle\Tests\CorsOptions;
 
-use eZ\Bundle\EzPublishRestBundle\CorsOptions\RestProvider;
+use EzSystems\EzPlatformRestBundle\CorsOptions\RestProvider;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;

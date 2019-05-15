@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\Tests\EventListener;
+namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 
 use eZ\Publish\Core\REST\Server\View\AcceptHeaderVisitorDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use eZ\Bundle\EzPublishRestBundle\EventListener\RequestListener;
+use EzSystems\EzPlatformRestBundle\EventListener\RequestListener;
 use Symfony\Component\HttpKernel\KernelEvents;
 use PHPUnit\Framework\MockObject\MockObject;
 

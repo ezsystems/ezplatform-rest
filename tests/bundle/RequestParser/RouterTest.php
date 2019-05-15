@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\Tests\RequestParser;
+namespace EzSystems\EzPlatformRestBundle\Tests\RequestParser;
 
 use PHPUnit\Framework\TestCase;
-use eZ\Bundle\EzPublishRestBundle\RequestParser\Router as RouterRequestParser;
+use EzSystems\EzPlatformRestBundle\RequestParser\Router as RouterRequestParser;
 use Symfony\Cmf\Component\Routing\ChainRouter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
@@ -138,7 +138,7 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @return \eZ\Bundle\EzPublishRestBundle\RequestParser\Router
+     * @return \EzSystems\EzPlatformRestBundle\RequestParser\Router
      */
     private function getRequestParser()
     {

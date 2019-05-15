@@ -1,13 +1,13 @@
 <?php
 
-namespace eZ\Bundle\EzPublishRestBundle;
+namespace EzSystems\EzPlatformRestBundle;
 
-use eZ\Bundle\EzPublishRestBundle\DependencyInjection\Security\RestSessionBasedFactory;
+use EzSystems\EzPlatformRestBundle\DependencyInjection\Security\RestSessionBasedFactory;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use eZ\Bundle\EzPublishRestBundle\DependencyInjection\Compiler;
+use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler;
 
-class EzPublishRestBundle extends Bundle
+class EzPlatformRestBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {

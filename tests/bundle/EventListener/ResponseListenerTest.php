@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Bundle\EzPublishRestBundle\Tests\EventListener;
+namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 
 use eZ\Publish\Core\REST\Server\View\AcceptHeaderVisitorDispatcher;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
-use eZ\Bundle\EzPublishRestBundle\EventListener\ResponseListener;
+use EzSystems\EzPlatformRestBundle\EventListener\ResponseListener;
 use stdClass;
 use Symfony\Component\HttpKernel\KernelEvents;
 
