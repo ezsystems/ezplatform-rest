@@ -1,0 +1,29 @@
+{
+    "name": "ezsystems/ezplatform-rest",
+    "description": "eZ Platform REST bundle",
+    "type": "ezplatform-bundle",
+    "license": "GPL-2.0-only",
+    "autoload": {
+        "psr-0": {
+            "eZ\\Bundle\\EzPublishRestBundle": "",
+            "eZ\\Publish\\Core\\REST\\Common": "",
+            "eZ\\Publish\\Core\\REST\\Server": ""
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "ezsystems/ezpublish-kernel": "^7.5@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0",
+        "friendsofphp/php-cs-fixer": "~2.7.1"
+    },
+    "scripts": {
+        "fix-cs": "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
