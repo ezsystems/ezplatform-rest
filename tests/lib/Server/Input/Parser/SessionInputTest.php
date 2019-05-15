@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
-use eZ\Publish\Core\REST\Server\Input\Parser\SessionInput;
-use eZ\Publish\Core\REST\Server\Values\SessionInput as SessionInputValue;
+use EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput;
+use EzSystems\EzPlatformRest\Server\Values\SessionInput as SessionInputValue;
 
 class SessionInputTest extends BaseTest
 {
@@ -36,7 +36,7 @@ class SessionInputTest extends BaseTest
     /**
      * Test SessionInput parser throwing exception on missing password.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'password' attribute for SessionInput.
      */
     public function testParseExceptionOnMissingIdentifier()
@@ -52,7 +52,7 @@ class SessionInputTest extends BaseTest
     /**
      * Test SessionInput parser throwing exception on missing login.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'login' attribute for SessionInput.
      */
     public function testParseExceptionOnMissingName()
@@ -68,7 +68,7 @@ class SessionInputTest extends BaseTest
     /**
      * Returns the session input parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\SessionInput
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput
      */
     protected function internalGetParser()
     {

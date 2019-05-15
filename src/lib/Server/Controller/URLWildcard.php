@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
-use eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException;
+use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\URLWildcardService;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -53,7 +53,7 @@ class URLWildcard extends RestController
     /**
      * Returns the list of URL wildcards.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\URLWildcardList
+     * @return \EzSystems\EzPlatformRest\Server\Values\URLWildcardList
      */
     public function listURLWildcards()
     {
@@ -65,9 +65,9 @@ class URLWildcard extends RestController
     /**
      * Creates a new URL wildcard.
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedURLWildcard
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedURLWildcard
      */
     public function createURLWildcard(Request $request)
     {
@@ -100,7 +100,7 @@ class URLWildcard extends RestController
      *
      * @param $urlWildcardId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteURLWildcard($urlWildcardId)
     {

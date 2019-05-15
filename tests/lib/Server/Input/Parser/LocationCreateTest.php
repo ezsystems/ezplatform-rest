@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\LocationService;
-use eZ\Publish\Core\REST\Server\Input\Parser\LocationCreate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate;
 use eZ\Publish\API\Repository\Values\Content\LocationCreateStruct;
 use eZ\Publish\API\Repository\Values\Content\Location;
 
@@ -79,7 +79,7 @@ class LocationCreateTest extends BaseTest
     /**
      * Test LocationCreate parser throwing exception on missing ParentLocation.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing or invalid 'ParentLocation' element for LocationCreate.
      */
     public function testParseExceptionOnMissingParentLocation()
@@ -99,7 +99,7 @@ class LocationCreateTest extends BaseTest
     /**
      * Test LocationCreate parser throwing exception on missing _href attribute for ParentLocation.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_href' attribute for ParentLocation element in LocationCreate.
      */
     public function testParseExceptionOnMissingHrefAttribute()
@@ -120,7 +120,7 @@ class LocationCreateTest extends BaseTest
     /**
      * Test LocationCreate parser throwing exception on missing sort field.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'sortField' element for LocationCreate.
      */
     public function testParseExceptionOnMissingSortField()
@@ -142,7 +142,7 @@ class LocationCreateTest extends BaseTest
     /**
      * Test LocationCreate parser throwing exception on missing sort order.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'sortOrder' element for LocationCreate.
      */
     public function testParseExceptionOnMissingSortOrder()
@@ -164,7 +164,7 @@ class LocationCreateTest extends BaseTest
     /**
      * Returns the LocationCreateStruct parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\LocationCreate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate
      */
     protected function internalGetParser()
     {

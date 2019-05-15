@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Tests\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 use eZ\Publish\API\Repository\Values\Content;
 
 class URLAliasTest extends ValueObjectVisitorBaseTest
@@ -250,7 +250,7 @@ class URLAliasTest extends ValueObjectVisitorBaseTest
     /**
      * Get the URLAlias visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\URLAlias
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLAlias
      */
     protected function internalGetVisitor()
     {

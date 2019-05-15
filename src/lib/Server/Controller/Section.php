@@ -6,17 +6,17 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\SectionService;
 use eZ\Publish\API\Repository\Values\Content\SectionCreateStruct;
 use eZ\Publish\API\Repository\Values\Content\SectionUpdateStruct;
-use eZ\Publish\Core\REST\Server\Values\NoContent;
+use EzSystems\EzPlatformRest\Server\Values\NoContent;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException;
+use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -44,7 +44,7 @@ class Section extends RestController
     /**
      * List sections.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\SectionList
+     * @return \EzSystems\EzPlatformRest\Server\Values\SectionList
      */
     public function listSections(Request $request)
     {
@@ -75,9 +75,9 @@ class Section extends RestController
     /**
      * Create new section.
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedSection
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedSection
      */
     public function createSection(Request $request)
     {
@@ -118,7 +118,7 @@ class Section extends RestController
      *
      * @param $sectionId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Section
      */
@@ -146,7 +146,7 @@ class Section extends RestController
      *
      * @param $sectionId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteSection($sectionId)
     {

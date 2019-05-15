@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 use eZ\Publish\API\Repository\Exceptions\BadStateException;
 
 class BadStateExceptionTest extends ExceptionTest
@@ -46,7 +46,7 @@ class BadStateExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\BadStateException
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BadStateException
      */
     protected function internalGetVisitor()
     {

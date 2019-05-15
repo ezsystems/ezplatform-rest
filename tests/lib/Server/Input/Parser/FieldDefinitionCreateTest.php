@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\REST\Server\Input\Parser\FieldDefinitionCreate;
-use eZ\Publish\Core\REST\Common\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate;
+use EzSystems\EzPlatformRest\Input\FieldTypeParser;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -117,7 +117,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Test FieldDefinitionCreate parser throwing exception on missing identifier.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'identifier' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnMissingIdentifier()
@@ -132,7 +132,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Test FieldDefinitionCreate parser throwing exception on missing fieldType.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'fieldType' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnMissingFieldType()
@@ -147,7 +147,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Test FieldDefinitionCreate parser throwing exception on invalid names.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'names' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnInvalidNames()
@@ -162,7 +162,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Test FieldDefinitionCreate parser throwing exception on invalid descriptions.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'descriptions' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnInvalidDescriptions()
@@ -177,7 +177,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Returns the FieldDefinitionCreate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\FieldDefinitionCreate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate
      */
     protected function internalGetParser()
     {
@@ -191,7 +191,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Get the FieldTypeParser mock object.
      *
-     * @return \eZ\Publish\Core\REST\Common\Input\FieldTypeParser
+     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser
      */
     protected function getFieldTypeParserMock()
     {

@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\SortClause;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\SortClause;
 
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished;
-use eZ\Publish\Core\REST\Server\Input\Parser\SortClause\DataKeyValueObjectClass;
-use eZ\Publish\Core\REST\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass;
+use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
 
 class DataKeyValueObjectClassTest extends BaseTest
 {
@@ -37,7 +37,7 @@ class DataKeyValueObjectClassTest extends BaseTest
     /**
      * Test DataKeyValueObjectClass parser throwing exception on missing sort clause.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage The <DatePublished> sort clause doesn't exist in the input structure
      */
     public function testParseExceptionOnMissingSortClause()
@@ -53,7 +53,7 @@ class DataKeyValueObjectClassTest extends BaseTest
     /**
      * Test DataKeyValueObjectClass parser throwing exception on invalid direction format.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid direction format in <DatePublished> sort clause
      */
     public function testParseExceptionOnInvalidDirectionFormat()
@@ -69,7 +69,7 @@ class DataKeyValueObjectClassTest extends BaseTest
     /**
      * Test DataKeyValueObjectClass parser throwing exception on nonexisting value object class.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Value object class <eC\Pubish\APl\Repudiatory\BadValues\Discontent\Queezy\SantaClause\ThisClassIsExistentiallyChallenged> is not defined
      */
     public function testParseExceptionOnNonexistingValueObjectClass()
@@ -88,7 +88,7 @@ class DataKeyValueObjectClassTest extends BaseTest
     /**
      * Returns the DataKeyValueObjectClass parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\SortClause\DataKeyValueObjectClass
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass
      */
     protected function internalGetParser()
     {

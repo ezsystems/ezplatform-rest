@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Service;
+namespace EzSystems\EzPlatformRest\Server\Service;
 
-use eZ\Publish\Core\REST\Common\Values;
-use eZ\Publish\Core\REST\Common\Values\Root;
+use EzSystems\EzPlatformRest\Values;
+use EzSystems\EzPlatformRest\Values\Root;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -66,7 +66,7 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
     /**
      * Build root resource.
      *
-     * @return array|\eZ\Publish\Core\REST\Common\Values\Root
+     * @return array|\EzSystems\EzPlatformRest\Values\Root
      */
     public function buildRootResource()
     {

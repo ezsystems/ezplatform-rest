@@ -2,10 +2,10 @@
 /**
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser\Limitation;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser\Limitation;
 
 use eZ\Publish\API\Repository\Values;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Exceptions;
 
 /**
  * Generic limitation value parser.
@@ -20,7 +20,7 @@ class PathStringRouteBasedLimitationParser extends RouteBasedLimitationParser
     /**
      * Prefixes the value parsed by the parent with a '/'.
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\Parser if the '_href' attribute doesn't end with a slash, since 6.4
+     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser if the '_href' attribute doesn't end with a slash, since 6.4
      *
      * @param $limitationValue
      *

@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
-use eZ\Publish\Core\REST\Server\Input\Parser\URLWildcardCreate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\URLWildcardCreate;
 
 class URLWildcardCreateTest extends BaseTest
 {
@@ -40,7 +40,7 @@ class URLWildcardCreateTest extends BaseTest
     /**
      * Test URLWildcardCreate parser throwing exception on missing sourceUrl.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'sourceUrl' value for URLWildcardCreate.
      */
     public function testParseExceptionOnMissingSourceUrl()
@@ -57,7 +57,7 @@ class URLWildcardCreateTest extends BaseTest
     /**
      * Test URLWildcardCreate parser throwing exception on missing destinationUrl.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'destinationUrl' value for URLWildcardCreate.
      */
     public function testParseExceptionOnMissingDestinationUrl()
@@ -74,7 +74,7 @@ class URLWildcardCreateTest extends BaseTest
     /**
      * Test URLWildcardCreate parser throwing exception on missing forward.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'forward' value for URLWildcardCreate.
      */
     public function testParseExceptionOnMissingForward()
@@ -91,7 +91,7 @@ class URLWildcardCreateTest extends BaseTest
     /**
      * Returns the URLWildcard input parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\URLWildcardCreate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\URLWildcardCreate
      */
     protected function internalGetParser()
     {

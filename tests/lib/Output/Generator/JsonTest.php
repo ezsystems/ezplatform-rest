@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output\Generator;
+namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
 
-use eZ\Publish\Core\REST\Common\Tests\Output\GeneratorTest;
-use eZ\Publish\Core\REST\Common;
-use eZ\Publish\Core\REST\Common\Output\Generator\Json\FieldTypeHashGenerator;
+use EzSystems\EzPlatformRest\Tests\Output\GeneratorTest;
+use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator;
 
 require_once __DIR__ . '/../GeneratorTest.php';
 
@@ -220,7 +220,7 @@ class JsonTest extends GeneratorTest
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testGeneratorMultipleElements()
     {
@@ -235,7 +235,7 @@ class JsonTest extends GeneratorTest
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testGeneratorMultipleStackedElements()
     {
@@ -263,7 +263,7 @@ class JsonTest extends GeneratorTest
     protected function getGenerator()
     {
         if (!isset($this->generator)) {
-            $this->generator = new Common\Output\Generator\Json(
+            $this->generator = new EzPlatformRest\Output\Generator\Json(
                 $this->createMock(FieldTypeHashGenerator::class)
             );
         }

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
-use eZ\Publish\Core\REST\Server\Values\BookmarkList as BookmarkListValue;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Visitor;
+use EzSystems\EzPlatformRest\Server\Values\BookmarkList as BookmarkListValue;
 
 class BookmarkList extends ValueObjectVisitor
 {

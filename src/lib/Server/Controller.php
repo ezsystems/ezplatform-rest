@@ -6,22 +6,22 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server;
+namespace EzSystems\EzPlatformRest\Server;
 
 use eZ\Publish\API\Repository\Repository;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\Routing\RouterInterface;
-use eZ\Publish\Core\REST\Common\Input\Dispatcher as InputDispatcher;
+use EzSystems\EzPlatformRest\Input\Dispatcher as InputDispatcher;
 use Symfony\Component\HttpFoundation\Request;
-use eZ\Publish\Core\REST\Common\RequestParser;
+use EzSystems\EzPlatformRest\RequestParser;
 
 abstract class Controller implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\Input\Dispatcher
+     * @var \EzSystems\EzPlatformRest\Input\Dispatcher
      */
     protected $inputDispatcher;
 
@@ -31,7 +31,7 @@ abstract class Controller implements ContainerAwareInterface
     protected $router;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\RequestParser
+     * @var \EzSystems\EzPlatformRest\RequestParser
      */
     protected $requestParser;
 

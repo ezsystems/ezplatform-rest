@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
-use eZ\Publish\Core\REST\Server\Input\Parser\RelationCreate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\RelationCreate;
 
 class RelationCreateTest extends BaseTest
 {
@@ -36,7 +36,7 @@ class RelationCreateTest extends BaseTest
     /**
      * Test RelationCreate parser throwing exception on missing Destination.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing or invalid 'Destination' element for RelationCreate.
      */
     public function testParseExceptionOnMissingDestination()
@@ -50,7 +50,7 @@ class RelationCreateTest extends BaseTest
     /**
      * Test RelationCreate parser throwing exception on missing Destination href.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_href' attribute for Destination element in RelationCreate.
      */
     public function testParseExceptionOnMissingDestinationHref()
@@ -66,7 +66,7 @@ class RelationCreateTest extends BaseTest
     /**
      * Returns the RelationCreate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\RelationCreate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\RelationCreate
      */
     protected function internalGetParser()
     {

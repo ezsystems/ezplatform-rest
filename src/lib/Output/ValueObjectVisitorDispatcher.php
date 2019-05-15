@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Output;
+namespace EzSystems\EzPlatformRest\Output;
 
 /**
  * Dispatches value objects to a visitor depending on the class name.
@@ -19,12 +19,12 @@ class ValueObjectVisitorDispatcher
     private $visitors;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\Output\Visitor
+     * @var \EzSystems\EzPlatformRest\Output\Visitor
      */
     private $outputVisitor;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\Output\Generator
+     * @var \EzSystems\EzPlatformRest\Output\Generator
      */
     private $outputGenerator;
 
@@ -40,7 +40,7 @@ class ValueObjectVisitorDispatcher
 
     /**
      * @param string $visitedClassName The FQN of the visited class
-     * @param \eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor $visitor The visitor object
+     * @param \EzSystems\EzPlatformRest\Output\ValueObjectVisitor $visitor The visitor object
      */
     public function addVisitor($visitedClassName, ValueObjectVisitor $visitor)
     {
@@ -50,8 +50,8 @@ class ValueObjectVisitorDispatcher
     /**
      * @param object $data The visited object
      *
-     * @throws \eZ\Publish\Core\REST\Common\Output\Exceptions\NoVisitorFoundException
-     * @throws \eZ\Publish\Core\REST\Common\Output\Exceptions\InvalidTypeException
+     * @throws \EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException
+     * @throws \EzSystems\EzPlatformRest\Output\Exceptions\InvalidTypeException
      *
      * @return mixed
      */

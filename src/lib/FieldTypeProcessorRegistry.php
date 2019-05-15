@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common;
+namespace EzSystems\EzPlatformRest;
 
 /**
  * FieldTypeProcessorRegistry.
@@ -16,12 +16,12 @@ class FieldTypeProcessorRegistry
     /**
      * Registered processors.
      *
-     * @var \eZ\Publish\Core\REST\Common\FieldTypeProcessor[]
+     * @var \EzSystems\EzPlatformRest\FieldTypeProcessor[]
      */
     private $processors = array();
 
     /**
-     * @param \eZ\Publish\Core\REST\Common\FieldTypeProcessor[] $processors
+     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor[] $processors
      */
     public function __construct(array $processors = array())
     {
@@ -34,7 +34,7 @@ class FieldTypeProcessorRegistry
      * Registers $processor for $fieldTypeIdentifier.
      *
      * @param string $fieldTypeIdentifier
-     * @param \eZ\Publish\Core\REST\Common\FieldTypeProcessor $processor
+     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor $processor
      */
     public function registerProcessor($fieldTypeIdentifier, FieldTypeProcessor $processor)
     {
@@ -60,7 +60,7 @@ class FieldTypeProcessorRegistry
      *
      * @throws \RuntimeException if not processor is registered for $fieldTypeIdentifier
      *
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor
      */
     public function getProcessor($fieldTypeIdentifier)
     {

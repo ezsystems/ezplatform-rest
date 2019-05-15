@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common;
+namespace EzSystems\EzPlatformRest;
 
 /**
  * FieldTypeProcessor.
@@ -23,7 +23,7 @@ abstract class FieldTypeProcessor
      * apply to hashes accepted by fromHash(). The return value of this method
      * replaces the $incomingValueHash.
      *
-     * @see \eZ\Publish\Core\REST\Common\Input\FieldTypeParser
+     * @see \EzSystems\EzPlatformRest\Input\FieldTypeParser
      *
      * @param mixed $incomingValueHash
      *
@@ -44,7 +44,7 @@ abstract class FieldTypeProcessor
      * $outgoingValueHash and must obey to the same rules as the original
      * $outgoingValueHash.
      *
-     * @see \eZ\Publish\Core\REST\Common\Output\FieldTypeSerializer
+     * @see \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
      *
      * @param mixed $outgoingValueHash
      *
@@ -65,7 +65,7 @@ abstract class FieldTypeProcessor
      * need to apply to hashes accepted by fieldSettingsFromHash(). The return
      * value of this method replaces the $incomingSettingsHash.
      *
-     * @see \eZ\Publish\Core\REST\Common\Input\FieldTypeParser
+     * @see \EzSystems\EzPlatformRest\Input\FieldTypeParser
      *
      * @param mixed $incomingSettingsHash
      *
@@ -86,7 +86,7 @@ abstract class FieldTypeProcessor
      * $outgoingSettingsHash and must obey to the same rules as the original
      * $outgoingSettingsHash.
      *
-     * @see \eZ\Publish\Core\REST\Common\Output\FieldTypeSerializer
+     * @see \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
      *
      * @param mixed $outgoingSettingsHash
      *
@@ -107,7 +107,7 @@ abstract class FieldTypeProcessor
      * rules that need to apply to hashes accepted by validatorConfigurationFromHash().
      * The return value of this method replaces the $incomingValidatorConfigurationHash.
      *
-     * @see \eZ\Publish\Core\REST\Common\Input\FieldTypeParser
+     * @see \EzSystems\EzPlatformRest\Input\FieldTypeParser
      *
      * @param mixed $incomingValidatorConfigurationHash
      *
@@ -128,7 +128,7 @@ abstract class FieldTypeProcessor
      * $outgoingValidatorConfigurationHash and must obey to the same rules as the original
      * $outgoingValidatorConfigurationHash.
      *
-     * @see \eZ\Publish\Core\REST\Common\Output\FieldTypeSerializer
+     * @see \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
      *
      * @param mixed $outgoingValidatorConfigurationHash
      *

@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\SectionService;
-use eZ\Publish\Core\REST\Server\Input\Parser\SectionInput;
+use EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput;
 use eZ\Publish\API\Repository\Values\Content\SectionCreateStruct;
 
 class SectionInputTest extends BaseTest
@@ -37,7 +37,7 @@ class SectionInputTest extends BaseTest
     /**
      * Test SectionInput parser throwing exception on missing identifier.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'identifier' attribute for SectionInput.
      */
     public function testParseExceptionOnMissingIdentifier()
@@ -53,7 +53,7 @@ class SectionInputTest extends BaseTest
     /**
      * Test SectionInput parser throwing exception on missing name.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'name' attribute for SectionInput.
      */
     public function testParseExceptionOnMissingName()
@@ -69,7 +69,7 @@ class SectionInputTest extends BaseTest
     /**
      * Returns the section input parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\SectionInput
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput
      */
     protected function internalGetParser()
     {

@@ -6,14 +6,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 
-use eZ\Publish\Core\REST\Common\Input\BaseParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\Input\FieldTypeParser;
-use eZ\Publish\Core\REST\Common\Input\ParserTools;
+use EzSystems\EzPlatformRest\Input\BaseParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Input\ParserTools;
 use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Exceptions;
 
 /**
  * Parser for FieldDefinitionUpdate.
@@ -30,14 +30,14 @@ class FieldDefinitionUpdate extends BaseParser
     /**
      * FieldType parser.
      *
-     * @var \eZ\Publish\Core\REST\Common\Input\FieldTypeParser
+     * @var \EzSystems\EzPlatformRest\Input\FieldTypeParser
      */
     protected $fieldTypeParser;
 
     /**
      * Parser tools.
      *
-     * @var \eZ\Publish\Core\REST\Common\Input\ParserTools
+     * @var \EzSystems\EzPlatformRest\Input\ParserTools
      */
     protected $parserTools;
 
@@ -45,7 +45,7 @@ class FieldDefinitionUpdate extends BaseParser
      * Construct.
      *
      * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \eZ\Publish\Core\REST\Common\Input\ParserTools $parserTools
+     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
      */
     public function __construct(ContentTypeService $contentTypeService, FieldTypeParser $fieldTypeParser, ParserTools $parserTools)
     {
@@ -58,7 +58,7 @@ class FieldDefinitionUpdate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return \eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionUpdateStruct
      */
@@ -152,7 +152,7 @@ class FieldDefinitionUpdate extends BaseParser
      *
      * @todo depends on temporary solution to give parser access to the URL
      *
-     * @see \eZ\Publish\Core\REST\Server\Controller\ContentType::updateFieldDefinition
+     * @see \EzSystems\EzPlatformRest\Server\Controller\ContentType::updateFieldDefinition
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
      *

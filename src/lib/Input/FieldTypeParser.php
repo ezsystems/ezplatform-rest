@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Input;
+namespace EzSystems\EzPlatformRest\Input;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry;
+use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\ContentTypeService;
 use eZ\Publish\API\Repository\FieldTypeService;
@@ -31,7 +31,7 @@ class FieldTypeParser
     protected $fieldTypeService;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry
+     * @var \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry
      */
     protected $fieldTypeProcessorRegistry;
 
@@ -39,7 +39,7 @@ class FieldTypeParser
      * @param \eZ\Publish\API\Repository\ContentService $contentService
      * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
      * @param \eZ\Publish\API\Repository\FieldTypeService $fieldTypeService
-     * @param \eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
+     * @param \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
      */
     public function __construct(
         ContentService $contentService,

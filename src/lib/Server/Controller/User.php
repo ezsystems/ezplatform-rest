@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Exceptions;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Exceptions;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\ContentTypeService;
@@ -24,8 +24,8 @@ use eZ\Publish\API\Repository\Values\User\UserRoleAssignment;
 use eZ\Publish\API\Repository\Values\User\UserGroupRoleAssignment;
 use eZ\Publish\API\Repository\Values\User\User as RepositoryUser;
 use eZ\Publish\API\Repository\Exceptions as ApiExceptions;
-use eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException;
-use eZ\Publish\Core\REST\Common\Exceptions\NotFoundException;
+use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
@@ -91,7 +91,7 @@ class User extends RestController
     private $csrfTokenStorage;
 
     /**
-     * @var \eZ\Publish\Core\REST\Server\Controller\SessionController
+     * @var \EzSystems\EzPlatformRest\Server\Controller\SessionController
      * @deprecated This property is added for backward compatibility. It is deprecated, and will be removed in 7.0.
      */
     private $sessionController;
@@ -127,7 +127,7 @@ class User extends RestController
     /**
      * Redirects to the root user group.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\PermanentRedirect
+     * @return \EzSystems\EzPlatformRest\Server\Values\PermanentRedirect
      */
     public function loadRootUserGroup()
     {
@@ -142,7 +142,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUserGroup
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup
      */
     public function loadUserGroup($groupPath)
     {
@@ -180,7 +180,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUser
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUser
      */
     public function loadUser($userId)
     {
@@ -225,9 +225,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\BadRequestException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedUserGroup
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedUserGroup
      */
     public function createUserGroup($groupPath, Request $request)
     {
@@ -269,9 +269,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedUser
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedUser
      */
     public function createUser($groupPath, Request $request)
     {
@@ -315,7 +315,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUserGroup
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup
      */
     public function updateUserGroup($groupPath, Request $request)
     {
@@ -365,7 +365,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUser
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUser
      */
     public function updateUser($userId, Request $request)
     {
@@ -409,9 +409,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteUserGroup($groupPath)
     {
@@ -439,9 +439,9 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteUser($userId)
     {
@@ -459,7 +459,7 @@ class User extends RestController
     /**
      * Loads users.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserList|\eZ\Publish\Core\REST\Server\Values\UserRefList
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserList|\EzSystems\EzPlatformRest\Server\Values\UserRefList
      */
     public function loadUsers(Request $request)
     {
@@ -518,7 +518,7 @@ class User extends RestController
      *
      * @param mixed $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUser[]
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUser[]
      */
     public function loadUsersAssignedToRole($roleId)
     {
@@ -553,7 +553,7 @@ class User extends RestController
     /**
      * Loads user groups.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserGroupList|\eZ\Publish\Core\REST\Server\Values\UserGroupRefList
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupList|\EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
      */
     public function loadUserGroups(Request $request)
     {
@@ -591,7 +591,7 @@ class User extends RestController
     /**
      * Loads a user group by its remote ID.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUserGroup
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup
      */
     public function loadUserGroupByRemoteId(Request $request)
     {
@@ -614,7 +614,7 @@ class User extends RestController
      *
      * @param mixed $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUserGroup[]
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[]
      */
     public function loadUserGroupsAssignedToRole($roleId)
     {
@@ -648,7 +648,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\VersionList
+     * @return \EzSystems\EzPlatformRest\Server\Values\VersionList
      */
     public function loadUserDrafts($userId, Request $request)
     {
@@ -664,9 +664,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\ResourceCreated
+     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
      */
     public function moveUserGroup($groupPath, Request $request)
     {
@@ -714,7 +714,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserGroupList|\eZ\Publish\Core\REST\Server\Values\UserGroupRefList
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupList|\EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
      */
     public function loadSubUserGroups($groupPath, Request $request)
     {
@@ -771,7 +771,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserGroupRefList
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
      */
     public function loadUserGroupsOfUser($userId, Request $request)
     {
@@ -812,7 +812,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserList|\eZ\Publish\Core\REST\Server\Values\UserRefList
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserList|\EzSystems\EzPlatformRest\Server\Values\UserRefList
      */
     public function loadUsersFromGroup($groupPath, Request $request)
     {
@@ -868,9 +868,9 @@ class User extends RestController
      * @param $userId
      * @param $groupPath
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserGroupRefList
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
      */
     public function unassignUserFromUserGroup($userId, $groupPath)
     {
@@ -919,9 +919,9 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserGroupRefList
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
      */
     public function assignUserToUserGroup($userId, Request $request)
     {
@@ -1001,7 +1001,7 @@ class User extends RestController
      *
      * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException If the CSRF token is missing or invalid.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserSession
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserSession
      *
      * @deprecated Deprecated since 6.5. Use SessionController::refreshSessionAction().
      */

@@ -6,17 +6,17 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output;
+namespace EzSystems\EzPlatformRest\Tests\Output;
 
 use eZ\Publish\API\Repository\FieldTypeService;
-use eZ\Publish\Core\REST\Common;
+use EzSystems\EzPlatformRest;
 use eZ\Publish\API\Repository\Values\Content\Field;
-use eZ\Publish\Core\REST\Common\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Generator;
 use eZ\Publish\API\Repository\FieldType as APIFieldType;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry;
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
+use EzSystems\EzPlatformRest\FieldTypeProcessor;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -402,7 +402,7 @@ class FieldTypeSerializerTest extends TestCase
 
     protected function getFieldTypeSerializer()
     {
-        return new Common\Output\FieldTypeSerializer(
+        return new EzPlatformRest\Output\FieldTypeSerializer(
             $this->getFieldTypeServiceMock(),
             $this->getFieldTypeProcessorRegistryMock()
         );

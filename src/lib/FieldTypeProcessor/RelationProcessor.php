@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
 
 class RelationProcessor extends BaseRelationProcessor
 {

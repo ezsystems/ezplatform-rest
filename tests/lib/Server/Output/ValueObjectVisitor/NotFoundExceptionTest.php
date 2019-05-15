@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 class NotFoundExceptionTest extends ExceptionTest
 {
@@ -46,7 +46,7 @@ class NotFoundExceptionTest extends ExceptionTest
     /**
      * Get the exception visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\NotFoundException
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NotFoundException
      */
     protected function internalGetVisitor()
     {

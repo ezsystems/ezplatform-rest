@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Input;
+namespace EzSystems\EzPlatformRest\Input;
 
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Exceptions;
 
 /**
  * Input dispatcher.
@@ -33,14 +33,14 @@ class Dispatcher
     protected $handlers = array();
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher
+     * @var \EzSystems\EzPlatformRest\Input\ParsingDispatcher
      */
     protected $parsingDispatcher;
 
     /**
      * Construct from optional parsers array.
      *
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      * @param array $handlers
      */
     public function __construct(ParsingDispatcher $parsingDispatcher, array $handlers = array())
@@ -55,7 +55,7 @@ class Dispatcher
      * Adds another handler for the given Content Type.
      *
      * @param string $type
-     * @param \eZ\Publish\Core\REST\Common\Input\Handler $handler
+     * @param \EzSystems\EzPlatformRest\Input\Handler $handler
      */
     public function addHandler($type, Handler $handler)
     {
@@ -65,7 +65,7 @@ class Dispatcher
     /**
      * Parse provided request.
      *
-     * @param \eZ\Publish\Core\REST\Common\Message $message
+     * @param \EzSystems\EzPlatformRest\Message $message
      *
      * @return mixed
      */

@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\RoleService;
-use eZ\Publish\Core\REST\Server\Input\Parser\RoleInput;
+use EzSystems\EzPlatformRest\Server\Input\Parser\RoleInput;
 use eZ\Publish\Core\Repository\Values\User\RoleCreateStruct;
 
 class RoleInputTest extends BaseTest
@@ -75,7 +75,7 @@ class RoleInputTest extends BaseTest
     /**
      * Returns the role input parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\RoleInput
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\RoleInput
      */
     protected function internalGetParser()
     {

@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Output;
+namespace EzSystems\EzPlatformRest\Output;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry;
+use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
 use eZ\Publish\API\Repository\FieldTypeService;
 use eZ\Publish\API\Repository\FieldType;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
@@ -27,13 +27,13 @@ class FieldTypeSerializer
     protected $fieldTypeService;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry
+     * @var \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry
      */
     protected $fieldTypeProcessorRegistry;
 
     /**
      * @param \eZ\Publish\API\Repository\FieldTypeService $fieldTypeService
-     * @param \eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
+     * @param \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
      */
     public function __construct(FieldTypeService $fieldTypeService, FieldTypeProcessorRegistry $fieldTypeProcessorRegistry)
     {
@@ -44,7 +44,7 @@ class FieldTypeSerializer
     /**
      * Serializes the field value of $field through $generator.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param \eZ\Publish\API\Repository\Values\ContentType\ContentType $contentType
      * @param \eZ\Publish\API\Repository\Values\Content\Field $field
      */
@@ -63,7 +63,7 @@ class FieldTypeSerializer
     /**
      * Serializes the $defaultValue for $fieldDefIdentifier through $generator.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param string $fieldTypeIdentifier
      * @param mixed $defaultValue
      */
@@ -81,7 +81,7 @@ class FieldTypeSerializer
      * Serializes $settings as fieldSettings for $fieldDefinition using
      * $generator.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param string $fieldTypeIdentifier
      * @param mixed $settings
      */
@@ -101,7 +101,7 @@ class FieldTypeSerializer
     /**
      * Serializes $validatorConfiguration for $fieldDefinition using $generator.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param string $fieldTypeIdentifier
      * @param mixed $validatorConfiguration
      */
@@ -137,7 +137,7 @@ class FieldTypeSerializer
      * $elementName.
      *
      * @param string $elementName
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param \eZ\Publish\API\Repository\FieldType $fieldType
      * @param mixed $value
      */
@@ -158,7 +158,7 @@ class FieldTypeSerializer
      * Serializes the given $hash with $generator into $elementName.
      *
      * @param string $elementName
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param mixed $hash
      */
     protected function serializeHash($elementName, Generator $generator, $hash)

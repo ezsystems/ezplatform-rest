@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Server\Values\RestContent;
-use eZ\Publish\Core\REST\Server\Values\RestLocation;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Values\RestContent;
+use EzSystems\EzPlatformRest\Server\Values\RestLocation;
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 
@@ -249,7 +249,7 @@ class RestLocationRootNodeTest extends RestLocationTest
     /**
      * Get the Location visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestLocation
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestLocation
      */
     protected function internalGetVisitor()
     {

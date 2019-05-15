@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor\MediaProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor;
 
 class MediaProcessorTest extends BinaryInputProcessorTest
 {
@@ -36,7 +36,7 @@ class MediaProcessorTest extends BinaryInputProcessorTest
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\MediaProcessor::preProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor::preProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPreProcessFieldSettingsHash($inputSettings, $outputSettings)
@@ -50,7 +50,7 @@ class MediaProcessorTest extends BinaryInputProcessorTest
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\MediaProcessor::postProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor::postProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPostProcessFieldSettingsHash($outputSettings, $inputSettings)
@@ -64,7 +64,7 @@ class MediaProcessorTest extends BinaryInputProcessorTest
     }
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\MediaProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor
      */
     protected function getProcessor()
     {

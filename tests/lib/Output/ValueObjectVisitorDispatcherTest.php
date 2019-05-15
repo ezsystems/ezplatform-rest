@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output;
+namespace EzSystems\EzPlatformRest\Tests\Output;
 
-use eZ\Publish\Core\REST\Common;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Visitor;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use stdClass;
 use PHPUnit\Framework\TestCase;
 
@@ -47,7 +47,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\InvalidTypeException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\InvalidTypeException
      */
     public function testVisitValueObjectInvalidType()
     {
@@ -55,7 +55,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\NoVisitorFoundException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException
      */
     public function testVisitValueObjectNoMatch()
     {
@@ -108,7 +108,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
      */
     private function getValueObjectDispatcher()
     {
-        $dispatcher = new Common\Output\ValueObjectVisitorDispatcher();
+        $dispatcher = new EzPlatformRest\Output\ValueObjectVisitorDispatcher();
         $dispatcher->setOutputGenerator($this->getOutputGeneratorMock());
         $dispatcher->setOutputVisitor($this->getOutputVisitorMock());
 
@@ -116,7 +116,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|\eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor
+     * @return \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzPlatformRest\Output\ValueObjectVisitor
      */
     private function getValueObjectVisitorMock()
     {

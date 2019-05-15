@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Output;
+namespace EzSystems\EzPlatformRest\Output;
 
-use eZ\Publish\Core\REST\Common\RequestParser;
+use EzSystems\EzPlatformRest\RequestParser;
 use eZ\Publish\API\Repository\Values\User\Limitation;
 use eZ\Publish\API\Repository\Values\Content\Location;
 use Symfony\Component\Routing\RouterInterface;
@@ -21,7 +21,7 @@ abstract class ValueObjectVisitor
     /**
      * URL handler for URL generation.
      *
-     * @var \eZ\Publish\Core\REST\Common\RequestParser
+     * @var \EzSystems\EzPlatformRest\RequestParser
      */
     protected $requestParser;
 
@@ -38,8 +38,8 @@ abstract class ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Visitor $visitor
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param mixed $data
      */
     abstract public function visit(Visitor $visitor, Generator $generator, $data);
@@ -65,7 +65,7 @@ abstract class ValueObjectVisitor
     /**
      * Returns a string representation for the given $boolValue.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param bool $boolValue
      *
      * @return mixed
@@ -78,7 +78,7 @@ abstract class ValueObjectVisitor
     /**
      * Visits the given list of $names.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param array $names
      */
     protected function visitNamesList(Generator $generator, array $names)
@@ -89,7 +89,7 @@ abstract class ValueObjectVisitor
     /**
      * Visits the given list of $descriptions.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param array $descriptions
      */
     protected function visitDescriptionsList(Generator $generator, array $descriptions)
@@ -100,7 +100,7 @@ abstract class ValueObjectVisitor
     /**
      * Visits a list of translated elements.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param array $translatedElements
      * @param mixed $listName
      */
@@ -119,7 +119,7 @@ abstract class ValueObjectVisitor
     /**
      * Visits a limitation.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param \eZ\Publish\API\Repository\Values\User\Limitation $limitation
      */
     protected function visitLimitation(Generator $generator, Limitation $limitation)

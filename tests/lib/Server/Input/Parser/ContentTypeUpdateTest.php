@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\ContentType\ContentTypeUpdateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\REST\Server\Input\Parser\ContentTypeUpdate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeUpdate;
 
 class ContentTypeUpdateTest extends BaseTest
 {
@@ -111,7 +111,7 @@ class ContentTypeUpdateTest extends BaseTest
     /**
      * Test ContentTypeUpdate parser throwing exception on invalid names.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'names' element for ContentTypeUpdate.
      */
     public function testParseExceptionOnInvalidNames()
@@ -126,7 +126,7 @@ class ContentTypeUpdateTest extends BaseTest
     /**
      * Test ContentTypeUpdate parser throwing exception on invalid descriptions.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'descriptions' element for ContentTypeUpdate.
      */
     public function testParseExceptionOnInvalidDescriptions()
@@ -141,7 +141,7 @@ class ContentTypeUpdateTest extends BaseTest
     /**
      * Test ContentTypeUpdate parser throwing exception on invalid User.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_href' attribute for User element in ContentTypeUpdate.
      */
     public function testParseExceptionOnInvalidUser()
@@ -156,7 +156,7 @@ class ContentTypeUpdateTest extends BaseTest
     /**
      * Returns the ContentTypeUpdate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\ContentTypeUpdate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeUpdate
      */
     protected function internalGetParser()
     {

@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser\Criterion;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
 
-use eZ\Publish\Core\REST\Common\Input\BaseParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Input\BaseParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 
 /**
  * Parser for MoreLikeThis Criterion.
@@ -20,9 +20,9 @@ class MoreLikeThis extends BaseParser
      * Parses input structure to a Criterion object.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\MoreLikeThis
      */

@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Input\Handler;
+namespace EzSystems\EzPlatformRest\Tests\Input\Handler;
 
-use eZ\Publish\Core\REST\Common;
+use EzSystems\EzPlatformRest;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -17,11 +17,11 @@ use PHPUnit\Framework\TestCase;
 class XmlTest extends TestCase
 {
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      */
     public function testConvertInvalidXml()
     {
-        $handler = new Common\Input\Handler\Xml();
+        $handler = new EzPlatformRest\Input\Handler\Xml();
 
         $this->assertSame(
             array(
@@ -49,7 +49,7 @@ class XmlTest extends TestCase
      */
     public function testConvertXml($xml, $expectation)
     {
-        $handler = new Common\Input\Handler\Xml();
+        $handler = new EzPlatformRest\Input\Handler\Xml();
 
         $this->assertSame(
             $expectation,

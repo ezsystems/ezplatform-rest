@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output;
+namespace EzSystems\EzPlatformRest\Tests\Output;
 
-use eZ\Publish\Core\REST\Common;
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitorDispatcher;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
+use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitorDispatcher;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Visitor;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 use Symfony\Component\HttpFoundation\Response;
@@ -96,7 +96,7 @@ class VisitorTest extends TestCase
             ->method('visit')
             ->with($data);
 
-        $visitor = new Common\Output\Visitor($generatorMock, $valueObjectDispatcherMock);
+        $visitor = new EzPlatformRest\Output\Visitor($generatorMock, $valueObjectDispatcherMock);
         $visitor->visit($data);
     }
 
@@ -122,7 +122,7 @@ class VisitorTest extends TestCase
     /**
      * @todo This is a test for a feature that needs refactoring.
      *
-     * @see \eZ\Publish\Core\REST\Common\Output\Visitor::visit
+     * @see \EzSystems\EzPlatformRest\Output\Visitor::visit
      */
     public function testSetFilteredHeaders()
     {

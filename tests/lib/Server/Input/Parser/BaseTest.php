@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
-use eZ\Publish\Core\REST\Common\Input;
-use eZ\Publish\Core\REST\Server\Tests\BaseTest as ParentBaseTest;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\RequestParser;
+use EzSystems\EzPlatformRest\Input;
+use EzSystems\EzPlatformRest\Server\Tests\BaseTest as ParentBaseTest;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\RequestParser;
 
 /**
  * Base test for input parsers.
@@ -19,24 +19,24 @@ use eZ\Publish\Core\REST\Common\RequestParser;
 abstract class BaseTest extends ParentBaseTest
 {
     /**
-     * @var \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher|\PHPUnit\Framework\MockObject\MockObject
+     * @var \EzSystems\EzPlatformRest\Input\ParsingDispatcher|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $parsingDispatcherMock;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @var \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $requestParserMock;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\Input\ParserTools
+     * @var \EzSystems\EzPlatformRest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Get the parsing dispatcher.
      *
-     * @return \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher
+     * @return \EzSystems\EzPlatformRest\Input\ParsingDispatcher
      */
     protected function getParsingDispatcherMock()
     {
@@ -63,7 +63,7 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Get the Request parser.
      *
-     * @return \eZ\Publish\Core\REST\Common\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @return \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestParserMock()
     {
@@ -98,7 +98,7 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Get the parser tools.
      *
-     * @return \eZ\Publish\Core\REST\Common\Input\ParserTools
+     * @return \EzSystems\EzPlatformRest\Input\ParserTools
      */
     protected function getParserTools()
     {
@@ -120,7 +120,7 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Must return the tested parser object.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\Base
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Base
      */
     abstract protected function internalGetParser();
 }

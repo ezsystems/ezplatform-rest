@@ -2,11 +2,11 @@
 /**
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser\Limitation;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser\Limitation;
 
-use eZ\Publish\Core\REST\Common\Input\BaseParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Input\BaseParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Exceptions;
 use eZ\Publish\API\Repository\Values;
 
 /**
@@ -49,7 +49,7 @@ class RouteBasedLimitationParser extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return \eZ\Publish\API\Repository\Values\ValueObject
      */

@@ -6,16 +6,16 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor\BinaryProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor;
 
 class BinaryProcessorTest extends BinaryInputProcessorTest
 {
     const TEMPLATE_URL = 'http://ez.no/subdir/var/rest_test/storage/original/{path}';
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\BinaryProcessor::postProcessValueHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor::postProcessValueHash
      */
     public function testPostProcessValueHash()
     {
@@ -41,7 +41,7 @@ class BinaryProcessorTest extends BinaryInputProcessorTest
     /**
      * Returns the processor under test.
      *
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\BinaryProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor
      */
     protected function getProcessor()
     {

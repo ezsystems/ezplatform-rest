@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Input;
+namespace EzSystems\EzPlatformRest\Input;
 
 use eZ\Publish\API\Repository\Values;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Exceptions;
 use RuntimeException;
 
 /**
@@ -21,7 +21,7 @@ class ParserTools
      * Parses the given $objectElement, if it contains embedded data.
      *
      * @param array $objectElement
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return mixed
      */

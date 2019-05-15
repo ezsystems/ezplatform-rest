@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Server\Input\Parser\Criterion as CriterionParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion as CriterionParser;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion as CriterionValue;
 
 /**
@@ -19,9 +19,9 @@ abstract class Query extends CriterionParser
      * Parses input structure to a Query.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Query
      */
@@ -110,7 +110,7 @@ abstract class Query extends CriterionParser
      * Handles SortClause data.
      *
      * @param array $sortClausesArray
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return array
      */

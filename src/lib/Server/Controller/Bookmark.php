@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\BookmarkService;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Common\Value as RestValue;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Value as RestValue;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use Symfony\Component\HttpFoundation\Request;
 
 class Bookmark extends RestController
@@ -50,7 +50,7 @@ class Bookmark extends RestController
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
      * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
      *
-     * @return \eZ\Publish\Core\REST\Common\Value
+     * @return \EzSystems\EzPlatformRest\Value
      */
     public function createBookmark(Request $request, int $locationId): RestValue
     {
@@ -81,7 +81,7 @@ class Bookmark extends RestController
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
      * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
      *
-     * @return \eZ\Publish\Core\REST\Common\Value
+     * @return \EzSystems\EzPlatformRest\Value
      */
     public function deleteBookmark(Request $request, int $locationId): RestValue
     {
@@ -105,7 +105,7 @@ class Bookmark extends RestController
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
      * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\OK
+     * @return \EzSystems\EzPlatformRest\Server\Values\OK
      */
     public function isBookmarked(Request $request, int $locationId): Values\OK
     {
@@ -125,7 +125,7 @@ class Bookmark extends RestController
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
      *
-     * @return \eZ\Publish\Core\REST\Common\Value
+     * @return \EzSystems\EzPlatformRest\Value
      */
     public function loadBookmarks(Request $request): RestValue
     {

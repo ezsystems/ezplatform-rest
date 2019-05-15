@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\Criterion;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserMetadata as UserMetadataCriterion;
-use eZ\Publish\Core\REST\Server\Input\Parser\Criterion\UserMetadata;
-use eZ\Publish\Core\REST\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserMetadata;
+use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
 
 class UserMetadataTest extends BaseTest
 {
@@ -52,7 +52,7 @@ class UserMetadataTest extends BaseTest
     /**
      * Test UserMetadata parser throwing exception on invalid UserMetadataCriterion format.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid <UserMetadataCriterion> format
      */
     public function testParseExceptionOnInvalidCriterionFormat()
@@ -68,7 +68,7 @@ class UserMetadataTest extends BaseTest
     /**
      * Test UserMetadata parser throwing exception on invalid target format.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid <Target> format
      */
     public function testParseExceptionOnInvalidTargetFormat()
@@ -87,7 +87,7 @@ class UserMetadataTest extends BaseTest
     /**
      * Test UserMetadata parser throwing exception on invalid value format.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid <Value> format
      */
     public function testParseExceptionOnInvalidValueFormat()
@@ -106,7 +106,7 @@ class UserMetadataTest extends BaseTest
     /**
      * Test UserMetadata parser throwing exception on wrong type of value format.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid <Value> format
      */
     public function testParseExceptionOnWrongValueType()
@@ -125,7 +125,7 @@ class UserMetadataTest extends BaseTest
     /**
      * Returns the UserMetadata criterion parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\Criterion\UserMetadata
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserMetadata
      */
     protected function internalGetParser()
     {

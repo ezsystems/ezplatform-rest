@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Output\Generator\Json;
+namespace EzSystems\EzPlatformRest\Output\Generator\Json;
 
 /**
  * Json object.
@@ -19,7 +19,7 @@ class JsonObject
     /**
      * Reference to the parent node.
      *
-     * @var \eZ\Publish\Core\REST\Common\Output\Generator\Json\JsonObject
+     * @var \EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
      */
     protected $_ref_parent;
 
@@ -36,7 +36,7 @@ class JsonObject
     /**
      * Get Parent of current node.
      *
-     * @return \eZ\Publish\Core\REST\Common\Output\Generator\Json\JsonObject
+     * @return \EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
      */
     public function getParent()
     {

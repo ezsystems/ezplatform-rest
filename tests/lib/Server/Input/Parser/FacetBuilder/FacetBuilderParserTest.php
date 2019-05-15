@@ -1,6 +1,6 @@
 <?php
 
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\FacetBuilder;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\FacetBuilder;
 
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\Content\Query;
@@ -11,7 +11,7 @@ use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\LocationFacetBui
 use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\SectionFacetBuilder;
 use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\TermFacetBuilder;
 use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\UserFacetBuilder;
-use eZ\Publish\Core\REST\Server\Input\Parser\Criterion\LocationId;
+use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LocationId;
 
 class FacetBuilderParserTest extends FacetBuilderBaseTest
 {

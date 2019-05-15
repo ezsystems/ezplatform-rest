@@ -3,18 +3,18 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
-use eZ\Publish\Core\REST\Common\Exceptions\NotFoundException;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Server\Controller;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Exceptions;
+use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Server\Controller;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Exceptions;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Csrf\CsrfToken;
-use eZ\Publish\Core\REST\Server\Security\CsrfTokenManager;
+use EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
@@ -27,7 +27,7 @@ class SessionController extends Controller
     private $authenticator;
 
     /**
-     * @var \eZ\Publish\Core\REST\Server\Security\CsrfTokenManager
+     * @var \EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager
      */
     private $csrfTokenManager;
 
@@ -56,7 +56,7 @@ class SessionController extends Controller
      */
     public function createSessionAction(Request $request)
     {
-        /** @var $sessionInput \eZ\Publish\Core\REST\Server\Values\SessionInput */
+        /** @var $sessionInput \EzSystems\EzPlatformRest\Server\Values\SessionInput */
         $sessionInput = $this->inputDispatcher->parse(
             new Message(
                 array('Content-Type' => $request->headers->get('Content-Type')),
@@ -99,9 +99,9 @@ class SessionController extends Controller
      *
      * @param string $sessionId
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\UserSession
+     * @return \EzSystems\EzPlatformRest\Server\Values\UserSession
      */
     public function refreshSessionAction($sessionId, Request $request)
     {

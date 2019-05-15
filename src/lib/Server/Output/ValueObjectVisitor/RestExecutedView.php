@@ -6,16 +6,16 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Values\Content as ApiValues;
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Visitor;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\Core\REST\Server\Values\RestContent as RestContentValue;
+use EzSystems\EzPlatformRest\Server\Values\RestContent as RestContentValue;
 
 /**
  * Section value object visitor.
@@ -51,9 +51,9 @@ class RestExecutedView extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Visitor $visitor
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
-     * @param \eZ\Publish\Core\REST\Server\Values\RestExecutedView $data
+     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Server\Values\RestExecutedView $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

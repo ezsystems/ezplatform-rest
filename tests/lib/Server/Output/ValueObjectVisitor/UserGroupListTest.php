@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use eZ\Publish\Core\REST\Common\Tests\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Server\Values\UserGroupList;
-use eZ\Publish\Core\REST\Server\Values\RestUserGroup;
+use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Values\UserGroupList;
+use EzSystems\EzPlatformRest\Server\Values\RestUserGroup;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\Core\Repository\Values\Content\Content;
 use eZ\Publish\Core\Repository\Values\Content\Location;
@@ -140,7 +140,7 @@ class UserGroupListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the UserGroupList visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\UserGroupList
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserGroupList
      */
     protected function internalGetVisitor()
     {

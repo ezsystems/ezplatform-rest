@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Tests\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Common\Output\FieldTypeSerializer;
-use eZ\Publish\Core\REST\Server;
+use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\FieldTypeSerializer;
+use EzSystems\EzPlatformRest\Server;
 use eZ\Publish\Core\Repository\Values;
 
 class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
@@ -143,7 +143,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Content visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestFieldDefinition
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestFieldDefinition
      */
     protected function internalGetVisitor()
     {

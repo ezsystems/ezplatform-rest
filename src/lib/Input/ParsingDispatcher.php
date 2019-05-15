@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Input;
+namespace EzSystems\EzPlatformRest\Input;
 
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Exceptions;
 
 /**
  * Parsing dispatcher.
@@ -29,7 +29,7 @@ class ParsingDispatcher
      *  )
      * </code>
      *
-     * @var \eZ\Publish\Core\REST\Common\Input\Parser[]
+     * @var \EzSystems\EzPlatformRest\Input\Parser[]
      */
     protected $parsers = array();
 
@@ -49,7 +49,7 @@ class ParsingDispatcher
      * Adds another parser for the given Content Type.
      *
      * @param string $mediaType
-     * @param \eZ\Publish\Core\REST\Common\Input\Parser $parser
+     * @param \EzSystems\EzPlatformRest\Input\Parser $parser
      */
     public function addParser($mediaType, Parser $parser)
     {

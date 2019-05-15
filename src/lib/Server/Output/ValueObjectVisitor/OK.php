@@ -2,11 +2,11 @@
 /**
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\Visitor;
 
 class OK extends ValueObjectVisitor
 {

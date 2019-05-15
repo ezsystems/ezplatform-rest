@@ -6,17 +6,17 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Input;
+namespace EzSystems\EzPlatformRest\Tests\Input;
 
-use eZ\Publish\Core\REST\Common\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Input\FieldTypeParser;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\Core\Repository\ContentService;
 use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\FieldTypeService;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\REST\Common\FieldTypeProcessorRegistry;
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
+use EzSystems\EzPlatformRest\FieldTypeProcessor;
 use eZ\Publish\SPI\FieldType\FieldType;
 use PHPUnit\Framework\TestCase;
 

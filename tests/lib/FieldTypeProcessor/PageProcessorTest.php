@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor\PageProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessor\PageProcessor;
 use eZ\Publish\Core\FieldType\Page\Parts\Base;
 use PHPUnit\Framework\TestCase;
 
@@ -104,7 +104,7 @@ class PageProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\PageProcessor::preProcessValueHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\PageProcessor::preProcessValueHash
      * @dataProvider fieldValueHashes
      */
     public function testPreProcessValueHash($inputValue, $outputValue)
@@ -118,7 +118,7 @@ class PageProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\PageProcessor::postProcessValueHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\PageProcessor::postProcessValueHash
      * @dataProvider fieldValueHashes
      */
     public function testPostProcessValueHash($outputValue, $inputValue)
@@ -132,7 +132,7 @@ class PageProcessorTest extends TestCase
     }
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\PageProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\PageProcessor
      */
     protected function getProcessor()
     {

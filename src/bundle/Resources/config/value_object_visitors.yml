@@ -1,130 +1,130 @@
 parameters:
-    ezpublish_rest.output.value_object_visitor.base.class: eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor
-    ezpublish_rest.output.value_object_visitor.ContentObjectStates.class: eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor\ContentObjectStates
+    ezpublish_rest.output.value_object_visitor.base.class: EzSystems\EzPlatformRest\Output\ValueObjectVisitor
+    ezpublish_rest.output.value_object_visitor.ContentObjectStates.class: EzSystems\EzPlatformRest\Output\ValueObjectVisitor\ContentObjectStates
 
     # Errors
-    ezpublish_rest.output.value_object_visitor.InvalidArgumentException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\InvalidArgumentException
-    ezpublish_rest.output.value_object_visitor.NotFoundException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\NotFoundException
-    ezpublish_rest.output.value_object_visitor.UnauthorizedException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\UnauthorizedException
-    ezpublish_rest.output.value_object_visitor.BadStateException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\BadStateException
-    ezpublish_rest.output.value_object_visitor.BadRequestException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\BadRequestException
-    ezpublish_rest.output.value_object_visitor.ContentFieldValidationException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentFieldValidationException
-    ezpublish_rest.output.value_object_visitor.ForbiddenException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ForbiddenException
-    ezpublish_rest.output.value_object_visitor.Exception.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Exception
-    ezpublish_rest.output.value_object_visitor.NotImplementedException.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\NotImplementedException
+    ezpublish_rest.output.value_object_visitor.InvalidArgumentException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\InvalidArgumentException
+    ezpublish_rest.output.value_object_visitor.NotFoundException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NotFoundException
+    ezpublish_rest.output.value_object_visitor.UnauthorizedException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UnauthorizedException
+    ezpublish_rest.output.value_object_visitor.BadStateException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BadStateException
+    ezpublish_rest.output.value_object_visitor.BadRequestException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BadRequestException
+    ezpublish_rest.output.value_object_visitor.ContentFieldValidationException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentFieldValidationException
+    ezpublish_rest.output.value_object_visitor.ForbiddenException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ForbiddenException
+    ezpublish_rest.output.value_object_visitor.Exception.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception
+    ezpublish_rest.output.value_object_visitor.NotImplementedException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NotImplementedException
 
     # Section
-    ezpublish_rest.output.value_object_visitor.SectionList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\SectionList
-    ezpublish_rest.output.value_object_visitor.CreatedSection.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedSection
-    ezpublish_rest.output.value_object_visitor.Section.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Section
+    ezpublish_rest.output.value_object_visitor.SectionList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\SectionList
+    ezpublish_rest.output.value_object_visitor.CreatedSection.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedSection
+    ezpublish_rest.output.value_object_visitor.Section.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Section
 
     # URLWildcard
-    ezpublish_rest.output.value_object_visitor.URLWildcardList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\URLWildcardList
-    ezpublish_rest.output.value_object_visitor.URLWildcard.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\URLWildcard
-    ezpublish_rest.output.value_object_visitor.CreatedURLWildcard.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedURLWildcard
+    ezpublish_rest.output.value_object_visitor.URLWildcardList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLWildcardList
+    ezpublish_rest.output.value_object_visitor.URLWildcard.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLWildcard
+    ezpublish_rest.output.value_object_visitor.CreatedURLWildcard.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedURLWildcard
 
     # URLAlias
-    ezpublish_rest.output.value_object_visitor.URLAliasList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\URLAliasList
-    ezpublish_rest.output.value_object_visitor.URLAliasRefList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\URLAliasRefList
-    ezpublish_rest.output.value_object_visitor.URLAlias.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\URLAlias
-    ezpublish_rest.output.value_object_visitor.CreatedURLAlias.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedURLAlias
+    ezpublish_rest.output.value_object_visitor.URLAliasList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLAliasList
+    ezpublish_rest.output.value_object_visitor.URLAliasRefList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLAliasRefList
+    ezpublish_rest.output.value_object_visitor.URLAlias.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLAlias
+    ezpublish_rest.output.value_object_visitor.CreatedURLAlias.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedURLAlias
 
     # Content
-    ezpublish_rest.output.value_object_visitor.ContentList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentList
-    ezpublish_rest.output.value_object_visitor.RestContent.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestContent
-    ezpublish_rest.output.value_object_visitor.CreatedContent.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedContent
-    ezpublish_rest.output.value_object_visitor.VersionList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\VersionList
-    ezpublish_rest.output.value_object_visitor.CreatedVersion.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedVersion
-    ezpublish_rest.output.value_object_visitor.VersionInfo.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\VersionInfo
-    ezpublish_rest.output.value_object_visitor.ImageVariation.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ImageVariation
-    ezpublish_rest.output.value_object_visitor.Version.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Version
-    ezpublish_rest.output.value_object_visitor.VersionTranslationInfo.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\VersionTranslationInfo
+    ezpublish_rest.output.value_object_visitor.ContentList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentList
+    ezpublish_rest.output.value_object_visitor.RestContent.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestContent
+    ezpublish_rest.output.value_object_visitor.CreatedContent.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedContent
+    ezpublish_rest.output.value_object_visitor.VersionList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\VersionList
+    ezpublish_rest.output.value_object_visitor.CreatedVersion.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedVersion
+    ezpublish_rest.output.value_object_visitor.VersionInfo.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\VersionInfo
+    ezpublish_rest.output.value_object_visitor.ImageVariation.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ImageVariation
+    ezpublish_rest.output.value_object_visitor.Version.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Version
+    ezpublish_rest.output.value_object_visitor.VersionTranslationInfo.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\VersionTranslationInfo
 
     # User group
-    ezpublish_rest.output.value_object_visitor.RestUserGroup.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestUserGroup
-    ezpublish_rest.output.value_object_visitor.CreatedUserGroup.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedUserGroup
-    ezpublish_rest.output.value_object_visitor.UserGroupList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\UserGroupList
-    ezpublish_rest.output.value_object_visitor.UserGroupRefList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\UserGroupRefList
+    ezpublish_rest.output.value_object_visitor.RestUserGroup.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUserGroup
+    ezpublish_rest.output.value_object_visitor.CreatedUserGroup.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedUserGroup
+    ezpublish_rest.output.value_object_visitor.UserGroupList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserGroupList
+    ezpublish_rest.output.value_object_visitor.UserGroupRefList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserGroupRefList
 
     # User
-    ezpublish_rest.output.value_object_visitor.UserList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\UserList
-    ezpublish_rest.output.value_object_visitor.UserRefList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\UserRefList
-    ezpublish_rest.output.value_object_visitor.CreatedUser.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedUser
-    ezpublish_rest.output.value_object_visitor.RestUser.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestUser
-    ezpublish_rest.output.value_object_visitor.UserSession.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\UserSession
-    ezpublish_rest.output.value_object_visitor.UserSessionDeleted.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\DeletedUserSession
+    ezpublish_rest.output.value_object_visitor.UserList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserList
+    ezpublish_rest.output.value_object_visitor.UserRefList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserRefList
+    ezpublish_rest.output.value_object_visitor.CreatedUser.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedUser
+    ezpublish_rest.output.value_object_visitor.RestUser.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUser
+    ezpublish_rest.output.value_object_visitor.UserSession.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserSession
+    ezpublish_rest.output.value_object_visitor.UserSessionDeleted.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\DeletedUserSession
 
     # ContentType
-    ezpublish_rest.output.value_object_visitor.RestContentType.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestContentType
-    ezpublish_rest.output.value_object_visitor.CreatedContentType.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedContentType
+    ezpublish_rest.output.value_object_visitor.RestContentType.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestContentType
+    ezpublish_rest.output.value_object_visitor.CreatedContentType.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedContentType
 
     # Object state
-    ezpublish_rest.output.value_object_visitor.ObjectStateList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ObjectStateList
-    ezpublish_rest.output.value_object_visitor.CreatedObjectState.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedObjectState
-    ezpublish_rest.output.value_object_visitor.RestObjectState.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestObjectState
-    ezpublish_rest.output.value_object_visitor.ObjectStateGroupList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ObjectStateGroupList
-    ezpublish_rest.output.value_object_visitor.CreatedObjectStateGroup.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedObjectStateGroup
-    ezpublish_rest.output.value_object_visitor.ObjectStateGroup.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ObjectStateGroup
+    ezpublish_rest.output.value_object_visitor.ObjectStateList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ObjectStateList
+    ezpublish_rest.output.value_object_visitor.CreatedObjectState.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedObjectState
+    ezpublish_rest.output.value_object_visitor.RestObjectState.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestObjectState
+    ezpublish_rest.output.value_object_visitor.ObjectStateGroupList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ObjectStateGroupList
+    ezpublish_rest.output.value_object_visitor.CreatedObjectStateGroup.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedObjectStateGroup
+    ezpublish_rest.output.value_object_visitor.ObjectStateGroup.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ObjectStateGroup
 
     # View
-    ezpublish_rest.output.value_object_visitor.RestExecutedView.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestExecutedView
+    ezpublish_rest.output.value_object_visitor.RestExecutedView.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestExecutedView
 
     # Trash
-    ezpublish_rest.output.value_object_visitor.RestTrashItem.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestTrashItem
-    ezpublish_rest.output.value_object_visitor.Trash.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Trash
+    ezpublish_rest.output.value_object_visitor.RestTrashItem.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestTrashItem
+    ezpublish_rest.output.value_object_visitor.Trash.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Trash
 
     # Location
-    ezpublish_rest.output.value_object_visitor.LocationList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\LocationList
-    ezpublish_rest.output.value_object_visitor.RestLocation.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestLocation
-    ezpublish_rest.output.value_object_visitor.Location.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Location
-    ezpublish_rest.output.value_object_visitor.CreatedLocation.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedLocation
+    ezpublish_rest.output.value_object_visitor.LocationList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\LocationList
+    ezpublish_rest.output.value_object_visitor.RestLocation.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestLocation
+    ezpublish_rest.output.value_object_visitor.Location.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Location
+    ezpublish_rest.output.value_object_visitor.CreatedLocation.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedLocation
 
     # Roles
-    ezpublish_rest.output.value_object_visitor.RestUserGroupRoleAssignment.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestUserGroupRoleAssignment
-    ezpublish_rest.output.value_object_visitor.RestUserRoleAssignment.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestUserRoleAssignment
-    ezpublish_rest.output.value_object_visitor.RoleAssignmentList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RoleAssignmentList
-    ezpublish_rest.output.value_object_visitor.PolicyList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\PolicyList
-    ezpublish_rest.output.value_object_visitor.CreatedPolicy.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedPolicy
-    ezpublish_rest.output.value_object_visitor.Policy.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Policy
-    ezpublish_rest.output.value_object_visitor.Role.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Role
-    ezpublish_rest.output.value_object_visitor.CreatedRole.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedRole
-    ezpublish_rest.output.value_object_visitor.PublishedRole.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\PublishedRole
-    ezpublish_rest.output.value_object_visitor.RoleList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RoleList
+    ezpublish_rest.output.value_object_visitor.RestUserGroupRoleAssignment.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUserGroupRoleAssignment
+    ezpublish_rest.output.value_object_visitor.RestUserRoleAssignment.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUserRoleAssignment
+    ezpublish_rest.output.value_object_visitor.RoleAssignmentList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RoleAssignmentList
+    ezpublish_rest.output.value_object_visitor.PolicyList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\PolicyList
+    ezpublish_rest.output.value_object_visitor.CreatedPolicy.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedPolicy
+    ezpublish_rest.output.value_object_visitor.Policy.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Policy
+    ezpublish_rest.output.value_object_visitor.Role.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Role
+    ezpublish_rest.output.value_object_visitor.CreatedRole.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedRole
+    ezpublish_rest.output.value_object_visitor.PublishedRole.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\PublishedRole
+    ezpublish_rest.output.value_object_visitor.RoleList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RoleList
 
     # Relation
-    ezpublish_rest.output.value_object_visitor.CreatedRelation.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedRelation
-    ezpublish_rest.output.value_object_visitor.RestRelation.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestRelation
-    ezpublish_rest.output.value_object_visitor.RelationList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RelationList
+    ezpublish_rest.output.value_object_visitor.CreatedRelation.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedRelation
+    ezpublish_rest.output.value_object_visitor.RestRelation.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestRelation
+    ezpublish_rest.output.value_object_visitor.RelationList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RelationList
 
     # Field Definition
-    ezpublish_rest.output.value_object_visitor.RestFieldDefinition.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestFieldDefinition
-    ezpublish_rest.output.value_object_visitor.CreatedFieldDefinition.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedFieldDefinition
-    ezpublish_rest.output.value_object_visitor.FieldDefinitionList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\FieldDefinitionList
+    ezpublish_rest.output.value_object_visitor.RestFieldDefinition.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestFieldDefinition
+    ezpublish_rest.output.value_object_visitor.CreatedFieldDefinition.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedFieldDefinition
+    ezpublish_rest.output.value_object_visitor.FieldDefinitionList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\FieldDefinitionList
 
     # Content Type Group
-    ezpublish_rest.output.value_object_visitor.ContentTypeGroupList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentTypeGroupList
-    ezpublish_rest.output.value_object_visitor.CreatedContentTypeGroup.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CreatedContentTypeGroup
-    ezpublish_rest.output.value_object_visitor.ContentTypeGroup.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentTypeGroup
-    ezpublish_rest.output.value_object_visitor.ContentTypeInfoList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentTypeInfoList
-    ezpublish_rest.output.value_object_visitor.ContentTypeList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentTypeList
-    ezpublish_rest.output.value_object_visitor.ContentTypeGroupRefList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentTypeGroupRefList
+    ezpublish_rest.output.value_object_visitor.ContentTypeGroupList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeGroupList
+    ezpublish_rest.output.value_object_visitor.CreatedContentTypeGroup.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedContentTypeGroup
+    ezpublish_rest.output.value_object_visitor.ContentTypeGroup.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeGroup
+    ezpublish_rest.output.value_object_visitor.ContentTypeInfoList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeInfoList
+    ezpublish_rest.output.value_object_visitor.ContentTypeList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeList
+    ezpublish_rest.output.value_object_visitor.ContentTypeGroupRefList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeGroupRefList
 
     # HTTP
-    ezpublish_rest.output.value_object_visitor.Conflict.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Conflict
-    ezpublish_rest.output.value_object_visitor.SeeOther.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\SeeOther
-    ezpublish_rest.output.value_object_visitor.Root.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Root
-    ezpublish_rest.output.value_object_visitor.NoContent.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\NoContent
-    ezpublish_rest.output.value_object_visitor.ResourceCreated.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ResourceCreated
-    ezpublish_rest.output.value_object_visitor.PermanentRedirect.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\PermanentRedirect
-    ezpublish_rest.output.value_object_visitor.TemporaryRedirect.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\TemporaryRedirect
-    ezpublish_rest.output.value_object_visitor.Options.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\Options
-    ezpublish_rest.output.value_object_visitor.OK.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\OK
+    ezpublish_rest.output.value_object_visitor.Conflict.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Conflict
+    ezpublish_rest.output.value_object_visitor.SeeOther.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\SeeOther
+    ezpublish_rest.output.value_object_visitor.Root.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Root
+    ezpublish_rest.output.value_object_visitor.NoContent.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NoContent
+    ezpublish_rest.output.value_object_visitor.ResourceCreated.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ResourceCreated
+    ezpublish_rest.output.value_object_visitor.PermanentRedirect.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\PermanentRedirect
+    ezpublish_rest.output.value_object_visitor.TemporaryRedirect.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\TemporaryRedirect
+    ezpublish_rest.output.value_object_visitor.Options.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Options
+    ezpublish_rest.output.value_object_visitor.OK.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\OK
 
     # Cache
-    ezpublish_rest.output.value_object_visitor.cached_value.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CachedValue
+    ezpublish_rest.output.value_object_visitor.cached_value.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CachedValue
 
     # Services
-    ezpublish_rest.output.value_object_visitor.CountryList.class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\CountryList
+    ezpublish_rest.output.value_object_visitor.CountryList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CountryList
 
 services:
     ezpublish_rest.output.value_object_visitor.base:
@@ -168,22 +168,22 @@ services:
         class: "%ezpublish_rest.output.value_object_visitor.BadRequestException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Exceptions\BadRequestException }
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Common\Exceptions\Parser }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Exceptions\Parser }
 
     ezpublish_rest.output.value_object_visitor.ContentFieldValidationException:
         parent: ezpublish_rest.output.value_object_visitor.BadRequestException
         class: "%ezpublish_rest.output.value_object_visitor.ContentFieldValidationException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Exceptions\ContentFieldValidationException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Exceptions\ContentFieldValidationException }
 
     ezpublish_rest.output.value_object_visitor.ForbiddenException:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ForbiddenException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException }
 
     ezpublish_rest.output.value_object_visitor.NotImplementedException:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -204,13 +204,13 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.SectionList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\SectionList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\SectionList }
 
     ezpublish_rest.output.value_object_visitor.CreatedSection:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedSection.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedSection }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedSection }
 
     ezpublish_rest.output.value_object_visitor.Section:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -223,7 +223,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.URLWildcardList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\URLWildcardList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\URLWildcardList }
 
     ezpublish_rest.output.value_object_visitor.URLWildcard:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -235,20 +235,20 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedURLWildcard.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedURLWildcard }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedURLWildcard }
 
     # URLAlias
     ezpublish_rest.output.value_object_visitor.URLAliasList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.URLAliasList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\URLAliasList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\URLAliasList }
 
     ezpublish_rest.output.value_object_visitor.URLAliasRefList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.URLAliasRefList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\URLAliasRefList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\URLAliasRefList }
 
     ezpublish_rest.output.value_object_visitor.URLAlias:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -260,39 +260,39 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedURLAlias.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedURLAlias }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedURLAlias }
 
     # Content
     ezpublish_rest.output.value_object_visitor.ContentList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ContentList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ContentList }
 
     ezpublish_rest.output.value_object_visitor.RestContent:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestContent.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestContent }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestContent }
 
     ezpublish_rest.output.value_object_visitor.CreatedContent:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedContent.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedContent }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedContent }
 
     ezpublish_rest.output.value_object_visitor.VersionList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.VersionList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\VersionList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\VersionList }
 
     ezpublish_rest.output.value_object_visitor.CreatedVersion:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedVersion.class%"
         arguments: [ "@ezpublish_rest.field_type_serializer" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedVersion }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedVersion }
 
     ezpublish_rest.output.value_object_visitor.VersionInfo:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -311,100 +311,100 @@ services:
         class: "%ezpublish_rest.output.value_object_visitor.Version.class%"
         arguments: [ "@ezpublish_rest.field_type_serializer"  ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\Version }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\Version }
 
     ezpublish_rest.output.value_object_visitor.VersionTranslationInfo:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.VersionTranslationInfo.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\VersionTranslationInfo }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\VersionTranslationInfo }
 
     # UserGroup
     ezpublish_rest.output.value_object_visitor.RestUserGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestUserGroup.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestUserGroup }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestUserGroup }
 
     ezpublish_rest.output.value_object_visitor.CreatedUserGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedUserGroup.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedUserGroup }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedUserGroup }
 
     ezpublish_rest.output.value_object_visitor.UserGroupList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.UserGroupList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\UserGroupList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\UserGroupList }
 
     ezpublish_rest.output.value_object_visitor.UserGroupRefList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.UserGroupRefList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\UserGroupRefList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\UserGroupRefList }
 
     # User
     ezpublish_rest.output.value_object_visitor.UserList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.UserList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\UserList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\UserList }
 
     ezpublish_rest.output.value_object_visitor.UserRefList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.UserRefList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\UserRefList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\UserRefList }
 
     ezpublish_rest.output.value_object_visitor.CreatedUser:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedUser.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedUser }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedUser }
 
     ezpublish_rest.output.value_object_visitor.RestUser:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestUser.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestUser }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestUser }
 
     ezpublish_rest.output.value_object_visitor.UserSession:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.UserSession.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\UserSession }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\UserSession }
 
     ezpublish_rest.output.value_object_visitor.UserSessionDeleted:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.UserSessionDeleted.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\DeletedUserSession }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\DeletedUserSession }
 
     # ContentType
     ezpublish_rest.output.value_object_visitor.RestContentType:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestContentType.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestContentType }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestContentType }
 
     ezpublish_rest.output.value_object_visitor.CreatedContentType:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedContentType.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedContentType }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedContentType }
 
     ezpublish_rest.output.value_object_visitor.ContentTypeList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentTypeList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ContentTypeList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ContentTypeList }
 
     ezpublish_rest.output.value_object_visitor.ContentTypeInfoList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentTypeInfoList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ContentTypeInfoList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ContentTypeInfoList }
 
     ezpublish_rest.output.value_object_visitor.ContentTypeGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -416,77 +416,77 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedContentTypeGroup.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedContentTypeGroup }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedContentTypeGroup }
 
     ezpublish_rest.output.value_object_visitor.ContentTypeGroupList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentTypeGroupList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ContentTypeGroupList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ContentTypeGroupList }
 
     ezpublish_rest.output.value_object_visitor.ContentTypeGroupRefList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentTypeGroupRefList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ContentTypeGroupRefList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ContentTypeGroupRefList }
 
     ezpublish_rest.output.value_object_visitor.FieldDefinitionList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.FieldDefinitionList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\FieldDefinitionList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\FieldDefinitionList }
 
     ezpublish_rest.output.value_object_visitor.CreatedFieldDefinition:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedFieldDefinition.class%"
         arguments: [ "@ezpublish_rest.field_type_serializer"  ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedFieldDefinition }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedFieldDefinition }
 
     ezpublish_rest.output.value_object_visitor.RestFieldDefinition:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestFieldDefinition.class%"
         arguments: [ "@ezpublish_rest.field_type_serializer"  ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestFieldDefinition }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestFieldDefinition }
 
     # Relation
     ezpublish_rest.output.value_object_visitor.RelationList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RelationList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RelationList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RelationList }
 
     ezpublish_rest.output.value_object_visitor.RestRelation:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestRelation.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestRelation }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestRelation }
 
     ezpublish_rest.output.value_object_visitor.CreatedRelation:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedRelation.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedRelation }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedRelation }
 
     # Role
     ezpublish_rest.output.value_object_visitor.RoleList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RoleList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RoleList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RoleList }
 
     ezpublish_rest.output.value_object_visitor.CreatedRole:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedRole.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedRole }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedRole }
 
     ezpublish_rest.output.value_object_visitor.PublishedRole:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.PublishedRole.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\PublishedRole }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\PublishedRole }
 
     ezpublish_rest.output.value_object_visitor.Role:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -506,44 +506,44 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedPolicy.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedPolicy }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedPolicy }
 
     ezpublish_rest.output.value_object_visitor.PolicyList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.PolicyList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\PolicyList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\PolicyList }
 
     ezpublish_rest.output.value_object_visitor.RoleAssignmentList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RoleAssignmentList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RoleAssignmentList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList }
 
     ezpublish_rest.output.value_object_visitor.RestUserRoleAssignment:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestUserRoleAssignment.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestUserRoleAssignment }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestUserRoleAssignment }
 
     ezpublish_rest.output.value_object_visitor.RestUserGroupRoleAssignment:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestUserGroupRoleAssignment.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestUserGroupRoleAssignment }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestUserGroupRoleAssignment }
 
     # Location
     ezpublish_rest.output.value_object_visitor.CreatedLocation:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedLocation.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedLocation }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedLocation }
 
     ezpublish_rest.output.value_object_visitor.RestLocation:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestLocation.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestLocation }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestLocation }
 
     ezpublish_rest.output.value_object_visitor.Location:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -556,20 +556,20 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.LocationList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\LocationList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\LocationList }
 
     # Trash
     ezpublish_rest.output.value_object_visitor.Trash:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Trash.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\Trash }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\Trash }
 
     ezpublish_rest.output.value_object_visitor.RestTrashItem:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestTrashItem.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestTrashItem }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestTrashItem }
 
     # Views
     ezpublish_rest.output.value_object_visitor.RestExecutedView:
@@ -577,7 +577,7 @@ services:
         class: "%ezpublish_rest.output.value_object_visitor.RestExecutedView.class%"
         arguments: [ "@ezpublish.api.service.location", "@ezpublish.api.service.content" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\RestExecutedView }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestExecutedView }
 
     # Object state
     ezpublish_rest.output.value_object_visitor.ObjectStateGroup:
@@ -590,101 +590,101 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedObjectStateGroup.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedObjectStateGroup }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedObjectStateGroup }
 
     ezpublish_rest.output.value_object_visitor.ObjectStateGroupList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ObjectStateGroupList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ObjectStateGroupList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ObjectStateGroupList }
 
     ezpublish_rest.output.value_object_visitor.RestObjectState:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestObjectState.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Common\Values\RestObjectState }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Values\RestObjectState }
 
     ezpublish_rest.output.value_object_visitor.CreatedObjectState:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CreatedObjectState.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CreatedObjectState }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedObjectState }
 
     ezpublish_rest.output.value_object_visitor.ObjectStateList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ObjectStateList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ObjectStateList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ObjectStateList }
 
     ezpublish_rest.output.value_object_visitor.ContentObjectStates:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentObjectStates.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Common\Values\ContentObjectStates }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Values\ContentObjectStates }
 
     # Services
     ezpublish_rest.output.value_object_visitor.CountryList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.CountryList.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CountryList}
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CountryList}
 
     # REST specific
     ezpublish_rest.output.value_object_visitor.TemporaryRedirect:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.TemporaryRedirect.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\TemporaryRedirect }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect }
 
     ezpublish_rest.output.value_object_visitor.PermanentRedirect:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.PermanentRedirect.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\PermanentRedirect }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\PermanentRedirect }
 
     ezpublish_rest.output.value_object_visitor.ResourceCreated:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ResourceCreated.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\ResourceCreated }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\ResourceCreated }
 
     ezpublish_rest.output.value_object_visitor.NoContent:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.NoContent.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\NoContent }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\NoContent }
 
     ezpublish_rest.output.value_object_visitor.Root:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Root.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Common\Values\Root }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Values\Root }
 
     ezpublish_rest.output.value_object_visitor.SeeOther:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.SeeOther.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\SeeOther }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\SeeOther }
 
     ezpublish_rest.output.value_object_visitor.Conflict:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Conflict.class%"
         arguments: [ true  ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\Conflict }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\Conflict }
 
     ezpublish_rest.output.value_object_visitor.Options:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Options.class%"
         arguments: [ true  ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\Options }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\Options }
 
     ezpublish_rest.output.value_object_visitor.OK:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.OK.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\OK }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\OK }
 
     ezpublish_rest.output.value_object_visitor.cached_value:
         class: "%ezpublish_rest.output.value_object_visitor.cached_value.class%"
@@ -694,10 +694,10 @@ services:
         calls:
             - [setRequestStack, ["@request_stack"]]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\CachedValue }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CachedValue }
 
     ezpublish_rest.output.value_object_visitor.BookmarkList:
         parent: ezpublish_rest.output.value_object_visitor.base
-        class: eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\BookmarkList
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BookmarkList
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\REST\Server\Values\BookmarkList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\BookmarkList }

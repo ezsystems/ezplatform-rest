@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\UrlHandler;
+namespace EzSystems\EzPlatformRest\Tests\UrlHandler;
 
-use eZ\Publish\Core\REST\Common;
+use EzSystems\EzPlatformRest;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -24,7 +24,7 @@ class PatternTest extends TestCase
      */
     public function testParseUnknownUrlType()
     {
-        $urlHandler = new Common\RequestParser\Pattern();
+        $urlHandler = new EzPlatformRest\RequestParser\Pattern();
         $urlHandler->parse('/foo');
     }
 
@@ -36,7 +36,7 @@ class PatternTest extends TestCase
      */
     public function testParseInvalidPattern()
     {
-        $urlHandler = new Common\RequestParser\Pattern(
+        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             array(
                 'invalid' => '/foo/{broken',
             )
@@ -52,7 +52,7 @@ class PatternTest extends TestCase
      */
     public function testPatternDoesNotMatch()
     {
-        $urlHandler = new Common\RequestParser\Pattern(
+        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             array(
                 'pattern' => '/foo/{foo}',
             )
@@ -68,7 +68,7 @@ class PatternTest extends TestCase
      */
     public function testPatternDoesNotMatchTrailing()
     {
-        $urlHandler = new Common\RequestParser\Pattern(
+        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             array(
                 'pattern' => '/foo/{foo}',
             )
@@ -139,7 +139,7 @@ class PatternTest extends TestCase
      */
     public function testGenerateUnknownUrlType()
     {
-        $urlHandler = new Common\RequestParser\Pattern();
+        $urlHandler = new EzPlatformRest\RequestParser\Pattern();
         $urlHandler->generate('unknown', array());
     }
 
@@ -151,7 +151,7 @@ class PatternTest extends TestCase
      */
     public function testGenerateMissingValue()
     {
-        $urlHandler = new Common\RequestParser\Pattern(
+        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             array(
                 'pattern' => '/foo/{unknown}',
             )
@@ -167,7 +167,7 @@ class PatternTest extends TestCase
      */
     public function testGenerateSuperfluousValue()
     {
-        $urlHandler = new Common\RequestParser\Pattern(
+        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             array(
                 'pattern' => '/foo/{foo}',
             )
@@ -199,11 +199,11 @@ class PatternTest extends TestCase
     /**
      * Returns the URL handler.
      *
-     * @return \eZ\Publish\Core\REST\Common\RequestParser\Pattern
+     * @return \EzSystems\EzPlatformRest\RequestParser\Pattern
      */
     protected function getWorkingUrlHandler()
     {
-        return new Common\RequestParser\Pattern(
+        return new EzPlatformRest\RequestParser\Pattern(
             array(
                 'section' => '/content/section/{section}',
                 'objectversion' => '/content/object/{object}/{version}',

@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
-use eZ\Publish\Core\REST\Server\Values\CachedValue;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Server\Values\CachedValue;
 use eZ\Publish\SPI\Variation\VariationHandler;
 use eZ\Publish\API\Repository\Exceptions\InvalidVariationException;
 
@@ -44,7 +44,7 @@ class BinaryContent extends RestController
      *                        If the version number isn't specified, the default one is used.
      * @param string $variationIdentifier
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
      * @return \eZ\Publish\SPI\Variation\Values\Variation
      */
@@ -95,7 +95,7 @@ class BinaryContent extends RestController
      * @return array An array with 3 keys: contentId, fieldId and versionNumber.
      *               If the versionNumber wasn't set, it is returned as null.
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException If the imageId format is invalid
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException If the imageId format is invalid
      */
     private function parseImageId($imageId)
     {

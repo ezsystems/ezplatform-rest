@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace eZ\Publish\Core\REST\Server\Values;
+namespace EzSystems\EzPlatformRest\Server\Values;
 
-use eZ\Publish\Core\REST\Common\Value as RestValue;
+use EzSystems\EzPlatformRest\Value as RestValue;
 
 class BookmarkList extends RestValue
 {
@@ -18,7 +18,7 @@ class BookmarkList extends RestValue
     public $totalCount = 0;
 
     /**
-     * @var \eZ\Publish\Core\REST\Server\Values\RestLocation[]
+     * @var \EzSystems\EzPlatformRest\Server\Values\RestLocation[]
      */
     public $items = [];
 
@@ -26,7 +26,7 @@ class BookmarkList extends RestValue
      * BookmarkList constructor.
      *
      * @param int $totalCount
-     * @param \eZ\Publish\Core\REST\Server\Values\RestLocation[] $items
+     * @param \EzSystems\EzPlatformRest\Server\Values\RestLocation[] $items
      */
     public function __construct(int $totalCount, array $items)
     {

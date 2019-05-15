@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\User\Limitation;
 use eZ\Publish\Core\Repository\RoleService;
-use eZ\Publish\Core\REST\Server\Input\Parser\PolicyUpdate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\PolicyUpdate;
 use eZ\Publish\Core\Repository\Values\User\PolicyUpdateStruct;
 
 class PolicyUpdateTest extends BaseTest
@@ -88,7 +88,7 @@ class PolicyUpdateTest extends BaseTest
     /**
      * Test PolicyUpdate parser throwing exception on missing identifier.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_identifier' attribute for Limitation.
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
@@ -122,7 +122,7 @@ class PolicyUpdateTest extends BaseTest
     /**
      * Test PolicyUpdate parser throwing exception on missing values.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid format for limitation values in Limitation.
      */
     public function testParseExceptionOnMissingLimitationValues()
@@ -144,7 +144,7 @@ class PolicyUpdateTest extends BaseTest
     /**
      * Returns the PolicyUpdateStruct parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\PolicyUpdate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\PolicyUpdate
      */
     protected function internalGetParser()
     {

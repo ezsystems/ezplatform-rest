@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser\Criterion;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Field as FieldCriterion;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
-use eZ\Publish\Core\REST\Common\Input\BaseParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Input\BaseParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Exceptions;
 
 /**
  * Parser for Field Criterion.
@@ -35,9 +35,9 @@ class Field extends BaseParser
      * Parses input structure to a Criterion object.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\Field
      */
@@ -65,7 +65,7 @@ class Field extends BaseParser
      * Get operator for the given literal name.
      *
      * For the full list of supported operators:
-     * @see \eZ\Publish\Core\REST\Server\Input\Parser\Criterion\Field::OPERATORS
+     * @see \EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Field::OPERATORS
      *
      * @param string $operatorName operator literal operator name
      *

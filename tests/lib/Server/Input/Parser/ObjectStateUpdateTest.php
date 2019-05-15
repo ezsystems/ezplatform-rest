@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\ObjectStateService;
-use eZ\Publish\Core\REST\Server\Input\Parser\ObjectStateUpdate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateUpdate;
 use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateUpdateStruct;
 
 class ObjectStateUpdateTest extends BaseTest
@@ -77,7 +77,7 @@ class ObjectStateUpdateTest extends BaseTest
     /**
      * Test ObjectStateUpdate parser throwing exception on invalid names structure.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateUpdate.
      */
     public function testParseExceptionOnInvalidNames()
@@ -103,7 +103,7 @@ class ObjectStateUpdateTest extends BaseTest
     /**
      * Returns the ObjectStateUpdate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\ObjectStateUpdate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateUpdate
      */
     protected function internalGetParser()
     {

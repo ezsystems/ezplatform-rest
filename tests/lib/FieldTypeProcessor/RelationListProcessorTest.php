@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor\RelationListProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessor\RelationListProcessor;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -35,7 +35,7 @@ class RelationListProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\RelationListProcessor::preProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\RelationListProcessor::preProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPreProcessFieldSettingsHash($inputSettings, $outputSettings)
@@ -49,7 +49,7 @@ class RelationListProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\RelationListProcessor::postProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\RelationListProcessor::postProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPostProcessFieldSettingsHash($outputSettings, $inputSettings)
@@ -121,7 +121,7 @@ class RelationListProcessorTest extends TestCase
     }
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\RelationListProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\RelationListProcessor
      */
     protected function getProcessor()
     {

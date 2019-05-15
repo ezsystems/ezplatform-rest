@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\LocationService;
-use eZ\Publish\Core\REST\Server\Input\Parser\LocationUpdate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate;
 use eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct;
 use eZ\Publish\API\Repository\Values\Content\Location;
-use eZ\Publish\Core\REST\Server\Values\RestLocationUpdateStruct;
+use EzSystems\EzPlatformRest\Server\Values\RestLocationUpdateStruct;
 
 class LocationUpdateTest extends BaseTest
 {
@@ -77,7 +77,7 @@ class LocationUpdateTest extends BaseTest
     /**
      * Test LocationUpdate parser throwing exception on missing sort field.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'sortField' element for LocationUpdate.
      */
     public function testParseExceptionOnMissingSortField()
@@ -95,7 +95,7 @@ class LocationUpdateTest extends BaseTest
     /**
      * Test LocationUpdate parser throwing exception on missing sort order.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'sortOrder' element for LocationUpdate.
      */
     public function testParseExceptionOnMissingSortOrder()
@@ -113,7 +113,7 @@ class LocationUpdateTest extends BaseTest
     /**
      * Returns the LocationUpdateStruct parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\LocationUpdate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate
      */
     protected function internalGetParser()
     {

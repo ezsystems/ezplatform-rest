@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\User\Limitation;
 use eZ\Publish\Core\Repository\RoleService;
-use eZ\Publish\Core\REST\Server\Input\Parser\PolicyCreate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\PolicyCreate;
 use eZ\Publish\Core\Repository\Values\User\PolicyCreateStruct;
 
 class PolicyCreateTest extends BaseTest
@@ -102,7 +102,7 @@ class PolicyCreateTest extends BaseTest
     /**
      * Test PolicyCreate parser throwing exception on missing module.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'module' attribute for PolicyCreate.
      */
     public function testParseExceptionOnMissingModule()
@@ -138,7 +138,7 @@ class PolicyCreateTest extends BaseTest
     /**
      * Test PolicyCreate parser throwing exception on missing function.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'function' attribute for PolicyCreate.
      */
     public function testParseExceptionOnMissingFunction()
@@ -174,7 +174,7 @@ class PolicyCreateTest extends BaseTest
     /**
      * Test PolicyCreate parser throwing exception on missing identifier.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_identifier' attribute for Limitation.
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
@@ -210,7 +210,7 @@ class PolicyCreateTest extends BaseTest
     /**
      * Test PolicyCreate parser throwing exception on missing values.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid format for limitation values in Limitation.
      */
     public function testParseExceptionOnMissingLimitationValues()
@@ -234,7 +234,7 @@ class PolicyCreateTest extends BaseTest
     /**
      * Returns the PolicyCreateStruct parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\PolicyCreate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\PolicyCreate
      */
     protected function internalGetParser()
     {

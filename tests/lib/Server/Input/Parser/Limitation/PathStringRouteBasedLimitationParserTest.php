@@ -2,10 +2,10 @@
 /**
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\Limitation;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\Limitation;
 
-use eZ\Publish\Core\REST\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser;
-use eZ\Publish\Core\REST\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser;
+use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
 
 class PathStringRouteBasedLimitationParserTest extends BaseTest
 {
@@ -30,7 +30,7 @@ class PathStringRouteBasedLimitationParserTest extends BaseTest
 
     /**
      * Must return the tested parser object.
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\Limitation\RouteBasedLimitationParser
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
      */
     protected function internalGetParser()
     {

@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor\AuthorProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor;
 use PHPUnit\Framework\TestCase;
 
 class AuthorProcessorTest extends TestCase
@@ -32,7 +32,7 @@ class AuthorProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\AuthorProcessor::preProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor::preProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPreProcessFieldSettingsHash($inputSettings, $outputSettings)
@@ -46,7 +46,7 @@ class AuthorProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\AuthorProcessor::postProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor::postProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPostProcessFieldSettingsHash($outputSettings, $inputSettings)
@@ -60,7 +60,7 @@ class AuthorProcessorTest extends TestCase
     }
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\AuthorProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor
      */
     protected function getProcessor()
     {

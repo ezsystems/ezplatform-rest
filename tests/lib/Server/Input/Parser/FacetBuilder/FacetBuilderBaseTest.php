@@ -1,24 +1,24 @@
 <?php
 
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\FacetBuilder;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\FacetBuilder;
 
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Server\Input\Parser\ContentQuery as QueryParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\ContentTypeParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\CriterionParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\DateRangeParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\FieldParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\FieldRangeParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\LocationParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\SectionParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\TermParser;
-use eZ\Publish\Core\REST\Server\Input\Parser\FacetBuilder\UserParser;
-use eZ\Publish\Core\REST\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Server\Input\Parser\ContentQuery as QueryParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\ContentTypeParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\CriterionParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\DateRangeParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\FieldParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\FieldRangeParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\LocationParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\SectionParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\TermParser;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\UserParser;
+use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
 
 abstract class FacetBuilderBaseTest extends BaseTest
 {
     /**
-     * @return \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher
+     * @return \EzSystems\EzPlatformRest\Input\ParsingDispatcher
      */
     protected function getParsingDispatcher()
     {
@@ -75,7 +75,7 @@ abstract class FacetBuilderBaseTest extends BaseTest
     /**
      * Returns the query parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\ContentQuery
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentQuery
      */
     protected function internalGetParser()
     {

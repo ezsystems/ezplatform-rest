@@ -3,11 +3,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
 
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\Core\FieldType\Relation\Type;
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessor;
 use Symfony\Component\Routing\RouterInterface;
 
 abstract class BaseRelationProcessor extends FieldTypeProcessor

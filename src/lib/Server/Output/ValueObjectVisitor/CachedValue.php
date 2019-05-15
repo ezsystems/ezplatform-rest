@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\RequestStackAware;
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Visitor;
 
 /**
  * CachedValue value object visitor.
@@ -32,7 +32,7 @@ class CachedValue extends ValueObjectVisitor
     /**
      * @param Visitor   $visitor
      * @param Generator $generator
-     * @param \eZ\Publish\Core\REST\Server\Values\CachedValue $data
+     * @param \EzSystems\EzPlatformRest\Server\Values\CachedValue $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

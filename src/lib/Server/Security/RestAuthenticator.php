@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Security;
+namespace EzSystems\EzPlatformRest\Server\Security;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
 use eZ\Publish\Core\MVC\Symfony\Security\UserInterface as EzUser;
-use eZ\Publish\Core\REST\Server\Exceptions\InvalidUserTypeException;
-use eZ\Publish\Core\REST\Server\Exceptions\UserConflictException;
+use EzSystems\EzPlatformRest\Server\Exceptions\InvalidUserTypeException;
+use EzSystems\EzPlatformRest\Server\Exceptions\UserConflictException;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -211,7 +211,7 @@ class RestAuthenticator implements ListenerInterface, AuthenticatorInterface
         // Session::invalidate() is not called on purpose, to avoid unwanted session migration that would imply
         // generation of a new session id.
         // REST logout must indeed clear the session cookie.
-        // See \eZ\Publish\Core\REST\Server\Security\RestLogoutHandler
+        // See \EzSystems\EzPlatformRest\Server\Security\RestLogoutHandler
         $this->sessionStorage->clear();
 
         $token = $this->tokenStorage->getToken();

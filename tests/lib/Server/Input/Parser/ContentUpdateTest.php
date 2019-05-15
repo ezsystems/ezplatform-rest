@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
-use eZ\Publish\Core\REST\Common\Exceptions\InvalidArgumentException;
-use eZ\Publish\Core\REST\Server\Input\Parser\ContentUpdate as ContentUpdateParser;
-use eZ\Publish\Core\REST\Common\Values\RestContentMetadataUpdateStruct;
-use eZ\Publish\Core\REST\Common\Exceptions\Parser;
+use EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException;
+use EzSystems\EzPlatformRest\Server\Input\Parser\ContentUpdate as ContentUpdateParser;
+use EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 use DateTime;
 
 class ContentUpdateTest extends BaseTest
@@ -19,7 +19,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Tests the ContentUpdate parser.
      *
-     * @return \eZ\Publish\Core\REST\Common\Values\RestContentMetadataUpdateStruct
+     * @return \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct
      */
     public function testParseValid()
     {
@@ -42,7 +42,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Test for valid owner ID value in result.
      *
-     * @param \eZ\Publish\Core\REST\Common\Values\RestContentMetadataUpdateStruct $result
+     * @param \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct $result
      *
      * @depends testParseValid
      */
@@ -132,7 +132,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Returns the ContentUpdate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\ContentUpdate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentUpdate
      */
     protected function internalGetParser()
     {
@@ -142,7 +142,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Returns a valid RestContentMetadataUpdateStruct that matches the structure from getValidInputData().
      *
-     * @return \eZ\Publish\Core\REST\Common\Values\RestContentMetadataUpdateStruct
+     * @return \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct
      */
     protected function getContentUpdateStruct()
     {

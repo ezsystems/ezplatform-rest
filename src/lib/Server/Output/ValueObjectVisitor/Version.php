@@ -6,14 +6,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
-use eZ\Publish\Core\REST\Common\Output\FieldTypeSerializer;
-use eZ\Publish\Core\REST\Server\Values\RelationList as RelationListValue;
-use eZ\Publish\Core\REST\Server\Values\Version as VersionValue;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Visitor;
+use EzSystems\EzPlatformRest\Output\FieldTypeSerializer;
+use EzSystems\EzPlatformRest\Server\Values\RelationList as RelationListValue;
+use EzSystems\EzPlatformRest\Server\Values\Version as VersionValue;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
 use eZ\Publish\API\Repository\Values\Content\Field;
 
@@ -23,12 +23,12 @@ use eZ\Publish\API\Repository\Values\Content\Field;
 class Version extends ValueObjectVisitor
 {
     /**
-     * @var \eZ\Publish\Core\REST\Common\Output\FieldTypeSerializer
+     * @var \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
      */
     protected $fieldTypeSerializer;
 
     /**
-     * @param \eZ\Publish\Core\REST\Common\Output\FieldTypeSerializer $fieldTypeSerializer
+     * @param \EzSystems\EzPlatformRest\Output\FieldTypeSerializer $fieldTypeSerializer
      */
     public function __construct(FieldTypeSerializer $fieldTypeSerializer)
     {
@@ -38,9 +38,9 @@ class Version extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Visitor $visitor
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
-     * @param \eZ\Publish\Core\REST\Server\Values\Version $data
+     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Server\Values\Version $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
@@ -55,7 +55,7 @@ class Version extends ValueObjectVisitor
     /**
      * Visits a single content field and generates its content.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
      * @param \eZ\Publish\API\Repository\Values\ContentType\ContentType $contentType
      * @param \eZ\Publish\API\Repository\Values\Content\Field $field
      */

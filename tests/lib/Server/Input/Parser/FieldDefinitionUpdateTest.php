@@ -6,14 +6,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionUpdateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\REST\Server\Input\Parser\FieldDefinitionUpdate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\REST\Common\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Input\FieldTypeParser;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -113,7 +113,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Test FieldDefinitionUpdate parser throwing exception on invalid names.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'names' element for FieldDefinitionUpdate.
      */
     public function testParseExceptionOnInvalidNames()
@@ -128,7 +128,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Test FieldDefinitionUpdate parser throwing exception on invalid descriptions.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'descriptions' element for FieldDefinitionUpdate.
      */
     public function testParseExceptionOnInvalidDescriptions()
@@ -143,7 +143,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Returns the FieldDefinitionUpdate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\FieldDefinitionUpdate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate
      */
     protected function internalGetParser()
     {
@@ -157,7 +157,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Get the FieldTypeParser mock object.
      *
-     * @return \eZ\Publish\Core\REST\Common\Input\FieldTypeParser
+     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser
      */
     protected function getFieldTypeParserMock()
     {

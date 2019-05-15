@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 
-use eZ\Publish\Core\REST\Common\Input\BaseParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\Input\FieldTypeParser;
-use eZ\Publish\Core\REST\Common\Input\ParserTools;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Input\BaseParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Input\ParserTools;
+use EzSystems\EzPlatformRest\Exceptions;
 use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\API\Repository\ContentTypeService;
 
@@ -38,14 +38,14 @@ class UserCreate extends BaseParser
     /**
      * FieldType parser.
      *
-     * @var \eZ\Publish\Core\REST\Common\Input\FieldTypeParser
+     * @var \EzSystems\EzPlatformRest\Input\FieldTypeParser
      */
     protected $fieldTypeParser;
 
     /**
      * Parser tools.
      *
-     * @var \eZ\Publish\Core\REST\Common\Input\ParserTools
+     * @var \EzSystems\EzPlatformRest\Input\ParserTools
      */
     protected $parserTools;
 
@@ -54,8 +54,8 @@ class UserCreate extends BaseParser
      *
      * @param \eZ\Publish\API\Repository\UserService $userService
      * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \eZ\Publish\Core\REST\Common\Input\FieldTypeParser $fieldTypeParser
-     * @param \eZ\Publish\Core\REST\Common\Input\ParserTools $parserTools
+     * @param \EzSystems\EzPlatformRest\Input\FieldTypeParser $fieldTypeParser
+     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
      */
     public function __construct(UserService $userService, ContentTypeService $contentTypeService, FieldTypeParser $fieldTypeParser, ParserTools $parserTools)
     {
@@ -69,7 +69,7 @@ class UserCreate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return \eZ\Publish\API\Repository\Values\User\UserCreateStruct
      */

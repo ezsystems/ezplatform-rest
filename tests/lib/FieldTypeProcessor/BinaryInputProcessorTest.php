@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
 use PHPUnit\Framework\TestCase;
 
@@ -51,7 +51,7 @@ abstract class BinaryInputProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\BinaryInputProcessor::preProcessValueHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryInputProcessor::preProcessValueHash
      */
     public function testPreProcessValueHashMissingKey()
     {
@@ -65,7 +65,7 @@ abstract class BinaryInputProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\BinaryInputProcessor::preProcessValueHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryInputProcessor::preProcessValueHash
      */
     public function testPreProcessValueHash()
     {
@@ -88,7 +88,7 @@ abstract class BinaryInputProcessorTest extends TestCase
     /**
      * Returns the processor under test.
      *
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\BinaryInputProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryInputProcessor
      */
     abstract protected function getProcessor();
 }

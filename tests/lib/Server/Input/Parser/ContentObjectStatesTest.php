@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
-use eZ\Publish\Core\REST\Common\Input\Parser;
+use EzSystems\EzPlatformRest\Input\Parser;
 
 class ContentObjectStatesTest extends BaseTest
 {
@@ -67,7 +67,7 @@ class ContentObjectStatesTest extends BaseTest
     /**
      * Test ContentObjectStates parser throwing exception on missing href.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_href' attribute for ObjectState.
      */
     public function testParseExceptionOnMissingHref()
@@ -96,7 +96,7 @@ class ContentObjectStatesTest extends BaseTest
     /**
      * Gets the ContentObjectStates parser.
      *
-     * @return \eZ\Publish\Core\REST\Common\Input\Parser\ContentObjectStates;
+     * @return \EzSystems\EzPlatformRest\Input\Parser\ContentObjectStates;
      */
     protected function internalGetParser()
     {

@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Input\Parser;
+namespace EzSystems\EzPlatformRest\Input\Parser;
 
-use eZ\Publish\Core\REST\Common\Input\BaseParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Common\Values\RestObjectState;
+use EzSystems\EzPlatformRest\Input\BaseParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Values\RestObjectState;
 use eZ\Publish\Core\Repository\Values\ObjectState\ObjectState;
 
 /**
@@ -23,9 +23,9 @@ class ContentObjectStates extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\Core\REST\Common\Values\RestObjectState[]
+     * @return \EzSystems\EzPlatformRest\Values\RestObjectState[]
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

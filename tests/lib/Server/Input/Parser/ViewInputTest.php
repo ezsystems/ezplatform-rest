@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\Core\REST\Server\Input\Parser\ViewInput;
-use eZ\Publish\Core\REST\Server\Values\RestViewInput;
+use EzSystems\EzPlatformRest\Server\Input\Parser\ViewInput;
+use EzSystems\EzPlatformRest\Server\Values\RestViewInput;
 
 class ViewInputTest extends BaseTest
 {
@@ -42,7 +42,7 @@ class ViewInputTest extends BaseTest
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      */
     public function testThrowsExceptionOnMissingIdentifier()
     {
@@ -51,7 +51,7 @@ class ViewInputTest extends BaseTest
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      */
     public function testThrowsExceptionOnMissingQuery()
     {
@@ -62,7 +62,7 @@ class ViewInputTest extends BaseTest
     /**
      * Returns the session input parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\ViewInput
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ViewInput
      */
     protected function internalGetParser()
     {

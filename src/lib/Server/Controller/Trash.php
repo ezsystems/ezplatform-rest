@@ -6,15 +6,15 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\TrashService;
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException;
+use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -52,7 +52,7 @@ class Trash extends RestController
     /**
      * Returns a list of all trash items.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\Trash
+     * @return \EzSystems\EzPlatformRest\Server\Values\Trash
      */
     public function loadTrashItems(Request $request)
     {
@@ -83,7 +83,7 @@ class Trash extends RestController
      *
      * @param $trashItemId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestTrashItem
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestTrashItem
      */
     public function loadTrashItem($trashItemId)
     {
@@ -96,7 +96,7 @@ class Trash extends RestController
     /**
      * Empties the trash.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function emptyTrash()
     {
@@ -110,7 +110,7 @@ class Trash extends RestController
      *
      * @param $trashItemId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteTrashItem($trashItemId)
     {
@@ -126,9 +126,9 @@ class Trash extends RestController
      *
      * @param $trashItemId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\ResourceCreated
+     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
      */
     public function restoreTrashItem($trashItemId, Request $request)
     {

@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\Criterion;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\Values\Content;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Server\Input\Parser;
-use eZ\Publish\Core\REST\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Server\Input\Parser;
+use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
 
 class LogicalAndTest extends BaseTest
 {
@@ -55,7 +55,7 @@ class LogicalAndTest extends BaseTest
 
         $criterionMock = $this->createMock(Content\Query\Criterion::class, [], [], '', false);
 
-        $parserMock = $this->createMock(\eZ\Publish\Core\REST\Common\Input\Parser::class);
+        $parserMock = $this->createMock(\EzSystems\EzPlatformRest\Input\Parser::class);
         $parserMock->method('parse')->willReturn($criterionMock);
 
         $result = $this->internalGetParser()->parse($logicalAndParsedFromXml, new ParsingDispatcher([
@@ -68,7 +68,7 @@ class LogicalAndTest extends BaseTest
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      */
     public function testThrowsExceptionOnInvalidAndStatement()
     {

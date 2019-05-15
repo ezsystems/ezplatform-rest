@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
 use eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation;
-use eZ\Publish\Core\REST\Server\Input\Parser\RoleAssignInput;
-use eZ\Publish\Core\REST\Server\Values\RoleAssignment;
+use EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput;
+use EzSystems\EzPlatformRest\Server\Values\RoleAssignment;
 
 class RoleAssignInputTest extends BaseTest
 {
@@ -63,7 +63,7 @@ class RoleAssignInputTest extends BaseTest
     /**
      * Test RoleAssignInput parser throwing exception on missing Role.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'Role' element for RoleAssignInput.
      */
     public function testParseExceptionOnMissingRole()
@@ -94,7 +94,7 @@ class RoleAssignInputTest extends BaseTest
     /**
      * Test RoleAssignInput parser throwing exception on invalid Role.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'Role' element for RoleAssignInput.
      */
     public function testParseExceptionOnInvalidRole()
@@ -126,7 +126,7 @@ class RoleAssignInputTest extends BaseTest
     /**
      * Test Limitation parser throwing exception on missing identifier.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_identifier' attribute for Limitation.
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
@@ -159,7 +159,7 @@ class RoleAssignInputTest extends BaseTest
     /**
      * Returns the role assign input parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\RoleAssignInput
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput
      */
     protected function internalGetParser()
     {

@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Values;
+namespace EzSystems\EzPlatformRest\Server\Values;
 
 use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
-use eZ\Publish\Core\REST\Common\Value as RestValue;
+use EzSystems\EzPlatformRest\Value as RestValue;
 
 class CachedValue extends RestValue
 {

@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\REST\Server\Input\Parser\ContentTypeGroupInput;
+use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput;
 use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
 
 class ContentTypeGroupInputTest extends BaseTest
@@ -58,7 +58,7 @@ class ContentTypeGroupInputTest extends BaseTest
     /**
      * Test ContentTypeGroupInput parser throwing exception on invalid User.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_href' attribute for User element in ContentTypeGroupInput.
      */
     public function testParseExceptionOnInvalidUser()
@@ -76,7 +76,7 @@ class ContentTypeGroupInputTest extends BaseTest
     /**
      * Returns the content type group input parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\ContentTypeGroupInput
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput
      */
     protected function internalGetParser()
     {

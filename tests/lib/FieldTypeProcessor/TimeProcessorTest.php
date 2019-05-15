@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor\TimeProcessor;
+use EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor;
 use PHPUnit\Framework\TestCase;
 
 class TimeProcessorTest extends TestCase
@@ -32,7 +32,7 @@ class TimeProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\TimeProcessor::preProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor::preProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPreProcessFieldSettingsHash($inputSettings, $outputSettings)
@@ -46,7 +46,7 @@ class TimeProcessorTest extends TestCase
     }
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\TimeProcessor::postProcessFieldSettingsHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor::postProcessFieldSettingsHash
      * @dataProvider fieldSettingsHashes
      */
     public function testPostProcessFieldSettingsHash($outputSettings, $inputSettings)
@@ -60,7 +60,7 @@ class TimeProcessorTest extends TestCase
     }
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\TimeProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor
      */
     protected function getProcessor()
     {

@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Visitor;
 
 /**
  * UserList value object visitor.
@@ -20,9 +20,9 @@ class UserList extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \eZ\Publish\Core\REST\Common\Output\Visitor $visitor
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator $generator
-     * @param \eZ\Publish\Core\REST\Server\Values\UserList $data
+     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
+     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \EzSystems\EzPlatformRest\Server\Values\UserList $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

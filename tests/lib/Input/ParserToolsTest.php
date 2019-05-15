@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Input;
+namespace EzSystems\EzPlatformRest\Tests\Input;
 
-use eZ\Publish\Core\REST\Common\Input\ParserTools;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Input\ParserTools;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use PHPUnit\Framework\TestCase;
 
 class ParserToolsTest extends TestCase

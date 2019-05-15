@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\FieldTypeProcessor;
+namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
-use eZ\Publish\Core\REST\Common\FieldTypeProcessor\ImageProcessor;
-use eZ\Publish\Core\REST\Common\RequestParser;
+use EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor;
+use EzSystems\EzPlatformRest\RequestParser;
 use Symfony\Component\Routing\RouterInterface;
 
 class ImageProcessorTest extends BinaryInputProcessorTest
@@ -18,7 +18,7 @@ class ImageProcessorTest extends BinaryInputProcessorTest
     protected $requestParser;
 
     /**
-     * @covers \eZ\Publish\Core\REST\Common\FieldTypeProcessor\ImageProcessor::postProcessValueHash
+     * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor::postProcessValueHash
      */
     public function testPostProcessValueHash()
     {
@@ -59,7 +59,7 @@ class ImageProcessorTest extends BinaryInputProcessorTest
     /**
      * Returns the processor under test.
      *
-     * @return \eZ\Publish\Core\REST\Common\FieldTypeProcessor\ImageProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor
      */
     protected function getProcessor()
     {

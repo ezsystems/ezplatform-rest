@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Values;
+namespace EzSystems\EzPlatformRest\Server\Values;
 
-use eZ\Publish\Core\REST\Common\Value as RestValue;
+use EzSystems\EzPlatformRest\Value as RestValue;
 
 /**
  * Trash view model.
@@ -18,7 +18,7 @@ class Trash extends RestValue
     /**
      * Trash items.
      *
-     * @var \eZ\Publish\Core\REST\Server\Values\RestTrashItem[]
+     * @var \EzSystems\EzPlatformRest\Server\Values\RestTrashItem[]
      */
     public $trashItems;
 
@@ -32,7 +32,7 @@ class Trash extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\Core\REST\Server\Values\RestTrashItem[] $trashItems
+     * @param \EzSystems\EzPlatformRest\Server\Values\RestTrashItem[] $trashItems
      * @param string $path
      */
     public function __construct(array $trashItems, $path)

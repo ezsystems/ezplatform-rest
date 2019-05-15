@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Input;
+namespace EzSystems\EzPlatformRest\Tests\Input;
 
-use eZ\Publish\Core\REST\Common;
-use eZ\Publish\Core\REST\Common\Input\Parser;
+use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Input\Parser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -18,11 +18,11 @@ use PHPUnit\Framework\TestCase;
 class ParsingDispatcherTest extends TestCase
 {
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      */
     public function testParseMissingContentType()
     {
-        $dispatcher = new Common\Input\ParsingDispatcher();
+        $dispatcher = new EzPlatformRest\Input\ParsingDispatcher();
 
         $dispatcher->parse(array(), 'text/unknown');
     }
@@ -30,7 +30,7 @@ class ParsingDispatcherTest extends TestCase
     public function testParse()
     {
         $parser = $this->createParserMock();
-        $dispatcher = new Common\Input\ParsingDispatcher(['text/html' => $parser]);
+        $dispatcher = new EzPlatformRest\Input\ParsingDispatcher(['text/html' => $parser]);
 
         $parser
             ->expects($this->at(0))
@@ -50,7 +50,7 @@ class ParsingDispatcherTest extends TestCase
     public function testParseCharset()
     {
         $parser = $this->createParserMock();
-        $dispatcher = new Common\Input\ParsingDispatcher(['text/html' => $parser]);
+        $dispatcher = new EzPlatformRest\Input\ParsingDispatcher(['text/html' => $parser]);
 
         $parser
             ->expects($this->at(0))
@@ -68,7 +68,7 @@ class ParsingDispatcherTest extends TestCase
     {
         $parserVersionOne = $this->createParserMock();
         $parserVersionTwo = $this->createParserMock();
-        $dispatcher = new Common\Input\ParsingDispatcher(
+        $dispatcher = new EzPlatformRest\Input\ParsingDispatcher(
             [
                 'text/html' => $parserVersionOne,
                 'text/html; version=2' => $parserVersionTwo,
@@ -84,7 +84,7 @@ class ParsingDispatcherTest extends TestCase
     public function testParseStripFormat()
     {
         $parser = $this->createParserMock();
-        $dispatcher = new Common\Input\ParsingDispatcher(['text/html' => $parser]);
+        $dispatcher = new EzPlatformRest\Input\ParsingDispatcher(['text/html' => $parser]);
 
         $parser
             ->expects($this->at(0))
@@ -99,7 +99,7 @@ class ParsingDispatcherTest extends TestCase
     }
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\Input\Parser|\PHPUnit\Framework\MockObject\MockObject
+     * @return \EzSystems\EzPlatformRest\Input\Parser|\PHPUnit\Framework\MockObject\MockObject
      */
     private function createParserMock()
     {

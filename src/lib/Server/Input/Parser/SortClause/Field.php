@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser\SortClause;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser\SortClause;
 
 use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\Core\REST\Common\Input\BaseParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\Input\BaseParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field as FieldSortClause;
 
 class Field extends BaseParser
@@ -18,7 +18,7 @@ class Field extends BaseParser
      * Parse input structure for Field sort clause.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return \eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field
      */

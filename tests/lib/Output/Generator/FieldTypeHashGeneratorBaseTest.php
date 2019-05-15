@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output\Generator;
+namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
 
 use PHPUnit\Framework\TestCase;
 
@@ -40,7 +40,7 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     /**
      * Initializes the generator.
      *
-     * @return \eZ\Publish\Core\REST\Common\Output\Generator
+     * @return \EzSystems\EzPlatformRest\Output\Generator
      */
     abstract protected function initializeGenerator();
 

@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output\Generator;
+namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
 
-use eZ\Publish\Core\REST\Common\Tests\Output\GeneratorTest;
-use eZ\Publish\Core\REST\Common\Output\Generator\Xml\FieldTypeHashGenerator;
-use eZ\Publish\Core\REST\Common;
+use EzSystems\EzPlatformRest\Tests\Output\GeneratorTest;
+use EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator;
+use EzSystems\EzPlatformRest;
 
 require_once __DIR__ . '/../GeneratorTest.php';
 
@@ -232,7 +232,7 @@ class XmlTest extends GeneratorTest
     protected function getGenerator()
     {
         if (!isset($this->generator)) {
-            $this->generator = new Common\Output\Generator\Xml(
+            $this->generator = new EzPlatformRest\Output\Generator\Xml(
                 $this->createMock(FieldTypeHashGenerator::class)
             );
         }

@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Tests\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Server\Values\RestContent;
-use eZ\Publish\Core\REST\Server\Values\RestTrashItem;
+use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Values\RestContent;
+use EzSystems\EzPlatformRest\Server\Values\RestTrashItem;
 use eZ\Publish\Core\Repository\Values\Content\TrashItem;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 
@@ -470,7 +470,7 @@ class RestTrashItemTest extends ValueObjectVisitorBaseTest
     /**
      * Get the TrashItem visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RestTrashItem
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestTrashItem
      */
     protected function internalGetVisitor()
     {

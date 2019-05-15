@@ -6,13 +6,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output;
+namespace EzSystems\EzPlatformRest\Tests\Output;
 
-use eZ\Publish\Core\REST\Common\Tests\AssertXmlTagTrait;
-use eZ\Publish\Core\REST\Server\Tests;
-use eZ\Publish\Core\REST\Common\Output\Generator;
-use eZ\Publish\Core\REST\Common\RequestParser;
-use eZ\Publish\Core\REST\Common\Output\Visitor;
+use EzSystems\EzPlatformRest\Tests\AssertXmlTagTrait;
+use EzSystems\EzPlatformRest\Server\Tests;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\RequestParser;
+use EzSystems\EzPlatformRest\Output\Visitor;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -23,19 +23,19 @@ abstract class ValueObjectVisitorBaseTest extends Tests\BaseTest
     /**
      * Visitor mock.
      *
-     * @var \eZ\Publish\Core\REST\Common\Output\Visitor
+     * @var \EzSystems\EzPlatformRest\Output\Visitor
      */
     protected $visitorMock;
 
     /**
      * Output generator.
      *
-     * @var \eZ\Publish\Core\REST\Common\Output\Generator\Xml
+     * @var \EzSystems\EzPlatformRest\Output\Generator\Xml
      */
     protected $generator;
 
     /**
-     * @var \eZ\Publish\Core\REST\Common\RequestParser
+     * @var \EzSystems\EzPlatformRest\RequestParser
      */
     protected $requestParser;
 
@@ -58,7 +58,7 @@ abstract class ValueObjectVisitorBaseTest extends Tests\BaseTest
     /**
      * Gets the visitor mock.
      *
-     * @return \eZ\Publish\Core\REST\Common\Output\Visitor|\PHPUnit\Framework\MockObject\MockObject
+     * @return \EzSystems\EzPlatformRest\Output\Visitor|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getVisitorMock()
     {
@@ -90,7 +90,7 @@ abstract class ValueObjectVisitorBaseTest extends Tests\BaseTest
     /**
      * Gets the output generator.
      *
-     * @return \eZ\Publish\Core\REST\Common\Output\Generator\Xml
+     * @return \EzSystems\EzPlatformRest\Output\Generator\Xml
      */
     protected function getGenerator()
     {
@@ -139,7 +139,7 @@ abstract class ValueObjectVisitorBaseTest extends Tests\BaseTest
     }
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @return \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestParser()
     {
@@ -224,7 +224,7 @@ abstract class ValueObjectVisitorBaseTest extends Tests\BaseTest
     /**
      * Must return an instance of the tested visitor object.
      *
-     * @return \eZ\Publish\Core\REST\Common\Output\ValueObjectVisitor
+     * @return \EzSystems\EzPlatformRest\Output\ValueObjectVisitor
      */
     abstract protected function internalGetVisitor();
 }

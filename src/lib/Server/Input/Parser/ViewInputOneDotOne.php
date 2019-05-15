@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 
-use eZ\Publish\Core\REST\Server\Input\Parser\Criterion as CriterionParser;
-use eZ\Publish\Core\REST\Common\Input\ParsingDispatcher;
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Server\Values\RestViewInput;
+use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion as CriterionParser;
+use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Server\Values\RestViewInput;
 
 /**
  * Parser for ViewInput 1.1.
@@ -22,11 +22,11 @@ class ViewInputOneDotOne extends CriterionParser
      * Parses input structure to a RestViewInput struct.
      *
      * @param array $data
-     * @param \eZ\Publish\Core\REST\Common\Input\ParsingDispatcher $parsingDispatcher
+     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestViewInput
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestViewInput
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

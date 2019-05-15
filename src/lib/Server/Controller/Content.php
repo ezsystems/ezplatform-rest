@@ -6,22 +6,22 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\Values\Content\Relation;
 use eZ\Publish\API\Repository\Values\Content\VersionInfo;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\ContentFieldValidationException;
 use eZ\Publish\API\Repository\Exceptions\ContentValidationException;
-use eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException;
-use eZ\Publish\Core\REST\Server\Exceptions\BadRequestException;
-use eZ\Publish\Core\REST\Server\Exceptions\ContentFieldValidationException as RESTContentFieldValidationException;
-use eZ\Publish\Core\REST\Server\Values\RestContentCreateStruct;
+use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
+use EzSystems\EzPlatformRest\Server\Exceptions\ContentFieldValidationException as RESTContentFieldValidationException;
+use EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
@@ -33,9 +33,9 @@ class Content extends RestController
     /**
      * Loads a content info by remote ID.
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\BadRequestException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\TemporaryRedirect
+     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
      */
     public function redirectContent(Request $request)
     {
@@ -63,7 +63,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestContent
      */
     public function loadContent($contentId, Request $request)
     {
@@ -112,7 +112,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestContent
      */
     public function updateContentMetadata($contentId, Request $request)
     {
@@ -162,7 +162,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\TemporaryRedirect
+     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
      */
     public function redirectCurrentVersion($contentId)
     {
@@ -185,7 +185,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param int $versionNumber
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\Version
+     * @return \EzSystems\EzPlatformRest\Server\Values\Version
      */
     public function loadContentInVersion($contentId, $versionNumber, Request $request)
     {
@@ -231,7 +231,7 @@ class Content extends RestController
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedContent
      */
     public function createContent(Request $request)
     {
@@ -246,7 +246,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteContent($contentId)
     {
@@ -262,7 +262,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\ResourceCreated
+     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
      */
     public function copyContent($contentId, Request $request)
     {
@@ -290,7 +290,7 @@ class Content extends RestController
      * @param int $contentId
      * @param string $languageCode
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      *
      * @throws \Exception
      */
@@ -321,7 +321,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\VersionList
+     * @return \EzSystems\EzPlatformRest\Server\Values\VersionList
      */
     public function loadContentVersions($contentId, Request $request)
     {
@@ -339,9 +339,9 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteContentVersion($contentId, $versionNumber)
     {
@@ -368,9 +368,9 @@ class Content extends RestController
      * @param int $versionNumber
      * @param string $languageCode
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      */
     public function deleteTranslationFromDraft($contentId, $versionNumber, $languageCode)
     {
@@ -392,7 +392,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedVersion
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedVersion
      */
     public function createDraftFromVersion($contentId, $versionNumber)
     {
@@ -421,7 +421,7 @@ class Content extends RestController
      *
      * @throws ForbiddenException if the current version is already a draft
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedVersion
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedVersion
      */
     public function createDraftFromCurrentVersion($contentId)
     {
@@ -454,10 +454,10 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\BadRequestException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\Version
+     * @return \EzSystems\EzPlatformRest\Server\Values\Version
      */
     public function updateVersion($contentId, $versionNumber, Request $request)
     {
@@ -525,7 +525,7 @@ class Content extends RestController
      *
      * @throws ForbiddenException if version $versionNumber isn't a draft
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function publishVersion($contentId, $versionNumber)
     {
@@ -550,7 +550,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\TemporaryRedirect
+     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
      */
     public function redirectCurrentVersionRelations($contentId)
     {
@@ -573,7 +573,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RelationList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RelationList
      */
     public function loadVersionRelations($contentId, $versionNumber, Request $request)
     {
@@ -615,9 +615,9 @@ class Content extends RestController
      * @param int $versionNumber
      * @param mixed $relationId
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestRelation
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestRelation
      */
     public function loadVersionRelation($contentId, $versionNumber, $relationId, Request $request)
     {
@@ -651,10 +651,10 @@ class Content extends RestController
      * @param int   $versionNumber
      * @param mixed $relationId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function removeRelation($contentId, $versionNumber, $relationId, Request $request)
     {
@@ -692,7 +692,7 @@ class Content extends RestController
      * @throws ForbiddenException if version $versionNumber isn't a draft
      * @throws ForbiddenException if a relation to the same content already exists
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedRelation
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedRelation
      */
     public function createRelation($contentId, $versionNumber, Request $request)
     {
@@ -736,7 +736,7 @@ class Content extends RestController
      *
      * @deprecated Since platform 1.0. Forwards the request to the new /views location, but returns a 301.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestExecutedView
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestExecutedView
      */
     public function createView()
     {
@@ -779,13 +779,13 @@ class Content extends RestController
 
     /**
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \eZ\Publish\Core\REST\Server\Values\RestContentCreateStruct $contentCreate
+     * @param \EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct $contentCreate
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
      * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
      * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedContent
      */
     protected function doCreateContent(Request $request, RestContentCreateStruct $contentCreate)
     {

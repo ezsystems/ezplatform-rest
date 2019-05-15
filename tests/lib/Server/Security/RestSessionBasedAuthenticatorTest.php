@@ -6,11 +6,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Security;
+namespace EzSystems\EzPlatformRest\Server\Tests\Security;
 
 use eZ\Publish\API\Repository\Values\User\User;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\REST\Server\Security\RestAuthenticator;
+use EzSystems\EzPlatformRest\Server\Security\RestAuthenticator;
 use eZ\Publish\Core\MVC\Symfony\Security\User as EzUser;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -63,7 +63,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
     private $logger;
 
     /**
-     * @var \eZ\Publish\Core\REST\Server\Security\RestAuthenticator
+     * @var \EzSystems\EzPlatformRest\Server\Security\RestAuthenticator
      */
     private $authenticator;
 
@@ -152,7 +152,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Server\Exceptions\InvalidUserTypeException
+     * @expectedException \EzSystems\EzPlatformRest\Server\Exceptions\InvalidUserTypeException
      */
     public function testAuthenticateInvalidUser()
     {
@@ -226,7 +226,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Server\Exceptions\UserConflictException
+     * @expectedException \EzSystems\EzPlatformRest\Server\Exceptions\UserConflictException
      */
     public function testAuthenticateUserConflict()
     {

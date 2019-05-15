@@ -6,9 +6,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Output\Generator;
+namespace EzSystems\EzPlatformRest\Output\Generator;
 
-use eZ\Publish\Core\REST\Common\Output\Generator;
+use EzSystems\EzPlatformRest\Output\Generator;
 
 /**
  * Xml generator.
@@ -25,7 +25,7 @@ class Xml extends Generator
     /**
      * Generator for field type hash values.
      *
-     * @var \eZ\Publish\Core\REST\Common\Output\Generator\Xml\FieldTypeHashGenerator
+     * @var \EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator
      */
     protected $hashGenerator;
 
@@ -44,7 +44,7 @@ class Xml extends Generator
     protected $vendor;
 
     /**
-     * @param \eZ\Publish\Core\REST\Common\Output\Generator\Xml\FieldTypeHashGenerator $hashGenerator
+     * @param \EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator $hashGenerator
      * @param string $vendor
      */
     public function __construct(Xml\FieldTypeHashGenerator $hashGenerator, $vendor = 'vnd.ez.api')

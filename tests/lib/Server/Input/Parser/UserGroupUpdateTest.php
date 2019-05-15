@@ -6,21 +6,21 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentService;
 use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\FieldTypeService;
 use eZ\Publish\Core\Repository\LocationService;
 use eZ\Publish\Core\Repository\UserService;
-use eZ\Publish\Core\REST\Server\Input\Parser\UserGroupUpdate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupUpdate;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\Content\ContentMetadataUpdateStruct;
 use eZ\Publish\API\Repository\Values\User\UserGroupUpdateStruct;
 use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
-use eZ\Publish\Core\REST\Common\Input\FieldTypeParser;
-use eZ\Publish\Core\REST\Server\Values\RestUserGroupUpdateStruct;
+use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Server\Values\RestUserGroupUpdateStruct;
 
 class UserGroupUpdateTest extends BaseTest
 {
@@ -97,7 +97,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Test UserGroupUpdate parser throwing exception on missing Section href.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing '_href' attribute for Section element in UserGroupUpdate.
      */
     public function testParseExceptionOnMissingSectionHref()
@@ -124,7 +124,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Test UserGroupUpdate parser throwing exception on invalid fields data.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid 'fields' element for UserGroupUpdate.
      */
     public function testParseExceptionOnInvalidFields()
@@ -146,7 +146,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Test UserGroupUpdate parser throwing exception on missing field definition identifier.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in field data for UserGroupUpdate.
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
@@ -174,7 +174,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Test UserGroupUpdate parser throwing exception on missing field value.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'fieldValue' element for 'name' identifier in UserGroupUpdate.
      */
     public function testParseExceptionOnMissingFieldValue()
@@ -202,7 +202,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Returns the UserGroupUpdate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\UserGroupUpdate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupUpdate
      */
     protected function internalGetParser()
     {
@@ -217,7 +217,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \eZ\Publish\Core\REST\Common\Input\FieldTypeParser;
+     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser;
      */
     private function getFieldTypeParserMock()
     {

@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\RequestParser;
+namespace EzSystems\EzPlatformRest\RequestParser;
 
-use eZ\Publish\Core\REST\Common\RequestParser;
-use eZ\Publish\Core\REST\Common\Exceptions;
+use EzSystems\EzPlatformRest\RequestParser;
+use EzSystems\EzPlatformRest\Exceptions;
 
 /**
  * Pattern based Request parser.

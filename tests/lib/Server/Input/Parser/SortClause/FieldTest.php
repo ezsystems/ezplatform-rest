@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser\SortClause;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser\SortClause;
 
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
-use eZ\Publish\Core\REST\Server\Input\Parser\SortClause\Field as FieldParser;
-use eZ\Publish\Core\REST\Server\Tests\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field as FieldParser;
+use EzSystems\EzPlatformRest\Server\Tests\Input\Parser\BaseTest;
 
 class FieldTest extends BaseTest
 {
@@ -38,7 +38,7 @@ class FieldTest extends BaseTest
     /**
      * Test Field parser throwing exception on missing sort clause.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage The <Field> sort clause doesn't exist in the input structure
      */
     public function testParseExceptionOnMissingSortClause()
@@ -54,7 +54,7 @@ class FieldTest extends BaseTest
     /**
      * Test Field parser throwing exception on invalid direction format.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Invalid direction format in <Field> sort clause
      */
     public function testParseExceptionOnInvalidDirectionFormat()
@@ -73,7 +73,7 @@ class FieldTest extends BaseTest
     /**
      * Returns the Field parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\SortClause\Field
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field
      */
     protected function internalGetParser()
     {

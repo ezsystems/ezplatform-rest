@@ -6,19 +6,19 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\URLAliasService;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\TrashService;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use eZ\Publish\Core\REST\Server\Exceptions\BadRequestException;
-use eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException;
+use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
+use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -77,9 +77,9 @@ class Location extends RestController
     /**
      * Loads the location for a given ID (x)or remote ID.
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\BadRequestException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\TemporaryRedirect
+     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
      */
     public function redirectLocation(Request $request)
     {
@@ -109,9 +109,9 @@ class Location extends RestController
      *
      * @param mixed $contentId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedLocation
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedLocation
      */
     public function createLocation($contentId, Request $request)
     {
@@ -138,7 +138,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestLocation
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestLocation
      */
     public function loadLocation($locationPath)
     {
@@ -166,7 +166,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteSubtree($locationPath)
     {
@@ -183,7 +183,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\ResourceCreated
+     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
      */
     public function copySubtree($locationPath, Request $request)
     {
@@ -217,9 +217,9 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\BadRequestException if the Destination header cannot be parsed as location or trash
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException if the Destination header cannot be parsed as location or trash
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\ResourceCreated | \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated | \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function moveSubtree($locationPath, Request $request)
     {
@@ -284,7 +284,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function swapLocation($locationPath, Request $request)
     {
@@ -310,7 +310,7 @@ class Location extends RestController
      *
      * @todo remove, or use in loadLocation with filter
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\LocationList
+     * @return \EzSystems\EzPlatformRest\Server\Values\LocationList
      */
     public function loadLocationByRemoteId(Request $request)
     {
@@ -332,7 +332,7 @@ class Location extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\LocationList
+     * @return \EzSystems\EzPlatformRest\Server\Values\LocationList
      */
     public function loadLocationsForContent($contentId, Request $request)
     {
@@ -357,7 +357,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\LocationList
+     * @return \EzSystems\EzPlatformRest\Server\Values\LocationList
      */
     public function loadLocationChildren($locationPath, Request $request)
     {
@@ -403,7 +403,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestLocation
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestLocation
      */
     public function updateLocation($locationPath, Request $request)
     {

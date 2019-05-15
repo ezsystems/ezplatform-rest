@@ -6,18 +6,18 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Exceptions\LimitationValidationException;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\Core\Base\Exceptions\ForbiddenException;
 use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Common\Exceptions;
-use eZ\Publish\Core\REST\Server\Exceptions\BadRequestException;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Exceptions;
+use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\RoleService;
 use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\API\Repository\LocationService;
@@ -74,7 +74,7 @@ class Role extends RestController
      *
      * Defaults to publishing the role, but you can create a draft instead by setting the POST parameter publish=false
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedRole
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedRole
      */
     public function createRole(Request $request)
     {
@@ -130,9 +130,9 @@ class Role extends RestController
      *
      * @throws \eZ\Publish\API\Repository\Exceptions\ForbiddenException if the Role already has a Role Draft that will need to be removed first,
      *                                                                  or if the authenticated user is not allowed to create a role
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\BadRequestException if a policy limitation in the $roleCreateStruct is not valid
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException if a policy limitation in the $roleCreateStruct is not valid
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedRole
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedRole
      */
     public function createRoleDraft($roleId, Request $request)
     {
@@ -156,7 +156,7 @@ class Role extends RestController
     /**
      * Loads list of roles.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RoleList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RoleList
      */
     public function listRoles(Request $request)
     {
@@ -268,7 +268,7 @@ class Role extends RestController
      *
      * @param mixed $roleId Original role ID, or ID of the role draft itself
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\PublishedRole
+     * @return \EzSystems\EzPlatformRest\Server\Values\PublishedRole
      */
     public function publishRoleDraft($roleId)
     {
@@ -293,7 +293,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteRole($roleId)
     {
@@ -311,7 +311,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteRoleDraft($roleId)
     {
@@ -327,7 +327,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\PolicyList
+     * @return \EzSystems\EzPlatformRest\Server\Values\PolicyList
      */
     public function loadPolicies($roleId, Request $request)
     {
@@ -341,7 +341,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deletePolicies($roleId)
     {
@@ -360,7 +360,7 @@ class Role extends RestController
      * @param $roleId
      * @param $policyId
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
      * @return \eZ\Publish\API\Repository\Values\User\Policy
      */
@@ -381,7 +381,7 @@ class Role extends RestController
      *
      * @param $roleId int ID of a role or a role draft
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedPolicy
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
      */
     public function addPolicy($roleId, Request $request)
     {
@@ -423,7 +423,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedPolicy
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
      */
     public function addPolicyByRoleDraft($roleId, Request $request)
     {
@@ -480,7 +480,7 @@ class Role extends RestController
      * @param $roleId int ID of a role or a role draft
      * @param $policyId int ID of a policy
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
      * @return \eZ\Publish\API\Repository\Values\User\Policy
      */
@@ -537,7 +537,7 @@ class Role extends RestController
      * @param $roleId
      * @param $policyId
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
      * @return \eZ\Publish\API\Repository\Values\User\Policy
      */
@@ -573,9 +573,9 @@ class Role extends RestController
      * @param $roleId int ID of a role or a role draft
      * @param $policyId int ID of a policy
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deletePolicy($roleId, $policyId, Request $request)
     {
@@ -627,9 +627,9 @@ class Role extends RestController
      * @param $roleId
      * @param $policyId
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function removePolicyByRoleDraft($roleId, $policyId, Request $request)
     {
@@ -657,7 +657,7 @@ class Role extends RestController
      *
      * @param $userId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RoleAssignmentList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
      */
     public function assignRoleToUser($userId, Request $request)
     {
@@ -687,7 +687,7 @@ class Role extends RestController
      *
      * @param $groupPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RoleAssignmentList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
      */
     public function assignRoleToUserGroup($groupPath, Request $request)
     {
@@ -721,7 +721,7 @@ class Role extends RestController
      * @param $userId
      * @param $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RoleAssignmentList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
      */
     public function unassignRoleFromUser($userId, $roleId)
     {
@@ -741,7 +741,7 @@ class Role extends RestController
      * @param $groupPath
      * @param $roleId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RoleAssignmentList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
      */
     public function unassignRoleFromUserGroup($groupPath, $roleId)
     {
@@ -762,7 +762,7 @@ class Role extends RestController
      *
      * @param $userId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RoleAssignmentList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
      */
     public function loadRoleAssignmentsForUser($userId)
     {
@@ -778,7 +778,7 @@ class Role extends RestController
      *
      * @param $groupPath
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RoleAssignmentList
+     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
      */
     public function loadRoleAssignmentsForUserGroup($groupPath)
     {
@@ -797,9 +797,9 @@ class Role extends RestController
      * @param $userId
      * @param $roleId
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUserRoleAssignment
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserRoleAssignment
      */
     public function loadRoleAssignmentForUser($userId, $roleId, Request $request)
     {
@@ -821,9 +821,9 @@ class Role extends RestController
      * @param $groupPath
      * @param $roleId
      *
-     * @throws \eZ\Publish\Core\REST\Common\Exceptions\NotFoundException
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestUserGroupRoleAssignment
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroupRoleAssignment
      */
     public function loadRoleAssignmentForUserGroup($groupPath, $roleId, Request $request)
     {
@@ -844,7 +844,7 @@ class Role extends RestController
     /**
      * Search all policies which are applied to a given user.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\PolicyList
+     * @return \EzSystems\EzPlatformRest\Server\Values\PolicyList
      */
     public function listPoliciesForUser(Request $request)
     {

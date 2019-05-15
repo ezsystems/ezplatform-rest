@@ -2,16 +2,16 @@
 /**
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Exceptions\NotImplementedException;
 use eZ\Publish\API\Repository\SearchService;
 use eZ\Publish\API\Repository\Values\Content\Language;
 use eZ\Publish\API\Repository\Values\Content\LocationQuery;
-use eZ\Publish\Core\REST\Server\Controller;
+use EzSystems\EzPlatformRest\Server\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Server\Values;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Server\Values;
 
 /**
  * Controller for Repository Views (Search, mostly).
@@ -31,7 +31,7 @@ class Views extends Controller
     /**
      * Creates and executes a content view.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\RestExecutedView
+     * @return \EzSystems\EzPlatformRest\Server\Values\RestExecutedView
      */
     public function createView(Request $request)
     {

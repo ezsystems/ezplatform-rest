@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Tests\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Server\Values\ContentList;
-use eZ\Publish\Core\REST\Server\Values\RestContent;
+use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Values\ContentList;
+use EzSystems\EzPlatformRest\Server\Values\RestContent;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 
 class ContentListTest extends ValueObjectVisitorBaseTest
@@ -122,7 +122,7 @@ class ContentListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ContentList visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\ContentList
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentList
      */
     protected function internalGetVisitor()
     {

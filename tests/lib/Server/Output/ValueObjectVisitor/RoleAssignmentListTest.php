@@ -6,12 +6,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\REST\Common\Tests\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Server\Values\RestUserRoleAssignment;
-use eZ\Publish\Core\REST\Server\Values\RoleAssignmentList;
+use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Values\RestUserRoleAssignment;
+use EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList;
 use eZ\Publish\Core\Repository\Values\User;
 
 class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
@@ -181,7 +181,7 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the RoleAssignmentList visitor.
      *
-     * @return \eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor\RoleAssignmentList
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RoleAssignmentList
      */
     protected function internalGetVisitor()
     {

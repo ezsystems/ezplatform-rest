@@ -6,19 +6,19 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Controller;
+namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
-use eZ\Publish\Core\REST\Common\Message;
-use eZ\Publish\Core\REST\Server\Values;
-use eZ\Publish\Core\REST\Common\Values\RestObjectState;
-use eZ\Publish\Core\REST\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Message;
+use EzSystems\EzPlatformRest\Server\Values;
+use EzSystems\EzPlatformRest\Values\RestObjectState;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\ObjectStateService;
 use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\Core\REST\Common\Values\ContentObjectStates;
+use EzSystems\EzPlatformRest\Values\ContentObjectStates;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException;
+use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -55,9 +55,9 @@ class ObjectState extends RestController
     /**
      * Creates a new object state group.
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedObjectStateGroup
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedObjectStateGroup
      */
     public function createObjectStateGroup(Request $request)
     {
@@ -86,9 +86,9 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\CreatedObjectState
+     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedObjectState
      */
     public function createObjectState($objectStateGroupId, Request $request)
     {
@@ -136,7 +136,7 @@ class ObjectState extends RestController
      * @param $objectStateGroupId
      * @param $objectStateId
      *
-     * @return \eZ\Publish\Core\REST\Common\Values\RestObjectState
+     * @return \EzSystems\EzPlatformRest\Values\RestObjectState
      */
     public function loadObjectState($objectStateGroupId, $objectStateId)
     {
@@ -149,7 +149,7 @@ class ObjectState extends RestController
     /**
      * Returns a list of all object state groups.
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\ObjectStateGroupList
+     * @return \EzSystems\EzPlatformRest\Server\Values\ObjectStateGroupList
      */
     public function loadObjectStateGroups()
     {
@@ -163,7 +163,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\ObjectStateList
+     * @return \EzSystems\EzPlatformRest\Server\Values\ObjectStateList
      */
     public function loadObjectStates($objectStateGroupId)
     {
@@ -180,7 +180,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteObjectStateGroup($objectStateGroupId)
     {
@@ -196,7 +196,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateId
      *
-     * @return \eZ\Publish\Core\REST\Server\Values\NoContent
+     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
     public function deleteObjectState($objectStateId)
     {
@@ -212,7 +212,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
      * @return \eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroup
      */
@@ -242,9 +242,9 @@ class ObjectState extends RestController
      * @param $objectStateGroupId
      * @param $objectStateId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Common\Values\RestObjectState
+     * @return \EzSystems\EzPlatformRest\Values\RestObjectState
      */
     public function updateObjectState($objectStateGroupId, $objectStateId, Request $request)
     {
@@ -271,7 +271,7 @@ class ObjectState extends RestController
      *
      * @param $contentId
      *
-     * @return \eZ\Publish\Core\REST\Common\Values\ContentObjectStates
+     * @return \EzSystems\EzPlatformRest\Values\ContentObjectStates
      */
     public function getObjectStatesForContent($contentId)
     {
@@ -298,9 +298,9 @@ class ObjectState extends RestController
      *
      * @param $contentId
      *
-     * @throws \eZ\Publish\Core\REST\Server\Exceptions\ForbiddenException
+     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\Core\REST\Common\Values\ContentObjectStates
+     * @return \EzSystems\EzPlatformRest\Values\ContentObjectStates
      */
     public function setObjectStatesForContent($contentId, Request $request)
     {

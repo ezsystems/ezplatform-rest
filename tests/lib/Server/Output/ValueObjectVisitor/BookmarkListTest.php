@@ -6,20 +6,20 @@
  */
 declare(strict_types=1);
 
-namespace eZ\Publish\Core\REST\Server\Tests\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Tests\Output\ValueObjectVisitor;
 
 use DOMDocument;
 use DOMXPath;
 use eZ\Publish\API\Repository\Values\Content\Location;
-use eZ\Publish\Core\REST\Common\Tests\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\REST\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\REST\Server\Values\BookmarkList;
-use eZ\Publish\Core\REST\Server\Values\RestLocation;
+use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Server\Values\BookmarkList;
+use EzSystems\EzPlatformRest\Server\Values\RestLocation;
 
 class BookmarkListTest extends ValueObjectVisitorBaseTest
 {
     /**
-     * @var \eZ\Publish\Core\REST\Server\Values\BookmarkList
+     * @var \EzSystems\EzPlatformRest\Server\Values\BookmarkList
      */
     private $data;
 

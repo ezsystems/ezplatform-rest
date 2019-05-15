@@ -6,10 +6,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Server\Tests\Input\Parser;
+namespace EzSystems\EzPlatformRest\Server\Tests\Input\Parser;
 
 use eZ\Publish\Core\Repository\ObjectStateService;
-use eZ\Publish\Core\REST\Server\Input\Parser\ObjectStateCreate;
+use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateCreate;
 use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateCreateStruct;
 
 class ObjectStateCreateTest extends BaseTest
@@ -84,7 +84,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Test ObjectStateCreate parser throwing exception on missing identifier.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'identifier' attribute for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingIdentifier()
@@ -117,7 +117,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Test ObjectStateCreate parser throwing exception on missing priority.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'priority' attribute for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingPriority()
@@ -150,7 +150,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Test ObjectStateCreate parser throwing exception on missing defaultLanguageCode.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing 'defaultLanguageCode' attribute for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingDefaultLanguageCode()
@@ -183,7 +183,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Test ObjectStateCreate parser throwing exception on missing names.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingNames()
@@ -209,7 +209,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Test ObjectStateCreate parser throwing exception on invalid names structure.
      *
-     * @expectedException \eZ\Publish\Core\REST\Common\Exceptions\Parser
+     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
      * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateCreate.
      */
     public function testParseExceptionOnInvalidNames()
@@ -236,7 +236,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Returns the ObjectStateCreate parser.
      *
-     * @return \eZ\Publish\Core\REST\Server\Input\Parser\ObjectStateCreate
+     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateCreate
      */
     protected function internalGetParser()
     {

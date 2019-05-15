@@ -6,7 +6,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace eZ\Publish\Core\REST\Common\Tests\Output;
+namespace EzSystems\EzPlatformRest\Tests\Output;
 
 use PHPUnit\Framework\TestCase;
 
@@ -16,17 +16,17 @@ use PHPUnit\Framework\TestCase;
 abstract class GeneratorTest extends TestCase
 {
     /**
-     * @var \eZ\Publish\Core\REST\Common\Output\Generator
+     * @var \EzSystems\EzPlatformRest\Output\Generator
      */
     protected $generator;
 
     /**
-     * @return \eZ\Publish\Core\REST\Common\Output\Generator
+     * @return \EzSystems\EzPlatformRest\Output\Generator
      */
     abstract protected function getGenerator();
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidDocumentStart()
     {
@@ -48,7 +48,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidDocumentNameEnd()
     {
@@ -59,7 +59,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidOuterElementStart()
     {
@@ -69,7 +69,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidElementEnd()
     {
@@ -81,7 +81,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidDocumentEnd()
     {
@@ -93,7 +93,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidAttributeOuterStart()
     {
@@ -103,7 +103,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidAttributeDocumentStart()
     {
@@ -114,7 +114,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidAttributeListStart()
     {
@@ -127,7 +127,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidValueElementOuterStart()
     {
@@ -137,7 +137,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidValueElementDocumentStart()
     {
@@ -148,7 +148,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidListOuterStart()
     {
@@ -158,7 +158,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidListDocumentStart()
     {
@@ -169,7 +169,7 @@ abstract class GeneratorTest extends TestCase
     }
 
     /**
-     * @expectedException \eZ\Publish\Core\REST\Common\Output\Exceptions\OutputGeneratorException
+     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
      */
     public function testInvalidListListStart()
     {
