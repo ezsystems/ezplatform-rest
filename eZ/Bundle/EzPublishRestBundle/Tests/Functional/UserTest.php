@@ -438,4 +438,64 @@ XML;
 
         self::assertHttpResponseCodeEquals($response, 204);
     }
+
+    public function testFilterUsersByLoginQueryParameter()
+    {
+        $response = $this->sendHttpRequest(
+            $this->createHttpRequest('GET', '/api/ezp/v2/user/users?login=admin')
+        );
+
+        self::assertHttpResponseCodeEquals($response, 200);
+
+        $response404 = $this->sendHttpRequest(
+            $this->createHttpRequest('GET', '/api/ezp/v2/user/users?login=foo')
+        );
+
+        self::assertHttpResponseCodeEquals($response404, 404);
+    }
+
+    public function testIfLoginIsUsedByAnotherUser()
+    {
+        $response = $this->sendHttpRequest(
+            $this->createHttpRequest('HEAD', '/api/ezp/v2/user/users?login=admin')
+        );
+
+        self::assertHttpResponseCodeEquals($response, 200);
+
+        $response404 = $this->sendHttpRequest(
+            $this->createHttpRequest('HEAD', '/api/ezp/v2/user/users?login=foo')
+        );
+
+        self::assertHttpResponseCodeEquals($response404, 404);
+    }
+
+    public function testFilterUsersByEmailQueryParameter()
+    {
+        $response = $this->sendHttpRequest(
+            $this->createHttpRequest('GET', '/api/ezp/v2/user/users?email=nospam@ez.no')
+        );
+
+        self::assertHttpResponseCodeEquals($response, 200);
+
+        $response404 = $this->sendHttpRequest(
+            $this->createHttpRequest('GET', '/api/ezp/v2/user/users?email=foo@bar.com')
+        );
+
+        self::assertHttpResponseCodeEquals($response404, 404);
+    }
+
+    public function testIfEmailIsUsedByAnotherUser()
+    {
+        $response = $this->sendHttpRequest(
+            $this->createHttpRequest('HEAD', '/api/ezp/v2/user/users?email=nospam@ez.no')
+        );
+
+        self::assertHttpResponseCodeEquals($response, 200);
+
+        $response404 = $this->sendHttpRequest(
+            $this->createHttpRequest('HEAD', '/api/ezp/v2/user/users?email=foo@bar.com')
+        );
+
+        self::assertHttpResponseCodeEquals($response404, 404);
+    }
 }
