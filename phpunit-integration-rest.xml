@@ -8,17 +8,13 @@
   beStrictAboutTestsThatDoNotTestAnything="false"
   colors="true"
   >
+  <php>
+    <env name="EZP_TEST_REST_HOST" value="localhost:8080"/>
+    <env name="EZP_TEST_REST_AUTH" value="admin:publish"/>
+  </php>
   <testsuites>
-    <testsuite name="eZ Publish REST Bundle">
-      <directory>tests/bundle/</directory>
-      <exclude>tests/bundle/Functional</exclude>
-    </testsuite>
-    <testsuite name="eZ Publish REST">
-      <directory>tests/lib/</directory>
-      <exclude>tests/lib/Server</exclude>
-    </testsuite>
-    <testsuite name="eZ Publish REST Server Tests">
-      <directory>tests/lib/Server</directory>
+    <testsuite name="eZ Publish REST Functional Tests">
+      <directory>tests/bundle/Functional</directory>
     </testsuite>
   </testsuites>
   <filter>
