@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the XmlTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Input\Handler;
 
 use EzSystems\EzPlatformRest;
@@ -24,21 +23,21 @@ class XmlTest extends TestCase
         $handler = new EzPlatformRest\Input\Handler\Xml();
 
         $this->assertSame(
-            array(
+            [
                 'text' => 'Hello world!',
-            ),
+            ],
             $handler->convert('{"text":"Hello world!"}')
         );
     }
 
     public static function getXmlFixtures()
     {
-        $fixtures = array();
+        $fixtures = [];
         foreach (glob(__DIR__ . '/_fixtures/*.xml') as $xmlFile) {
-            $fixtures[] = array(
+            $fixtures[] = [
                 file_get_contents($xmlFile),
                 is_file($xmlFile . '.php') ? include $xmlFile . '.php' : null,
-            );
+            ];
         }
 
         return $fixtures;

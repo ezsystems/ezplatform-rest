@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the SessionBasedFactory class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\DependencyInjection\Security;
 
 use Symfony\Bundle\SecurityBundle\DependencyInjection\Security\Factory\FormLoginFactory;
@@ -18,8 +17,8 @@ class RestSessionBasedFactory extends FormLoginFactory
     {
         parent::__construct();
         unset($this->options['check_path']);
-        $this->defaultSuccessHandlerOptions = array();
-        $this->defaultFailureHandlerOptions = array();
+        $this->defaultSuccessHandlerOptions = [];
+        $this->defaultFailureHandlerOptions = [];
     }
 
     protected function isRememberMeAware($config)
@@ -43,7 +42,7 @@ class RestSessionBasedFactory extends FormLoginFactory
             $logoutListenerDef = $container->getDefinition('security.logout_listener.' . $id);
             $logoutListenerDef->addMethodCall(
                 'addHandler',
-                array(new Reference('ezpublish_rest.security.authentication.logout_handler'))
+                [new Reference('ezpublish_rest.security.authentication.logout_handler')]
             );
 
             foreach ($logoutListenerDef->getMethodCalls() as $callArray) {

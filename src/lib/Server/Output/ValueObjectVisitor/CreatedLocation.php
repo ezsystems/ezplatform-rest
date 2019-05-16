@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the CreatedLocation ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -32,7 +31,7 @@ class CreatedLocation extends RestLocation
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadLocation',
-                array('locationPath' => trim($data->restLocation->location->pathString, '/'))
+                ['locationPath' => trim($data->restLocation->location->pathString, '/')]
             )
         );
         $visitor->setStatus(201);

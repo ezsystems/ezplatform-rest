@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RestRelation ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -34,11 +33,11 @@ class RestRelation extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadVersionRelation',
-                array(
+                [
                     'contentId' => $data->contentId,
                     'versionNumber' => $data->versionNo,
                     'relationId' => $data->relation->id,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');
@@ -48,9 +47,9 @@ class RestRelation extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadContent',
-                array(
+                [
                     'contentId' => $data->contentId,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');
@@ -61,9 +60,9 @@ class RestRelation extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadContent',
-                array(
+                [
                     'contentId' => $data->relation->getDestinationContentInfo()->id,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');

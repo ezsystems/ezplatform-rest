@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Mapper class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Routing\OptionsLoader;
 
 use Symfony\Component\Routing\Route;
@@ -23,7 +22,7 @@ class Mapper
     public function mapRoute(Route $route)
     {
         $optionsRoute = clone $route;
-        $optionsRoute->setMethods(array('OPTIONS'));
+        $optionsRoute->setMethods(['OPTIONS']);
         $optionsRoute->setDefault(
             '_controller',
             'ezpublish_rest.controller.options:getRouteOptions'

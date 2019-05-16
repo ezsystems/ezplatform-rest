@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
@@ -41,40 +40,40 @@ class VersionTest extends ValueObjectVisitorBaseTest
 
         $version = new Version(
             new Values\Content\Content(
-                array(
+                [
                     'versionInfo' => new Values\Content\VersionInfo(
-                        array(
+                        [
                             'versionNo' => 5,
                             'contentInfo' => new ContentInfo(
-                                array(
+                                [
                                     'id' => 23,
                                     'contentTypeId' => 42,
-                                )
+                                ]
                             ),
-                        )
+                        ]
                     ),
-                    'internalFields' => array(
+                    'internalFields' => [
                         new Field(
-                            array(
+                            [
                                 'id' => 1,
                                 'languageCode' => 'eng-US',
                                 'fieldDefIdentifier' => 'ezauthor',
                                 'fieldTypeIdentifier' => 'ezauthor',
-                            )
+                            ]
                         ),
                         new Field(
-                            array(
+                            [
                                 'id' => 2,
                                 'languageCode' => 'eng-US',
                                 'fieldDefIdentifier' => 'ezimage',
                                 'fieldTypeIdentifier' => 'ezauthor',
-                            )
+                            ]
                         ),
-                    ),
-                )
+                    ],
+                ]
             ),
             $this->getMockForAbstractClass(ContentType::class),
-            array()
+            []
         );
 
         $this->fieldTypeSerializerMock->expects($this->exactly(2))
@@ -90,10 +89,10 @@ class VersionTest extends ValueObjectVisitorBaseTest
 
         $this->addRouteExpectation(
             'ezpublish_rest_loadContentInVersion',
-            array(
+            [
                 'contentId' => $version->content->id,
                 'versionNumber' => $version->content->versionInfo->versionNo,
-            ),
+            ],
             "/content/objects/{$version->content->id}/versions/{$version->content->versionInfo->versionNo}"
         );
 
@@ -118,13 +117,13 @@ class VersionTest extends ValueObjectVisitorBaseTest
     public function testResultContainsVersionChildren($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'Version',
-                'children' => array(
+                'children' => [
                     'less_than' => 2,
                     'greater_than' => 0,
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <Version> element.',
             false
@@ -139,13 +138,13 @@ class VersionTest extends ValueObjectVisitorBaseTest
     public function testResultVersionAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'Version',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.Version+xml',
                     'href' => '/content/objects/23/versions/5',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <Version> attributes.',
             false
@@ -160,13 +159,13 @@ class VersionTest extends ValueObjectVisitorBaseTest
     public function testResultContainsFieldsChildren($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'Fields',
-                'children' => array(
+                'children' => [
                     'less_than' => 3,
                     'greater_than' => 1,
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <Fields> element.',
             false

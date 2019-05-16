@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RequestListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\EventListener;
 
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -27,10 +26,10 @@ class RequestListener implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return array(
+        return [
             // 10001 is to ensure that REST requests are tagged before CorsListener is called
-            KernelEvents::REQUEST => array('onKernelRequest', 10001),
-        );
+            KernelEvents::REQUEST => ['onKernelRequest', 10001],
+        ];
     }
 
     /**

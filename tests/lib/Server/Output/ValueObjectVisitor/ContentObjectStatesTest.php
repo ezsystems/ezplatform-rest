@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -27,7 +26,7 @@ class ContentObjectStatesTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         // @todo Improve this test with values...
-        $stateList = new ContentObjectStates(array());
+        $stateList = new ContentObjectStates([]);
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -52,9 +51,9 @@ class ContentObjectStatesTest extends ValueObjectVisitorBaseTest
     public function testResultContainsContentObjectStatesElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ContentObjectStates',
-            ),
+            ],
             $result,
             'Invalid <ContentObjectStates> element.',
             false
@@ -71,12 +70,12 @@ class ContentObjectStatesTest extends ValueObjectVisitorBaseTest
     public function testResultContainsContentObjectStatesAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ContentObjectStates',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.ContentObjectStates+xml',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ContentObjectStates> attributes.',
             false

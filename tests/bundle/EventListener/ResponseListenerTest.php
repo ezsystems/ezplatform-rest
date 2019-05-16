@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RestValueResponseListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 
 use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
@@ -37,14 +36,14 @@ class ResponseListenerTest extends EventListenerTest
     public function setUp()
     {
         $this->eventValue = new stdClass();
-        $this->response = new Response('BODY', 406, array('foo' => 'bar'));
+        $this->response = new Response('BODY', 406, ['foo' => 'bar']);
     }
 
     public function provideExpectedSubscribedEventTypes()
     {
-        return array(
-            array(array(KernelEvents::VIEW, KernelEvents::EXCEPTION)),
-        );
+        return [
+            [[KernelEvents::VIEW, KernelEvents::EXCEPTION]],
+        ];
     }
 
     public function testOnKernelResultViewIsNotRestRequest()

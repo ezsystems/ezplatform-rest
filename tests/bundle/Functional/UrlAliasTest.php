@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Functional\UrlAliasTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
@@ -77,6 +76,7 @@ XML;
 
     /**
      * Covers POST /content/urlaliases.
+     *
      * @returns string The created url alias href
      */
     public function testCreateGlobalUrlAlias()

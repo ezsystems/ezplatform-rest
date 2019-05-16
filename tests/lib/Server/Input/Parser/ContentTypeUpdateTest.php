@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\Location;
@@ -84,13 +83,13 @@ class ContentTypeUpdateTest extends BaseTest
         );
 
         $this->assertEquals(
-            array('eng-US' => 'Updated content type'),
+            ['eng-US' => 'Updated content type'],
             $result->names,
             'names not created correctly'
         );
 
         $this->assertEquals(
-            array('eng-US' => 'Updated content type description'),
+            ['eng-US' => 'Updated content type description'],
             $result->descriptions,
             'descriptions not created correctly'
         );
@@ -189,7 +188,7 @@ class ContentTypeUpdateTest extends BaseTest
      */
     protected function getInputArray()
     {
-        return array(
+        return [
             'identifier' => 'updated_content_type',
             'mainLanguageCode' => 'eng-US',
             'remoteId' => 'remote123456',
@@ -199,33 +198,33 @@ class ContentTypeUpdateTest extends BaseTest
             'defaultSortField' => 'PATH',
             'defaultSortOrder' => 'ASC',
             'defaultAlwaysAvailable' => 'true',
-            'names' => array(
-                'value' => array(
-                    array(
+            'names' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-US',
                         '#text' => 'Updated content type',
-                    ),
-                ),
-            ),
-            'descriptions' => array(
-                'value' => array(
-                    array(
+                    ],
+                ],
+            ],
+            'descriptions' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-US',
                         '#text' => 'Updated content type description',
-                    ),
-                ),
-            ),
+                    ],
+                ],
+            ],
             'modificationDate' => '2012-12-31T12:30:00',
-            'User' => array(
+            'User' => [
                 '_href' => '/user/users/14',
-            ),
-        );
+            ],
+        ];
     }
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/user/users/14', 'userId', 14),
-        );
+        return [
+            ['/user/users/14', 'userId', 14],
+        ];
     }
 }

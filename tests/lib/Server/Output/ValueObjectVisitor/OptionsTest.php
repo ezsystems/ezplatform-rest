@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -26,7 +25,7 @@ class OptionsTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $noContent = new Values\Options(array('GET', 'POST'));
+        $noContent = new Values\Options(['GET', 'POST']);
 
         $this->getVisitorMock()->expects($this->once())
             ->method('setStatus')
@@ -36,8 +35,8 @@ class OptionsTest extends ValueObjectVisitorBaseTest
             ->method('setHeader')
             ->will(
                 $this->returnValueMap(
-                    array('Allow', 'GET,POST'),
-                    array('Content-Length', 0)
+                    ['Allow', 'GET,POST'],
+                    ['Content-Length', 0]
                 )
             );
 

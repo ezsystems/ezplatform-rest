@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ObjectState controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
@@ -65,7 +64,7 @@ class ObjectState extends RestController
             $createdStateGroup = $this->objectStateService->createObjectStateGroup(
                 $this->inputDispatcher->parse(
                     new Message(
-                        array('Content-Type' => $request->headers->get('Content-Type')),
+                        ['Content-Type' => $request->headers->get('Content-Type')],
                         $request->getContent()
                     )
                 )
@@ -75,9 +74,9 @@ class ObjectState extends RestController
         }
 
         return new Values\CreatedObjectStateGroup(
-            array(
+            [
                 'objectStateGroup' => $createdStateGroup,
-            )
+            ]
         );
     }
 
@@ -99,7 +98,7 @@ class ObjectState extends RestController
                 $objectStateGroup,
                 $this->inputDispatcher->parse(
                     new Message(
-                        array('Content-Type' => $request->headers->get('Content-Type')),
+                        ['Content-Type' => $request->headers->get('Content-Type')],
                         $request->getContent()
                     )
                 )
@@ -109,12 +108,12 @@ class ObjectState extends RestController
         }
 
         return new Values\CreatedObjectState(
-            array(
+            [
                 'objectState' => new RestObjectState(
                     $createdObjectState,
                     $objectStateGroup->id
                 ),
-            )
+            ]
         );
     }
 
@@ -220,7 +219,7 @@ class ObjectState extends RestController
     {
         $updateStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -250,7 +249,7 @@ class ObjectState extends RestController
     {
         $updateStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -278,7 +277,7 @@ class ObjectState extends RestController
         $groups = $this->objectStateService->loadObjectStateGroups();
         $contentInfo = $this->contentService->loadContentInfo($contentId);
 
-        $contentObjectStates = array();
+        $contentObjectStates = [];
 
         foreach ($groups as $group) {
             try {
@@ -306,12 +305,12 @@ class ObjectState extends RestController
     {
         $newObjectStates = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
 
-        $countByGroups = array();
+        $countByGroups = [];
         foreach ($newObjectStates as $newObjectState) {
             $groupId = (int)$newObjectState->groupId;
             if (array_key_exists($groupId, $countByGroups)) {
@@ -329,7 +328,7 @@ class ObjectState extends RestController
 
         $contentInfo = $this->contentService->loadContentInfo($contentId);
 
-        $contentObjectStates = array();
+        $contentObjectStates = [];
         foreach ($newObjectStates as $newObjectState) {
             $objectStateGroup = $this->objectStateService->loadObjectStateGroup($newObjectState->groupId);
             $this->objectStateService->setContentState($contentInfo, $objectStateGroup, $newObjectState->objectState);

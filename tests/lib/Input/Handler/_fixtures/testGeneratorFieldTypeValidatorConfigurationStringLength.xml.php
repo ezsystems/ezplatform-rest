@@ -1,23 +1,22 @@
 <?php
 
-return array(
-    'ContentTypeCreate' =>
-    array(
-        'FieldDefinitions' =>
-        array(
-            'FieldDefinition' =>
-            array(
-                array(
-                    'validatorConfiguration' =>
-                    array(
-                        'StringLengthValidator' =>
-                        array(
+/**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ */
+return [
+    'ContentTypeCreate' => [
+        'FieldDefinitions' => [
+            'FieldDefinition' => [
+                [
+                    'validatorConfiguration' => [
+                        'StringLengthValidator' => [
                             'minStringLength' => false,
-                            'maxStringLength' => 192
-                        )
-                    )
-                )
-            )
-        ),
-    ),
-);
+                            'maxStringLength' => 192,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+];

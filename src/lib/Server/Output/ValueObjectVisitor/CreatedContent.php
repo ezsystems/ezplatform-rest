@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the CreatedContent ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -30,7 +29,7 @@ class CreatedContent extends RestContent
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadContent',
-                array('contentId' => $data->content->contentInfo->id)
+                ['contentId' => $data->content->contentInfo->id]
             )
         );
         $visitor->setStatus(201);

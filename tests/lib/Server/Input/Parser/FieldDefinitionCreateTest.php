@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
@@ -85,30 +84,30 @@ class FieldDefinitionCreateTest extends BaseTest
         );
 
         $this->assertEquals(
-            array('eng-US' => 'Title'),
+            ['eng-US' => 'Title'],
             $result->names,
             'names not created correctly'
         );
 
         $this->assertEquals(
-            array('eng-US' => 'This is the title'),
+            ['eng-US' => 'This is the title'],
             $result->descriptions,
             'descriptions not created correctly'
         );
 
         $this->assertEquals(
-            array('textRows' => 24),
+            ['textRows' => 24],
             $result->fieldSettings,
             'fieldSettings not created correctly'
         );
 
         $this->assertEquals(
-            array(
-                'StringLengthValidator' => array(
+            [
+                'StringLengthValidator' => [
                     'minStringLength' => 12,
                     'maxStringLength' => 24,
-                ),
-            ),
+                ],
+            ],
             $result->validatorConfiguration,
             'validatorConfiguration not created correctly'
         );
@@ -203,18 +202,18 @@ class FieldDefinitionCreateTest extends BaseTest
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseFieldSettings')
-            ->will($this->returnValue(array('textRows' => 24)));
+            ->will($this->returnValue(['textRows' => 24]));
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseValidatorConfiguration')
             ->will(
                 $this->returnValue(
-                    array(
-                        'StringLengthValidator' => array(
+                    [
+                        'StringLengthValidator' => [
                             'minStringLength' => 12,
                             'maxStringLength' => 24,
-                        ),
-                    )
+                        ],
+                    ]
                 )
             );
 
@@ -236,10 +235,10 @@ class FieldDefinitionCreateTest extends BaseTest
             ->will(
                 $this->returnValue(
                     new FieldDefinitionCreateStruct(
-                        array(
+                        [
                             'identifier' => 'title',
                             'fieldTypeIdentifier' => 'ezstring',
-                        )
+                        ]
                     )
                 )
             );
@@ -254,7 +253,7 @@ class FieldDefinitionCreateTest extends BaseTest
      */
     protected function getInputArray()
     {
-        return array(
+        return [
             'identifier' => 'title',
             'fieldType' => 'ezstring',
             'fieldGroup' => 'content',
@@ -264,32 +263,32 @@ class FieldDefinitionCreateTest extends BaseTest
             'isInfoCollector' => 'true',
             'isSearchable' => 'true',
             'defaultValue' => 'New title',
-            'names' => array(
-                'value' => array(
-                    array(
+            'names' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-US',
                         '#text' => 'Title',
-                    ),
-                ),
-            ),
-            'descriptions' => array(
-                'value' => array(
-                    array(
+                    ],
+                ],
+            ],
+            'descriptions' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-US',
                         '#text' => 'This is the title',
-                    ),
-                ),
-            ),
+                    ],
+                ],
+            ],
             // Note that ezstring does not support settings, but that is irrelevant for the test
-            'fieldSettings' => array(
+            'fieldSettings' => [
                 'textRows' => 24,
-            ),
-            'validatorConfiguration' => array(
-                'StringLengthValidator' => array(
+            ],
+            'validatorConfiguration' => [
+                'StringLengthValidator' => [
                     'minStringLength' => '12',
                     'maxStringLength' => '24',
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
     }
 }

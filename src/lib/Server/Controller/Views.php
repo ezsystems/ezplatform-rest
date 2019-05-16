@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\EzPlatformRest\Server\Controller;
@@ -37,7 +39,7 @@ class Views extends Controller
     {
         $viewInput = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -49,13 +51,13 @@ class Views extends Controller
         }
 
         return new Values\RestExecutedView(
-            array(
+            [
                 'identifier' => $viewInput->identifier,
                 'searchResults' => $this->searchService->$method(
                     $viewInput->query,
                     ['languages' => Language::ALL]
                 ),
-            )
+            ]
         );
     }
 

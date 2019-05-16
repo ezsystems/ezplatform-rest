@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Functional\ContentTypeTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
@@ -296,6 +295,7 @@ XML;
 
     /**
      * Covers POST /content/type/<contentTypeId>.
+     *
      * @depends testCopyContentType
      *
      * @return string the created content type draft href
@@ -371,6 +371,7 @@ XML;
 
     /**
      * Covers POST /content/types/<contentTypeId>/draft/fielddefinitions.
+     *
      * @depends testCreateContentTypeDraft
      *
      * @return string The content type draft field definition href
@@ -479,6 +480,7 @@ XML;
 
     /**
      * Covers DELETE /content/types/<contentTypeId>/draft/fieldDefinitions/<fieldDefinitionId>.
+     *
      * @depends testAddContentTypeDraftFieldDefinition
      *
      * @param string $fieldDefinitionHref
@@ -494,6 +496,7 @@ XML;
 
     /**
      * Covers DELETE /content/types/<contentTypeId>/draft.
+     *
      * @depends testCreateContentTypeDraft
      */
     public function testDeleteContentTypeDraft($contentTypeDraftHref)

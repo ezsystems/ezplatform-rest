@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RestUser ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -33,7 +32,7 @@ class RestUser extends ValueObjectVisitor
 
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadUser', array('userId' => $contentInfo->id))
+            $this->router->generate('ezpublish_rest_loadUser', ['userId' => $contentInfo->id])
         );
         $generator->endAttribute('href');
 
@@ -50,7 +49,7 @@ class RestUser extends ValueObjectVisitor
 
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadContentType', array('contentTypeId' => $contentInfo->contentTypeId))
+            $this->router->generate('ezpublish_rest_loadContentType', ['contentTypeId' => $contentInfo->contentTypeId])
         );
         $generator->endAttribute('href');
 
@@ -62,7 +61,7 @@ class RestUser extends ValueObjectVisitor
         $generator->startObjectElement('Versions', 'VersionList');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadContentVersions', array('contentId' => $contentInfo->id))
+            $this->router->generate('ezpublish_rest_loadContentVersions', ['contentId' => $contentInfo->id])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Versions');
@@ -70,7 +69,7 @@ class RestUser extends ValueObjectVisitor
         $generator->startObjectElement('Section');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadSection', array('sectionId' => $contentInfo->sectionId))
+            $this->router->generate('ezpublish_rest_loadSection', ['sectionId' => $contentInfo->sectionId])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Section');
@@ -80,7 +79,7 @@ class RestUser extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadLocation',
-                array('locationPath' => trim($data->mainLocation->pathString, '/'))
+                ['locationPath' => trim($data->mainLocation->pathString, '/')]
             )
         );
         $generator->endAttribute('href');
@@ -89,7 +88,7 @@ class RestUser extends ValueObjectVisitor
         $generator->startObjectElement('Locations', 'LocationList');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadLocationsForContent', array('contentId' => $contentInfo->id))
+            $this->router->generate('ezpublish_rest_loadLocationsForContent', ['contentId' => $contentInfo->id])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Locations');
@@ -97,7 +96,7 @@ class RestUser extends ValueObjectVisitor
         $generator->startObjectElement('Groups', 'UserGroupRefList');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadUserGroupsOfUser', array('userId' => $contentInfo->id))
+            $this->router->generate('ezpublish_rest_loadUserGroupsOfUser', ['userId' => $contentInfo->id])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Groups');
@@ -105,7 +104,7 @@ class RestUser extends ValueObjectVisitor
         $generator->startObjectElement('Owner', 'User');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadUser', array('userId' => $contentInfo->ownerId))
+            $this->router->generate('ezpublish_rest_loadUser', ['userId' => $contentInfo->ownerId])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Owner');
@@ -150,7 +149,7 @@ class RestUser extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadUserGroupsOfUser',
-                array('userId' => $contentInfo->id)
+                ['userId' => $contentInfo->id]
             )
         );
         $generator->endAttribute('href');
@@ -161,9 +160,9 @@ class RestUser extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadRoleAssignmentsForUser',
-                array(
+                [
                     'userId' => $contentInfo->id,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');

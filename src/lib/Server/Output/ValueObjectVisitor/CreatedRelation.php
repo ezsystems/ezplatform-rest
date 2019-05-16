@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the CreatedRelation ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -32,11 +31,11 @@ class CreatedRelation extends RestRelation
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadVersionRelation',
-                array(
+                [
                     'contentId' => $data->relation->contentId,
                     'versionNumber' => $data->relation->versionNo,
                     'relationId' => $data->relation->relation->id,
-                )
+                ]
             )
         );
         $visitor->setStatus(201);

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Functional\TestCase class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use Buzz\Browser;
@@ -53,18 +52,21 @@ class TestCase extends BaseTestCase
 
     /**
      * The username to use for login.
+     *
      * @var string
      */
     private $loginUsername;
 
     /**
      * The password to use for login.
+     *
      * @var string
      */
     private $loginPassword;
 
     /**
      * If true, a login request is automatically done during setUp().
+     *
      * @var bool
      */
     protected $autoLogin = true;
@@ -74,7 +76,7 @@ class TestCase extends BaseTestCase
      *
      * @var array
      */
-    private static $createdContent = array();
+    private static $createdContent = [];
 
     protected function setUp()
     {
@@ -157,7 +159,6 @@ class TestCase extends BaseTestCase
      * @param string $contentType
      * @param string $acceptType
      * @param string $body
-     *
      * @param array $extraHeaders [key => value] array of extra headers
      *
      * @return \Psr\Http\Message\RequestInterface
@@ -389,7 +390,7 @@ XML;
     /**
      * Sends a login request to the REST server.
      *
-     * @return \stdClass an object with the name, identifier, csrftoken properties.
+     * @return \stdClass an object with the name, identifier, csrftoken properties
      */
     protected function login()
     {
@@ -403,7 +404,7 @@ XML;
     /**
      * @param string $login
      * @param string $password
-     * @param array $extraHeaders extra [key => value] headers to be passed with the authentication request.
+     * @param array $extraHeaders extra [key => value] headers to be passed with the authentication request
      *
      * @return \Psr\Http\Message\RequestInterface
      */

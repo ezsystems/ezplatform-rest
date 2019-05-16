@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -48,6 +49,7 @@ abstract class BaseRelationProcessor extends FieldTypeProcessor
 
     /**
      * @param  int $contentId
+     *
      * @return string
      */
     public function mapToContentHref($contentId)
@@ -57,6 +59,7 @@ abstract class BaseRelationProcessor extends FieldTypeProcessor
 
     /**
      * @param  int $locationId
+     *
      * @return string
      */
     public function mapToLocationHref($locationId)

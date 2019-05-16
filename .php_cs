@@ -26,11 +26,13 @@ return PhpCsFixer\Config::create()
         ],
         'yoda_style' => false,
         'no_break_comment' => false,
+        'native_function_invocation' => false
     ])
     ->setRiskyAllowed(true)
     ->setFinder(
         PhpCsFixer\Finder::create()
             ->in(__DIR__ . '/src')
+            ->in(__DIR__ . '/tests')
             ->files()->name('*.php')
     )
 ;

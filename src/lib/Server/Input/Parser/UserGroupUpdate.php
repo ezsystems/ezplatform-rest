@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the UserGroupUpdate parser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 
 use EzSystems\EzPlatformRest\Input\BaseParser;
@@ -76,7 +75,7 @@ class UserGroupUpdate extends BaseParser
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
-        $parsedData = array();
+        $parsedData = [];
 
         if (array_key_exists('mainLanguageCode', $data)) {
             $parsedData['mainLanguageCode'] = $data['mainLanguageCode'];
@@ -103,7 +102,7 @@ class UserGroupUpdate extends BaseParser
                 throw new Exceptions\Parser("Invalid 'fields' element for UserGroupUpdate.");
             }
 
-            $parsedData['fields'] = array();
+            $parsedData['fields'] = [];
             foreach ($data['fields']['field'] as $fieldData) {
                 if (!array_key_exists('fieldDefinitionIdentifier', $fieldData)) {
                     throw new Exceptions\Parser("Missing 'fieldDefinitionIdentifier' element in field data for UserGroupUpdate.");
@@ -120,10 +119,10 @@ class UserGroupUpdate extends BaseParser
                     $languageCode = $fieldData['languageCode'];
                 }
 
-                $parsedData['fields'][$fieldData['fieldDefinitionIdentifier']] = array(
+                $parsedData['fields'][$fieldData['fieldDefinitionIdentifier']] = [
                     'fieldValue' => $fieldValue,
                     'languageCode' => $languageCode,
-                );
+                ];
             }
         }
 

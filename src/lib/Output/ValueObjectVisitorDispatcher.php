@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ValueObjectVisitorDispatcher class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Output;
 
 /**
@@ -60,7 +59,7 @@ class ValueObjectVisitorDispatcher
         if (!is_object($data)) {
             throw new Exceptions\InvalidTypeException($data);
         }
-        $checkedClassNames = array();
+        $checkedClassNames = [];
 
         $className = get_class($data);
         do {

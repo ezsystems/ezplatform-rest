@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Functional\SearchViewTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use DOMDocument;
@@ -268,6 +267,7 @@ XML;
      * @param string $name
      * @param string $operator
      * @param string|string[] $value
+     *
      * @return DOMElement
      */
     private function buildFieldXml(string $name, string $operator, $value): DOMElement

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RestValueResponseListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 
 use PHPUnit\Framework\MockObject\MockObject;
@@ -55,9 +54,9 @@ class CsrfListenerTest extends EventListenerTest
 
     public function provideExpectedSubscribedEventTypes()
     {
-        return array(
-            array(array(KernelEvents::REQUEST)),
-        );
+        return [
+            [[KernelEvents::REQUEST]],
+        ];
     }
 
     public function testIsNotRestRequest()
@@ -111,11 +110,11 @@ class CsrfListenerTest extends EventListenerTest
 
     public function getIgnoredRequestMethods()
     {
-        return array(
-            array('GET'),
-            array('HEAD'),
-            array('OPTIONS'),
-        );
+        return [
+            ['GET'],
+            ['HEAD'],
+            ['OPTIONS'],
+        ];
     }
 
     /**

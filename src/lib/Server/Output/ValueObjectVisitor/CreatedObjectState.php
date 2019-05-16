@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the CreatedObjectState ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -32,10 +31,10 @@ class CreatedObjectState extends RestObjectState
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadObjectState',
-                array(
+                [
                     'objectStateGroupId' => $data->objectState->groupId,
                     'objectStateId' => $data->objectState->objectState->id,
-                )
+                ]
             )
         );
         $visitor->setStatus(201);

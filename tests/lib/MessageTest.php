@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the MessageTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests;
 
 use EzSystems\EzPlatformRest;
@@ -23,7 +22,7 @@ class MessageTest extends TestCase
     {
         $message = new EzPlatformRest\Message();
 
-        $this->assertSame(array(), $message->headers);
+        $this->assertSame([], $message->headers);
     }
 
     /**
@@ -42,9 +41,9 @@ class MessageTest extends TestCase
     public function testCreateMessageConstructorHeaders()
     {
         $message = new EzPlatformRest\Message(
-            $headers = array(
+            $headers = [
                 'Content-Type' => 'text/xml',
-            )
+            ]
         );
 
         $this->assertSame($headers, $message->headers);
@@ -56,7 +55,7 @@ class MessageTest extends TestCase
     public function testCreateMessageConstructorBody()
     {
         $message = new EzPlatformRest\Message(
-            array(),
+            [],
             'Hello world!'
         );
 

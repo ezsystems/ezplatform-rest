@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RestContentType ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -44,9 +43,9 @@ class RestContentType extends RestContentTypeBase
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadContentType' . $urlTypeSuffix,
-                array(
+                [
                     'contentTypeId' => $contentType->id,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');
@@ -78,7 +77,7 @@ class RestContentType extends RestContentTypeBase
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadUser',
-                array('userId' => $contentType->creatorId)
+                ['userId' => $contentType->creatorId]
             )
         );
         $generator->endAttribute('href');
@@ -89,7 +88,7 @@ class RestContentType extends RestContentTypeBase
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadUser',
-                array('userId' => $contentType->modifierId)
+                ['userId' => $contentType->modifierId]
             )
         );
         $generator->endAttribute('href');
@@ -100,7 +99,7 @@ class RestContentType extends RestContentTypeBase
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadGroupsOfContentType',
-                array('contentTypeId' => $contentType->id)
+                ['contentTypeId' => $contentType->id]
             )
         );
         $generator->endAttribute('href');
@@ -111,7 +110,7 @@ class RestContentType extends RestContentTypeBase
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadContentTypeDraft',
-                array('contentTypeId' => $contentType->id)
+                ['contentTypeId' => $contentType->id]
             )
         );
         $generator->endAttribute('href');

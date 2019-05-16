@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RestTrashItem ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -35,7 +34,7 @@ class RestTrashItem extends ValueObjectVisitor
 
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadTrashItem', array('trashItemId' => $trashItem->id))
+            $this->router->generate('ezpublish_rest_loadTrashItem', ['trashItemId' => $trashItem->id])
         );
         $generator->endAttribute('href');
 
@@ -65,9 +64,9 @@ class RestTrashItem extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadLocation',
-                array(
+                [
                     'locationPath' => implode('/', $pathStringParts),
-                )
+                ]
             )
         );
         $generator->endAttribute('href');
@@ -88,7 +87,7 @@ class RestTrashItem extends ValueObjectVisitor
         $generator->startObjectElement('Content');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadContent', array('contentId' => $contentInfo->id))
+            $this->router->generate('ezpublish_rest_loadContent', ['contentId' => $contentInfo->id])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Content');
@@ -104,7 +103,7 @@ class RestTrashItem extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadContent',
-                array('contentId' => $contentInfo->id)
+                ['contentId' => $contentInfo->id]
             )
         );
         $generator->endAttribute('href');

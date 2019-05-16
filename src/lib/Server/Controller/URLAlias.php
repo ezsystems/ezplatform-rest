@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the URLAlias controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
@@ -95,7 +94,7 @@ class URLAlias extends RestController
                 $this->urlAliasService->listLocationAliases($location, $custom),
                 $request->getPathInfo()
             ),
-            array('locationId' => $location->id)
+            ['locationId' => $location->id]
         );
     }
 
@@ -110,7 +109,7 @@ class URLAlias extends RestController
     {
         $urlAliasCreate = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -151,9 +150,9 @@ class URLAlias extends RestController
         }
 
         return new Values\CreatedURLAlias(
-            array(
+            [
                 'urlAlias' => $createdURLAlias,
-            )
+            ]
         );
     }
 
@@ -167,9 +166,9 @@ class URLAlias extends RestController
     public function deleteURLAlias($urlAliasId)
     {
         $this->urlAliasService->removeAliases(
-            array(
+            [
                 $this->urlAliasService->load($urlAliasId),
-            )
+            ]
         );
 
         return new Values\NoContent();

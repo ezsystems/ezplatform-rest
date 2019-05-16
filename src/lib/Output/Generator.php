@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Generator base class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Output;
 
 /**
@@ -21,7 +20,7 @@ abstract class Generator
      *
      * @var array
      */
-    protected $stack = array();
+    protected $stack = [];
 
     /**
      * If set to true, output will be formatted and indented.
@@ -40,7 +39,7 @@ abstract class Generator
      */
     public function reset()
     {
-        $this->stack = array();
+        $this->stack = [];
         $this->isEmpty = true;
     }
 
@@ -71,7 +70,7 @@ abstract class Generator
             );
         }
 
-        $this->stack[] = array('document', $data, array());
+        $this->stack[] = ['document', $data, []];
     }
 
     /**
@@ -110,7 +109,7 @@ abstract class Generator
      */
     protected function checkStartObjectElement($data)
     {
-        $this->checkStart('objectElement', $data, array('document', 'objectElement', 'hashElement', 'list'));
+        $this->checkStart('objectElement', $data, ['document', 'objectElement', 'hashElement', 'list']);
 
         $last = count($this->stack) - 2;
         if ($this->stack[$last][0] !== 'list') {
@@ -155,7 +154,7 @@ abstract class Generator
      */
     protected function checkStartHashElement($data)
     {
-        $this->checkStart('hashElement', $data, array('document', 'objectElement', 'hashElement', 'list'));
+        $this->checkStart('hashElement', $data, ['document', 'objectElement', 'hashElement', 'list']);
 
         $last = count($this->stack) - 2;
         if ($this->stack[$last][0] !== 'list') {
@@ -201,7 +200,7 @@ abstract class Generator
      */
     protected function checkStartValueElement($data)
     {
-        $this->checkStart('valueElement', $data, array('objectElement', 'hashElement', 'list'));
+        $this->checkStart('valueElement', $data, ['objectElement', 'hashElement', 'list']);
     }
 
     /**
@@ -235,7 +234,7 @@ abstract class Generator
      */
     protected function checkStartList($data)
     {
-        $this->checkStart('list', $data, array('objectElement', 'hashElement'));
+        $this->checkStart('list', $data, ['objectElement', 'hashElement']);
     }
 
     /**
@@ -270,7 +269,7 @@ abstract class Generator
      */
     protected function checkStartAttribute($data)
     {
-        $this->checkStart('attribute', $data, array('objectElement', 'hashElement'));
+        $this->checkStart('attribute', $data, ['objectElement', 'hashElement']);
     }
 
     /**
@@ -368,7 +367,7 @@ abstract class Generator
             );
         }
 
-        $this->stack[] = array($type, $data, array());
+        $this->stack[] = [$type, $data, []];
     }
 
     /**
@@ -389,7 +388,7 @@ abstract class Generator
             );
         }
 
-        if (array($lastTag[0], $lastTag[1]) !== array($type, $data)) {
+        if ([$lastTag[0], $lastTag[1]] !== [$type, $data]) {
             throw new Exceptions\OutputGeneratorException(
                 sprintf(
                     'Invalid close: Trying to close %s:%s, while last element was %s:%s.',

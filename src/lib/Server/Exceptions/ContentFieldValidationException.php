@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ContentFieldValidationException tests.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Exceptions;
 
 use eZ\Publish\API\Repository\Exceptions\ContentFieldValidationException as APIContentFieldValidationException;
@@ -17,6 +16,7 @@ class ContentFieldValidationException extends BadRequestException
 {
     /**
      * Contains an array of field ValidationError objects indexed with FieldDefinition id and language code.
+     *
      * @see eZ\Publish\Core\Base\Exceptions\ContentFieldValidationException
      *
      * @var \eZ\Publish\Core\FieldType\ValidationError[]

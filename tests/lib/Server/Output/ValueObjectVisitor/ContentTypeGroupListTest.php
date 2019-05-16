@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -28,9 +27,9 @@ class ContentTypeGroupListTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $contentTypeGroupList = new ContentTypeGroupList(array());
+        $contentTypeGroupList = new ContentTypeGroupList([]);
 
-        $this->addRouteExpectation('ezpublish_rest_loadContentTypeGroupList', array(), '/content/typegroups');
+        $this->addRouteExpectation('ezpublish_rest_loadContentTypeGroupList', [], '/content/typegroups');
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -55,9 +54,9 @@ class ContentTypeGroupListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsContentTypeGroupListElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ContentTypeGroupList',
-            ),
+            ],
             $result,
             'Invalid <ContentTypeGroupList> element.',
             false
@@ -74,13 +73,13 @@ class ContentTypeGroupListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsContentTypeGroupListAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ContentTypeGroupList',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.ContentTypeGroupList+xml',
                     'href' => '/content/typegroups',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ContentTypeGroupList> attributes.',
             false
@@ -98,10 +97,10 @@ class ContentTypeGroupListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $contentTypeGroupList = new ContentTypeGroupList(
-            array(
+            [
                 new ContentType\ContentTypeGroup(),
                 new ContentType\ContentTypeGroup(),
-            )
+            ]
         );
 
         $this->getVisitorMock()->expects($this->exactly(2))

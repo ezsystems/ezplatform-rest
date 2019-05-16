@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ */
 namespace EzSystems\EzPlatformRest\Server\Input\Parser\SortClause;
 
 use eZ\Publish\API\Repository\Values\Content\Query;
@@ -12,6 +16,7 @@ class DataKeyValueObjectClass extends BaseParser
     /**
      * Data key, corresponding to the $valueObjectClass class.
      * Example: 'DatePublished'.
+     *
      * @var string
      */
     protected $dataKey;
@@ -19,6 +24,7 @@ class DataKeyValueObjectClass extends BaseParser
     /**
      * Value object class, corresponding to the $dataKey.
      * Example: 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished'.
+     *
      * @var string
      */
     protected $valueObjectClass;

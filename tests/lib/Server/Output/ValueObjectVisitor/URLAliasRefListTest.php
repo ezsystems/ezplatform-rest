@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -28,19 +27,19 @@ class URLAliasRefListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $urlAliasRefList = new URLAliasRefList(
-            array(
+            [
                 new URLAlias(
-                    array(
+                    [
                         'id' => 'some-id',
-                    )
+                    ]
                 ),
-            ),
+            ],
             '/some/path'
         );
 
         $this->addRouteExpectation(
             'ezpublish_rest_loadURLAlias',
-            array('urlAliasId' => $urlAliasRefList->urlAliases[0]->id),
+            ['urlAliasId' => $urlAliasRefList->urlAliases[0]->id],
             "/content/urlaliases/{$urlAliasRefList->urlAliases[0]->id}"
         );
 

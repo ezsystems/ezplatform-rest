@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Functional\UserTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
@@ -85,6 +84,7 @@ XML;
 
     /**
      * Covers PATCH /user/groups/{groupPath}.
+     *
      * @depends testCreateUserGroup
      */
     public function testUpdateUserGroup($groupHref)
@@ -262,6 +262,7 @@ XML;
 
     /**
      * Covers GET /user/users/{userId}/drafts.
+     *
      * @depends testCreateUser
      */
     public function testLoadUserDrafts($userHref)
@@ -288,6 +289,7 @@ XML;
 
     /**
      * Covers GET /user/users/{userId}/groups.
+     *
      * @depends testCreateUser
      */
     public function testLoadUserGroupsOfUser($userHref)
@@ -301,6 +303,7 @@ XML;
 
     /**
      * Covers GET /user/groups/<groupPath>/users.
+     *
      * @depends testCreateUserGroup
      */
     public function testLoadUsersFromGroup($groupHref)
@@ -314,6 +317,7 @@ XML;
 
     /**
      * Covers POST /user/users/{userId}/groups.
+     *
      * @depends testCreateUser
      *
      * @return string $userHref
@@ -332,6 +336,7 @@ XML;
 
     /**
      * Covers DELETE /user/users/{userId}/groups/{groupPath}.
+     *
      * @depends testAssignUserToUserGroup
      */
     public function testUnassignUserFromUserGroup($userHref)
@@ -346,6 +351,7 @@ XML;
 
     /**
      * Covers MOVE /user/groups/{groupPath}.
+     *
      * @depends testCreateUserGroup
      */
     public function testMoveUserGroup($groupHref)

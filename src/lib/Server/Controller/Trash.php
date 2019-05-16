@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Trash controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use EzSystems\EzPlatformRest\Server\Values;
@@ -63,7 +62,7 @@ class Trash extends RestController
         $query->offset = $offset >= 0 ? $offset : null;
         $query->limit = $limit >= 0 ? $limit : null;
 
-        $trashItems = array();
+        $trashItems = [];
 
         foreach ($this->trashService->findTrashItems($query)->items as $trashItem) {
             $trashItems[] = new Values\RestTrashItem(
@@ -170,9 +169,9 @@ class Trash extends RestController
         return new Values\ResourceCreated(
             $this->router->generate(
                 'ezpublish_rest_loadLocation',
-                array(
+                [
                     'locationPath' => trim($location->pathString, '/'),
-                )
+                ]
             )
         );
     }

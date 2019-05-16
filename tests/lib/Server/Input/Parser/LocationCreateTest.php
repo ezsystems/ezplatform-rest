@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\LocationService;
@@ -20,16 +19,16 @@ class LocationCreateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
-            'ParentLocation' => array(
+        $inputArray = [
+            'ParentLocation' => [
                 '_href' => '/content/locations/1/2/42',
-            ),
+            ],
             'priority' => '2',
             'hidden' => 'true',
             'remoteId' => 'remoteId12345678',
             'sortField' => 'PATH',
             'sortOrder' => 'ASC',
-        );
+        ];
 
         $locationCreate = $this->getParser();
         $result = $locationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -84,13 +83,13 @@ class LocationCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingParentLocation()
     {
-        $inputArray = array(
+        $inputArray = [
             'priority' => '0',
             'hidden' => 'false',
             'remoteId' => 'remoteId12345678',
             'sortField' => 'PATH',
             'sortOrder' => 'ASC',
-        );
+        ];
 
         $locationCreate = $this->getParser();
         $locationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -104,14 +103,14 @@ class LocationCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingHrefAttribute()
     {
-        $inputArray = array(
-            'ParentLocation' => array(),
+        $inputArray = [
+            'ParentLocation' => [],
             'priority' => '0',
             'hidden' => 'false',
             'remoteId' => 'remoteId12345678',
             'sortField' => 'PATH',
             'sortOrder' => 'ASC',
-        );
+        ];
 
         $locationCreate = $this->getParser();
         $locationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -125,15 +124,15 @@ class LocationCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingSortField()
     {
-        $inputArray = array(
-            'ParentLocation' => array(
+        $inputArray = [
+            'ParentLocation' => [
                 '_href' => '/content/locations/1/2/42',
-            ),
+            ],
             'priority' => '0',
             'hidden' => 'false',
             'remoteId' => 'remoteId12345678',
             'sortOrder' => 'ASC',
-        );
+        ];
 
         $locationCreate = $this->getParser();
         $locationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -147,15 +146,15 @@ class LocationCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingSortOrder()
     {
-        $inputArray = array(
-            'ParentLocation' => array(
+        $inputArray = [
+            'ParentLocation' => [
                 '_href' => '/content/locations/1/2/42',
-            ),
+            ],
             'priority' => '0',
             'hidden' => 'false',
             'remoteId' => 'remoteId12345678',
             'sortField' => 'PATH',
-        );
+        ];
 
         $locationCreate = $this->getParser();
         $locationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -187,7 +186,7 @@ class LocationCreateTest extends BaseTest
             ->method('newLocationCreateStruct')
             ->with($this->equalTo(42))
             ->will(
-                $this->returnValue(new LocationCreateStruct(array('parentLocationId' => 42)))
+                $this->returnValue(new LocationCreateStruct(['parentLocationId' => 42]))
             );
 
         return $locationServiceMock;
@@ -195,8 +194,8 @@ class LocationCreateTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/content/locations/1/2/42', 'locationPath', '1/2/42'),
-        );
+        return [
+            ['/content/locations/1/2/42', 'locationPath', '1/2/42'],
+        ];
     }
 }

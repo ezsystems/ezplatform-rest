@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ContentFieldValidationException ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Values\Translation;
@@ -98,6 +97,7 @@ class ContentFieldValidationException extends BadRequestException
      * Convert a Translation object to a string, detecting singular/plural as needed.
      *
      * @param Translation $translation The Translation object
+     *
      * @return string
      */
     private function translationToString(Translation $translation)

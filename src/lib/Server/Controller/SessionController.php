@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -59,7 +60,7 @@ class SessionController extends Controller
         /** @var $sessionInput \EzSystems\EzPlatformRest\Server\Values\SessionInput */
         $sessionInput = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -169,7 +170,7 @@ class SessionController extends Controller
      *
      * @param Request $request
      *
-     * @throws UnauthorizedException if the token is missing or invalid.
+     * @throws UnauthorizedException if the token is missing or invalid
      */
     private function checkCsrfToken(Request $request)
     {
@@ -199,7 +200,7 @@ class SessionController extends Controller
     /**
      * Returns the csrf token for REST. The token is generated if it doesn't exist.
      *
-     * @return string The csrf token, or an empty string if csrf check is disabled.
+     * @return string the csrf token, or an empty string if csrf check is disabled
      */
     private function getCsrfToken()
     {

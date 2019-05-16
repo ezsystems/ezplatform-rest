@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Version ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -95,10 +94,10 @@ class Version extends ValueObjectVisitor
         if ($path == null) {
             $path = $this->router->generate(
                 'ezpublish_rest_loadContentInVersion',
-                array(
+                [
                     'contentId' => $content->id,
                     'versionNumber' => $versionInfo->versionNo,
-                )
+                ]
             );
         }
 

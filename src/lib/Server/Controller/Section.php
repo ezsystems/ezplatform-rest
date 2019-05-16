@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Section controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use EzSystems\EzPlatformRest\Message;
@@ -49,9 +48,9 @@ class Section extends RestController
     public function listSections(Request $request)
     {
         if ($request->query->has('identifier')) {
-            $sections = array(
+            $sections = [
                 $this->loadSectionByIdentifier($request),
-            );
+            ];
         } else {
             $sections = $this->sectionService->loadSections();
         }
@@ -85,7 +84,7 @@ class Section extends RestController
             $createdSection = $this->sectionService->createSection(
                 $this->inputDispatcher->parse(
                     new Message(
-                        array('Content-Type' => $request->headers->get('Content-Type')),
+                        ['Content-Type' => $request->headers->get('Content-Type')],
                         $request->getContent()
                     )
                 )
@@ -95,9 +94,9 @@ class Section extends RestController
         }
 
         return new Values\CreatedSection(
-            array(
+            [
                 'section' => $createdSection,
-            )
+            ]
         );
     }
 
@@ -126,7 +125,7 @@ class Section extends RestController
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -169,10 +168,10 @@ class Section extends RestController
     protected function mapToUpdateStruct(SectionCreateStruct $createStruct)
     {
         return new SectionUpdateStruct(
-            array(
+            [
                 'name' => $createStruct->name,
                 'identifier' => $createStruct->identifier,
-            )
+            ]
         );
     }
 }

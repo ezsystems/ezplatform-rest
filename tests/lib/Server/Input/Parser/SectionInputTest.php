@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\SectionService;
@@ -19,10 +18,10 @@ class SectionInputTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'name' => 'Name Foo',
             'identifier' => 'Identifier Bar',
-        );
+        ];
 
         $sectionInput = $this->getParser();
         $result = $sectionInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -42,9 +41,9 @@ class SectionInputTest extends BaseTest
      */
     public function testParseExceptionOnMissingIdentifier()
     {
-        $inputArray = array(
+        $inputArray = [
             'name' => 'Name Foo',
-        );
+        ];
 
         $sectionInput = $this->getParser();
         $sectionInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -58,9 +57,9 @@ class SectionInputTest extends BaseTest
      */
     public function testParseExceptionOnMissingName()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Identifier Bar',
-        );
+        ];
 
         $sectionInput = $this->getParser();
         $sectionInput->parse($inputArray, $this->getParsingDispatcherMock());

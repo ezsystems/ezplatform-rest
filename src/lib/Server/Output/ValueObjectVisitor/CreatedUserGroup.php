@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the CreatedUserGroup ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -32,7 +31,7 @@ class CreatedUserGroup extends RestUserGroup
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadUserGroup',
-                array('groupPath' => trim($data->userGroup->mainLocation->pathString, '/'))
+                ['groupPath' => trim($data->userGroup->mainLocation->pathString, '/')]
             )
         );
         $visitor->setStatus(201);

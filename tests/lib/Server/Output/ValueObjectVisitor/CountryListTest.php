@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -27,20 +26,20 @@ class CountryListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $countryList = new CountryList(
-            array(
-                'VA' => array(
+            [
+                'VA' => [
                     'Name' => 'Holy See (Vatican City State)',
                     'Alpha2' => 'VA',
                     'Alpha3' => 'VAT',
                     'IDC' => '3906',
-                ),
-                'HM' => array(
+                ],
+                'HM' => [
                     'Name' => 'Heard Island and McDonald Islands',
                     'Alpha2' => 'HM',
                     'Alpha3' => 'HMD',
                     'IDC' => '672',
-                ),
-            )
+                ],
+            ]
         );
 
         $visitor->visit(

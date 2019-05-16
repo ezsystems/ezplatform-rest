@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the FieldTypeProcessorPass class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -30,7 +29,7 @@ class FieldTypeProcessorPass implements CompilerPassInterface
 
                 $definition->addMethodCall(
                     'registerProcessor',
-                    array($attribute['alias'], new Reference($id))
+                    [$attribute['alias'], new Reference($id)]
                 );
             }
         }

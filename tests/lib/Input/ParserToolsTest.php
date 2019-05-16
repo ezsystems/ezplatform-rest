@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a ParserToolsTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Input;
 
 use EzSystems\EzPlatformRest\Input\ParserTools;
@@ -20,11 +19,11 @@ class ParserToolsTest extends TestCase
 
         $this->assertTrue(
             $parserTools->isEmbeddedObject(
-                array(
+                [
                     '_href' => '/foo/bar',
                     '_media-type' => 'application/some-type',
                     'id' => 23,
-                )
+                ]
             )
         );
     }
@@ -35,10 +34,10 @@ class ParserToolsTest extends TestCase
 
         $this->assertFalse(
             $parserTools->isEmbeddedObject(
-                array(
+                [
                     '_href' => '/foo/bar',
                     '_media-type' => 'application/some-type',
-                )
+                ]
             )
         );
     }
@@ -55,11 +54,11 @@ class ParserToolsTest extends TestCase
                 $this->equalTo('application/my-type')
             );
 
-        $parsingInput = array(
+        $parsingInput = [
             '_href' => '/foo/bar',
             '_media-type' => 'application/my-type',
-            'someContent' => array(),
-        );
+            'someContent' => [],
+        ];
 
         $this->assertEquals(
             '/foo/bar',
@@ -75,11 +74,11 @@ class ParserToolsTest extends TestCase
         $dispatcherMock->expects($this->never())
             ->method('parse');
 
-        $parsingInput = array(
+        $parsingInput = [
             '_href' => '/foo/bar',
             '_media-type' => 'application/my-type',
             '#someTextContent' => 'foo',
-        );
+        ];
 
         $this->assertEquals(
             '/foo/bar',

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentService;
@@ -22,18 +21,18 @@ class VersionUpdateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'initialLanguageCode' => 'eng-US',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'subject',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
             '__url' => '/content/objects/42/versions/1',
-        );
+        ];
 
         $VersionUpdate = $this->getParser();
         $result = $VersionUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -67,11 +66,11 @@ class VersionUpdateTest extends BaseTest
      */
     public function testParseExceptionOnInvalidFields()
     {
-        $inputArray = array(
+        $inputArray = [
             'initialLanguageCode' => 'eng-US',
-            'fields' => array(),
+            'fields' => [],
             '__url' => '/content/objects/42/versions/1',
-        );
+        ];
 
         $VersionUpdate = $this->getParser();
         $VersionUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -85,17 +84,17 @@ class VersionUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
-        $inputArray = array(
+        $inputArray = [
             'initialLanguageCode' => 'eng-US',
-            'fields' => array(
-                'field' => array(
-                    array(
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
+            'fields' => [
+                'field' => [
+                    [
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
             '__url' => '/content/objects/42/versions/1',
-        );
+        ];
 
         $VersionUpdate = $this->getParser();
         $VersionUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -109,17 +108,17 @@ class VersionUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingFieldValue()
     {
-        $inputArray = array(
+        $inputArray = [
             'initialLanguageCode' => 'eng-US',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'subject',
-                    ),
-                ),
-            ),
+                    ],
+                ],
+            ],
             '__url' => '/content/objects/42/versions/1',
-        );
+        ];
 
         $VersionUpdate = $this->getParser();
         $VersionUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -146,20 +145,20 @@ class VersionUpdateTest extends BaseTest
     private function getFieldTypeParserMock()
     {
         $fieldTypeParserMock = $this->getMockBuilder(FieldTypeParser::class)
-            ->setMethods(array())
+            ->setMethods([])
             ->disableOriginalConstructor()
             ->setConstructorArgs(
-                array(
+                [
                     $this->getContentServiceMock(),
                     $this->createMock(ContentTypeService::class),
                     $this->createMock(FieldTypeService::class),
-                )
+                ]
             )
             ->getMock();
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseFieldValue')
-            ->with(42, 'subject', array())
+            ->with(42, 'subject', [])
             ->will($this->returnValue('foo'));
 
         return $fieldTypeParserMock;
@@ -185,8 +184,8 @@ class VersionUpdateTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/content/objects/42/versions/1', 'contentId', 42),
-        );
+        return [
+            ['/content/objects/42/versions/1', 'contentId', 42],
+        ];
     }
 }

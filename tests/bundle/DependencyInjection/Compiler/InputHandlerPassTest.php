@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the InputHandlerPassTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
 
 use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\InputHandlerPass;
@@ -19,14 +18,14 @@ class InputHandlerPassTest extends TestCase
     public function testProcess()
     {
         $visitorDefinition = new Definition();
-        $visitorDefinition->addTag('ezpublish_rest.input.handler', array('format' => 'test'));
+        $visitorDefinition->addTag('ezpublish_rest.input.handler', ['format' => 'test']);
 
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->addDefinitions(
-            array(
+            [
                 'ezpublish_rest.input.dispatcher' => new Definition(),
                 'ezpublish_rest.input.handler.test' => $visitorDefinition,
-            )
+            ]
         );
 
         $compilerPass = new InputHandlerPass();

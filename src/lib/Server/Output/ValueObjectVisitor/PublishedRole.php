@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the PublishedRole ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -32,7 +31,7 @@ class PublishedRole extends Role
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadRole',
-                array('roleId' => $data->role->id)
+                ['roleId' => $data->role->id]
             )
         );
         $visitor->setStatus(204);

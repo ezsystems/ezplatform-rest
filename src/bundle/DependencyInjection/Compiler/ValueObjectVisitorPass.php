@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ValueObjectVisitorPass class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -34,7 +33,7 @@ class ValueObjectVisitorPass implements CompilerPassInterface
 
                 $definition->addMethodCall(
                     'addVisitor',
-                    array($attribute['type'], new Reference($id))
+                    [$attribute['type'], new Reference($id)]
                 );
             }
         }

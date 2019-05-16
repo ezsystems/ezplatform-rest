@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the SessionInputTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\LocationQuery;
@@ -20,10 +19,10 @@ class ViewInputOneDotOneTest extends BaseTest
      */
     public function testParseContentQuery()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Query identifier',
             'ContentQuery' => [],
-        );
+        ];
 
         $parser = $this->getParser();
         $parsingDispatcher = $this->getParsingDispatcherMock();
@@ -47,10 +46,10 @@ class ViewInputOneDotOneTest extends BaseTest
      */
     public function testParseLocationQuery()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Query identifier',
             'LocationQuery' => [],
-        );
+        ];
 
         $parser = $this->getParser();
         $parsingDispatcher = $this->getParsingDispatcherMock();

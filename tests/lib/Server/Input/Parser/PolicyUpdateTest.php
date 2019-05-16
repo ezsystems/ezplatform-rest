@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\User\Limitation;
@@ -20,28 +19,28 @@ class PolicyUpdateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
-            'limitations' => array(
-                'limitation' => array(
-                    array(
+        $inputArray = [
+            'limitations' => [
+                'limitation' => [
+                    [
                         '_identifier' => 'Class',
-                        'values' => array(
-                            'ref' => array(
-                                array(
+                        'values' => [
+                            'ref' => [
+                                [
                                     '_href' => 1,
-                                ),
-                                array(
+                                ],
+                                [
                                     '_href' => 2,
-                                ),
-                                array(
+                                ],
+                                [
                                     '_href' => 3,
-                                ),
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        );
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
 
         $policyUpdate = $this->getParser();
         $result = $policyUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -79,7 +78,7 @@ class PolicyUpdateTest extends BaseTest
         );
 
         $this->assertEquals(
-            array(1, 2, 3),
+            [1, 2, 3],
             $parsedLimitations['Class']->limitationValues,
             'Limitation values not created correctly.'
         );
@@ -93,27 +92,27 @@ class PolicyUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
     {
-        $inputArray = array(
-            'limitations' => array(
-                'limitation' => array(
-                    array(
-                        'values' => array(
-                            'ref' => array(
-                                array(
+        $inputArray = [
+            'limitations' => [
+                'limitation' => [
+                    [
+                        'values' => [
+                            'ref' => [
+                                [
                                     '_href' => 1,
-                                ),
-                                array(
+                                ],
+                                [
                                     '_href' => 2,
-                                ),
-                                array(
+                                ],
+                                [
                                     '_href' => 3,
-                                ),
-                            ),
-                        ),
-                    ),
-                ),
-            ),
-        );
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+        ];
 
         $policyUpdate = $this->getParser();
         $policyUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -127,15 +126,15 @@ class PolicyUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingLimitationValues()
     {
-        $inputArray = array(
-            'limitations' => array(
-                'limitation' => array(
-                    array(
+        $inputArray = [
+            'limitations' => [
+                'limitation' => [
+                    [
                         '_identifier' => 'Class',
-                    ),
-                ),
-            ),
-        );
+                    ],
+                ],
+            ],
+        ];
 
         $policyUpdate = $this->getParser();
         $policyUpdate->parse($inputArray, $this->getParsingDispatcherMock());

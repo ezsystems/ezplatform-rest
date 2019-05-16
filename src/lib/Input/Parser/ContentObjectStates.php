@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ContentObjectStates parser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Input\Parser;
 
 use EzSystems\EzPlatformRest\Input\BaseParser;
@@ -35,7 +34,7 @@ class ContentObjectStates extends BaseParser
             throw new Exceptions\Parser("Missing or invalid 'ObjectState' elements for ContentObjectStates.");
         }
 
-        $states = array();
+        $states = [];
         foreach ($data['ObjectState'] as $rawStateData) {
             if (!array_key_exists('_href', $rawStateData)) {
                 throw new Exceptions\Parser("Missing '_href' attribute for ObjectState.");
@@ -43,9 +42,9 @@ class ContentObjectStates extends BaseParser
 
             $states[] = new RestObjectState(
                 new ObjectState(
-                    array(
+                    [
                         'id' => $this->requestParser->parseHref($rawStateData['_href'], 'objectStateId'),
-                    )
+                    ]
                 ),
                 $this->requestParser->parseHref($rawStateData['_href'], 'objectStateGroupId')
             );

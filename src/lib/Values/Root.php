@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Root class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Values;
 
 use EzSystems\EzPlatformRest\Value as RestValue;
@@ -20,7 +19,7 @@ class Root extends RestValue
      */
     protected $resources;
 
-    public function __construct(array $resources = array())
+    public function __construct(array $resources = [])
     {
         $this->resources = $resources;
     }

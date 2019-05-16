@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ValueObjectVisitorPassTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
 
 use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\ValueObjectVisitorPass;
@@ -19,14 +18,14 @@ class ValueObjectVisitorPassTest extends TestCase
     public function testProcess()
     {
         $visitorDefinition = new Definition();
-        $visitorDefinition->addTag('ezpublish_rest.output.value_object_visitor', array('type' => 'test'));
+        $visitorDefinition->addTag('ezpublish_rest.output.value_object_visitor', ['type' => 'test']);
 
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->addDefinitions(
-            array(
+            [
                 'ezpublish_rest.output.value_object_visitor.dispatcher' => new Definition(),
                 'ezpublish_rest.output.value_object_visitor.test' => $visitorDefinition,
-            )
+            ]
         );
 
         $compilerPass = new ValueObjectVisitorPass();

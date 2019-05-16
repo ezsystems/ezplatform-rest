@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Section ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Values\Content as ApiValues;
@@ -62,7 +61,7 @@ class RestExecutedView extends ValueObjectVisitor
 
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_views_load', array('viewId' => $data->identifier))
+            $this->router->generate('ezpublish_rest_views_load', ['viewId' => $data->identifier])
         );
         $generator->endAttribute('href');
 
@@ -78,7 +77,7 @@ class RestExecutedView extends ValueObjectVisitor
         $generator->startObjectElement('Result', 'ViewResult');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_views_load_results', array('viewId' => $data->identifier))
+            $this->router->generate('ezpublish_rest_views_load_results', ['viewId' => $data->identifier])
         );
         $generator->endAttribute('href');
 

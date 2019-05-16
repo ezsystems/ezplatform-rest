@@ -1,13 +1,10 @@
 <?php
 
 /**
- * This file contains the AcceptHeaderVisitorDispatcher class.
- *
- * @version $Revision$
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\View;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -26,7 +23,7 @@ class AcceptHeaderVisitorDispatcher
      *
      * @var array
      */
-    protected $mapping = array();
+    protected $mapping = [];
 
     /**
      * Adds view handler.

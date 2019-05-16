@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -28,7 +27,7 @@ class TrashTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $trash = new Trash(array(), '/content/trash');
+        $trash = new Trash([], '/content/trash');
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -53,9 +52,9 @@ class TrashTest extends ValueObjectVisitorBaseTest
     public function testResultContainsTrashElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'Trash',
-            ),
+            ],
             $result,
             'Invalid <Trash> element.',
             false
@@ -72,13 +71,13 @@ class TrashTest extends ValueObjectVisitorBaseTest
     public function testResultContainsTrashAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'Trash',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.Trash+xml',
                     'href' => '/content/trash',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <Trash> attributes.',
             false
@@ -96,7 +95,7 @@ class TrashTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $trashList = new Trash(
-            array(
+            [
                 new RestTrashItem(
                     new Content\TrashItem(),
                     // Dummy value for ChildCount
@@ -107,7 +106,7 @@ class TrashTest extends ValueObjectVisitorBaseTest
                     // Dummy value for ChildCount
                     0
                 ),
-            ),
+            ],
             '/content/trash'
         );
 

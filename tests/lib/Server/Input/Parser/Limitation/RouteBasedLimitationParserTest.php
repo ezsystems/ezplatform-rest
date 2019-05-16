@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Limitation;
@@ -30,6 +32,7 @@ class RouteBasedLimitationParserTest extends BaseTest
 
     /**
      * Must return the tested parser object.
+     *
      * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
      */
     protected function internalGetParser()
@@ -39,8 +42,8 @@ class RouteBasedLimitationParserTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/content/sections/42', 'sectionId', 42),
-        );
+        return [
+            ['/content/sections/42', 'sectionId', 42],
+        ];
     }
 }

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -28,7 +27,7 @@ class ContentTypeInfoListTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $contentTypeInfoList = new ContentTypeInfoList(array(), '/content/typegroups/2/types');
+        $contentTypeInfoList = new ContentTypeInfoList([], '/content/typegroups/2/types');
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -53,9 +52,9 @@ class ContentTypeInfoListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsContentTypeInfoListElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ContentTypeInfoList',
-            ),
+            ],
             $result,
             'Invalid <ContentTypeInfoList> element.',
             false
@@ -72,13 +71,13 @@ class ContentTypeInfoListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsContentTypeInfoListAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ContentTypeInfoList',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.ContentTypeInfoList+xml',
                     'href' => '/content/typegroups/2/types',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ContentTypeInfoList> attributes.',
             false
@@ -96,18 +95,18 @@ class ContentTypeInfoListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $contentTypeInfoList = new ContentTypeInfoList(
-            array(
+            [
                 new ContentType\ContentType(
-                    array(
-                        'fieldDefinitions' => array(),
-                    )
+                    [
+                        'fieldDefinitions' => [],
+                    ]
                 ),
                 new ContentType\ContentType(
-                    array(
-                        'fieldDefinitions' => array(),
-                    )
+                    [
+                        'fieldDefinitions' => [],
+                    ]
                 ),
-            ),
+            ],
             '/content/typegroups/2/types'
         );
 

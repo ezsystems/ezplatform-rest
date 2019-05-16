@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ContentObjectStates ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -38,10 +37,10 @@ class ContentObjectStates extends ValueObjectVisitor
                 'href',
                 $this->router->generate(
                     'ezpublish_rest_loadObjectState',
-                    array(
+                    [
                         'objectStateGroupId' => $state->groupId,
                         'objectStateId' => $state->objectState->id,
-                    )
+                    ]
                 )
             );
             $generator->endAttribute('href');

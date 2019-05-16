@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the UserUpdate parser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 
 use EzSystems\EzPlatformRest\Input\BaseParser;
@@ -76,7 +75,7 @@ class UserUpdate extends BaseParser
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
-        $parsedData = array();
+        $parsedData = [];
 
         //@todo XSD has a login element, but it's not possible to update login
 
@@ -115,7 +114,7 @@ class UserUpdate extends BaseParser
                 throw new Exceptions\Parser("Invalid 'fields' element for UserUpdate.");
             }
 
-            $parsedData['fields'] = array();
+            $parsedData['fields'] = [];
             foreach ($data['fields']['field'] as $fieldData) {
                 if (!array_key_exists('fieldDefinitionIdentifier', $fieldData)) {
                     throw new Exceptions\Parser("Missing 'fieldDefinitionIdentifier' element in field data for UserUpdate.");
@@ -132,10 +131,10 @@ class UserUpdate extends BaseParser
                     $languageCode = $fieldData['languageCode'];
                 }
 
-                $parsedData['fields'][$fieldData['fieldDefinitionIdentifier']] = array(
+                $parsedData['fields'][$fieldData['fieldDefinitionIdentifier']] = [
                     'fieldValue' => $fieldValue,
                     'languageCode' => $languageCode,
-                );
+                ];
             }
         }
 

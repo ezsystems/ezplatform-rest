@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ContentTypeGroupRefList ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -33,9 +32,9 @@ class ContentTypeGroupRefList extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_listContentTypesForGroup',
-                array(
+                [
                     'contentTypeGroupId' => $data->contentType->id,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');
@@ -50,9 +49,9 @@ class ContentTypeGroupRefList extends ValueObjectVisitor
                 'href',
                 $this->router->generate(
                     'ezpublish_rest_loadContentTypeGroup',
-                    array(
+                    [
                         'contentTypeGroupId' => $contentTypeGroup->id,
-                    )
+                    ]
                 )
             );
             $generator->endAttribute('href');
@@ -65,10 +64,10 @@ class ContentTypeGroupRefList extends ValueObjectVisitor
                     'href',
                     $this->router->generate(
                         'ezpublish_rest_unlinkContentTypeFromGroup',
-                        array(
+                        [
                             'contentTypeId' => $data->contentType->id,
                             'contentTypeGroupId' => $contentTypeGroup->id,
-                        )
+                        ]
                     )
                 );
                 $generator->endAttribute('href');

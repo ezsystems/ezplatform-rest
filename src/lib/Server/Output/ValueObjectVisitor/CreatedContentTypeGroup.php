@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the CreatedContentTypeGroup ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
@@ -32,7 +31,7 @@ class CreatedContentTypeGroup extends ContentTypeGroup
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadContentTypeGroup',
-                array('contentTypeGroupId' => $data->contentTypeGroup->id)
+                ['contentTypeGroupId' => $data->contentTypeGroup->id]
             )
         );
         $visitor->setStatus(201);

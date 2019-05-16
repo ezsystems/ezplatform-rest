@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RestConfigurationProviderTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\CorsOptions;
 
 use EzSystems\EzPlatformRestBundle\CorsOptions\RestProvider;
@@ -23,16 +22,16 @@ class RestProviderTest extends TestCase
      * Return value expectation for RequestMatcher::matchRequest
      * Set to false to expect Router::match() never to be called, or to an exception to have it throw one.
      */
-    protected $matchRequestResult = array();
+    protected $matchRequestResult = [];
 
     public function testGetOptions()
     {
-        $this->matchRequestResult = array('allowedMethods' => 'GET,POST,DELETE');
+        $this->matchRequestResult = ['allowedMethods' => 'GET,POST,DELETE'];
 
         self::assertEquals(
-            array(
-                'allow_methods' => array('GET', 'POST', 'DELETE'),
-            ),
+            [
+                'allow_methods' => ['GET', 'POST', 'DELETE'],
+            ],
             $this->getProvider()->getOptions($this->createRequest())
         );
     }
@@ -41,20 +40,20 @@ class RestProviderTest extends TestCase
     {
         $this->matchRequestResult = new ResourceNotFoundException();
         self::assertEquals(
-            array(
-                'allow_methods' => array(),
-            ),
+            [
+                'allow_methods' => [],
+            ],
             $this->getProvider()->getOptions($this->createRequest())
         );
     }
 
     public function testGetOptionsMethodNotAllowed()
     {
-        $this->matchRequestResult = new MethodNotAllowedException(array('OPTIONS'));
+        $this->matchRequestResult = new MethodNotAllowedException(['OPTIONS']);
         self::assertEquals(
-            array(
-                'allow_methods' => array(),
-            ),
+            [
+                'allow_methods' => [],
+            ],
             $this->getProvider()->getOptions($this->createRequest())
         );
     }
@@ -70,11 +69,11 @@ class RestProviderTest extends TestCase
 
     public function testGetOptionsNoMethods()
     {
-        $this->matchRequestResult = array();
+        $this->matchRequestResult = [];
         self::assertEquals(
-            array(
-                'allow_methods' => array(),
-            ),
+            [
+                'allow_methods' => [],
+            ],
             $this->getProvider()->getOptions($this->createRequest())
         );
     }
@@ -83,7 +82,7 @@ class RestProviderTest extends TestCase
     {
         $this->matchRequestResult = false;
         self::assertEquals(
-            array(),
+            [],
             $this->getProvider()->getOptions($this->createRequest(false))
         );
     }

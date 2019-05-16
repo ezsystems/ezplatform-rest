@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ObjectStateService;
@@ -19,26 +18,26 @@ class ObjectStateUpdateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'test-state',
             'defaultLanguageCode' => 'eng-GB',
-            'names' => array(
-                'value' => array(
-                    array(
+            'names' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-GB',
                         '#text' => 'Test state',
-                    ),
-                ),
-            ),
-            'descriptions' => array(
-                'value' => array(
-                    array(
+                    ],
+                ],
+            ],
+            'descriptions' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-GB',
                         '#text' => 'Test description',
-                    ),
-                ),
-            ),
-        );
+                    ],
+                ],
+            ],
+        ];
 
         $objectStateUpdate = $this->getParser();
         $result = $objectStateUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -62,13 +61,13 @@ class ObjectStateUpdateTest extends BaseTest
         );
 
         $this->assertEquals(
-            array('eng-GB' => 'Test state'),
+            ['eng-GB' => 'Test state'],
             $result->names,
             'ObjectStateUpdateStruct names property not created correctly.'
         );
 
         $this->assertEquals(
-            array('eng-GB' => 'Test description'),
+            ['eng-GB' => 'Test description'],
             $result->descriptions,
             'ObjectStateUpdateStruct descriptions property not created correctly.'
         );
@@ -82,19 +81,19 @@ class ObjectStateUpdateTest extends BaseTest
      */
     public function testParseExceptionOnInvalidNames()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'test-state',
             'defaultLanguageCode' => 'eng-GB',
-            'names' => array(),
-            'descriptions' => array(
-                'value' => array(
-                    array(
+            'names' => [],
+            'descriptions' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-GB',
                         '#text' => 'Test description',
-                    ),
-                ),
-            ),
-        );
+                    ],
+                ],
+            ],
+        ];
 
         $objectStateUpdate = $this->getParser();
         $objectStateUpdate->parse($inputArray, $this->getParsingDispatcherMock());

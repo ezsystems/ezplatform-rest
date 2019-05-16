@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ContentType controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
@@ -58,16 +57,16 @@ class ContentType extends RestController
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
 
         try {
             return new Values\CreatedContentTypeGroup(
-                array(
+                [
                     'contentTypeGroup' => $this->contentTypeService->createContentTypeGroup($createStruct),
-                )
+                ]
             );
         } catch (InvalidArgumentException $e) {
             throw new ForbiddenException($e->getMessage());
@@ -87,7 +86,7 @@ class ContentType extends RestController
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -163,9 +162,9 @@ class ContentType extends RestController
             return new Values\TemporaryRedirect(
                 $this->router->generate(
                     'ezpublish_rest_loadContentTypeGroup',
-                    array(
+                    [
                         'contentTypeGroupId' => $contentTypeGroup->id,
-                    )
+                    ]
                 )
             );
         }
@@ -212,21 +211,21 @@ class ContentType extends RestController
     public function listContentTypes(Request $request)
     {
         if ($this->getMediaType($request) === 'application/vnd.ez.api.contenttypelist') {
-            $return = new Values\ContentTypeList(array(), $request->getPathInfo());
+            $return = new Values\ContentTypeList([], $request->getPathInfo());
         } else {
-            $return = new Values\ContentTypeInfoList(array(), $request->getPathInfo());
+            $return = new Values\ContentTypeInfoList([], $request->getPathInfo());
         }
 
         if ($request->query->has('identifier')) {
-            $return->contentTypes = array($this->loadContentTypeByIdentifier($request));
+            $return->contentTypes = [$this->loadContentTypeByIdentifier($request)];
 
             return $return;
         }
 
         if ($request->query->has('remoteId')) {
-            $return->contentTypes = array(
+            $return->contentTypes = [
                 $this->loadContentTypeByRemoteId($request),
-            );
+            ];
 
             return $return;
         }
@@ -295,15 +294,15 @@ class ContentType extends RestController
             $contentTypeDraft = $this->contentTypeService->createContentType(
                 $this->inputDispatcher->parse(
                     new Message(
-                        array(
+                        [
                             'Content-Type' => $request->headers->get('Content-Type'),
                             // @todo Needs refactoring! Temporary solution so parser has access to get parameters
                             '__publish' => $publish,
-                        ),
+                        ],
                         $request->getContent()
                     )
                 ),
-                array($contentTypeGroup)
+                [$contentTypeGroup]
             );
         } catch (InvalidArgumentException $e) {
             throw new ForbiddenException($e->getMessage());
@@ -321,22 +320,22 @@ class ContentType extends RestController
             $contentType = $this->contentTypeService->loadContentType($contentTypeDraft->id, Language::ALL);
 
             return new Values\CreatedContentType(
-                array(
+                [
                     'contentType' => new Values\RestContentType(
                         $contentType,
                         $contentType->getFieldDefinitions()
                     ),
-                )
+                ]
             );
         }
 
         return new Values\CreatedContentType(
-            array(
+            [
                 'contentType' => new Values\RestContentType(
                     $contentTypeDraft,
                     $contentTypeDraft->getFieldDefinitions()
                 ),
-            )
+            ]
         );
     }
 
@@ -357,7 +356,7 @@ class ContentType extends RestController
         return new Values\ResourceCreated(
             $this->router->generate(
                 'ezpublish_rest_loadContentType',
-                array('contentTypeId' => $copiedContentType->id)
+                ['contentTypeId' => $copiedContentType->id]
             )
         );
     }
@@ -385,9 +384,9 @@ class ContentType extends RestController
 
         $contentTypeUpdateStruct = $this->inputDispatcher->parse(
             new Message(
-                array(
+                [
                     'Content-Type' => $request->headers->get('Content-Type'),
-                ),
+                ],
                 $request->getContent()
             )
         );
@@ -402,14 +401,14 @@ class ContentType extends RestController
         }
 
         return new Values\CreatedContentType(
-            array(
+            [
                 'contentType' => new Values\RestContentType(
                     // Reload the content type draft to get the updated values
                     $this->contentTypeService->loadContentTypeDraft(
                         $contentTypeDraft->id
                     )
                 ),
-            )
+            ]
         );
     }
 
@@ -444,9 +443,9 @@ class ContentType extends RestController
         $contentTypeDraft = $this->contentTypeService->loadContentTypeDraft($contentTypeId);
         $contentTypeUpdateStruct = $this->inputDispatcher->parse(
             new Message(
-                array(
+                [
                     'Content-Type' => $request->headers->get('Content-Type'),
-                ),
+                ],
                 $request->getContent()
             )
         );
@@ -483,9 +482,9 @@ class ContentType extends RestController
         $contentTypeDraft = $this->contentTypeService->loadContentTypeDraft($contentTypeId);
         $fieldDefinitionCreate = $this->inputDispatcher->parse(
             new Message(
-                array(
+                [
                     'Content-Type' => $request->headers->get('Content-Type'),
-                ),
+                ],
                 $request->getContent()
             )
         );
@@ -507,9 +506,9 @@ class ContentType extends RestController
         foreach ($updatedDraft->getFieldDefinitions() as $fieldDefinition) {
             if ($fieldDefinition->identifier == $fieldDefinitionCreate->identifier) {
                 return new Values\CreatedFieldDefinition(
-                    array(
+                    [
                         'fieldDefinition' => new Values\RestFieldDefinition($updatedDraft, $fieldDefinition),
-                    )
+                    ]
                 );
             }
         }
@@ -621,11 +620,11 @@ class ContentType extends RestController
         $contentTypeDraft = $this->contentTypeService->loadContentTypeDraft($contentTypeId);
         $fieldDefinitionUpdate = $this->inputDispatcher->parse(
             new Message(
-                array(
+                [
                     'Content-Type' => $request->headers->get('Content-Type'),
                     // @todo Needs refactoring! Temporary solution so parser has access to URL
                     'Url' => $request->getPathInfo(),
-                ),
+                ],
                 $request->getContent()
             )
         );
@@ -884,11 +883,11 @@ class ContentType extends RestController
     private function mapToGroupUpdateStruct(ContentTypeGroupCreateStruct $createStruct)
     {
         return new ContentTypeGroupUpdateStruct(
-            array(
+            [
                 'identifier' => $createStruct->identifier,
                 'modifierId' => $createStruct->creatorId,
                 'modificationDate' => $createStruct->creationDate,
-            )
+            ]
         );
     }
 
@@ -958,7 +957,7 @@ class ContentType extends RestController
      */
     protected function getContentTypeList()
     {
-        $contentTypes = array();
+        $contentTypes = [];
         foreach ($this->contentTypeService->loadContentTypeGroups() as $contentTypeGroup) {
             $contentTypes = array_merge(
                 $contentTypes,

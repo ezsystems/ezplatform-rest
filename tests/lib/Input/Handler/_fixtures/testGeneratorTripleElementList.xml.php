@@ -1,23 +1,22 @@
 <?php
 
-return array(
-  'elementList' =>
-  array(
+/**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
+ */
+return [
+  'elementList' => [
     '_media-type' => 'application/vnd.ez.api.elementList+xml',
-    'element' =>
-    array(
-      0 =>
-      array(
+    'element' => [
+      0 => [
         '_media-type' => 'application/vnd.ez.api.element+xml',
-      ),
-      1 =>
-      array(
+      ],
+      1 => [
         '_media-type' => 'application/vnd.ez.api.element+xml',
-      ),
-      2 =>
-      array(
+      ],
+      2 => [
         '_media-type' => 'application/vnd.ez.api.element+xml',
-      ),
-    ),
-  ),
-);
+      ],
+    ],
+  ],
+];

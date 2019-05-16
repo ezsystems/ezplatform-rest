@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the RelationListProcessor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
 use eZ\Publish\API\Repository\LocationService;
@@ -16,19 +15,19 @@ use Symfony\Component\Routing\RouterInterface;
 
 class RelationListProcessorTest extends TestCase
 {
-    protected $constants = array(
+    protected $constants = [
         'SELECTION_BROWSE',
         'SELECTION_DROPDOWN',
-    );
+    ];
 
     public function fieldSettingsHashes()
     {
         return array_map(
             function ($constantName) {
-                return array(
-                    array('selectionMethod' => $constantName),
-                    array('selectionMethod' => constant("eZ\\Publish\\Core\\FieldType\\RelationList\\Type::{$constantName}")),
-                );
+                return [
+                    ['selectionMethod' => $constantName],
+                    ['selectionMethod' => constant("eZ\\Publish\\Core\\FieldType\\RelationList\\Type::{$constantName}")],
+                ];
             },
             $this->constants
         );

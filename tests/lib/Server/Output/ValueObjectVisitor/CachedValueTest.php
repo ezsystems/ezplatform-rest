@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
@@ -21,11 +20,11 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
 {
     protected $options;
 
-    protected $defaultOptions = array(
+    protected $defaultOptions = [
         'content.view_cache' => true,
         'content.ttl_cache' => true,
         'content.default_ttl' => 60,
-    );
+    ];
 
     /**
      * @var Request
@@ -59,7 +58,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
         $responseMock->expects($this->once())->method('setSharedMaxAge')->with($this->defaultOptions['content.default_ttl']);
         $responseMock->expects($this->at(3))->method('setVary')->with('X-User-Hash', false);
 
-        $result = $this->visit(new CachedValue(new stdClass(), array('locationId' => 'testLocationId')));
+        $result = $this->visit(new CachedValue(new stdClass(), ['locationId' => 'testLocationId']));
 
         self::assertNotNull($result);
     }
@@ -96,7 +95,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     public function testVisitViewCacheDisabled()
     {
         // disable caching globally
-        $this->options = array_merge($this->defaultOptions, array('content.view_cache' => false));
+        $this->options = array_merge($this->defaultOptions, ['content.view_cache' => false]);
 
         $this->getResponseMock()->expects($this->never())->method('setPublic');
 
@@ -108,7 +107,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     public function testVisitCacheTTLCacheDisabled()
     {
         // disable caching globally
-        $this->options = array_merge($this->defaultOptions, array('content.ttl_cache' => false));
+        $this->options = array_merge($this->defaultOptions, ['content.ttl_cache' => false]);
 
         $responseMock = $this->getResponseMock();
         $responseMock->expects($this->once())->method('setPublic');

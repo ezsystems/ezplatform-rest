@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the URLAlias ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -61,7 +60,7 @@ class URLAlias extends ValueObjectVisitor
     {
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadURLAlias', array('urlAliasId' => $data->id))
+            $this->router->generate('ezpublish_rest_loadURLAlias', ['urlAliasId' => $data->id])
         );
         $generator->endAttribute('href');
 
@@ -75,7 +74,7 @@ class URLAlias extends ValueObjectVisitor
             $generator->startObjectElement('location', 'Location');
             $generator->startAttribute(
                 'href',
-                $this->router->generate('ezpublish_rest_loadLocation', array('locationPath' => $data->destination))
+                $this->router->generate('ezpublish_rest_loadLocation', ['locationPath' => $data->destination])
             );
             $generator->endAttribute('href');
             $generator->endObjectElement('location');

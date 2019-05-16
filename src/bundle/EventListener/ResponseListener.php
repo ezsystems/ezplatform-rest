@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the ResponseListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\EventListener;
 
 use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
@@ -39,11 +38,11 @@ class ResponseListener implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return array(
+        return [
             KernelEvents::VIEW => 'onKernelResultView',
             // Must happen BEFORE the Core ExceptionListener.
             KernelEvents::EXCEPTION => ['onKernelExceptionView', 20],
-        );
+        ];
     }
 
     /**

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the Parsing Dispatcher class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Input;
 
 use EzSystems\EzPlatformRest\Exceptions;
@@ -31,14 +30,14 @@ class ParsingDispatcher
      *
      * @var \EzSystems\EzPlatformRest\Input\Parser[]
      */
-    protected $parsers = array();
+    protected $parsers = [];
 
     /**
      * Construct from optional parsers array.
      *
      * @param array $parsers
      */
-    public function __construct(array $parsers = array())
+    public function __construct(array $parsers = [])
     {
         foreach ($parsers as $mediaType => $parser) {
             $this->addParser($mediaType, $parser);

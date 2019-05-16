@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the TimeProcessorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
 
 use EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor;
@@ -13,19 +12,19 @@ use PHPUnit\Framework\TestCase;
 
 class TimeProcessorTest extends TestCase
 {
-    protected $constants = array(
+    protected $constants = [
         'DEFAULT_EMPTY',
         'DEFAULT_CURRENT_TIME',
-    );
+    ];
 
     public function fieldSettingsHashes()
     {
         return array_map(
             function ($constantName) {
-                return array(
-                    array('defaultType' => $constantName),
-                    array('defaultType' => constant("eZ\\Publish\\Core\\FieldType\\Time\\Type::{$constantName}")),
-                );
+                return [
+                    ['defaultType' => $constantName],
+                    ['defaultType' => constant("eZ\\Publish\\Core\\FieldType\\Time\\Type::{$constantName}")],
+                ];
             },
             $this->constants
         );

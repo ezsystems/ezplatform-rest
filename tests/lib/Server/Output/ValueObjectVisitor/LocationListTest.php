@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -27,7 +26,7 @@ class LocationListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         // @todo coverage test with a list of values
-        $locationList = new LocationList(array(), '/content/objects/42/locations');
+        $locationList = new LocationList([], '/content/objects/42/locations');
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -52,9 +51,9 @@ class LocationListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsLocationListElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'LocationList',
-            ),
+            ],
             $result,
             'Invalid <LocationList> element.',
             false
@@ -71,13 +70,13 @@ class LocationListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsLocationListAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'LocationList',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.LocationList+xml',
                     'href' => '/content/objects/42/locations',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <LocationList> attributes.',
             false

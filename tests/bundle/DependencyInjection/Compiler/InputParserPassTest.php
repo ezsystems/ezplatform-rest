@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the InputParserPassTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
 
 use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\InputParserPass;
@@ -19,14 +18,14 @@ class InputParserPassTest extends TestCase
     public function testProcess()
     {
         $visitorDefinition = new Definition();
-        $visitorDefinition->addTag('ezpublish_rest.input.parser', array('mediaType' => 'application/vnd.ez.api.UnitTest'));
+        $visitorDefinition->addTag('ezpublish_rest.input.parser', ['mediaType' => 'application/vnd.ez.api.UnitTest']);
 
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->addDefinitions(
-            array(
+            [
                 'ezpublish_rest.input.parsing_dispatcher' => new Definition(),
                 'ezpublish_rest.input.parser.unit_test' => $visitorDefinition,
-            )
+            ]
         );
 
         $compilerPass = new InputParserPass();

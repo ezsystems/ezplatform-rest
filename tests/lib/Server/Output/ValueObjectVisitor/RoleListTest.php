@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Values\User\Role;
@@ -28,7 +27,7 @@ class RoleListTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $roleList = new RoleList(array(), '/user/roles');
+        $roleList = new RoleList([], '/user/roles');
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -53,9 +52,9 @@ class RoleListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsRoleListElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'RoleList',
-            ),
+            ],
             $result,
             'Invalid <RoleList> element.',
             false
@@ -72,13 +71,13 @@ class RoleListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsRoleListAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'RoleList',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.RoleList+xml',
                     'href' => '/user/roles',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <RoleList> attributes.',
             false
@@ -96,10 +95,10 @@ class RoleListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $roleList = new RoleList(
-            array(
+            [
                 new User\Role(),
                 new User\Role(),
-            ),
+            ],
             '/user/roles'
         );
 

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing the LogicalOr Criterion parser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
 
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
@@ -38,7 +37,7 @@ class LogicalOr extends LogicalOperator
             throw new Exceptions\Parser('Invalid <' . static::TAG_NAME . '> format');
         }
 
-        $criteria = array();
+        $criteria = [];
 
         $flattenedCriteriaElements = $this->getFlattenedCriteriaData($data[static::TAG_NAME]);
         foreach ($flattenedCriteriaElements as $criterionElement) {

@@ -1,11 +1,10 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
@@ -36,7 +35,7 @@ class FieldDefinitionListTest extends ValueObjectVisitorBaseTest
 
         $this->addRouteExpectation(
             'ezpublish_rest_loadContentTypeFieldDefinitionList',
-            array('contentTypeId' => $fieldDefinitionList->contentType->id),
+            ['contentTypeId' => $fieldDefinitionList->contentType->id],
             "/content/types/{$fieldDefinitionList->contentType->id}/fieldDefinitions"
         );
 
@@ -60,33 +59,33 @@ class FieldDefinitionListTest extends ValueObjectVisitorBaseTest
     {
         return new Server\Values\FieldDefinitionList(
             new Values\ContentType\ContentType(
-                array(
+                [
                     'id' => 'contentTypeId',
                     'status' => Values\ContentType\ContentType::STATUS_DEFINED,
-                    'fieldDefinitions' => array(),
-                )
+                    'fieldDefinitions' => [],
+                ]
             ),
-            array(
+            [
                 new Values\ContentType\FieldDefinition(
-                    array('id' => 'fieldDefinitionId_1')
+                    ['id' => 'fieldDefinitionId_1']
                 ),
                 new Values\ContentType\FieldDefinition(
-                    array('id' => 'fieldDefinitionId_2')
+                    ['id' => 'fieldDefinitionId_2']
                 ),
-            )
+            ]
         );
     }
 
     public function provideXpathAssertions()
     {
-        return array(
-            array(
+        return [
+            [
                 '/FieldDefinitions[@href="/content/types/contentTypeId/fieldDefinitions"]',
-            ),
-            array(
+            ],
+            [
                 '/FieldDefinitions[@media-type="application/vnd.ez.api.FieldDefinitionList+xml"]',
-            ),
-        );
+            ],
+        ];
     }
 
     /**
