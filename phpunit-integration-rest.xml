@@ -20,10 +20,6 @@
   <filter>
     <whitelist>
       <directory>src</directory>
-      <exclude>
-        <directory>tests/bundle/</directory>
-        <directory>tests/lib/</directory>
-      </exclude>
     </whitelist>
   </filter>
 </phpunit>
