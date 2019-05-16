@@ -5,9 +5,14 @@
     "license": "GPL-2.0-only",
     "autoload": {
         "psr-4": {
-            "eZ\\Bundle\\EzPublishRestBundle\\": "eZ/Bundle/EzPublishRestBundle/",
-            "eZ\\Publish\\Core\\REST\\Common\\": "eZ/Publish/Core/REST/Common/",
-            "eZ\\Publish\\Core\\REST\\Server\\": "eZ/Publish/Core/REST/Server/"
+            "EzSystems\\EzPlatformRestBundle\\": "src/bundle/",
+            "EzSystems\\EzPlatformRest\\": "src/lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "EzSystems\\EzPlatformRestBundle\\Tests\\": "tests/bundle/",
+            "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/"
         }
     },
     "require": {

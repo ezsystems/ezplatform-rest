@@ -1,0 +1,29 @@
+<phpunit
+  backupGlobals="false"
+  backupStaticAttributes="false"
+  bootstrap="vendor/autoload.php"
+  convertErrorsToExceptions="true"
+  convertNoticesToExceptions="true"
+  convertWarningsToExceptions="true"
+  beStrictAboutTestsThatDoNotTestAnything="false"
+  colors="true"
+  >
+  <testsuites>
+    <testsuite name="eZ Publish REST Bundle">
+      <directory>tests/bundle/</directory>
+      <exclude>tests/bundle/Functional</exclude>
+    </testsuite>
+    <testsuite name="eZ Publish REST">
+      <directory>tests/lib/</directory>
+      <exclude>tests/lib/Server</exclude>
+    </testsuite>
+    <testsuite name="eZ Publish REST Server Tests">
+      <directory>tests/lib/Server</directory>
+    </testsuite>
+  </testsuites>
+  <filter>
+    <whitelist>
+      <directory>src</directory>
+    </whitelist>
+  </filter>
+</phpunit>
