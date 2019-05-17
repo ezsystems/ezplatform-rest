@@ -1,0 +1,88 @@
+# Use trusty for better performance (and avoiding mysql/postgres/solr gone issues on precise and container infra)
+dist: trusty
+sudo: required
+
+language: php
+
+services:
+  - mysql
+
+# Mysql isn't installed on trusty (only client is), so we need to specifically install it
+addons:
+  apt:
+    packages:
+    - mysql-server-5.6
+    - mysql-client-core-5.6
+    - mysql-client-5.6
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
+env:
+  global:
+    # For functional and acceptance tests
+    - COMPOSE_FILE="doc/docker/base-dev.yml:doc/docker/selenium.yml"
+    # In order to specify extra flags like ignoring platform reqs, using only stable packages and so on.
+    - COMPOSER_FLAGS=""
+    - EZPLATFORM_REPO="https://github.com/ezsystems/ezplatform.git"
+
+matrix:
+  fast_finish: true
+  include:
+# 7.1
+    - php: 7.1
+      env: TEST_CONFIG="phpunit.xml"
+    - php: 7.1
+      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" SYMFONY_ENV=behat SYMFONY_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
+# 7.2
+    - php: 7.2
+      env: TEST_CONFIG="phpunit.xml"
+    - php: 7.2
+      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" SYMFONY_ENV=behat SYMFONY_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
+# 7.3
+    - php: 7.3
+      env: TEST_CONFIG="phpunit.xml"
+    - php: 7.3
+      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" SYMFONY_ENV=behat SYMFONY_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
+    - name: "Code Style Check"
+      env: CHECK_CS=1
+
+# test only master, stable branches and pull requests
+branches:
+  only:
+    - master
+    - /^\d.\d+$/
+
+# setup requirements for running unit/integration/behat tests
+before_install:
+  # Disable memory_limit for composer
+  - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+  # Prepare system
+  - if [ "$REST_TEST_CONFIG" != "" ] ; then ./.travis/prepare_ezplatform.sh ; fi
+  # Execute Symfony command if specified
+  - if [ "$SF_CMD" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec --user www-data app sh -c "bin/console $SF_CMD" ; fi
+  # Detecting timezone issues by testing on random timezone
+  - TEST_TIMEZONES=("America/New_York" "Asia/Calcutta" "UTC")
+  - TEST_TIMEZONE=${TEST_TIMEZONES["`shuf -i 0-2 -n 1`"]}
+
+install:
+  - if [ "$CHECK_CS" == "1" -o "$TEST_CONFIG" != "" ]; then travis_retry composer install --prefer-dist --no-interaction --no-suggest ; fi
+
+# execute phpunit or behat as the script command
+script:
+  - if [ "$TEST_CONFIG" != "" ] ; then php -d date.timezone=$TEST_TIMEZONE -d memory_limit=-1 vendor/bin/phpunit -c $TEST_CONFIG ; fi
+  - if [ "$REST_TEST_CONFIG" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec --user www-data app sh -c "php -d date.timezone=$TEST_TIMEZONE -d memory_limit=-1 bin/phpunit --bootstrap vendor/autoload.php -c vendor/ezsystems/ezplatform-rest/$REST_TEST_CONFIG"  ; fi
+  - if [ "$CHECK_CS" == "1" ] ; then ./vendor/bin/php-cs-fixer fix -v --dry-run --show-progress=estimating ; fi
+
+notifications:
+  slack:
+    rooms:
+      - secure: xoJTQ+n7UwzWL8XgObcxlWtoQ2ymA+ivQULGDDc+v2S8F8HRFxgY1g5ZE1SmRH8k7sFc9z2uMbuuEuk/RAQH+k+9X9hA4bqL462wC2kXJU2e/AUbGb4XZH4d4Q4qY8K03oR+QfcE18jW/CAKyUdsSNWntw5BE9AoLgjKPUWk3N3rIQsLYwzjhb4Phs0uzXjCXzQq1qhTaqK3RqTV9yQhz8wdPSGu2XfQWGXmuSjRHsv8YMwsbCj9J3bgC8kkXf0LuUqR6rQLzXrLDYfDS+nkPsI6zOYmEhO8pr4u8Ha5j5FGLgzSCeVGGDfoJ48Y9l5v/7bZikgKHwJLZI2FR3IcolH/X4yVVVdeDbTQ44flp4go+VNBZq5uGxo2D6+fWa171lfgzbUzSQnKWw94dNRcGJnfo0jEYzFiOwmaU/RRH6LpHmrzy3xlCx0ZzeHALQ+C1pIuey9QhJM7GmoYZjCDqb/oHsAML+CEARbLict+KRrssgH3+iUI5T6Yi9Z1o8J+a8KyZ506PaIdds6xwR8ksHTjZe/EZbhYPxgjcDsKfhH391Corjx5duA9fJjW7nitKr5AbyIDuerbKb+Afs/V7ag81Orq/4QJ6RUXtzNFIK8j9aqovQCjYwcIOINEj/CKgyvP7nXpOdpnjFZgLEIKSL74ogWL2AK9uLQs7h7zWw0=
+    on_success: change
+    on_failure: always
+    on_pull_requests: false
+
+# reduce depth (history) of git checkout
+git:
+  depth: 30
