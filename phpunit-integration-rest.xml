@@ -9,7 +9,7 @@
   colors="true"
   >
   <php>
-    <env name="EZP_TEST_REST_HOST" value="localhost:8080"/>
+    <env name="EZP_TEST_REST_HOST" value="localhost"/>
     <env name="EZP_TEST_REST_AUTH" value="admin:publish"/>
   </php>
   <testsuites>
