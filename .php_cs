@@ -22,7 +22,7 @@ return PhpCsFixer\Config::create()
             'commentType' => 'PHPDoc',
             'header' => $header,
             'location' => 'after_open',
-            'separate' => 'top',
+            'separate' => 'none',
         ],
         'yoda_style' => false,
         'no_break_comment' => false,
