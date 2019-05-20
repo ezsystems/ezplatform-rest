@@ -6,11 +6,7 @@
     "autoload": {
         "psr-4": {
             "EzSystems\\EzPlatformRestBundle\\": "src/bundle/",
-            "EzSystems\\EzPlatformRest\\": "src/lib/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
+            "EzSystems\\EzPlatformRest\\": "src/lib/",
             "EzSystems\\EzPlatformRestBundle\\Tests\\": "tests/bundle/",
             "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/"
         }
