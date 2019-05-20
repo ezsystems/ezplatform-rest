@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the UserRefList ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -38,7 +36,7 @@ class UserRefList extends ValueObjectVisitor
         foreach ($data->users as $user) {
             $generator->startObjectElement('User');
 
-            $generator->startAttribute('href', $this->router->generate('ezpublish_rest_loadUser', array('userId' => $user->contentInfo->id)));
+            $generator->startAttribute('href', $this->router->generate('ezpublish_rest_loadUser', ['userId' => $user->contentInfo->id]));
             $generator->endAttribute('href');
 
             $generator->endObjectElement('User');

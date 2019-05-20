@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the CreatedFieldDefinition ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -36,10 +34,10 @@ class CreatedFieldDefinition extends RestFieldDefinition
             'Location',
             $this->router->generate(
                 "ezpublish_rest_loadContentType{$draftUriPart}FieldDefinition",
-                array(
+                [
                     'contentTypeId' => $restFieldDefinition->contentType->id,
                     'fieldDefinitionId' => $restFieldDefinition->fieldDefinition->id,
-                )
+                ]
             )
         );
         $visitor->setStatus(201);

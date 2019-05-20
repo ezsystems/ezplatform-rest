@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -86,13 +84,13 @@ class ContentTypeCreateTest extends BaseTest
         );
 
         $this->assertEquals(
-            array('eng-US' => 'New content type'),
+            ['eng-US' => 'New content type'],
             $result->names,
             'names not created correctly'
         );
 
         $this->assertEquals(
-            array('eng-US' => 'New content type description'),
+            ['eng-US' => 'New content type description'],
             $result->descriptions,
             'descriptions not created correctly'
         );
@@ -219,7 +217,7 @@ class ContentTypeCreateTest extends BaseTest
         $inputArray = $this->getInputArray();
         // Field definitions are required only with immediate publish
         $inputArray['__publish'] = true;
-        $inputArray['FieldDefinitions']['FieldDefinition'] = array();
+        $inputArray['FieldDefinitions']['FieldDefinition'] = [];
 
         $contentTypeCreate = $this->getParser();
         $contentTypeCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -234,7 +232,7 @@ class ContentTypeCreateTest extends BaseTest
     public function testParseExceptionOnInvalidFieldDefinition()
     {
         $inputArray = $this->getInputArray();
-        $inputArray['FieldDefinitions']['FieldDefinition'] = array('hi there');
+        $inputArray['FieldDefinitions']['FieldDefinition'] = ['hi there'];
 
         $contentTypeCreate = $this->getParser();
         $contentTypeCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -265,8 +263,8 @@ class ContentTypeCreateTest extends BaseTest
 
         $fieldDefinitionCreateParserMock->expects($this->any())
             ->method('parse')
-            ->with(array(), $this->getParsingDispatcherMock())
-            ->will($this->returnValue(new FieldDefinitionCreateStruct()));
+            ->with([], $this->getParsingDispatcherMock())
+            ->willReturn(new FieldDefinitionCreateStruct());
 
         return $fieldDefinitionCreateParserMock;
     }
@@ -283,14 +281,12 @@ class ContentTypeCreateTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('newContentTypeCreateStruct')
             ->with($this->equalTo('new_content_type'))
-            ->will(
-                $this->returnValue(
+            ->willReturn(
                     new ContentTypeCreateStruct(
-                        array(
+                        [
                             'identifier' => 'new_content_type',
-                        )
+                        ]
                     )
-                )
             );
 
         return $contentTypeServiceMock;
@@ -303,7 +299,7 @@ class ContentTypeCreateTest extends BaseTest
      */
     protected function getInputArray()
     {
-        return array(
+        return [
             'identifier' => 'new_content_type',
             'mainLanguageCode' => 'eng-US',
             'remoteId' => 'remote123456',
@@ -313,41 +309,41 @@ class ContentTypeCreateTest extends BaseTest
             'defaultSortField' => 'PATH',
             'defaultSortOrder' => 'ASC',
             'defaultAlwaysAvailable' => 'true',
-            'names' => array(
-                'value' => array(
-                    array(
+            'names' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-US',
                         '#text' => 'New content type',
-                    ),
-                ),
-            ),
-            'descriptions' => array(
-                'value' => array(
-                    array(
+                    ],
+                ],
+            ],
+            'descriptions' => [
+                'value' => [
+                    [
                         '_languageCode' => 'eng-US',
                         '#text' => 'New content type description',
-                    ),
-                ),
-            ),
+                    ],
+                ],
+            ],
             'modificationDate' => '2012-12-31T12:30:00',
-            'User' => array(
+            'User' => [
                 '_href' => '/user/users/14',
-            ),
+            ],
 
             // mocked
-            'FieldDefinitions' => array(
-                'FieldDefinition' => array(
-                    array(),
-                    array(),
-                ),
-            ),
-        );
+            'FieldDefinitions' => [
+                'FieldDefinition' => [
+                    [],
+                    [],
+                ],
+            ],
+        ];
     }
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/user/users/14', 'userId', 14),
-        );
+        return [
+            ['/user/users/14', 'userId', 14],
+        ];
     }
 }

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ValueObjectVisitorPass class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -34,7 +32,7 @@ class ValueObjectVisitorPass implements CompilerPassInterface
 
                 $definition->addMethodCall(
                     'addVisitor',
-                    array($attribute['type'], new Reference($id))
+                    [$attribute['type'], new Reference($id)]
                 );
             }
         }

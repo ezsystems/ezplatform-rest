@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the MediaProcessorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -12,7 +10,7 @@ use EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor;
 
 class MediaProcessorTest extends BinaryInputProcessorTest
 {
-    protected $constants = array(
+    protected $constants = [
         'TYPE_FLASH',
         'TYPE_QUICKTIME',
         'TYPE_REALPLAYER',
@@ -20,16 +18,16 @@ class MediaProcessorTest extends BinaryInputProcessorTest
         'TYPE_WINDOWSMEDIA',
         'TYPE_HTML5_VIDEO',
         'TYPE_HTML5_AUDIO',
-    );
+    ];
 
     public function fieldSettingsHashes()
     {
         return array_map(
             function ($constantName) {
-                return array(
-                    array('mediaType' => $constantName),
-                    array('mediaType' => constant("eZ\\Publish\\Core\\FieldType\\Media\\Type::{$constantName}")),
-                );
+                return [
+                    ['mediaType' => $constantName],
+                    ['mediaType' => constant("eZ\\Publish\\Core\\FieldType\\Media\\Type::{$constantName}")],
+                ];
             },
             $this->constants
         );

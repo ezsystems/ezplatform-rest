@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestObjectState ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -34,7 +32,7 @@ class RestObjectState extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadObjectState',
-                array('objectStateGroupId' => $data->groupId, 'objectStateId' => $data->objectState->id)
+                ['objectStateGroupId' => $data->groupId, 'objectStateId' => $data->objectState->id]
             )
         );
         $generator->endAttribute('href');
@@ -52,7 +50,7 @@ class RestObjectState extends ValueObjectVisitor
 
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadObjectStateGroup', array('objectStateGroupId' => $data->groupId))
+            $this->router->generate('ezpublish_rest_loadObjectStateGroup', ['objectStateGroupId' => $data->groupId])
         );
         $generator->endAttribute('href');
 

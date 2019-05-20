@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Message class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -41,7 +39,7 @@ class Message
      * @param string $body
      * @param int $statusCode
      */
-    public function __construct(array $headers = array(), $body = '', $statusCode = 200)
+    public function __construct(array $headers = [], $body = '', $statusCode = 200)
     {
         $this->headers = $headers;
         $this->body = $body;

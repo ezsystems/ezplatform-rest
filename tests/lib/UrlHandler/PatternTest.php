@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the PatternTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -37,9 +35,9 @@ class PatternTest extends TestCase
     public function testParseInvalidPattern()
     {
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
-            array(
+            [
                 'invalid' => '/foo/{broken',
-            )
+            ]
         );
         $urlHandler->parse('/foo');
     }
@@ -53,9 +51,9 @@ class PatternTest extends TestCase
     public function testPatternDoesNotMatch()
     {
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
-            array(
+            [
                 'pattern' => '/foo/{foo}',
-            )
+            ]
         );
         $urlHandler->parse('/bar');
     }
@@ -69,9 +67,9 @@ class PatternTest extends TestCase
     public function testPatternDoesNotMatchTrailing()
     {
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
-            array(
+            [
                 'pattern' => '/foo/{foo}',
-            )
+            ]
         );
         $urlHandler->parse('/foo/23/bar');
     }
@@ -83,37 +81,37 @@ class PatternTest extends TestCase
      */
     public static function getParseValues()
     {
-        return array(
-            array(
+        return [
+            [
                 'section',
                 '/content/section/42',
-                array(
+                [
                     'section' => '42',
-                ),
-            ),
-            array(
+                ],
+            ],
+            [
                 'objectversion',
                 '/content/object/42/23',
-                array(
+                [
                     'object' => '42',
                     'version' => '23',
-                ),
-            ),
-            array(
+                ],
+            ],
+            [
                 'location',
                 '/content/locations/23/42/100',
-                array(
+                [
                     'location' => '23/42/100',
-                ),
-            ),
-            array(
+                ],
+            ],
+            [
                 'locationChildren',
                 '/content/locations/23/42/100/children',
-                array(
+                [
                     'location' => '23/42/100',
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
     }
 
     /**
@@ -140,7 +138,7 @@ class PatternTest extends TestCase
     public function testGenerateUnknownUrlType()
     {
         $urlHandler = new EzPlatformRest\RequestParser\Pattern();
-        $urlHandler->generate('unknown', array());
+        $urlHandler->generate('unknown', []);
     }
 
     /**
@@ -152,11 +150,11 @@ class PatternTest extends TestCase
     public function testGenerateMissingValue()
     {
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
-            array(
+            [
                 'pattern' => '/foo/{unknown}',
-            )
+            ]
         );
-        $urlHandler->generate('pattern', array());
+        $urlHandler->generate('pattern', []);
     }
 
     /**
@@ -168,16 +166,16 @@ class PatternTest extends TestCase
     public function testGenerateSuperfluousValue()
     {
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
-            array(
+            [
                 'pattern' => '/foo/{foo}',
-            )
+            ]
         );
         $urlHandler->generate(
             'pattern',
-            array(
+            [
                 'foo' => 23,
                 'bar' => 42,
-            )
+            ]
         );
     }
 
@@ -204,12 +202,12 @@ class PatternTest extends TestCase
     protected function getWorkingUrlHandler()
     {
         return new EzPlatformRest\RequestParser\Pattern(
-            array(
+            [
                 'section' => '/content/section/{section}',
                 'objectversion' => '/content/object/{object}/{version}',
                 'locationChildren' => '/content/locations/{&location}/children',
                 'location' => '/content/locations/{&location}',
-            )
+            ]
         );
     }
 }

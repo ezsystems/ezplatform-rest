@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the SessionInputTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -20,10 +18,10 @@ class ViewInputOneDotOneTest extends BaseTest
      */
     public function testParseContentQuery()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Query identifier',
             'ContentQuery' => [],
-        );
+        ];
 
         $parser = $this->getParser();
         $parsingDispatcher = $this->getParsingDispatcherMock();
@@ -31,7 +29,7 @@ class ViewInputOneDotOneTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($inputArray['ContentQuery'], 'application/vnd.ez.api.internal.ContentQuery')
-            ->will($this->returnValue(new Query()));
+            ->willReturn(new Query());
 
         $result = $parser->parse($inputArray, $parsingDispatcher);
 
@@ -47,10 +45,10 @@ class ViewInputOneDotOneTest extends BaseTest
      */
     public function testParseLocationQuery()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Query identifier',
             'LocationQuery' => [],
-        );
+        ];
 
         $parser = $this->getParser();
         $parsingDispatcher = $this->getParsingDispatcherMock();
@@ -58,7 +56,7 @@ class ViewInputOneDotOneTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($inputArray['LocationQuery'], 'application/vnd.ez.api.internal.LocationQuery')
-            ->will($this->returnValue(new LocationQuery()));
+            ->willReturn(new LocationQuery());
 
         $result = $parser->parse($inputArray, $parsingDispatcher);
 

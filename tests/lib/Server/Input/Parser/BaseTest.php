@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -57,7 +55,7 @@ abstract class BaseTest extends ParentBaseTest
      */
     public function getParseHrefExpectationsMap()
     {
-        return array();
+        return [];
     }
 
     /**
@@ -89,7 +87,7 @@ abstract class BaseTest extends ParentBaseTest
             $this->requestParserMock
                 ->expects($this->any())
                 ->method('parseHref')
-                ->will($this->returnCallback($callback));
+                ->willReturnCallback($callback);
         }
 
         return $this->requestParserMock;

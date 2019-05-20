@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -17,13 +15,13 @@ class ContentObjectStatesTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
-            'ObjectState' => array(
-                array(
+        $inputArray = [
+            'ObjectState' => [
+                [
                     '_href' => '/content/objectstategroups/42/objectstates/21',
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
 
         $objectState = $this->getParser();
         $result = $objectState->parse($inputArray, $this->getParsingDispatcherMock());
@@ -72,14 +70,14 @@ class ContentObjectStatesTest extends BaseTest
      */
     public function testParseExceptionOnMissingHref()
     {
-        $inputArray = array(
-            'ObjectState' => array(
-                array(
+        $inputArray = [
+            'ObjectState' => [
+                [
                     '_href' => '/content/objectstategroups/42/objectstates/21',
-                ),
-                array(),
-            ),
-        );
+                ],
+                [],
+            ],
+        ];
 
         $objectState = $this->getParser();
         $objectState->parse($inputArray, $this->getParsingDispatcherMock());
@@ -87,10 +85,10 @@ class ContentObjectStatesTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/content/objectstategroups/42/objectstates/21', 'objectStateId', 21),
-            array('/content/objectstategroups/42/objectstates/21', 'objectStateGroupId', 42),
-        );
+        return [
+            ['/content/objectstategroups/42/objectstates/21', 'objectStateId', 21],
+            ['/content/objectstategroups/42/objectstates/21', 'objectStateGroupId', 42],
+        ];
     }
 
     /**

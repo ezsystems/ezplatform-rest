@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestValueResponseListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -37,14 +35,14 @@ class ResponseListenerTest extends EventListenerTest
     public function setUp()
     {
         $this->eventValue = new stdClass();
-        $this->response = new Response('BODY', 406, array('foo' => 'bar'));
+        $this->response = new Response('BODY', 406, ['foo' => 'bar']);
     }
 
     public function provideExpectedSubscribedEventTypes()
     {
-        return array(
-            array(array(KernelEvents::VIEW, KernelEvents::EXCEPTION)),
-        );
+        return [
+            [[KernelEvents::VIEW, KernelEvents::EXCEPTION]],
+        ];
     }
 
     public function testOnKernelResultViewIsNotRestRequest()
@@ -94,10 +92,8 @@ class ResponseListenerTest extends EventListenerTest
             ->with(
                 $this->getRequestMock(),
                 $this->eventValue
-            )->will(
-                $this->returnValue(
-                    $this->response
-                )
+            )->willReturn(
+                $this->response
             );
 
         $event->expects($this->once())
@@ -139,7 +135,7 @@ class ResponseListenerTest extends EventListenerTest
             $this->eventMock
                 ->expects($this->any())
                 ->method('getControllerResult')
-                ->will($this->returnValue($this->eventValue));
+                ->willReturn($this->eventValue);
         }
 
         return $this->eventMock;
@@ -156,7 +152,7 @@ class ResponseListenerTest extends EventListenerTest
             $this->eventMock
                 ->expects($this->any())
                 ->method('getException')
-                ->will($this->returnValue($this->eventValue));
+                ->willReturn($this->eventValue);
         }
 
         return $this->eventMock;

@@ -1,5 +1,7 @@
 <?php
+
 /**
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\EzPlatformRest\Server\Input\Parser\Limitation;
@@ -22,6 +24,7 @@ class RouteBasedLimitationParser extends BaseParser
     /**
      * Name of the route parameter.
      * Example: "sectionId".
+     *
      * @var string
      */
     private $limitationRouteParameterName;
@@ -29,6 +32,7 @@ class RouteBasedLimitationParser extends BaseParser
     /**
      * Value object class built by the Parser.
      * Example: "eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation".
+     *
      * @var string
      */
     private $limitationClass;

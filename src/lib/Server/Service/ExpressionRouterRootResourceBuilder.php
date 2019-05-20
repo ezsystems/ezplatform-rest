@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ExpressionRouterRootResourceBuilder class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -72,7 +70,7 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
     {
         $language = new ExpressionLanguage();
 
-        $resources = array();
+        $resources = [];
         foreach ($this->resourceConfig as $name => $resource) {
             $resources[] = new Values\Resource(
                 $name,

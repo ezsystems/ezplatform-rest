@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -57,13 +55,13 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     public function testResultContainsErrorCode($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ErrorMessage',
-                'descendant' => array(
+                'descendant' => [
                     'tag' => 'errorCode',
                     'content' => (string)$this->getExpectedStatusCode(),
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ErrorMessage> element.'
         );
@@ -79,13 +77,13 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     public function testResultContainsErrorMessage($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ErrorMessage',
-                'descendant' => array(
+                'descendant' => [
                     'tag' => 'errorMessage',
                     'content' => $this->getExpectedMessage(),
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ErrorMessage> element.'
         );
@@ -101,12 +99,12 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     public function testResultContainsErrorDescription($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ErrorMessage',
-                'descendant' => array(
+                'descendant' => [
                     'tag' => 'errorDescription',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ErrorMessage> element.'
         );
@@ -122,12 +120,12 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     public function testResultContainsExceptionAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ErrorMessage',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.ErrorMessage+xml',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ErrorMessage> attributes.'
         );

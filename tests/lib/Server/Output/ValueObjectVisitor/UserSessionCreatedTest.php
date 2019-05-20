@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the SessionTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -42,15 +40,15 @@ class UserSessionCreatedTest extends UserSessionTest
 
         $this->addRouteExpectation(
             'ezpublish_rest_deleteSession',
-            array(
+            [
                 'sessionId' => $session->sessionId,
-            ),
+            ],
             "/user/sessions/{$session->sessionId}"
         );
 
         $this->addRouteExpectation(
             'ezpublish_rest_loadUser',
-            array('userId' => $session->user->id),
+            ['userId' => $session->user->id],
             "/user/users/{$session->user->id}"
         );
 

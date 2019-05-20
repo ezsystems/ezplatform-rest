@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the CreatedURLWildcard ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -32,7 +30,7 @@ class CreatedURLWildcard extends URLWildcard
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadURLWildcard',
-                array('urlWildcardId' => $data->urlWildcard->id)
+                ['urlWildcardId' => $data->urlWildcard->id]
             )
         );
         $visitor->setStatus(201);

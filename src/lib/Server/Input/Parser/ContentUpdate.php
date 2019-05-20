@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ContentUpdate parser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -34,7 +32,7 @@ class ContentUpdate extends BaseParser
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
-        $parsedData = array();
+        $parsedData = [];
 
         if (array_key_exists('Section', $data) && is_array($data['Section']) && isset($data['Section']['_href'])) {
             try {

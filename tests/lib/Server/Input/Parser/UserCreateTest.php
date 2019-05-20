@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -25,28 +23,28 @@ class UserCreateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $result = $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -104,26 +102,26 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnInvalidContentType()
     {
-        $inputArray = array(
-            'ContentType' => array(),
+        $inputArray = [
+            'ContentType' => [],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -137,27 +135,27 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingMainLanguageCode()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
-            'Section' => array(
+            ],
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -171,27 +169,27 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingLogin()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -205,27 +203,27 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingEmail()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -239,27 +237,27 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingPassword()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -273,26 +271,26 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnInvalidSection()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(),
+            'Section' => [],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -306,20 +304,20 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnInvalidFields()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-        );
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -333,31 +331,31 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
-                        'fieldValue' => array(),
-                    ),
-                    array(
+            'fields' => [
+                'field' => [
+                    [
+                        'fieldValue' => [],
+                    ],
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -371,28 +369,28 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnInvalidFieldDefinitionIdentifier()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'unknown',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
-        );
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -406,27 +404,27 @@ class UserCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingFieldValue()
     {
-        $inputArray = array(
-            'ContentType' => array(
+        $inputArray = [
+            'ContentType' => [
                 '_href' => '/content/types/4',
-            ),
+            ],
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/4',
-            ),
+            ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
             'email' => 'nospam@ez.no',
             'password' => 'password',
             'enabled' => 'true',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'name',
-                    ),
-                ),
-            ),
-        );
+                    ],
+                ],
+            ],
+        ];
 
         $userCreate = $this->getParser();
         $userCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -455,21 +453,21 @@ class UserCreateTest extends BaseTest
     private function getFieldTypeParserMock()
     {
         $fieldTypeParserMock = $this->getMockBuilder(FieldTypeParser::class)
-            ->setMethods(array())
+            ->setMethods([])
             ->disableOriginalConstructor()
             ->setConstructorArgs(
-                array(
+                [
                     $this->createMock(ContentService::class),
                     $this->getContentTypeServiceMock(),
                     $this->createMock(FieldTypeService::class),
-                )
+                ]
             )
             ->getMock();
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseValue')
-            ->with('ezstring', array())
-            ->will($this->returnValue('foo'));
+            ->with('ezstring', [])
+            ->willReturn('foo');
 
         return $fieldTypeParserMock;
     }
@@ -493,15 +491,13 @@ class UserCreateTest extends BaseTest
                 $this->equalTo('eng-US'),
                 $this->equalTo($contentType)
             )
-            ->will(
-                $this->returnValue(
+            ->willReturn(
                     new UserCreateStruct(
-                        array(
+                        [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',
-                        )
+                        ]
                     )
-                )
             );
 
         return $userServiceMock;
@@ -519,7 +515,7 @@ class UserCreateTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('loadContentType')
             ->with($this->equalTo(4))
-            ->will($this->returnValue($this->getContentType()));
+            ->willReturn($this->getContentType());
 
         return $contentTypeServiceMock;
     }
@@ -532,27 +528,27 @@ class UserCreateTest extends BaseTest
     protected function getContentType()
     {
         return new ContentType(
-            array(
+            [
                 'id' => 4,
                 'identifier' => 'some_class',
-                'fieldDefinitions' => array(
+                'fieldDefinitions' => [
                     new FieldDefinition(
-                        array(
+                        [
                             'id' => 42,
                             'identifier' => 'name',
                             'fieldTypeIdentifier' => 'ezstring',
-                        )
+                        ]
                     ),
-                ),
-            )
+                ],
+            ]
         );
     }
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/content/types/4', 'contentTypeId', 4),
-            array('/content/sections/4', 'sectionId', 4),
-        );
+        return [
+            ['/content/types/4', 'contentTypeId', 4],
+            ['/content/sections/4', 'sectionId', 4],
+        ];
     }
 }

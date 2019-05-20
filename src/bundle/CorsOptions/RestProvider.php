@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestConfigurationProvider class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -41,7 +39,7 @@ class RestProvider implements ProviderInterface
      */
     public function getOptions(Request $request)
     {
-        $return = array();
+        $return = [];
         if ($request->attributes->has('is_rest_request') && $request->attributes->get('is_rest_request') === true) {
             $return['allow_methods'] = $this->getAllowedMethods($request->getPathInfo());
         }
@@ -64,6 +62,6 @@ class RestProvider implements ProviderInterface
             // neither does it care about a method not allowed
         }
 
-        return array();
+        return [];
     }
 }

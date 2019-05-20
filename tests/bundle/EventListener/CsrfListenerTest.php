@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestValueResponseListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -55,9 +53,9 @@ class CsrfListenerTest extends EventListenerTest
 
     public function provideExpectedSubscribedEventTypes()
     {
-        return array(
-            array(array(KernelEvents::REQUEST)),
-        );
+        return [
+            [[KernelEvents::REQUEST]],
+        ];
     }
 
     public function testIsNotRestRequest()
@@ -111,11 +109,11 @@ class CsrfListenerTest extends EventListenerTest
 
     public function getIgnoredRequestMethods()
     {
-        return array(
-            array('GET'),
-            array('HEAD'),
-            array('OPTIONS'),
-        );
+        return [
+            ['GET'],
+            ['HEAD'],
+            ['OPTIONS'],
+        ];
     }
 
     /**
@@ -175,16 +173,14 @@ class CsrfListenerTest extends EventListenerTest
         $provider = $this->createMock(CsrfTokenManagerInterface::class);
         $provider->expects($this->any())
             ->method('isTokenValid')
-            ->will(
-                $this->returnCallback(
-                    function (CsrfToken $token) {
-                        if ($token == new CsrfToken(self::INTENTION, self::VALID_TOKEN)) {
-                            return true;
-                        }
-
-                        return false;
+            ->willReturnCallback(
+                function (CsrfToken $token) {
+                    if ($token == new CsrfToken(self::INTENTION, self::VALID_TOKEN)) {
+                        return true;
                     }
-                )
+
+                    return false;
+                }
             );
 
         return $provider;
@@ -201,7 +197,7 @@ class CsrfListenerTest extends EventListenerTest
             $this->eventMock
                 ->expects($this->any())
                 ->method('getRequestType')
-                ->will($this->returnValue($this->requestType));
+                ->willReturn($this->requestType);
         }
 
         return $this->eventMock;
@@ -217,7 +213,7 @@ class CsrfListenerTest extends EventListenerTest
             $this->sessionMock
                 ->expects($this->atLeastOnce())
                 ->method('isStarted')
-                ->will($this->returnValue($this->sessionIsStarted));
+                ->willReturn($this->sessionIsStarted);
         }
 
         return $this->sessionMock;
@@ -244,13 +240,13 @@ class CsrfListenerTest extends EventListenerTest
                     ->expects($this->atLeastOnce())
                     ->method('has')
                     ->with(CsrfListener::CSRF_TOKEN_HEADER)
-                    ->will($this->returnValue(true));
+                    ->willReturn(true);
 
                 $this->requestHeadersMock
                     ->expects($this->atLeastOnce())
                     ->method('get')
                     ->with(CsrfListener::CSRF_TOKEN_HEADER)
-                    ->will($this->returnValue($this->csrfTokenHeaderValue));
+                    ->willReturn($this->csrfTokenHeaderValue);
             }
         }
 
@@ -273,7 +269,7 @@ class CsrfListenerTest extends EventListenerTest
                 $this->requestMock
                     ->expects($this->atLeastOnce())
                     ->method('getSession')
-                    ->will($this->returnValue($this->getSessionMock()));
+                    ->willReturn($this->getSessionMock());
             }
 
             if ($this->route === false) {
@@ -285,7 +281,7 @@ class CsrfListenerTest extends EventListenerTest
                     ->expects($this->atLeastOnce())
                     ->method('get')
                     ->with('_route')
-                    ->will($this->returnValue($this->route));
+                    ->willReturn($this->route);
             }
         }
 

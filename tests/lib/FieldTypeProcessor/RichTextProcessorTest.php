@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RichTextProcessorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -19,7 +17,7 @@ class RichTextProcessorTest extends TestCase
     {
         $processor = $this->getProcessor();
 
-        $outputValue = array(
+        $outputValue = [
             'xml' => <<<EOT
 <?xml version="1.0" encoding="UTF-8"?>
 <section xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ezxhtml="http://ez.no/xmlns/ezpublish/docbook/xhtml" xmlns:ezcustom="http://ez.no/xmlns/ezpublish/docbook/custom" version="5.0-variant ezpublish-1.0">
@@ -27,7 +25,7 @@ class RichTextProcessorTest extends TestCase
     <para>Foobar</para>
 </section>
 EOT
-        );
+        ];
         $processedOutputValue = $outputValue;
         $processedOutputValue['xhtml5edit'] = <<<EOT
 <?xml version="1.0" encoding="UTF-8"?>
@@ -45,7 +43,7 @@ EOT;
             ->expects($this->once())
             ->method('convert')
             ->with($this->isInstanceOf('DOMDocument'))
-            ->will($this->returnValue($convertedDocument));
+            ->willReturn($convertedDocument);
 
         $this->assertEquals(
             $processedOutputValue,

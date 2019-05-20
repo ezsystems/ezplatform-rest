@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -26,25 +24,25 @@ class UserUpdateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/1',
-            ),
+            ],
             'remoteId' => 'remoteId123456',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'first_name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
             'email' => 'nospam@ez.no',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
-        );
+        ];
 
         $userUpdate = $this->getParser();
         $result = $userUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -119,23 +117,23 @@ class UserUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingSectionHref()
     {
-        $inputArray = array(
+        $inputArray = [
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(),
+            'Section' => [],
             'remoteId' => 'remoteId123456',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'first_name',
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
             'email' => 'nospam@ez.no',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
-        );
+        ];
 
         $userUpdate = $this->getParser();
         $userUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -149,18 +147,18 @@ class UserUpdateTest extends BaseTest
      */
     public function testParseExceptionOnInvalidFields()
     {
-        $inputArray = array(
+        $inputArray = [
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/1',
-            ),
+            ],
             'remoteId' => 'remoteId123456',
-            'fields' => array(),
+            'fields' => [],
             'email' => 'nospam@ez.no',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
-        );
+        ];
 
         $userUpdate = $this->getParser();
         $userUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -174,24 +172,24 @@ class UserUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
-        $inputArray = array(
+        $inputArray = [
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/1',
-            ),
+            ],
             'remoteId' => 'remoteId123456',
-            'fields' => array(
-                'field' => array(
-                    array(
-                        'fieldValue' => array(),
-                    ),
-                ),
-            ),
+            'fields' => [
+                'field' => [
+                    [
+                        'fieldValue' => [],
+                    ],
+                ],
+            ],
             'email' => 'nospam@ez.no',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
-        );
+        ];
 
         $userUpdate = $this->getParser();
         $userUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -205,24 +203,24 @@ class UserUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingFieldValue()
     {
-        $inputArray = array(
+        $inputArray = [
             'mainLanguageCode' => 'eng-US',
-            'Section' => array(
+            'Section' => [
                 '_href' => '/content/sections/1',
-            ),
+            ],
             'remoteId' => 'remoteId123456',
-            'fields' => array(
-                'field' => array(
-                    array(
+            'fields' => [
+                'field' => [
+                    [
                         'fieldDefinitionIdentifier' => 'first_name',
-                    ),
-                ),
-            ),
+                    ],
+                ],
+            ],
             'email' => 'nospam@ez.no',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
-        );
+        ];
 
         $userUpdate = $this->getParser();
         $userUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -251,21 +249,21 @@ class UserUpdateTest extends BaseTest
     private function getFieldTypeParserMock()
     {
         $fieldTypeParserMock = $this->getMockBuilder(FieldTypeParser::class)
-            ->setMethods(array())
+            ->setMethods([])
             ->disableOriginalConstructor()
             ->setConstructorArgs(
-                array(
+                [
                     $this->getContentServiceMock(),
                     $this->createMock(ContentTypeService::class),
                     $this->createMock(FieldTypeService::class),
-                )
+                ]
             )
             ->getMock();
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseFieldValue')
-            ->with(14, 'first_name', array())
-            ->will($this->returnValue('foo'));
+            ->with(14, 'first_name', [])
+            ->willReturn('foo');
 
         return $fieldTypeParserMock;
     }
@@ -281,8 +279,8 @@ class UserUpdateTest extends BaseTest
 
         $userServiceMock->expects($this->any())
             ->method('newUserUpdateStruct')
-            ->will(
-                $this->returnValue(new UserUpdateStruct())
+            ->willReturn(
+                new UserUpdateStruct()
             );
 
         return $userServiceMock;
@@ -299,14 +297,14 @@ class UserUpdateTest extends BaseTest
 
         $contentServiceMock->expects($this->any())
             ->method('newContentUpdateStruct')
-            ->will(
-                $this->returnValue(new ContentUpdateStruct())
+            ->willReturn(
+                new ContentUpdateStruct()
             );
 
         $contentServiceMock->expects($this->any())
             ->method('newContentMetadataUpdateStruct')
-            ->will(
-                $this->returnValue(new ContentMetadataUpdateStruct())
+            ->willReturn(
+                new ContentMetadataUpdateStruct()
             );
 
         return $contentServiceMock;
@@ -314,9 +312,9 @@ class UserUpdateTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/user/users/14', 'userId', 14),
-            array('/content/sections/1', 'sectionId', 1),
-        );
+        return [
+            ['/user/users/14', 'userId', 14],
+            ['/content/sections/1', 'sectionId', 1],
+        ];
     }
 }

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestFieldDefinition ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -59,10 +57,10 @@ class RestFieldDefinition extends RestContentTypeBase
             'href',
             $this->router->generate(
                 "ezpublish_rest_loadContentType{$urlTypeSuffix}FieldDefinition",
-                array(
+                [
                     'contentTypeId' => $contentType->id,
                     'fieldDefinitionId' => $fieldDefinition->id,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');

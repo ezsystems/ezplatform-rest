@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the  class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -118,12 +116,12 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     {
         $this->getGenerator()->generateFieldTypeHash(
             'fieldValue',
-            array(
+            [
                 23,
                 true,
                 'Sindelfingen',
                 null,
-            )
+            ]
         );
 
         $this->assertSerializationSame(__FUNCTION__);
@@ -133,12 +131,12 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     {
         $this->getGenerator()->generateFieldTypeHash(
             'fieldValue',
-            array(
+            [
                 'age' => 23,
                 'married' => true,
                 'city' => 'Sindelfingen',
                 'cause' => null,
-            )
+            ]
         );
 
         $this->assertSerializationSame(__FUNCTION__);
@@ -148,12 +146,12 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     {
         $this->getGenerator()->generateFieldTypeHash(
             'fieldValue',
-            array(
+            [
                 23,
                 'married' => true,
                 'Sindelfingen',
                 'cause' => null,
-            )
+            ]
         );
 
         $this->assertSerializationSame(__FUNCTION__);
@@ -163,10 +161,10 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     {
         $this->getGenerator()->generateFieldTypeHash(
             'fieldValue',
-            array(
-                array('id' => 1, 'name' => 'Joe Sindelfingen', 'email' => 'sindelfingen@example.com'),
-                array('id' => 2, 'name' => 'Joe Bielefeld', 'email' => 'bielefeld@example.com'),
-            )
+            [
+                ['id' => 1, 'name' => 'Joe Sindelfingen', 'email' => 'sindelfingen@example.com'],
+                ['id' => 2, 'name' => 'Joe Bielefeld', 'email' => 'bielefeld@example.com'],
+            ]
         );
 
         $this->assertSerializationSame(__FUNCTION__);
@@ -232,7 +230,7 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
                 $fqClassName,
                 strlen(__NAMESPACE__) + 1
             ),
-            array('\\' => '_')
+            ['\\' => '_']
         );
     }
 }

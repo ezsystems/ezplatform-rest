@@ -1,10 +1,8 @@
 <?php
 
 /**
- * File containing the DeletedUserSessionTest class.
- *
- * @copyright Copyright (C) 1999-2014 eZ Systems AS. All rights reserved.
- * @license http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
@@ -24,10 +22,10 @@ class DeletedUserSessionTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $generatedResponse = new Response();
-        $responseHeaders = array(
+        $responseHeaders = [
             'foo' => 'bar',
             'some' => 'thing',
-        );
+        ];
         $cookie = new Cookie('cookie_name', 'cookie_value');
         $generatedResponse->headers->add($responseHeaders);
         $generatedResponse->headers->setCookie($cookie);
@@ -47,7 +45,7 @@ class DeletedUserSessionTest extends ValueObjectVisitorBaseTest
         $this->assertTrue($generator->isEmpty());
         $this->assertSame('bar', $this->getResponseMock()->headers->get('foo'));
         $this->assertSame('thing', $this->getResponseMock()->headers->get('some'));
-        $this->assertSame(array($cookie), $this->getResponseMock()->headers->getCookies());
+        $this->assertSame([$cookie], $this->getResponseMock()->headers->getCookies());
     }
 
     protected function internalGetVisitor()

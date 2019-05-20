@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the JsonTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -176,7 +174,7 @@ class JsonTest extends GeneratorTest
 
         $generator->startHashElement('elements');
 
-        $generator->startValueElement('element', 'element value 1', array('attribute' => 'attribute value 1'));
+        $generator->startValueElement('element', 'element value 1', ['attribute' => 'attribute value 1']);
         $generator->endValueElement('element');
 
         $generator->endHashElement('elements');

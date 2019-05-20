@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RouterTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -29,16 +27,16 @@ class RouterTest extends TestCase
         $uri = self::$routePrefix . '/';
         $request = Request::create($uri, 'GET');
 
-        $expectedMatchResult = array(
+        $expectedMatchResult = [
             '_route' => 'ezpublish_rest_testRoute',
             '_controller' => '',
-        );
+        ];
 
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
             ->with($this->attributeEqualTo('pathInfo', '/api/test/v1/'))
-            ->will($this->returnValue($expectedMatchResult));
+            ->willReturn($expectedMatchResult);
 
         self::assertEquals(
             $expectedMatchResult,
@@ -84,16 +82,16 @@ class RouterTest extends TestCase
     {
         $href = '/api/test/v1/content/objects/1';
 
-        $expectedMatchResult = array(
+        $expectedMatchResult = [
             '_route' => 'ezpublish_rest_testParseHref',
             'contentId' => 1,
-        );
+        ];
 
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
             ->with($this->attributeEqualTo('pathInfo', $href))
-            ->will($this->returnValue($expectedMatchResult));
+            ->willReturn($expectedMatchResult);
 
         self::assertEquals(1, $this->getRequestParser()->parseHref($href, 'contentId'));
     }
@@ -106,15 +104,15 @@ class RouterTest extends TestCase
     {
         $href = '/api/test/v1/content/no-attribute';
 
-        $matchResult = array(
+        $matchResult = [
             '_route' => 'ezpublish_rest_testParseHrefAttributeNotFound',
-        );
+        ];
 
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
             ->with($this->attributeEqualTo('pathInfo', $href))
-            ->will($this->returnValue($matchResult));
+            ->willReturn($matchResult);
 
         self::assertEquals(1, $this->getRequestParser()->parseHref($href, 'badAttribute'));
     }
@@ -122,14 +120,14 @@ class RouterTest extends TestCase
     public function testGenerate()
     {
         $routeName = 'ezpublish_rest_testGenerate';
-        $arguments = array('arg1' => 1);
+        $arguments = ['arg1' => 1];
 
         $expectedResult = self::$routePrefix . '/generate/' . $arguments['arg1'];
         $this->getRouterMock()
             ->expects($this->once())
             ->method('generate')
             ->with($routeName, $arguments)
-            ->will($this->returnValue($expectedResult));
+            ->willReturn($expectedResult);
 
         self::assertEquals(
             $expectedResult,
@@ -158,7 +156,7 @@ class RouterTest extends TestCase
             $this->router
                 ->expects($this->any())
                 ->method('getContext')
-                ->will($this->returnValue(new RequestContext()));
+                ->willReturn(new RequestContext());
         }
 
         return $this->router;

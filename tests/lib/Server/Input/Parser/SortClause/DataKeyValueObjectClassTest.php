@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -20,9 +18,9 @@ class DataKeyValueObjectClassTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'DatePublished' => Query::SORT_ASC,
-        );
+        ];
 
         $dataKeyValueObjectClass = $this->getParser();
         $result = $dataKeyValueObjectClass->parse($inputArray, $this->getParsingDispatcherMock());
@@ -42,9 +40,9 @@ class DataKeyValueObjectClassTest extends BaseTest
      */
     public function testParseExceptionOnMissingSortClause()
     {
-        $inputArray = array(
+        $inputArray = [
             'name' => 'Keep on mocking in the free world',
-        );
+        ];
 
         $dataKeyValueObjectClass = $this->getParser();
         $dataKeyValueObjectClass->parse($inputArray, $this->getParsingDispatcherMock());
@@ -58,9 +56,9 @@ class DataKeyValueObjectClassTest extends BaseTest
      */
     public function testParseExceptionOnInvalidDirectionFormat()
     {
-        $inputArray = array(
+        $inputArray = [
             'DatePublished' => 'Jailhouse Mock',
-        );
+        ];
 
         $dataKeyValueObjectClass = $this->getParser();
         $dataKeyValueObjectClass->parse($inputArray, $this->getParsingDispatcherMock());
@@ -74,9 +72,9 @@ class DataKeyValueObjectClassTest extends BaseTest
      */
     public function testParseExceptionOnNonexistingValueObjectClass()
     {
-        $inputArray = array(
+        $inputArray = [
             'DatePublished' => Query::SORT_ASC,
-        );
+        ];
 
         $dataKeyValueObjectClass = new DataKeyValueObjectClass(
             'DatePublished',

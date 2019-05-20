@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the FieldTypeProcessorRegistry class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -18,12 +16,12 @@ class FieldTypeProcessorRegistry
      *
      * @var \EzSystems\EzPlatformRest\FieldTypeProcessor[]
      */
-    private $processors = array();
+    private $processors = [];
 
     /**
      * @param \EzSystems\EzPlatformRest\FieldTypeProcessor[] $processors
      */
-    public function __construct(array $processors = array())
+    public function __construct(array $processors = [])
     {
         foreach ($processors as $fieldTypeIdentifier => $processor) {
             $this->registerProcessor($fieldTypeIdentifier, $processor);

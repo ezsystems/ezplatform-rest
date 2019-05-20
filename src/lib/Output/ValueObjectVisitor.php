@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -109,7 +107,7 @@ abstract class ValueObjectVisitor
         $generator->startHashElement($listName);
         $generator->startList('value');
         foreach ($translatedElements as $languageCode => $element) {
-            $generator->startValueElement('value', $element, array('languageCode' => $languageCode));
+            $generator->startValueElement('value', $element, ['languageCode' => $languageCode]);
             $generator->endValueElement('value');
         }
         $generator->endList('value');

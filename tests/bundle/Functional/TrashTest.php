@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Functional\TrashTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -47,6 +45,7 @@ class TrashTest extends RESTFunctionalTestCase
 
     /**
      * Covers DELETE /content/trash/{trashItemId}.
+     *
      * @depends testCreateTrashItem
      */
     public function testDeleteTrashItem($trashItemId)
@@ -63,6 +62,7 @@ class TrashTest extends RESTFunctionalTestCase
 
     /**
      * Covers MOVE /content/trash/{trashItemId}.
+     *
      * @depends testCreateTrashItem
      */
     public function testRestoreTrashItem($trashItemId)

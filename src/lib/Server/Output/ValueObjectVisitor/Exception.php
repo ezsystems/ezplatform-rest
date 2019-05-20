@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Exception ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -31,7 +29,7 @@ class Exception extends ValueObjectVisitor
      *
      * @var array
      */
-    protected $httpStatusCodes = array(
+    protected $httpStatusCodes = [
         400 => 'Bad Request',
         401 => 'Unauthorized',
         402 => 'Payment Required',
@@ -67,7 +65,7 @@ class Exception extends ValueObjectVisitor
         507 => 'Insufficient Storage',
         509 => 'Bandwidth Limit Exceeded',
         510 => 'Not Extended',
-    );
+    ];
 
     /**
      * @var TranslatorInterface

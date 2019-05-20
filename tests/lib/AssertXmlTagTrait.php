@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing AssertXmlTagTrait trait.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -28,13 +26,13 @@ trait AssertXmlTagTrait
     public static function assertXMLTag($matcher, $actualXml, $message = '')
     {
         // Provide default values.
-        $matcher += array('attributes' => array());
+        $matcher += ['attributes' => []];
 
         // Create an XPath query that selects the xml tag.
         $query = '//' . $matcher['tag'];
 
         // Append XPath selectors for the attributes and content text.
-        $selectors = array();
+        $selectors = [];
         foreach ($matcher['attributes'] as $attribute => $value) {
             $selectors[] = "@$attribute='$value'";
         }

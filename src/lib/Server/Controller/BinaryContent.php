@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the BinaryContent controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -80,7 +78,7 @@ class BinaryContent extends RestController
 
             return new CachedValue(
                 $variation,
-                array('locationId' => $content->contentInfo->mainLocationId)
+                ['locationId' => $content->contentInfo->mainLocationId]
             );
         } catch (InvalidVariationException $e) {
             throw new Exceptions\NotFoundException("Invalid image variation $variationIdentifier");

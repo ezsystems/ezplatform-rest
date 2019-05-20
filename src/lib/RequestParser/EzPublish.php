@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the EzPublish RequestParser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -19,7 +17,7 @@ class EzPublish extends Pattern
      * @var array
      * @todo: Add sensible missing names
      */
-    protected $map = array(
+    protected $map = [
         'root' => '/',
         'locations' => '/content/locations',
         'locationByRemote' => '/content/locations?remoteId={location}',
@@ -96,5 +94,5 @@ class EzPublish extends Pattern
         'userRoleAssignment' => '/user/users/{user}/roles/{role}',
         'userPolicies' => '/user/policies?userId={user}',
         'userSession' => '/user/sessions/{sessionId}',
-    );
+    ];
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
@@ -38,6 +39,7 @@ class CsrfTokenManager extends BaseCsrfTokenManager
      * Tests if a CSRF token is stored.
      *
      * @param string $tokenId
+     *
      * @return bool
      */
     public function hasToken($tokenId)
@@ -49,6 +51,7 @@ class CsrfTokenManager extends BaseCsrfTokenManager
      * Resolves token namespace.
      *
      * @param RequestStack $requestStack
+     *
      * @return string
      */
     private function resolveNamespace(RequestStack $requestStack = null)

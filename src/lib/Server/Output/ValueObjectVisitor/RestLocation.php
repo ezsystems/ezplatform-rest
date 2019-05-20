@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestLocation ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -38,7 +36,7 @@ class RestLocation extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadLocation',
-                array('locationPath' => trim($location->pathString, '/'))
+                ['locationPath' => trim($location->pathString, '/')]
             )
         );
         $generator->endAttribute('href');
@@ -67,9 +65,9 @@ class RestLocation extends ValueObjectVisitor
                 'href',
                 $this->router->generate(
                     'ezpublish_rest_loadLocation',
-                    array(
+                    [
                         'locationPath' => implode('/', array_slice($location->path, 0, count($location->path) - 1)),
-                    )
+                    ]
                 )
             );
             $generator->endAttribute('href');
@@ -93,9 +91,9 @@ class RestLocation extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadLocationChildren',
-                array(
+                [
                     'locationPath' => trim($location->pathString, '/'),
-                )
+                ]
             )
         );
         $generator->endAttribute('href');
@@ -104,7 +102,7 @@ class RestLocation extends ValueObjectVisitor
         $generator->startObjectElement('Content');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadContent', array('contentId' => $contentInfo->id))
+            $this->router->generate('ezpublish_rest_loadContent', ['contentId' => $contentInfo->id])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Content');
@@ -120,7 +118,7 @@ class RestLocation extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_listLocationURLAliases',
-                array('locationPath' => trim($location->pathString, '/'))
+                ['locationPath' => trim($location->pathString, '/')]
             )
         );
         $generator->endAttribute('href');
@@ -131,7 +129,7 @@ class RestLocation extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadContent',
-                array('contentId' => $contentInfo->id)
+                ['contentId' => $contentInfo->id]
             )
         );
         $generator->endAttribute('href');

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ParentLocationRemoteId Criterion parser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -46,7 +44,7 @@ class ParentLocationRemoteId extends BaseParser
         if (!array_key_exists('ParentLocationRemoteIdCriterion', $data)) {
             throw new Exceptions\Parser('Invalid <ParentLocationRemoteIdCriterion> format');
         }
-        $contentIdArray = array();
+        $contentIdArray = [];
         foreach (explode(',', $data['ParentLocationRemoteIdCriterion']) as $parentRemoteId) {
             $location = $this->locationService->loadLocationByRemoteId($parentRemoteId);
             $contentIdArray[] = $location->id;

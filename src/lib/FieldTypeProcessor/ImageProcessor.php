@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ImageProcessor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -67,15 +65,15 @@ class ImageProcessor extends BinaryInputProcessor
 
         $outgoingValueHash['path'] = '/' . $outgoingValueHash['path'];
         foreach ($this->variations as $variationIdentifier) {
-            $outgoingValueHash['variations'][$variationIdentifier] = array(
+            $outgoingValueHash['variations'][$variationIdentifier] = [
                 'href' => $this->router->generate(
                     'ezpublish_rest_binaryContent_getImageVariation',
-                    array(
+                    [
                         'imageId' => $outgoingValueHash['imageId'],
                         'variationIdentifier' => $variationIdentifier,
-                    )
+                    ]
                 ),
-            );
+            ];
         }
 
         return $outgoingValueHash;
@@ -101,16 +99,16 @@ class ImageProcessor extends BinaryInputProcessor
         }
 
         return str_replace(
-            array(
+            [
                 '{variation}',
                 '{fieldId}',
                 '{versionNo}',
-            ),
-            array(
+            ],
+            [
                 $variation,
                 $fieldId,
                 $versionNo,
-            ),
+            ],
             $this->urlTemplate
         );
     }

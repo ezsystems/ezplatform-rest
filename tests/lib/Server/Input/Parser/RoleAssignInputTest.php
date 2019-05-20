@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -36,7 +34,7 @@ class RoleAssignInputTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($limitation, 'application/vnd.ez.api.internal.limitation.Section')
-            ->will($this->returnValue(new SectionLimitation()));
+            ->willReturn(new SectionLimitation());
 
         $roleAssignInput = $this->getParser();
         $result = $roleAssignInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -68,24 +66,24 @@ class RoleAssignInputTest extends BaseTest
      */
     public function testParseExceptionOnMissingRole()
     {
-        $inputArray = array(
-            'limitation' => array(
+        $inputArray = [
+            'limitation' => [
                 '_identifier' => 'Section',
-                'values' => array(
-                    'ref' => array(
-                        array(
+                'values' => [
+                    'ref' => [
+                        [
                             '_href' => '/content/sections/1',
-                        ),
-                        array(
+                        ],
+                        [
                             '_href' => '/content/sections/2',
-                        ),
-                        array(
+                        ],
+                        [
                             '_href' => '/content/sections/3',
-                        ),
-                    ),
-                ),
-            ),
-        );
+                        ],
+                    ],
+                ],
+            ],
+        ];
 
         $roleAssignInput = $this->getParser();
         $roleAssignInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -99,25 +97,25 @@ class RoleAssignInputTest extends BaseTest
      */
     public function testParseExceptionOnInvalidRole()
     {
-        $inputArray = array(
-            'Role' => array(),
-            'limitation' => array(
+        $inputArray = [
+            'Role' => [],
+            'limitation' => [
                 '_identifier' => 'Section',
-                'values' => array(
-                    'ref' => array(
-                        array(
+                'values' => [
+                    'ref' => [
+                        [
                             '_href' => '/content/sections/1',
-                        ),
-                        array(
+                        ],
+                        [
                             '_href' => '/content/sections/2',
-                        ),
-                        array(
+                        ],
+                        [
                             '_href' => '/content/sections/3',
-                        ),
-                    ),
-                ),
-            ),
-        );
+                        ],
+                    ],
+                ],
+            ],
+        ];
 
         $roleAssignInput = $this->getParser();
         $roleAssignInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -131,26 +129,26 @@ class RoleAssignInputTest extends BaseTest
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
     {
-        $inputArray = array(
-            'Role' => array(
+        $inputArray = [
+            'Role' => [
                 '_href' => '/user/roles/42',
-            ),
-            'limitation' => array(
-                'values' => array(
-                    'ref' => array(
-                        array(
+            ],
+            'limitation' => [
+                'values' => [
+                    'ref' => [
+                        [
                             '_href' => '/content/sections/1',
-                        ),
-                        array(
+                        ],
+                        [
                             '_href' => '/content/sections/2',
-                        ),
-                        array(
+                        ],
+                        [
                             '_href' => '/content/sections/3',
-                        ),
-                    ),
-                ),
-            ),
-        );
+                        ],
+                    ],
+                ],
+            ],
+        ];
 
         $roleAssignInput = $this->getParser();
         $roleAssignInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -170,8 +168,8 @@ class RoleAssignInputTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/user/roles/42', 'roleId', 42),
-        );
+        return [
+            ['/user/roles/42', 'roleId', 42],
+        ];
     }
 }

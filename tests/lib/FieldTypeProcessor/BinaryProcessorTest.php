@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the BinaryProcessorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -22,18 +20,18 @@ class BinaryProcessorTest extends BinaryInputProcessorTest
         $uri = '/var/ezdemo_site/storage/original/application/815b3aa9.pdf';
         $processor = $this->getProcessor();
 
-        $inputHash = array(
+        $inputHash = [
             'uri' => '/var/ezdemo_site/storage/original/application/815b3aa9.pdf',
-        );
+        ];
 
         $outputHash = $processor->postProcessValueHash($inputHash);
 
         $expectedUri = 'http://static.example.com' . $uri;
         $this->assertEquals(
-            array(
+            [
                 'url' => $expectedUri,
                 'uri' => $expectedUri,
-            ),
+            ],
             $outputHash
         );
     }

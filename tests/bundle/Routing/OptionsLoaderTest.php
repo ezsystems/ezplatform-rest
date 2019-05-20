@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the OptionsLoaderTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -33,10 +31,10 @@ class OptionsLoaderTest extends TestCase
 
     public function getResourceType()
     {
-        return array(
-            array('rest_options', true),
-            array('something else', false),
-        );
+        return [
+            ['rest_options', true],
+            ['something else', false],
+        ];
     }
 
     public function testLoad()
@@ -46,7 +44,7 @@ class OptionsLoaderTest extends TestCase
         $this->getRouteCollectionMapperMock()->expects($this->once())
             ->method('mapCollection')
             ->with(new RouteCollection())
-            ->will($this->returnValue($optionsRouteCollection));
+            ->willReturn($optionsRouteCollection);
 
         self::assertSame(
             $optionsRouteCollection,
@@ -62,14 +60,14 @@ class OptionsLoaderTest extends TestCase
     protected function getOptionsLoader()
     {
         $mock = $this->getMockBuilder(OptionsLoader::class)
-            ->setConstructorArgs(array($this->getRouteCollectionMapperMock()))
-            ->setMethods(array('import'))
+            ->setConstructorArgs([$this->getRouteCollectionMapperMock()])
+            ->setMethods(['import'])
             ->getMock();
 
         $mock->expects($this->any())
             ->method('import')
             ->with($this->anything(), $this->anything())
-            ->will($this->returnValue(new RouteCollection()));
+            ->willReturn(new RouteCollection());
 
         return $mock;
     }

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the UserGroupRefList ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -44,9 +42,9 @@ class UserGroupRefList extends ValueObjectVisitor
                 'href',
                 $this->router->generate(
                     'ezpublish_rest_loadUserGroup',
-                    array(
+                    [
                         'groupPath' => trim($userGroup->mainLocation->pathString, '/'),
-                    )
+                    ]
                 )
             );
             $generator->endAttribute('href');
@@ -58,10 +56,10 @@ class UserGroupRefList extends ValueObjectVisitor
                     'href',
                     $this->router->generate(
                         'ezpublish_rest_unassignUserFromUserGroup',
-                        array(
+                        [
                             'userId' => $data->userId,
                             'groupPath' => $userGroup->mainLocation->path[count($userGroup->mainLocation->path) - 1],
-                        )
+                        ]
                     )
                 );
                 $generator->endAttribute('href');

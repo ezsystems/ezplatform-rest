@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the SessionInputTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -15,11 +13,11 @@ class QueryParserTest extends BaseTest
 {
     public function testParseEmptyQuery()
     {
-        $inputArray = array(
+        $inputArray = [
             'Filter' => [],
             'Criteria' => [],
             'Query' => [],
-        );
+        ];
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
         $parser = $this->getParser();
@@ -33,18 +31,18 @@ class QueryParserTest extends BaseTest
 
     public function testDispatchOneFilter()
     {
-        $inputArray = array(
+        $inputArray = [
             'Filter' => ['ContentTypeIdentifierCriterion' => 'article'],
             'Criteria' => [],
             'Query' => [],
-        );
+        ];
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
         $parsingDispatcher
             ->expects($this->once())
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
 
         $parser = $this->getParser();
 
@@ -58,23 +56,23 @@ class QueryParserTest extends BaseTest
 
     public function testDispatchMoreThanOneFilter()
     {
-        $inputArray = array(
+        $inputArray = [
             'Filter' => ['ContentTypeIdentifierCriterion' => 'article', 'ParentLocationIdCriterion' => 762],
             'Criteria' => [],
             'Query' => [],
-        );
+        ];
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
         $parsingDispatcher
             ->expects($this->at(0))
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
         $parsingDispatcher
             ->expects($this->at(1))
             ->method('parse')
             ->with(['ParentLocationIdCriterion' => 762])
-            ->will($this->returnValue(new Query\Criterion\ParentLocationId(762)));
+            ->willReturn(new Query\Criterion\ParentLocationId(762));
 
         $parser = $this->getParser();
 
@@ -91,18 +89,18 @@ class QueryParserTest extends BaseTest
 
     public function testDispatchOneQueryItem()
     {
-        $inputArray = array(
+        $inputArray = [
             'Query' => ['ContentTypeIdentifierCriterion' => 'article'],
             'Criteria' => [],
             'Filter' => [],
-        );
+        ];
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
         $parsingDispatcher
             ->expects($this->once())
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
 
         $parser = $this->getParser();
 
@@ -116,23 +114,23 @@ class QueryParserTest extends BaseTest
 
     public function testDispatchMoreThanOneQueryItem()
     {
-        $inputArray = array(
+        $inputArray = [
             'Query' => ['ContentTypeIdentifierCriterion' => 'article', 'ParentLocationIdCriterion' => 762],
             'Criteria' => [],
             'Filter' => [],
-        );
+        ];
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
         $parsingDispatcher
             ->expects($this->at(0))
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
         $parsingDispatcher
             ->expects($this->at(1))
             ->method('parse')
             ->with(['ParentLocationIdCriterion' => 762])
-            ->will($this->returnValue(new Query\Criterion\ParentLocationId(762)));
+            ->willReturn(new Query\Criterion\ParentLocationId(762));
 
         $parser = $this->getParser();
 

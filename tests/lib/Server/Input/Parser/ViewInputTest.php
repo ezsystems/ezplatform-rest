@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the SessionInputTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -19,10 +17,10 @@ class ViewInputTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Query identifier',
             'Query' => [],
-        );
+        ];
 
         $parser = $this->getParser();
         $parsingDispatcher = $this->getParsingDispatcherMock();
@@ -30,7 +28,7 @@ class ViewInputTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($inputArray['Query'], 'application/vnd.ez.api.internal.ContentQuery')
-            ->will($this->returnValue(new Query()));
+            ->willReturn(new Query());
 
         $result = $parser->parse($inputArray, $parsingDispatcher);
 

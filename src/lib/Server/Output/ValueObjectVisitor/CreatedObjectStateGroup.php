@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the CreatedObjectStateGroup ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -32,7 +30,7 @@ class CreatedObjectStateGroup extends ObjectStateGroup
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadObjectStateGroup',
-                array('objectStateGroupId' => $data->objectStateGroup->id)
+                ['objectStateGroupId' => $data->objectStateGroup->id]
             )
         );
         $visitor->setStatus(201);

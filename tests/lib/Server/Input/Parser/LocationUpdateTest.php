@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -21,13 +19,13 @@ class LocationUpdateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'priority' => 0,
             'remoteId' => 'remote-id',
             'hidden' => 'true',
             'sortField' => 'PATH',
             'sortOrder' => 'ASC',
-        );
+        ];
 
         $locationUpdate = $this->getParser();
         $result = $locationUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -82,11 +80,11 @@ class LocationUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingSortField()
     {
-        $inputArray = array(
+        $inputArray = [
             'priority' => 0,
             'remoteId' => 'remote-id',
             'sortOrder' => 'ASC',
-        );
+        ];
 
         $locationUpdate = $this->getParser();
         $locationUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -100,11 +98,11 @@ class LocationUpdateTest extends BaseTest
      */
     public function testParseExceptionOnMissingSortOrder()
     {
-        $inputArray = array(
+        $inputArray = [
             'priority' => 0,
             'remoteId' => 'remote-id',
             'sortField' => 'PATH',
-        );
+        ];
 
         $locationUpdate = $this->getParser();
         $locationUpdate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -134,8 +132,8 @@ class LocationUpdateTest extends BaseTest
 
         $locationServiceMock->expects($this->any())
             ->method('newLocationUpdateStruct')
-            ->will(
-                $this->returnValue(new LocationUpdateStruct())
+            ->willReturn(
+                new LocationUpdateStruct()
             );
 
         return $locationServiceMock;

@@ -1,10 +1,8 @@
 <?php
 
 /**
- * File containing the RestLogoutHandlerTest class.
- *
- * @copyright Copyright (C) 1999-2014 eZ Systems AS. All rights reserved.
- * @license http://www.gnu.org/licenses/gpl-2.0.txt GNU General Public License v2
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace EzSystems\EzPlatformRest\Tests\Server\Security;
 
@@ -42,7 +40,7 @@ class RestLogoutHandlerTest extends TestCase
         $this->session
             ->expects($this->once())
             ->method('getName')
-            ->will($this->returnValue($sessionId));
+            ->willReturn($sessionId);
         $request = new Request();
         $request->setSession($this->session);
         $request->attributes->set('is_rest_request', true);
@@ -50,7 +48,7 @@ class RestLogoutHandlerTest extends TestCase
             ->expects($this->once())
             ->method('getParameter')
             ->with('session')
-            ->will($this->returnValue([]));
+            ->willReturn([]);
         $response = new Response();
         $response->headers = $this->createMock(ResponseHeaderBag::class);
         $response->headers
@@ -71,7 +69,7 @@ class RestLogoutHandlerTest extends TestCase
         $this->session
             ->expects($this->once())
             ->method('getName')
-            ->will($this->returnValue($sessionId));
+            ->willReturn($sessionId);
         $request = new Request();
         $request->setSession($this->session);
         $request->attributes->set('is_rest_request', true);
@@ -83,7 +81,7 @@ class RestLogoutHandlerTest extends TestCase
             ->expects($this->once())
             ->method('getParameter')
             ->with('session')
-            ->will($this->returnValue($sessionSettings));
+            ->willReturn($sessionSettings);
         $response = new Response();
         $response->headers = $this->createMock(ResponseHeaderBag::class);
         $response->headers

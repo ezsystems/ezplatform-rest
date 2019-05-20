@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -26,7 +24,7 @@ class OptionsTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $noContent = new Values\Options(array('GET', 'POST'));
+        $noContent = new Values\Options(['GET', 'POST']);
 
         $this->getVisitorMock()->expects($this->once())
             ->method('setStatus')
@@ -34,11 +32,9 @@ class OptionsTest extends ValueObjectVisitorBaseTest
 
         $this->getVisitorMock()->expects($this->exactly(2))
             ->method('setHeader')
-            ->will(
-                $this->returnValueMap(
-                    array('Allow', 'GET,POST'),
-                    array('Content-Length', 0)
-                )
+            ->willReturnMap(
+                 ['Allow', 'GET,POST'],
+                 ['Content-Length', 0]
             );
 
         $visitor->visit(

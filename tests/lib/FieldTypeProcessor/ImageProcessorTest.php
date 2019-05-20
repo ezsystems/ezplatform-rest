@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ImageProcessorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -24,10 +22,10 @@ class ImageProcessorTest extends BinaryInputProcessorTest
     {
         $processor = $this->getProcessor();
 
-        $inputHash = array(
+        $inputHash = [
             'path' => 'var/some_site/223-1-eng-US/Cool-File.jpg',
             'imageId' => '223-12345',
-        );
+        ];
 
         $routerMock = $this->getRouterMock();
         foreach ($this->getVariations() as $iteration => $variationIdentifier) {
@@ -37,21 +35,21 @@ class ImageProcessorTest extends BinaryInputProcessorTest
                 ->method('generate')
                 ->with(
                     'ezpublish_rest_binaryContent_getImageVariation',
-                    array('imageId' => $inputHash['imageId'], 'variationIdentifier' => $variationIdentifier)
+                    ['imageId' => $inputHash['imageId'], 'variationIdentifier' => $variationIdentifier]
                 )
-                ->will(
-                    $this->returnValue($expectedVariations[$variationIdentifier]['href'])
+                ->willReturn(
+                    $expectedVariations[$variationIdentifier]['href']
                 );
         }
 
         $outputHash = $processor->postProcessValueHash($inputHash);
 
         $this->assertEquals(
-            array(
+            [
                 'path' => '/var/some_site/223-1-eng-US/Cool-File.jpg',
                 'imageId' => '223-12345',
                 'variations' => $expectedVariations,
-            ),
+            ],
             $outputHash
         );
     }
@@ -84,6 +82,6 @@ class ImageProcessorTest extends BinaryInputProcessorTest
 
     protected function getVariations()
     {
-        return array('small', 'medium', 'large');
+        return ['small', 'medium', 'large'];
     }
 }

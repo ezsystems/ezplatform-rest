@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the SessionInputTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -18,10 +16,10 @@ class SessionInputTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'login' => 'Login Foo',
             'password' => 'Password Bar',
-        );
+        ];
 
         $sessionInput = $this->getParser();
         $result = $sessionInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -41,9 +39,9 @@ class SessionInputTest extends BaseTest
      */
     public function testParseExceptionOnMissingIdentifier()
     {
-        $inputArray = array(
+        $inputArray = [
             'login' => 'Login Foo',
-        );
+        ];
 
         $sessionInput = $this->getParser();
         $sessionInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -57,9 +55,9 @@ class SessionInputTest extends BaseTest
      */
     public function testParseExceptionOnMissingName()
     {
-        $inputArray = array(
+        $inputArray = [
             'password' => 'Password Bar',
-        );
+        ];
 
         $sessionInput = $this->getParser();
         $sessionInput->parse($inputArray, $this->getParsingDispatcherMock());

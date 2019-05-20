@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Role controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -160,7 +158,7 @@ class Role extends RestController
      */
     public function listRoles(Request $request)
     {
-        $roles = array();
+        $roles = [];
         if ($request->query->has('identifier')) {
             try {
                 $role = $this->roleService->loadRoleByIdentifier($request->query->get('identifier'));
@@ -224,7 +222,7 @@ class Role extends RestController
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -246,7 +244,7 @@ class Role extends RestController
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -387,7 +385,7 @@ class Role extends RestController
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -409,9 +407,9 @@ class Role extends RestController
         }
 
         return new Values\CreatedPolicy(
-            array(
+            [
                 'policy' => $this->getLastAddedPolicy($role),
-            )
+            ]
         );
     }
 
@@ -429,7 +427,7 @@ class Role extends RestController
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -444,9 +442,9 @@ class Role extends RestController
         }
 
         return new Values\CreatedPolicy(
-            array(
+            [
                 'policy' => $this->getLastAddedPolicy($role),
-            )
+            ]
         );
     }
 
@@ -488,7 +486,7 @@ class Role extends RestController
     {
         $updateStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -545,7 +543,7 @@ class Role extends RestController
     {
         $updateStruct = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -663,7 +661,7 @@ class Role extends RestController
     {
         $roleAssignment = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -693,7 +691,7 @@ class Role extends RestController
     {
         $roleAssignment = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -868,9 +866,9 @@ class Role extends RestController
     protected function mapToUpdateStruct(RoleCreateStruct $createStruct)
     {
         return new RoleUpdateStruct(
-            array(
+            [
                 'identifier' => $createStruct->identifier,
-            )
+            ]
         );
     }
 }

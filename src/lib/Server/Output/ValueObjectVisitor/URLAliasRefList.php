@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the URLAliasRefList ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -38,7 +36,7 @@ class URLAliasRefList extends ValueObjectVisitor
 
             $generator->startAttribute(
                 'href',
-                $this->router->generate('ezpublish_rest_loadURLAlias', array('urlAliasId' => $urlAlias->id))
+                $this->router->generate('ezpublish_rest_loadURLAlias', ['urlAliasId' => $urlAlias->id])
             );
             $generator->endAttribute('href');
 

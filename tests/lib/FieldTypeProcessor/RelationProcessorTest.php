@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RelationProcessorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -16,19 +14,19 @@ use Symfony\Component\Routing\RouterInterface;
 
 class RelationProcessorTest extends TestCase
 {
-    protected $constants = array(
+    protected $constants = [
         'SELECTION_BROWSE',
         'SELECTION_DROPDOWN',
-    );
+    ];
 
     public function fieldSettingsHashes()
     {
         return array_map(
             function ($constantName) {
-                return array(
-                    array('selectionMethod' => $constantName),
-                    array('selectionMethod' => constant("eZ\\Publish\\Core\\FieldType\\Relation\\Type::{$constantName}")),
-                );
+                return [
+                    ['selectionMethod' => $constantName],
+                    ['selectionMethod' => constant("eZ\\Publish\\Core\\FieldType\\Relation\\Type::{$constantName}")],
+                ];
             },
             $this->constants
         );
@@ -107,7 +105,7 @@ class RelationProcessorTest extends TestCase
             ->expects($this->once())
             ->method('generate')
             ->with('ezpublish_rest_loadContent', ['contentId' => 42])
-            ->will($this->returnValue('/api/ezp/v2/content/objects/42'));
+            ->willReturn('/api/ezp/v2/content/objects/42');
 
         $hash = $processor->postProcessValueHash(['destinationContentId' => 42]);
         $this->assertArrayHasKey('destinationContentHref', $hash);

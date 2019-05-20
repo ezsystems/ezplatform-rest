@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing ValueObjectVisitorBaseTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -68,7 +66,7 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
             $this->visitorMock
                 ->expects($this->any())
                 ->method('getResponse')
-                ->will($this->returnValue($this->getResponseMock()));
+                ->willReturn($this->getResponseMock());
         }
 
         return $this->visitorMock;
@@ -187,7 +185,7 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
                 $this->equalTo($routeName),
                 $this->equalTo($arguments)
             )
-            ->will($this->returnValue($returnValue));
+            ->willReturn($returnValue);
     }
 
     /**
@@ -218,7 +216,7 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
                 $this->equalTo($routeName),
                 $this->equalTo($arguments)
             )
-            ->will($this->returnValue($returnValue));
+            ->willReturn($returnValue);
     }
 
     /**

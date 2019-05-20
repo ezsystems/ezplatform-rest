@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the ParserTools class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -66,7 +64,7 @@ class ParserTools
      */
     public function parseTranslatableList(array $listElement)
     {
-        $listItems = array();
+        $listItems = [];
         foreach ($listElement['value'] as $valueRow) {
             $listItems[$valueRow['_languageCode']] = isset($valueRow['#text']) ?
                 $valueRow['#text'] :
@@ -82,6 +80,7 @@ class ParserTools
      * @param string|bool $value
      *
      * @return bool
+     *
      * @throws \RuntimeException if the value can not be transformed to a boolean
      */
     public function parseBooleanValue($value)
@@ -197,7 +196,7 @@ class ParserTools
             throw new Exceptions\Parser('Invalid format for limitation values in Limitation.');
         }
 
-        $limitationValues = array();
+        $limitationValues = [];
         foreach ($limitation['values']['ref'] as $limitationValue) {
             if (!array_key_exists('_href', $limitationValue)) {
                 throw new Exceptions\Parser('Invalid format for limitation values in Limitation.');

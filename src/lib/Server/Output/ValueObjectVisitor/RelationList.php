@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RelationList ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -34,10 +32,10 @@ class RelationList extends ValueObjectVisitor
         if ($path === null) {
             $path = $this->router->generate(
                 'ezpublish_rest_loadVersionRelations',
-                array(
+                [
                     'contentId' => $data->contentId,
                     'versionNumber' => $data->versionNo,
-                )
+                ]
             );
         }
 

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the CreatedUser ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -32,7 +30,7 @@ class CreatedUser extends RestUser
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadUser',
-                array('userId' => $data->user->contentInfo->id)
+                ['userId' => $data->user->contentInfo->id]
             )
         );
         $visitor->setStatus(201);

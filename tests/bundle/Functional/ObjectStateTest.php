@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Functional\ObjectStateTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -96,6 +94,7 @@ XML;
 
     /**
      * Covers GET /content/objectstategroups/{objectStateGroupId}.
+     *
      * @depends testCreateObjectStateGroup
      */
     public function testLoadObjectStateGroup($objectStateGroupHref)
@@ -109,6 +108,7 @@ XML;
 
     /**
      * Covers GET /content/objectstategroups/{objectStateGroupId}/objectstates/{objectStateId}.
+     *
      * @depends testCreateObjectState
      */
     public function testLoadObjectState($objectStateHref)
@@ -134,6 +134,7 @@ XML;
 
     /**
      * Covers GET /content/objectstategroups/{objectStateGroupId}/objectstates.
+     *
      * @depends testCreateObjectStateGroup
      */
     public function testLoadObjectStates($objectStateGroupHref)
@@ -147,6 +148,7 @@ XML;
 
     /**
      * Covers PATCH /content/objects/{contentId}/objectstates.
+     *
      * @depends testCreateObjectState
      *
      * @return string The created folder content href
@@ -179,6 +181,7 @@ XML;
 
     /**
      * Covers GET /content/objects/{contentId}/objectstates.
+     *
      * @depends testSetObjectStatesForContent
      */
     public function testGetObjectStatesForContent($contentHref)
@@ -192,6 +195,7 @@ XML;
 
     /**
      * Covers PATCH /content/objectstategroups/{objectStateGroupId}/objectstates/{objectStateId}.
+     *
      * @depends testCreateObjectState
      */
     public function testUpdateObjectState($objectStateHref)
@@ -223,6 +227,7 @@ XML;
 
     /**
      * Covers PATCH /content/objectstategroups/{objectStateGroupId}.
+     *
      * @depends testCreateObjectStateGroup
      */
     public function testUpdateObjectStateGroup($objectStateGroupHref)
@@ -254,6 +259,7 @@ XML;
 
     /**
      * Covers DELETE.
+     *
      * @depends testCreateObjectState
      */
     public function testDeleteObjectState($objectStateHref)
@@ -267,6 +273,7 @@ XML;
 
     /**
      * Covers DELETE /content/objectstategroups/{objectStateGroupId}.
+     *
      * @depends testCreateObjectStateGroup
      */
     public function testDeleteObjectStateGroup($objectStateGroupHref)

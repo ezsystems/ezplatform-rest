@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -27,9 +25,9 @@ class ObjectStateGroupListTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $groupList = new ObjectStateGroupList(array());
+        $groupList = new ObjectStateGroupList([]);
 
-        $this->addRouteExpectation('ezpublish_rest_loadObjectStateGroups', array(), '/content/objectstategroups');
+        $this->addRouteExpectation('ezpublish_rest_loadObjectStateGroups', [], '/content/objectstategroups');
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -54,9 +52,9 @@ class ObjectStateGroupListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsObjectStateGroupListElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ObjectStateGroupList',
-            ),
+            ],
             $result,
             'Invalid <ObjectStateGroupList> element.',
             false
@@ -73,13 +71,13 @@ class ObjectStateGroupListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsObjectStateGroupListAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'ObjectStateGroupList',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.ObjectStateGroupList+xml',
                     'href' => '/content/objectstategroups',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <ObjectStateGroupList> attributes.',
             false
@@ -97,10 +95,10 @@ class ObjectStateGroupListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $groupList = new ObjectStateGroupList(
-            array(
+            [
                 new ObjectStateGroup(),
                 new ObjectStateGroup(),
-            )
+            ]
         );
 
         $this->getVisitorMock()->expects($this->exactly(2))

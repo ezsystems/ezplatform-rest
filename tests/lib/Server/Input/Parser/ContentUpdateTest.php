@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -85,11 +83,11 @@ class ContentUpdateTest extends BaseTest
 
     public function providerForTestParseFailureInvalidHref()
     {
-        return array(
-            array('Section', 'Invalid format for <Section> reference in <ContentUpdate>.'),
-            array('MainLocation', 'Invalid format for <MainLocation> reference in <ContentUpdate>.'),
-            array('Owner', 'Invalid format for <Owner> reference in <ContentUpdate>.'),
-        );
+        return [
+            ['Section', 'Invalid format for <Section> reference in <ContentUpdate>.'],
+            ['MainLocation', 'Invalid format for <MainLocation> reference in <ContentUpdate>.'],
+            ['Owner', 'Invalid format for <Owner> reference in <ContentUpdate>.'],
+        ];
     }
 
     /**
@@ -123,10 +121,10 @@ class ContentUpdateTest extends BaseTest
 
     public function providerForTestParseFailureInvalidDate()
     {
-        return array(
-            array('publishDate', 'Invalid format for <publishDate> in <ContentUpdate>'),
-            array('modificationDate', 'Invalid format for <modificationDate> in <ContentUpdate>'),
-        );
+        return [
+            ['publishDate', 'Invalid format for <publishDate> in <ContentUpdate>'],
+            ['modificationDate', 'Invalid format for <modificationDate> in <ContentUpdate>'],
+        ];
     }
 
     /**
@@ -147,7 +145,7 @@ class ContentUpdateTest extends BaseTest
     protected function getContentUpdateStruct()
     {
         return new RestContentMetadataUpdateStruct(
-            array(
+            [
                 'mainLanguageCode' => 'eng-GB',
                 'sectionId' => 23,
                 'mainLocationId' => 55,
@@ -156,7 +154,7 @@ class ContentUpdateTest extends BaseTest
                 'remoteId' => '7e7afb135e50490a281dafc0aafb6dac',
                 'modificationDate' => new DateTime('19/Sept/2012:14:05:00 +0200'),
                 'publishedDate' => new DateTime('19/Sept/2012:14:05:00 +0200'),
-            )
+            ]
         );
     }
 
@@ -167,28 +165,28 @@ class ContentUpdateTest extends BaseTest
      */
     protected function getValidInputData()
     {
-        return array(
+        return [
             'mainLanguageCode' => 'eng-GB',
-            'Section' => array('_href' => '/content/sections/23'),
-            'MainLocation' => array('_href' => '/content/locations/1/2/55'),
-            'Owner' => array('_href' => '/user/users/42'),
+            'Section' => ['_href' => '/content/sections/23'],
+            'MainLocation' => ['_href' => '/content/locations/1/2/55'],
+            'Owner' => ['_href' => '/user/users/42'],
             'alwaysAvailable' => 'false',
             'remoteId' => '7e7afb135e50490a281dafc0aafb6dac',
             'modificationDate' => '19/Sept/2012:14:05:00 +0200',
             'publishDate' => '19/Sept/2012:14:05:00 +0200',
-        );
+        ];
     }
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/content/sections/23', 'sectionId', 23),
-            array('/user/users/42', 'userId', 42),
-            array('/content/locations/1/2/55', 'locationPath', '1/2/55'),
+        return [
+            ['/content/sections/23', 'sectionId', 23],
+            ['/user/users/42', 'userId', 42],
+            ['/content/locations/1/2/55', 'locationPath', '1/2/55'],
 
-            array('/invalid/section/uri', 'sectionId', new InvalidArgumentException('Invalid format for <Section> reference in <ContentUpdate>.')),
-            array('/invalid/section/uri', 'userId', new InvalidArgumentException('Invalid format for <Owner> reference in <ContentUpdate>.')),
-            array('/invalid/section/uri', 'locationPath', new InvalidArgumentException('Invalid format for <MainLocation> reference in <ContentUpdate>.')),
-        );
+            ['/invalid/section/uri', 'sectionId', new InvalidArgumentException('Invalid format for <Section> reference in <ContentUpdate>.')],
+            ['/invalid/section/uri', 'userId', new InvalidArgumentException('Invalid format for <Owner> reference in <ContentUpdate>.')],
+            ['/invalid/section/uri', 'locationPath', new InvalidArgumentException('Invalid format for <MainLocation> reference in <ContentUpdate>.')],
+        ];
     }
 }

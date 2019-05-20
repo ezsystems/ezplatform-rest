@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -19,13 +17,13 @@ class ContentTypeGroupInputTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Identifier Bar',
-            'User' => array(
+            'User' => [
                 '_href' => '/user/users/14',
-            ),
+            ],
             'modificationDate' => '2012-12-31T12:00:00',
-        );
+        ];
 
         $contentTypeGroupInput = $this->getParser();
         $result = $contentTypeGroupInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -63,11 +61,11 @@ class ContentTypeGroupInputTest extends BaseTest
      */
     public function testParseExceptionOnInvalidUser()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Identifier Bar',
-            'User' => array(),
+            'User' => [],
             'modificationDate' => '2012-12-31T12:00:00',
-        );
+        ];
 
         $contentTypeGroupInput = $this->getParser();
         $contentTypeGroupInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -98,8 +96,8 @@ class ContentTypeGroupInputTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('newContentTypeGroupCreateStruct')
             ->with($this->equalTo('Identifier Bar'))
-            ->will(
-                $this->returnValue(new ContentTypeGroupCreateStruct(array('identifier' => 'Identifier Bar')))
+            ->willReturn(
+                new ContentTypeGroupCreateStruct(['identifier' => 'Identifier Bar'])
             );
 
         return $contentTypeServiceMock;
@@ -107,8 +105,8 @@ class ContentTypeGroupInputTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/user/users/14', 'userId', 14),
-        );
+        return [
+            ['/user/users/14', 'userId', 14],
+        ];
     }
 }

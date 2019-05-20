@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the CsrfListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -26,7 +24,7 @@ class CsrfListener implements EventSubscriberInterface
     const CSRF_TOKEN_HEADER = 'X-CSRF-Token';
 
     /**
-     * @var null|CsrfTokenManagerInterface
+     * @var CsrfTokenManagerInterface|null
      */
     private $csrfTokenManager;
 
@@ -52,7 +50,7 @@ class CsrfListener implements EventSubscriberInterface
      * @param \Symfony\Component\EventDispatcher\EventDispatcherInterface $eventDispatcher
      * @param bool $csrfEnabled
      * @param string $csrfTokenIntention
-     * @param null|CsrfTokenManagerInterface $csrfTokenManager
+     * @param CsrfTokenManagerInterface|null $csrfTokenManager
      */
     public function __construct(
         EventDispatcherInterface $eventDispatcher,
@@ -71,9 +69,9 @@ class CsrfListener implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return array(
+        return [
             KernelEvents::REQUEST => 'onKernelRequest',
-        );
+        ];
     }
 
     /**
@@ -124,7 +122,7 @@ class CsrfListener implements EventSubscriberInterface
      */
     protected function isMethodSafe($method)
     {
-        return in_array($method, array('GET', 'HEAD', 'OPTIONS'));
+        return in_array($method, ['GET', 'HEAD', 'OPTIONS']);
     }
 
     /**
@@ -159,7 +157,7 @@ class CsrfListener implements EventSubscriberInterface
      *
      * @param Request $request
      *
-     * @return bool true/false if the token is valid/invalid, false if none was found in the request's headers.
+     * @return bool true/false if the token is valid/invalid, false if none was found in the request's headers
      */
     protected function checkCsrfToken(Request $request)
     {

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestSessionBasedAuthenticationListener class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -75,7 +73,7 @@ class RestAuthenticator implements ListenerInterface, AuthenticatorInterface
     /**
      * @var \Symfony\Component\Security\Http\Logout\LogoutHandlerInterface[]
      */
-    private $logoutHandlers = array();
+    private $logoutHandlers = [];
 
     public function __construct(
         TokenStorageInterface $tokenStorage,

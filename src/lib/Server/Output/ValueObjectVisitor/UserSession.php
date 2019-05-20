@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the UserSession ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -41,7 +39,7 @@ class UserSession extends ValueObjectVisitor
 
     protected function visitUserSessionAttributes(Visitor $visitor, Generator $generator, UserSessionValue $data)
     {
-        $sessionHref = $this->router->generate('ezpublish_rest_deleteSession', array('sessionId' => $data->sessionId));
+        $sessionHref = $this->router->generate('ezpublish_rest_deleteSession', ['sessionId' => $data->sessionId]);
 
         $generator->startAttribute('href', $sessionHref);
         $generator->endAttribute('href');
@@ -58,7 +56,7 @@ class UserSession extends ValueObjectVisitor
         $generator->startObjectElement('User', 'User');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadUser', array('userId' => $data->user->id))
+            $this->router->generate('ezpublish_rest_loadUser', ['userId' => $data->user->id])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('User');

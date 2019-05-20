@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Functional\LocationTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -14,6 +12,7 @@ class LocationTest extends RESTFunctionalTestCase
 {
     /**
      * Covers POST /content/objects/{contentId}/locations.
+     *
      * @returns string location href
      */
     public function testCreateLocation()
@@ -136,6 +135,7 @@ XML;
 
     /**
      * Covers MOVE /content/locations/{locationPath}.
+     *
      * @depends testCopySubtree
      */
     public function testMoveSubtree($locationHref)
@@ -195,6 +195,7 @@ XML;
 
     /**
      * Covers PATCH /content/locations/{locationPath}.
+     *
      * @depends testCreateLocation
      */
     public function testUpdateLocation($locationHref)

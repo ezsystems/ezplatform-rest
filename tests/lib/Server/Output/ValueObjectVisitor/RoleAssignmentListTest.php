@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -28,11 +26,11 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $roleAssignmentList = new RoleAssignmentList(array(), '42');
+        $roleAssignmentList = new RoleAssignmentList([], '42');
 
         $this->addRouteExpectation(
             'ezpublish_rest_loadRoleAssignmentsForUser',
-            array('userId' => 42),
+            ['userId' => 42],
             '/user/users/42/roles'
         );
 
@@ -59,9 +57,9 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsRoleListElement($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'RoleAssignmentList',
-            ),
+            ],
             $result,
             'Invalid <RoleAssignmentList> element.',
             false
@@ -78,13 +76,13 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsUserRoleAssignmentListAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'RoleAssignmentList',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.RoleAssignmentList+xml',
                     'href' => '/user/users/42/roles',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <RoleAssignmentList> attributes.',
             false
@@ -102,10 +100,10 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $roleAssignmentList = new RoleAssignmentList(
-            array(
+            [
                 new User\UserRoleAssignment(),
                 new User\UserRoleAssignment(),
-            ),
+            ],
             42
         );
 
@@ -134,11 +132,11 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $roleAssignmentList = new RoleAssignmentList(array(), '/1/5/777', true);
+        $roleAssignmentList = new RoleAssignmentList([], '/1/5/777', true);
 
         $this->addRouteExpectation(
             'ezpublish_rest_loadRoleAssignmentsForUserGroup',
-            array('groupPath' => '/1/5/777'),
+            ['groupPath' => '/1/5/777'],
             '/user/groups/1/5/777/roles'
         );
 
@@ -165,13 +163,13 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
     public function testResultContainsGroupRoleAssignmentListAttributes($result)
     {
         $this->assertXMLTag(
-            array(
+            [
                 'tag' => 'RoleAssignmentList',
-                'attributes' => array(
+                'attributes' => [
                     'media-type' => 'application/vnd.ez.api.RoleAssignmentList+xml',
                     'href' => '/user/groups/1/5/777/roles',
-                ),
-            ),
+                ],
+            ],
             $result,
             'Invalid <RoleAssignmentList> attributes.',
             false

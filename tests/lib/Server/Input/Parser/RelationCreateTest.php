@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -17,11 +15,11 @@ class RelationCreateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
-            'Destination' => array(
+        $inputArray = [
+            'Destination' => [
                 '_href' => '/content/objects/42',
-            ),
-        );
+            ],
+        ];
 
         $relationCreate = $this->getParser();
         $result = $relationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -41,7 +39,7 @@ class RelationCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingDestination()
     {
-        $inputArray = array();
+        $inputArray = [];
 
         $relationCreate = $this->getParser();
         $relationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -55,9 +53,9 @@ class RelationCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingDestinationHref()
     {
-        $inputArray = array(
-            'Destination' => array(),
-        );
+        $inputArray = [
+            'Destination' => [],
+        ];
 
         $relationCreate = $this->getParser();
         $relationCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -78,8 +76,8 @@ class RelationCreateTest extends BaseTest
 
     public function getParseHrefExpectationsMap()
     {
-        return array(
-            array('/content/objects/42', 'contentId', 42),
-        );
+        return [
+            ['/content/objects/42', 'contentId', 42],
+        ];
     }
 }

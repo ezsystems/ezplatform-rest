@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -17,21 +15,21 @@ class URLWildcardCreateTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'sourceUrl' => '/source/url',
             'destinationUrl' => '/destination/url',
             'forward' => 'true',
-        );
+        ];
 
         $urlWildcardCreate = $this->getParser();
         $result = $urlWildcardCreate->parse($inputArray, $this->getParsingDispatcherMock());
 
         $this->assertEquals(
-            array(
+            [
                 'sourceUrl' => '/source/url',
                 'destinationUrl' => '/destination/url',
                 'forward' => true,
-            ),
+            ],
             $result,
             'URLWildcardCreate not parsed correctly.'
         );
@@ -45,10 +43,10 @@ class URLWildcardCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingSourceUrl()
     {
-        $inputArray = array(
+        $inputArray = [
             'destinationUrl' => '/destination/url',
             'forward' => 'true',
-        );
+        ];
 
         $urlWildcardCreate = $this->getParser();
         $urlWildcardCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -62,10 +60,10 @@ class URLWildcardCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingDestinationUrl()
     {
-        $inputArray = array(
+        $inputArray = [
             'sourceUrl' => '/source/url',
             'forward' => 'true',
-        );
+        ];
 
         $urlWildcardCreate = $this->getParser();
         $urlWildcardCreate->parse($inputArray, $this->getParsingDispatcherMock());
@@ -79,10 +77,10 @@ class URLWildcardCreateTest extends BaseTest
      */
     public function testParseExceptionOnMissingForward()
     {
-        $inputArray = array(
+        $inputArray = [
             'sourceUrl' => '/source/url',
             'destinationUrl' => '/destination/url',
-        );
+        ];
 
         $urlWildcardCreate = $this->getParser();
         $urlWildcardCreate->parse($inputArray, $this->getParsingDispatcherMock());

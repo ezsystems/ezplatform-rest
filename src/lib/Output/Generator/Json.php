@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Json generator class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -209,7 +207,7 @@ class Json extends Generator
      * @param string $value
      * @param array $attributes
      */
-    public function startValueElement($name, $value, $attributes = array())
+    public function startValueElement($name, $value, $attributes = [])
     {
         $this->checkStartValueElement($name);
 

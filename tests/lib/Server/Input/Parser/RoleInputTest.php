@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -19,7 +17,7 @@ class RoleInputTest extends BaseTest
      */
     public function testParse()
     {
-        $inputArray = array(
+        $inputArray = [
             'identifier' => 'Identifier Bar',
             /* @todo uncomment when support for multilingual names and descriptions is added EZP-24776
             'mainLanguageCode' => 'eng-GB',
@@ -40,7 +38,7 @@ class RoleInputTest extends BaseTest
                 )
             )
             */
-        );
+        ];
 
         $roleInput = $this->getParser();
         $result = $roleInput->parse($inputArray, $this->getParsingDispatcherMock());
@@ -97,8 +95,8 @@ class RoleInputTest extends BaseTest
         $roleServiceMock->expects($this->any())
             ->method('newRoleCreateStruct')
             ->with($this->equalTo('Identifier Bar'))
-            ->will(
-                $this->returnValue(new RoleCreateStruct(array('identifier' => 'Identifier Bar')))
+            ->willReturn(
+                new RoleCreateStruct(['identifier' => 'Identifier Bar'])
             );
 
         return $roleServiceMock;

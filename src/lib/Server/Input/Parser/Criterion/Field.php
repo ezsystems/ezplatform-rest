@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Field Criterion parser class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -65,6 +63,7 @@ class Field extends BaseParser
      * Get operator for the given literal name.
      *
      * For the full list of supported operators:
+     *
      * @see \EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Field::OPERATORS
      *
      * @param string $operatorName operator literal operator name

@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Functional\RoleTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -230,6 +228,7 @@ XML;
 
     /**
      * Covers POST /user/roles/{roleId}/policies.
+     *
      * @depends testCreateRole
      *
      * @return string The created policy href
@@ -271,6 +270,7 @@ XML;
 
     /**
      * Covers POST /user/roles/{roleId}/policies.
+     *
      * @depends testCreateRoleDraft
      *
      * @return string The created policy href
@@ -311,6 +311,7 @@ XML;
 
     /**
      * Covers GET /user/roles/{roleId}/policies/{policyId}.
+     *
      * @depends testAddPolicy
      */
     public function testLoadPolicy($policyHref)
@@ -324,6 +325,7 @@ XML;
 
     /**
      * Covers GET /user/roles/{roleId}/policies.
+     *
      * @depends testCreateRole
      */
     public function testLoadPolicies($roleHref)
@@ -337,6 +339,7 @@ XML;
 
     /**
      * Covers PATCH /user/roles/{roleId}/policies/{policyId}.
+     *
      * @depends testAddPolicy
      */
     public function testUpdatePolicy($policyHref)
@@ -368,6 +371,7 @@ XML;
 
     /**
      * Covers PATCH /user/roles/{roleId}/policies/{policyId}.
+     *
      * @depends testAddPolicyByRoleDraft
      */
     public function testUpdatePolicyByRoleDraft($policyHref)
@@ -475,6 +479,7 @@ XML;
 
     /**
      * Covers GET /user/users/{userId}/roles/{roleId}.
+     *
      * @depends testAssignRoleToUser
      */
     public function testLoadRoleAssignmentForUser($roleAssignmentHref)
@@ -488,6 +493,7 @@ XML;
 
     /**
      * Covers DELETE /user/users/{userId}/roles/{roleId}.
+     *
      * @depends testAssignRoleToUser
      */
     public function testUnassignRoleFromUser($roleAssignmentHref)
@@ -537,6 +543,7 @@ XML;
 
     /**
      * Covers GET /user/groups/{groupId}/roles/{roleId}.
+     *
      * @depends testAssignRoleToUserGroup
      */
     public function testLoadRoleAssignmentForUserGroup($roleAssignmentHref)
@@ -551,6 +558,7 @@ XML;
 
     /**
      * Covers DELETE /user/groups/{groupId}/roles/{roleId}.
+     *
      * @depends testAssignRoleToUserGroup
      */
     public function testUnassignRoleFromUserGroup($roleAssignmentHref)
@@ -601,6 +609,7 @@ XML;
 
     /**
      * Covers DELETE /user/roles/{roleId}/policies/{policyId}.
+     *
      * @depends testAddPolicy
      */
     public function testDeletePolicy($policyHref)
@@ -614,6 +623,7 @@ XML;
 
     /**
      * Covers DELETE /user/roles/{roleId}/policies/{policyId}.
+     *
      * @depends testAddPolicyByRoleDraft
      */
     public function testRemovePolicyByRoleDraft($policyHref)
@@ -627,6 +637,7 @@ XML;
 
     /**
      * Covers DELETE /user/roles/{roleId}/policies.
+     *
      * @depends testCreateRole
      */
     public function testDeletePolicies($roleHref)
@@ -640,6 +651,7 @@ XML;
 
     /**
      * Covers DELETE /user/roles/{roleId}.
+     *
      * @depends testCreateRole
      */
     public function testDeleteRole($roleHref)
@@ -653,6 +665,7 @@ XML;
 
     /**
      * Covers PUBLISH /user/roles/{roleId}/draft.
+     *
      * @depends testCreateRoleDraft
      */
     public function testPublishRoleDraft($roleDraftHref)
@@ -671,6 +684,7 @@ XML;
 
     /**
      * Covers DELETE /user/roles/{roleId}/draft.
+     *
      * @depends testCreateRoleDraft
      */
     public function testDeleteRoleDraft($roleDraftHref)

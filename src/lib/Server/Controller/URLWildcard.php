@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the URLWildcard controller class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -73,7 +71,7 @@ class URLWildcard extends RestController
     {
         $urlWildcardCreate = $this->inputDispatcher->parse(
             new Message(
-                array('Content-Type' => $request->headers->get('Content-Type')),
+                ['Content-Type' => $request->headers->get('Content-Type')],
                 $request->getContent()
             )
         );
@@ -89,9 +87,9 @@ class URLWildcard extends RestController
         }
 
         return new Values\CreatedURLWildcard(
-            array(
+            [
                 'urlWildcard' => $createdURLWildcard,
-            )
+            ]
         );
     }
 

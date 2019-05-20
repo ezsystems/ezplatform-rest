@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the OptionsRouteCollectionTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -32,9 +30,9 @@ class RouteCollectionMapperTest extends TestCase
     public function testAddRestRoutesCollection()
     {
         $restRoutesCollection = new RouteCollection();
-        $restRoutesCollection->add('ezpublish_rest_route_one_get', $this->createRoute('/route/one', array('GET')));
-        $restRoutesCollection->add('ezpublish_rest_route_one_post', $this->createRoute('/route/one', array('POST')));
-        $restRoutesCollection->add('ezpublish_rest_route_two_delete', $this->createRoute('/route/two', array('DELETE')));
+        $restRoutesCollection->add('ezpublish_rest_route_one_get', $this->createRoute('/route/one', ['GET']));
+        $restRoutesCollection->add('ezpublish_rest_route_one_post', $this->createRoute('/route/one', ['POST']));
+        $restRoutesCollection->add('ezpublish_rest_route_two_delete', $this->createRoute('/route/two', ['DELETE']));
 
         $optionsRouteCollection = $this->collectionMapper->mapCollection($restRoutesCollection);
 
@@ -72,6 +70,6 @@ class RouteCollectionMapperTest extends TestCase
      */
     private function createRoute($path, array $methods)
     {
-        return new Route($path, array(), array(), array(), '', array(), $methods);
+        return new Route($path, [], [], [], '', [], $methods);
     }
 }

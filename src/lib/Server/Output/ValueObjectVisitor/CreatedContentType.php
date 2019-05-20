@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the CreatedContentType ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -34,9 +32,9 @@ class CreatedContentType extends RestContentType
             'Location',
             $this->router->generate(
                 'ezpublish_rest_loadContentType' . $this->getUrlTypeSuffix($restContentType->contentType->status),
-                array(
+                [
                     'contentTypeId' => $restContentType->contentType->id,
-                )
+                ]
             )
         );
         $visitor->setStatus(201);

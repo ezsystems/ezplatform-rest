@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the VisitorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -34,21 +32,21 @@ class VisitorTest extends TestCase
         $generator
             ->expects($this->at(2))
             ->method('isEmpty')
-            ->will($this->returnValue(false));
+            ->willReturn(false);
 
         $generator
             ->expects($this->at(3))
             ->method('endDocument')
             ->with($data)
-            ->will($this->returnValue('Hello world!'));
+            ->willReturn('Hello world!');
 
         $visitor = $this->getMockBuilder(Visitor::class)
-            ->setMethods(array('visitValueObject'))
-            ->setConstructorArgs(array($generator, $this->getValueObjectDispatcherMock()))
+            ->setMethods(['visitValueObject'])
+            ->setConstructorArgs([$generator, $this->getValueObjectDispatcherMock()])
             ->getMock();
 
         $this->assertEquals(
-            new Response('Hello world!', 200, array()),
+            new Response('Hello world!', 200, []),
             $visitor->visit($data)
         );
     }
@@ -66,19 +64,19 @@ class VisitorTest extends TestCase
         $generator
             ->expects($this->at(2))
             ->method('isEmpty')
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $generator
             ->expects($this->never())
             ->method('endDocument');
 
         $visitor = $this->getMockBuilder(Visitor::class)
-            ->setMethods(array('visitValueObject'))
-            ->setConstructorArgs(array($generator, $this->getValueObjectDispatcherMock()))
+            ->setMethods(['visitValueObject'])
+            ->setConstructorArgs([$generator, $this->getValueObjectDispatcherMock()])
             ->getMock();
 
         $this->assertEquals(
-            new Response(null, 200, array()),
+            new Response(null, 200, []),
             $visitor->visit($data)
         );
     }
@@ -111,9 +109,9 @@ class VisitorTest extends TestCase
             new Response(
                 null,
                 200,
-                array(
+                [
                     'Content-Type' => 'text/xml',
-                )
+                ]
             ),
             $visitor->visit($data)
         );
@@ -136,9 +134,9 @@ class VisitorTest extends TestCase
             new Response(
                 null,
                 200,
-                array(
+                [
                     'Content-Type' => 'text/xml',
-                )
+                ]
             ),
             $visitor->visit($data)
         );
@@ -156,9 +154,9 @@ class VisitorTest extends TestCase
             new Response(
                 null,
                 200,
-                array(
+                [
                     'Content-Type' => 'text/xml',
-                )
+                ]
             ),
             $visitor->visit($data)
         );
@@ -179,7 +177,7 @@ class VisitorTest extends TestCase
             new Response(
                 null,
                 200,
-                array()
+                []
             ),
             $result
         );
@@ -235,12 +233,12 @@ class VisitorTest extends TestCase
     protected function getVisitorMock()
     {
         return $this->getMockBuilder(Visitor::class)
-            ->setMethods(array('visitValueObject'))
+            ->setMethods(['visitValueObject'])
             ->setConstructorArgs(
-                array(
+                [
                     $this->getGeneratorMock(),
                     $this->getValueObjectDispatcherMock(),
-                )
+                ]
             )
             ->getMock();
     }

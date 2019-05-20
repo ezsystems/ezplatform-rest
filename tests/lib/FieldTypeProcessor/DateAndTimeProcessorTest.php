@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the DateAndTimeProcessorTest class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -13,20 +11,20 @@ use PHPUnit\Framework\TestCase;
 
 class DateAndTimeProcessorTest extends TestCase
 {
-    protected $constants = array(
+    protected $constants = [
         'DEFAULT_EMPTY',
         'DEFAULT_CURRENT_DATE',
         'DEFAULT_CURRENT_DATE_ADJUSTED',
-    );
+    ];
 
     public function fieldSettingsHashes()
     {
         return array_map(
             function ($constantName) {
-                return array(
-                    array('defaultType' => $constantName),
-                    array('defaultType' => constant("eZ\\Publish\\Core\\FieldType\\DateAndTime\\Type::{$constantName}")),
-                );
+                return [
+                    ['defaultType' => $constantName],
+                    ['defaultType' => constant("eZ\\Publish\\Core\\FieldType\\DateAndTime\\Type::{$constantName}")],
+                ];
             },
             $this->constants
         );

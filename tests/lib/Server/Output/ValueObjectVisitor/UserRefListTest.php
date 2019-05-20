@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing a test class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -32,25 +30,25 @@ class UserRefListTest extends ValueObjectVisitorBaseTest
         $generator->startDocument(null);
 
         $UserRefList = new UserRefList(
-            array(
+            [
                 new RestUser(
                     new User(),
                     $this->getMockForAbstractClass(ContentType::class),
                     new ContentInfo(
-                        array(
+                        [
                             'id' => 14,
-                        )
+                        ]
                     ),
                     new Location(),
-                    array()
+                    []
                 ),
-            ),
+            ],
             '/some/path'
         );
 
         $this->addRouteExpectation(
             'ezpublish_rest_loadUser',
-            array('userId' => $UserRefList->users[0]->contentInfo->id),
+            ['userId' => $UserRefList->users[0]->contentInfo->id],
             "/user/users/{$UserRefList->users[0]->contentInfo->id}"
         );
 

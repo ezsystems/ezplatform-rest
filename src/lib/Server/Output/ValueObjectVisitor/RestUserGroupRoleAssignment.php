@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the RestUserGroupRoleAssignment ValueObjectVisitor class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -37,10 +35,10 @@ class RestUserGroupRoleAssignment extends ValueObjectVisitor
             'href',
             $this->router->generate(
                 'ezpublish_rest_loadRoleAssignmentForUserGroup',
-                array(
+                [
                     'groupPath' => trim($data->id, '/'),
                     'roleId' => $role->id,
-                )
+                ]
             )
         );
         $generator->endAttribute('href');
@@ -53,7 +51,7 @@ class RestUserGroupRoleAssignment extends ValueObjectVisitor
         $generator->startObjectElement('Role');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadRole', array('roleId' => $role->id))
+            $this->router->generate('ezpublish_rest_loadRole', ['roleId' => $role->id])
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Role');

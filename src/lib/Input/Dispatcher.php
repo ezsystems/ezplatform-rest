@@ -1,8 +1,6 @@
 <?php
 
 /**
- * File containing the Input Dispatcher class.
- *
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
@@ -30,7 +28,7 @@ class Dispatcher
      *
      * @var array
      */
-    protected $handlers = array();
+    protected $handlers = [];
 
     /**
      * @var \EzSystems\EzPlatformRest\Input\ParsingDispatcher
@@ -43,7 +41,7 @@ class Dispatcher
      * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      * @param array $handlers
      */
-    public function __construct(ParsingDispatcher $parsingDispatcher, array $handlers = array())
+    public function __construct(ParsingDispatcher $parsingDispatcher, array $handlers = [])
     {
         $this->parsingDispatcher = $parsingDispatcher;
         foreach ($handlers as $type => $handler) {
