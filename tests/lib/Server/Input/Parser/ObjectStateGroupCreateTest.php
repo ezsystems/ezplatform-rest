@@ -212,8 +212,8 @@ class ObjectStateGroupCreateTest extends BaseTest
         $objectStateServiceMock->expects($this->any())
             ->method('newObjectStateGroupCreateStruct')
             ->with($this->equalTo('test-group'))
-            ->will(
-                $this->returnValue(new ObjectStateGroupCreateStruct(['identifier' => 'test-group']))
+            ->willReturn(
+                new ObjectStateGroupCreateStruct(['identifier' => 'test-group'])
             );
 
         return $objectStateServiceMock;

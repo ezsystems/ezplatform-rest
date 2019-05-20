@@ -125,7 +125,7 @@ class RestProviderTest extends TestCase
         } else {
             $mock->expects($this->any())
                 ->method('matchRequest')
-                ->will($this->returnValue($this->matchRequestResult));
+                ->willReturn($this->matchRequestResult);
         }
 
         return $mock;

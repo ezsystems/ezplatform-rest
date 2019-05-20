@@ -257,14 +257,12 @@ class PolicyCreateTest extends BaseTest
                 $this->equalTo('content'),
                 $this->equalTo('delete')
             )
-            ->will(
-                $this->returnValue(
-                    new PolicyCreateStruct(
-                        [
-                            'module' => 'content',
-                            'function' => 'delete',
-                        ]
-                    )
+            ->willReturn(
+                new PolicyCreateStruct(
+                    [
+                        'module' => 'content',
+                        'function' => 'delete',
+                    ]
                 )
             );
 

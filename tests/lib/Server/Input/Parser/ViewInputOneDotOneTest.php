@@ -29,7 +29,7 @@ class ViewInputOneDotOneTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($inputArray['ContentQuery'], 'application/vnd.ez.api.internal.ContentQuery')
-            ->will($this->returnValue(new Query()));
+            ->willReturn(new Query());
 
         $result = $parser->parse($inputArray, $parsingDispatcher);
 
@@ -56,7 +56,7 @@ class ViewInputOneDotOneTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($inputArray['LocationQuery'], 'application/vnd.ez.api.internal.LocationQuery')
-            ->will($this->returnValue(new LocationQuery()));
+            ->willReturn(new LocationQuery());
 
         $result = $parser->parse($inputArray, $parsingDispatcher);
 

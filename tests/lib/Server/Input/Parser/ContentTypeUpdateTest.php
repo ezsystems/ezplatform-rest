@@ -175,7 +175,7 @@ class ContentTypeUpdateTest extends BaseTest
 
         $contentTypeServiceMock->expects($this->any())
             ->method('newContentTypeUpdateStruct')
-            ->will($this->returnValue(new ContentTypeUpdateStruct()));
+            ->willReturn(new ContentTypeUpdateStruct());
 
         return $contentTypeServiceMock;
     }

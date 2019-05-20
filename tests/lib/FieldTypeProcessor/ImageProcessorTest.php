@@ -37,8 +37,8 @@ class ImageProcessorTest extends BinaryInputProcessorTest
                     'ezpublish_rest_binaryContent_getImageVariation',
                     ['imageId' => $inputHash['imageId'], 'variationIdentifier' => $variationIdentifier]
                 )
-                ->will(
-                    $this->returnValue($expectedVariations[$variationIdentifier]['href'])
+                ->willReturn(
+                    $expectedVariations[$variationIdentifier]['href']
                 );
         }
 

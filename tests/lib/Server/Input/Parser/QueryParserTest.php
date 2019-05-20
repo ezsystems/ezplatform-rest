@@ -42,7 +42,7 @@ class QueryParserTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
 
         $parser = $this->getParser();
 
@@ -67,12 +67,12 @@ class QueryParserTest extends BaseTest
             ->expects($this->at(0))
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
         $parsingDispatcher
             ->expects($this->at(1))
             ->method('parse')
             ->with(['ParentLocationIdCriterion' => 762])
-            ->will($this->returnValue(new Query\Criterion\ParentLocationId(762)));
+            ->willReturn(new Query\Criterion\ParentLocationId(762));
 
         $parser = $this->getParser();
 
@@ -100,7 +100,7 @@ class QueryParserTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
 
         $parser = $this->getParser();
 
@@ -125,12 +125,12 @@ class QueryParserTest extends BaseTest
             ->expects($this->at(0))
             ->method('parse')
             ->with(['ContentTypeIdentifierCriterion' => 'article'])
-            ->will($this->returnValue(new Query\Criterion\ContentTypeIdentifier('article')));
+            ->willReturn(new Query\Criterion\ContentTypeIdentifier('article'));
         $parsingDispatcher
             ->expects($this->at(1))
             ->method('parse')
             ->with(['ParentLocationIdCriterion' => 762])
-            ->will($this->returnValue(new Query\Criterion\ParentLocationId(762)));
+            ->willReturn(new Query\Criterion\ParentLocationId(762));
 
         $parser = $this->getParser();
 

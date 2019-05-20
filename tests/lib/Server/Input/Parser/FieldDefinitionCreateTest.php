@@ -197,23 +197,21 @@ class FieldDefinitionCreateTest extends BaseTest
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseValue')
-            ->will($this->returnValue('New title'));
+            ->willReturn('New title');
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseFieldSettings')
-            ->will($this->returnValue(['textRows' => 24]));
+            ->willReturn(['textRows' => 24]);
 
         $fieldTypeParserMock->expects($this->any())
             ->method('parseValidatorConfiguration')
-            ->will(
-                $this->returnValue(
-                    [
-                        'StringLengthValidator' => [
-                            'minStringLength' => 12,
-                            'maxStringLength' => 24,
-                        ],
-                    ]
-                )
+            ->willReturn(
+                [
+                    'StringLengthValidator' => [
+                        'minStringLength' => 12,
+                        'maxStringLength' => 24,
+                    ],
+                ]
             );
 
         return $fieldTypeParserMock;
@@ -231,15 +229,13 @@ class FieldDefinitionCreateTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('newFieldDefinitionCreateStruct')
             ->with($this->equalTo('title'), $this->equalTo('ezstring'))
-            ->will(
-                $this->returnValue(
+            ->willReturn(
                     new FieldDefinitionCreateStruct(
                         [
                             'identifier' => 'title',
                             'fieldTypeIdentifier' => 'ezstring',
                         ]
                     )
-                )
             );
 
         return $contentTypeServiceMock;

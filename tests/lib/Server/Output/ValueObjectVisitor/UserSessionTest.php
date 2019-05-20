@@ -179,7 +179,7 @@ class UserSessionTest extends ValueObjectVisitorBaseTest
         $user->expects($this->any())
             ->method('__get')
             ->with($this->equalTo('id'))
-            ->will($this->returnValue('user123'));
+            ->willReturn('user123');
 
         return $user;
     }

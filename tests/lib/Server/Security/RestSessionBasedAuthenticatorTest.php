@@ -94,12 +94,12 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->once())
             ->method('getToken')
-            ->will($this->returnValue($existingToken));
+            ->willReturn($existingToken);
 
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue($username));
+            ->willReturn($username);
         $existingToken
             ->expects($this->once())
             ->method('setAttribute')
@@ -124,12 +124,12 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->once())
             ->method('getToken')
-            ->will($this->returnValue($existingToken));
+            ->willReturn($existingToken);
 
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue(__METHOD__));
+            ->willReturn(__METHOD__);
 
         $request = new Request();
         $request->attributes->set('username', $username);
@@ -140,7 +140,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('authenticate')
             ->with($this->equalTo($usernamePasswordToken))
-            ->will($this->returnValue(null));
+            ->willReturn(null);
 
         $this->logger
             ->expects($this->once())
@@ -161,7 +161,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue(__METHOD__));
+            ->willReturn(__METHOD__);
 
         $request = new Request();
         $request->attributes->set('username', $username);
@@ -173,7 +173,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('authenticate')
             ->with($this->equalTo($usernamePasswordToken))
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $this->tokenStorage
             ->expects($this->once())
@@ -198,7 +198,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $authenticatedToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue('not_an_ez_user'));
+            ->willReturn('not_an_ez_user');
 
         $this->logger
             ->expects($this->once())
@@ -218,7 +218,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $apiUser
             ->expects($this->any())
             ->method('getUserId')
-            ->will($this->returnValue($userId));
+            ->willReturn($userId);
 
         return new EzUser($apiUser);
     }
@@ -236,11 +236,11 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue(__METHOD__));
+            ->willReturn(__METHOD__);
         $existingToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($existingUser));
+            ->willReturn($existingUser);
 
         $request = new Request();
         $request->attributes->set('username', $username);
@@ -252,7 +252,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('authenticate')
             ->with($this->equalTo($usernamePasswordToken))
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $this->eventDispatcher
             ->expects($this->once())
@@ -265,7 +265,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(0))
             ->method('getToken')
-            ->will($this->returnValue($existingToken));
+            ->willReturn($existingToken);
         $this->tokenStorage
             ->expects($this->at(1))
             ->method('setToken')
@@ -273,7 +273,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(2))
             ->method('getToken')
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
         $this->tokenStorage
             ->expects($this->at(3))
             ->method('setToken')
@@ -283,13 +283,13 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $authenticatedToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($authenticatedUser));
+            ->willReturn($authenticatedUser);
 
         $this->configResolver
             ->expects($this->once())
             ->method('getParameter')
             ->with('anonymous_user_id')
-            ->will($this->returnValue(10));
+            ->willReturn(10);
 
         $this->authenticator->authenticate($request);
     }
@@ -305,11 +305,11 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue(__METHOD__));
+            ->willReturn(__METHOD__);
         $existingToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($existingUser));
+            ->willReturn($existingUser);
 
         $request = new Request();
         $request->attributes->set('username', $username);
@@ -321,7 +321,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('authenticate')
             ->with($this->equalTo($usernamePasswordToken))
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $this->eventDispatcher
             ->expects($this->once())
@@ -334,7 +334,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(0))
             ->method('getToken')
-            ->will($this->returnValue($existingToken));
+            ->willReturn($existingToken);
         $this->tokenStorage
             ->expects($this->at(1))
             ->method('setToken')
@@ -342,19 +342,19 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(2))
             ->method('getToken')
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $authenticatedUser = $this->createUser(456);
         $authenticatedToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($authenticatedUser));
+            ->willReturn($authenticatedUser);
 
         $this->configResolver
             ->expects($this->once())
             ->method('getParameter')
             ->with('anonymous_user_id')
-            ->will($this->returnValue($anonymousUserId));
+            ->willReturn($anonymousUserId);
 
         $this->assertSame($authenticatedToken, $this->authenticator->authenticate($request));
     }
@@ -368,7 +368,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue(__METHOD__));
+            ->willReturn(__METHOD__);
 
         $request = new Request();
         $request->attributes->set('username', $username);
@@ -380,7 +380,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('authenticate')
             ->with($this->equalTo($usernamePasswordToken))
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $this->eventDispatcher
             ->expects($this->once())
@@ -393,7 +393,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(0))
             ->method('getToken')
-            ->will($this->returnValue($existingToken));
+            ->willReturn($existingToken);
         $this->tokenStorage
             ->expects($this->at(1))
             ->method('setToken')
@@ -401,13 +401,13 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(2))
             ->method('getToken')
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $authenticatedUser = $this->createUser(456);
         $authenticatedToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($authenticatedUser));
+            ->willReturn($authenticatedUser);
 
         $this->assertSame($authenticatedToken, $this->authenticator->authenticate($request));
     }
@@ -422,11 +422,11 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue(__METHOD__));
+            ->willReturn(__METHOD__);
         $existingToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($existingUser));
+            ->willReturn($existingUser);
 
         $request = new Request();
         $request->attributes->set('username', $username);
@@ -438,7 +438,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('authenticate')
             ->with($this->equalTo($usernamePasswordToken))
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $this->eventDispatcher
             ->expects($this->once())
@@ -451,7 +451,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(0))
             ->method('getToken')
-            ->will($this->returnValue($existingToken));
+            ->willReturn($existingToken);
         $this->tokenStorage
             ->expects($this->at(1))
             ->method('setToken')
@@ -459,13 +459,13 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(2))
             ->method('getToken')
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $authenticatedUser = $this->createUser(456);
         $authenticatedToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($authenticatedUser));
+            ->willReturn($authenticatedUser);
 
         $this->assertSame($authenticatedToken, $this->authenticator->authenticate($request));
     }
@@ -479,7 +479,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $existingToken
             ->expects($this->once())
             ->method('getUsername')
-            ->will($this->returnValue(__METHOD__));
+            ->willReturn(__METHOD__);
 
         $request = new Request();
         $request->attributes->set('username', $username);
@@ -491,7 +491,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('authenticate')
             ->with($this->equalTo($usernamePasswordToken))
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $this->eventDispatcher
             ->expects($this->once())
@@ -504,7 +504,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(0))
             ->method('getToken')
-            ->will($this->returnValue($existingToken));
+            ->willReturn($existingToken);
         $this->tokenStorage
             ->expects($this->at(1))
             ->method('setToken')
@@ -512,13 +512,13 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->at(2))
             ->method('getToken')
-            ->will($this->returnValue($authenticatedToken));
+            ->willReturn($authenticatedToken);
 
         $authenticatedUser = $this->createUser(456);
         $authenticatedToken
             ->expects($this->once())
             ->method('getUser')
-            ->will($this->returnValue($authenticatedUser));
+            ->willReturn($authenticatedUser);
 
         $this->assertSame($authenticatedToken, $this->authenticator->authenticate($request));
     }
@@ -534,7 +534,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->tokenStorage
             ->expects($this->once())
             ->method('getToken')
-            ->will($this->returnValue($token));
+            ->willReturn($token);
 
         $request = new Request();
         $logoutHandler1 = $this->createMock(LogoutHandlerInterface::class);

@@ -264,7 +264,7 @@ class ContentTypeCreateTest extends BaseTest
         $fieldDefinitionCreateParserMock->expects($this->any())
             ->method('parse')
             ->with([], $this->getParsingDispatcherMock())
-            ->will($this->returnValue(new FieldDefinitionCreateStruct()));
+            ->willReturn(new FieldDefinitionCreateStruct());
 
         return $fieldDefinitionCreateParserMock;
     }
@@ -281,14 +281,12 @@ class ContentTypeCreateTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('newContentTypeCreateStruct')
             ->with($this->equalTo('new_content_type'))
-            ->will(
-                $this->returnValue(
+            ->willReturn(
                     new ContentTypeCreateStruct(
                         [
                             'identifier' => 'new_content_type',
                         ]
                     )
-                )
             );
 
         return $contentTypeServiceMock;

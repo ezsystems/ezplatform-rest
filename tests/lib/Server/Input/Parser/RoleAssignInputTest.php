@@ -34,7 +34,7 @@ class RoleAssignInputTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($limitation, 'application/vnd.ez.api.internal.limitation.Section')
-            ->will($this->returnValue(new SectionLimitation()));
+            ->willReturn(new SectionLimitation());
 
         $roleAssignInput = $this->getParser();
         $result = $roleAssignInput->parse($inputArray, $this->getParsingDispatcherMock());

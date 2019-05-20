@@ -95,8 +95,8 @@ class RoleInputTest extends BaseTest
         $roleServiceMock->expects($this->any())
             ->method('newRoleCreateStruct')
             ->with($this->equalTo('Identifier Bar'))
-            ->will(
-                $this->returnValue(new RoleCreateStruct(['identifier' => 'Identifier Bar']))
+            ->willReturn(
+                new RoleCreateStruct(['identifier' => 'Identifier Bar'])
             );
 
         return $roleServiceMock;

@@ -28,7 +28,7 @@ class ViewInputTest extends BaseTest
             ->expects($this->once())
             ->method('parse')
             ->with($inputArray['Query'], 'application/vnd.ez.api.internal.ContentQuery')
-            ->will($this->returnValue(new Query()));
+            ->willReturn(new Query());
 
         $result = $parser->parse($inputArray, $parsingDispatcher);
 

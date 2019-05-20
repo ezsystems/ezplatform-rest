@@ -96,8 +96,8 @@ class ContentTypeGroupInputTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('newContentTypeGroupCreateStruct')
             ->with($this->equalTo('Identifier Bar'))
-            ->will(
-                $this->returnValue(new ContentTypeGroupCreateStruct(['identifier' => 'Identifier Bar']))
+            ->willReturn(
+                new ContentTypeGroupCreateStruct(['identifier' => 'Identifier Bar'])
             );
 
         return $contentTypeServiceMock;

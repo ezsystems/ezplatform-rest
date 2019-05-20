@@ -105,7 +105,7 @@ class RelationProcessorTest extends TestCase
             ->expects($this->once())
             ->method('generate')
             ->with('ezpublish_rest_loadContent', ['contentId' => 42])
-            ->will($this->returnValue('/api/ezp/v2/content/objects/42'));
+            ->willReturn('/api/ezp/v2/content/objects/42');
 
         $hash = $processor->postProcessValueHash(['destinationContentId' => 42]);
         $this->assertArrayHasKey('destinationContentHref', $hash);

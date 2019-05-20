@@ -36,7 +36,7 @@ class RouterTest extends TestCase
             ->expects($this->once())
             ->method('matchRequest')
             ->with($this->attributeEqualTo('pathInfo', '/api/test/v1/'))
-            ->will($this->returnValue($expectedMatchResult));
+            ->willReturn($expectedMatchResult);
 
         self::assertEquals(
             $expectedMatchResult,
@@ -91,7 +91,7 @@ class RouterTest extends TestCase
             ->expects($this->once())
             ->method('matchRequest')
             ->with($this->attributeEqualTo('pathInfo', $href))
-            ->will($this->returnValue($expectedMatchResult));
+            ->willReturn($expectedMatchResult);
 
         self::assertEquals(1, $this->getRequestParser()->parseHref($href, 'contentId'));
     }
@@ -112,7 +112,7 @@ class RouterTest extends TestCase
             ->expects($this->once())
             ->method('matchRequest')
             ->with($this->attributeEqualTo('pathInfo', $href))
-            ->will($this->returnValue($matchResult));
+            ->willReturn($matchResult);
 
         self::assertEquals(1, $this->getRequestParser()->parseHref($href, 'badAttribute'));
     }
@@ -127,7 +127,7 @@ class RouterTest extends TestCase
             ->expects($this->once())
             ->method('generate')
             ->with($routeName, $arguments)
-            ->will($this->returnValue($expectedResult));
+            ->willReturn($expectedResult);
 
         self::assertEquals(
             $expectedResult,
@@ -156,7 +156,7 @@ class RouterTest extends TestCase
             $this->router
                 ->expects($this->any())
                 ->method('getContext')
-                ->will($this->returnValue(new RequestContext()));
+                ->willReturn(new RequestContext());
         }
 
         return $this->router;

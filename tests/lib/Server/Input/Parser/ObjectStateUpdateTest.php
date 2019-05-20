@@ -122,8 +122,8 @@ class ObjectStateUpdateTest extends BaseTest
 
         $objectStateServiceMock->expects($this->any())
             ->method('newObjectStateUpdateStruct')
-            ->will(
-                $this->returnValue(new ObjectStateUpdateStruct())
+            ->willReturn(
+                new ObjectStateUpdateStruct()
             );
 
         return $objectStateServiceMock;

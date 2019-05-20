@@ -87,7 +87,7 @@ abstract class BaseTest extends ParentBaseTest
             $this->requestParserMock
                 ->expects($this->any())
                 ->method('parseHref')
-                ->will($this->returnCallback($callback));
+                ->willReturnCallback($callback);
         }
 
         return $this->requestParserMock;

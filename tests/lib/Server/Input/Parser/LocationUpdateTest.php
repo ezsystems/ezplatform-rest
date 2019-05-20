@@ -132,8 +132,8 @@ class LocationUpdateTest extends BaseTest
 
         $locationServiceMock->expects($this->any())
             ->method('newLocationUpdateStruct')
-            ->will(
-                $this->returnValue(new LocationUpdateStruct())
+            ->willReturn(
+                new LocationUpdateStruct()
             );
 
         return $locationServiceMock;

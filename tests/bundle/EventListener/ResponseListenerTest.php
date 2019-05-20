@@ -92,10 +92,8 @@ class ResponseListenerTest extends EventListenerTest
             ->with(
                 $this->getRequestMock(),
                 $this->eventValue
-            )->will(
-                $this->returnValue(
-                    $this->response
-                )
+            )->willReturn(
+                $this->response
             );
 
         $event->expects($this->once())
@@ -137,7 +135,7 @@ class ResponseListenerTest extends EventListenerTest
             $this->eventMock
                 ->expects($this->any())
                 ->method('getControllerResult')
-                ->will($this->returnValue($this->eventValue));
+                ->willReturn($this->eventValue);
         }
 
         return $this->eventMock;
@@ -154,7 +152,7 @@ class ResponseListenerTest extends EventListenerTest
             $this->eventMock
                 ->expects($this->any())
                 ->method('getException')
-                ->will($this->returnValue($this->eventValue));
+                ->willReturn($this->eventValue);
         }
 
         return $this->eventMock;

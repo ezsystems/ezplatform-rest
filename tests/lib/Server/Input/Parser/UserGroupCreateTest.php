@@ -332,7 +332,7 @@ class UserGroupCreateTest extends BaseTest
         $fieldTypeParserMock->expects($this->any())
             ->method('parseValue')
             ->with('ezstring', [])
-            ->will($this->returnValue('foo'));
+            ->willReturn('foo');
 
         return $fieldTypeParserMock;
     }
@@ -353,15 +353,13 @@ class UserGroupCreateTest extends BaseTest
                 $this->equalTo('eng-US'),
                 $this->equalTo($contentType)
             )
-            ->will(
-                $this->returnValue(
+            ->willReturn(
                     new UserGroupCreateStruct(
                         [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',
                         ]
                     )
-                )
             );
 
         return $userServiceMock;
@@ -379,7 +377,7 @@ class UserGroupCreateTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('loadContentType')
             ->with($this->equalTo(3))
-            ->will($this->returnValue($this->getContentType()));
+            ->willReturn($this->getContentType());
 
         return $contentTypeServiceMock;
     }

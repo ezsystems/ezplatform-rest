@@ -32,13 +32,13 @@ class VisitorTest extends TestCase
         $generator
             ->expects($this->at(2))
             ->method('isEmpty')
-            ->will($this->returnValue(false));
+            ->willReturn(false);
 
         $generator
             ->expects($this->at(3))
             ->method('endDocument')
             ->with($data)
-            ->will($this->returnValue('Hello world!'));
+            ->willReturn('Hello world!');
 
         $visitor = $this->getMockBuilder(Visitor::class)
             ->setMethods(['visitValueObject'])
@@ -64,7 +64,7 @@ class VisitorTest extends TestCase
         $generator
             ->expects($this->at(2))
             ->method('isEmpty')
-            ->will($this->returnValue(true));
+            ->willReturn(true);
 
         $generator
             ->expects($this->never())

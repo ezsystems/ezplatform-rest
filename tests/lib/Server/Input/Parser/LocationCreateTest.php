@@ -184,8 +184,8 @@ class LocationCreateTest extends BaseTest
         $locationServiceMock->expects($this->any())
             ->method('newLocationCreateStruct')
             ->with($this->equalTo(42))
-            ->will(
-                $this->returnValue(new LocationCreateStruct(['parentLocationId' => 42]))
+            ->willReturn(
+                new LocationCreateStruct(['parentLocationId' => 42])
             );
 
         return $locationServiceMock;

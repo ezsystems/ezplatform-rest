@@ -69,7 +69,7 @@ abstract class EventListenerTest extends TestCase
             $this->eventMock
                 ->expects($this->any())
                 ->method('getRequest')
-                ->will($this->returnValue($this->getRequestMock()));
+                ->willReturn($this->getRequestMock());
         }
 
         return $this->eventMock;
@@ -86,7 +86,7 @@ abstract class EventListenerTest extends TestCase
                 ->expects($this->once())
                 ->method('get')
                 ->with('is_rest_request')
-                ->will($this->returnValue($this->isRestRequest));
+                ->willReturn($this->isRestRequest);
         }
 
         return $this->requestAttributesMock;
@@ -110,7 +110,7 @@ abstract class EventListenerTest extends TestCase
                 $this->requestMock
                     ->expects($this->atLeastOnce())
                     ->method('getMethod')
-                    ->will($this->returnValue($this->requestMethod));
+                    ->willReturn($this->requestMethod);
             }
         }
 

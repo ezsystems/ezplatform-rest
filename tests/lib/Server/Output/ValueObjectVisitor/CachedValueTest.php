@@ -166,22 +166,18 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
         $mock
             ->expects($this->any())
             ->method('hasParameter')
-            ->will(
-                $this->returnCallback(
+            ->willReturnCallback(
                     function ($parameterName) use ($options) {
                         return isset($options[$parameterName]);
                     }
-                )
             );
         $mock
             ->expects($this->any())
             ->method('getParameter')
-            ->will(
-                $this->returnCallback(
+            ->willReturnCallback(
                     function ($parameterName, $defaultValue) use ($options) {
                         return isset($options[$parameterName]) ? $options[$parameterName] : $defaultValue;
                     }
-                )
             );
 
         return $mock;

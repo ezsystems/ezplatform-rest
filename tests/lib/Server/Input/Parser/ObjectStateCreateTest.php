@@ -256,8 +256,8 @@ class ObjectStateCreateTest extends BaseTest
         $objectStateServiceMock->expects($this->any())
             ->method('newObjectStateCreateStruct')
             ->with($this->equalTo('test-state'))
-            ->will(
-                $this->returnValue(new ObjectStateCreateStruct(['identifier' => 'test-state']))
+            ->willReturn(
+                new ObjectStateCreateStruct(['identifier' => 'test-state'])
             );
 
         return $objectStateServiceMock;
