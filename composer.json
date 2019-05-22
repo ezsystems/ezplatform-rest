@@ -6,11 +6,7 @@
     "autoload": {
         "psr-4": {
             "EzSystems\\EzPlatformRestBundle\\": "src/bundle/",
-            "EzSystems\\EzPlatformRest\\": "src/lib/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
+            "EzSystems\\EzPlatformRest\\": "src/lib/",
             "EzSystems\\EzPlatformRestBundle\\Tests\\": "tests/bundle/",
             "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/"
         }
@@ -22,13 +18,16 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~7.5.11",
-        "friendsofphp/php-cs-fixer": "~2.15.0"
+        "friendsofphp/php-cs-fixer": "~2.15.0",
+        "matthiasnoback/symfony-dependency-injection-test": "^3.0"
     },
     "scripts": {
         "fix-cs": "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"
     },
     "extra": {
+        "_ezplatform_branch_for_behat_tests": "master",
         "branch-alias": {
+            "dev-tmp_ci_branch": "1.0.x-dev",
             "dev-master": "1.0.x-dev"
         }
     }
