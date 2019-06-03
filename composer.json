@@ -11,10 +11,11 @@
             "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^7.1",
-        "ezsystems/ezpublish-kernel": "^8.0@dev",
-        "ezsystems/doctrine-dbal-schema": "^1.0@dev"
+        "ezsystems/ezpublish-kernel": "^8.0@dev"
     },
     "require-dev": {
         "phpunit/phpunit": "~7.5.11",
