@@ -139,28 +139,33 @@ services:
         class: "%ezpublish_rest.controller.root.class%"
         parent: ezpublish_rest.controller.base
         arguments: ["@ezpublish_rest.root_resource_builder"]
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.section:
         class: "%ezpublish_rest.controller.section.class%"
         parent: ezpublish_rest.controller.base
         arguments:
             - "@ezpublish.api.service.section"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.binary_content:
         class: "%ezpublish_rest.controller.binary_content.class%"
         parent: ezpublish_rest.controller.base
         arguments:
             - "@ezpublish.fieldType.ezimage.variation_service"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.content:
         class: "%ezpublish_rest.controller.content.class%"
         parent: ezpublish_rest.controller.base
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.content_type:
         class: "%ezpublish_rest.controller.content_type.class%"
         parent: ezpublish_rest.controller.base
         arguments:
             - "@ezpublish.api.service.content_type"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.role:
         class: "%ezpublish_rest.controller.role.class%"
@@ -169,6 +174,7 @@ services:
             - "@ezpublish.api.service.role"
             - "@ezpublish.api.service.user"
             - "@ezpublish.api.service.location"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.location:
         class: "%ezpublish_rest.controller.location.class%"
@@ -178,6 +184,7 @@ services:
             - "@ezpublish.api.service.content"
             - "@ezpublish.api.service.trash"
             - "@ezpublish.api.service.url_alias"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.object_state:
         class: "%ezpublish_rest.controller.object_state.class%"
@@ -185,6 +192,7 @@ services:
         arguments:
             - "@ezpublish.api.service.object_state"
             - "@ezpublish.api.service.content"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.trash:
         class: "%ezpublish_rest.controller.trash.class%"
@@ -192,6 +200,7 @@ services:
         arguments:
             - "@ezpublish.api.service.trash"
             - "@ezpublish.api.service.location"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.user:
         class: "%ezpublish_rest.controller.user.class%"
@@ -204,12 +213,14 @@ services:
             - "@ezpublish.api.service.location"
             - "@ezpublish.api.service.section"
             - "@ezpublish.api.repository"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.url_wildcard:
         class: "%ezpublish_rest.controller.url_wildcard.class%"
         parent: ezpublish_rest.controller.base
         arguments:
             - "@ezpublish.api.service.url_wildcard"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.url_alias:
         class: "%ezpublish_rest.controller.url_alias.class%"
@@ -217,12 +228,14 @@ services:
         arguments:
             - "@ezpublish.api.service.url_alias"
             - "@ezpublish.api.service.location"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.views:
         class: "%ezpublish_rest.controller.views.class%"
         parent: ezpublish_rest.controller.base
         arguments:
             - "@ezpublish.api.service.search"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.session:
         class: EzSystems\EzPlatformRest\Server\Controller\SessionController
@@ -231,6 +244,7 @@ services:
             - "@ezpublish_rest.session_authenticator"
             - "%ezpublish_rest.csrf_token_intention%"
             - "@?ezpublish_rest.security.csrf.token_manager"
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.bookmark:
         class: EzSystems\EzPlatformRest\Server\Controller\Bookmark
@@ -238,6 +252,7 @@ services:
         arguments:
             - '@ezpublish.api.service.bookmark'
             - '@ezpublish.api.service.location'
+        tags: [controller.service_arguments]
 
     ezpublish_rest.request_listener:
         class: "%ezpublish_rest.request_listener.class%"
@@ -264,10 +279,12 @@ services:
     ezpublish_rest.controller.options:
         class: "%ezpublish_rest.controller.options.class%"
         parent: ezpublish_rest.controller.base
+        tags: [controller.service_arguments]
 
     ezpublish_rest.controller.services:
         class: "%ezpublish_rest.controller.services.class%"
         arguments: ["%ezpublish.fieldType.ezcountry.data%"]
+        tags: [controller.service_arguments]
 
     ezpublish_rest.field_type_processor_registry:
         class: "%ezpublish_rest.field_type_processor_registry.class%"
