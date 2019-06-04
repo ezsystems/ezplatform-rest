@@ -43,7 +43,6 @@ parameters:
     ezpublish_rest.field_type_processor.ezobjectrelationlist.class: EzSystems\EzPlatformRest\FieldTypeProcessor\RelationListProcessor
     ezpublish_rest.field_type_processor.ezobjectrelation.class: EzSystems\EzPlatformRest\FieldTypeProcessor\RelationProcessor
     ezpublish_rest.field_type_processor.eztime.class: EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor
-    ezpublish_rest.field_type_processor.ezrichtext.class: EzSystems\EzPlatformRest\FieldTypeProcessor\RichTextProcessor
     ezpublish_rest.field_type_processor.ezbinaryfile.class: EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor
     ezpublish_rest.field_type_processor.ezfloat.class: EzSystems\EzPlatformRest\FieldTypeProcessor\FloatProcessor
     ezpublish_rest.field_type_processor.ezstring.class: EzSystems\EzPlatformRest\FieldTypeProcessor\StringProcessor
@@ -318,13 +317,6 @@ services:
         class: "%ezpublish_rest.field_type_processor.eztime.class%"
         tags:
             - { name: ezpublish_rest.field_type_processor, alias: eztime }
-
-    ezpublish_rest.field_type_processor.ezrichtext:
-        class: "%ezpublish_rest.field_type_processor.ezrichtext.class%"
-        arguments:
-            - "@ezpublish.fieldType.ezrichtext.converter.edit.xhtml5"
-        tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezrichtext }
 
     ezpublish_rest.field_type_processor.ezbinaryfile:
         class: "%ezpublish_rest.field_type_processor.ezbinaryfile.class%"
