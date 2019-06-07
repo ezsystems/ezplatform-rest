@@ -30,13 +30,6 @@ env:
 matrix:
   fast_finish: true
   include:
-# 7.2
-    - name: "PHP 7.2 Unit tests"
-      php: 7.2
-      env: TEST_CONFIG="phpunit.xml"
-    - name: "PHP 7.2 REST Integration Tests"
-      php: 7.2
-      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" SYMFONY_ENV=behat PHP_IMAGE=ezsystems/php:7.2-v1 SYMFONY_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
 # 7.3
     - name: "PHP 7.3 Unit tests"
       php: 7.3
