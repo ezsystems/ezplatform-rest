@@ -10,7 +10,7 @@ use eZ\Publish\Core\Base\Translatable;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\Visitor;
-use Symfony\Component\Translation\TranslatorInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Exception value object visitor.
