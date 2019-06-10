@@ -86,12 +86,12 @@ class TestCase extends BaseTestCase
         list($this->loginUsername, $this->loginPassword) = explode(':', $this->httpAuth);
 
         $this->httpClient = new Curl(
+            new HttpFactory(),
             [
                 'verify' => false,
                 'timeout' => 90,
                 'allow_redirects' => false,
-            ],
-            new HttpFactory()
+            ]
         );
 
         if ($this->autoLogin) {
