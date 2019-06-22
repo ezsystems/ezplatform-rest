@@ -88,6 +88,24 @@ class JsonTest extends GeneratorTest
 
         $generator->startObjectElement('element');
 
+        $generator->attribute('attribute', 'value');
+
+        $generator->endObjectElement('element');
+
+        $this->assertSame(
+            '{"element":{"_media-type":"application\/vnd.ez.api.element+json","_attribute":"value"}}',
+            $generator->endDocument('test')
+        );
+    }
+
+    public function testGeneratorStartEndAttribute()
+    {
+        $generator = $this->getGenerator();
+
+        $generator->startDocument('test');
+
+        $generator->startObjectElement('element');
+
         $generator->startAttribute('attribute', 'value');
         $generator->endAttribute('attribute');
 
@@ -107,11 +125,8 @@ class JsonTest extends GeneratorTest
 
         $generator->startObjectElement('element');
 
-        $generator->startAttribute('attribute1', 'value');
-        $generator->endAttribute('attribute1');
-
-        $generator->startAttribute('attribute2', 'value');
-        $generator->endAttribute('attribute2');
+        $generator->attribute('attribute1', 'value');
+        $generator->attribute('attribute2', 'value');
 
         $generator->endObjectElement('element');
 
@@ -122,6 +137,24 @@ class JsonTest extends GeneratorTest
     }
 
     public function testGeneratorValueElement()
+    {
+        $generator = $this->getGenerator();
+
+        $generator->startDocument('test');
+
+        $generator->startObjectElement('element');
+
+        $generator->valueElement('value', '42');
+
+        $generator->endObjectElement('element');
+
+        $this->assertSame(
+            '{"element":{"_media-type":"application\/vnd.ez.api.element+json","value":"42"}}',
+            $generator->endDocument('test')
+        );
+    }
+
+    public function testGeneratorStartEndValueElement()
     {
         $generator = $this->getGenerator();
 
