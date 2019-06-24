@@ -23,7 +23,7 @@ class BookmarkListTest extends ValueObjectVisitorBaseTest
      */
     private $data;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->data = new BookmarkList(10, [
             new RestLocation($this->createMock(Location::class), 0),

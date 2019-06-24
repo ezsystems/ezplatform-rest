@@ -28,7 +28,7 @@ class SearchViewTest extends RESTFunctionalTestCase
      */
     private $nonSearchableContentHref;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->contentTypeHref = $this->createTestContentType();
@@ -38,7 +38,7 @@ class SearchViewTest extends RESTFunctionalTestCase
         $this->contentHrefList[] = $this->createTestContentWithTags('even-fancier', ['bar', 'bazfoo']);
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
         array_map([$this, 'deleteContent'], $this->contentHrefList);

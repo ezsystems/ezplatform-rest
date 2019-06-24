@@ -77,7 +77,7 @@ class TestCase extends BaseTestCase
      */
     private static $createdContent = [];
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -269,7 +269,7 @@ EOF;
         };
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         self::clearCreatedElement(self::$createdContent);
     }

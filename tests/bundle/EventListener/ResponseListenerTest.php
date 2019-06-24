@@ -32,7 +32,7 @@ class ResponseListenerTest extends EventListenerTest
 
     protected $eventMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->eventValue = new stdClass();
         $this->response = new Response('BODY', 406, ['foo' => 'bar']);

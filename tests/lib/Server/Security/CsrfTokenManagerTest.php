@@ -22,7 +22,7 @@ class CsrfTokenManagerTest extends TestCase
     /** @var \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\RequestStack */
     private $requestStack;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 

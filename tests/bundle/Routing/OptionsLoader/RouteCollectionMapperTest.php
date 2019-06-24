@@ -20,7 +20,7 @@ class RouteCollectionMapperTest extends TestCase
     /** @var RouteCollectionMapper */
     protected $collectionMapper;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->collectionMapper = new RouteCollectionMapper(
             new Mapper()
