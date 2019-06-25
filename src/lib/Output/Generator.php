@@ -185,6 +185,18 @@ abstract class Generator
     }
 
     /**
+     * Generate value element with given $name and $value.
+     *
+     * @param string $name
+     * @param mixed $value
+     */
+    public function valueElement(string $name, $value): void
+    {
+        $this->startValueElement($name, $value);
+        $this->endValueElement($name);
+    }
+
+    /**
      * Start value element.
      *
      * @param string $name
@@ -251,6 +263,18 @@ abstract class Generator
     protected function checkEndList($data)
     {
         $this->checkEnd('list', $data);
+    }
+
+    /**
+     * Generate attribute with given $name and $value.
+     *
+     * @param string $name
+     * @param mixed $value
+     */
+    public function attribute(string $name, $value): void
+    {
+        $this->startAttribute($name, $value);
+        $this->endAttribute($name);
     }
 
     /**
