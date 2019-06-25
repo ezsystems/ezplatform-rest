@@ -23,7 +23,7 @@ class VersionInfoTest extends ValueObjectVisitorBaseTest
      */
     protected $modificationDate;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->creationDate = new \DateTime('2012-05-19 12:23 Europe/Berlin');
         $this->modificationDate = new \DateTime('2012-08-31 23:42 Europe/Berlin');

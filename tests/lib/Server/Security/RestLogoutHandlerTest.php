@@ -27,7 +27,7 @@ class RestLogoutHandlerTest extends TestCase
      */
     private $session;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->configResolver = $this->createMock(ConfigResolverInterface::class);

@@ -20,7 +20,7 @@ class VersionTest extends ValueObjectVisitorBaseTest
 {
     protected $fieldTypeSerializerMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->fieldTypeSerializerMock = $this->createMock(FieldTypeSerializer::class);
     }

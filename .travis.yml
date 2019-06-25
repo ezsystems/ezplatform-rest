@@ -36,7 +36,7 @@ matrix:
       env: TEST_CONFIG="phpunit.xml"
     - name: "PHP 7.3 REST Integration Tests"
       php: 7.3
-      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" SYMFONY_ENV=behat PHP_IMAGE=ezsystems/php:7.3-v1 SYMFONY_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
+      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" TEST_CMD="./bin/.travis/run_rest_tests.sh" APP_ENV=behat PHP_IMAGE=ezsystems/php:7.3-v1 APP_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
     - name: "Code Style Check"
       php: 7.3
       env: CHECK_CS=1
@@ -65,7 +65,7 @@ install:
 # execute phpunit or behat as the script command
 script:
   - if [ "$TEST_CONFIG" != "" ] ; then php -d date.timezone=$TEST_TIMEZONE -d memory_limit=-1 vendor/bin/phpunit -c $TEST_CONFIG ; fi
-  - if [ "$REST_TEST_CONFIG" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec --user www-data app sh -c "php -d date.timezone=$TEST_TIMEZONE -d memory_limit=-1 bin/phpunit --bootstrap vendor/autoload.php -c vendor/ezsystems/ezplatform-rest/$REST_TEST_CONFIG"  ; fi
+  - if [ "$REST_TEST_CONFIG" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec --user www-data app sh -c "$TEST_CMD"  ; fi
   - if [ "$CHECK_CS" == "1" ] ; then ./vendor/bin/php-cs-fixer fix -v --dry-run --show-progress=estimating ; fi
 
 notifications:

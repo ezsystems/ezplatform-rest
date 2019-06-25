@@ -15,7 +15,7 @@ class MapperTest extends TestCase
     /** @var Mapper */
     protected $mapper;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mapper = new Mapper();
     }

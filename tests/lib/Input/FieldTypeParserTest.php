@@ -37,7 +37,7 @@ class FieldTypeParserTest extends TestCase
 
     protected $fieldTypeProcessorMock;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->contentServiceMock = $this->createMock(ContentService::class);
         $this->contentTypeServiceMock = $this->createMock(ContentTypeService::class);

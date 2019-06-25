@@ -19,12 +19,12 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     /**
      * To make sure float values are serialized with same precision across php versions we force precision.
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->iniPrecisions = [ini_set('precision', 17), ini_set('serialize_precision', 17)];
     }
 
-    public function TearDown()
+    public function tearDown(): void
     {
         ini_set('precision', $this->iniPrecisions[0]);
         ini_set('serialize_precision', $this->iniPrecisions[1]);

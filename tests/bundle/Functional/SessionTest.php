@@ -14,7 +14,7 @@ use stdClass;
 
 class SessionTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         $this->autoLogin = false;
         parent::setUp();

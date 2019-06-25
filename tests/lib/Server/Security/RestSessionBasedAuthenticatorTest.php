@@ -65,7 +65,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
      */
     private $authenticator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->tokenStorage = $this->createMock(TokenStorageInterface::class);

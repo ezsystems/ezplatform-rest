@@ -12,7 +12,7 @@ abstract class BinaryInputProcessorTest extends TestCase
 {
     private $tempDir;
 
-    public function tearDown()
+    public function tearDown(): void
     {
         $iterator = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator(
