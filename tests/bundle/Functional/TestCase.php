@@ -37,6 +37,13 @@ class TestCase extends BaseTestCase
     private $httpHost;
 
     /**
+     * HTTP scheme (http or https).
+     *
+     * @var string
+     */
+    private $httpScheme;
+
+    /**
      * @var string
      * Basic auth login:password
      */
@@ -82,6 +89,7 @@ class TestCase extends BaseTestCase
         parent::setUp();
 
         $this->httpHost = getenv('EZP_TEST_REST_HOST') ?: 'localhost';
+        $this->httpScheme = getenv('EZP_TEST_REST_SCHEME') ?: 'http';
         $this->httpAuth = getenv('EZP_TEST_REST_AUTH') ?: 'admin:publish';
         list($this->loginUsername, $this->loginPassword) = explode(':', $this->httpAuth);
 
@@ -149,7 +157,7 @@ class TestCase extends BaseTestCase
      */
     protected function getBaseURI()
     {
-        return "http://{$this->httpHost}";
+        return "{$this->httpScheme}://{$this->httpHost}";
     }
 
     /**
