@@ -127,10 +127,7 @@ class RestAuthenticator implements ListenerInterface, AuthenticatorInterface
         }
 
         $this->tokenStorage->setToken($token);
-        $this->dispatcher->dispatch(
-            SecurityEvents::INTERACTIVE_LOGIN,
-            new InteractiveLoginEvent($request, $token)
-        );
+        $this->dispatcher->dispatch(new InteractiveLoginEvent($request, $token), SecurityEvents::INTERACTIVE_LOGIN);
 
         // Re-fetch token from SecurityContext since an INTERACTIVE_LOGIN listener might have changed it
         // i.e. when using multiple user providers.

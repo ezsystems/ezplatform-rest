@@ -184,8 +184,8 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('dispatch')
             ->with(
-                SecurityEvents::INTERACTIVE_LOGIN,
-                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken))
+                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken)),
+                SecurityEvents::INTERACTIVE_LOGIN
             );
 
         $this->tokenStorage
@@ -258,8 +258,8 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('dispatch')
             ->with(
-                SecurityEvents::INTERACTIVE_LOGIN,
-                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken))
+                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken)),
+                SecurityEvents::INTERACTIVE_LOGIN
             );
 
         $this->tokenStorage
@@ -327,8 +327,8 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('dispatch')
             ->with(
-                SecurityEvents::INTERACTIVE_LOGIN,
-                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken))
+                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken)),
+                SecurityEvents::INTERACTIVE_LOGIN
             );
 
         $this->tokenStorage
@@ -386,8 +386,8 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('dispatch')
             ->with(
-                SecurityEvents::INTERACTIVE_LOGIN,
-                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken))
+                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken)),
+                SecurityEvents::INTERACTIVE_LOGIN
             );
 
         $this->tokenStorage
@@ -444,8 +444,8 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('dispatch')
             ->with(
-                SecurityEvents::INTERACTIVE_LOGIN,
-                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken))
+                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken)),
+                SecurityEvents::INTERACTIVE_LOGIN
             );
 
         $this->tokenStorage
@@ -497,8 +497,8 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->expects($this->once())
             ->method('dispatch')
             ->with(
-                SecurityEvents::INTERACTIVE_LOGIN,
-                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken))
+                $this->equalTo(new InteractiveLoginEvent($request, $authenticatedToken)),
+                SecurityEvents::INTERACTIVE_LOGIN
             );
 
         $this->tokenStorage
