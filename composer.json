@@ -11,8 +11,6 @@
             "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": "^7.3",
         "ext-dom": "*",
