@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
+use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\API\Repository\Values\Content\Language;
 use EzSystems\EzPlatformRest\Message;
 use EzSystems\EzPlatformRest\Server\Values;
@@ -96,16 +97,9 @@ class User extends RestController
      */
     private $sessionController;
 
-    /**
-     * Construct controller.
-     *
-     * @param \eZ\Publish\API\Repository\UserService $userService
-     * @param \eZ\Publish\API\Repository\RoleService $roleService
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
-     * @param \eZ\Publish\API\Repository\SectionService $sectionService
-     * @param \eZ\Publish\API\Repository\Repository $repository
-     */
+    /** @var \eZ\Publish\API\Repository\PermissionResolver */
+    private $permissionResolver;
+
     public function __construct(
         UserService $userService,
         RoleService $roleService,
@@ -113,7 +107,8 @@ class User extends RestController
         ContentTypeService $contentTypeService,
         LocationService $locationService,
         SectionService $sectionService,
-        Repository $repository
+        Repository $repository,
+        PermissionResolver $permissionResolver
     ) {
         $this->userService = $userService;
         $this->roleService = $roleService;
@@ -122,6 +117,7 @@ class User extends RestController
         $this->locationService = $locationService;
         $this->sectionService = $sectionService;
         $this->repository = $repository;
+        $this->permissionResolver = $permissionResolver;
     }
 
     /**
@@ -194,7 +190,7 @@ class User extends RestController
             $relations = $this->contentService->loadRelations($user->getVersionInfo());
         } catch (UnauthorizedException $e) {
             // TODO: Hack for special case to allow current logged in user to load him/here self (but not relations)
-            if ($user->id == $this->repository->getCurrentUser()->id) {
+            if ($user->id == $this->permissionResolver->getCurrentUserReference()->getUserId()) {
                 $userMainLocation = $this->repository->sudo(
                     function () use ($userContentInfo) {
                         return $this->locationService->loadLocation($userContentInfo->mainLocationId);
@@ -447,7 +443,7 @@ class User extends RestController
     {
         $user = $this->userService->loadUser($userId);
 
-        if ($user->id == $this->repository->getCurrentUser()->id) {
+        if ($user->id == $this->permissionResolver->getCurrentUserReference()->getUserId()) {
             throw new Exceptions\ForbiddenException('Currently authenticated user cannot be deleted');
         }
 
