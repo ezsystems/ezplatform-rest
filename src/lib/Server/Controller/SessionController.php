@@ -6,6 +6,8 @@
  */
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
+use eZ\Publish\API\Repository\PermissionResolver;
+use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
 use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
@@ -22,30 +24,38 @@ use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 
 class SessionController extends Controller
 {
-    /**
-     * @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface
-     */
+    /** @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface */
     private $authenticator;
 
-    /**
-     * @var \EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager
-     */
+    /** @var \EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager */
     private $csrfTokenManager;
 
-    /**
-     * @var string
-     */
+    /** @var string */
     private $csrfTokenIntention;
+
+    /** @var \eZ\Publish\API\Repository\PermissionResolver */
+    private $permissionResolver;
+
+    /** @var \eZ\Publish\API\Repository\UserService */
+    private $userService;
+
+    /** @var \Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface */
+    private $csrfTokenStorage;
 
     public function __construct(
         AuthenticatorInterface $authenticator,
         $tokenIntention,
+        PermissionResolver $permissionResolver,
+        UserService $userService,
         CsrfTokenManager $csrfTokenManager = null,
         TokenStorageInterface $csrfTokenStorage = null
     ) {
         $this->authenticator = $authenticator;
         $this->csrfTokenIntention = $tokenIntention;
         $this->csrfTokenManager = $csrfTokenManager;
+        $this->permissionResolver = $permissionResolver;
+        $this->userService = $userService;
+        $this->csrfTokenStorage = $csrfTokenStorage;
     }
 
     /**
@@ -116,9 +126,12 @@ class SessionController extends Controller
         }
 
         $this->checkCsrfToken($request);
+        $currentUser = $this->userService->loadUser(
+            $this->permissionResolver->getCurrentUserReference()->getUserId()
+        );
 
         return new Values\UserSession(
-            $this->repository->getCurrentUser(),
+            $currentUser,
             $session->getName(),
             $session->getId(),
             $request->headers->get('X-CSRF-Token'),

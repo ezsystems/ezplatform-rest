@@ -213,6 +213,7 @@ services:
             - "@ezpublish.api.service.location"
             - "@ezpublish.api.service.section"
             - "@ezpublish.api.repository"
+            - '@eZ\Publish\API\Repository\PermissionResolver'
         tags: [controller.service_arguments]
 
     ezpublish_rest.controller.url_wildcard:
@@ -243,6 +244,8 @@ services:
         arguments:
             - "@ezpublish_rest.session_authenticator"
             - "%ezpublish_rest.csrf_token_intention%"
+            - '@eZ\Publish\API\Repository\PermissionResolver'
+            - '@ezpublish.api.service.user'
             - "@?ezpublish_rest.security.csrf.token_manager"
         tags: [controller.service_arguments]
 
