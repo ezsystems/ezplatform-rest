@@ -226,11 +226,15 @@ class Role extends RestController
                 $request->getContent()
             )
         );
-
-        return $this->roleService->updateRole(
-            $this->roleService->loadRole($roleId),
+        $roleDraft = $this->roleService->createRoleDraft(
+            $this->roleService->loadRole($roleId)
+        );
+        $this->roleService->updateRoleDraft(
+            $roleDraft,
             $this->mapToUpdateStruct($createStruct)
         );
+
+        return $this->roleService->loadRole($roleId);
     }
 
     /**
