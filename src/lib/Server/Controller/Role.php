@@ -348,10 +348,12 @@ class Role extends RestController
     public function deletePolicies($roleId)
     {
         $loadedRole = $this->roleService->loadRole($roleId);
-
-        foreach ($loadedRole->getPolicies() as $policy) {
-            $this->roleService->deletePolicy($policy);
+        $roleDraft = $this->roleService->createRoleDraft($loadedRole);
+        /** @var \eZ\Publish\API\Repository\Values\User\PolicyDraft $policyDraft */
+        foreach ($roleDraft->getPolicies() as $policyDraft) {
+            $this->roleService->removePolicyByRoleDraft($roleDraft, $policyDraft);
         }
+        $this->roleService->publishRoleDraft($roleDraft);
 
         return new Values\NoContent();
     }
@@ -540,63 +542,10 @@ class Role extends RestController
      */
     public function deletePolicy($roleId, $policyId, Request $request)
     {
-        try {
-            // First try to treat $roleId as a role draft ID.
-            $roleDraft = $this->roleService->loadRoleDraft($roleId);
-
-            $policy = null;
-            foreach ($roleDraft->getPolicies() as $rolePolicy) {
-                if ($rolePolicy->id == $policyId) {
-                    $policy = $rolePolicy;
-                    break;
-                }
-            }
-
-            if ($policy !== null) {
-                $this->roleService->removePolicyByRoleDraft($roleDraft, $policy);
-
-                return new Values\NoContent();
-            }
-        } catch (NotFoundException $e) {
-            // Then try to treat $roleId as a role ID.
-            $role = $this->roleService->loadRole($roleId);
-
-            $policy = null;
-            foreach ($role->getPolicies() as $rolePolicy) {
-                if ($rolePolicy->id == $policyId) {
-                    $policy = $rolePolicy;
-                    break;
-                }
-            }
-
-            if ($policy !== null) {
-                $this->roleService->deletePolicy($policy);
-
-                return new Values\NoContent();
-            }
-        }
-
-        throw new Exceptions\NotFoundException("Policy not found: '{$request->getPathInfo()}'.");
-    }
-
-    /**
-     * Remove a policy from a role draft.
-     *
-     * @since 6.2
-     * @deprecated since 6.3, use {@see deletePolicy}
-     *
-     * @param $roleId
-     * @param $policyId
-     *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
-     *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
-     */
-    public function removePolicyByRoleDraft($roleId, $policyId, Request $request)
-    {
         $roleDraft = $this->roleService->loadRoleDraft($roleId);
 
         $policy = null;
+        /** @var \eZ\Publish\API\Repository\Values\User\PolicyDraft $rolePolicy */
         foreach ($roleDraft->getPolicies() as $rolePolicy) {
             if ($rolePolicy->id == $policyId) {
                 $policy = $rolePolicy;
