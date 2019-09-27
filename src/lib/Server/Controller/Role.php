@@ -400,47 +400,6 @@ class Role extends RestController
                 $this->roleService->loadRoleDraft($roleId),
                 $createStruct
             );
-        } catch (NotFoundException $e) {
-            // Then try to treat $roleId as a role ID.
-            $role = $this->roleService->addPolicy(
-                $this->roleService->loadRole($roleId),
-                $createStruct
-            );
-        } catch (LimitationValidationException $e) {
-            throw new BadRequestException($e->getMessage());
-        }
-
-        return new Values\CreatedPolicy(
-            [
-                'policy' => $this->getLastAddedPolicy($role),
-            ]
-        );
-    }
-
-    /**
-     * Adds a policy to a role draft.
-     *
-     * @since 6.2
-     * @deprecated since 6.3, use {@see addPolicy}
-     *
-     * @param $roleId
-     *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
-     */
-    public function addPolicyByRoleDraft($roleId, Request $request)
-    {
-        $createStruct = $this->inputDispatcher->parse(
-            new Message(
-                ['Content-Type' => $request->headers->get('Content-Type')],
-                $request->getContent()
-            )
-        );
-
-        try {
-            $role = $this->roleService->addPolicyByRoleDraft(
-                $this->roleService->loadRoleDraft($roleId),
-                $createStruct
-            );
         } catch (LimitationValidationException $e) {
             throw new BadRequestException($e->getMessage());
         }
