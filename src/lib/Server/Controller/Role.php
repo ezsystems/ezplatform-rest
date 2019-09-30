@@ -456,68 +456,13 @@ class Role extends RestController
             )
         );
 
-        try {
-            // First try to treat $roleId as a role draft ID.
-            $role = $this->roleService->loadRoleDraft($roleId);
-            foreach ($role->getPolicies() as $policy) {
-                if ($policy->id == $policyId) {
-                    try {
-                        return $this->roleService->updatePolicy(
-                            $policy,
-                            $updateStruct
-                        );
-                    } catch (LimitationValidationException $e) {
-                        throw new BadRequestException($e->getMessage());
-                    }
-                }
-            }
-        } catch (NotFoundException $e) {
-            // Then try to treat $roleId as a role ID.
-            $role = $this->roleService->loadRole($roleId);
-            foreach ($role->getPolicies() as $policy) {
-                if ($policy->id == $policyId) {
-                    try {
-                        return $this->roleService->updatePolicy(
-                            $policy,
-                            $updateStruct
-                        );
-                    } catch (LimitationValidationException $e) {
-                        throw new BadRequestException($e->getMessage());
-                    }
-                }
-            }
-        }
-
-        throw new Exceptions\NotFoundException("Policy not found: '{$request->getPathInfo()}'.");
-    }
-
-    /**
-     * Updates a policy.
-     *
-     * @since 6.2
-     * @deprecated since 6.3, use {@see updatePolicy}
-     *
-     * @param $roleId
-     * @param $policyId
-     *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
-     *
-     * @return \eZ\Publish\API\Repository\Values\User\Policy
-     */
-    public function updatePolicyByRoleDraft($roleId, $policyId, Request $request)
-    {
-        $updateStruct = $this->inputDispatcher->parse(
-            new Message(
-                ['Content-Type' => $request->headers->get('Content-Type')],
-                $request->getContent()
-            )
-        );
-
-        $role = $this->roleService->loadRoleDraft($roleId);
-        foreach ($role->getPolicies() as $policy) {
+        $roleDraft = $this->roleService->loadRoleDraft($roleId);
+        /** @var \eZ\Publish\API\Repository\Values\User\PolicyDraft $policy */
+        foreach ($roleDraft->getPolicies() as $policy) {
             if ($policy->id == $policyId) {
                 try {
-                    return $this->roleService->updatePolicy(
+                    return $this->roleService->updatePolicyByRoleDraft(
+                        $roleDraft,
                         $policy,
                         $updateStruct
                     );
