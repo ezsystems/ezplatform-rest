@@ -706,10 +706,15 @@ class Role extends RestController
      */
     public function listPoliciesForUser(Request $request)
     {
+        $user = $this->userService->loadUser($request->query->get('userId'));
+        $roleAssignments = $this->roleService->getRoleAssignmentsForUser($user, true);
+
+        $policies = [];
+        foreach ($roleAssignments as $roleAssignment) {
+            $policies[] = $roleAssignment->getRole()->getPolicies();
+        }
         return new Values\PolicyList(
-            $this->roleService->loadPoliciesByUserId(
-                $request->query->get('userId')
-            ),
+            array_merge(...$policies),
             $request->getPathInfo()
         );
     }
