@@ -581,13 +581,16 @@ class Role extends RestController
     public function unassignRoleFromUser($userId, $roleId)
     {
         $user = $this->userService->loadUser($userId);
-        $role = $this->roleService->loadRole($roleId);
-
-        $this->roleService->unassignRoleFromUser($role, $user);
 
         $roleAssignments = $this->roleService->getRoleAssignmentsForUser($user);
+        foreach ($roleAssignments as $roleAssignment) {
+            if ($roleAssignment->role->id === $roleId) {
+                $this->roleService->removeRoleAssignment($roleAssignment);
+            }
+        }
+        $newRoleAssignments = $this->roleService->getRoleAssignmentsForUser($user);
 
-        return new Values\RoleAssignmentList($roleAssignments, $user->id);
+        return new Values\RoleAssignmentList($newRoleAssignments, $user->id);
     }
 
     /**
