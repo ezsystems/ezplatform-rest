@@ -607,9 +607,12 @@ class Role extends RestController
         $groupLocation = $this->locationService->loadLocation(array_pop($groupLocationParts));
         $userGroup = $this->userService->loadUserGroup($groupLocation->contentId);
 
-        $role = $this->roleService->loadRole($roleId);
-        $this->roleService->unassignRoleFromUserGroup($role, $userGroup);
-
+        $roleAssignments = $this->roleService->getRoleAssignmentsForUserGroup($userGroup);
+        foreach ($roleAssignments as $roleAssignment) {
+            if ($roleAssignment->role->id === $roleId) {
+                $this->roleService->removeRoleAssignment($roleAssignment);
+            }
+        }
         $roleAssignments = $this->roleService->getRoleAssignmentsForUserGroup($userGroup);
 
         return new Values\RoleAssignmentList($roleAssignments, $groupPath, true);
