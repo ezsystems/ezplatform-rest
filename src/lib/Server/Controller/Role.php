@@ -716,6 +716,7 @@ class Role extends RestController
         foreach ($roleAssignments as $roleAssignment) {
             $policies[] = $roleAssignment->getRole()->getPolicies();
         }
+
         return new Values\PolicyList(
             array_merge(...$policies),
             $request->getPathInfo()
