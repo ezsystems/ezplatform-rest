@@ -229,48 +229,6 @@ XML;
     /**
      * Covers POST /user/roles/{roleId}/policies.
      *
-     * @depends testCreateRole
-     *
-     * @return string The created policy href
-     */
-    public function testAddPolicy($roleHref)
-    {
-        // @todo Error in Resource URL in spec @ https://github.com/ezsystems/ezpublish-kernel/blob/master/doc/specifications/rest/REST-API-V2.rst#151213create-policy
-        $xml = <<< XML
-<?xml version="1.0" encoding="UTF-8"?>
-<PolicyCreate>
-  <module>content</module>
-  <function>create</function>
-  <limitations>
-    <limitation identifier="Class">
-      <values>
-        <ref href="2"/>
-      </values>
-    </limitation>
-  </limitations>
-</PolicyCreate>
-XML;
-        $request = $this->createHttpRequest(
-            'POST',
-            "$roleHref/policies",
-            'PolicyCreate+xml',
-            'Policy+json',
-            $xml
-        );
-        $response = $this->sendHttpRequest($request);
-
-        self::assertHttpResponseCodeEquals($response, 201);
-        self::assertHttpResponseHasHeader($response, 'Location');
-
-        $href = $response->getHeader('Location')[0];
-        $this->addCreatedElement($href);
-
-        return $href;
-    }
-
-    /**
-     * Covers POST /user/roles/{roleId}/policies.
-     *
      * @depends testCreateRoleDraft
      *
      * @return string The created policy href
