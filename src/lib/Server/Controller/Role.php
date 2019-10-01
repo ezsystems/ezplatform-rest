@@ -383,7 +383,7 @@ class Role extends RestController
     /**
      * Adds a policy to role.
      *
-     * @param $roleId int ID of a role or a role draft
+     * @param $roleId int ID of a role draft
      *
      * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
      */
@@ -440,7 +440,7 @@ class Role extends RestController
     /**
      * Updates a policy.
      *
-     * @param $roleId int ID of a role or a role draft
+     * @param $roleId int ID of a role draft
      * @param $policyId int ID of a policy
      *
      * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
@@ -478,7 +478,7 @@ class Role extends RestController
     /**
      * Delete a policy from role.
      *
-     * @param $roleId int ID of a role or a role draft
+     * @param $roleId int ID of a role draft
      * @param $policyId int ID of a policy
      *
      * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
