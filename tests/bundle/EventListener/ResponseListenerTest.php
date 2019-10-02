@@ -9,9 +9,9 @@ namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
-use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use EzSystems\EzPlatformRestBundle\EventListener\ResponseListener;
 use stdClass;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -65,7 +65,7 @@ class ResponseListenerTest extends EventListenerTest
         );
     }
 
-    protected function onKernelViewIsNotRestRequest($method, GetResponseEvent $event)
+    protected function onKernelViewIsNotRestRequest($method, RequestEvent $event)
     {
         $this->getVisitorDispatcherMock()
             ->expects($this->never())
@@ -126,12 +126,12 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|GetResponseForControllerResultEvent
+     * @return MockObject|ViewEvent
      */
     protected function getControllerResultEventMock()
     {
         if (!isset($this->eventMock)) {
-            $this->eventMock = parent::getEventMock(GetResponseForControllerResultEvent::class);
+            $this->eventMock = parent::getEventMock(ViewEvent::class);
             $this->eventMock
                 ->expects($this->any())
                 ->method('getControllerResult')
@@ -142,12 +142,12 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|GetResponseForExceptionEvent
+     * @return MockObject|ExceptionEvent
      */
     protected function getExceptionEventMock()
     {
         if (!isset($this->eventMock)) {
-            $this->eventMock = parent::getEventMock(GetResponseForExceptionEvent::class);
+            $this->eventMock = parent::getEventMock(ExceptionEvent::class);
 
             $this->eventMock
                 ->expects($this->any())

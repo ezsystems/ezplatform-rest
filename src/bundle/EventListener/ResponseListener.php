@@ -7,10 +7,10 @@
 namespace EzSystems\EzPlatformRestBundle\EventListener;
 
 use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
-use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 
 /**
  * REST Response Listener.
@@ -45,9 +45,9 @@ class ResponseListener implements EventSubscriberInterface
     }
 
     /**
-     * @param \Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent $event
+     * @param \Symfony\Component\HttpKernel\Event\ViewEvent $event
      */
-    public function onKernelResultView(GetResponseForControllerResultEvent $event)
+    public function onKernelResultView(ViewEvent $event)
     {
         if (!$event->getRequest()->attributes->get('is_rest_request')) {
             return;
@@ -63,11 +63,11 @@ class ResponseListener implements EventSubscriberInterface
     }
 
     /**
-     * @param \Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent $event
+     * @param \Symfony\Component\HttpKernel\Event\ExceptionEvent $event
      *
      * @throws \Exception
      */
-    public function onKernelExceptionView(GetResponseForExceptionEvent $event)
+    public function onKernelExceptionView(ExceptionEvent $event)
     {
         if (!$event->getRequest()->attributes->get('is_rest_request')) {
             return;

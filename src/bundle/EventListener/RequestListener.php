@@ -8,7 +8,7 @@ namespace EzSystems\EzPlatformRestBundle\EventListener;
 
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -34,9 +34,9 @@ class RequestListener implements EventSubscriberInterface
     /**
      * If the request is a REST one, sets the is_rest_request request attribute.
      *
-     * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+     * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
      */
-    public function onKernelRequest(GetResponseEvent $event)
+    public function onKernelRequest(RequestEvent $event)
     {
         $isRestRequest = true;
 

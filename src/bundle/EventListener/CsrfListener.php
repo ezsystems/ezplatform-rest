@@ -10,7 +10,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use EzSystems\EzPlatformRestBundle\RestEvents;
 use Symfony\Component\Security\Csrf\CsrfToken;
@@ -77,11 +77,11 @@ class CsrfListener implements EventSubscriberInterface
     /**
      * This method validates CSRF token if CSRF protection is enabled.
      *
-     * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+     * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
      *
      * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException
      */
-    public function onKernelRequest(GetResponseEvent $event)
+    public function onKernelRequest(RequestEvent $event)
     {
         if (!$event->getRequest()->attributes->get('is_rest_request')) {
             return;

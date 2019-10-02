@@ -11,7 +11,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\Form\Extension\Csrf\CsrfProvider\CsrfProviderInterface;
 use EzSystems\EzPlatformRestBundle\EventListener\CsrfListener;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -187,12 +187,12 @@ class CsrfListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|GetResponseEvent
+     * @return MockObject|RequestEvent
      */
     protected function getEventMock($class = null)
     {
         if (!isset($this->eventMock)) {
-            parent::getEventMock(GetResponseEvent::class);
+            parent::getEventMock(RequestEvent::class);
 
             $this->eventMock
                 ->expects($this->any())
