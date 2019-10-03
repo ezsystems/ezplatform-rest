@@ -16,14 +16,13 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
-use Symfony\Component\Security\Http\Firewall\ListenerInterface;
 use Symfony\Component\Security\Http\Logout\LogoutHandlerInterface;
 use Symfony\Component\Security\Http\Logout\SessionLogoutHandler;
 use Symfony\Component\Security\Http\SecurityEvents;
@@ -34,7 +33,7 @@ use Symfony\Component\Security\Http\SecurityEvents;
  * Implements \Symfony\Component\Security\Http\Firewall\ListenerInterface to be able to receive the provider key
  * (firewall identifier from configuration).
  */
-class RestAuthenticator implements ListenerInterface, AuthenticatorInterface
+class RestAuthenticator implements AuthenticatorInterface
 {
     /**
      * @var \Psr\Log\LoggerInterface
@@ -96,9 +95,9 @@ class RestAuthenticator implements ListenerInterface, AuthenticatorInterface
     /**
      * Doesn't do anything as we don't use this service with main Firewall listener.
      *
-     * @param \Symfony\Component\HttpKernel\Event\GetResponseEvent $event
+     * @param \Symfony\Component\HttpKernel\Event\RequestEvent $event
      */
-    public function handle(GetResponseEvent $event)
+    public function __invoke(RequestEvent $event)
     {
         return;
     }

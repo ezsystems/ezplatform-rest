@@ -8,7 +8,7 @@ namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 
 use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use EzSystems\EzPlatformRestBundle\EventListener\RequestListener;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -120,7 +120,7 @@ class RequestListenerTest extends EventListenerTest
      */
     protected function performFakeRequest($uri, $type = HttpKernelInterface::MASTER_REQUEST)
     {
-        $event = new GetResponseEvent(
+        $event = new RequestEvent(
             $this->createMock(HttpKernelInterface::class),
             Request::create($uri),
             $type
