@@ -383,11 +383,11 @@ class Role extends RestController
     /**
      * Adds a policy to role.
      *
-     * @param $roleId int ID of a role draft
+     * @param int $roleDraftId ID of a role draft
      *
      * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
      */
-    public function addPolicy($roleId, Request $request)
+    public function addPolicy($roleDraftId, Request $request)
     {
         $createStruct = $this->inputDispatcher->parse(
             new Message(
@@ -397,9 +397,8 @@ class Role extends RestController
         );
 
         try {
-            // First try to treat $roleId as a role draft ID.
             $role = $this->roleService->addPolicyByRoleDraft(
-                $this->roleService->loadRoleDraft($roleId),
+                $this->roleService->loadRoleDraft($roleDraftId),
                 $createStruct
             );
         } catch (LimitationValidationException $e) {
@@ -440,14 +439,14 @@ class Role extends RestController
     /**
      * Updates a policy.
      *
-     * @param $roleId int ID of a role draft
-     * @param $policyId int ID of a policy
+     * @param int $roleDraftId ID of a role draft
+     * @param int $policyId ID of a policy
      *
      * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
      * @return \eZ\Publish\API\Repository\Values\User\Policy
      */
-    public function updatePolicy($roleId, $policyId, Request $request)
+    public function updatePolicy($roleDraftId, $policyId, Request $request)
     {
         $updateStruct = $this->inputDispatcher->parse(
             new Message(
@@ -456,7 +455,7 @@ class Role extends RestController
             )
         );
 
-        $roleDraft = $this->roleService->loadRoleDraft($roleId);
+        $roleDraft = $this->roleService->loadRoleDraft($roleDraftId);
         /** @var \eZ\Publish\API\Repository\Values\User\PolicyDraft $policy */
         foreach ($roleDraft->getPolicies() as $policy) {
             if ($policy->id == $policyId) {
@@ -478,16 +477,16 @@ class Role extends RestController
     /**
      * Delete a policy from role.
      *
-     * @param $roleId int ID of a role draft
-     * @param $policyId int ID of a policy
+     * @param int $roleDraftId ID of a role draft
+     * @param int $policyId ID of a policy
      *
      * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
      * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
      */
-    public function deletePolicy($roleId, $policyId, Request $request)
+    public function deletePolicy($roleDraftId, $policyId, Request $request)
     {
-        $roleDraft = $this->roleService->loadRoleDraft($roleId);
+        $roleDraft = $this->roleService->loadRoleDraft($roleDraftId);
 
         $policy = null;
         /** @var \eZ\Publish\API\Repository\Values\User\PolicyDraft $rolePolicy */
