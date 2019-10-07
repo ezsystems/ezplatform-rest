@@ -502,8 +502,8 @@ class Role extends RestController
                     }
                 }
             }
-            throw new BadRequestException($roleDraft->getPolicies()[0]->originalId . '/' . $policyId);
         }
+
         throw new Exceptions\NotFoundException("Policy not found: '{$request->getPathInfo()}'.");
     }
 
@@ -758,7 +758,7 @@ class Role extends RestController
      */
     public function listPoliciesForUser(Request $request)
     {
-        $user = $this->userService->loadUser($request->query->get('userId'));
+        $user = $this->userService->loadUser((int)$request->query->get('userId'));
         $roleAssignments = $this->roleService->getRoleAssignmentsForUser($user, true);
 
         $policies = [];
