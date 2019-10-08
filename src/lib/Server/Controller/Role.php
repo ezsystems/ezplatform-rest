@@ -492,11 +492,19 @@ class Role extends RestController
             foreach ($roleDraft->getPolicies() as $policy) {
                 if ($policy->originalId == $policyId) {
                     try {
-                        return $this->roleService->updatePolicyByRoleDraft(
+                        $policyDraft = $this->roleService->updatePolicyByRoleDraft(
                             $roleDraft,
                             $policy,
                             $updateStruct
                         );
+                        $this->roleService->publishRoleDraft($roleDraft);
+                        $role = $this->roleService->loadRole($roleId);
+
+                        foreach ($role->getPolicies() as $newPolicy) {
+                            if ($newPolicy->id == $policyDraft->id) {
+                                return $newPolicy;
+                            }
+                        }
                     } catch (LimitationValidationException $e) {
                         throw new BadRequestException($e->getMessage());
                     }
