@@ -775,7 +775,7 @@ class Role extends RestController
         }
 
         return new Values\PolicyList(
-            array_merge(...$policies),
+            !empty($policies) ? array_merge(...$policies) : [],
             $request->getPathInfo()
         );
     }
