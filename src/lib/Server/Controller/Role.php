@@ -287,7 +287,7 @@ class Role extends RestController
 
         $this->roleService->publishRoleDraft($roleDraft);
 
-        $role = $this->roleService->loadRole($roleId);
+        $role = $this->roleService->loadRoleByIdentifier($roleDraft->identifier);
 
         return new Values\PublishedRole(['role' => new Values\RestRole($role)]);
     }
