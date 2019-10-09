@@ -641,7 +641,7 @@ class Role extends RestController
 
         $roleAssignments = $this->roleService->getRoleAssignmentsForUser($user);
         foreach ($roleAssignments as $roleAssignment) {
-            if ($roleAssignment->role->id === $roleId) {
+            if ($roleAssignment->role->id == $roleId) {
                 $this->roleService->removeRoleAssignment($roleAssignment);
             }
         }
@@ -666,7 +666,7 @@ class Role extends RestController
 
         $roleAssignments = $this->roleService->getRoleAssignmentsForUserGroup($userGroup);
         foreach ($roleAssignments as $roleAssignment) {
-            if ($roleAssignment->role->id === $roleId) {
+            if ($roleAssignment->role->id == $roleId) {
                 $this->roleService->removeRoleAssignment($roleAssignment);
             }
         }
