@@ -226,11 +226,17 @@ class Role extends RestController
                 $request->getContent()
             )
         );
-
-        return $this->roleService->updateRole(
-            $this->roleService->loadRole($roleId),
+        $roleDraft = $this->roleService->createRoleDraft(
+            $this->roleService->loadRole($roleId)
+        );
+        $roleDraft = $this->roleService->updateRoleDraft(
+            $roleDraft,
             $this->mapToUpdateStruct($createStruct)
         );
+
+        $this->roleService->publishRoleDraft($roleDraft);
+
+        return $this->roleService->loadRole($roleId);
     }
 
     /**
@@ -281,7 +287,7 @@ class Role extends RestController
 
         $this->roleService->publishRoleDraft($roleDraft);
 
-        $role = $this->roleService->loadRole($roleId);
+        $role = $this->roleService->loadRoleByIdentifier($roleDraft->identifier);
 
         return new Values\PublishedRole(['role' => new Values\RestRole($role)]);
     }
@@ -344,10 +350,12 @@ class Role extends RestController
     public function deletePolicies($roleId)
     {
         $loadedRole = $this->roleService->loadRole($roleId);
-
-        foreach ($loadedRole->getPolicies() as $policy) {
-            $this->roleService->deletePolicy($policy);
+        $roleDraft = $this->roleService->createRoleDraft($loadedRole);
+        /** @var \eZ\Publish\API\Repository\Values\User\PolicyDraft $policyDraft */
+        foreach ($roleDraft->getPolicies() as $policyDraft) {
+            $this->roleService->removePolicyByRoleDraft($roleDraft, $policyDraft);
         }
+        $this->roleService->publishRoleDraft($roleDraft);
 
         return new Values\NoContent();
     }
@@ -377,7 +385,7 @@ class Role extends RestController
     /**
      * Adds a policy to role.
      *
-     * @param $roleId int ID of a role or a role draft
+     * @param int $roleId ID of a role draft
      *
      * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
      */
@@ -398,45 +406,15 @@ class Role extends RestController
             );
         } catch (NotFoundException $e) {
             // Then try to treat $roleId as a role ID.
-            $role = $this->roleService->addPolicy(
-                $this->roleService->loadRole($roleId),
+            $roleDraft = $this->roleService->createRoleDraft(
+                $this->roleService->loadRole($roleId)
+            );
+            $roleDraft = $this->roleService->addPolicyByRoleDraft(
+                $roleDraft,
                 $createStruct
             );
-        } catch (LimitationValidationException $e) {
-            throw new BadRequestException($e->getMessage());
-        }
-
-        return new Values\CreatedPolicy(
-            [
-                'policy' => $this->getLastAddedPolicy($role),
-            ]
-        );
-    }
-
-    /**
-     * Adds a policy to a role draft.
-     *
-     * @since 6.2
-     * @deprecated since 6.3, use {@see addPolicy}
-     *
-     * @param $roleId
-     *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
-     */
-    public function addPolicyByRoleDraft($roleId, Request $request)
-    {
-        $createStruct = $this->inputDispatcher->parse(
-            new Message(
-                ['Content-Type' => $request->headers->get('Content-Type')],
-                $request->getContent()
-            )
-        );
-
-        try {
-            $role = $this->roleService->addPolicyByRoleDraft(
-                $this->roleService->loadRoleDraft($roleId),
-                $createStruct
-            );
+            $this->roleService->publishRoleDraft($roleDraft);
+            $role = $this->roleService->loadRole($roleId);
         } catch (LimitationValidationException $e) {
             throw new BadRequestException($e->getMessage());
         }
@@ -475,8 +453,8 @@ class Role extends RestController
     /**
      * Updates a policy.
      *
-     * @param $roleId int ID of a role or a role draft
-     * @param $policyId int ID of a policy
+     * @param int $roleId ID of a role draft
+     * @param int $policyId ID of a policy
      *
      * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
@@ -490,14 +468,14 @@ class Role extends RestController
                 $request->getContent()
             )
         );
-
         try {
             // First try to treat $roleId as a role draft ID.
-            $role = $this->roleService->loadRoleDraft($roleId);
-            foreach ($role->getPolicies() as $policy) {
+            $roleDraft = $this->roleService->loadRoleDraft($roleId);
+            foreach ($roleDraft->getPolicies() as $policy) {
                 if ($policy->id == $policyId) {
                     try {
-                        return $this->roleService->updatePolicy(
+                        return $this->roleService->updatePolicyByRoleDraft(
+                            $roleDraft,
                             $policy,
                             $updateStruct
                         );
@@ -508,56 +486,28 @@ class Role extends RestController
             }
         } catch (NotFoundException $e) {
             // Then try to treat $roleId as a role ID.
-            $role = $this->roleService->loadRole($roleId);
-            foreach ($role->getPolicies() as $policy) {
-                if ($policy->id == $policyId) {
+            $roleDraft = $this->roleService->createRoleDraft(
+                $this->roleService->loadRole($roleId)
+            );
+            foreach ($roleDraft->getPolicies() as $policy) {
+                if ($policy->originalId == $policyId) {
                     try {
-                        return $this->roleService->updatePolicy(
+                        $policyDraft = $this->roleService->updatePolicyByRoleDraft(
+                            $roleDraft,
                             $policy,
                             $updateStruct
                         );
+                        $this->roleService->publishRoleDraft($roleDraft);
+                        $role = $this->roleService->loadRole($roleId);
+
+                        foreach ($role->getPolicies() as $newPolicy) {
+                            if ($newPolicy->id == $policyDraft->id) {
+                                return $newPolicy;
+                            }
+                        }
                     } catch (LimitationValidationException $e) {
                         throw new BadRequestException($e->getMessage());
                     }
-                }
-            }
-        }
-
-        throw new Exceptions\NotFoundException("Policy not found: '{$request->getPathInfo()}'.");
-    }
-
-    /**
-     * Updates a policy.
-     *
-     * @since 6.2
-     * @deprecated since 6.3, use {@see updatePolicy}
-     *
-     * @param $roleId
-     * @param $policyId
-     *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
-     *
-     * @return \eZ\Publish\API\Repository\Values\User\Policy
-     */
-    public function updatePolicyByRoleDraft($roleId, $policyId, Request $request)
-    {
-        $updateStruct = $this->inputDispatcher->parse(
-            new Message(
-                ['Content-Type' => $request->headers->get('Content-Type')],
-                $request->getContent()
-            )
-        );
-
-        $role = $this->roleService->loadRoleDraft($roleId);
-        foreach ($role->getPolicies() as $policy) {
-            if ($policy->id == $policyId) {
-                try {
-                    return $this->roleService->updatePolicy(
-                        $policy,
-                        $updateStruct
-                    );
-                } catch (LimitationValidationException $e) {
-                    throw new BadRequestException($e->getMessage());
                 }
             }
         }
@@ -568,8 +518,8 @@ class Role extends RestController
     /**
      * Delete a policy from role.
      *
-     * @param $roleId int ID of a role or a role draft
-     * @param $policyId int ID of a policy
+     * @param int $roleId ID of a role draft
+     * @param int $policyId ID of a policy
      *
      * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
      *
@@ -580,7 +530,6 @@ class Role extends RestController
         try {
             // First try to treat $roleId as a role draft ID.
             $roleDraft = $this->roleService->loadRoleDraft($roleId);
-
             $policy = null;
             foreach ($roleDraft->getPolicies() as $rolePolicy) {
                 if ($rolePolicy->id == $policyId) {
@@ -588,7 +537,6 @@ class Role extends RestController
                     break;
                 }
             }
-
             if ($policy !== null) {
                 $this->roleService->removePolicyByRoleDraft($roleDraft, $policy);
 
@@ -596,57 +544,23 @@ class Role extends RestController
             }
         } catch (NotFoundException $e) {
             // Then try to treat $roleId as a role ID.
-            $role = $this->roleService->loadRole($roleId);
-
+            $roleDraft = $this->roleService->createRoleDraft(
+                $this->roleService->loadRole($roleId)
+            );
             $policy = null;
-            foreach ($role->getPolicies() as $rolePolicy) {
-                if ($rolePolicy->id == $policyId) {
+            foreach ($roleDraft->getPolicies() as $rolePolicy) {
+                if ($rolePolicy->originalId == $policyId) {
                     $policy = $rolePolicy;
                     break;
                 }
             }
-
             if ($policy !== null) {
-                $this->roleService->deletePolicy($policy);
+                $this->roleService->removePolicyByRoleDraft($roleDraft, $policy);
+                $this->roleService->publishRoleDraft($roleDraft);
 
                 return new Values\NoContent();
             }
         }
-
-        throw new Exceptions\NotFoundException("Policy not found: '{$request->getPathInfo()}'.");
-    }
-
-    /**
-     * Remove a policy from a role draft.
-     *
-     * @since 6.2
-     * @deprecated since 6.3, use {@see deletePolicy}
-     *
-     * @param $roleId
-     * @param $policyId
-     *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
-     *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
-     */
-    public function removePolicyByRoleDraft($roleId, $policyId, Request $request)
-    {
-        $roleDraft = $this->roleService->loadRoleDraft($roleId);
-
-        $policy = null;
-        foreach ($roleDraft->getPolicies() as $rolePolicy) {
-            if ($rolePolicy->id == $policyId) {
-                $policy = $rolePolicy;
-                break;
-            }
-        }
-
-        if ($policy !== null) {
-            $this->roleService->removePolicyByRoleDraft($roleDraft, $policy);
-
-            return new Values\NoContent();
-        }
-
         throw new Exceptions\NotFoundException("Policy not found: '{$request->getPathInfo()}'.");
     }
 
@@ -724,13 +638,16 @@ class Role extends RestController
     public function unassignRoleFromUser($userId, $roleId)
     {
         $user = $this->userService->loadUser($userId);
-        $role = $this->roleService->loadRole($roleId);
-
-        $this->roleService->unassignRoleFromUser($role, $user);
 
         $roleAssignments = $this->roleService->getRoleAssignmentsForUser($user);
+        foreach ($roleAssignments as $roleAssignment) {
+            if ($roleAssignment->role->id == $roleId) {
+                $this->roleService->removeRoleAssignment($roleAssignment);
+            }
+        }
+        $newRoleAssignments = $this->roleService->getRoleAssignmentsForUser($user);
 
-        return new Values\RoleAssignmentList($roleAssignments, $user->id);
+        return new Values\RoleAssignmentList($newRoleAssignments, $user->id);
     }
 
     /**
@@ -747,9 +664,12 @@ class Role extends RestController
         $groupLocation = $this->locationService->loadLocation(array_pop($groupLocationParts));
         $userGroup = $this->userService->loadUserGroup($groupLocation->contentId);
 
-        $role = $this->roleService->loadRole($roleId);
-        $this->roleService->unassignRoleFromUserGroup($role, $userGroup);
-
+        $roleAssignments = $this->roleService->getRoleAssignmentsForUserGroup($userGroup);
+        foreach ($roleAssignments as $roleAssignment) {
+            if ($roleAssignment->role->id == $roleId) {
+                $this->roleService->removeRoleAssignment($roleAssignment);
+            }
+        }
         $roleAssignments = $this->roleService->getRoleAssignmentsForUserGroup($userGroup);
 
         return new Values\RoleAssignmentList($roleAssignments, $groupPath, true);
@@ -846,10 +766,16 @@ class Role extends RestController
      */
     public function listPoliciesForUser(Request $request)
     {
+        $user = $this->userService->loadUser((int)$request->query->get('userId'));
+        $roleAssignments = $this->roleService->getRoleAssignmentsForUser($user, true);
+
+        $policies = [];
+        foreach ($roleAssignments as $roleAssignment) {
+            $policies[] = $roleAssignment->getRole()->getPolicies();
+        }
+
         return new Values\PolicyList(
-            $this->roleService->loadPoliciesByUserId(
-                $request->query->get('userId')
-            ),
+            !empty($policies) ? array_merge(...$policies) : [],
             $request->getPathInfo()
         );
     }

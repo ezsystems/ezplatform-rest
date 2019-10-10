@@ -367,6 +367,8 @@ XML;
         $response = $this->sendHttpRequest($request);
 
         self::assertHttpResponseCodeEquals($response, 200);
+
+        return json_decode($response->getBody(), true)['Policy']['_href'];
     }
 
     /**
@@ -610,7 +612,7 @@ XML;
     /**
      * Covers DELETE /user/roles/{roleId}/policies/{policyId}.
      *
-     * @depends testAddPolicy
+     * @depends testUpdatePolicy
      */
     public function testDeletePolicy($policyHref)
     {
