@@ -82,7 +82,7 @@ class UserGroupUpdate extends BaseParser
 
         if (array_key_exists('Section', $data) && is_array($data['Section'])) {
             if (!array_key_exists('_href', $data['Section'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for Section element in UserGroupUpdate.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the Section element in UserGroupUpdate.");
             }
 
             $parsedData['sectionId'] = $this->requestParser->parseHref($data['Section']['_href'], 'sectionId');
@@ -108,7 +108,7 @@ class UserGroupUpdate extends BaseParser
                 }
 
                 if (!array_key_exists('fieldValue', $fieldData)) {
-                    throw new Exceptions\Parser("Missing 'fieldValue' element for '{$fieldData['fieldDefinitionIdentifier']}' identifier in UserGroupUpdate.");
+                    throw new Exceptions\Parser("Missing 'fieldValue' element for the '{$fieldData['fieldDefinitionIdentifier']}' identifier in UserGroupUpdate.");
                 }
 
                 $fieldValue = $this->fieldTypeParser->parseFieldValue($groupLocation->contentId, $fieldData['fieldDefinitionIdentifier'], $fieldData['fieldValue']);

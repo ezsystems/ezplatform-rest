@@ -30,7 +30,7 @@ class RelationCreate extends BaseParser
         }
 
         if (!array_key_exists('_href', $data['Destination'])) {
-            throw new Exceptions\Parser("Missing '_href' attribute for Destination element in RelationCreate.");
+            throw new Exceptions\Parser("Missing '_href' attribute for the Destination element in RelationCreate.");
         }
 
         return $this->requestParser->parseHref($data['Destination']['_href'], 'contentId');

@@ -23,7 +23,7 @@ class FieldTypeProcessorPass implements CompilerPassInterface
         foreach ($container->findTaggedServiceIds('ezpublish_rest.field_type_processor') as $id => $attributes) {
             foreach ($attributes as $attribute) {
                 if (!isset($attribute['alias'])) {
-                    throw new \LogicException('ezpublish_rest.field_type_processor service tag needs an "alias" attribute to identify the field type. None given.');
+                    throw new \LogicException('The ezpublish_rest.field_type_processor service tag needs an "alias" attribute to identify the Field Type.');
                 }
 
                 $definition->addMethodCall(

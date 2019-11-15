@@ -100,7 +100,7 @@ class ContentCreate extends BaseParser
         }
 
         if (!array_key_exists('_href', $data['ContentType'])) {
-            throw new Exceptions\Parser("Missing '_href' attribute for ContentType element in ContentCreate.");
+            throw new Exceptions\Parser("Missing '_href' attribute for the ContentType element in ContentCreate.");
         }
 
         if (!array_key_exists('mainLanguageCode', $data)) {
@@ -115,7 +115,7 @@ class ContentCreate extends BaseParser
 
         if (array_key_exists('Section', $data) && is_array($data['Section'])) {
             if (!array_key_exists('_href', $data['Section'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for Section element in ContentCreate.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the Section element in ContentCreate.");
             }
 
             $contentCreateStruct->sectionId = $this->requestParser->parseHref($data['Section']['_href'], 'sectionId');
@@ -135,7 +135,7 @@ class ContentCreate extends BaseParser
 
         if (array_key_exists('User', $data) && is_array($data['User'])) {
             if (!array_key_exists('_href', $data['User'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for User element in ContentCreate.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the User element in ContentCreate.");
             }
 
             $contentCreateStruct->ownerId = $this->requestParser->parseHref($data['User']['_href'], 'userId');
@@ -147,18 +147,18 @@ class ContentCreate extends BaseParser
 
         foreach ($data['fields']['field'] as $fieldData) {
             if (!array_key_exists('fieldDefinitionIdentifier', $fieldData)) {
-                throw new Exceptions\Parser("Missing 'fieldDefinitionIdentifier' element in field data for ContentCreate.");
+                throw new Exceptions\Parser("Missing 'fieldDefinitionIdentifier' element in Field data for ContentCreate.");
             }
 
             $fieldDefinition = $contentType->getFieldDefinition($fieldData['fieldDefinitionIdentifier']);
             if (!$fieldDefinition) {
                 throw new Exceptions\Parser(
-                    "'{$fieldData['fieldDefinitionIdentifier']}' is invalid field definition identifier for '{$contentType->identifier}' content type in ContentCreate."
+                    "'{$fieldData['fieldDefinitionIdentifier']}' is an invalid Field definition identifier for the '{$contentType->identifier}' Content Type in ContentCreate."
                 );
             }
 
             if (!array_key_exists('fieldValue', $fieldData)) {
-                throw new Exceptions\Parser("Missing 'fieldValue' element for '{$fieldData['fieldDefinitionIdentifier']}' identifier in ContentCreate.");
+                throw new Exceptions\Parser("Missing 'fieldValue' element for the '{$fieldData['fieldDefinitionIdentifier']}' identifier in ContentCreate.");
             }
 
             $fieldValue = $this->fieldTypeParser->parseValue($fieldDefinition->fieldTypeIdentifier,

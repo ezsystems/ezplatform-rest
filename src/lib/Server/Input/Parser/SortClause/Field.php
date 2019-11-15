@@ -25,11 +25,11 @@ class Field extends BaseParser
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
         if (!isset($data['Field'])) {
-            throw new Exceptions\Parser("The <Field> sort clause doesn't exist in the input structure");
+            throw new Exceptions\Parser("The <Field> Sort Clause doesn't exist in the input structure");
         }
 
         if (!is_array($data['Field'])) {
-            throw new Exceptions\Parser('The <Field> sort clause has missing arguments: contentTypeIdentifier, fieldDefinitionIdentifier');
+            throw new Exceptions\Parser('The <Field> Sort Clause has missing arguments: contentTypeIdentifier, fieldDefinitionIdentifier');
         }
 
         $data['Field'] = $this->normalizeData($data['Field']);
@@ -42,16 +42,16 @@ class Field extends BaseParser
 
         if (isset($data['Field']['identifier'])) {
             if (false === strpos($data['Field']['identifier'], '/')) {
-                throw new Exceptions\Parser('<Field> sort clause parameter "identifier" value has to be in "contentTypeIdentifier/fieldDefinitionIdentifier" format');
+                throw new Exceptions\Parser('<Field> Sort Clause parameter "identifier" value has to be in "contentTypeIdentifier/fieldDefinitionIdentifier" format');
             }
 
             list($contentTypeIdentifier, $fieldDefinitionIdentifier) = explode('/', $data['Field']['identifier'], 2);
         } else {
             if (!isset($data['Field']['contentTypeIdentifier'])) {
-                throw new Exceptions\Parser('<Field> sort clause have missing parameter "contentTypeIdentifier"');
+                throw new Exceptions\Parser('<Field> Sort Clause has missing parameter "contentTypeIdentifier"');
             }
             if (!isset($data['Field']['fieldDefinitionIdentifier'])) {
-                throw new Exceptions\Parser('<Field> sort clause have missing parameter "fieldDefinitionIdentifier"');
+                throw new Exceptions\Parser('<Field> Sort Clause has missing parameter "fieldDefinitionIdentifier"');
             }
 
             $contentTypeIdentifier = $data['Field']['contentTypeIdentifier'];

@@ -48,7 +48,7 @@ class FieldTypeHashGenerator
                 break;
 
             default:
-                throw new \Exception('Invalid type in field value hash: ' . $hashValueType);
+                throw new \Exception('Invalid type in Field value hash: ' . $hashValueType);
         }
     }
 

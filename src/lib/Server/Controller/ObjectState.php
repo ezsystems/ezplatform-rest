@@ -321,7 +321,7 @@ class ObjectState extends RestController
 
         foreach ($countByGroups as $groupId => $count) {
             if ($count > 1) {
-                throw new ForbiddenException("Multiple object states provided for group with ID $groupId");
+                throw new ForbiddenException("Multiple Object states provided for group with ID $groupId");
             }
         }
 

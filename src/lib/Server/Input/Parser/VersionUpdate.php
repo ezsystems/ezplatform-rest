@@ -73,11 +73,11 @@ class VersionUpdate extends BaseParser
 
             foreach ($data['fields']['field'] as $fieldData) {
                 if (!array_key_exists('fieldDefinitionIdentifier', $fieldData)) {
-                    throw new Exceptions\Parser("Missing 'fieldDefinitionIdentifier' element in field data for VersionUpdate.");
+                    throw new Exceptions\Parser("Missing 'fieldDefinitionIdentifier' element in Field data for VersionUpdate.");
                 }
 
                 if (!array_key_exists('fieldValue', $fieldData)) {
-                    throw new Exceptions\Parser("Missing 'fieldValue' element for '{$fieldData['fieldDefinitionIdentifier']}' identifier in VersionUpdate.");
+                    throw new Exceptions\Parser("Missing 'fieldValue' element for the '{$fieldData['fieldDefinitionIdentifier']}' identifier in VersionUpdate.");
                 }
 
                 $fieldValue = $this->fieldTypeParser->parseFieldValue(

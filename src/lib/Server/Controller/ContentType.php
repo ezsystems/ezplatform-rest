@@ -138,7 +138,7 @@ class ContentType extends RestController
 
         $contentTypes = $this->contentTypeService->loadContentTypes($contentTypeGroup);
         if (!empty($contentTypes)) {
-            throw new ForbiddenException('Only empty content type groups can be deleted');
+            throw new ForbiddenException('Only empty Content Type groups can be deleted');
         }
 
         $this->contentTypeService->deleteContentTypeGroup($contentTypeGroup);
@@ -707,7 +707,7 @@ class ContentType extends RestController
 
         $fieldDefinitions = $contentTypeDraft->getFieldDefinitions();
         if (empty($fieldDefinitions)) {
-            throw new ForbiddenException('Empty content type draft cannot be published');
+            throw new ForbiddenException('Cannot publish an empty Content Type draft');
         }
 
         $this->contentTypeService->publishContentTypeDraft($contentTypeDraft);
@@ -810,7 +810,7 @@ class ContentType extends RestController
         }
 
         if ($contentTypeInGroup) {
-            throw new ForbiddenException('Content type is already linked to provided group');
+            throw new ForbiddenException('The Content Type is already linked to the provided group');
         }
 
         $this->contentTypeService->assignContentTypeGroup(
@@ -852,11 +852,11 @@ class ContentType extends RestController
         }
 
         if (!$contentTypeInGroup) {
-            throw new Exceptions\NotFoundException('Content type is not in the given group');
+            throw new Exceptions\NotFoundException('The Content Type is not in the provided group');
         }
 
         if (count($existingContentTypeGroups) == 1) {
-            throw new ForbiddenException('Content type cannot be unlinked from the only remaining group');
+            throw new ForbiddenException('Cannot unlink the Content Type from its only remaining group');
         }
 
         $this->contentTypeService->unassignContentTypeGroup(

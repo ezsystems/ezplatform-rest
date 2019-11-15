@@ -142,7 +142,7 @@ class ContentTypeCreate extends BaseParser
 
         if (array_key_exists('User', $data)) {
             if (!array_key_exists('_href', $data['User'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for User element in ContentTypeCreate.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the User element in ContentTypeCreate.");
             }
 
             $contentTypeCreateStruct->creatorId = $this->requestParser->parseHref($data['User']['_href'], 'userId');
@@ -163,7 +163,7 @@ class ContentTypeCreate extends BaseParser
         // With no field definitions given and when ContentType is immediately published we must return HTTP 400 BadRequest,
         // instead of relying on service to throw InvalidArgumentException
         if (isset($data['__publish']) && $data['__publish'] === true && empty($data['FieldDefinitions']['FieldDefinition'])) {
-            throw new Exceptions\Parser('ContentTypeCreate should provide at least one field definition.');
+            throw new Exceptions\Parser('ContentTypeCreate should provide at least one Field definition.');
         }
 
         foreach ($data['FieldDefinitions']['FieldDefinition'] as $fieldDefinitionData) {

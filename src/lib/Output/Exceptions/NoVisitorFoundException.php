@@ -22,7 +22,7 @@ class NoVisitorFoundException extends RuntimeException
     {
         parent::__construct(
             sprintf(
-                'No visitor found for %s!',
+                'No visitor found for %s.',
                 implode(', ', $classes)
             )
         );

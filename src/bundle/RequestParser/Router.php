@@ -70,7 +70,7 @@ class Router implements RequestParser
         $parsingResult = $this->parse($href);
 
         if (!isset($parsingResult[$attribute])) {
-            throw new InvalidArgumentException("No such attribute '$attribute' in route matched from $href");
+            throw new InvalidArgumentException("No attribute '$attribute' in route matched from $href");
         }
 
         return $parsingResult[$attribute];

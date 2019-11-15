@@ -114,7 +114,7 @@ class ContentTypeUpdate extends BaseParser
 
         if (array_key_exists('User', $data)) {
             if (!array_key_exists('_href', $data['User'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for User element in ContentTypeUpdate.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the User element in ContentTypeUpdate.");
             }
 
             $contentTypeUpdateStruct->modifierId = $this->requestParser->parseHref($data['User']['_href'], 'userId');
