@@ -349,7 +349,7 @@ class Content extends RestController
         );
 
         if ($versionInfo->isPublished()) {
-            throw new ForbiddenException('Versions with status PUBLISHED cannot be deleted');
+            throw new ForbiddenException('Versions with PUBLISHED status cannot be deleted');
         }
 
         $this->repository->getContentService()->deleteVersion(
@@ -430,7 +430,7 @@ class Content extends RestController
         );
 
         if ($versionInfo->isDraft()) {
-            throw new ForbiddenException('Current version already has status DRAFT');
+            throw new ForbiddenException('Current version already has DRAFT status');
         }
 
         $contentDraft = $this->repository->getContentService()->createContentDraft($contentInfo);
@@ -481,7 +481,7 @@ class Content extends RestController
         );
 
         if (!$versionInfo->isDraft()) {
-            throw new ForbiddenException('Only versions with status DRAFT can be updated');
+            throw new ForbiddenException('Only versions with DRAFT status can be updated');
         }
 
         try {
@@ -533,7 +533,7 @@ class Content extends RestController
         );
 
         if (!$versionInfo->isDraft()) {
-            throw new ForbiddenException('Only versions with status DRAFT can be published');
+            throw new ForbiddenException('Only versions with DRAFT status can be published');
         }
 
         $this->repository->getContentService()->publishVersion(
