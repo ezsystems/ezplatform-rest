@@ -98,7 +98,7 @@ class RouterTest extends TestCase
 
     /**
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage No such attribute 'badAttribute' in route matched from /api/test/v1/content/no-attribute
+     * @expectedExceptionMessage No attribute 'badAttribute' in route matched from /api/test/v1/content/no-attribute
      */
     public function testParseHrefAttributeNotFound()
     {

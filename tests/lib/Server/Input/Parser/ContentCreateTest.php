@@ -203,7 +203,7 @@ class ContentCreateTest extends BaseTest
      * Test ContentCreate parser throwing exception on invalid ContentType.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for ContentType element in ContentCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the ContentType element in ContentCreate.
      */
     public function testParseExceptionOnInvalidContentType()
     {
@@ -280,7 +280,7 @@ class ContentCreateTest extends BaseTest
      * Test ContentCreate parser throwing exception on invalid Section.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for Section element in ContentCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the Section element in ContentCreate.
      */
     public function testParseExceptionOnInvalidSection()
     {
@@ -318,7 +318,7 @@ class ContentCreateTest extends BaseTest
      * Test ContentCreate parser throwing exception on invalid User.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for User element in ContentCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentCreate.
      */
     public function testParseExceptionOnInvalidUser()
     {
@@ -384,7 +384,7 @@ class ContentCreateTest extends BaseTest
      * Test ContentCreate parser throwing exception on missing field definition identifier.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in field data for ContentCreate.
+     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in Field data for ContentCreate.
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
@@ -423,7 +423,7 @@ class ContentCreateTest extends BaseTest
      * Test ContentCreate parser throwing exception on invalid field definition identifier.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage 'unknown' is invalid field definition identifier for 'some_class' content type in ContentCreate.
+     * @expectedExceptionMessage 'unknown' is an invalid Field definition identifier for the 'some_class' Content Type in ContentCreate.
      */
     public function testParseExceptionOnInvalidFieldDefinitionIdentifier()
     {
@@ -463,7 +463,7 @@ class ContentCreateTest extends BaseTest
      * Test ContentCreate parser throwing exception on missing field value.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for 'subject' identifier in ContentCreate.
+     * @expectedExceptionMessage Missing 'fieldValue' element for the 'subject' identifier in ContentCreate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {

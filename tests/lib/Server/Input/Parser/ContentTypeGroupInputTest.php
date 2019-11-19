@@ -57,7 +57,7 @@ class ContentTypeGroupInputTest extends BaseTest
      * Test ContentTypeGroupInput parser throwing exception on invalid User.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for User element in ContentTypeGroupInput.
+     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentTypeGroupInput.
      */
     public function testParseExceptionOnInvalidUser()
     {

@@ -49,7 +49,7 @@ class RelationCreateTest extends BaseTest
      * Test RelationCreate parser throwing exception on missing Destination href.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for Destination element in RelationCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the Destination element in RelationCreate.
      */
     public function testParseExceptionOnMissingDestinationHref()
     {

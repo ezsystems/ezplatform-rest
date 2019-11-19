@@ -84,9 +84,9 @@ class ContentUpdateTest extends BaseTest
     public function providerForTestParseFailureInvalidHref()
     {
         return [
-            ['Section', 'Invalid format for <Section> reference in <ContentUpdate>.'],
-            ['MainLocation', 'Invalid format for <MainLocation> reference in <ContentUpdate>.'],
-            ['Owner', 'Invalid format for <Owner> reference in <ContentUpdate>.'],
+            ['Section', 'Invalid format for the <Section> reference in <ContentUpdate>.'],
+            ['MainLocation', 'Invalid format for the <MainLocation> reference in <ContentUpdate>.'],
+            ['Owner', 'Invalid format for the <Owner> reference in <ContentUpdate>.'],
         ];
     }
 
@@ -184,9 +184,9 @@ class ContentUpdateTest extends BaseTest
             ['/user/users/42', 'userId', 42],
             ['/content/locations/1/2/55', 'locationPath', '1/2/55'],
 
-            ['/invalid/section/uri', 'sectionId', new InvalidArgumentException('Invalid format for <Section> reference in <ContentUpdate>.')],
-            ['/invalid/section/uri', 'userId', new InvalidArgumentException('Invalid format for <Owner> reference in <ContentUpdate>.')],
-            ['/invalid/section/uri', 'locationPath', new InvalidArgumentException('Invalid format for <MainLocation> reference in <ContentUpdate>.')],
+            ['/invalid/section/uri', 'sectionId', new InvalidArgumentException('Invalid format for the <Section> reference in <ContentUpdate>.')],
+            ['/invalid/section/uri', 'userId', new InvalidArgumentException('Invalid format for the <Owner> reference in <ContentUpdate>.')],
+            ['/invalid/section/uri', 'locationPath', new InvalidArgumentException('Invalid format for the <MainLocation> reference in <ContentUpdate>.')],
         ];
     }
 }

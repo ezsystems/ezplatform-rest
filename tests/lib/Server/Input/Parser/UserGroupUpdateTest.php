@@ -96,7 +96,7 @@ class UserGroupUpdateTest extends BaseTest
      * Test UserGroupUpdate parser throwing exception on missing Section href.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for Section element in UserGroupUpdate.
+     * @expectedExceptionMessage Missing '_href' attribute for the Section element in UserGroupUpdate.
      */
     public function testParseExceptionOnMissingSectionHref()
     {
@@ -173,7 +173,7 @@ class UserGroupUpdateTest extends BaseTest
      * Test UserGroupUpdate parser throwing exception on missing field value.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for 'name' identifier in UserGroupUpdate.
+     * @expectedExceptionMessage Missing 'fieldValue' element for the 'name' identifier in UserGroupUpdate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {

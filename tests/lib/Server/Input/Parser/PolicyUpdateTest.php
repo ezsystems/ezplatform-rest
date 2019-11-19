@@ -121,7 +121,7 @@ class PolicyUpdateTest extends BaseTest
      * Test PolicyUpdate parser throwing exception on missing values.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid format for limitation values in Limitation.
+     * @expectedExceptionMessage Invalid format for Limitation value in Limitation.
      */
     public function testParseExceptionOnMissingLimitationValues()
     {

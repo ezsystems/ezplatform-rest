@@ -94,7 +94,7 @@ class UserGroupCreateTest extends BaseTest
      * Test UserGroupCreate parser throwing exception on invalid ContentType.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for ContentType element in UserGroupCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the ContentType element in UserGroupCreate.
      */
     public function testParseExceptionOnInvalidContentType()
     {
@@ -153,7 +153,7 @@ class UserGroupCreateTest extends BaseTest
      * Test UserGroupCreate parser throwing exception on invalid Section.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for Section element in UserGroupCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the Section element in UserGroupCreate.
      */
     public function testParseExceptionOnInvalidSection()
     {
@@ -239,7 +239,7 @@ class UserGroupCreateTest extends BaseTest
      * Test UserGroupCreate parser throwing exception on invalid field definition identifier.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage 'unknown' is invalid field definition identifier for 'some_class' content type in UserGroupCreate.
+     * @expectedExceptionMessage 'unknown' is an invalid Field definition identifier for the 'some_class' Content Type in UserGroupCreate.
      */
     public function testParseExceptionOnInvalidFieldDefinitionIdentifier()
     {
@@ -270,7 +270,7 @@ class UserGroupCreateTest extends BaseTest
      * Test UserGroupCreate parser throwing exception on missing field value.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for 'name' identifier in UserGroupCreate.
+     * @expectedExceptionMessage Missing 'fieldValue' element for the 'name' identifier in UserGroupCreate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {

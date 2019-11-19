@@ -140,7 +140,7 @@ class ContentTypeUpdateTest extends BaseTest
      * Test ContentTypeUpdate parser throwing exception on invalid User.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for User element in ContentTypeUpdate.
+     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentTypeUpdate.
      */
     public function testParseExceptionOnInvalidUser()
     {

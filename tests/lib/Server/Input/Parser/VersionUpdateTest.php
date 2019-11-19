@@ -79,7 +79,7 @@ class VersionUpdateTest extends BaseTest
      * Test VersionUpdate parser throwing exception on missing field definition identifier.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in field data for VersionUpdate.
+     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in Field data for VersionUpdate.
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
@@ -103,7 +103,7 @@ class VersionUpdateTest extends BaseTest
      * Test VersionUpdate parser throwing exception on missing field value.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for 'subject' identifier in VersionUpdate.
+     * @expectedExceptionMessage Missing 'fieldValue' element for the 'subject' identifier in VersionUpdate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {

@@ -98,7 +98,7 @@ class UserCreateTest extends BaseTest
      * Test UserCreate parser throwing exception on invalid ContentType.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for ContentType element in UserCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the ContentType element in UserCreate.
      */
     public function testParseExceptionOnInvalidContentType()
     {
@@ -267,7 +267,7 @@ class UserCreateTest extends BaseTest
      * Test UserCreate parser throwing exception on invalid Section.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for Section element in UserCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the Section element in UserCreate.
      */
     public function testParseExceptionOnInvalidSection()
     {
@@ -365,7 +365,7 @@ class UserCreateTest extends BaseTest
      * Test UserCreate parser throwing exception on invalid field definition identifier.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage 'unknown' is invalid field definition identifier for 'some_class' content type in UserCreate.
+     * @expectedExceptionMessage 'unknown' is an invalid Field definition identifier for the 'some_class' Content Type in UserCreate.
      */
     public function testParseExceptionOnInvalidFieldDefinitionIdentifier()
     {
@@ -400,7 +400,7 @@ class UserCreateTest extends BaseTest
      * Test UserCreate parser throwing exception on missing field value.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for 'name' identifier in UserCreate.
+     * @expectedExceptionMessage Missing 'fieldValue' element for the 'name' identifier in UserCreate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {
