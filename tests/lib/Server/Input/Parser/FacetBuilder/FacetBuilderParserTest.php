@@ -23,7 +23,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'ContentType' => [
@@ -58,7 +57,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'ContentType' => [],
@@ -81,7 +79,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'Criterion' => [
@@ -108,7 +105,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'Field' => [
@@ -143,7 +139,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'Location' => [
@@ -170,7 +165,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'Section' => [],
@@ -193,7 +187,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'Term' => [],
@@ -216,7 +209,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'User' => [
@@ -243,7 +235,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [],
         ];
@@ -262,7 +253,6 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
             'FacetBuilders' => [
                 'ContentType' => [],

@@ -15,7 +15,6 @@ class QueryParserTest extends BaseTest
     {
         $inputArray = [
             'Filter' => [],
-            'Criteria' => [],
             'Query' => [],
         ];
 
@@ -33,7 +32,6 @@ class QueryParserTest extends BaseTest
     {
         $inputArray = [
             'Filter' => ['ContentTypeIdentifierCriterion' => 'article'],
-            'Criteria' => [],
             'Query' => [],
         ];
 
@@ -58,7 +56,6 @@ class QueryParserTest extends BaseTest
     {
         $inputArray = [
             'Filter' => ['ContentTypeIdentifierCriterion' => 'article', 'ParentLocationIdCriterion' => 762],
-            'Criteria' => [],
             'Query' => [],
         ];
 
@@ -91,7 +88,6 @@ class QueryParserTest extends BaseTest
     {
         $inputArray = [
             'Query' => ['ContentTypeIdentifierCriterion' => 'article'],
-            'Criteria' => [],
             'Filter' => [],
         ];
 
@@ -116,7 +112,6 @@ class QueryParserTest extends BaseTest
     {
         $inputArray = [
             'Query' => ['ContentTypeIdentifierCriterion' => 'article', 'ParentLocationIdCriterion' => 762],
-            'Criteria' => [],
             'Filter' => [],
         ];
 
