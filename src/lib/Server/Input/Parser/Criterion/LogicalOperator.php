@@ -12,22 +12,9 @@ use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
 /**
  * Parser for LogicalOperator Criterion.
  */
-class LogicalOperator extends Criterion
+abstract class LogicalOperator extends Criterion
 {
-    /**
-     * Parses input structure to a Criterion object.
-     *
-     * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
-     *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
-     *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\LogicalOperator
-     */
-    public function parse(array $data, ParsingDispatcher $parsingDispatcher)
-    {
-        throw new \Exception('@todo implement');
-    }
+    abstract public function parse(array $data, ParsingDispatcher $parsingDispatcher);
 
     /**
      * @param array $criteriaByType
