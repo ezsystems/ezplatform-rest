@@ -115,7 +115,7 @@ abstract class Generator
             // Ensure object element type only occurs once outside of lists
             if (isset($this->stack[$last][2][$data])) {
                 throw new Exceptions\OutputGeneratorException(
-                    "Element {$data} may only occur once inside of {$this->stack[$last][0]}."
+                    "Element {$data} may only occur once inside {$this->stack[$last][0]}."
                 );
             }
         }
@@ -160,7 +160,7 @@ abstract class Generator
             // Ensure hash element type only occurs once outside of lists
             if (isset($this->stack[$last][2][$data])) {
                 throw new Exceptions\OutputGeneratorException(
-                    "Element {$data} may only occur once inside of {$this->stack[$last][0]}."
+                    "Element {$data} may only occur once inside {$this->stack[$last][0]}."
                 );
             }
         }

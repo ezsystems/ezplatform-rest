@@ -39,7 +39,7 @@ class FieldTest extends BaseTest
      * Test Field parser throwing exception on missing sort clause.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage The <Field> sort clause doesn't exist in the input structure
+     * @expectedExceptionMessage The <Field> Sort Clause doesn't exist in the input structure
      */
     public function testParseExceptionOnMissingSortClause()
     {

@@ -73,7 +73,7 @@ class ParsingDispatcher
         }
 
         if (!isset($this->parsers[$mediaType][$version])) {
-            throw new Exceptions\Parser("Unknown content type specification: '{$mediaType} (version: $version)'.");
+            throw new Exceptions\Parser("Unknown Content Type specification: '{$mediaType} (version: $version)'.");
         }
 
         return $this->parsers[$mediaType][$version]->parse($data, $this);

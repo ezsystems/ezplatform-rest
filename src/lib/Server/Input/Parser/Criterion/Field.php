@@ -76,7 +76,7 @@ class Field extends BaseParser
         if (!isset(self::OPERATORS[$operatorName])) {
             throw new Exceptions\Parser(
                 sprintf(
-                    'Unexpected Field operator, expected one of the following: %s',
+                    'Unexpected Field operator. Expected one of: %s',
                     implode(', ', array_keys(self::OPERATORS))
                 )
             );

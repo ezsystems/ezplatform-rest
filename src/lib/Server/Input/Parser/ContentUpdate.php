@@ -38,7 +38,7 @@ class ContentUpdate extends BaseParser
             try {
                 $parsedData['sectionId'] = $this->requestParser->parseHref($data['Section']['_href'], 'sectionId');
             } catch (Exceptions\InvalidArgumentException $e) {
-                throw new Exceptions\Parser('Invalid format for <Section> reference in <ContentUpdate>.');
+                throw new Exceptions\Parser('Invalid format for the <Section> reference in <ContentUpdate>.');
             }
         }
 
@@ -46,7 +46,7 @@ class ContentUpdate extends BaseParser
             try {
                 $parsedData['ownerId'] = $this->requestParser->parseHref($data['Owner']['_href'], 'userId');
             } catch (Exceptions\InvalidArgumentException $e) {
-                throw new Exceptions\Parser('Invalid format for <Owner> reference in <ContentUpdate>.');
+                throw new Exceptions\Parser('Invalid format for the <Owner> reference in <ContentUpdate>.');
             }
         }
 
@@ -59,7 +59,7 @@ class ContentUpdate extends BaseParser
                 $mainLocationIdParts = explode('/', $this->requestParser->parseHref($data['MainLocation']['_href'], 'locationPath'));
                 $parsedData['mainLocationId'] = array_pop($mainLocationIdParts);
             } catch (Exceptions\InvalidArgumentException $e) {
-                throw new Exceptions\Parser('Invalid format for <MainLocation> reference in <ContentUpdate>.');
+                throw new Exceptions\Parser('Invalid format for the <MainLocation> reference in <ContentUpdate>.');
             }
         }
 

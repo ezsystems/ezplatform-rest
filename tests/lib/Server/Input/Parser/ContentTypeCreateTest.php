@@ -180,7 +180,7 @@ class ContentTypeCreateTest extends BaseTest
      * Test ContentTypeCreate parser throwing exception on invalid User.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for User element in ContentTypeCreate.
+     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentTypeCreate.
      */
     public function testParseExceptionOnInvalidUser()
     {
@@ -210,7 +210,7 @@ class ContentTypeCreateTest extends BaseTest
      * Test ContentTypeCreate parser throwing exception on invalid FieldDefinitions.
      *
      * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage ContentTypeCreate should provide at least one field definition.
+     * @expectedExceptionMessage ContentTypeCreate should provide at least one Field definition.
      */
     public function testParseExceptionOnMissingFieldDefinitions()
     {

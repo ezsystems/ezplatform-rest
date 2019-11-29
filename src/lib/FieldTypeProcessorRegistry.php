@@ -64,7 +64,7 @@ class FieldTypeProcessorRegistry
     {
         if (!$this->hasProcessor($fieldTypeIdentifier)) {
             throw new \RuntimeException(
-                "No field type processor for '{$fieldTypeIdentifier}' found."
+                "Field Type processor for '{$fieldTypeIdentifier}' not found."
             );
         }
 

@@ -56,13 +56,13 @@ class DataKeyValueObjectClass extends BaseParser
         }
 
         if (!array_key_exists($this->dataKey, $data)) {
-            throw new Exceptions\Parser("The <{$this->dataKey}> sort clause doesn't exist in the input structure");
+            throw new Exceptions\Parser("The <{$this->dataKey}> Sort Clause doesn't exist in the input structure");
         }
 
         $direction = $data[$this->dataKey];
 
         if (!in_array($direction, [Query::SORT_ASC, Query::SORT_DESC])) {
-            throw new Exceptions\Parser("Invalid direction format in <{$this->dataKey}> sort clause");
+            throw new Exceptions\Parser("Invalid direction format in the <{$this->dataKey}> Sort Clause");
         }
 
         return new $this->valueObjectClass($direction);

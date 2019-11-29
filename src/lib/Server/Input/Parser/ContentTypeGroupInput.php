@@ -72,7 +72,7 @@ class ContentTypeGroupInput extends BaseParser
 
         if (array_key_exists('User', $data) && is_array($data['User'])) {
             if (!array_key_exists('_href', $data['User'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for User element in ContentTypeGroupInput.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the User element in ContentTypeGroupInput.");
             }
 
             $contentTypeGroupCreateStruct->creatorId = $this->requestParser->parseHref($data['User']['_href'], 'userId');

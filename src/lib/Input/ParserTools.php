@@ -116,7 +116,7 @@ class ParserTools
                 return Values\ContentType\ContentType::STATUS_MODIFIED;
         }
 
-        throw new \RuntimeException("Unknown ContentType status '{$contentTypeStatus}.'");
+        throw new \RuntimeException("Unknown Content Type status '{$contentTypeStatus}.'");
     }
 
     /**
@@ -155,7 +155,7 @@ class ParserTools
                 return Values\Content\Location::SORT_FIELD_CONTENTOBJECT_ID;
         }
 
-        throw new \RuntimeException("Unknown default sort field: '{$defaultSortFieldString}'.");
+        throw new \RuntimeException("Unknown default sort Field: '{$defaultSortFieldString}'.");
     }
 
     /**
@@ -193,13 +193,13 @@ class ParserTools
         $limitationObject = $this->getLimitationByIdentifier($limitation['_identifier']);
 
         if (!isset($limitation['values']['ref']) || !is_array($limitation['values']['ref'])) {
-            throw new Exceptions\Parser('Invalid format for limitation values in Limitation.');
+            throw new Exceptions\Parser('Invalid format for Limitation value in Limitation.');
         }
 
         $limitationValues = [];
         foreach ($limitation['values']['ref'] as $limitationValue) {
             if (!array_key_exists('_href', $limitationValue)) {
-                throw new Exceptions\Parser('Invalid format for limitation values in Limitation.');
+                throw new Exceptions\Parser('Invalid format for Limitation value in Limitation.');
             }
 
             $limitationValues[] = $limitationValue['_href'];

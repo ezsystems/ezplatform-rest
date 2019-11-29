@@ -146,7 +146,7 @@ class Location extends RestController
 
         if (trim($location->pathString, '/') != $locationPath) {
             throw new Exceptions\NotFoundException(
-                "Could not find location with path string $locationPath"
+                "Could not find a Location with path string $locationPath"
             );
         }
 

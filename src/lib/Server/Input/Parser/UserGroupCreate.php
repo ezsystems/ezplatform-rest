@@ -66,7 +66,7 @@ class UserGroupCreate extends BaseParser
         $contentType = null;
         if (array_key_exists('ContentType', $data) && is_array($data['ContentType'])) {
             if (!array_key_exists('_href', $data['ContentType'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for ContentType element in UserGroupCreate.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the ContentType element in UserGroupCreate.");
             }
 
             $contentType = $this->contentTypeService->loadContentType(
@@ -82,7 +82,7 @@ class UserGroupCreate extends BaseParser
 
         if (array_key_exists('Section', $data) && is_array($data['Section'])) {
             if (!array_key_exists('_href', $data['Section'])) {
-                throw new Exceptions\Parser("Missing '_href' attribute for Section element in UserGroupCreate.");
+                throw new Exceptions\Parser("Missing '_href' attribute for the Section element in UserGroupCreate.");
             }
 
             $userGroupCreateStruct->sectionId = $this->requestParser->parseHref($data['Section']['_href'], 'sectionId');
@@ -104,12 +104,12 @@ class UserGroupCreate extends BaseParser
             $fieldDefinition = $userGroupCreateStruct->contentType->getFieldDefinition($fieldData['fieldDefinitionIdentifier']);
             if (!$fieldDefinition) {
                 throw new Exceptions\Parser(
-                    "'{$fieldData['fieldDefinitionIdentifier']}' is invalid field definition identifier for '{$userGroupCreateStruct->contentType->identifier}' content type in UserGroupCreate."
+                    "'{$fieldData['fieldDefinitionIdentifier']}' is an invalid Field definition identifier for the '{$userGroupCreateStruct->contentType->identifier}' Content Type in UserGroupCreate."
                 );
             }
 
             if (!array_key_exists('fieldValue', $fieldData)) {
-                throw new Exceptions\Parser("Missing 'fieldValue' element for '{$fieldData['fieldDefinitionIdentifier']}' identifier in UserGroupCreate.");
+                throw new Exceptions\Parser("Missing 'fieldValue' element for the '{$fieldData['fieldDefinitionIdentifier']}' identifier in UserGroupCreate.");
             }
 
             $fieldValue = $this->fieldTypeParser->parseValue($fieldDefinition->fieldTypeIdentifier, $fieldData['fieldValue']);

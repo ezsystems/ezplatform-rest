@@ -349,7 +349,7 @@ class Content extends RestController
         );
 
         if ($versionInfo->isPublished()) {
-            throw new ForbiddenException('Version in status PUBLISHED cannot be deleted');
+            throw new ForbiddenException('Versions with PUBLISHED status cannot be deleted');
         }
 
         $this->repository->getContentService()->deleteVersion(
@@ -376,7 +376,7 @@ class Content extends RestController
         $versionInfo = $contentService->loadVersionInfoById($contentId, $versionNumber);
 
         if (!$versionInfo->isDraft()) {
-            throw new ForbiddenException('Translation can be deleted from DRAFT Version only');
+            throw new ForbiddenException('Translation can be deleted from a DRAFT version only');
         }
 
         $contentService->deleteTranslationFromDraft($versionInfo, $languageCode);
@@ -430,7 +430,7 @@ class Content extends RestController
         );
 
         if ($versionInfo->isDraft()) {
-            throw new ForbiddenException('Current version is already in status DRAFT');
+            throw new ForbiddenException('Current version already has DRAFT status');
         }
 
         $contentDraft = $this->repository->getContentService()->createContentDraft($contentInfo);
@@ -481,7 +481,7 @@ class Content extends RestController
         );
 
         if (!$versionInfo->isDraft()) {
-            throw new ForbiddenException('Only version in status DRAFT can be updated');
+            throw new ForbiddenException('Only versions with DRAFT status can be updated');
         }
 
         try {
@@ -533,7 +533,7 @@ class Content extends RestController
         );
 
         if (!$versionInfo->isDraft()) {
-            throw new ForbiddenException('Only version in status DRAFT can be published');
+            throw new ForbiddenException('Only versions with DRAFT status can be published');
         }
 
         $this->repository->getContentService()->publishVersion(
@@ -678,7 +678,7 @@ class Content extends RestController
             }
         }
 
-        throw new Exceptions\NotFoundException("Relation not found: '{$request->getPathInfo()}'.");
+        throw new Exceptions\NotFoundException("Could not find Relation '{$request->getPathInfo()}'.");
     }
 
     /**
@@ -716,7 +716,7 @@ class Content extends RestController
         $existingRelations = $this->repository->getContentService()->loadRelations($versionInfo);
         foreach ($existingRelations as $existingRelation) {
             if ($existingRelation->getDestinationContentInfo()->id == $destinationContentId) {
-                throw new ForbiddenException('Relation of type COMMON to selected destination content ID already exists');
+                throw new ForbiddenException('Relation of type COMMON to the selected destination content ID already exists');
             }
         }
 

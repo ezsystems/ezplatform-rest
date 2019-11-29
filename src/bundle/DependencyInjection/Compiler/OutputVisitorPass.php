@@ -35,7 +35,7 @@ class OutputVisitorPass implements CompilerPassInterface
                 $priority = isset($attribute['priority']) ? $attribute['priority'] : 0;
 
                 if (!isset($attribute['regexps'])) {
-                    throw new \LogicException('ezpublish_rest.output.visitor service tag needs a "regexps" attribute to identify the Accept header. None given.');
+                    throw new \LogicException('The ezpublish_rest.output.visitor service tag needs a "regexps" attribute to identify the Accept header.');
                 }
 
                 if (is_array($attribute['regexps'])) {
@@ -44,10 +44,10 @@ class OutputVisitorPass implements CompilerPassInterface
                     try {
                         $regexps = $container->getParameter($attribute['regexps']);
                     } catch (InvalidArgumentException $e) {
-                        throw new \LogicException("The regexps attribute of the ezpublish_rest.output.visitor service tag can be a string matching a container parameter name. No parameter {$attribute['regexps']} could be found.");
+                        throw new \LogicException("The regexps attribute of the ezpublish_rest.output.visitor service tag can be a string matching a container parameter name. Could not find parameter {$attribute['regexps']}.");
                     }
                 } else {
-                    throw new \LogicException('ezpublish_rest.output.visitor service tag needs a "regexps" attribute, either as an array or a string. Invalid value.');
+                    throw new \LogicException('The ezpublish_rest.output.visitor service tag needs a "regexps" attribute, either as an array or a string. Invalid value.');
                 }
 
                 $visitors[$priority][] = [

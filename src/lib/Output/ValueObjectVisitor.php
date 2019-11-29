@@ -179,7 +179,7 @@ abstract class ValueObjectVisitor
                 return 'CONTENTOBJECT_ID';
         }
 
-        throw new \RuntimeException("Unknown default sort field: '{$sortField}'.");
+        throw new \RuntimeException("Unknown default sort Field: '{$sortField}'.");
     }
 
     /**

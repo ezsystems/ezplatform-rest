@@ -108,7 +108,7 @@ class RestRelation extends ValueObjectVisitor
         }
 
         if (empty($relationTypeList)) {
-            throw new \Exception('Unknown relation type ' . $relationType . '.');
+            throw new \Exception('Unknown Relation type ' . $relationType . '.');
         }
 
         return implode(',', $relationTypeList);

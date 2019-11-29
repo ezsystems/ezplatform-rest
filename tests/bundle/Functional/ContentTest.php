@@ -411,7 +411,7 @@ XML;
         );
 
         if ($response->getStatusCode() != 200) {
-            throw new \InvalidArgumentException("Content with ID $restContentHref could not be loaded");
+            throw new \InvalidArgumentException("Could not load content with ID $restContentHref");
         }
 
         $array = json_decode($response->getBody(), true);

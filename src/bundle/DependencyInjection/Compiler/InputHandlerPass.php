@@ -30,7 +30,7 @@ class InputHandlerPass implements CompilerPassInterface
         foreach ($container->findTaggedServiceIds('ezpublish_rest.input.handler') as $id => $attributes) {
             foreach ($attributes as $attribute) {
                 if (!isset($attribute['format'])) {
-                    throw new \LogicException('ezpublish_rest.input.handler service tag needs a "format" attribute to identify the input handler. None given.');
+                    throw new \LogicException('The ezpublish_rest.input.handler service tag needs a "format" attribute to identify the input handler.');
                 }
 
                 $definition->addMethodCall(

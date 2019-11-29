@@ -61,7 +61,7 @@ class BinaryContent extends RestController
         }
 
         if (!$fieldFound) {
-            throw new Exceptions\NotFoundException("No image field with ID $fieldId could be found");
+            throw new Exceptions\NotFoundException("No image Field with ID $fieldId found");
         }
 
         // check the field's value

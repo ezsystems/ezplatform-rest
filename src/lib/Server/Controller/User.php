@@ -148,7 +148,7 @@ class User extends RestController
 
         if (trim($userGroupLocation->pathString, '/') != $groupPath) {
             throw new NotFoundException(
-                "Could not find location with path string $groupPath"
+                "Could not find a Location with path string $groupPath"
             );
         }
 
@@ -422,7 +422,7 @@ class User extends RestController
         // Load one user to see if user group is empty or not
         $users = $this->userService->loadUsersOfUserGroup($userGroup, 0, 1);
         if (!empty($users)) {
-            throw new Exceptions\ForbiddenException('Non-empty user groups cannot be deleted');
+            throw new Exceptions\ForbiddenException('Cannot delete non-empty User Groups');
         }
 
         $this->userService->deleteUserGroup($userGroup);
@@ -444,7 +444,7 @@ class User extends RestController
         $user = $this->userService->loadUser($userId);
 
         if ($user->id == $this->permissionResolver->getCurrentUserReference()->getUserId()) {
-            throw new Exceptions\ForbiddenException('Currently authenticated user cannot be deleted');
+            throw new Exceptions\ForbiddenException('Cannot delete the currently authenticated User');
         }
 
         $this->userService->deleteUser($user);
@@ -491,7 +491,7 @@ class User extends RestController
         }
 
         if (empty($restUsers)) {
-            throw new NotFoundException('No users were found with the given filter');
+            throw new NotFoundException('Could not find Users with the given filter');
         }
 
         if ($this->getMediaType($request) === 'application/vnd.ez.api.userlist') {
