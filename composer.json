@@ -15,6 +15,11 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.3",
+        "ext-dom": "*",
+        "ext-json": "*",
+        "ext-libxml": "*",
+        "ext-simplexml": "*",
+        "ext-xmlwriter": "*",
         "ezsystems/ezpublish-kernel": "^8.0@dev",
         "symfony/http-kernel": "^4.3",
         "symfony/dependency-injection": "^4.3",
