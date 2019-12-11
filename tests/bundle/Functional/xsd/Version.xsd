@@ -106,6 +106,15 @@
             </xsd:simpleContent>
           </xsd:complexType>
         </xsd:element>
+        <xsd:element name="Thumbnail">
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:attribute type="xsd:string" name="media-type"/>
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
+        </xsd:element>
       </xsd:sequence>
       <xsd:attribute type="xsd:string" name="media-type"/>
       <xsd:attribute type="xsd:string" name="href"/>
