@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
+use eZ\Publish\API\Repository\Values\Content\Thumbnail;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\Visitor;
@@ -42,11 +43,17 @@ class Version extends ValueObjectVisitor
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
+        /** @var \eZ\Publish\API\Repository\Values\Content\Content $content */
+        $content = $data->content;
+
         $generator->startObjectElement('Version');
 
         $visitor->setHeader('Content-Type', $generator->getMediaType('Version'));
         $visitor->setHeader('Accept-Patch', $generator->getMediaType('VersionUpdate'));
+
         $this->visitVersionAttributes($visitor, $generator, $data);
+        $this->visitThumbnail($visitor, $generator, $content->getThumbnail());
+
         $generator->endObjectElement('Version');
     }
 
@@ -120,5 +127,29 @@ class Version extends ValueObjectVisitor
                 $versionInfo->versionNo
             )
         );
+    }
+
+    private function visitThumbnail(
+        Visitor $visitor,
+        Generator $generator,
+        ?Thumbnail $thumbnail
+    ): void {
+        $generator->startObjectElement('Thumbnail');
+
+        if (!empty($thumbnail)) {
+            $generator->startValueElement('resource', $thumbnail->resource);
+            $generator->endValueElement('resource');
+
+            $generator->startValueElement('width', $thumbnail->width);
+            $generator->endValueElement('width');
+
+            $generator->startValueElement('height', $thumbnail->height);
+            $generator->endValueElement('height');
+
+            $generator->startValueElement('mimeType', $thumbnail->mimeType);
+            $generator->endValueElement('mimeType');
+        }
+
+        $generator->endObjectElement('Thumbnail');
     }
 }
