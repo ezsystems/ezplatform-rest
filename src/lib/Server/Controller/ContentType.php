@@ -530,7 +530,7 @@ class ContentType extends RestController
 
         return new Values\FieldDefinitionList(
             $contentType,
-            $contentType->getFieldDefinitions()
+            $contentType->getFieldDefinitions()->toArray()
         );
     }
 
