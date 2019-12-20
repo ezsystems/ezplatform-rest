@@ -114,7 +114,7 @@ class ContentFieldValidationExceptionTest extends ValueObjectVisitorBaseTest
      */
     protected function getExpectedDescription()
     {
-        return 'Content fields did not validate';
+        return 'Content Fields did not validate';
     }
 
     /**
