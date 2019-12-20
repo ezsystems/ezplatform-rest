@@ -12,6 +12,7 @@ use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use eZ\Publish\Core\Repository\Values\Content\ContentCreateStruct;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
+use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ContentCreate;
 use EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate;
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
@@ -623,7 +624,7 @@ class ContentCreateTest extends BaseTest
             [
                 'id' => 13,
                 'identifier' => 'some_class',
-                'fieldDefinitions' => [
+                'fieldDefinitions' => new FieldDefinitionCollection([
                     new FieldDefinition(
                         [
                             'id' => 42,
@@ -638,7 +639,7 @@ class ContentCreateTest extends BaseTest
                             'fieldTypeIdentifier' => 'ezstring',
                         ]
                     ),
-                ],
+                ]),
             ]
         );
     }

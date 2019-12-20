@@ -198,7 +198,7 @@ class ContentType extends RestController
 
         return new Values\RestContentType(
             $contentType,
-            $contentType->getFieldDefinitions()
+            $contentType->getFieldDefinitions()->toArray()
         );
     }
 
@@ -322,7 +322,7 @@ class ContentType extends RestController
                 [
                     'contentType' => new Values\RestContentType(
                         $contentType,
-                        $contentType->getFieldDefinitions()
+                        $contentType->getFieldDefinitions()->toArray()
                     ),
                 ]
             );
@@ -332,7 +332,7 @@ class ContentType extends RestController
             [
                 'contentType' => new Values\RestContentType(
                     $contentTypeDraft,
-                    $contentTypeDraft->getFieldDefinitions()
+                    $contentTypeDraft->getFieldDefinitions()->toArray()
                 ),
             ]
         );
@@ -424,7 +424,7 @@ class ContentType extends RestController
 
         return new Values\RestContentType(
             $contentTypeDraft,
-            $contentTypeDraft->getFieldDefinitions()
+            $contentTypeDraft->getFieldDefinitions()->toArray()
         );
     }
 
@@ -530,7 +530,7 @@ class ContentType extends RestController
 
         return new Values\FieldDefinitionList(
             $contentType,
-            $contentType->getFieldDefinitions()
+            $contentType->getFieldDefinitions()->toArray()
         );
     }
 
@@ -716,7 +716,7 @@ class ContentType extends RestController
 
         return new Values\RestContentType(
             $publishedContentType,
-            $publishedContentType->getFieldDefinitions()
+            $publishedContentType->getFieldDefinitions()->toArray()
         );
     }
 

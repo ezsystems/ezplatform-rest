@@ -10,6 +10,7 @@ use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\UserService;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\FieldTypeService;
+use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupCreate;
 use eZ\Publish\Core\Repository\Values\User\UserGroupCreateStruct;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
@@ -393,7 +394,7 @@ class UserGroupCreateTest extends BaseTest
             [
                 'id' => 3,
                 'identifier' => 'some_class',
-                'fieldDefinitions' => [
+                'fieldDefinitions' => new FieldDefinitionCollection([
                     new FieldDefinition(
                         [
                             'id' => 42,
@@ -401,7 +402,7 @@ class UserGroupCreateTest extends BaseTest
                             'fieldTypeIdentifier' => 'ezstring',
                         ]
                     ),
-                ],
+                ]),
             ]
         );
     }
