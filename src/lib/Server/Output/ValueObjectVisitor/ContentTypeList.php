@@ -38,7 +38,7 @@ class ContentTypeList extends ValueObjectVisitor
             $visitor->visitValueObject(
                 new Values\RestContentType(
                     $contentType,
-                    $contentType->getFieldDefinitions()
+                    $contentType->getFieldDefinitions()->toArray()
                 )
             );
         }
