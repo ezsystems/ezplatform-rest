@@ -43,7 +43,7 @@ class Version extends ValueObjectVisitor
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
-        /** @var \eZ\Publish\Core\Repository\Values\Content\Content $content */
+        /** @var \eZ\Publish\API\Repository\Values\Content\Content $content */
         $content = $data->content;
 
         $generator->startObjectElement('Version');
