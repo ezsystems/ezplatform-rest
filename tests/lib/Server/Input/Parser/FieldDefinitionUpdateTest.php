@@ -8,6 +8,7 @@ namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionUpdateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
+use eZ\Publish\Core\Repository\Values\ContentType\ContentTypeDraft;
 use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
@@ -202,16 +203,18 @@ class FieldDefinitionUpdateTest extends BaseTest
             ->method('loadContentTypeDraft')
             ->with($this->equalTo(42))
             ->willReturn(
-                    new ContentType(
+                    new ContentTypeDraft(
                         [
-                            'fieldDefinitions' => [
-                                new FieldDefinition(
-                                    [
-                                        'id' => 24,
-                                        'fieldTypeIdentifier' => 'ezstring',
-                                    ]
-                                ),
-                            ],
+                            'innerContentType' => new ContentType([
+                                'fieldDefinitions' => [
+                                    new FieldDefinition(
+                                        [
+                                            'id' => 24,
+                                            'fieldTypeIdentifier' => 'ezstring',
+                                        ]
+                                    ),
+                                ],
+                            ]),
                         ]
                     )
             );

@@ -8,14 +8,14 @@ namespace EzSystems\EzPlatformRest\Tests\Input;
 
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Repository\ContentService;
-use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\Repository\FieldTypeService;
+use eZ\Publish\API\Repository\ContentService;
+use eZ\Publish\API\Repository\ContentTypeService;
+use eZ\Publish\API\Repository\FieldType;
+use eZ\Publish\API\Repository\FieldTypeService;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
 use EzSystems\EzPlatformRest\FieldTypeProcessor;
-use eZ\Publish\SPI\FieldType\FieldType;
 use PHPUnit\Framework\TestCase;
 
 /**
