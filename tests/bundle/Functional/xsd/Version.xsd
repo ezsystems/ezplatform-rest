@@ -108,11 +108,39 @@
         </xsd:element>
         <xsd:element name="Thumbnail">
           <xsd:complexType>
-            <xsd:simpleContent>
-              <xsd:extension base="xsd:string">
-                <xsd:attribute type="xsd:string" name="media-type"/>
-              </xsd:extension>
-            </xsd:simpleContent>
+            <xsd:sequence>
+              <xsd:element type="xsd:string" name="resource"/>
+              <xsd:element name="width">
+                <xsd:simpleType>
+                  <xsd:union>
+                    <xsd:simpleType>
+                      <xsd:restriction base='xsd:string'>
+                        <xsd:length value="0"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                    <xsd:simpleType>
+                      <xsd:restriction base='xsd:integer' />
+                    </xsd:simpleType>
+                  </xsd:union>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="height">
+                <xsd:simpleType>
+                  <xsd:union>
+                    <xsd:simpleType>
+                      <xsd:restriction base='xsd:string'>
+                        <xsd:length value="0"/>
+                      </xsd:restriction>
+                    </xsd:simpleType>
+                    <xsd:simpleType>
+                      <xsd:restriction base='xsd:integer' />
+                    </xsd:simpleType>
+                  </xsd:union>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element type="xsd:string" name="mimeType" nillable="true"/>
+            </xsd:sequence>
+            <xsd:attribute type="xsd:string" name="media-type"/>
           </xsd:complexType>
         </xsd:element>
       </xsd:sequence>
