@@ -138,7 +138,7 @@
                   </xsd:union>
                 </xsd:simpleType>
               </xsd:element>
-              <xsd:element type="xsd:string" name="mimeType" nillable="true"/>
+              <xsd:element type="xsd:string" name="mimeType"/>
             </xsd:sequence>
             <xsd:attribute type="xsd:string" name="media-type"/>
           </xsd:complexType>
