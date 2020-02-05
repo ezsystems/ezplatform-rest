@@ -21,12 +21,21 @@ class ContentList extends RestValue
     public $contents;
 
     /**
+     * Total items list count.
+     *
+     * @var int
+     */
+    public $totalCount;
+
+    /**
      * Construct.
      *
      * @param \EzSystems\EzPlatformRest\Server\Values\RestContent[] $contents
+     * @param int $totalCount
      */
-    public function __construct(array $contents)
+    public function __construct(array $contents, int $totalCount)
     {
         $this->contents = $contents;
+        $this->totalCount = $totalCount;
     }
 }
