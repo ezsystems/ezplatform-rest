@@ -65,7 +65,7 @@ install:
 # execute phpunit or behat as the script command
 script:
   - if [ "$TEST_CONFIG" != "" ] ; then php -d date.timezone=$TEST_TIMEZONE -d memory_limit=-1 vendor/bin/phpunit -c $TEST_CONFIG ; fi
-  - if [ "$REST_TEST_CONFIG" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec --user www-data app sh -c "$TEST_CMD"  ; fi
+  - if [ "$REST_TEST_CONFIG" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec app sh -c "$TEST_CMD"  ; fi
   - if [ "$CHECK_CS" == "1" ] ; then ./vendor/bin/php-cs-fixer fix -v --dry-run --show-progress=estimating ; fi
 
 notifications:
