@@ -127,7 +127,7 @@ class ContentListTest extends ValueObjectVisitorBaseTest
      *
      * @depends testContentListVisitsChildren
      */
-    public function testResultContainsTotalCountAttributes($result)
+    public function testResultContainsTotalCountAttributes(string $result): void
     {
         $this->assertXMLTag(
             [
