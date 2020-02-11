@@ -35,6 +35,9 @@ class ContentList extends ValueObjectVisitor
         );
         $generator->endAttribute('href');
 
+        $generator->startAttribute('totalCount', $data->totalCount);
+        $generator->endAttribute('totalCount');
+
         $generator->startList('ContentInfo');
         foreach ($data->contents as $content) {
             $visitor->visitValueObject($content);

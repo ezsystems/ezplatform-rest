@@ -26,7 +26,7 @@ class ContentListTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $contentList = new ContentList([]);
+        $contentList = new ContentList([], 0);
 
         $this->addRouteExpectation(
             'ezpublish_rest_redirectContent',
@@ -103,7 +103,8 @@ class ContentListTest extends ValueObjectVisitorBaseTest
             [
                 new RestContent(new ContentInfo()),
                 new RestContent(new ContentInfo()),
-            ]
+            ],
+            2
         );
 
         $this->getVisitorMock()->expects($this->exactly(2))
@@ -114,6 +115,30 @@ class ContentListTest extends ValueObjectVisitorBaseTest
             $this->getVisitorMock(),
             $generator,
             $contentList
+        );
+
+        return $generator->endDocument(null);
+    }
+
+    /**
+     * Test if result contains ContentList element attributes.
+     *
+     * @param string $result
+     *
+     * @depends testContentListVisitsChildren
+     */
+    public function testResultContainsTotalCountAttributes(string $result): void
+    {
+        $this->assertXMLTag(
+            [
+                'tag' => 'ContentList',
+                'attributes' => [
+                    'totalCount' => 2,
+                ],
+            ],
+            $result,
+            'Invalid <ContentList> totalCount attribute.',
+            false
         );
     }
 
