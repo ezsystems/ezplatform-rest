@@ -6,11 +6,21 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
+use EzSystems\EzPlatformRest\Output\Generator\Xml;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use DOMDocument;
+use DOMXPath;
+use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception as ExceptionValueObjectVisitor;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ExceptionTest extends ValueObjectVisitorBaseTest
 {
+    protected const NON_VERBOSE_ERROR_DESCRIPTION = 'An error has occurred. Please try again later or contact your Administrator.';
+
+    /** @var \Symfony\Contracts\Translation\TranslatorInterface|\PHPUnit\Framework\MockObject\MockObject */
+    private $translatorMock;
+
     /**
      * Test the Exception visitor.
      *
@@ -21,24 +31,27 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
         $visitor = $this->getVisitor();
         $generator = $this->getGenerator();
 
-        $generator->startDocument(null);
+        $result = $this->generateDocument($generator, $visitor);
 
-        $previousException = new \Exception('Sub-test');
-        $exception = new \Exception('Test', 0, $previousException);
+        $this->assertNotNull($result);
 
-        $this
-            ->getVisitorMock()
-            ->expects($this->once())
-            ->method('visitValueObject')
-            ->with($previousException);
+        return $result;
+    }
 
-        $visitor->visit(
-            $this->getVisitorMock(),
-            $generator,
-            $exception
-        );
+    public function testVisitNonVerbose(): string
+    {
+        $this->getTranslatorMock()->method('trans')
+             ->with('non_verbose_error', [], 'repository_exceptions')
+             ->willReturn(self::NON_VERBOSE_ERROR_DESCRIPTION);
 
-        $result = $generator->endDocument(null);
+        $visitor = $this->internalGetNonDebugVisitor();
+        $visitor->setRequestParser($this->getRequestParser());
+        $visitor->setRouter($this->getRouterMock());
+        $visitor->setTemplateRouter($this->getTemplatedRouterMock());
+
+        $generator = $this->getGenerator();
+
+        $result = $this->generateDocument($generator, $visitor);
 
         $this->assertNotNull($result);
 
@@ -108,6 +121,21 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
             $result,
             'Invalid <ErrorMessage> element.'
         );
+    }
+
+    /**
+     * @depends testVisitNonVerbose
+     */
+    public function testNonVerboseErrorDescription(string $result): void
+    {
+        $document = new DOMDocument();
+        $document->loadXML($result);
+        $xpath = new DOMXPath($document);
+
+        $nodeList = $xpath->query('//ErrorMessage/errorDescription');
+        $errorDescriptionNode = $nodeList->item(0);
+
+        $this->assertEquals(self::NON_VERBOSE_ERROR_DESCRIPTION, $errorDescriptionNode->textContent);
     }
 
     /**
@@ -184,6 +212,51 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
      */
     protected function internalGetVisitor()
     {
-        return new ValueObjectVisitor\Exception();
+        return new ExceptionValueObjectVisitor(true, $this->getTranslatorMock());
+    }
+
+    /**
+     * Gets the exception visitor.
+     *
+     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception
+     */
+    protected function internalGetNonDebugVisitor(): ExceptionValueObjectVisitor
+    {
+        return new ExceptionValueObjectVisitor(false, $this->getTranslatorMock());
+    }
+
+    protected function getTranslatorMock(): TranslatorInterface
+    {
+        if (!isset($this->translatorMock)) {
+            $this->translatorMock = $this->getMockBuilder(TranslatorInterface::class)
+                 ->disableOriginalConstructor()
+                 ->getMock();
+        }
+
+        return $this->translatorMock;
+    }
+
+    private function generateDocument(
+        Xml $generator,
+        ValueObjectVisitor $visitor
+    ): string {
+        $generator->startDocument(null);
+
+        $previousException = new \Exception('Sub-test');
+        $exception = new \Exception('Test', 0, $previousException);
+
+        $this
+            ->getVisitorMock()
+            ->expects($this->once())
+            ->method('visitValueObject')
+            ->with($previousException);
+
+        $visitor->visit(
+            $this->getVisitorMock(),
+            $generator,
+            $exception
+        );
+
+        return $generator->endDocument(null);
     }
 }
