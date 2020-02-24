@@ -512,11 +512,41 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserMetadata }
 
+    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\IsUserBased:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.IsUserBased }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\IsUserEnabled:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.IsUserEnabled }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserId:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserId }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserLogin:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserLogin }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserEmail:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserEmail }
+
     ezpublish_rest.input.parser.internal.criterion.ObjectStateId:
         parent: ezpublish_rest.input.parser
         class: "%ezpublish_rest.input.parser.internal.criterion.ObjectStateId.class%"
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.ObjectStateId }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ObjectStateIdentifier:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.ObjectStateIdentifier }
 
     ezpublish_rest.input.parser.internal.criterion.Visibility:
         parent: ezpublish_rest.input.parser
