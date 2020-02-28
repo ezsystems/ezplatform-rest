@@ -17,10 +17,21 @@ class ObjectStateIdentifier extends BaseParser
 {
     public function parse(array $data, ParsingDispatcher $parsingDispatcher): ObjectStateIdentifierCriterion
     {
-        if (!array_key_exists('ObjectStateIdentifierCriterion', $data)) {
+        if (
+            !array_key_exists('ObjectStateIdentifierCriterion', $data)
+            || !array_key_exists('value', $data['ObjectStateIdentifierCriterion'])
+            || !array_key_exists('target', $data['ObjectStateIdentifierCriterion'])
+        ) {
             throw new Exceptions\Parser('Invalid <ObjectStateIdentifierCriterion> format');
         }
 
-        return new ObjectStateIdentifierCriterion(explode(',', $data['ObjectStateIdentifierCriterion']));
+        $target = !empty($data['ObjectStateIdentifierCriterion']['target'])
+            ? $data['ObjectStateIdentifierCriterion']['target']
+            : null;
+
+        return new ObjectStateIdentifierCriterion(
+            explode(',', $data['ObjectStateIdentifierCriterion']['value']),
+            $target
+        );
     }
 }
