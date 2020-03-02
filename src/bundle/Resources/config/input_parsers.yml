@@ -524,6 +524,13 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.Visibility }
 
+    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Sibling:
+        parent: ezpublish_rest.input.parser
+        arguments:
+            $locationService: "@ezpublish.api.service.location"
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.Sibling }
+
     ezpublish_rest.input.parser.internal.sortclause.content_id:
         parent: ezpublish_rest.input.parser
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
