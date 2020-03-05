@@ -7,6 +7,7 @@
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\Values\Content;
+use EzSystems\EzPlatformRest\Exceptions\Parser as ParserException;
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use EzSystems\EzPlatformRest\Server\Input\Parser;
 use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
@@ -77,11 +78,9 @@ class LogicalOrTest extends BaseTest
         self::assertCount(4, (array)$result->criteria);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testThrowsExceptionOnInvalidAndStatement()
     {
+        $this->expectException(ParserException::class);
         $this->internalGetParser()->parse(['OR' => 'Wrong type'], new ParsingDispatcher());
     }
 

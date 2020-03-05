@@ -16,6 +16,9 @@ use PHPUnit\Framework\ExpectationFailedException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
+use Symfony\Component\HttpClient\CurlHttpClient;
+use Symfony\Component\HttpClient\HttpClient;
+use Symfony\Component\HttpClient\Psr18Client;
 
 class TestCase extends BaseTestCase
 {
@@ -27,7 +30,7 @@ class TestCase extends BaseTestCase
     ];
 
     /**
-     * @var \Buzz\Client\BuzzClientInterface
+     * @var \Psr\Http\Client\ClientInterface
      */
     private $httpClient;
 
@@ -91,16 +94,14 @@ class TestCase extends BaseTestCase
         $this->httpHost = getenv('EZP_TEST_REST_HOST') ?: 'localhost';
         $this->httpScheme = getenv('EZP_TEST_REST_SCHEME') ?: 'http';
         $this->httpAuth = getenv('EZP_TEST_REST_AUTH') ?: 'admin:publish';
-        list($this->loginUsername, $this->loginPassword) = explode(':', $this->httpAuth);
+        [$this->loginUsername, $this->loginPassword] = explode(':', $this->httpAuth);
 
-        $this->httpClient = new Curl(
-            new HttpFactory(),
-            [
-                'verify' => false,
-                'timeout' => 90,
-                'allow_redirects' => false,
-            ]
-        );
+        $this->httpClient = new Psr18Client(new CurlHttpClient([
+            'verify_host' => false,
+            'verify_peer' => false,
+            'timeout' => 90,
+            'max_redirects' => 0,
+        ]));
 
         if ($this->autoLogin) {
             $session = $this->login();

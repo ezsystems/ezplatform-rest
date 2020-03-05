@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\User\Limitation;
 use eZ\Publish\Core\Repository\RoleService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\PolicyCreate;
 use eZ\Publish\Core\Repository\Values\User\PolicyCreateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class PolicyCreateTest extends BaseTest
 {
@@ -66,11 +67,7 @@ class PolicyCreateTest extends BaseTest
 
         $parsedLimitations = $result->getLimitations();
 
-        $this->assertInternalType(
-            'array',
-            $parsedLimitations,
-            'PolicyCreateStruct limitations not created correctly'
-        );
+        $this->assertIsArray($parsedLimitations, 'PolicyCreateStruct limitations not created correctly');
 
         $this->assertCount(
             1,
@@ -99,12 +96,11 @@ class PolicyCreateTest extends BaseTest
 
     /**
      * Test PolicyCreate parser throwing exception on missing module.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'module' attribute for PolicyCreate.
      */
     public function testParseExceptionOnMissingModule()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'module\' attribute for PolicyCreate.');
         $inputArray = [
             'function' => 'delete',
             'limitations' => [
@@ -135,12 +131,11 @@ class PolicyCreateTest extends BaseTest
 
     /**
      * Test PolicyCreate parser throwing exception on missing function.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'function' attribute for PolicyCreate.
      */
     public function testParseExceptionOnMissingFunction()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'function\' attribute for PolicyCreate.');
         $inputArray = [
             'module' => 'content',
             'limitations' => [
@@ -171,12 +166,11 @@ class PolicyCreateTest extends BaseTest
 
     /**
      * Test PolicyCreate parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_identifier' attribute for Limitation.
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_identifier\' attribute for Limitation.');
         $inputArray = [
             'module' => 'content',
             'function' => 'delete',
@@ -207,12 +201,11 @@ class PolicyCreateTest extends BaseTest
 
     /**
      * Test PolicyCreate parser throwing exception on missing values.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid format for Limitation value in Limitation.
      */
     public function testParseExceptionOnMissingLimitationValues()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid format for Limitation value in Limitation.');
         $inputArray = [
             'module' => 'content',
             'function' => 'delete',

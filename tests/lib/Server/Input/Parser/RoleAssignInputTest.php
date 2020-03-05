@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
 use eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation;
 use EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput;
 use EzSystems\EzPlatformRest\Server\Values\RoleAssignment;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class RoleAssignInputTest extends BaseTest
 {
@@ -60,12 +61,11 @@ class RoleAssignInputTest extends BaseTest
 
     /**
      * Test RoleAssignInput parser throwing exception on missing Role.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'Role' element for RoleAssignInput.
      */
     public function testParseExceptionOnMissingRole()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'Role\' element for RoleAssignInput.');
         $inputArray = [
             'limitation' => [
                 '_identifier' => 'Section',
@@ -91,12 +91,11 @@ class RoleAssignInputTest extends BaseTest
 
     /**
      * Test RoleAssignInput parser throwing exception on invalid Role.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'Role' element for RoleAssignInput.
      */
     public function testParseExceptionOnInvalidRole()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'Role\' element for RoleAssignInput.');
         $inputArray = [
             'Role' => [],
             'limitation' => [
@@ -123,12 +122,11 @@ class RoleAssignInputTest extends BaseTest
 
     /**
      * Test Limitation parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_identifier' attribute for Limitation.
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_identifier\' attribute for Limitation.');
         $inputArray = [
             'Role' => [
                 '_href' => '/user/roles/42',

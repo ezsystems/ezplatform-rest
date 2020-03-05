@@ -17,6 +17,7 @@ use EzSystems\EzPlatformRest\Server\Input\Parser\ContentCreate;
 use EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate;
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
 use eZ\Publish\API\Repository\FieldTypeService;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ContentCreateTest extends BaseTest
 {
@@ -126,12 +127,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on missing LocationCreate.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'LocationCreate' element for ContentCreate.
      */
     public function testParseExceptionOnMissingLocationCreate()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'LocationCreate\' element for ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -165,12 +165,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on missing ContentType.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'ContentType' element for ContentCreate.
      */
     public function testParseExceptionOnMissingContentType()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'ContentType\' element for ContentCreate.');
         $inputArray = [
             'mainLanguageCode' => 'eng-US',
             'LocationCreate' => [],
@@ -202,12 +201,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on invalid ContentType.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the ContentType element in ContentCreate.
      */
     public function testParseExceptionOnInvalidContentType()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the ContentType element in ContentCreate.');
         $inputArray = [
             'ContentType' => [],
             'mainLanguageCode' => 'eng-US',
@@ -240,12 +238,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on missing mainLanguageCode.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'mainLanguageCode' element for ContentCreate.
      */
     public function testParseExceptionOnMissingMainLanguageCode()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'mainLanguageCode\' element for ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -279,12 +276,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on invalid Section.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the Section element in ContentCreate.
      */
     public function testParseExceptionOnInvalidSection()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the Section element in ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -317,12 +313,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on invalid User.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentCreate.
      */
     public function testParseExceptionOnInvalidUser()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the User element in ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -355,12 +350,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on invalid fields data.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'fields' element for ContentCreate.
      */
     public function testParseExceptionOnInvalidFields()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'fields\' element for ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -383,12 +377,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on missing field definition identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in Field data for ContentCreate.
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldDefinitionIdentifier\' element in Field data for ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -422,12 +415,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on invalid field definition identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage 'unknown' is an invalid Field definition identifier for the 'some_class' Content Type in ContentCreate.
      */
     public function testParseExceptionOnInvalidFieldDefinitionIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('\'unknown\' is an invalid Field definition identifier for the \'some_class\' Content Type in ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -462,12 +454,11 @@ class ContentCreateTest extends BaseTest
 
     /**
      * Test ContentCreate parser throwing exception on missing field value.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for the 'subject' identifier in ContentCreate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldValue\' element for the \'subject\' identifier in ContentCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/13',
@@ -518,7 +509,7 @@ class ContentCreateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser;
+     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {

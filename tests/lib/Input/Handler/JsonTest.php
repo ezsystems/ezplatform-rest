@@ -7,6 +7,7 @@
 namespace EzSystems\EzPlatformRest\Tests\Input\Handler;
 
 use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -14,11 +15,10 @@ use PHPUnit\Framework\TestCase;
  */
 class JsonTest extends TestCase
 {
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testConvertInvalidJson()
     {
+        $this->expectException(Parser::class);
+
         $handler = $this->getHandler();
         $handler->convert('{text:"Hello world!"}');
     }

@@ -7,6 +7,7 @@
 namespace EzSystems\EzPlatformRest\Tests\Input\Handler;
 
 use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -14,11 +15,10 @@ use PHPUnit\Framework\TestCase;
  */
 class XmlTest extends TestCase
 {
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testConvertInvalidXml()
     {
+        $this->expectException(Parser::class);
+
         $handler = new EzPlatformRest\Input\Handler\Xml();
 
         $this->assertSame(

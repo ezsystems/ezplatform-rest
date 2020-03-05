@@ -9,6 +9,7 @@ namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 use eZ\Publish\Core\Repository\SectionService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput;
 use eZ\Publish\API\Repository\Values\Content\SectionCreateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class SectionInputTest extends BaseTest
 {
@@ -34,12 +35,11 @@ class SectionInputTest extends BaseTest
 
     /**
      * Test SectionInput parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'identifier' attribute for SectionInput.
      */
     public function testParseExceptionOnMissingIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'identifier\' attribute for SectionInput.');
         $inputArray = [
             'name' => 'Name Foo',
         ];
@@ -50,12 +50,11 @@ class SectionInputTest extends BaseTest
 
     /**
      * Test SectionInput parser throwing exception on missing name.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'name' attribute for SectionInput.
      */
     public function testParseExceptionOnMissingName()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'name\' attribute for SectionInput.');
         $inputArray = [
             'identifier' => 'Identifier Bar',
         ];

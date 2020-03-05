@@ -9,6 +9,7 @@ namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 use eZ\Publish\Core\Repository\ContentTypeService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput;
 use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ContentTypeGroupInputTest extends BaseTest
 {
@@ -55,12 +56,11 @@ class ContentTypeGroupInputTest extends BaseTest
 
     /**
      * Test ContentTypeGroupInput parser throwing exception on invalid User.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentTypeGroupInput.
      */
     public function testParseExceptionOnInvalidUser()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the User element in ContentTypeGroupInput.');
         $inputArray = [
             'identifier' => 'Identifier Bar',
             'User' => [],

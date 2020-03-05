@@ -14,6 +14,7 @@ use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -112,12 +113,11 @@ class FieldDefinitionUpdateTest extends BaseTest
 
     /**
      * Test FieldDefinitionUpdate parser throwing exception on invalid names.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'names' element for FieldDefinitionUpdate.
      */
     public function testParseExceptionOnInvalidNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'names\' element for FieldDefinitionUpdate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['names']['value']);
 
@@ -127,12 +127,11 @@ class FieldDefinitionUpdateTest extends BaseTest
 
     /**
      * Test FieldDefinitionUpdate parser throwing exception on invalid descriptions.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'descriptions' element for FieldDefinitionUpdate.
      */
     public function testParseExceptionOnInvalidDescriptions()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'descriptions\' element for FieldDefinitionUpdate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['descriptions']['value']);
 

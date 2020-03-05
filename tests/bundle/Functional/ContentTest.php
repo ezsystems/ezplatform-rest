@@ -6,7 +6,6 @@
  */
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
-use Buzz\Message\Response;
 use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
 use Psr\Http\Message\ResponseInterface;
 

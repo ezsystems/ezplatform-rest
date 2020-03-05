@@ -57,11 +57,10 @@ class RestProviderTest extends TestCase
         );
     }
 
-    /**
-     * @expectedException \Exception
-     */
     public function testGetOptionsException()
     {
+        $this->expectException(Exception::class);
+
         $this->matchRequestResult = new Exception();
         $this->getProvider()->getOptions($this->createRequest());
     }

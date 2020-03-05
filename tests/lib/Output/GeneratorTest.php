@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\Output;
 
+use EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -23,11 +24,10 @@ abstract class GeneratorTest extends TestCase
      */
     abstract protected function getGenerator();
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidDocumentStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
@@ -45,32 +45,29 @@ abstract class GeneratorTest extends TestCase
         $this->assertNotNull($generator->endDocument('test'));
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidDocumentNameEnd()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
         $generator->endDocument('invalid');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidOuterElementStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startObjectElement('element');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidElementEnd()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
@@ -78,11 +75,10 @@ abstract class GeneratorTest extends TestCase
         $generator->endObjectElement('invalid');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidDocumentEnd()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
@@ -90,32 +86,29 @@ abstract class GeneratorTest extends TestCase
         $generator->endDocument('test');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidAttributeOuterStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startAttribute('attribute', 'value');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidAttributeDocumentStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
         $generator->startAttribute('attribute', 'value');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidAttributeListStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
@@ -124,53 +117,48 @@ abstract class GeneratorTest extends TestCase
         $generator->startAttribute('attribute', 'value');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidValueElementOuterStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startValueElement('element', 'value');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidValueElementDocumentStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
         $generator->startValueElement('element', 'value');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidListOuterStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startList('list');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidListDocumentStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
         $generator->startList('list');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testInvalidListListStart()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');

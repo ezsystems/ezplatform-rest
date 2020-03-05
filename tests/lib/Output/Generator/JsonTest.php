@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
 
+use EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException;
 use EzSystems\EzPlatformRest\Tests\Output\GeneratorTest;
 use EzSystems\EzPlatformRest;
 use EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator;
@@ -250,11 +251,10 @@ class JsonTest extends GeneratorTest
         );
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testGeneratorMultipleElements()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');
@@ -265,11 +265,10 @@ class JsonTest extends GeneratorTest
         $generator->startObjectElement('element');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException
-     */
     public function testGeneratorMultipleStackedElements()
     {
+        $this->expectException(OutputGeneratorException::class);
+
         $generator = $this->getGenerator();
 
         $generator->startDocument('test');

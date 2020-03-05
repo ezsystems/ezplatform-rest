@@ -16,6 +16,7 @@ use eZ\Publish\API\Repository\Values\User\UserUpdateStruct;
 use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
 use EzSystems\EzPlatformRest\Server\Values\RestUserUpdateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class UserUpdateTest extends BaseTest
 {
@@ -111,12 +112,11 @@ class UserUpdateTest extends BaseTest
 
     /**
      * Test UserUpdate parser throwing exception on missing Section href.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the Section element in UserUpdate.
      */
     public function testParseExceptionOnMissingSectionHref()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the Section element in UserUpdate.');
         $inputArray = [
             'mainLanguageCode' => 'eng-US',
             'Section' => [],
@@ -141,12 +141,11 @@ class UserUpdateTest extends BaseTest
 
     /**
      * Test UserUpdate parser throwing exception on invalid fields data.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'fields' element for UserUpdate.
      */
     public function testParseExceptionOnInvalidFields()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'fields\' element for UserUpdate.');
         $inputArray = [
             'mainLanguageCode' => 'eng-US',
             'Section' => [
@@ -166,12 +165,11 @@ class UserUpdateTest extends BaseTest
 
     /**
      * Test UserUpdate parser throwing exception on missing field definition identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in field data for UserUpdate.
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldDefinitionIdentifier\' element in field data for UserUpdate.');
         $inputArray = [
             'mainLanguageCode' => 'eng-US',
             'Section' => [
@@ -197,12 +195,11 @@ class UserUpdateTest extends BaseTest
 
     /**
      * Test UserUpdate parser throwing exception on missing field value.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for the 'first_name' identifier in UserUpdate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldValue\' element for the \'first_name\' identifier in UserUpdate.');
         $inputArray = [
             'mainLanguageCode' => 'eng-US',
             'Section' => [
@@ -244,7 +241,7 @@ class UserUpdateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser;
+     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {

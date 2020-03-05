@@ -9,6 +9,7 @@ namespace EzSystems\EzPlatformRest\Tests\Input;
 use EzSystems\EzPlatformRest\Input\ParserTools;
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use PHPUnit\Framework\TestCase;
+use RuntimeException;
 
 class ParserToolsTest extends TestCase
 {
@@ -95,11 +96,10 @@ class ParserToolsTest extends TestCase
         $this->assertFalse($tools->parseBooleanValue(false));
     }
 
-    /**
-     * @expectedException \RuntimeException
-     */
     public function testUnexpectedValueParseBooleanValue()
     {
+        $this->expectException(RuntimeException::class);
+
         $this->getParserTools()->parseBooleanValue('whatever but not a boolean');
     }
 

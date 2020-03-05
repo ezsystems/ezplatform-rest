@@ -9,6 +9,7 @@ namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 use eZ\Publish\Core\Repository\ObjectStateService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateGroupCreate;
 use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroupCreateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ObjectStateGroupCreateTest extends BaseTest
 {
@@ -74,12 +75,11 @@ class ObjectStateGroupCreateTest extends BaseTest
 
     /**
      * Test ObjectStateGroupCreate parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'identifier' attribute for ObjectStateGroupCreate.
      */
     public function testParseExceptionOnMissingIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'identifier\' attribute for ObjectStateGroupCreate.');
         $inputArray = [
             'defaultLanguageCode' => 'eng-GB',
             'names' => [
@@ -106,12 +106,11 @@ class ObjectStateGroupCreateTest extends BaseTest
 
     /**
      * Test ObjectStateGroupCreate parser throwing exception on missing defaultLanguageCode.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'defaultLanguageCode' attribute for ObjectStateGroupCreate.
      */
     public function testParseExceptionOnMissingDefaultLanguageCode()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'defaultLanguageCode\' attribute for ObjectStateGroupCreate.');
         $inputArray = [
             'identifier' => 'test-group',
             'names' => [
@@ -138,12 +137,11 @@ class ObjectStateGroupCreateTest extends BaseTest
 
     /**
      * Test ObjectStateGroupCreate parser throwing exception on missing names.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateGroupCreate.
      */
     public function testParseExceptionOnMissingNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'names\' element for ObjectStateGroupCreate.');
         $inputArray = [
             'identifier' => 'test-group',
             'defaultLanguageCode' => 'eng-GB',
@@ -163,12 +161,11 @@ class ObjectStateGroupCreateTest extends BaseTest
 
     /**
      * Test ObjectStateGroupCreate parser throwing exception on invalid names structure.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateGroupCreate.
      */
     public function testParseExceptionOnInvalidNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'names\' element for ObjectStateGroupCreate.');
         $inputArray = [
             'identifier' => 'test-group',
             'defaultLanguageCode' => 'eng-GB',

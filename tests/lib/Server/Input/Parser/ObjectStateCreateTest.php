@@ -9,6 +9,7 @@ namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 use eZ\Publish\Core\Repository\ObjectStateService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateCreate;
 use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateCreateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ObjectStateCreateTest extends BaseTest
 {
@@ -81,12 +82,11 @@ class ObjectStateCreateTest extends BaseTest
 
     /**
      * Test ObjectStateCreate parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'identifier' attribute for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'identifier\' attribute for ObjectStateCreate.');
         $inputArray = [
             'priority' => '0',
             'defaultLanguageCode' => 'eng-GB',
@@ -114,12 +114,11 @@ class ObjectStateCreateTest extends BaseTest
 
     /**
      * Test ObjectStateCreate parser throwing exception on missing priority.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'priority' attribute for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingPriority()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'priority\' attribute for ObjectStateCreate.');
         $inputArray = [
             'identifier' => 'test-state',
             'defaultLanguageCode' => 'eng-GB',
@@ -147,12 +146,11 @@ class ObjectStateCreateTest extends BaseTest
 
     /**
      * Test ObjectStateCreate parser throwing exception on missing defaultLanguageCode.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'defaultLanguageCode' attribute for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingDefaultLanguageCode()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'defaultLanguageCode\' attribute for ObjectStateCreate.');
         $inputArray = [
             'identifier' => 'test-state',
             'priority' => '0',
@@ -180,12 +178,11 @@ class ObjectStateCreateTest extends BaseTest
 
     /**
      * Test ObjectStateCreate parser throwing exception on missing names.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateCreate.
      */
     public function testParseExceptionOnMissingNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'names\' element for ObjectStateCreate.');
         $inputArray = [
             'identifier' => 'test-state',
             'priority' => '0',
@@ -206,12 +203,11 @@ class ObjectStateCreateTest extends BaseTest
 
     /**
      * Test ObjectStateCreate parser throwing exception on invalid names structure.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateCreate.
      */
     public function testParseExceptionOnInvalidNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'names\' element for ObjectStateCreate.');
         $inputArray = [
             'identifier' => 'test-state',
             'priority' => '0',

@@ -11,6 +11,7 @@ use EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate;
 use eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct;
 use eZ\Publish\API\Repository\Values\Content\Location;
 use EzSystems\EzPlatformRest\Server\Values\RestLocationUpdateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class LocationUpdateTest extends BaseTest
 {
@@ -74,12 +75,11 @@ class LocationUpdateTest extends BaseTest
 
     /**
      * Test LocationUpdate parser throwing exception on missing sort field.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'sortField' element for LocationUpdate.
      */
     public function testParseExceptionOnMissingSortField()
     {
+        $this->expectException('EzSystems\EzPlatformRest\Exceptions\Parser');
+        $this->expectExceptionMessage('Missing \'sortField\' element for LocationUpdate.');
         $inputArray = [
             'priority' => 0,
             'remoteId' => 'remote-id',
@@ -92,12 +92,11 @@ class LocationUpdateTest extends BaseTest
 
     /**
      * Test LocationUpdate parser throwing exception on missing sort order.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'sortOrder' element for LocationUpdate.
      */
     public function testParseExceptionOnMissingSortOrder()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'sortOrder\' element for LocationUpdate.');
         $inputArray = [
             'priority' => 0,
             'remoteId' => 'remote-id',

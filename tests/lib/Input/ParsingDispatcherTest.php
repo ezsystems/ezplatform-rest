@@ -15,11 +15,10 @@ use PHPUnit\Framework\TestCase;
  */
 class ParsingDispatcherTest extends TestCase
 {
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testParseMissingContentType()
     {
+        $this->expectException(\EzSystems\EzPlatformRest\Exceptions\Parser::class);
+
         $dispatcher = new EzPlatformRest\Input\ParsingDispatcher();
 
         $dispatcher->parse([], 'text/unknown');

@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\ContentType\ContentTypeUpdateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeUpdate;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ContentTypeUpdateTest extends BaseTest
 {
@@ -108,12 +109,11 @@ class ContentTypeUpdateTest extends BaseTest
 
     /**
      * Test ContentTypeUpdate parser throwing exception on invalid names.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'names' element for ContentTypeUpdate.
      */
     public function testParseExceptionOnInvalidNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'names\' element for ContentTypeUpdate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['names']['value']);
 
@@ -123,12 +123,11 @@ class ContentTypeUpdateTest extends BaseTest
 
     /**
      * Test ContentTypeUpdate parser throwing exception on invalid descriptions.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'descriptions' element for ContentTypeUpdate.
      */
     public function testParseExceptionOnInvalidDescriptions()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'descriptions\' element for ContentTypeUpdate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['descriptions']['value']);
 
@@ -138,12 +137,11 @@ class ContentTypeUpdateTest extends BaseTest
 
     /**
      * Test ContentTypeUpdate parser throwing exception on invalid User.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentTypeUpdate.
      */
     public function testParseExceptionOnInvalidUser()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the User element in ContentTypeUpdate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['User']['_href']);
 

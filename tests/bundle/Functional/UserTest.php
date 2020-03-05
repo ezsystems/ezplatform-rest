@@ -68,8 +68,7 @@ XML;
     }
 
     /**
-     * @param $userGroupId
-     * Covers GET /user/groups/{groupId}
+     * @param $userGroupId Covers GET /user/groups/{groupId}
      * @depends testCreateUserGroup
      */
     public function testLoadUserGroup($groupId)
@@ -163,8 +162,7 @@ XML;
     }
 
     /**
-     * @param $userId
-     * Covers GET /user/users/{userId}
+     * @param $userId Covers GET /user/users/{userId}
      * @depends testCreateUser
      */
     public function testLoadUser($userHref)

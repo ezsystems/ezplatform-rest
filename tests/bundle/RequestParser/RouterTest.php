@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRestBundle\Tests\RequestParser;
 
+use EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 use EzSystems\EzPlatformRestBundle\RequestParser\Router as RouterRequestParser;
 use Symfony\Cmf\Component\Routing\ChainRouter;
@@ -35,7 +36,6 @@ class RouterTest extends TestCase
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
-            ->with($this->attributeEqualTo('pathInfo', '/api/test/v1/'))
             ->willReturn($expectedMatchResult);
 
         self::assertEquals(
@@ -44,35 +44,31 @@ class RouterTest extends TestCase
         );
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage No route matched '/api/test/v1/nomatch'
-     */
     public function testParseNoMatch()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('No route matched \'/api/test/v1/nomatch\'');
+
         $uri = self::$routePrefix . '/nomatch';
 
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
-            ->with($this->attributeEqualTo('pathInfo', $uri))
             ->will($this->throwException(new ResourceNotFoundException()));
 
         $this->getRequestParser()->parse($uri);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage No route matched '/no/prefix'
-     */
     public function testParseNoPrefix()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('No route matched \'/no/prefix\'');
+
         $uri = '/no/prefix';
 
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
-            ->with($this->attributeEqualTo('pathInfo', $uri))
             ->will($this->throwException(new ResourceNotFoundException()));
 
         $this->getRequestParser()->parse($uri);
@@ -90,18 +86,16 @@ class RouterTest extends TestCase
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
-            ->with($this->attributeEqualTo('pathInfo', $href))
             ->willReturn($expectedMatchResult);
 
         self::assertEquals(1, $this->getRequestParser()->parseHref($href, 'contentId'));
     }
-
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage No attribute 'badAttribute' in route matched from /api/test/v1/content/no-attribute
-     */
+    
     public function testParseHrefAttributeNotFound()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage('No attribute \'badAttribute\' in route matched from /api/test/v1/content/no-attribute');
+
         $href = '/api/test/v1/content/no-attribute';
 
         $matchResult = [
@@ -111,7 +105,6 @@ class RouterTest extends TestCase
         $this->getRouterMock()
             ->expects($this->once())
             ->method('matchRequest')
-            ->with($this->attributeEqualTo('pathInfo', $href))
             ->willReturn($matchResult);
 
         self::assertEquals(1, $this->getRequestParser()->parseHref($href, 'badAttribute'));

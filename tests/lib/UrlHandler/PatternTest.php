@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\UrlHandler;
 
+use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use EzSystems\EzPlatformRest;
 use PHPUnit\Framework\TestCase;
 
@@ -16,24 +17,24 @@ class PatternTest extends TestCase
 {
     /**
      * Tests parsing unknown URL type.
-     *
-     * @expectedException \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage URL '/foo' did not match any route.
      */
     public function testParseUnknownUrlType()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("URL '/foo' did not match any route.");
+
         $urlHandler = new EzPlatformRest\RequestParser\Pattern();
         $urlHandler->parse('/foo');
     }
 
     /**
      * Tests parsing invalid pattern.
-     *
-     * @expectedException \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage Invalid pattern part: '{broken'.
      */
     public function testParseInvalidPattern()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Invalid pattern part: '{broken'.");
+
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             [
                 'invalid' => '/foo/{broken',
@@ -44,12 +45,12 @@ class PatternTest extends TestCase
 
     /**
      * Tests parsing when pattern does not match.
-     *
-     * @expectedException \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage URL '/bar' did not match any route.
      */
     public function testPatternDoesNotMatch()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("URL '/bar' did not match any route.");
+
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             [
                 'pattern' => '/foo/{foo}',
@@ -60,12 +61,12 @@ class PatternTest extends TestCase
 
     /**
      * Test parsing when pattern does not match the end of the URL.
-     *
-     * @expectedException \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage URL '/foo/23/bar' did not match any route.
      */
     public function testPatternDoesNotMatchTrailing()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("URL '/foo/23/bar' did not match any route.");
+
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             [
                 'pattern' => '/foo/{foo}',
@@ -131,24 +132,24 @@ class PatternTest extends TestCase
 
     /**
      * Test generating unknown URL type.
-     *
-     * @expectedException \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage No URL for type 'unknown' available.
      */
     public function testGenerateUnknownUrlType()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("No URL for type 'unknown' available.");
+
         $urlHandler = new EzPlatformRest\RequestParser\Pattern();
         $urlHandler->generate('unknown', []);
     }
 
     /**
      * Test generating URL with missing value.
-     *
-     * @expectedException \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage No value provided for 'unknown'.
      */
     public function testGenerateMissingValue()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("No value provided for 'unknown'.");
+
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             [
                 'pattern' => '/foo/{unknown}',
@@ -159,12 +160,12 @@ class PatternTest extends TestCase
 
     /**
      * Test generating URL with extra value.
-     *
-     * @expectedException \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @expectedExceptionMessage Unused values in values array: 'bar'.
      */
     public function testGenerateSuperfluousValue()
     {
+        $this->expectException(InvalidArgumentException::class);
+        $this->expectExceptionMessage("Unused values in values array: 'bar'.");
+
         $urlHandler = new EzPlatformRest\RequestParser\Pattern(
             [
                 'pattern' => '/foo/{foo}',

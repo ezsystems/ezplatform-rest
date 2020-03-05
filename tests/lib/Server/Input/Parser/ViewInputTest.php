@@ -39,20 +39,16 @@ class ViewInputTest extends BaseTest
         $this->assertEquals($expectedViewInput, $result, 'RestViewInput not created correctly.');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testThrowsExceptionOnMissingIdentifier()
     {
+        $this->expectException('EzSystems\EzPlatformRest\Exceptions\Parser');
         $inputArray = ['Query' => []];
         $this->getParser()->parse($inputArray, $this->getParsingDispatcherMock());
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testThrowsExceptionOnMissingQuery()
     {
+        $this->expectException('EzSystems\EzPlatformRest\Exceptions\Parser');
         $inputArray = ['identifier' => 'foo'];
         $this->getParser()->parse($inputArray, $this->getParsingDispatcherMock());
     }
