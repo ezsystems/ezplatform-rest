@@ -37,7 +37,7 @@ class RestProvider implements ProviderInterface
      *
      * @return array
      */
-    public function getOptions(Request $request)
+    public function getOptions(Request $request): array
     {
         $return = [];
         if ($request->attributes->has('is_rest_request') && $request->attributes->get('is_rest_request') === true) {

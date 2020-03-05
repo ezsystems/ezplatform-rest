@@ -112,7 +112,7 @@ class CsrfListener implements EventSubscriberInterface
         }
 
         // Dispatching event so that CSRF token intention can be injected into Legacy Stack
-        $this->eventDispatcher->dispatch(RestEvents::REST_CSRF_TOKEN_VALIDATED);
+        $this->eventDispatcher->dispatch($event, RestEvents::REST_CSRF_TOKEN_VALIDATED);
     }
 
     /**
