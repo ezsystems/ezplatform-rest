@@ -6,9 +6,6 @@
  */
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
-use Buzz\Browser;
-use Buzz\Client\BuzzClientInterface;
-use Buzz\Client\Curl;
 use Nyholm\Psr7\Factory\Psr17Factory as HttpFactory;
 use Nyholm\Psr7\Request as HttpRequest;
 use PHPUnit\Framework\TestCase as BaseTestCase;
@@ -17,7 +14,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
 use Symfony\Component\HttpClient\CurlHttpClient;
-use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\Psr18Client;
 
 class TestCase extends BaseTestCase
