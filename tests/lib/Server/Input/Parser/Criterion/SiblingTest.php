@@ -58,7 +58,7 @@ final class SiblingTest extends BaseTest
         $this->expectExceptionMessage('Invalid <SiblingCriterion> format');
 
         $this->getParser()->parse([
-        /** Missing SiblingsCriterion key */
+        /** Missing SiblingCriterion key */
         ], $this->getParsingDispatcherMock());
     }
 
