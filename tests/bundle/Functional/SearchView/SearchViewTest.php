@@ -6,14 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView;
 
 use DOMDocument;
 use DOMElement;
-use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 
-class SearchViewTest extends RESTFunctionalTestCase
+class SearchViewTest extends SearchViewTestCase
 {
     /** @var string */
     protected $contentTypeHref;
@@ -430,33 +429,5 @@ XML;
         self::assertHttpResponseHasHeader($response, 'Location');
 
         return $response->getHeader('Location')[0];
-    }
-
-    /**
-     * Perform search View Query providing payload ($body) in a given $format.
-     *
-     * @param string $format xml or json
-     *
-     * @throws \Psr\Http\Client\ClientExceptionInterface
-     */
-    private function getQueryResultsCount(string $format, string $body): int
-    {
-        $request = $this->createHttpRequest(
-            'POST',
-            '/api/ezp/v2/views',
-            "ViewInput+{$format}; version=1.1",
-            'View+json',
-            $body
-        );
-        $response = $this->sendHttpRequest($request);
-
-        self::assertHttpResponseCodeEquals($response, 200);
-        $jsonResponse = json_decode($response->getBody()->getContents());
-
-        if (isset($jsonResponse->ErrorMessage)) {
-            self::fail(var_export($jsonResponse, true));
-        }
-
-        return $jsonResponse->View->Result->count;
     }
 }
