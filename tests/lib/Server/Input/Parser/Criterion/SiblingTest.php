@@ -41,7 +41,7 @@ final class SiblingTest extends BaseTest
             ->willReturn($location);
 
         $actual = $this->getParser()->parse([
-            'SiblingsCriterion' => self::EXAMPLE_LOCATION_ID,
+            'SiblingCriterion' => self::EXAMPLE_LOCATION_ID,
         ], $this->getParsingDispatcherMock());
 
         $exepected = new SiblingCriterion(
