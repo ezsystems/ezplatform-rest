@@ -12,7 +12,7 @@ use EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\SearchCriterionTe
 
 final class IsUserEnabledTest extends SearchCriterionTestCase
 {
-    public function getCriteriaPayloads(): array
+    public function getCriteriaPayloads(): iterable
     {
         return [
             'is user enabled' => [

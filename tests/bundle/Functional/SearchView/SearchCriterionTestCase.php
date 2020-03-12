@@ -10,7 +10,7 @@ namespace EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView;
 
 abstract class SearchCriterionTestCase extends SearchViewTestCase
 {
-    abstract public function getCriteriaPayloads(): array;
+    abstract public function getCriteriaPayloads(): iterable;
 
     /**
      * @dataProvider getCriteriaPayloads
