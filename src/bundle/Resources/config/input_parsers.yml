@@ -514,11 +514,15 @@ services:
 
     EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\IsUserBased:
         parent: ezpublish_rest.input.parser
+        arguments:
+            $parserTools: '@ezpublish_rest.parser_tools'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.IsUserBased }
 
     EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\IsUserEnabled:
         parent: ezpublish_rest.input.parser
+        arguments:
+            $parserTools: '@ezpublish_rest.parser_tools'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.IsUserEnabled }
 
