@@ -10,21 +10,14 @@ namespace EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\Criterion;
 
 use EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\SearchCriterionTestCase;
 
-final class IsUserBasedTest extends SearchCriterionTestCase
+final class SiblingTest extends SearchCriterionTestCase
 {
     public function getCriteriaPayloads(): iterable
     {
-        return [
-            'is user based' => [
-                'json',
-                $this->buildJsonCriterionQuery('"IsUserBasedCriterion": true'),
-                2,
-            ],
-            'is not user based' => [
-                'json',
-                $this->buildJsonCriterionQuery('"IsUserBasedCriterion": false'),
-                10,
-            ],
+        yield 'sibling' => [
+            'json',
+            $this->buildJsonCriterionQuery('"SiblingCriterion": 2'),
+            2,
         ];
     }
 }
