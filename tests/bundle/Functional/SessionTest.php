@@ -98,27 +98,31 @@ class SessionTest extends TestCase
         $baseURI = $this->getBaseURI();
         $browser = $this->createBrowser();
 
-        $response = $browser->get("{$baseURI}/login");
-        self::assertHttpResponseCodeEquals($response, 200);
+        $browser->request('GET', "{$baseURI}/login");
+        $response = $browser->getInternalResponse();
+
+        self::assertEquals( 200, $response->getStatusCode());
 
         $domDocument = new DOMDocument();
         // load HTML, suppress error reporting due to buggy Sf toolbar code in dev/behat ENVs
-        $domDocument->loadHTML($response->getBody(), LIBXML_NOERROR);
+        $domDocument->loadHTML($response->getContent(), LIBXML_NOERROR);
+
         $xpath = new DOMXPath($domDocument);
 
         $csrfDomElements = $xpath->query("//input[@name='_csrf_token']/@value");
         self::assertGreaterThan(0, $csrfDomElements->length);
         $csrfTokenValue = $csrfDomElements->item(0)->nodeValue;
 
-        $loginResponse = $browser->submitForm(
-            "{$baseURI}/login_check",
+        $browser->submitForm(
+            'Login',
             [
                 '_username' => $this->getLoginUsername(),
                 '_password' => $this->getLoginPassword(),
                 '_csrf_token' => $csrfTokenValue,
             ]
         );
-        self::assertHttpResponseHasHeader($loginResponse, 'set-cookie');
+        $loginResponse = $browser->getInternalResponse();
+        self::assertNotEmpty($loginResponse->getHeader('set-cookie'));
 
         $request = $this->createAuthenticationHttpRequest(
             $this->getLoginUsername(),

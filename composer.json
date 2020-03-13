@@ -45,7 +45,8 @@
         "friendsofphp/php-cs-fixer": "^2.16.0",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "nyholm/psr7": "^1.1",
-        "symfony/http-client": "^5.0"
+        "symfony/http-client": "^5.0",
+        "symfony/browser-kit": "^5.0"
     },
     "scripts": {
         "fix-cs": "@php ./vendor/bin/php-cs-fixer fix -v --show-progress=estimating"

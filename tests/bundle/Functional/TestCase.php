@@ -13,7 +13,9 @@ use PHPUnit\Framework\ExpectationFailedException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
+use Symfony\Component\BrowserKit\HttpBrowser;
 use Symfony\Component\HttpClient\CurlHttpClient;
+use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Component\HttpClient\Psr18Client;
 
 class TestCase extends BaseTestCase
@@ -108,16 +110,14 @@ class TestCase extends BaseTestCase
 
     /**
      * Instantiate Browser object.
-     *
-     * @return \Buzz\Client\BuzzClientInterface
      */
-    public function createBrowser(): BuzzClientInterface
+    public function createBrowser(): HttpBrowser
     {
         if ($this->httpClient === null) {
             throw new RuntimeException('Unable to create browser - test is not initialized');
         }
 
-        return new Browser($this->httpClient, new HttpFactory());
+        return new HttpBrowser(new CurlHttpClient());
     }
 
     /**
@@ -125,7 +125,7 @@ class TestCase extends BaseTestCase
      *
      * @return \Psr\Http\Message\ResponseInterface
      *
-     * @throws \Psr\Http\Client\ClientException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
      */
     public function sendHttpRequest(RequestInterface $request): ResponseInterface
     {
@@ -148,7 +148,7 @@ class TestCase extends BaseTestCase
     }
 
     /**
-     * Get base URI for \Buzz\Browser based requests.
+     * Get base URI for Browser based requests.
      *
      * @return string
      */
