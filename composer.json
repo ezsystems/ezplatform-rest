@@ -14,8 +14,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
-        {"type": "vcs", "url": "https://github.com/webhdx/JMSTranslationBundle.git"},
-        {"type": "vcs", "url": "https://github.com/webhdx/Routing.git"}
+        {"type": "vcs", "url": "https://github.com/ezsystems/Routing.git"},
+        {"type": "vcs", "url": "https://github.com/hautelook/TemplatedUriRouter.git"},
+        {"type": "vcs", "url": "https://github.com/ezsystems/TemplatedUriBundle.git"}
     ],
     "require": {
         "php": "^7.3",
@@ -35,7 +36,8 @@
         "symfony/security-csrf": "^5.0",
         "symfony/expression-language": "^5.0",
         "symfony/form": "^5.0",
-        "symfony/security-bundle": "^5.0"
+        "symfony/security-bundle": "^5.0",
+        "hautelook/templated-uri-bundle": "^3.3"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.5",
