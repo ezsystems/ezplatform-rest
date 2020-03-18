@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
 
+use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserMetadata as UserMetadataCriterion;
 use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserMetadata;
 use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
@@ -18,15 +19,15 @@ class UserMetadataTest extends BaseTest
         return [
             [
                 ['UserMetadataCriterion' => ['Target' => 'owner', 'Value' => 14]],
-                new UserMetadataCriterion('owner', null, [14]),
+                new UserMetadataCriterion('owner', Operator::IN, [14]),
             ],
             [
                 ['UserMetadataCriterion' => ['Target' => 'owner', 'Value' => '14,15,42']],
-                new UserMetadataCriterion('owner', null, [14, 15, 42]),
+                new UserMetadataCriterion('owner', Operator::IN, [14, 15, 42]),
             ],
             [
                 ['UserMetadataCriterion' => ['Target' => 'owner', 'Value' => [14, 15, 42]]],
-                new UserMetadataCriterion('owner', null, [14, 15, 42]),
+                new UserMetadataCriterion('owner', Operator::IN, [14, 15, 42]),
             ],
         ];
     }

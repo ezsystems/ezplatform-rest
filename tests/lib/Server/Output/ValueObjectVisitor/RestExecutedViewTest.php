@@ -171,7 +171,7 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
         return new SearchHit([
             'score' => 0.234,
             'index' => 'waze',
-            'valueObject' => new ApiValues\Location(),
+            'valueObject' => new ApiValues\Location(['id' => 10]),
         ]);
     }
 }
