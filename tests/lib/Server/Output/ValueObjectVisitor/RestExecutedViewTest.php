@@ -21,6 +21,8 @@ use eZ\Publish\Core\Repository\Values\Content as ApiValues;
 
 class RestExecutedViewTest extends ValueObjectVisitorBaseTest
 {
+    private const EXAMPLE_LOCATION_ID = 54;
+
     /**
      * Test the RestExecutedView visitor.
      *
@@ -112,7 +114,6 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
         return new ValueObjectVisitor\RestExecutedView(
             $this->getLocationServiceMock(),
             $this->getContentServiceMock(),
-            $this->getContentTypeServiceMock()
         );
     }
 
@@ -129,7 +130,10 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
      */
     public function getContentServiceMock()
     {
-        return $this->createMock(ContentService::class);
+        $contentService = $this->createMock(ContentService::class);
+        $contentService->method('loadRelations')->willReturn([]);
+
+        return $contentService;
     }
 
     /**
@@ -149,7 +153,11 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
             'score' => 0.123,
             'index' => 'alexandria',
             'valueObject' => new ApiValues\Content([
-                'versionInfo' => new Content\VersionInfo(['contentInfo' => new ContentInfo()]),
+                'versionInfo' => new Content\VersionInfo([
+                    'contentInfo' => new ContentInfo([
+                        'mainLocationId' => self::EXAMPLE_LOCATION_ID,
+                    ]),
+                ]),
                 'contentType' => new ContentType(),
             ]),
         ]);
