@@ -16,6 +16,7 @@ use eZ\Publish\Core\Repository\Values\User\UserGroupCreateStruct;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class UserGroupCreateTest extends BaseTest
 {
@@ -93,12 +94,11 @@ class UserGroupCreateTest extends BaseTest
 
     /**
      * Test UserGroupCreate parser throwing exception on invalid ContentType.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the ContentType element in UserGroupCreate.
      */
     public function testParseExceptionOnInvalidContentType()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the ContentType element in UserGroupCreate.');
         $inputArray = [
             'ContentType' => [],
             'mainLanguageCode' => 'eng-US',
@@ -122,12 +122,11 @@ class UserGroupCreateTest extends BaseTest
 
     /**
      * Test UserGroupCreate parser throwing exception on missing mainLanguageCode.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'mainLanguageCode' element for UserGroupCreate.
      */
     public function testParseExceptionOnMissingMainLanguageCode()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'mainLanguageCode\' element for UserGroupCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/3',
@@ -152,12 +151,11 @@ class UserGroupCreateTest extends BaseTest
 
     /**
      * Test UserGroupCreate parser throwing exception on invalid Section.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the Section element in UserGroupCreate.
      */
     public function testParseExceptionOnInvalidSection()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the Section element in UserGroupCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/3',
@@ -181,12 +179,11 @@ class UserGroupCreateTest extends BaseTest
 
     /**
      * Test UserGroupCreate parser throwing exception on invalid fields data.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'fields' element for UserGroupCreate.
      */
     public function testParseExceptionOnInvalidFields()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'fields\' element for UserGroupCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/3',
@@ -204,12 +201,11 @@ class UserGroupCreateTest extends BaseTest
 
     /**
      * Test UserGroupCreate parser throwing exception on missing field definition identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in field data for UserGroupCreate.
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldDefinitionIdentifier\' element in field data for UserGroupCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/3',
@@ -238,12 +234,11 @@ class UserGroupCreateTest extends BaseTest
 
     /**
      * Test UserGroupCreate parser throwing exception on invalid field definition identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage 'unknown' is an invalid Field definition identifier for the 'some_class' Content Type in UserGroupCreate.
      */
     public function testParseExceptionOnInvalidFieldDefinitionIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('\'unknown\' is an invalid Field definition identifier for the \'some_class\' Content Type in UserGroupCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/3',
@@ -269,12 +264,11 @@ class UserGroupCreateTest extends BaseTest
 
     /**
      * Test UserGroupCreate parser throwing exception on missing field value.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for the 'name' identifier in UserGroupCreate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldValue\' element for the \'name\' identifier in UserGroupCreate.');
         $inputArray = [
             'ContentType' => [
                 '_href' => '/content/types/3',
@@ -314,7 +308,7 @@ class UserGroupCreateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser;
+     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {

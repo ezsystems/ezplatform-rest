@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
 use EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field as FieldParser;
 use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class FieldTest extends BaseTest
 {
@@ -37,12 +38,11 @@ class FieldTest extends BaseTest
 
     /**
      * Test Field parser throwing exception on missing sort clause.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage The <Field> Sort Clause doesn't exist in the input structure
      */
     public function testParseExceptionOnMissingSortClause()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('The <Field> Sort Clause doesn\'t exist in the input structure');
         $inputArray = [
             'name' => 'Keep on mocking in the free world',
         ];
@@ -53,12 +53,11 @@ class FieldTest extends BaseTest
 
     /**
      * Test Field parser throwing exception on invalid direction format.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid direction format in <Field> sort clause
      */
     public function testParseExceptionOnInvalidDirectionFormat()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid direction format in <Field> sort clause');
         $inputArray = [
             'Field' => [
                 'identifier' => 'content/field',

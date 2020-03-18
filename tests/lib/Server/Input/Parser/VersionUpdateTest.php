@@ -12,6 +12,7 @@ use eZ\Publish\API\Repository\FieldTypeService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\VersionUpdate;
 use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class VersionUpdateTest extends BaseTest
 {
@@ -59,12 +60,11 @@ class VersionUpdateTest extends BaseTest
 
     /**
      * Test VersionUpdate parser throwing exception on invalid fields data.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'fields' element for VersionUpdate.
      */
     public function testParseExceptionOnInvalidFields()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'fields\' element for VersionUpdate.');
         $inputArray = [
             'initialLanguageCode' => 'eng-US',
             'fields' => [],
@@ -77,12 +77,11 @@ class VersionUpdateTest extends BaseTest
 
     /**
      * Test VersionUpdate parser throwing exception on missing field definition identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldDefinitionIdentifier' element in Field data for VersionUpdate.
      */
     public function testParseExceptionOnMissingFieldDefinitionIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldDefinitionIdentifier\' element in Field data for VersionUpdate.');
         $inputArray = [
             'initialLanguageCode' => 'eng-US',
             'fields' => [
@@ -101,12 +100,11 @@ class VersionUpdateTest extends BaseTest
 
     /**
      * Test VersionUpdate parser throwing exception on missing field value.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldValue' element for the 'subject' identifier in VersionUpdate.
      */
     public function testParseExceptionOnMissingFieldValue()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldValue\' element for the \'subject\' identifier in VersionUpdate.');
         $inputArray = [
             'initialLanguageCode' => 'eng-US',
             'fields' => [
@@ -139,7 +137,7 @@ class VersionUpdateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser;
+     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {

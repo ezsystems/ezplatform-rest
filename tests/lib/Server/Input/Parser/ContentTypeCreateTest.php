@@ -12,6 +12,7 @@ use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentTypeCreateStruct;
 use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeCreate;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ContentTypeCreateTest extends BaseTest
 {
@@ -118,12 +119,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'identifier' element for ContentTypeCreate.
      */
     public function testParseExceptionOnMissingIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'identifier\' element for ContentTypeCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['identifier']);
 
@@ -133,12 +133,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on missing mainLanguageCode.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'mainLanguageCode' element for ContentTypeCreate.
      */
     public function testParseExceptionOnMissingMainLanguageCode()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'mainLanguageCode\' element for ContentTypeCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['mainLanguageCode']);
 
@@ -148,12 +147,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on invalid names.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'names' element for ContentTypeCreate.
      */
     public function testParseExceptionOnInvalidNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'names\' element for ContentTypeCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['names']['value']);
 
@@ -163,12 +161,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on invalid descriptions.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'descriptions' element for ContentTypeCreate.
      */
     public function testParseExceptionOnInvalidDescriptions()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'descriptions\' element for ContentTypeCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['descriptions']['value']);
 
@@ -178,12 +175,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on invalid User.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the User element in ContentTypeCreate.
      */
     public function testParseExceptionOnInvalidUser()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the User element in ContentTypeCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['User']['_href']);
 
@@ -193,12 +189,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on invalid FieldDefinitions.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'FieldDefinitions' element for ContentTypeCreate.
      */
     public function testParseExceptionOnInvalidFieldDefinitions()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'FieldDefinitions\' element for ContentTypeCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['FieldDefinitions']['FieldDefinition']);
 
@@ -208,12 +203,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on invalid FieldDefinitions.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage ContentTypeCreate should provide at least one Field definition.
      */
     public function testParseExceptionOnMissingFieldDefinitions()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('ContentTypeCreate should provide at least one Field definition.');
         $inputArray = $this->getInputArray();
         // Field definitions are required only with immediate publish
         $inputArray['__publish'] = true;
@@ -225,12 +219,11 @@ class ContentTypeCreateTest extends BaseTest
 
     /**
      * Test ContentTypeCreate parser throwing exception on invalid FieldDefinitions.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'FieldDefinition' element for ContentTypeCreate.
      */
     public function testParseExceptionOnInvalidFieldDefinition()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'FieldDefinition\' element for ContentTypeCreate.');
         $inputArray = $this->getInputArray();
         $inputArray['FieldDefinitions']['FieldDefinition'] = ['hi there'];
 

@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate;
 use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -114,12 +115,11 @@ class FieldDefinitionCreateTest extends BaseTest
 
     /**
      * Test FieldDefinitionCreate parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'identifier' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnMissingIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'identifier\' element for FieldDefinitionCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['identifier']);
 
@@ -129,12 +129,11 @@ class FieldDefinitionCreateTest extends BaseTest
 
     /**
      * Test FieldDefinitionCreate parser throwing exception on missing fieldType.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'fieldType' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnMissingFieldType()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'fieldType\' element for FieldDefinitionCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['fieldType']);
 
@@ -144,12 +143,11 @@ class FieldDefinitionCreateTest extends BaseTest
 
     /**
      * Test FieldDefinitionCreate parser throwing exception on invalid names.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'names' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnInvalidNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'names\' element for FieldDefinitionCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['names']['value']);
 
@@ -159,12 +157,11 @@ class FieldDefinitionCreateTest extends BaseTest
 
     /**
      * Test FieldDefinitionCreate parser throwing exception on invalid descriptions.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid 'descriptions' element for FieldDefinitionCreate.
      */
     public function testParseExceptionOnInvalidDescriptions()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid \'descriptions\' element for FieldDefinitionCreate.');
         $inputArray = $this->getInputArray();
         unset($inputArray['descriptions']['value']);
 

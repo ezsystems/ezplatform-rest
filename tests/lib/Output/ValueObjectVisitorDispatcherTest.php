@@ -7,6 +7,8 @@
 namespace EzSystems\EzPlatformRest\Tests\Output;
 
 use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Output\Exceptions\InvalidTypeException;
+use EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\Visitor;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -44,19 +46,17 @@ class ValueObjectVisitorDispatcherTest extends TestCase
         $valueObjectDispatcher->visit($data);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\InvalidTypeException
-     */
     public function testVisitValueObjectInvalidType()
     {
+        $this->expectException(InvalidTypeException::class);
+
         $this->getValueObjectDispatcher()->visit(42);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException
-     */
     public function testVisitValueObjectNoMatch()
     {
+        $this->expectException(NoVisitorFoundException::class);
+
         $dispatcher = $this->getValueObjectDispatcher();
 
         $dispatcher->visit(new stdClass());

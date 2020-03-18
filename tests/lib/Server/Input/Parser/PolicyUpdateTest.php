@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\User\Limitation;
 use eZ\Publish\Core\Repository\RoleService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\PolicyUpdate;
 use eZ\Publish\Core\Repository\Values\User\PolicyUpdateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class PolicyUpdateTest extends BaseTest
 {
@@ -52,11 +53,7 @@ class PolicyUpdateTest extends BaseTest
 
         $parsedLimitations = $result->getLimitations();
 
-        $this->assertInternalType(
-            'array',
-            $parsedLimitations,
-            'PolicyUpdateStruct limitations not created correctly'
-        );
+        $this->assertIsArray($parsedLimitations, 'PolicyUpdateStruct limitations not created correctly');
 
         $this->assertCount(
             1,
@@ -85,12 +82,11 @@ class PolicyUpdateTest extends BaseTest
 
     /**
      * Test PolicyUpdate parser throwing exception on missing identifier.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_identifier' attribute for Limitation.
      */
     public function testParseExceptionOnMissingLimitationIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_identifier\' attribute for Limitation.');
         $inputArray = [
             'limitations' => [
                 'limitation' => [
@@ -119,12 +115,11 @@ class PolicyUpdateTest extends BaseTest
 
     /**
      * Test PolicyUpdate parser throwing exception on missing values.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid format for Limitation value in Limitation.
      */
     public function testParseExceptionOnMissingLimitationValues()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid format for Limitation value in Limitation.');
         $inputArray = [
             'limitations' => [
                 'limitation' => [

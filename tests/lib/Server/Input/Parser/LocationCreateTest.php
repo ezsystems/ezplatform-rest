@@ -10,6 +10,7 @@ use eZ\Publish\Core\Repository\LocationService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate;
 use eZ\Publish\API\Repository\Values\Content\LocationCreateStruct;
 use eZ\Publish\API\Repository\Values\Content\Location;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class LocationCreateTest extends BaseTest
 {
@@ -76,12 +77,11 @@ class LocationCreateTest extends BaseTest
 
     /**
      * Test LocationCreate parser throwing exception on missing ParentLocation.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'ParentLocation' element for LocationCreate.
      */
     public function testParseExceptionOnMissingParentLocation()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'ParentLocation\' element for LocationCreate.');
         $inputArray = [
             'priority' => '0',
             'hidden' => 'false',
@@ -96,12 +96,11 @@ class LocationCreateTest extends BaseTest
 
     /**
      * Test LocationCreate parser throwing exception on missing _href attribute for ParentLocation.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the ParentLocation element in LocationCreate.
      */
     public function testParseExceptionOnMissingHrefAttribute()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the ParentLocation element in LocationCreate.');
         $inputArray = [
             'ParentLocation' => [],
             'priority' => '0',
@@ -117,12 +116,11 @@ class LocationCreateTest extends BaseTest
 
     /**
      * Test LocationCreate parser throwing exception on missing sort field.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'sortField' element for LocationCreate.
      */
     public function testParseExceptionOnMissingSortField()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'sortField\' element for LocationCreate.');
         $inputArray = [
             'ParentLocation' => [
                 '_href' => '/content/locations/1/2/42',
@@ -139,12 +137,11 @@ class LocationCreateTest extends BaseTest
 
     /**
      * Test LocationCreate parser throwing exception on missing sort order.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'sortOrder' element for LocationCreate.
      */
     public function testParseExceptionOnMissingSortOrder()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'sortOrder\' element for LocationCreate.');
         $inputArray = [
             'ParentLocation' => [
                 '_href' => '/content/locations/1/2/42',

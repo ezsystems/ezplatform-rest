@@ -25,6 +25,9 @@ use Symfony\Component\Security\Http\Logout\SessionLogoutHandler;
 use Symfony\Component\Security\Http\SecurityEvents;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
+use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
+use EzSystems\EzPlatformRest\Server\Exceptions\InvalidUserTypeException;
+use EzSystems\EzPlatformRest\Server\Exceptions\UserConflictException;
 
 class RestSessionBasedAuthenticatorTest extends TestCase
 {
@@ -112,11 +115,9 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->assertSame($existingToken, $this->authenticator->authenticate($request));
     }
 
-    /**
-     * @expectedException \Symfony\Component\Security\Core\Exception\TokenNotFoundException
-     */
     public function testAuthenticateNoTokenFound()
     {
+        $this->expectException(TokenNotFoundException::class);
         $username = 'foo_user';
         $password = 'publish';
 
@@ -149,11 +150,9 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->authenticator->authenticate($request);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Server\Exceptions\InvalidUserTypeException
-     */
     public function testAuthenticateInvalidUser()
     {
+        $this->expectException(InvalidUserTypeException::class);
         $username = 'foo_user';
         $password = 'publish';
 
@@ -223,11 +222,9 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         return new EzUser($apiUser);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Server\Exceptions\UserConflictException
-     */
     public function testAuthenticateUserConflict()
     {
+        $this->expectException(UserConflictException::class);
         $username = 'foo_user';
         $password = 'publish';
 

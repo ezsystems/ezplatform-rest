@@ -7,6 +7,7 @@
 namespace EzSystems\EzPlatformRest\Tests\Input;
 
 use EzSystems\EzPlatformRest;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use EzSystems\EzPlatformRest\Input\Handler;
 use PHPUnit\Framework\TestCase;
@@ -21,11 +22,10 @@ class DispatcherTest extends TestCase
         return $this->createMock(ParsingDispatcher::class);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testParseMissingContentType()
     {
+        $this->expectException(Parser::class);
+
         $message = new EzPlatformRest\Message();
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
@@ -34,11 +34,10 @@ class DispatcherTest extends TestCase
         $dispatcher->parse($message);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testParseInvalidContentType()
     {
+        $this->expectException(Parser::class);
+
         $message = new EzPlatformRest\Message(
             [
                 'Content-Type' => 'text/html',
@@ -51,11 +50,10 @@ class DispatcherTest extends TestCase
         $dispatcher->parse($message);
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testParseMissingFormatHandler()
     {
+        $this->expectException(Parser::class);
+
         $message = new EzPlatformRest\Message(
             [
                 'Content-Type' => 'text/html+unknown',

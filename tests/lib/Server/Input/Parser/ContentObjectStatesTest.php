@@ -26,11 +26,7 @@ class ContentObjectStatesTest extends BaseTest
         $objectState = $this->getParser();
         $result = $objectState->parse($inputArray, $this->getParsingDispatcherMock());
 
-        $this->assertInternalType(
-            'array',
-            $result,
-            'ContentObjectStates not parsed correctly'
-        );
+        $this->assertIsArray($result, 'ContentObjectStates not parsed correctly');
 
         $this->assertNotEmpty(
             $result,
@@ -64,12 +60,11 @@ class ContentObjectStatesTest extends BaseTest
 
     /**
      * Test ContentObjectStates parser throwing exception on missing href.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for ObjectState.
      */
     public function testParseExceptionOnMissingHref()
     {
+        $this->expectException('EzSystems\EzPlatformRest\Exceptions\Parser');
+        $this->expectExceptionMessage('Missing \'_href\' attribute for ObjectState.');
         $inputArray = [
             'ObjectState' => [
                 [
@@ -94,7 +89,7 @@ class ContentObjectStatesTest extends BaseTest
     /**
      * Gets the ContentObjectStates parser.
      *
-     * @return \EzSystems\EzPlatformRest\Input\Parser\ContentObjectStates;
+     * @return \EzSystems\EzPlatformRest\Input\Parser\ContentObjectStates ;
      */
     protected function internalGetParser()
     {

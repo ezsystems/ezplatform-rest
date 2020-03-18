@@ -6,9 +6,11 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
 
+use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserMetadata as UserMetadataCriterion;
 use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserMetadata;
 use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class UserMetadataTest extends BaseTest
 {
@@ -17,15 +19,15 @@ class UserMetadataTest extends BaseTest
         return [
             [
                 ['UserMetadataCriterion' => ['Target' => 'owner', 'Value' => 14]],
-                new UserMetadataCriterion('owner', null, [14]),
+                new UserMetadataCriterion('owner', Operator::IN, [14]),
             ],
             [
                 ['UserMetadataCriterion' => ['Target' => 'owner', 'Value' => '14,15,42']],
-                new UserMetadataCriterion('owner', null, [14, 15, 42]),
+                new UserMetadataCriterion('owner', Operator::IN, [14, 15, 42]),
             ],
             [
                 ['UserMetadataCriterion' => ['Target' => 'owner', 'Value' => [14, 15, 42]]],
-                new UserMetadataCriterion('owner', null, [14, 15, 42]),
+                new UserMetadataCriterion('owner', Operator::IN, [14, 15, 42]),
             ],
         ];
     }
@@ -49,12 +51,11 @@ class UserMetadataTest extends BaseTest
 
     /**
      * Test UserMetadata parser throwing exception on invalid UserMetadataCriterion format.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid <UserMetadataCriterion> format
      */
     public function testParseExceptionOnInvalidCriterionFormat()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid <UserMetadataCriterion> format');
         $inputArray = [
             'foo' => 'Michael learns to mock',
         ];
@@ -65,12 +66,11 @@ class UserMetadataTest extends BaseTest
 
     /**
      * Test UserMetadata parser throwing exception on invalid target format.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid <Target> format
      */
     public function testParseExceptionOnInvalidTargetFormat()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid <Target> format');
         $inputArray = [
             'UserMetadataCriterion' => [
                 'foo' => 'Mock around the clock',
@@ -84,12 +84,11 @@ class UserMetadataTest extends BaseTest
 
     /**
      * Test UserMetadata parser throwing exception on invalid value format.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid <Value> format
      */
     public function testParseExceptionOnInvalidValueFormat()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid <Value> format');
         $inputArray = [
             'UserMetadataCriterion' => [
                 'Target' => 'Moxette',
@@ -103,12 +102,11 @@ class UserMetadataTest extends BaseTest
 
     /**
      * Test UserMetadata parser throwing exception on wrong type of value format.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid <Value> format
      */
     public function testParseExceptionOnWrongValueType()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid <Value> format');
         $inputArray = [
             'UserMetadataCriterion' => [
                 'Target' => 'We will mock you',

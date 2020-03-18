@@ -57,8 +57,7 @@ XML;
     }
 
     /**
-     * @param $urlWildcardHref
-     * Covers GET /content/urlwildcards/{urlWildcardId}
+     * @param $urlWildcardHref Covers GET /content/urlwildcards/{urlWildcardId}
      * @depends testCreateUrlWildcard
      */
     public function testLoadUrlWildcard($urlWildcardHref)

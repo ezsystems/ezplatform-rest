@@ -8,6 +8,7 @@ namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput;
 use EzSystems\EzPlatformRest\Server\Values\SessionInput as SessionInputValue;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class SessionInputTest extends BaseTest
 {
@@ -33,12 +34,11 @@ class SessionInputTest extends BaseTest
 
     /**
      * Test SessionInput parser throwing exception on missing password.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'password' attribute for SessionInput.
      */
     public function testParseExceptionOnMissingIdentifier()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'password\' attribute for SessionInput.');
         $inputArray = [
             'login' => 'Login Foo',
         ];
@@ -49,12 +49,11 @@ class SessionInputTest extends BaseTest
 
     /**
      * Test SessionInput parser throwing exception on missing login.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'login' attribute for SessionInput.
      */
     public function testParseExceptionOnMissingName()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'login\' attribute for SessionInput.');
         $inputArray = [
             'password' => 'Password Bar',
         ];

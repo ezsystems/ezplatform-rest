@@ -9,6 +9,7 @@ namespace EzSystems\EzPlatformRest\Tests;
 use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
 use EzSystems\EzPlatformRest\FieldTypeProcessor;
 use EzSystems\EzPlatformRest\Tests\Server\BaseTest;
+use RuntimeException;
 
 class FieldTypeProcessorRegistryTest extends BaseTest
 {
@@ -58,11 +59,10 @@ class FieldTypeProcessorRegistryTest extends BaseTest
         );
     }
 
-    /**
-     * @expectedException \RuntimeException
-     */
     public function testGetProcessorNotFoundException()
     {
+        $this->expectException(RuntimeException::class);
+
         $registry = new FieldTypeProcessorRegistry();
 
         $registry->getProcessor('my-type');

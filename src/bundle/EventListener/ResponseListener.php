@@ -76,7 +76,7 @@ class ResponseListener implements EventSubscriberInterface
         $event->setResponse(
             $this->viewDispatcher->dispatch(
                 $event->getRequest(),
-                $event->getException()
+                $event->getThrowable()
             )
         );
         $event->stopPropagation();

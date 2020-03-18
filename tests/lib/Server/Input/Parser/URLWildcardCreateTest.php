@@ -7,6 +7,7 @@
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use EzSystems\EzPlatformRest\Server\Input\Parser\URLWildcardCreate;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class URLWildcardCreateTest extends BaseTest
 {
@@ -37,12 +38,11 @@ class URLWildcardCreateTest extends BaseTest
 
     /**
      * Test URLWildcardCreate parser throwing exception on missing sourceUrl.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'sourceUrl' value for URLWildcardCreate.
      */
     public function testParseExceptionOnMissingSourceUrl()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'sourceUrl\' value for URLWildcardCreate.');
         $inputArray = [
             'destinationUrl' => '/destination/url',
             'forward' => 'true',
@@ -54,12 +54,11 @@ class URLWildcardCreateTest extends BaseTest
 
     /**
      * Test URLWildcardCreate parser throwing exception on missing destinationUrl.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'destinationUrl' value for URLWildcardCreate.
      */
     public function testParseExceptionOnMissingDestinationUrl()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'destinationUrl\' value for URLWildcardCreate.');
         $inputArray = [
             'sourceUrl' => '/source/url',
             'forward' => 'true',
@@ -71,12 +70,11 @@ class URLWildcardCreateTest extends BaseTest
 
     /**
      * Test URLWildcardCreate parser throwing exception on missing forward.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing 'forward' value for URLWildcardCreate.
      */
     public function testParseExceptionOnMissingForward()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'forward\' value for URLWildcardCreate.');
         $inputArray = [
             'sourceUrl' => '/source/url',
             'destinationUrl' => '/destination/url',

@@ -9,6 +9,7 @@ namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 use eZ\Publish\Core\Repository\ObjectStateService;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateGroupUpdate;
 use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroupUpdateStruct;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ObjectStateGroupUpdateTest extends BaseTest
 {
@@ -74,12 +75,11 @@ class ObjectStateGroupUpdateTest extends BaseTest
 
     /**
      * Test ObjectStateGroupUpdate parser throwing exception on invalid names structure.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'names' element for ObjectStateGroupUpdate.
      */
     public function testParseExceptionOnInvalidNames()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'names\' element for ObjectStateGroupUpdate.');
         $inputArray = [
             'identifier' => 'test-group',
             'defaultLanguageCode' => 'eng-GB',

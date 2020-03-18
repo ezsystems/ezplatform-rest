@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished;
 use EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass;
 use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class DataKeyValueObjectClassTest extends BaseTest
 {
@@ -34,12 +35,11 @@ class DataKeyValueObjectClassTest extends BaseTest
 
     /**
      * Test DataKeyValueObjectClass parser throwing exception on missing sort clause.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage The <DatePublished> Sort Clause doesn't exist in the input structure
      */
     public function testParseExceptionOnMissingSortClause()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('The <DatePublished> Sort Clause doesn\'t exist in the input structure');
         $inputArray = [
             'name' => 'Keep on mocking in the free world',
         ];
@@ -50,12 +50,11 @@ class DataKeyValueObjectClassTest extends BaseTest
 
     /**
      * Test DataKeyValueObjectClass parser throwing exception on invalid direction format.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Invalid direction format in the <DatePublished> Sort Clause
      */
     public function testParseExceptionOnInvalidDirectionFormat()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Invalid direction format in the <DatePublished> Sort Clause');
         $inputArray = [
             'DatePublished' => 'Jailhouse Mock',
         ];
@@ -66,12 +65,11 @@ class DataKeyValueObjectClassTest extends BaseTest
 
     /**
      * Test DataKeyValueObjectClass parser throwing exception on nonexisting value object class.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Value object class <eC\Pubish\APl\Repudiatory\BadValues\Discontent\Queezy\SantaClause\ThisClassIsExistentiallyChallenged> is not defined
      */
     public function testParseExceptionOnNonexistingValueObjectClass()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Value object class <eC\Pubish\APl\Repudiatory\BadValues\Discontent\Queezy\SantaClause\ThisClassIsExistentiallyChallenged> is not defined');
         $inputArray = [
             'DatePublished' => Query::SORT_ASC,
         ];

@@ -7,6 +7,7 @@
 namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
 
 use EzSystems\EzPlatformRest\Server\Input\Parser\RelationCreate;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class RelationCreateTest extends BaseTest
 {
@@ -33,12 +34,11 @@ class RelationCreateTest extends BaseTest
 
     /**
      * Test RelationCreate parser throwing exception on missing Destination.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing or invalid 'Destination' element for RelationCreate.
      */
     public function testParseExceptionOnMissingDestination()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing or invalid \'Destination\' element for RelationCreate.');
         $inputArray = [];
 
         $relationCreate = $this->getParser();
@@ -47,12 +47,11 @@ class RelationCreateTest extends BaseTest
 
     /**
      * Test RelationCreate parser throwing exception on missing Destination href.
-     *
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     * @expectedExceptionMessage Missing '_href' attribute for the Destination element in RelationCreate.
      */
     public function testParseExceptionOnMissingDestinationHref()
     {
+        $this->expectException(Parser::class);
+        $this->expectExceptionMessage('Missing \'_href\' attribute for the Destination element in RelationCreate.');
         $inputArray = [
             'Destination' => [],
         ];

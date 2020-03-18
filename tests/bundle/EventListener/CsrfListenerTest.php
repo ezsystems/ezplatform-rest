@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 
+use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\ParameterBag;
@@ -68,7 +69,7 @@ class CsrfListenerTest extends EventListenerTest
         $this->csrfTokenHeaderValue = null;
 
         $listener = $this->getEventListener();
-        $listener->onKernelRequest($this->getEventMock());
+        $listener->onKernelRequest($this->getEvent());
     }
 
     public function testCsrfDisabled()
@@ -78,7 +79,7 @@ class CsrfListenerTest extends EventListenerTest
         $this->route = false;
         $this->csrfTokenHeaderValue = null;
 
-        $this->getEventListener(false)->onKernelRequest($this->getEventMock());
+        $this->getEventListener(false)->onKernelRequest($this->getEvent());
     }
 
     public function testNoSessionStarted()
@@ -89,7 +90,7 @@ class CsrfListenerTest extends EventListenerTest
         $this->route = false;
         $this->csrfTokenHeaderValue = null;
 
-        $this->getEventListener()->onKernelRequest($this->getEventMock());
+        $this->getEventListener()->onKernelRequest($this->getEvent());
     }
 
     /**
@@ -104,7 +105,7 @@ class CsrfListenerTest extends EventListenerTest
         $this->route = false;
         $this->csrfTokenHeaderValue = null;
 
-        $this->getEventListener()->onKernelRequest($this->getEventMock());
+        $this->getEventListener()->onKernelRequest($this->getEvent());
     }
 
     public function getIgnoredRequestMethods()
@@ -124,7 +125,7 @@ class CsrfListenerTest extends EventListenerTest
         $this->route = $route;
         $this->csrfTokenHeaderValue = null;
 
-        $this->getEventListener()->onKernelRequest($this->getEventMock());
+        $this->getEventListener()->onKernelRequest($this->getEvent());
     }
 
     public static function provideSessionRoutes()
@@ -136,24 +137,22 @@ class CsrfListenerTest extends EventListenerTest
         ];
     }
 
-    /**
-     * @expectedException \eZ\Publish\Core\Base\Exceptions\UnauthorizedException
-     */
     public function testNoHeader()
     {
+        $this->expectException(UnauthorizedException::class);
+
         $this->csrfTokenHeaderValue = false;
 
-        $this->getEventListener()->onKernelRequest($this->getEventMock());
+        $this->getEventListener()->onKernelRequest($this->getEvent());
     }
 
-    /**
-     * @expectedException \eZ\Publish\Core\Base\Exceptions\UnauthorizedException
-     */
     public function testInvalidToken()
     {
+        $this->expectException(UnauthorizedException::class);
+
         $this->csrfTokenHeaderValue = self::INVALID_TOKEN;
 
-        $this->getEventListener()->onKernelRequest($this->getEventMock());
+        $this->getEventListener()->onKernelRequest($this->getEvent());
     }
 
     public function testValidToken()
@@ -162,7 +161,7 @@ class CsrfListenerTest extends EventListenerTest
             ->expects($this->once())
             ->method('dispatch');
 
-        $this->getEventListener()->onKernelRequest($this->getEventMock());
+        $this->getEventListener()->onKernelRequest($this->getEvent());
     }
 
     /**
@@ -189,18 +188,18 @@ class CsrfListenerTest extends EventListenerTest
     /**
      * @return MockObject|RequestEvent
      */
-    protected function getEventMock($class = null)
+    protected function getEvent($class = null)
     {
-        if (!isset($this->eventMock)) {
-            parent::getEventMock(RequestEvent::class);
+        if (!isset($this->event)) {
+            parent::getEvent(RequestEvent::class);
 
-            $this->eventMock
+            $this->event
                 ->expects($this->any())
                 ->method('getRequestType')
                 ->willReturn($this->requestType);
         }
 
-        return $this->eventMock;
+        return $this->event;
     }
 
     /**

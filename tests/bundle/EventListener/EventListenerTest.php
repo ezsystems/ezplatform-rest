@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 abstract class EventListenerTest extends TestCase
 {
     /** @var EventDispatcherInterface */
-    protected $eventMock;
+    protected $event;
 
     /** @var Request|MockObject */
     protected $requestMock;
@@ -59,20 +59,20 @@ abstract class EventListenerTest extends TestCase
     /**
      * @return MockObject|$class
      */
-    protected function getEventMock($class)
+    protected function getEvent($class)
     {
-        if (!isset($this->eventMock)) {
-            $this->eventMock = $this->getMockBuilder($class)
-                ->disableOriginalConstructor()
-                ->getMock();
+        if (!isset($this->event)) {
+            $this->event = $this->getMockBuilder($class)
+                                ->disableOriginalConstructor()
+                                ->getMock();
 
-            $this->eventMock
+            $this->event
                 ->expects($this->any())
                 ->method('getRequest')
                 ->willReturn($this->getRequestMock());
         }
 
-        return $this->eventMock;
+        return $this->event;
     }
 
     /**

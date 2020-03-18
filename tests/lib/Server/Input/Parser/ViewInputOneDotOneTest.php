@@ -10,6 +10,7 @@ use eZ\Publish\API\Repository\Values\Content\LocationQuery;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use EzSystems\EzPlatformRest\Server\Input\Parser\ViewInputOneDotOne;
 use EzSystems\EzPlatformRest\Server\Values\RestViewInput;
+use EzSystems\EzPlatformRest\Exceptions\Parser;
 
 class ViewInputOneDotOneTest extends BaseTest
 {
@@ -67,20 +68,16 @@ class ViewInputOneDotOneTest extends BaseTest
         $this->assertEquals($expectedViewInput, $result, 'RestViewInput not created correctly.');
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testThrowsExceptionOnMissingIdentifier()
     {
+        $this->expectException(Parser::class);
         $inputArray = ['Query' => []];
         $this->getParser()->parse($inputArray, $this->getParsingDispatcherMock());
     }
 
-    /**
-     * @expectedException \EzSystems\EzPlatformRest\Exceptions\Parser
-     */
     public function testThrowsExceptionOnMissingQuery()
     {
+        $this->expectException(Parser::class);
         $inputArray = ['identifier' => 'foo'];
         $this->getParser()->parse($inputArray, $this->getParsingDispatcherMock());
     }
