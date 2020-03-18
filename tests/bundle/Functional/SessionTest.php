@@ -101,7 +101,7 @@ class SessionTest extends TestCase
         $browser->request('GET', "{$baseURI}/login");
         $response = $browser->getInternalResponse();
 
-        self::assertEquals( 200, $response->getStatusCode());
+        self::assertEquals(200, $response->getStatusCode());
 
         $domDocument = new DOMDocument();
         // load HTML, suppress error reporting due to buggy Sf toolbar code in dev/behat ENVs

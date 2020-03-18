@@ -90,7 +90,7 @@ class RouterTest extends TestCase
 
         self::assertEquals(1, $this->getRequestParser()->parseHref($href, 'contentId'));
     }
-    
+
     public function testParseHrefAttributeNotFound()
     {
         $this->expectException(InvalidArgumentException::class);

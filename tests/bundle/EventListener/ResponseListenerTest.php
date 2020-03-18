@@ -9,7 +9,6 @@ namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
 use Exception;
 use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
 use PHPUnit\Framework\MockObject\MockObject;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
