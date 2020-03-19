@@ -33,9 +33,10 @@
         "ezsystems/templated-uri-bundle": "^3.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.5",
+        "ezsystems/doctrine-dbal-schema": "^1.0@dev",
         "ezsystems/ezplatform-code-style": "^0.1.0",
         "friendsofphp/php-cs-fixer": "^2.16.0",
+        "phpunit/phpunit": "^8.5",
         "matthiasnoback/symfony-dependency-injection-test": "^4.1",
         "nyholm/psr7": "^1.1",
         "symfony/http-client": "^5.0",
