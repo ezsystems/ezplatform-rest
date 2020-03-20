@@ -474,7 +474,10 @@ XML;
         );
 
         $version = json_decode($response->getBody(), true);
-        self::assertNotContains($translationToDelete, $version['Version']['VersionInfo']['languageCodes']);
+        self::assertStringNotContainsString(
+            $translationToDelete,
+            $version['Version']['VersionInfo']['languageCodes']
+        );
     }
 
     /**
@@ -536,6 +539,40 @@ XML;
         }
     }
 
+    private function assertTranslationDoesNotExist(
+        string $translationToDelete,
+        array $versionItem
+    ): void {
+        self::assertStringNotContainsString(
+            $translationToDelete,
+            $versionItem['VersionInfo']['languageCodes'],
+            sprintf(
+                '"%s" exists in the loaded VersionInfo: %s',
+                $translationToDelete,
+                var_export(
+                    $versionItem['VersionInfo'],
+                    true
+                )
+            )
+        );
+        $translations = array_column(
+            $versionItem['VersionInfo']['names']['value'],
+            '_languageCode'
+        );
+        self::assertNotContainsEquals(
+            $translationToDelete,
+            $translations,
+            sprintf(
+                '"%s" exists in the loaded VersionInfo: %s',
+                $translationToDelete,
+                var_export(
+                    $versionItem['VersionInfo'],
+                    true
+                )
+            )
+        );
+    }
+
     /**
      * Covers DELETE /content/objects/<contentId>/translations/<languageCode>.
      */
@@ -576,10 +613,7 @@ XML;
         self::assertHttpResponseCodeEquals($response, 200);
         $versionList = json_decode($response->getBody(), true);
         foreach ($versionList['VersionList']['VersionItem'] as $versionItem) {
-            self::assertNotContains($translationToDelete, $versionItem['VersionInfo']['languageCodes']);
-            foreach ($versionItem['VersionInfo']['names']['value'] as $name) {
-                self::assertNotEquals($translationToDelete, $name['_languageCode']);
-            }
+            $this->assertTranslationDoesNotExist($translationToDelete, $versionItem);
         }
 
         return $restContentHref;
@@ -621,10 +655,7 @@ XML;
         $versionList = json_decode($response->getBody(), true);
         foreach ($versionList['VersionList']['VersionItem'] as $versionItem) {
             self::assertNotEmpty($versionItem['VersionInfo']['languageCodes']);
-            self::assertNotContains($translationToDelete, $versionItem['VersionInfo']['languageCodes']);
-            foreach ($versionItem['VersionInfo']['names']['value'] as $name) {
-                self::assertNotEquals($translationToDelete, $name['_languageCode']);
-            }
+            $this->assertTranslationDoesNotExist($translationToDelete, $versionItem);
         }
     }
 
