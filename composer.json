@@ -18,7 +18,7 @@
         "ext-libxml": "*",
         "ext-simplexml": "*",
         "ext-xmlwriter": "*",
-        "ezsystems/ezplatform-kernel": "^1.0@dev",
+        "ezsystems/ezplatform-kernel": "^1.0",
         "symfony/http-kernel": "^5.0",
         "symfony/dependency-injection": "^5.0",
         "symfony/routing": "^5.0",
@@ -33,7 +33,7 @@
         "ezsystems/templated-uri-bundle": "^3.3"
     },
     "require-dev": {
-        "ezsystems/doctrine-dbal-schema": "^1.0@dev",
+        "ezsystems/doctrine-dbal-schema": "^1.0",
         "ezsystems/ezplatform-code-style": "^0.1.0",
         "friendsofphp/php-cs-fixer": "^2.16.0",
         "phpunit/phpunit": "^8.5",
