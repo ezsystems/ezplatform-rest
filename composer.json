@@ -30,7 +30,7 @@
         "symfony/expression-language": "^5.0",
         "symfony/form": "^5.0",
         "symfony/security-bundle": "^5.0",
-        "ezsystems/templated-uri-bundle": "^3.3"
+        "hautelook/templated-uri-bundle": "^3.2"
     },
     "require-dev": {
         "ezsystems/doctrine-dbal-schema": "^1.0@dev",
