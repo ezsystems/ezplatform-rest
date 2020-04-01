@@ -4,8 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace EzSystems\EzPlatformRest\Server\Service;
 
+use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use EzSystems\EzPlatformRest\Values;
 use EzSystems\EzPlatformRest\Values\Root;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
@@ -32,33 +35,20 @@ use Symfony\Component\Routing\RouterInterface;
  */
 class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterface
 {
-    /**
-     * @var \Symfony\Component\Routing\RouterInterface
-     */
+    /** @var \Symfony\Component\Routing\RouterInterface */
     protected $router;
 
-    /**
-     * @var \Symfony\Component\Routing\RouterInterface
-     */
+    /** @var \Symfony\Component\Routing\RouterInterface */
     protected $templateRouter;
 
-    /**
-     * @var array
-     */
-    protected $resourceConfig;
+    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    protected $configResolver;
 
-    /**
-     * Creates a new resource builder.
-     *
-     * @param \Symfony\Component\Routing\RouterInterface $router
-     * @param \Symfony\Component\Routing\RouterInterface $templateRouter
-     * @param array $resourceConfig
-     */
-    public function __construct(RouterInterface $router, RouterInterface $templateRouter, array $resourceConfig)
+    public function __construct(RouterInterface $router, RouterInterface $templateRouter, ConfigResolverInterface $configResolver)
     {
         $this->router = $router;
         $this->templateRouter = $templateRouter;
-        $this->resourceConfig = $resourceConfig;
+        $this->configResolver = $configResolver;
     }
 
     /**
@@ -66,12 +56,12 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
      *
      * @return array|\EzSystems\EzPlatformRest\Values\Root
      */
-    public function buildRootResource()
+    public function buildRootResource(): Root
     {
         $language = new ExpressionLanguage();
 
         $resources = [];
-        foreach ($this->resourceConfig as $name => $resource) {
+        foreach ($this->configResolver->getParameter('rest_root_resources') as $name => $resource) {
             $resources[] = new Values\Resource(
                 $name,
                 $resource['mediaType'],
