@@ -421,35 +421,6 @@ XML;
         return $array['Content'];
     }
 
-    public function testCreateView()
-    {
-        $body = <<< XML
-<?xml version="1.0" encoding="UTF-8"?>
-<ViewInput>
-  <identifier>testCreateView</identifier>
-  <Query>
-    <Criteria>
-      <ContentTypeIdentifierCriterion>folder</ContentTypeIdentifierCriterion>
-    </Criteria>
-    <limit>10</limit>
-    <offset>0</offset>
-  </Query>
-</ViewInput>
-XML;
-        $request = $this->createHttpRequest(
-            'POST',
-            '/api/ezp/v2/content/views',
-            'ViewInput+xml',
-            'View+json',
-            $body
-        );
-        $response = $this->sendHttpRequest($request);
-
-        // Returns 301 since 6.0 (deprecated in favour of /views)
-        self::assertHttpResponseCodeEquals($response, 301);
-        self::assertHttpResponseHasHeader($response, 'Location');
-    }
-
     /**
      * Covers DELETE /content/objects/<contentId>/versions/<versionNo>/translations/<languageCode>.
      *
