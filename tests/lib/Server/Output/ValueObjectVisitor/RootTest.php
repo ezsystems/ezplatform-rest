@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
+use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
 use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Server\Service\ExpressionRouterRootResourceBuilder;
@@ -38,7 +39,17 @@ class RootTest extends ValueObjectVisitorBaseTest
         $this->addRouteExpectation('ezpublish_rest_loadUsers', [], '/user/users');
         $this->addTemplatedRouteExpectation('ezpublish_rest_loadUsers', ['roleId' => '{roleId}'], '/user/users{?roleId}');
 
-        return new ExpressionRouterRootResourceBuilder($this->getRouterMock(), $this->getTemplatedRouterMock(), $resourceConfig);
+        $configResolver = $this->createMock(ConfigResolverInterface::class);
+        $configResolver
+            ->method('getParameter')
+            ->with('rest_root_resources')
+            ->willReturn($resourceConfig);
+
+        return new ExpressionRouterRootResourceBuilder(
+            $this->getRouterMock(),
+            $this->getTemplatedRouterMock(),
+            $configResolver
+        );
     }
 
     /**
