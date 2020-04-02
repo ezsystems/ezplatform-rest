@@ -83,20 +83,6 @@ class User extends RestController
      */
     protected $repository;
 
-    /**
-     * @var \Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface
-     *
-     * @deprecated This property is deprecated since 6.5, and will be removed in 7.0.
-     */
-    private $csrfTokenStorage;
-
-    /**
-     * @var \EzSystems\EzPlatformRest\Server\Controller\SessionController
-     *
-     * @deprecated This property is added for backward compatibility. It is deprecated, and will be removed in 7.0.
-     */
-    private $sessionController;
-
     /** @var \eZ\Publish\API\Repository\PermissionResolver */
     private $permissionResolver;
 
@@ -972,68 +958,6 @@ class User extends RestController
     }
 
     /**
-     * Creates a new session based on the credentials provided as POST parameters.
-     *
-     * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException If the login or password are incorrect or invalid CSRF
-     *
-     * @return Values\UserSession|Values\Conflict
-     *
-     * @deprecated Deprecated since 6.5. Use SessionController::refreshSessionAction().
-     */
-    public function createSession(Request $request)
-    {
-        @trigger_error(
-            E_USER_DEPRECATED,
-            'The session actions from the User controller are deprecated since 6.5. Use the SessionController instead.'
-        );
-
-        return $this->sessionController->createSessionAction($request);
-    }
-
-    /**
-     * Refresh given session.
-     *
-     * @param string $sessionId
-     *
-     * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException if the CSRF token is missing or invalid
-     *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserSession
-     *
-     * @deprecated Deprecated since 6.5. Use SessionController::refreshSessionAction().
-     */
-    public function refreshSession($sessionId, Request $request)
-    {
-        @trigger_error(
-            E_USER_DEPRECATED,
-            'The session actions from the User controller are deprecated since 6.5. Use the SessionController instead.'
-        );
-
-        return $this->sessionController->refreshSessionAction($sessionId, $request);
-    }
-
-    /**
-     * Deletes given session.
-     *
-     * @param string $sessionId
-     *
-     * @return Values\DeletedUserSession|\Symfony\Component\HttpFoundation\Response
-     *
-     * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException if the CSRF token is missing or invalid
-     * @throws RestNotFoundException
-     *
-     * @deprecated Deprecated since 6.5. Use SessionController::refreshSessionAction().
-     */
-    public function deleteSession($sessionId, Request $request)
-    {
-        @trigger_error(
-            E_USER_DEPRECATED,
-            'The session actions from the User controller are deprecated since 6.5. Use the SessionController instead.'
-        );
-
-        return $this->sessionController->deleteSessionAction($sessionId, $request);
-    }
-
-    /**
      * Extracts and returns an item id from a path, e.g. /1/2/58 => 58.
      *
      * @param string $path
@@ -1045,20 +969,5 @@ class User extends RestController
         $pathParts = explode('/', $path);
 
         return array_pop($pathParts);
-    }
-
-    public function setTokenStorage(TokenStorageInterface $csrfTokenStorage)
-    {
-        @trigger_error(
-            E_USER_DEPRECATED,
-            'setTokenStorage() is deprecated since 6.5 and will be removed in 7.0.'
-        );
-
-        $this->csrfTokenStorage = $csrfTokenStorage;
-    }
-
-    public function setSessionController(SessionController $sessionController)
-    {
-        $this->sessionController = $sessionController;
     }
 }
