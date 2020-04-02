@@ -29,20 +29,6 @@ abstract class Query extends CriterionParser
     {
         $query = $this->buildQuery();
 
-        // @deprecated Criteria
-        // -- FullTextCriterion
-        if (array_key_exists('Criteria', $data) && is_array($data['Criteria'])) {
-            $message = 'The Criteria element is deprecated since ezpublish-kernel 6.6, and will be removed in 8.0. Use Filter instead, or Query for criteria that should affect scoring.';
-            if (array_key_exists('Filter', $data) && is_array($data['Filter'])) {
-                $message .= ' The Criteria element will be merged into Filter.';
-                $data['Filter'] = array_merge($data['Filter'], $data['Criteria']);
-            } else {
-                $data['Filter'] = $data['Criteria'];
-            }
-
-            @trigger_error($message, E_USER_DEPRECATED);
-        }
-
         if (array_key_exists('Filter', $data) && is_array($data['Filter'])) {
             $query->filter = $this->processCriteriaArray($data['Filter'], $parsingDispatcher);
         }
