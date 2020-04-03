@@ -126,18 +126,6 @@ class CsrfListener implements EventSubscriberInterface
     }
 
     /**
-     * @param string $route
-     *
-     * @return bool
-     *
-     * @deprecated Deprecated since 6.5. Use isSessionRoute() instead.
-     */
-    protected function isLoginRequest($route)
-    {
-        return $route === 'ezpublish_rest_createSession';
-    }
-
-    /**
      * Tests if a given $route is a session management one.
      *
      * @param string $route

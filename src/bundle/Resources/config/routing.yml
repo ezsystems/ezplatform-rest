@@ -253,13 +253,6 @@ ezpublish_rest_binaryContent_getImageVariation:
 
 # Views
 
-# Deprecated in favour of /views from Platform 1.0
-ezpublish_rest_createContentView:
-    path: /content/views
-    defaults:
-        _controller: ezpublish_rest.controller.content:createView
-    methods: [POST]
-
 # Views, Platform 1.0
 ezpublish_rest_views_create:
     path: /views
