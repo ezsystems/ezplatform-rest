@@ -7,7 +7,6 @@
 namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
-use eZ\Publish\API\Repository\Values\User\Limitation;
 
 class RoleTest extends RESTFunctionalTestCase
 {
