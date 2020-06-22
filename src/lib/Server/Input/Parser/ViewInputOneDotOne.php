@@ -36,6 +36,10 @@ class ViewInputOneDotOne extends CriterionParser
         }
         $restViewInput->identifier = $data['identifier'];
 
+        // language params
+        $restViewInput->languageCode = $data['languageCode'] ?? null;
+        $restViewInput->useAlwaysAvailable = $data['useAlwaysAvailable'] ?? null;
+
         // query
         if (array_key_exists('ContentQuery', $data) && is_array($data['ContentQuery'])) {
             $queryData = $data['ContentQuery'];
