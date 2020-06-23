@@ -36,6 +36,10 @@ class ViewInput extends BaseParser
         }
         $restViewInput->identifier = $data['identifier'];
 
+        // language params
+        $restViewInput->languageCode = $data['languageCode'] ?? null;
+        $restViewInput->useAlwaysAvailable = $data['useAlwaysAvailable'] ?? null;
+
         // query
         if (!array_key_exists('Query', $data) || !is_array($data['Query'])) {
             throw new Exceptions\Parser('Missing <Query> attribute for <ViewInput>.');
