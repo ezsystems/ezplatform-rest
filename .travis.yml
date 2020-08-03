@@ -36,7 +36,7 @@ matrix:
       env: TEST_CONFIG="phpunit.xml"
     - name: "PHP 7.3 REST Integration Tests"
       php: 7.3
-      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" TEST_CMD="./bin/.travis/run_rest_tests.sh" APP_ENV=behat PHP_IMAGE=ezsystems/php:7.3-v1 APP_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
+      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" TEST_CMD="./bin/.travis/run_rest_tests.sh" APP_ENV=behat PHP_IMAGE=ezsystems/php:7.3-v1-node PHP_IMAGE_DEV=ezsystems/php:7.3-v1-dev APP_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
     - name: "Code Style Check"
       php: 7.3
       env: CHECK_CS=1
