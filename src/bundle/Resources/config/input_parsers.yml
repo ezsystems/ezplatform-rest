@@ -10,6 +10,7 @@ parameters:
     ezpublish_rest.input.parser.ContentTypeUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeUpdate
     ezpublish_rest.input.parser.FieldDefinitionCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate
     ezpublish_rest.input.parser.FieldDefinitionUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate
+    ezpublish_rest.input.parser.JWTTokenInput.class: EzSystems\EzPlatformRest\Server\Input\Parser\JWTTokenInput
     ezpublish_rest.input.parser.LocationCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate
     ezpublish_rest.input.parser.LocationUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate
     ezpublish_rest.input.parser.ObjectStateCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateCreate
@@ -158,6 +159,12 @@ services:
             - "@ezpublish_rest.parser_tools"
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.FieldDefinitionUpdate }
+
+    ezpublish_rest.input.parser.JWTTokenInput:
+        parent: ezpublish_rest.input.parser
+        class: "%ezpublish_rest.input.parser.JWTTokenInput.class%"
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.JWTTokenInput }
 
     ezpublish_rest.input.parser.LocationCreate:
         parent: ezpublish_rest.input.parser

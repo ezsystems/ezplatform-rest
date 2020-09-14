@@ -84,3 +84,6 @@ parameters:
         refreshSession:
             mediaType: 'UserSession'
             href: 'templateRouter.generate("ezpublish_rest_refreshSession", {sessionId: "{sessionId}"})'
+        createToken:
+            mediaType: 'JWTToken'
+            href: 'router.generate("ezpublish_rest_createToken")'

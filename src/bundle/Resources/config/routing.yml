@@ -1132,6 +1132,11 @@ ezpublish_rest_refreshSession:
         _controller: ezpublish_rest.controller.session:refreshSessionAction
     methods: [POST]
 
+ezpublish_rest_createToken:
+    path: /user/jwttoken
+    defaults:
+        _controller: ezpublish_rest.controller.jwt:createToken
+    methods: [POST]
 
 # URL aliases
 
