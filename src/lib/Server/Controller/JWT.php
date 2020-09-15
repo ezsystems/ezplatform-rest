@@ -8,6 +8,7 @@ namespace EzSystems\EzPlatformRest\Server\Controller;
 
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\UserService;
+use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use eZ\Publish\Core\MVC\Symfony\Security\User;
 use EzSystems\EzPlatformRest\Message;
 use EzSystems\EzPlatformRest\Server\Controller as RestController;
@@ -50,8 +51,8 @@ class JWT extends RestController
             $token = $this->tokenManager->create(new User($user, ['ROLE_USER']));
 
             return new Values\JWTToken($token);
-        } catch (NotFoundException $e) {
-        } catch (BadCredentialsException $e) {
+        } catch (NotFoundException | BadCredentialsException $e) {
+            throw new UnauthorizedException('Invalid username or password', $request->getPathInfo());
         }
     }
 }
