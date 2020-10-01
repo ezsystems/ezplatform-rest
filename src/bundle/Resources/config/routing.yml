@@ -1133,7 +1133,7 @@ ezpublish_rest_refreshSession:
     methods: [POST]
 
 ezpublish_rest_createToken:
-    path: /user/jwttoken
+    path: /user/token/jwt
     defaults:
         _controller: ezpublish_rest.controller.jwt:createToken
     methods: [POST]

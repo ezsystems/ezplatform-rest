@@ -8,7 +8,7 @@ namespace EzSystems\EzPlatformRest\Server\Values;
 
 use EzSystems\EzPlatformRest\Value as RestValue;
 
-class JWTTokenInput extends RestValue
+class JWTInput extends RestValue
 {
     /** @var string */
     public $username;

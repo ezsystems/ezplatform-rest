@@ -33,9 +33,9 @@ class JWT extends RestController
         $this->tokenManager = $tokenManager;
     }
 
-    public function createToken(Request $request): Values\JWTToken
+    public function createToken(Request $request): Values\JWT
     {
-        /** @var \EzSystems\EzPlatformRest\Server\Values\JWTTokenInput $jwtTokenInput */
+        /** @var \EzSystems\EzPlatformRest\Server\Values\JWTInput $jwtTokenInput */
         $jwtTokenInput = $this->inputDispatcher->parse(
             new Message(
                 ['Content-Type' => $request->headers->get('Content-Type')],
@@ -50,7 +50,7 @@ class JWT extends RestController
             }
             $token = $this->tokenManager->create(new User($user, ['ROLE_USER']));
 
-            return new Values\JWTToken($token);
+            return new Values\JWT($token);
         } catch (NotFoundException | BadCredentialsException $e) {
             throw new UnauthorizedException('Invalid username or password', $request->getPathInfo());
         }

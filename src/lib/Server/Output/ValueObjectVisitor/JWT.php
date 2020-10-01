@@ -10,16 +10,16 @@ use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Visitor;
 
-class JWTToken extends ValueObjectVisitor
+class JWT extends ValueObjectVisitor
 {
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
         $visitor->setStatus(200);
-        $visitor->setHeader('Content-Type', $generator->getMediaType('JWTToken'));
+        $visitor->setHeader('Content-Type', $generator->getMediaType('JWT'));
 
-        $generator->startObjectElement('JWTToken');
+        $generator->startObjectElement('JWT');
         $generator->startAttribute('token', $data->token);
         $generator->endAttribute('token');
-        $generator->endObjectElement('JWTToken');
+        $generator->endObjectElement('JWT');
     }
 }

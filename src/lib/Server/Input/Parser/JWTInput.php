@@ -9,11 +9,11 @@ namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 use EzSystems\EzPlatformRest\Input\BaseParser;
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Values\JWTTokenInput as JWTTokenInputValue;
+use EzSystems\EzPlatformRest\Server\Values\JWTInput as JWTInputValue;
 
-class JWTTokenInput extends BaseParser
+class JWTInput extends BaseParser
 {
-    public function parse(array $data, ParsingDispatcher $parsingDispatcher): JWTTokenInputValue
+    public function parse(array $data, ParsingDispatcher $parsingDispatcher): JWTInputValue
     {
         if (!\array_key_exists('username', $data)) {
             throw new Exceptions\Parser("Missing 'username' attribute for JWTTokenInput.");
@@ -23,6 +23,6 @@ class JWTTokenInput extends BaseParser
             throw new Exceptions\Parser("Missing 'password' attribute for JWTTokenInput.");
         }
 
-        return new JWTTokenInputValue($data['username'], $data['password']);
+        return new JWTInputValue($data['username'], $data['password']);
     }
 }

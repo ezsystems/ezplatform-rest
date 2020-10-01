@@ -10,7 +10,7 @@ namespace EzSystems\EzPlatformRest\Server\Values;
 
 use EzSystems\EzPlatformRest\Value as RestValue;
 
-class JWTToken extends RestValue
+class JWT extends RestValue
 {
     /** @var string */
     public $token;
