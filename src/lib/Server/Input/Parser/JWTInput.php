@@ -16,11 +16,11 @@ class JWTInput extends BaseParser
     public function parse(array $data, ParsingDispatcher $parsingDispatcher): JWTInputValue
     {
         if (!\array_key_exists('username', $data)) {
-            throw new Exceptions\Parser("Missing 'username' attribute for JWTTokenInput.");
+            throw new Exceptions\Parser("Missing 'username' attribute for JWTInput.");
         }
 
         if (!array_key_exists('password', $data)) {
-            throw new Exceptions\Parser("Missing 'password' attribute for JWTTokenInput.");
+            throw new Exceptions\Parser("Missing 'password' attribute for JWTInput.");
         }
 
         return new JWTInputValue($data['username'], $data['password']);
