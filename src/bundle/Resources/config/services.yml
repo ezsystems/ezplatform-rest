@@ -11,7 +11,6 @@ parameters:
     ezpublish_rest.controller.binary_content.class: EzSystems\EzPlatformRest\Server\Controller\BinaryContent
     ezpublish_rest.controller.content.class: EzSystems\EzPlatformRest\Server\Controller\Content
     ezpublish_rest.controller.content_type.class: EzSystems\EzPlatformRest\Server\Controller\ContentType
-    ezpublish_rest.controller.jwt.class: EzSystems\EzPlatformRest\Server\Controller\JWT
     ezpublish_rest.controller.location.class: EzSystems\EzPlatformRest\Server\Controller\Location
     ezpublish_rest.controller.object_state.class: EzSystems\EzPlatformRest\Server\Controller\ObjectState
     ezpublish_rest.controller.role.class: EzSystems\EzPlatformRest\Server\Controller\Role

@@ -53,7 +53,6 @@ parameters:
     ezpublish_rest.output.value_object_visitor.RestUser.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUser
     ezpublish_rest.output.value_object_visitor.UserSession.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserSession
     ezpublish_rest.output.value_object_visitor.UserSessionDeleted.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\DeletedUserSession
-    ezpublish_rest.output.value_object_visitor.JWT.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\JWT
 
     # ContentType
     ezpublish_rest.output.value_object_visitor.RestContentType.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestContentType
@@ -386,7 +385,7 @@ services:
 
     ezpublish_rest.output.value_object_visitior.JWT:
         parent: ezpublish_rest.output.value_object_visitor.base
-        class: "%ezpublish_rest.output.value_object_visitor.JWT.class%"
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\JWT
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\JWT }
 

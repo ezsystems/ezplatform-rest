@@ -4,6 +4,8 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
+declare(strict_types=1);
+
 namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\JWT;
@@ -12,7 +14,7 @@ use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
 
 class JWTTest extends ValueObjectVisitorBaseTest
 {
-    public function testVisit()
+    public function testVisit(): string
     {
         $visitor = $this->getVisitor();
         $generator = $this->getGenerator();
@@ -74,7 +76,7 @@ class JWTTest extends ValueObjectVisitorBaseTest
         );
     }
 
-    protected function internalGetVisitor()
+    protected function internalGetVisitor(): JWT
     {
         return new JWT();
     }
