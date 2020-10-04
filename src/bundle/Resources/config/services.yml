@@ -257,8 +257,7 @@ services:
             - '@ezpublish.api.service.location'
         tags: [controller.service_arguments]
 
-    ezpublish_rest.controller.jwt:
-        class: EzSystems\EzPlatformRest\Server\Controller\JWT
+    EzSystems\EzPlatformRest\Server\Controller\JWT:
         parent: ezpublish_rest.controller.base
         arguments:
             - '@ezpublish.api.service.user'

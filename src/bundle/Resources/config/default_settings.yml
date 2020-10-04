@@ -86,4 +86,4 @@ parameters:
             href: 'templateRouter.generate("ezpublish_rest_refreshSession", {sessionId: "{sessionId}"})'
         createToken:
             mediaType: 'JWT'
-            href: 'router.generate("ezpublish_rest_createToken")'
+            href: 'router.generate("ibexa.platform.rest.createToken")'

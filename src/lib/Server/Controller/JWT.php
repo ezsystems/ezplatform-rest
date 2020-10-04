@@ -19,7 +19,10 @@ use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 
-final class JWT extends RestController
+/**
+ * @internal
+ */
+class JWT extends RestController
 {
     /** @var \eZ\Publish\API\Repository\UserService */
     private $userService;

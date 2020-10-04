@@ -12,7 +12,7 @@ use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Visitor;
 
-class JWT extends ValueObjectVisitor
+final class JWT extends ValueObjectVisitor
 {
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {
