@@ -21,7 +21,7 @@ final class JWTInput extends BaseParser
             throw new Exceptions\Parser("Missing 'username' attribute for JWTInput.");
         }
 
-        if (!array_key_exists('password', $data)) {
+        if (!\array_key_exists('password', $data)) {
             throw new Exceptions\Parser("Missing 'password' attribute for JWTInput.");
         }
 
