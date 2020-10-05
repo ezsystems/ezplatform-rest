@@ -22,7 +22,7 @@ use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 /**
  * @internal
  */
-class JWT extends RestController
+final class JWT extends RestController
 {
     /** @var \eZ\Publish\API\Repository\UserService */
     private $userService;
