@@ -383,6 +383,11 @@ services:
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\DeletedUserSession }
 
+    EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\JWT:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\JWT }
+
     # ContentType
     ezpublish_rest.output.value_object_visitor.RestContentType:
         parent: ezpublish_rest.output.value_object_visitor.base

@@ -159,6 +159,11 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.FieldDefinitionUpdate }
 
+    EzSystems\EzPlatformRest\Server\Input\Parser\JWTInput:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.JWTInput }
+
     ezpublish_rest.input.parser.LocationCreate:
         parent: ezpublish_rest.input.parser
         class: "%ezpublish_rest.input.parser.LocationCreate.class%"

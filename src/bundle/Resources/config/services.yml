@@ -257,6 +257,13 @@ services:
             - '@ezpublish.api.service.location'
         tags: [controller.service_arguments]
 
+    EzSystems\EzPlatformRest\Server\Controller\JWT:
+        parent: ezpublish_rest.controller.base
+        arguments:
+            - '@ezpublish.api.service.user'
+            - '@Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface'
+        tags: [controller.service_arguments]
+
     ezpublish_rest.request_listener:
         class: "%ezpublish_rest.request_listener.class%"
         tags:

@@ -1209,3 +1209,10 @@ ezpublish_rest_loadBookmarks:
     defaults:
         _controller: ezpublish_rest.controller.bookmark:loadBookmarks
     methods: [GET]
+
+# JWT
+
+ibexa.platform.rest.create_token:
+    path: /user/token/jwt
+    controller: EzSystems\EzPlatformRest\Server\Controller\JWT::createToken
+    methods: [POST]

@@ -28,3 +28,9 @@ services:
             - '@?security.csrf.token_generator'
             - '@?security.csrf.token_storage'
             - '@?request_stack'
+
+    EzSystems\EzPlatformRest\Server\Security\EventListener\SecurityListener:
+        arguments:
+            - '@eZ\Publish\API\Repository\PermissionResolver'
+        tags:
+            - { name: kernel.event_subscriber }
