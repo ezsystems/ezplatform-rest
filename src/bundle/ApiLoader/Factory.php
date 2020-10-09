@@ -72,4 +72,18 @@ class Factory
             $variationsIdentifiers
         );
     }
+
+    public function getImageAssetFieldTypeProcessor(
+        RouterInterface $router
+    ): FieldTypeProcessor\ImageAssetFieldTypeProcessor {
+        $variationsIdentifiers = array_keys($this->configResolver->getParameter('image_variations'));
+        sort($variationsIdentifiers);
+
+        return new FieldTypeProcessor\ImageAssetFieldTypeProcessor(
+            $router,
+            $this->repository->getContentService(),
+            $this->configResolver->getParameter('fieldtypes.ezimageasset.mappings'),
+            $variationsIdentifiers
+        );
+    }
 }
