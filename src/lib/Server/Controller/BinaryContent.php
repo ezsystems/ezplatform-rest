@@ -56,7 +56,7 @@ class BinaryContent extends RestController
         $fieldFound = false;
         /** @var $field \eZ\Publish\API\Repository\Values\Content\Field */
         foreach ($content->getFields() as $field) {
-            if ($field->id == $fieldId) {
+            if ($field->id === $fieldId) {
                 $fieldFound = true;
                 break;
             }
@@ -109,6 +109,7 @@ class BinaryContent extends RestController
     private function parseImageId($imageId)
     {
         $idArray = explode('-', $imageId);
+        $idArray = array_map('intval', $idArray);
 
         if (\count($idArray) == 2) {
             return array_merge($idArray, [null]);
