@@ -6,30 +6,32 @@
  */
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
+use eZ\Publish\API\Repository\Exceptions\InvalidVariationException;
+use eZ\Publish\Core\FieldType\Image\Value as ImageValue;
+use eZ\Publish\Core\FieldType\ImageAsset\Value as ImageAssetValue;
+use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use eZ\Publish\SPI\Variation\VariationHandler;
 use EzSystems\EzPlatformRest\Exceptions;
 use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use EzSystems\EzPlatformRest\Server\Values\CachedValue;
-use eZ\Publish\SPI\Variation\VariationHandler;
-use eZ\Publish\API\Repository\Exceptions\InvalidVariationException;
 
 /**
  * Binary content controller.
  */
 class BinaryContent extends RestController
 {
-    /**
-     * @var \eZ\Publish\SPI\Variation\VariationHandler
-     */
+    /** @var \eZ\Publish\SPI\Variation\VariationHandler */
     protected $imageVariationHandler;
 
-    /**
-     * Construct controller.
-     *
-     * @param \eZ\Publish\SPI\Variation\VariationHandler $imageVariationHandler
-     */
-    public function __construct(VariationHandler $imageVariationHandler)
-    {
+    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    private $configResolver;
+
+    public function __construct(
+        VariationHandler $imageVariationHandler,
+        ConfigResolverInterface $configResolver
+    ) {
         $this->imageVariationHandler = $imageVariationHandler;
+        $this->configResolver = $configResolver;
     }
 
     /**
@@ -54,7 +56,7 @@ class BinaryContent extends RestController
         $fieldFound = false;
         /** @var $field \eZ\Publish\API\Repository\Values\Content\Field */
         foreach ($content->getFields() as $field) {
-            if ($field->id == $fieldId) {
+            if ($field->id === $fieldId) {
                 $fieldFound = true;
                 break;
             }
@@ -64,9 +66,18 @@ class BinaryContent extends RestController
             throw new Exceptions\NotFoundException("No image Field with ID $fieldId found");
         }
 
-        // check the field's value
-        if ($field->value->uri === null) {
-            throw new Exceptions\NotFoundException("Image file {$field->value->id} doesn't exist");
+        $value = $field->value;
+
+        if ($value instanceof ImageValue && $value->uri === null) {
+            throw new Exceptions\NotFoundException("Image file {$value->id} doesn't exist");
+        }
+        if ($value instanceof ImageAssetValue) {
+            if ($value->destinationContentId === null) {
+                throw new Exceptions\NotFoundException("There is no image connected with field {$fieldId}");
+            }
+            $content = $this->repository->getContentService()->loadContent((int) $value->destinationContentId);
+            $mappings = $this->configResolver->getParameter('fieldtypes.ezimageasset.mappings');
+            $field = $content->getField($mappings['content_field_identifier']);
         }
 
         try {
@@ -98,10 +109,11 @@ class BinaryContent extends RestController
     private function parseImageId($imageId)
     {
         $idArray = explode('-', $imageId);
+        $idArray = array_map('intval', $idArray);
 
-        if (count($idArray) == 2) {
+        if (\count($idArray) == 2) {
             return array_merge($idArray, [null]);
-        } elseif (count($idArray) == 3) {
+        } elseif (\count($idArray) == 3) {
             return $idArray;
         }
 

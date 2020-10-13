@@ -153,6 +153,7 @@ services:
         parent: ezpublish_rest.controller.base
         arguments:
             - "@ezpublish.fieldType.ezimage.variation_service"
+            - '@ezpublish.config.resolver'
         tags: [controller.service_arguments]
 
     ezpublish_rest.controller.content:
@@ -307,6 +308,13 @@ services:
             - "@router"
         tags:
             - { name: ezpublish_rest.field_type_processor, alias: ezimage }
+
+    EzSystems\EzPlatformRest\FieldTypeProcessor\ImageAssetFieldTypeProcessor:
+        factory: ["@ezpublish_rest.factory", getImageAssetFieldTypeProcessor]
+        arguments:
+            - "@router"
+        tags:
+            - { name: ezpublish_rest.field_type_processor, alias: ezimageasset }
 
     ezpublish_rest.field_type_processor.ezdatetime:
         class: "%ezpublish_rest.field_type_processor.ezdatetime.class%"
