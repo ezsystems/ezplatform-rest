@@ -63,6 +63,19 @@ abstract class Query extends CriterionParser
             $query->facetBuilders = $facetBuilders;
         }
 
+        if (array_key_exists('Aggregations', $data)) {
+            foreach ($data['Aggregations'] as $aggregation) {
+                $aggregationName = array_key_first($aggregation);
+                $aggregationData = $aggregation[$aggregationName];
+
+                $query->aggregations[] = $this->dispatchAggregation(
+                    $aggregationName,
+                    $aggregationData,
+                    $parsingDispatcher
+                );
+            }
+        }
+
         return $query;
     }
 

@@ -720,6 +720,143 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.facetbuilder.User }
 
+    # aggregation parsers
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\DateTimeRangeParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.range.DateTimeRange }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\FloatRangeParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation..range.FloatRange }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\IntRangeParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.range.IntRange }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\ContentTypeGroupTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.ContentTypeGroupTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\ContentTypeTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.ContentTypeTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\DateMetadataRangeAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.DateMetadataRangeAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\AuthorTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.AuthorTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\CheckboxTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.CheckboxTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\CountryTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.CountryTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\DateRangeAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.DateRangeAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\DateTimeRangeAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.DateTimeRangeAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\FloatRangeAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.FloatRangeAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\FloatStatsAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.FloatStatsAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\IntegerRangeAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.IntegerRangeAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\IntegerStatsAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.IntegerStatsAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\KeywordTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.KeywordTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\SelectionTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.SelectionTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\TimeRangeAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.TimeRangeAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\LanguageTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.LanguageTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\ObjectStateTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.ObjectStateTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawRangeAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.RawRangeAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawStatsAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.RawStatsAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.RawTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\SectionTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.SectionTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Location\SubtreeTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.SubtreeTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\UserMetadataTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.UserMetadataTermAggregation }
+
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\VisibilityTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.VisibilityTermAggregation }
+
     # role limitation parsers
 
     ezpublish_rest.input.parser.internal.limitation.Subtree:

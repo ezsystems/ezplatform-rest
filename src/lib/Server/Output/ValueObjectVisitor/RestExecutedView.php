@@ -147,6 +147,14 @@ class RestExecutedView extends ValueObjectVisitor
         $generator->endHashElement('searchHits');
         // END searchHits
 
+        // BEGIN aggregations
+        $generator->startList('aggregations');
+        foreach ($data->searchResults->aggregations as $aggregationResult) {
+            $visitor->visitValueObject($aggregationResult);
+        }
+        $generator->endList('aggregations');
+        // END aggregations
+
         $generator->endObjectElement('Result');
         // END Result
 

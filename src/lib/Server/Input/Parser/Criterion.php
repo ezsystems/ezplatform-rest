@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 
+use eZ\Publish\API\Repository\Values\Content\Query\Aggregation;
 use EzSystems\EzPlatformRest\Input\BaseParser;
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use EzSystems\EzPlatformRest\Exceptions;
@@ -68,6 +69,24 @@ abstract class Criterion extends BaseParser
     }
 
     /**
+     * Dispatches parsing of a aggregation name + data to its own parser.
+     *
+     * @return \eZ\Publish\API\Repository\Values\Content\Query\Aggregation
+     */
+    public function dispatchAggregation(
+        string $aggregationName,
+        array $aggregationData,
+        ParsingDispatcher $parsingDispatcher
+    ): Aggregation {
+        return $parsingDispatcher->parse(
+            [
+                $aggregationName => $aggregationData,
+            ],
+            $this->getAggregationMediaType($aggregationName)
+        );
+    }
+
+    /**
      * Dispatches parsing of a sort clause name + direction to its own parser.
      *
      * @param string $sortClauseName
@@ -103,5 +122,10 @@ abstract class Criterion extends BaseParser
     protected function getFacetBuilderMediaType($facetBuilderName)
     {
         return 'application/vnd.ez.api.internal.facetbuilder.' . $facetBuilderName;
+    }
+
+    protected function getAggregationMediaType(string $aggregationName): string
+    {
+        return 'application/vnd.ez.api.internal.aggregation.' . $aggregationName;
     }
 }

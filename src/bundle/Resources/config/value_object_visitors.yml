@@ -199,6 +199,13 @@ services:
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: Exception }
 
+    # Language
+    ezpublish_rest.output.value_object_visitor.Language:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Language
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Language }
+
     # Section
     ezpublish_rest.output.value_object_visitor.SectionList:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -263,6 +270,12 @@ services:
             - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedURLAlias }
 
     # Content
+    ezpublish_rest.output.value_object_visitor.Author:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Author
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\FieldType\Author\Author }
+
     ezpublish_rest.output.value_object_visitor.ContentList:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentList.class%"
@@ -322,6 +335,14 @@ services:
             - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\VersionTranslationInfo }
 
     # UserGroup
+    ezpublish_rest.output.value_object_visitor.UserGroup:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserGroup
+        arguments:
+            $contentService: '@ezpublish.api.service.content'
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\UserGroup }
+
     ezpublish_rest.output.value_object_visitor.RestUserGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestUserGroup.class%"
@@ -365,6 +386,14 @@ services:
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\CreatedUser }
 
+    ezpublish_rest.output.value_object_visitor.User:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\User
+        arguments:
+            $contentService: '@ezpublish.api.service.content'
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\User }
+
     ezpublish_rest.output.value_object_visitor.RestUser:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestUser.class%"
@@ -389,6 +418,12 @@ services:
             - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\JWT }
 
     # ContentType
+    ezpublish_rest.output.value_object_visitor.ContentType:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentType
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\ContentType\ContentType }
+
     ezpublish_rest.output.value_object_visitor.RestContentType:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.RestContentType.class%"
@@ -586,7 +621,39 @@ services:
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\RestExecutedView }
 
+    # Aggregations
+
+    ezpublish_rest.output.value_object_visitor.Range:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Range
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range }
+
+    ezpublish_rest.output.value_object_visitor.RangeAggregationResult:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RangeAggregationResult
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\RangeAggregationResult }
+
+    ezpublish_rest.output.value_object_visitor.StatsAggregationResult:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\StatsAggregationResult
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\StatsAggregationResult }
+
+    ezpublish_rest.output.value_object_visitor.TermAggregationResult:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\TermAggregationResult
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\TermAggregationResult }
+
     # Object state
+    ezpublish_rest.output.value_object_visitor.ObjectState:
+        parent: ezpublish_rest.output.value_object_visitor.base
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ObjectState
+        tags:
+            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\ObjectState\ObjectState }
+
     ezpublish_rest.output.value_object_visitor.ObjectStateGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ObjectStateGroup.class%"
