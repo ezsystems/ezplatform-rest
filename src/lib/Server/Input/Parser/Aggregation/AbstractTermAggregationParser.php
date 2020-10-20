@@ -34,7 +34,7 @@ abstract class AbstractTermAggregationParser extends BaseParser
         }
 
         if (array_key_exists('minCount', $aggregationData)) {
-            $aggregation->setLimit((int)$aggregationData['minCount']);
+            $aggregation->setMinCount((int)$aggregationData['minCount']);
         }
 
         return $aggregation;
