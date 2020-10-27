@@ -74,12 +74,10 @@ class LocationUpdateTest extends BaseTest
     }
 
     /**
-     * Test LocationUpdate parser throwing exception on missing sort field.
+     * Test LocationUpdate parser with missing sort field.
      */
-    public function testParseExceptionOnMissingSortField()
+    public function testParseWithMissingSortField()
     {
-        $this->expectException('EzSystems\EzPlatformRest\Exceptions\Parser');
-        $this->expectExceptionMessage('Missing \'sortField\' element for LocationUpdate.');
         $inputArray = [
             'priority' => 0,
             'remoteId' => 'remote-id',
@@ -87,16 +85,28 @@ class LocationUpdateTest extends BaseTest
         ];
 
         $locationUpdate = $this->getParser();
-        $locationUpdate->parse($inputArray, $this->getParsingDispatcherMock());
+        $result = $locationUpdate->parse($inputArray, $this->getParsingDispatcherMock());
+
+        $this->assertInstanceOf(
+            RestLocationUpdateStruct::class,
+            $result
+        );
+
+        $this->assertInstanceOf(
+            LocationUpdateStruct::class,
+            $result->locationUpdateStruct
+        );
+
+        $this->assertNull(
+            $result->locationUpdateStruct->sortField
+        );
     }
 
     /**
-     * Test LocationUpdate parser throwing exception on missing sort order.
+     * Test LocationUpdate parser with missing sort order.
      */
-    public function testParseExceptionOnMissingSortOrder()
+    public function testParseWithMissingSortOrder()
     {
-        $this->expectException(Parser::class);
-        $this->expectExceptionMessage('Missing \'sortOrder\' element for LocationUpdate.');
         $inputArray = [
             'priority' => 0,
             'remoteId' => 'remote-id',
@@ -104,7 +114,21 @@ class LocationUpdateTest extends BaseTest
         ];
 
         $locationUpdate = $this->getParser();
-        $locationUpdate->parse($inputArray, $this->getParsingDispatcherMock());
+        $result = $locationUpdate->parse($inputArray, $this->getParsingDispatcherMock());
+
+        $this->assertInstanceOf(
+            RestLocationUpdateStruct::class,
+            $result
+        );
+
+        $this->assertInstanceOf(
+            LocationUpdateStruct::class,
+            $result->locationUpdateStruct
+        );
+
+        $this->assertNull(
+            $result->locationUpdateStruct->sortOrder
+        );
     }
 
     /**
