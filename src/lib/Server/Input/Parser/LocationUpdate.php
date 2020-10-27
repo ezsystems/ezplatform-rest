@@ -9,7 +9,6 @@ namespace EzSystems\EzPlatformRest\Server\Input\Parser;
 use EzSystems\EzPlatformRest\Input\BaseParser;
 use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
 use EzSystems\EzPlatformRest\Input\ParserTools;
-use EzSystems\EzPlatformRest\Exceptions;
 use eZ\Publish\API\Repository\LocationService;
 use EzSystems\EzPlatformRest\Server\Values\RestLocationUpdateStruct;
 
@@ -69,17 +68,13 @@ class LocationUpdate extends BaseParser
             $hidden = $this->parserTools->parseBooleanValue($data['hidden']);
         }
 
-        if (!array_key_exists('sortField', $data)) {
-            throw new Exceptions\Parser("Missing 'sortField' element for LocationUpdate.");
+        if (array_key_exists('sortField', $data)) {
+            $locationUpdateStruct->sortField = $this->parserTools->parseDefaultSortField($data['sortField']);
         }
 
-        $locationUpdateStruct->sortField = $this->parserTools->parseDefaultSortField($data['sortField']);
-
-        if (!array_key_exists('sortOrder', $data)) {
-            throw new Exceptions\Parser("Missing 'sortOrder' element for LocationUpdate.");
+        if (array_key_exists('sortOrder', $data)) {
+            $locationUpdateStruct->sortOrder = $this->parserTools->parseDefaultSortOrder($data['sortOrder']);
         }
-
-        $locationUpdateStruct->sortOrder = $this->parserTools->parseDefaultSortOrder($data['sortOrder']);
 
         return new RestLocationUpdateStruct($locationUpdateStruct, $hidden);
     }
