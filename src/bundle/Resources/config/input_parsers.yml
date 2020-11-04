@@ -660,6 +660,15 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.SectionName }
 
+    ezpublish_rest.input.parser.internal.sortclause.score:
+        parent: ezpublish_rest.input.parser
+        class: 'EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass'
+        arguments:
+            - 'Score'
+            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Score'
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.Score }
+
     ezpublish_rest.input.parser.internal.sortclause.Field:
         parent: ezpublish_rest.input.parser
         class: '%ezpublish_rest.input.parser.internal.sortclause.field.class%'
