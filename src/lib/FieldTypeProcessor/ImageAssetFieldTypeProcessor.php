@@ -9,6 +9,7 @@ declare(strict_types=1);
 namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
 
 use eZ\Publish\API\Repository\ContentService;
+use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use EzSystems\EzPlatformRest\FieldTypeProcessor;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -48,7 +49,11 @@ class ImageAssetFieldTypeProcessor extends FieldTypeProcessor
             return $outgoingValueHash;
         }
 
-        $imageContent = $this->contentService->loadContent((int) $outgoingValueHash['destinationContentId']);
+        try {
+            $imageContent = $this->contentService->loadContent((int) $outgoingValueHash['destinationContentId']);
+        } catch (NotFoundException $e) {
+            return $outgoingValueHash;
+        }
 
         $field = $imageContent->getField($this->configMappings['content_field_identifier']);
 
