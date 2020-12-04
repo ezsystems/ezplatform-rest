@@ -24,7 +24,7 @@ use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 
 class SessionController extends Controller
 {
-    /** @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface */
+    /** @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
     private $authenticator;
 
     /** @var \EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager */
@@ -43,10 +43,10 @@ class SessionController extends Controller
     private $csrfTokenStorage;
 
     public function __construct(
-        AuthenticatorInterface $authenticator,
         $tokenIntention,
         PermissionResolver $permissionResolver,
         UserService $userService,
+        ?AuthenticatorInterface $authenticator = null,
         CsrfTokenManager $csrfTokenManager = null,
         TokenStorageInterface $csrfTokenStorage = null
     ) {
@@ -83,7 +83,7 @@ class SessionController extends Controller
                 $this->checkCsrfToken($request);
             }
 
-            $token = $this->authenticator->authenticate($request);
+            $token = $this->getAuthenticator()->authenticate($request);
             $csrfToken = $this->getCsrfToken();
 
             return new Values\UserSession(
@@ -97,10 +97,10 @@ class SessionController extends Controller
             // Already logged in with another user, this will be converted to HTTP status 409
             return new Values\Conflict();
         } catch (AuthenticationException $e) {
-            $this->authenticator->logout($request);
+            $this->getAuthenticator()->logout($request);
             throw new UnauthorizedException('Invalid login or password', $request->getPathInfo());
         } catch (AccessDeniedException $e) {
-            $this->authenticator->logout($request);
+            $this->getAuthenticator()->logout($request);
             throw new UnauthorizedException($e->getMessage(), $request->getPathInfo());
         }
     }
@@ -119,7 +119,7 @@ class SessionController extends Controller
         $session = $request->getSession();
 
         if ($session === null || !$session->isStarted() || $session->getId() != $sessionId || !$this->hasStoredCsrfToken()) {
-            $response = $this->authenticator->logout($request);
+            $response = $this->getAuthenticator()->logout($request);
             $response->setStatusCode(404);
 
             return $response;
@@ -153,7 +153,7 @@ class SessionController extends Controller
         /** @var $session \Symfony\Component\HttpFoundation\Session\Session */
         $session = $request->getSession();
         if (!$session->isStarted() || $session->getId() != $sessionId || !$this->hasStoredCsrfToken()) {
-            $response = $this->authenticator->logout($request);
+            $response = $this->getAuthenticator()->logout($request);
             $response->setStatusCode(404);
 
             return $response;
@@ -161,7 +161,7 @@ class SessionController extends Controller
 
         $this->checkCsrfToken($request);
 
-        return new Values\DeletedUserSession($this->authenticator->logout($request));
+        return new Values\DeletedUserSession($this->getAuthenticator()->logout($request));
     }
 
     /**
@@ -222,5 +222,19 @@ class SessionController extends Controller
         }
 
         return $this->csrfTokenManager->getToken($this->csrfTokenIntention)->getValue();
+    }
+
+    private function getAuthenticator(): ?AuthenticatorInterface
+    {
+        if (null === $this->authenticator) {
+            throw new \RuntimeException(
+                sprintf(
+                    "No %s instance injected. Ensure 'ezpublish_rest_session' is configured under your firewall",
+                    AuthenticatorInterface::class
+                )
+            );
+        }
+
+        return $this->authenticator;
     }
 }
