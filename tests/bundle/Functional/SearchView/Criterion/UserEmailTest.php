@@ -17,13 +17,13 @@ final class UserEmailTest extends SearchCriterionTestCase
         return [
             'exact match' => [
                 'json',
-                $this->buildJsonCriterionQuery('"UserEmailCriterion": "nospam@ez.no"'),
-                2,
+                $this->buildJsonCriterionQuery('"UserEmailCriterion": "admin@link.invalid"'),
+                1,
             ],
             'pattern match' => [
                 'json',
-                $this->buildJsonCriterionQuery('"UserEmailCriterion": "nospam@*"'),
-                2,
+                $this->buildJsonCriterionQuery('"UserEmailCriterion": "admin@*"'),
+                1,
             ],
         ];
     }
