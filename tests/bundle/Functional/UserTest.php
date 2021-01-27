@@ -475,7 +475,7 @@ XML;
     public function testFilterUsersByEmailQueryParameter()
     {
         $response = $this->sendHttpRequest(
-            $this->createHttpRequest('GET', '/api/ezp/v2/user/users?email=nospam@ez.no')
+            $this->createHttpRequest('GET', '/api/ezp/v2/user/users?email=admin@link.invalid')
         );
 
         self::assertHttpResponseCodeEquals($response, 200);
@@ -490,7 +490,7 @@ XML;
     public function testIfEmailIsUsedByAnotherUser()
     {
         $response = $this->sendHttpRequest(
-            $this->createHttpRequest('HEAD', '/api/ezp/v2/user/users?email=nospam@ez.no')
+            $this->createHttpRequest('HEAD', '/api/ezp/v2/user/users?email=admin@link.invalid')
         );
 
         self::assertHttpResponseCodeEquals($response, 200);
