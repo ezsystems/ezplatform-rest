@@ -39,7 +39,7 @@ class UserUpdateTest extends BaseTest
                     ],
                 ],
             ],
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
@@ -85,7 +85,7 @@ class UserUpdateTest extends BaseTest
         );
 
         $this->assertEquals(
-            'nospam@ez.no',
+            'admin@link.invalid',
             $result->userUpdateStruct->email,
             'email not created correctly'
         );
@@ -129,7 +129,7 @@ class UserUpdateTest extends BaseTest
                     ],
                 ],
             ],
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
@@ -153,7 +153,7 @@ class UserUpdateTest extends BaseTest
             ],
             'remoteId' => 'remoteId123456',
             'fields' => [],
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
@@ -183,7 +183,7 @@ class UserUpdateTest extends BaseTest
                     ],
                 ],
             ],
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',
@@ -213,7 +213,7 @@ class UserUpdateTest extends BaseTest
                     ],
                 ],
             ],
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'somePassword',
             'enabled' => 'true',
             '__url' => '/user/users/14',

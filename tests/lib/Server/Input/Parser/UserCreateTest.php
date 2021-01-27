@@ -35,7 +35,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -111,7 +111,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -144,7 +144,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -177,7 +177,7 @@ class UserCreateTest extends BaseTest
                 '_href' => '/content/sections/4',
             ],
             'remoteId' => 'remoteId12345678',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -244,7 +244,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'enabled' => 'true',
             'fields' => [
                 'field' => [
@@ -275,7 +275,7 @@ class UserCreateTest extends BaseTest
             'Section' => [],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -309,7 +309,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
         ];
@@ -335,7 +335,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -372,7 +372,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -406,7 +406,7 @@ class UserCreateTest extends BaseTest
             ],
             'remoteId' => 'remoteId12345678',
             'login' => 'login',
-            'email' => 'nospam@ez.no',
+            'email' => 'admin@link.invalid',
             'password' => 'password',
             'enabled' => 'true',
             'fields' => [
@@ -478,7 +478,7 @@ class UserCreateTest extends BaseTest
             ->method('newUserCreateStruct')
             ->with(
                 $this->equalTo('login'),
-                $this->equalTo('nospam@ez.no'),
+                $this->equalTo('admin@link.invalid'),
                 $this->equalTo('password'),
                 $this->equalTo('eng-US'),
                 $this->equalTo($contentType)
