@@ -14,7 +14,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class FieldTypeProcessorPass implements CompilerPassInterface
 {
-    public const FIELD_TYPE_PROCESSOR_SERVICE_TAG = 'ezplatform.field_type.rest.processor';
+    public const FIELD_TYPE_PROCESSOR_SERVICE_TAG = 'ibexa.rest.field_type.processor';
     public const DEPRECATED_FIELD_TYPE_PROCESSOR_SERVICE_TAG = 'ezpublish_rest.field_type_processor';
 
     public function process(ContainerBuilder $container)
