@@ -307,35 +307,35 @@ services:
         arguments:
             - "@router"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezimage }
+            - { name: ibexa.rest.field_type.processor, alias: ezimage }
 
     EzSystems\EzPlatformRest\FieldTypeProcessor\ImageAssetFieldTypeProcessor:
         factory: ["@ezpublish_rest.factory", getImageAssetFieldTypeProcessor]
         arguments:
             - "@router"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezimageasset }
+            - { name: ibexa.rest.field_type.processor, alias: ezimageasset }
 
     ezpublish_rest.field_type_processor.ezdatetime:
         class: "%ezpublish_rest.field_type_processor.ezdatetime.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezdatetime }
+            - { name: ibexa.rest.field_type.processor, alias: ezdatetime }
 
     ezpublish_rest.field_type_processor.ezdate:
         class: "%ezpublish_rest.field_type_processor.ezdate.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezdate }
+            - { name: ibexa.rest.field_type.processor, alias: ezdate }
 
     ezpublish_rest.field_type_processor.ezmedia:
         class: "%ezpublish_rest.field_type_processor.ezmedia.class%"
         factory: ["@ezpublish_rest.factory", getMediaFieldTypeProcessor]
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezmedia }
+            - { name: ibexa.rest.field_type.processor, alias: ezmedia }
 
     ezpublish_rest.field_type_processor.ezobjectrelationlist:
         class: "%ezpublish_rest.field_type_processor.ezobjectrelationlist.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezobjectrelationlist }
+            - { name: ibexa.rest.field_type.processor, alias: ezobjectrelationlist }
         calls:
             - [setRouter, ["@router"]]
             - [setLocationService, ["@ezpublish.api.service.location"]]
@@ -343,7 +343,7 @@ services:
     ezpublish_rest.field_type_processor.ezobjectrelation:
         class: "%ezpublish_rest.field_type_processor.ezobjectrelation.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezobjectrelation }
+            - { name: ibexa.rest.field_type.processor, alias: ezobjectrelation }
         calls:
             - [setRouter, ["@router"]]
             - [setLocationService, ["@ezpublish.api.service.location"]]
@@ -351,7 +351,7 @@ services:
     ezpublish_rest.field_type_processor.eztime:
         class: "%ezpublish_rest.field_type_processor.eztime.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: eztime }
+            - { name: ibexa.rest.field_type.processor, alias: eztime }
 
     ezpublish_rest.field_type_processor.ezbinaryfile:
         class: "%ezpublish_rest.field_type_processor.ezbinaryfile.class%"
@@ -359,22 +359,22 @@ services:
         arguments:
             - "@ezpublish.core.io.default_url_decorator"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezbinaryfile }
+            - { name: ibexa.rest.field_type.processor, alias: ezbinaryfile }
 
     ezpublish_rest.field_type_processor.ezfloat:
         class: "%ezpublish_rest.field_type_processor.ezfloat.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezfloat }
+            - { name: ibexa.rest.field_type.processor, alias: ezfloat }
 
     ezpublish_rest.field_type_processor.ezstring:
         class: "%ezpublish_rest.field_type_processor.ezstring.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezstring }
+            - { name: ibexa.rest.field_type.processor, alias: ezstring }
 
     ezpublish_rest.field_type_processor.ezuser:
         class: "%ezpublish_rest.field_type_processor.ezuser.class%"
         tags:
-            - { name: ezpublish_rest.field_type_processor, alias: ezuser }
+            - { name: ibexa.rest.field_type.processor, alias: ezuser }
 
     ### OUTPUT
 

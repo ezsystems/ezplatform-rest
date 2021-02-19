@@ -14,10 +14,13 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class FieldTypeProcessorPassTest extends TestCase
 {
-    public function testProcess()
+    /**
+     * @dataProvider dataProviderForProcess
+     */
+    public function testProcess(string $tag): void
     {
         $processorDefinition = new Definition();
-        $processorDefinition->addTag('ezpublish_rest.field_type_processor', ['alias' => 'test']);
+        $processorDefinition->addTag($tag, ['alias' => 'test']);
 
         $containerBuilder = new ContainerBuilder();
         $containerBuilder->addDefinitions(
@@ -35,5 +38,11 @@ class FieldTypeProcessorPassTest extends TestCase
         self::assertEquals('registerProcessor', $dispatcherMethodCalls[0][0], "Failed asserting that called method is 'addVisitor'");
         self::assertInstanceOf(Reference::class, $dispatcherMethodCalls[0][1][1], 'Failed asserting that method call is to a Reference object');
         self::assertEquals('ezpublish_rest.field_type_processor.test', $dispatcherMethodCalls[0][1][1]->__toString(), "Failed asserting that Referenced service is 'ezpublish_rest.output.value_object_visitor.test'");
+    }
+
+    public function dataProviderForProcess(): iterable
+    {
+        yield [FieldTypeProcessorPass::FIELD_TYPE_PROCESSOR_SERVICE_TAG];
+        yield [FieldTypeProcessorPass::DEPRECATED_FIELD_TYPE_PROCESSOR_SERVICE_TAG];
     }
 }
