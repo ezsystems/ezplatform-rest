@@ -23,9 +23,7 @@ env:
   global:
     # For functional and acceptance tests
     - COMPOSE_FILE="doc/docker/base-dev.yml:doc/docker/selenium.yml"
-    # In order to specify extra flags like ignoring platform reqs, using only stable packages and so on.
-    - COMPOSER_FLAGS=""
-    - EZPLATFORM_REPO="https://github.com/ezsystems/ezplatform.git"
+    - PROJECT_VERSION=^3.3.x-dev
 
 matrix:
   fast_finish: true
@@ -36,7 +34,12 @@ matrix:
       env: TEST_CONFIG="phpunit.xml"
     - name: "PHP 7.3 REST Integration Tests"
       php: 7.3
-      env: REST_TEST_CONFIG="phpunit-integration-rest.xml" TEST_CMD="./bin/.travis/run_rest_tests.sh" APP_ENV=behat PHP_IMAGE=ezsystems/php:7.3-v1-node PHP_IMAGE_DEV=ezsystems/php:7.3-v1-dev APP_DEBUG=1 SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
+      env: 
+        - REST_TEST_CONFIG="phpunit-integration-rest.xml"
+        - APP_ENV=dev 
+        - APP_DEBUG=1 
+        - SF_CMD="ez:behat:create-language 'pol-PL' 'Polish (polski)'"
+        - WEB_HOST=web
     - name: "Code Style Check"
       php: 7.3
       env: CHECK_CS=1
@@ -48,25 +51,23 @@ branches:
     - /^\d.\d+$/
 
 # setup requirements for running unit/integration/behat tests
-before_install:
+install:
   # Disable memory_limit for composer
   - echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
   # Prepare system
-  - if [ "$REST_TEST_CONFIG" != "" ] ; then ./.travis/prepare_ezplatform.sh ; fi
+  - travis_retry composer install --prefer-dist --no-interaction --no-suggest
+  - if [ "$REST_TEST_CONFIG" != "" ] ; then ./vendor/bin/prepare_project_edition.sh oss ${PROJECT_VERSION} ${COMPOSE_FILE} ; fi
   # Execute Symfony command if specified
-  - if [ "$SF_CMD" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec --user www-data app sh -c "bin/console $SF_CMD" ; fi
+  - if [ "$SF_CMD" != "" ] ; then cd "$HOME/build/project"; docker-compose exec --user www-data app sh -c "APP_ENV=behat php bin/console $SF_CMD" ; fi
   # Detecting timezone issues by testing on random timezone
   - TEST_TIMEZONES=("America/New_York" "Asia/Calcutta" "UTC")
   - TEST_TIMEZONE=${TEST_TIMEZONES["`shuf -i 0-2 -n 1`"]}
 
-install:
-  - if [ "$CHECK_CS" == "1" -o "$TEST_CONFIG" != "" ]; then travis_retry composer install --prefer-dist --no-interaction --no-suggest ; fi
-
 # execute phpunit or behat as the script command
 script:
   - if [ "$TEST_CONFIG" != "" ] ; then php -d date.timezone=$TEST_TIMEZONE -d memory_limit=-1 vendor/bin/phpunit -c $TEST_CONFIG ; fi
-  - if [ "$REST_TEST_CONFIG" != "" ] ; then cd "$HOME/build/ezplatform"; docker-compose exec app sh -c "$TEST_CMD"  ; fi
-  - if [ "$CHECK_CS" == "1" ] ; then ./vendor/bin/php-cs-fixer fix -v --dry-run --show-progress=estimating ; fi
+  - if [ "$REST_TEST_CONFIG" != "" ] ; then cd "$HOME/build/project"; docker-compose exec app sh -c "cd ezsystems/ezplatform-rest && composer update && php ./vendor/bin/phpunit -c phpunit-integration-rest.xml" ; fi
+  - if [ "$CHECK_CS" == "1" ] ; then ./vendor/bin/check_cs.sh ; fi
 
 notifications:
   slack:
