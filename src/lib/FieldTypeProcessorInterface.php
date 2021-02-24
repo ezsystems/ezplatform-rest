@@ -1,15 +1,8 @@
 <?php
 
-/**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
- * @license For full copyright and license information view LICENSE file distributed with this source code.
- */
 namespace EzSystems\EzPlatformRest;
 
-/**
- * FieldTypeProcessor.
- */
-abstract class FieldTypeProcessor implements FieldTypeProcessorInterface
+interface FieldTypeProcessorInterface
 {
     /**
      * Perform manipulations on a received $incomingValueHash.
@@ -27,10 +20,7 @@ abstract class FieldTypeProcessor implements FieldTypeProcessorInterface
      *
      * @return mixed Pre processed hash
      */
-    public function preProcessValueHash($incomingValueHash)
-    {
-        return $incomingValueHash;
-    }
+    public function preProcessValueHash($incomingValueHash);
 
     /**
      * Perform manipulations on an a generated $outgoingValueHash.
@@ -48,10 +38,7 @@ abstract class FieldTypeProcessor implements FieldTypeProcessorInterface
      *
      * @return mixed Post processed hash
      */
-    public function postProcessValueHash($outgoingValueHash)
-    {
-        return $outgoingValueHash;
-    }
+    public function postProcessValueHash($outgoingValueHash);
 
     /**
      * Perform manipulations on a received $incomingSettingsHash.
@@ -69,10 +56,7 @@ abstract class FieldTypeProcessor implements FieldTypeProcessorInterface
      *
      * @return mixed Pre processed hash
      */
-    public function preProcessFieldSettingsHash($incomingSettingsHash)
-    {
-        return $incomingSettingsHash;
-    }
+    public function preProcessFieldSettingsHash($incomingSettingsHash);
 
     /**
      * Perform manipulations on a received $outgoingSettingsHash.
@@ -90,10 +74,7 @@ abstract class FieldTypeProcessor implements FieldTypeProcessorInterface
      *
      * @return mixed Post processed hash
      */
-    public function postProcessFieldSettingsHash($outgoingSettingsHash)
-    {
-        return $outgoingSettingsHash;
-    }
+    public function postProcessFieldSettingsHash($outgoingSettingsHash);
 
     /**
      * Perform manipulations on a received $incomingValidatorConfigurationHash.
@@ -111,10 +92,7 @@ abstract class FieldTypeProcessor implements FieldTypeProcessorInterface
      *
      * @return mixed Pre processed hash
      */
-    public function preProcessValidatorConfigurationHash($incomingValidatorConfigurationHash)
-    {
-        return $incomingValidatorConfigurationHash;
-    }
+    public function preProcessValidatorConfigurationHash($incomingValidatorConfigurationHash);
 
     /**
      * Perform manipulations on a received $outgoingValidatorConfigurationHash.
@@ -132,8 +110,5 @@ abstract class FieldTypeProcessor implements FieldTypeProcessorInterface
      *
      * @return mixed Post processed hash
      */
-    public function postProcessValidatorConfigurationHash($outgoingValidatorConfigurationHash)
-    {
-        return $outgoingValidatorConfigurationHash;
-    }
+    public function postProcessValidatorConfigurationHash($outgoingValidatorConfigurationHash);
 }
