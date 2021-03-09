@@ -87,3 +87,7 @@ parameters:
         createToken:
             mediaType: 'JWT'
             href: 'router.generate("ibexa.platform.rest.create_token")'
+
+    # Boundary times in microseconds which the authentication check will be delayed by.
+    ibexa.rest.authentication_min_delay_time: 30000
+    ibexa.rest.authentication_max_delay_time: 500000
