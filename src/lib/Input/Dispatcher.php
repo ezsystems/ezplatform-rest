@@ -41,7 +41,7 @@ class Dispatcher
      * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
      * @param \EzSystems\EzPlatformRest\Input\Handler[] $handlers
      */
-    public function __construct(ParsingDispatcher $parsingDispatcher, iterable $handlers = [])
+    public function __construct(ParsingDispatcher $parsingDispatcher, array $handlers = [])
     {
         $this->parsingDispatcher = $parsingDispatcher;
         foreach ($handlers as $type => $handler) {
