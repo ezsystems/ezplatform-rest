@@ -14,12 +14,12 @@ class FieldTypeProcessorRegistry
     /**
      * Registered processors.
      *
-     * @var \EzSystems\EzPlatformRest\FieldTypeProcessor[]
+     * @var \EzSystems\EzPlatformRest\FieldTypeProcessorInterface[]
      */
     private $processors = [];
 
     /**
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor[] $processors
+     * @param \EzSystems\EzPlatformRest\FieldTypeProcessorInterface[] $processors
      */
     public function __construct(array $processors = [])
     {
@@ -32,10 +32,18 @@ class FieldTypeProcessorRegistry
      * Registers $processor for $fieldTypeIdentifier.
      *
      * @param string $fieldTypeIdentifier
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor $processor
+     * @param \EzSystems\EzPlatformRest\FieldTypeProcessorInterface $processor
      */
-    public function registerProcessor($fieldTypeIdentifier, FieldTypeProcessor $processor)
+    public function registerProcessor($fieldTypeIdentifier, /*FieldTypeProcessorInterface*/ $processor)
     {
+        // The FieldTypeProcessorInterface was a late addition to the FieldTypeProcessor class.
+        // The type validation is done this way to insure BC, ie. allowing subclasses of this class
+        // to keep working even if they have the same method overridden with the original signature
+        if (! $processor instanceof FieldTypeProcessorInterface) {
+            throw new \TypeError('Argument 2 passed to ' . get_class($this) . '::registerProcessor() must be an' .
+                ' instance of EzSystems\EzPlatformRest\FieldTypeProcessorInterface, instance of ' . get_class($processor) .
+                ' given');
+        }
         $this->processors[$fieldTypeIdentifier] = $processor;
     }
 
@@ -58,7 +66,7 @@ class FieldTypeProcessorRegistry
      *
      * @throws \RuntimeException if not processor is registered for $fieldTypeIdentifier
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor
+     * @return \EzSystems\EzPlatformRest\FieldTypeProcessorInterface
      */
     public function getProcessor($fieldTypeIdentifier)
     {
