@@ -26,7 +26,7 @@ class Dispatcher
      *  )
      * </code>
      *
-     * @var array
+     * @var \EzSystems\EzPlatformRest\Input\Handler[]
      */
     protected $handlers = [];
 
@@ -39,7 +39,7 @@ class Dispatcher
      * Construct from optional parsers array.
      *
      * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
-     * @param array $handlers
+     * @param \EzSystems\EzPlatformRest\Input\Handler[] $handlers
      */
     public function __construct(ParsingDispatcher $parsingDispatcher, array $handlers = [])
     {

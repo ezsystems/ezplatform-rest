@@ -84,7 +84,7 @@ class ParsingDispatcher
      *
      * @param string $mediaType Ex: text/html; version=1.1
      *
-     * @return string An array with the mediatype string, stripped from the version, and the version (1.0 by default)
+     * @return array An array with the mediatype string, stripped from the version, and the version (1.0 by default)
      */
     protected function parseMediaTypeVersion($mediaType)
     {
