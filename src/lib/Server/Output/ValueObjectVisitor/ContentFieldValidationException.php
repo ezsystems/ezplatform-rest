@@ -33,7 +33,10 @@ class ContentFieldValidationException extends BadRequestException
         $generator->startValueElement('errorCode', $statusCode);
         $generator->endValueElement('errorCode');
 
-        $generator->startValueElement('errorMessage', $this->httpStatusCodes[$statusCode]);
+        $generator->startValueElement(
+            'errorMessage',
+            static::$httpStatusCodes[$statusCode] ?? static::$httpStatusCodes[500]
+        );
         $generator->endValueElement('errorMessage');
 
         $generator->startValueElement('errorDescription', $data->getMessage());

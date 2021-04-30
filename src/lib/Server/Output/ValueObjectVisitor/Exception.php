@@ -10,6 +10,7 @@ use eZ\Publish\Core\Base\Translatable;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\Visitor;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
@@ -29,7 +30,7 @@ class Exception extends ValueObjectVisitor
      *
      * @var array
      */
-    protected $httpStatusCodes = [
+    protected static $httpStatusCodes = [
         400 => 'Bad Request',
         401 => 'Unauthorized',
         402 => 'Payment Required',
@@ -105,14 +106,22 @@ class Exception extends ValueObjectVisitor
     {
         $generator->startObjectElement('ErrorMessage');
 
-        $statusCode = $this->getStatus();
+        if ($data instanceof HttpExceptionInterface) {
+            $statusCode = $data->getStatusCode();
+        } else {
+            $statusCode = $this->getStatus();
+        }
+
         $visitor->setStatus($statusCode);
         $visitor->setHeader('Content-Type', $generator->getMediaType('ErrorMessage'));
 
         $generator->startValueElement('errorCode', $statusCode);
         $generator->endValueElement('errorCode');
 
-        $generator->startValueElement('errorMessage', $this->httpStatusCodes[$statusCode]);
+        $generator->startValueElement(
+            'errorMessage',
+            static::$httpStatusCodes[$statusCode] ?? static::$httpStatusCodes[500]
+        );
         $generator->endValueElement('errorMessage');
 
         if ($this->debug || $statusCode < 500) {
