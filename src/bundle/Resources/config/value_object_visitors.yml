@@ -204,7 +204,7 @@ services:
         class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\HttpException
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: Symfony\Component\HttpKernel\Exception\HttpExceptionInterface }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Symfony\Component\HttpKernel\Exception\HttpException }
 
     # Language
     ezpublish_rest.output.value_object_visitor.Language:
