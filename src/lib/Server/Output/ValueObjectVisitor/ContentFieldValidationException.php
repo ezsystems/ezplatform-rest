@@ -30,17 +30,14 @@ class ContentFieldValidationException extends BadRequestException
         $visitor->setStatus($statusCode);
         $visitor->setHeader('Content-Type', $generator->getMediaType('ErrorMessage'));
 
-        $generator->startValueElement('errorCode', $statusCode);
-        $generator->endValueElement('errorCode');
+        $generator->valueElement('errorCode', $statusCode);
 
-        $generator->startValueElement(
+        $generator->valueElement(
             'errorMessage',
             static::$httpStatusCodes[$statusCode] ?? static::$httpStatusCodes[500]
         );
-        $generator->endValueElement('errorMessage');
 
-        $generator->startValueElement('errorDescription', $data->getMessage());
-        $generator->endValueElement('errorDescription');
+        $generator->valueElement('errorDescription', $data->getMessage());
 
         $generator->startHashElement('errorDetails');
         $generator->startList('fields');
@@ -52,17 +49,15 @@ class ContentFieldValidationException extends BadRequestException
 
                 foreach ($validationErrors as $validationError) {
                     $generator->startHashElement('field');
-                    $generator->startAttribute('fieldTypeId', $fieldTypeId);
-                    $generator->endAttribute('fieldTypeId');
+                    $generator->attribute('fieldTypeId', $fieldTypeId);
 
                     $generator->startList('errors');
                     $generator->startHashElement('error');
 
-                    $generator->startValueElement('type', $validationError->getTarget());
-                    $generator->endValueElement('type');
+                    $generator->valueElement('type', $validationError->getTarget());
 
                     $translation = $validationError->getTranslatableMessage();
-                    $generator->startValueElement(
+                    $generator->valueElement(
                         'message',
                         $this->translator->trans(
                             $this->translationToString($translation),
@@ -70,7 +65,6 @@ class ContentFieldValidationException extends BadRequestException
                             'repository_exceptions'
                         )
                     );
-                    $generator->endValueElement('message');
 
                     $generator->endHashElement('error');
                     $generator->endList('errors');
@@ -82,14 +76,9 @@ class ContentFieldValidationException extends BadRequestException
         $generator->endHashElement('errorDetails');
 
         if ($this->debug) {
-            $generator->startValueElement('trace', $data->getTraceAsString());
-            $generator->endValueElement('trace');
-
-            $generator->startValueElement('file', $data->getFile());
-            $generator->endValueElement('file');
-
-            $generator->startValueElement('line', $data->getLine());
-            $generator->endValueElement('line');
+            $generator->valueElement('trace', $data->getTraceAsString());
+            $generator->valueElement('file', $data->getFile());
+            $generator->valueElement('line', $data->getLine());
         }
 
         $generator->endObjectElement('ErrorMessage');
