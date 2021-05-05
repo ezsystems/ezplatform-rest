@@ -12,7 +12,6 @@ parameters:
     ezpublish_rest.output.value_object_visitor.ForbiddenException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ForbiddenException
     ezpublish_rest.output.value_object_visitor.Exception.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception
     ezpublish_rest.output.value_object_visitor.NotImplementedException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NotImplementedException
-    ezpublish_rest.output.value_object_visitor.HttpException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\HttpException
 
     # Section
     ezpublish_rest.output.value_object_visitor.SectionList.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\SectionList
@@ -202,7 +201,7 @@ services:
 
     ezpublish_rest.output.value_object_visitor.symfony.HttpException:
         parent: ezpublish_rest.output.value_object_visitor.base
-        class: "%ezpublish_rest.output.value_object_visitor.HttpException.class%"
+        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\HttpException
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: Symfony\Component\HttpKernel\Exception\HttpExceptionInterface }
