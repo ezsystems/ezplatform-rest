@@ -199,9 +199,8 @@ services:
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: Exception }
 
-    ezpublish_rest.output.value_object_visitor.symfony.HttpException:
+    EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\HttpException:
         parent: ezpublish_rest.output.value_object_visitor.base
-        class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\HttpException
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: Symfony\Component\HttpKernel\Exception\HttpException }
