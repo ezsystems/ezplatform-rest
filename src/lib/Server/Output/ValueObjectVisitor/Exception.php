@@ -7,8 +7,8 @@
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\Core\Base\Translatable;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Visitor;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
@@ -29,7 +29,7 @@ class Exception extends ValueObjectVisitor
      *
      * @var array
      */
-    protected $httpStatusCodes = [
+    protected static $httpStatusCodes = [
         400 => 'Bad Request',
         401 => 'Unauthorized',
         402 => 'Payment Required',
@@ -67,18 +67,16 @@ class Exception extends ValueObjectVisitor
         510 => 'Not Extended',
     ];
 
-    /**
-     * @var TranslatorInterface
-     */
+    /** @var \Symfony\Contracts\Translation\TranslatorInterface */
     protected $translator;
 
     /**
      * Construct from debug flag.
      *
      * @param bool $debug
-     * @param TranslatorInterface $translator
+     * @param \Symfony\Contracts\Translation\TranslatorInterface|null $translator
      */
-    public function __construct($debug = false, TranslatorInterface $translator = null)
+    public function __construct($debug = false, ?TranslatorInterface $translator = null)
     {
         $this->debug = (bool)$debug;
         $this->translator = $translator;
@@ -105,15 +103,14 @@ class Exception extends ValueObjectVisitor
     {
         $generator->startObjectElement('ErrorMessage');
 
-        $statusCode = $this->getStatus();
-        $visitor->setStatus($statusCode);
         $visitor->setHeader('Content-Type', $generator->getMediaType('ErrorMessage'));
 
-        $generator->startValueElement('errorCode', $statusCode);
-        $generator->endValueElement('errorCode');
+        $statusCode = $this->generateErrorCode($generator, $visitor, $data);
 
-        $generator->startValueElement('errorMessage', $this->httpStatusCodes[$statusCode]);
-        $generator->endValueElement('errorMessage');
+        $generator->valueElement(
+            'errorMessage',
+            static::$httpStatusCodes[$statusCode] ?? static::$httpStatusCodes[500]
+        );
 
         if ($this->debug || $statusCode < 500) {
             $errorDescription = $data instanceof Translatable && $this->translator
@@ -126,18 +123,12 @@ class Exception extends ValueObjectVisitor
                 : 'An error has occurred. Please try again later or contact your Administrator.';
         }
 
-        $generator->startValueElement('errorDescription', $errorDescription);
-        $generator->endValueElement('errorDescription');
+        $generator->valueElement('errorDescription', $errorDescription);
 
         if ($this->debug) {
-            $generator->startValueElement('trace', $data->getTraceAsString());
-            $generator->endValueElement('trace');
-
-            $generator->startValueElement('file', $data->getFile());
-            $generator->endValueElement('file');
-
-            $generator->startValueElement('line', $data->getLine());
-            $generator->endValueElement('line');
+            $generator->valueElement('trace', $data->getTraceAsString());
+            $generator->valueElement('file', $data->getFile());
+            $generator->valueElement('line', $data->getLine());
         }
 
         if ($previous = $data->getPrevious()) {
@@ -147,5 +138,15 @@ class Exception extends ValueObjectVisitor
         }
 
         $generator->endObjectElement('ErrorMessage');
+    }
+
+    protected function generateErrorCode(Generator $generator, Visitor $visitor, \Exception $e): int
+    {
+        $statusCode = $this->getStatus();
+        $visitor->setStatus($statusCode);
+
+        $generator->valueElement('errorCode', $statusCode);
+
+        return $statusCode;
     }
 }
