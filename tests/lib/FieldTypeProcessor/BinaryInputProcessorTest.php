@@ -17,7 +17,7 @@ abstract class BinaryInputProcessorTest extends TestCase
         $iterator = new \RecursiveIteratorIterator(
             new \RecursiveDirectoryIterator(
                 $this->getTempDir(),
-                \FileSystemIterator::KEY_AS_PATHNAME | \FileSystemIterator::SKIP_DOTS | \ FilesystemIterator::CURRENT_AS_FILEINFO
+                \FileSystemIterator::KEY_AS_PATHNAME | \FileSystemIterator::SKIP_DOTS | \FilesystemIterator::CURRENT_AS_FILEINFO
             ),
             \RecursiveIteratorIterator::CHILD_FIRST
         );
