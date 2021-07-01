@@ -53,16 +53,6 @@ abstract class Query extends CriterionParser
             $query->sortClauses = $this->processSortClauses($data['SortClauses'], $parsingDispatcher);
         }
 
-        // FacetBuilders
-        // -- facetBuilderListType
-        if (array_key_exists('FacetBuilders', $data)) {
-            $facetBuilders = [];
-            foreach ($data['FacetBuilders'] as $facetBuilderName => $facetBuilderData) {
-                $facetBuilders[] = $this->dispatchFacetBuilder($facetBuilderName, $facetBuilderData, $parsingDispatcher);
-            }
-            $query->facetBuilders = $facetBuilders;
-        }
-
         if (array_key_exists('Aggregations', $data)) {
             foreach ($data['Aggregations'] as $aggregation) {
                 $aggregationName = array_key_first($aggregation);
