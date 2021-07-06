@@ -15,7 +15,6 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
@@ -69,11 +68,6 @@ class RestAuthenticator implements AuthenticatorInterface
     private $configResolver;
 
     /**
-     * @var \Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface
-     */
-    private $sessionStorage;
-
-    /**
      * @var \Symfony\Component\Security\Http\Logout\LogoutHandlerInterface[]
      */
     private $logoutHandlers = [];
@@ -94,7 +88,6 @@ class RestAuthenticator implements AuthenticatorInterface
         $providerKey,
         EventDispatcherInterface $dispatcher,
         ConfigResolverInterface $configResolver,
-        SessionStorageInterface $sessionStorage,
         LoggerInterface $logger = null,
         $minSleepTime = self::DEFAULT_MIN_SLEEP_VALUE,
         $maxSleepTime = self::DEFAULT_MAX_SLEEP_VALUE
@@ -104,7 +97,6 @@ class RestAuthenticator implements AuthenticatorInterface
         $this->providerKey = $providerKey;
         $this->dispatcher = $dispatcher;
         $this->configResolver = $configResolver;
-        $this->sessionStorage = $sessionStorage;
         $this->logger = $logger;
         $this->minSleepTime = !is_int($minSleepTime) ? self::DEFAULT_MIN_SLEEP_VALUE : $minSleepTime;
         $this->maxSleepTime = !is_int($maxSleepTime) ? self::DEFAULT_MAX_SLEEP_VALUE : $maxSleepTime;
@@ -226,7 +218,7 @@ class RestAuthenticator implements AuthenticatorInterface
         // generation of a new session id.
         // REST logout must indeed clear the session cookie.
         // See \EzSystems\EzPlatformRest\Server\Security\RestLogoutHandler
-        $this->sessionStorage->clear();
+        $request->getSession()->clear();
 
         $token = $this->tokenStorage->getToken();
         foreach ($this->logoutHandlers as $handler) {

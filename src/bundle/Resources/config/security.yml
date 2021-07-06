@@ -13,7 +13,6 @@ services:
             - ~ # Will be replaced at compile time by security provider key
             - "@event_dispatcher"
             - "@ezpublish.config.resolver"
-            - "@session.storage"
             - "@?logger"
             - "%ibexa.rest.authentication_min_delay_time%"
             - "%ibexa.rest.authentication_max_delay_time%"
