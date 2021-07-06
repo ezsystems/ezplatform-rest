@@ -15,7 +15,8 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Session\Storage\SessionStorageInterface;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -56,11 +57,6 @@ class RestSessionBasedAuthenticatorTest extends TestCase
     /**
      * @var \PHPUnit\Framework\MockObject\MockObject
      */
-    private $sessionStorage;
-
-    /**
-     * @var \PHPUnit\Framework\MockObject\MockObject
-     */
     private $logger;
 
     /**
@@ -75,7 +71,6 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         $this->authenticationManager = $this->createMock(AuthenticationManagerInterface::class);
         $this->eventDispatcher = $this->createMock(EventDispatcherInterface::class);
         $this->configResolver = $this->createMock(ConfigResolverInterface::class);
-        $this->sessionStorage = $this->createMock(SessionStorageInterface::class);
         $this->logger = $this->createMock(LoggerInterface::class);
         $this->authenticator = new RestAuthenticator(
             $this->tokenStorage,
@@ -83,7 +78,6 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             self::PROVIDER_KEY,
             $this->eventDispatcher,
             $this->configResolver,
-            $this->sessionStorage,
             $this->logger
         );
     }
@@ -534,6 +528,8 @@ class RestSessionBasedAuthenticatorTest extends TestCase
             ->willReturn($token);
 
         $request = new Request();
+        $request->setSession(new Session(new MockArraySessionStorage()));
+
         $logoutHandler1 = $this->createMock(LogoutHandlerInterface::class);
         $logoutHandler1
             ->expects($this->once())
