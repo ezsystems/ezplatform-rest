@@ -856,6 +856,11 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.SubtreeTermAggregation }
 
+    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Location\LocationChildrenTermAggregationParser:
+        parent: ezpublish_rest.input.parser
+        tags:
+            - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.LocationChildrenTermAggregation }
+
     EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\UserMetadataTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
