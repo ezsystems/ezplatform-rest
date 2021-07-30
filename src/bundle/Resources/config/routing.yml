@@ -1118,18 +1118,21 @@ ezpublish_rest_createSession:
     path: /user/sessions
     defaults:
         _controller: ezpublish_rest.controller.session:createSessionAction
+        csrf_protection: false
     methods: [POST]
 
 ezpublish_rest_deleteSession:
     path: /user/sessions/{sessionId}
     defaults:
         _controller: ezpublish_rest.controller.session:deleteSessionAction
+        csrf_protection: false
     methods: [DELETE]
 
 ezpublish_rest_refreshSession:
     path: /user/sessions/{sessionId}/refresh
     defaults:
         _controller: ezpublish_rest.controller.session:refreshSessionAction
+        csrf_protection: false
     methods: [POST]
 
 

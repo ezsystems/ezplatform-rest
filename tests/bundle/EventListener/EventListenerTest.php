@@ -34,6 +34,8 @@ abstract class EventListenerTest extends TestCase
 
     protected $requestMethod = false;
 
+    protected $enableCsrfProtection = true;
+
     /**
      * @dataProvider provideExpectedSubscribedEventTypes
      */
@@ -87,6 +89,11 @@ abstract class EventListenerTest extends TestCase
                 ->method('get')
                 ->with('is_rest_request')
                 ->willReturn($this->isRestRequest);
+
+            $this->requestAttributesMock
+                ->method('getBoolean')
+                ->with('csrf_protection', true)
+                ->willReturn($this->enableCsrfProtection);
         }
 
         return $this->requestAttributesMock;

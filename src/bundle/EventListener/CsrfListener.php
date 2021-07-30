@@ -104,6 +104,10 @@ class CsrfListener implements EventSubscriberInterface
             return;
         }
 
+        if (!$event->getRequest()->attributes->getBoolean('csrf_protection', true)) {
+            return;
+        }
+
         if (!$this->checkCsrfToken($event->getRequest())) {
             throw new UnauthorizedException(
                 'Missing or invalid CSRF token',
@@ -143,6 +147,8 @@ class CsrfListener implements EventSubscriberInterface
      * @param string $route
      *
      * @return bool
+     *
+     * @deprecated since Ibexa DXP 3.3.7. Add csrf_protection: false attribute to route definition instead.
      */
     protected function isSessionRoute($route)
     {
