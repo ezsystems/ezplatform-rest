@@ -137,6 +137,15 @@ class CsrfListenerTest extends EventListenerTest
         ];
     }
 
+    public function testSkipCsrfProtection(): void
+    {
+        $this->enableCsrfProtection = false;
+        $this->csrfTokenHeaderValue = null;
+
+        $listener = $this->getEventListener();
+        $listener->onKernelRequest($this->getEvent());
+    }
+
     public function testNoHeader()
     {
         $this->expectException(UnauthorizedException::class);
