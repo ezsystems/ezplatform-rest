@@ -30,7 +30,7 @@
         "symfony/expression-language": "^5.3",
         "symfony/form": "^5.3",
         "symfony/security-bundle": "^5.3",
-        "hautelook/templated-uri-bundle": "^3.2",
+        "ibexa/templated-uri-bundle": "^3.2",
         "lexik/jwt-authentication-bundle": "^2.8"
     },
     "require-dev": {
