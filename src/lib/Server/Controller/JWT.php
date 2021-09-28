@@ -8,34 +8,32 @@ declare(strict_types=1);
 
 namespace EzSystems\EzPlatformRest\Server\Controller;
 
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use eZ\Publish\Core\MVC\Symfony\Security\User;
+use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
 use EzSystems\EzPlatformRest\Message;
 use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use EzSystems\EzPlatformRest\Server\Values;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Exception\BadCredentialsException;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
 /**
  * @internal
  */
 final class JWT extends RestController
 {
-    /** @var \eZ\Publish\API\Repository\UserService */
-    private $userService;
-
     /** @var \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface */
     private $tokenManager;
 
+    /** @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
+    private $authenticator;
+
     public function __construct(
-        UserService $userService,
-        JWTTokenManagerInterface $tokenManager
+        JWTTokenManagerInterface $tokenManager,
+        ?AuthenticatorInterface $authenticator = null
     ) {
-        $this->userService = $userService;
         $this->tokenManager = $tokenManager;
+        $this->authenticator = $authenticator;
     }
 
     public function createToken(Request $request): Values\JWT
@@ -49,15 +47,31 @@ final class JWT extends RestController
         );
 
         try {
-            $user = $this->userService->loadUserByLogin($jwtTokenInput->username);
-            if (!$this->userService->checkUserCredentials($user, $jwtTokenInput->password)) {
-                throw new BadCredentialsException();
-            }
-            $token = $this->tokenManager->create(new User($user, ['ROLE_USER']));
+            $request->attributes->set('username', $jwtTokenInput->username);
+            $request->attributes->set('password', (string) $jwtTokenInput->password);
 
-            return new Values\JWT($token);
-        } catch (NotFoundException | BadCredentialsException $e) {
-            throw new UnauthorizedException('Invalid username or password', $request->getPathInfo());
+            $token = $this->getAuthenticator()->authenticate($request);
+
+            $jwtToken = $this->tokenManager->create($token->getUser());
+
+            return new Values\JWT($jwtToken);
+        } catch (AuthenticationException $e) {
+            $this->getAuthenticator()->logout($request);
+            throw new UnauthorizedException('Invalid login or password', $request->getPathInfo());
         }
+    }
+
+    private function getAuthenticator(): AuthenticatorInterface
+    {
+        if (null === $this->authenticator) {
+            throw new \RuntimeException(
+                sprintf(
+                    "No %s instance injected. Ensure 'ezpublish_rest_session' is configured under your firewall",
+                    AuthenticatorInterface::class
+                )
+            );
+        }
+
+        return $this->authenticator;
     }
 }
