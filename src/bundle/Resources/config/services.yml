@@ -261,8 +261,8 @@ services:
     EzSystems\EzPlatformRest\Server\Controller\JWT:
         parent: ezpublish_rest.controller.base
         arguments:
-            - '@ezpublish.api.service.user'
             - '@Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface'
+            - '@?ezpublish_rest.session_authenticator'
         tags: [controller.service_arguments]
 
     ezpublish_rest.request_listener:
