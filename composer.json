@@ -7,10 +7,14 @@
         "psr-4": {
             "EzSystems\\EzPlatformRestBundle\\": "src/bundle/",
             "EzSystems\\EzPlatformRest\\": "src/lib/",
+            "Ibexa\\Bundle\\Rest\\": "src/bundle/",
+            "Ibexa\\Rest\\": "src/lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "EzSystems\\EzPlatformRestBundle\\Tests\\": "tests/bundle/",
             "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/",
-            "Ibexa\\Bundle\\Rest\\": "src/bundle/",
-            "Ibexa\\Rest\\": "src/lib/",
             "Ibexa\\Tests\\Rest\\": "tests/lib/",
             "Ibexa\\Tests\\Bundle\\Rest\\": "tests/bundle/"
         }
