@@ -6,6 +6,7 @@
  */
 namespace EzSystems\EzPlatformRest\Tests\Output;
 
+use Error;
 use EzSystems\EzPlatformRest;
 use EzSystems\EzPlatformRest\Output\Exceptions\InvalidTypeException;
 use EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException;
@@ -99,6 +100,14 @@ class ValueObjectVisitorDispatcherTest extends TestCase
             ->with($this->getOutputVisitorMock(), $this->getOutputGeneratorMock(), $data);
 
         $dispatcher->visit($data);
+    }
+
+    public function testVisitError(): void
+    {
+        $this->expectException(Error::class);
+
+        $dispatcher = $this->getValueObjectDispatcher();
+        $dispatcher->visit($this->createMock(Error::class));
     }
 
     /**
