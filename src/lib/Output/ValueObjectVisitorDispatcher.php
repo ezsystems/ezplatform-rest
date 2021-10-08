@@ -6,6 +6,8 @@
  */
 namespace EzSystems\EzPlatformRest\Output;
 
+use Error;
+
 /**
  * Dispatches value objects to a visitor depending on the class name.
  */
@@ -55,6 +57,11 @@ class ValueObjectVisitorDispatcher
      */
     public function visit($data)
     {
+        if ($data instanceof Error) {
+            // Skip internal PHP errors serialization
+            throw $data;
+        }
+
         if (!is_object($data)) {
             throw new Exceptions\InvalidTypeException($data);
         }

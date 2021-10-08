@@ -13,6 +13,7 @@ use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
 use EzSystems\EzPlatformRest\Message;
 use EzSystems\EzPlatformRest\Server\Controller as RestController;
 use EzSystems\EzPlatformRest\Server\Values;
+use Ibexa\Rest\Server\Security\JWTUser;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -50,9 +51,11 @@ final class JWT extends RestController
             $request->attributes->set('username', $jwtTokenInput->username);
             $request->attributes->set('password', (string) $jwtTokenInput->password);
 
-            $token = $this->getAuthenticator()->authenticate($request);
+            $user = $this->getAuthenticator()->authenticate($request)->getUser();
 
-            $jwtToken = $this->tokenManager->create($token->getUser());
+            $jwtToken = $this->tokenManager->create(
+                new JWTUser($user, $jwtTokenInput->username)
+            );
 
             return new Values\JWT($jwtToken);
         } catch (AuthenticationException $e) {

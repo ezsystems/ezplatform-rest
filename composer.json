@@ -7,8 +7,16 @@
         "psr-4": {
             "EzSystems\\EzPlatformRestBundle\\": "src/bundle/",
             "EzSystems\\EzPlatformRest\\": "src/lib/",
+            "Ibexa\\Bundle\\Rest\\": "src/bundle/",
+            "Ibexa\\Rest\\": "src/lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "EzSystems\\EzPlatformRestBundle\\Tests\\": "tests/bundle/",
-            "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/"
+            "EzSystems\\EzPlatformRest\\Tests\\": "tests/lib/",
+            "Ibexa\\Tests\\Rest\\": "tests/lib/",
+            "Ibexa\\Tests\\Bundle\\Rest\\": "tests/bundle/"
         }
     },
     "require": {
@@ -18,7 +26,7 @@
         "ext-libxml": "*",
         "ext-simplexml": "*",
         "ext-xmlwriter": "*",
-        "ezsystems/ezplatform-kernel": "^2.0@dev",
+        "ezsystems/ezplatform-kernel": "^4.0@dev",
         "symfony/http-kernel": "^5.3",
         "symfony/dependency-injection": "^5.3",
         "symfony/routing": "^5.3",
@@ -35,7 +43,7 @@
     },
     "require-dev": {
         "ibexa/ci-scripts": "^0.2@dev",
-        "ezsystems/doctrine-dbal-schema": "^2.0@dev",
+        "ezsystems/doctrine-dbal-schema": "^4.0@dev",
         "ezsystems/ezplatform-code-style": "^0.1.0",
         "friendsofphp/php-cs-fixer": "^2.16.0",
         "phpunit/phpunit": "^8.5",
