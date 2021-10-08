@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Routing\OptionsLoader;
+namespace Ibexa\Bundle\Rest\Routing\OptionsLoader;
 
 use Symfony\Component\Routing\RouteCollection;
 
@@ -52,3 +52,5 @@ class RouteCollectionMapper
         return $optionsRouteCollection;
     }
 }
+
+class_alias(RouteCollectionMapper::class, 'EzSystems\EzPlatformRestBundle\Routing\OptionsLoader\RouteCollectionMapper');

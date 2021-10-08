@@ -4,19 +4,19 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\UserService;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\FieldTypeService;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupCreate;
+use Ibexa\Rest\Server\Input\Parser\UserGroupCreate;
 use eZ\Publish\Core\Repository\Values\User\UserGroupCreateStruct;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class UserGroupCreateTest extends BaseTest
 {
@@ -409,3 +409,5 @@ class UserGroupCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(UserGroupCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\UserGroupCreateTest');

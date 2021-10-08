@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\Parser;
+use Ibexa\Contracts\Rest\Input\Parser;
 
 class ContentObjectStatesTest extends BaseTest
 {
@@ -96,3 +96,5 @@ class ContentObjectStatesTest extends BaseTest
         return new Parser\ContentObjectStates();
     }
 }
+
+class_alias(ContentObjectStatesTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentObjectStatesTest');

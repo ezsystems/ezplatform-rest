@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\DateMetadataRangeAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
 
 final class DateMetadataRangeAggregationParser extends AbstractRangeAggregationParser
 {
@@ -58,3 +58,5 @@ final class DateMetadataRangeAggregationParser extends AbstractRangeAggregationP
         }
     }
 }
+
+class_alias(DateMetadataRangeAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\DateMetadataRangeAggregationParser');

@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
 
 /**
  * CreatedObjectState value object visitor.
@@ -39,3 +39,5 @@ class CreatedObjectState extends RestObjectState
         $visitor->setStatus(201);
     }
 }
+
+class_alias(CreatedObjectState::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CreatedObjectState');

@@ -4,15 +4,15 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentService;
 use eZ\Publish\API\Repository\ContentTypeService;
 use eZ\Publish\API\Repository\FieldTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\VersionUpdate;
+use Ibexa\Rest\Server\Input\Parser\VersionUpdate;
 use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class VersionUpdateTest extends BaseTest
 {
@@ -186,3 +186,5 @@ class VersionUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(VersionUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\VersionUpdateTest');

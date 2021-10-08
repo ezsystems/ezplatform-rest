@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Values;
+namespace Ibexa\Rest\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * ContentObjectStates view model.
@@ -30,3 +30,5 @@ class ContentObjectStates extends RestValue
         $this->states = $states;
     }
 }
+
+class_alias(ContentObjectStates::class, 'EzSystems\EzPlatformRest\Values\ContentObjectStates');

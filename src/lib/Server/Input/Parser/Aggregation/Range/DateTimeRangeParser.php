@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Range;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 
 final class DateTimeRangeParser extends AbstractRangeParser
 {
@@ -23,3 +23,5 @@ final class DateTimeRangeParser extends AbstractRangeParser
         return new DateTimeImmutable($value);
     }
 }
+
+class_alias(DateTimeRangeParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\DateTimeRangeParser');

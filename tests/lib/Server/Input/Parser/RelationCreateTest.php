@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Server\Input\Parser\RelationCreate;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\RelationCreate;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class RelationCreateTest extends BaseTest
 {
@@ -80,3 +80,5 @@ class RelationCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(RelationCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\RelationCreateTest');

@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\LocationQuery;
 use eZ\Publish\API\Repository\Values\Content\Query;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ViewInputOneDotOne;
-use EzSystems\EzPlatformRest\Server\Values\RestViewInput;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\ViewInputOneDotOne;
+use Ibexa\Rest\Server\Values\RestViewInput;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ViewInputOneDotOneTest extends BaseTest
 {
@@ -92,3 +92,5 @@ class ViewInputOneDotOneTest extends BaseTest
         return new ViewInputOneDotOne();
     }
 }
+
+class_alias(ViewInputOneDotOneTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ViewInputOneDotOneTest');

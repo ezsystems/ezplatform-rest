@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output;
+namespace Ibexa\Rest\Output;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
+use Ibexa\Rest\FieldTypeProcessorRegistry;
 use eZ\Publish\API\Repository\FieldTypeService;
 use eZ\Publish\API\Repository\FieldType;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
@@ -164,3 +164,5 @@ class FieldTypeSerializer
         $generator->generateFieldTypeHash($elementName, $hash);
     }
 }
+
+class_alias(FieldTypeSerializer::class, 'EzSystems\EzPlatformRest\Output\FieldTypeSerializer');

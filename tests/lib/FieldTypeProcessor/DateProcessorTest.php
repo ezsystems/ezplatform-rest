@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\DateProcessor;
+use Ibexa\Rest\FieldTypeProcessor\DateProcessor;
 use PHPUnit\Framework\TestCase;
 
 class DateProcessorTest extends TestCase
@@ -65,3 +65,5 @@ class DateProcessorTest extends TestCase
         return new DateProcessor();
     }
 }
+
+class_alias(DateProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\DateProcessorTest');

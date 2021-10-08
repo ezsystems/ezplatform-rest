@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion as CriterionParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Values\RestViewInput;
+use Ibexa\Rest\Server\Input\Parser\Criterion as CriterionParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
+use Ibexa\Rest\Server\Values\RestViewInput;
 
 /**
  * Parser for ViewInput 1.1.
@@ -60,3 +60,5 @@ class ViewInputOneDotOne extends CriterionParser
         return $restViewInput;
     }
 }
+
+class_alias(ViewInputOneDotOne::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\ViewInputOneDotOne');

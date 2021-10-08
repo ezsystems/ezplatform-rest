@@ -4,19 +4,19 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\URLAliasService;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Exceptions;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\TrashService;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -430,3 +430,5 @@ class Location extends RestController
         );
     }
 }
+
+class_alias(Location::class, 'EzSystems\EzPlatformRest\Server\Controller\Location');

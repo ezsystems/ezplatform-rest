@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
+namespace Ibexa\Rest\FieldTypeProcessor;
 
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
 use Symfony\Component\Routing\RouterInterface;
 
 class ImageAssetFieldTypeProcessor extends FieldTypeProcessor
@@ -73,3 +73,5 @@ class ImageAssetFieldTypeProcessor extends FieldTypeProcessor
         return $outgoingValueHash;
     }
 }
+
+class_alias(ImageAssetFieldTypeProcessor::class, 'EzSystems\EzPlatformRest\FieldTypeProcessor\ImageAssetFieldTypeProcessor');

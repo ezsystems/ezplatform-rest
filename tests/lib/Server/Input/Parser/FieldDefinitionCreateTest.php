@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -284,3 +284,5 @@ class FieldDefinitionCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(FieldDefinitionCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\FieldDefinitionCreateTest');

@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Limitation;
+namespace Ibexa\Rest\Server\Input\Parser\Limitation;
 
 use eZ\Publish\API\Repository\Values;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Exceptions;
 
 /**
  * Generic limitation value parser.
@@ -37,3 +37,5 @@ class PathStringRouteBasedLimitationParser extends RouteBasedLimitationParser
         return '/' . ltrim(parent::parseIdFromHref($limitationValue), '/');
     }
 }
+
+class_alias(PathStringRouteBasedLimitationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser');

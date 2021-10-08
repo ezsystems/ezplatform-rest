@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests;
+namespace Ibexa\Tests\Rest;
 
-use EzSystems\EzPlatformRest;
+use Ibexa\Rest;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -61,3 +61,5 @@ class MessageTest extends TestCase
         $this->assertSame('Hello world!', $message->body);
     }
 }
+
+class_alias(MessageTest::class, 'EzSystems\EzPlatformRest\Tests\MessageTest');

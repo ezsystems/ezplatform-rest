@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Range;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range;
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
 
 abstract class AbstractRangeParser extends BaseParser
 {
@@ -33,3 +33,5 @@ abstract class AbstractRangeParser extends BaseParser
 
     abstract protected function visitRangeValue(ParsingDispatcher $parsingDispatcher, $value);
 }
+
+class_alias(AbstractRangeParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\AbstractRangeParser');

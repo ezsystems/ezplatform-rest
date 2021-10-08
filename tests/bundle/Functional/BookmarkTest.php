@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
-use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
+use Ibexa\Tests\Bundle\Rest\Functional\TestCase as RESTFunctionalTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 class BookmarkTest extends RESTFunctionalTestCase
@@ -114,3 +114,5 @@ class BookmarkTest extends RESTFunctionalTestCase
         self::assertHttpResponseCodeEquals($response, Response::HTTP_NOT_FOUND);
     }
 }
+
+class_alias(BookmarkTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\BookmarkTest');

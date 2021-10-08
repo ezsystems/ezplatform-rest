@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
+use Ibexa\Rest\Values\RestContentMetadataUpdateStruct;
 use DateTime;
 use Exception;
 
@@ -99,3 +99,5 @@ class ContentUpdate extends BaseParser
         return new RestContentMetadataUpdateStruct($parsedData);
     }
 }
+
+class_alias(ContentUpdate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\ContentUpdate');

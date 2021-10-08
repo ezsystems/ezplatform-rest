@@ -4,22 +4,22 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentService;
 use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\FieldTypeService;
 use eZ\Publish\Core\Repository\LocationService;
 use eZ\Publish\Core\Repository\UserService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupUpdate;
+use Ibexa\Rest\Server\Input\Parser\UserGroupUpdate;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\Core\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\Content\ContentMetadataUpdateStruct;
 use eZ\Publish\API\Repository\Values\User\UserGroupUpdateStruct;
 use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Server\Values\RestUserGroupUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Values\RestUserGroupUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class UserGroupUpdateTest extends BaseTest
 {
@@ -313,3 +313,5 @@ class UserGroupUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(UserGroupUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\UserGroupUpdateTest');

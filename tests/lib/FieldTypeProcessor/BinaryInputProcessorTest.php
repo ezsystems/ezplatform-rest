@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
 use PHPUnit\Framework\TestCase;
 
@@ -90,3 +90,5 @@ abstract class BinaryInputProcessorTest extends TestCase
      */
     abstract protected function getProcessor();
 }
+
+class_alias(BinaryInputProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\BinaryInputProcessorTest');

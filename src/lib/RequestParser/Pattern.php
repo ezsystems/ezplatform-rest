@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\RequestParser;
+namespace Ibexa\Rest\RequestParser;
 
-use EzSystems\EzPlatformRest\RequestParser;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\RequestParser;
+use Ibexa\Rest\Exceptions;
 
 /**
  * Pattern based Request parser.
@@ -189,3 +189,5 @@ class Pattern implements RequestParser
         return $parsingResult[$attribute];
     }
 }
+
+class_alias(Pattern::class, 'EzSystems\EzPlatformRest\RequestParser\Pattern');

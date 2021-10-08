@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output;
+namespace Ibexa\Tests\Rest\Output;
 
-use EzSystems\EzPlatformRest\Tests\AssertXmlTagTrait;
-use EzSystems\EzPlatformRest\Tests\Server;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\RequestParser;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Tests\Rest\AssertXmlTagTrait;
+use Ibexa\Tests\Rest\Server;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Rest\RequestParser;
+use Ibexa\Contracts\Rest\Output\Visitor;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -226,3 +226,5 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
      */
     abstract protected function internalGetVisitor();
 }
+
+class_alias(ValueObjectVisitorBaseTest::class, 'EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest');

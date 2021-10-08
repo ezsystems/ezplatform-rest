@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input\Handler;
+namespace Ibexa\Tests\Rest\Input\Handler;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -55,3 +55,5 @@ class XmlTest extends TestCase
         );
     }
 }
+
+class_alias(XmlTest::class, 'EzSystems\EzPlatformRest\Tests\Input\Handler\XmlTest');

@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\View;
+namespace Ibexa\Rest\Server\View;
 
 use Symfony\Component\HttpFoundation\Request;
-use EzSystems\EzPlatformRest\Output\Visitor as OutputVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor as OutputVisitor;
 use Symfony\Component\HttpFoundation\Response;
 use RuntimeException;
 
@@ -59,3 +59,5 @@ class AcceptHeaderVisitorDispatcher
         throw new RuntimeException('No view mapping found.');
     }
 }
+
+class_alias(AcceptHeaderVisitorDispatcher::class, 'EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher');

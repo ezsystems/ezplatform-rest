@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
 
 /**
  * URLWildcardList value object visitor.
@@ -42,3 +42,5 @@ class URLWildcardList extends ValueObjectVisitor
         $generator->endObjectElement('UrlWildcardList');
     }
 }
+
+class_alias(URLWildcardList::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLWildcardList');

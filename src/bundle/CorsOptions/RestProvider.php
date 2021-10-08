@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\CorsOptions;
+namespace Ibexa\Bundle\Rest\CorsOptions;
 
 use Nelmio\CorsBundle\Options\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -65,3 +65,5 @@ class RestProvider implements ProviderInterface
         return [];
     }
 }
+
+class_alias(RestProvider::class, 'EzSystems\EzPlatformRestBundle\CorsOptions\RestProvider');

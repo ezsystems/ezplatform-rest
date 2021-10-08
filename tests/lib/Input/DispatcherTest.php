@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input;
+namespace Ibexa\Tests\Rest\Input;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Input\Handler;
+use Ibexa\Rest;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Input\Handler;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -166,3 +166,5 @@ class DispatcherTest extends TestCase
         $dispatcher->parse($message);
     }
 }
+
+class_alias(DispatcherTest::class, 'EzSystems\EzPlatformRest\Tests\Input\DispatcherTest');

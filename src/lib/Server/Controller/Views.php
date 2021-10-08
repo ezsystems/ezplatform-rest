@@ -4,16 +4,16 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\Exceptions\NotImplementedException;
 use eZ\Publish\API\Repository\SearchService;
 use eZ\Publish\API\Repository\Values\Content\Language;
 use eZ\Publish\API\Repository\Values\Content\LocationQuery;
-use EzSystems\EzPlatformRest\Server\Controller;
+use Ibexa\Rest\Server\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Values;
 
 /**
  * Controller for Repository Views (Search, mostly).
@@ -100,3 +100,5 @@ class Views extends Controller
         return new NotImplementedException('ezpublish_rest.controller.content:loadViewResults');
     }
 }
+
+class_alias(Views::class, 'EzSystems\EzPlatformRest\Server\Controller\Views');

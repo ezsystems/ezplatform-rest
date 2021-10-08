@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Security;
+namespace Ibexa\Rest\Server\Security;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
 use eZ\Publish\Core\MVC\Symfony\Security\UserInterface as EzUser;
-use EzSystems\EzPlatformRest\Server\Exceptions\InvalidUserTypeException;
-use EzSystems\EzPlatformRest\Server\Exceptions\UserConflictException;
+use Ibexa\Rest\Server\Exceptions\InvalidUserTypeException;
+use Ibexa\Rest\Server\Exceptions\UserConflictException;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -234,3 +234,5 @@ class RestAuthenticator implements AuthenticatorInterface
         return $response;
     }
 }
+
+class_alias(RestAuthenticator::class, 'EzSystems\EzPlatformRest\Server\Security\RestAuthenticator');

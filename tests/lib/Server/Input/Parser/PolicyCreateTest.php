@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\User\Limitation;
 use eZ\Publish\Core\Repository\RoleService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\PolicyCreate;
+use Ibexa\Rest\Server\Input\Parser\PolicyCreate;
 use eZ\Publish\Core\Repository\Values\User\PolicyCreateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class PolicyCreateTest extends BaseTest
 {
@@ -262,3 +262,5 @@ class PolicyCreateTest extends BaseTest
         return $roleServiceMock;
     }
 }
+
+class_alias(PolicyCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\PolicyCreateTest');

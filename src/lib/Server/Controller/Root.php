@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Service\RootResourceBuilderInterface;
+use Ibexa\Contracts\Rest\Exceptions\NotFoundException;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Service\RootResourceBuilderInterface;
 
 /**
  * Root controller.
@@ -45,3 +45,5 @@ class Root extends RestController
         throw new NotFoundException('No such route');
     }
 }
+
+class_alias(Root::class, 'EzSystems\EzPlatformRest\Server\Controller\Root');

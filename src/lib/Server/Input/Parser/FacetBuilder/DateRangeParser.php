@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder;
+namespace Ibexa\Rest\Server\Input\Parser\FacetBuilder;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\DateRangeFacetBuilder;
 
 /**
@@ -57,3 +57,5 @@ class DateRangeParser extends BaseParser
         */
     }
 }
+
+class_alias(DateRangeParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\DateRangeParser');

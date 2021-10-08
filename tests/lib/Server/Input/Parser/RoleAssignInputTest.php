@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
 use eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation;
-use EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput;
-use EzSystems\EzPlatformRest\Server\Values\RoleAssignment;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\RoleAssignInput;
+use Ibexa\Rest\Server\Values\RoleAssignment;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class RoleAssignInputTest extends BaseTest
 {
@@ -171,3 +171,5 @@ class RoleAssignInputTest extends BaseTest
         ];
     }
 }
+
+class_alias(RoleAssignInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\RoleAssignInputTest');

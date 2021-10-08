@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
+namespace Ibexa\Tests\Rest\Output\Generator;
 
-use EzSystems\EzPlatformRest\Tests\Output\GeneratorTest;
-use EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator;
-use EzSystems\EzPlatformRest;
+use Ibexa\Tests\Rest\Output\GeneratorTest;
+use Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator;
+use Ibexa\Rest;
 
 require_once __DIR__ . '/../GeneratorTest.php';
 
@@ -272,3 +272,5 @@ class XmlTest extends GeneratorTest
         return $this->generator;
     }
 }
+
+class_alias(XmlTest::class, 'EzSystems\EzPlatformRest\Tests\Output\Generator\XmlTest');

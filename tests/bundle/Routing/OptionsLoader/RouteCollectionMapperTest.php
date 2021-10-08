@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Routing\OptionsLoader;
+namespace Ibexa\Tests\Bundle\Rest\Routing\OptionsLoader;
 
-use EzSystems\EzPlatformRestBundle\Routing\OptionsLoader\Mapper;
-use EzSystems\EzPlatformRestBundle\Routing\OptionsLoader\RouteCollectionMapper;
+use Ibexa\Bundle\Rest\Routing\OptionsLoader\Mapper;
+use Ibexa\Bundle\Rest\Routing\OptionsLoader\RouteCollectionMapper;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\Route;
 use Symfony\Component\Routing\RouteCollection;
@@ -73,3 +73,5 @@ class RouteCollectionMapperTest extends TestCase
         return new Route($path, [], [], [], '', [], $methods);
     }
 }
+
+class_alias(RouteCollectionMapperTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Routing\OptionsLoader\RouteCollectionMapperTest');

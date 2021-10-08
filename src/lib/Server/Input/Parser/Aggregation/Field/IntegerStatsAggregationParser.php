@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Field;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractStatsAggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Field\IntegerStatsAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\AbstractStatsAggregationParser;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Server\Input\Parser\Aggregation\AbstractStatsAggregationParser;
+use Ibexa\Rest\Exceptions;
 
 final class IntegerStatsAggregationParser extends AbstractStatsAggregationParser
 {
@@ -38,3 +38,5 @@ final class IntegerStatsAggregationParser extends AbstractStatsAggregationParser
         );
     }
 }
+
+class_alias(IntegerStatsAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\IntegerStatsAggregationParser');

@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\URLAliasService;
 use eZ\Publish\API\Repository\LocationService;
 use Symfony\Component\HttpFoundation\Request;
@@ -173,3 +173,5 @@ class URLAlias extends RestController
         return new Values\NoContent();
     }
 }
+
+class_alias(URLAlias::class, 'EzSystems\EzPlatformRest\Server\Controller\URLAlias');

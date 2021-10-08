@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest;
+namespace Ibexa\Rest;
 
 /**
  * Interface for Request parsers.
@@ -40,3 +40,5 @@ interface RequestParser
      */
     public function parseHref($href, $attribute);
 }
+
+class_alias(RequestParser::class, 'EzSystems\EzPlatformRest\RequestParser');

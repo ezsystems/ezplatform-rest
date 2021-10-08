@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\DateMetadata;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Server\Input\Parser\Criterion\DateMetadata;
+use Ibexa\Rest\Exceptions;
 
 final class DateMetadataTest extends BaseTest
 {
@@ -163,3 +163,5 @@ final class DateMetadataTest extends BaseTest
         return new DateMetadata();
     }
 }
+
+class_alias(DateMetadataTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion\DateMetadataTest');

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Exceptions\Parser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\JWTInput;
-use EzSystems\EzPlatformRest\Server\Values\JWTInput as JWTInputValue;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\JWTInput;
+use Ibexa\Rest\Server\Values\JWTInput as JWTInputValue;
 
 class JWTInputTest extends BaseTest
 {
@@ -79,3 +79,5 @@ class JWTInputTest extends BaseTest
         return new JWTInput();
     }
 }
+
+class_alias(JWTInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\JWTInputTest');

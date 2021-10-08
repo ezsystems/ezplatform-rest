@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Routing;
+namespace Ibexa\Bundle\Rest\Routing;
 
 use Symfony\Component\Config\Loader\Loader;
-use EzSystems\EzPlatformRestBundle\Routing\OptionsLoader\RouteCollectionMapper;
+use Ibexa\Bundle\Rest\Routing\OptionsLoader\RouteCollectionMapper;
 use Symfony\Component\Routing\RouteCollection;
 
 /**
@@ -40,3 +40,5 @@ class OptionsLoader extends Loader
         return $type === 'rest_options';
     }
 }
+
+class_alias(OptionsLoader::class, 'EzSystems\EzPlatformRestBundle\Routing\OptionsLoader');

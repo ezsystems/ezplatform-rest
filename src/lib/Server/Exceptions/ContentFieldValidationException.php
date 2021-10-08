@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Exceptions;
+namespace Ibexa\Rest\Server\Exceptions;
 
 use eZ\Publish\API\Repository\Exceptions\ContentFieldValidationException as APIContentFieldValidationException;
 
@@ -39,3 +39,5 @@ class ContentFieldValidationException extends BadRequestException
         return $this->errors;
     }
 }
+
+class_alias(ContentFieldValidationException::class, 'EzSystems\EzPlatformRest\Server\Exceptions\ContentFieldValidationException');

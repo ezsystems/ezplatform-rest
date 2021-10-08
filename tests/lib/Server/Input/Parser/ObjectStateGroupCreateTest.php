@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ObjectStateService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateGroupCreate;
+use Ibexa\Rest\Server\Input\Parser\ObjectStateGroupCreate;
 use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroupCreateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ObjectStateGroupCreateTest extends BaseTest
 {
@@ -216,3 +216,5 @@ class ObjectStateGroupCreateTest extends BaseTest
         return $objectStateServiceMock;
     }
 }
+
+class_alias(ObjectStateGroupCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ObjectStateGroupCreateTest');

@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\UrlHandler;
+namespace Ibexa\Tests\Rest\UrlHandler;
 
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest;
+use Ibexa\Rest;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -212,3 +212,5 @@ class PatternTest extends TestCase
         );
     }
 }
+
+class_alias(PatternTest::class, 'EzSystems\EzPlatformRest\Tests\UrlHandler\PatternTest');

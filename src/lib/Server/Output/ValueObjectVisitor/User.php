@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\ContentService;
-use EzSystems\EzPlatformRest\Output\DelegateValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Server\Values\RestUser;
+use Ibexa\Rest\Output\DelegateValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Rest\Server\Values\RestUser;
 
 final class User extends ValueObjectVisitor implements DelegateValueObjectVisitor
 {
@@ -43,3 +43,5 @@ final class User extends ValueObjectVisitor implements DelegateValueObjectVisito
         );
     }
 }
+
+class_alias(User::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\User');

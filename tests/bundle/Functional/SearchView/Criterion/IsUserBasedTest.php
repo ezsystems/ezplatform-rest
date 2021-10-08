@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\Criterion;
+namespace Ibexa\Tests\Bundle\Rest\Functional\SearchView\Criterion;
 
-use EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\SearchCriterionTestCase;
+use Ibexa\Tests\Bundle\Rest\Functional\SearchView\SearchCriterionTestCase;
 
 final class IsUserBasedTest extends SearchCriterionTestCase
 {
@@ -28,3 +28,5 @@ final class IsUserBasedTest extends SearchCriterionTestCase
         ];
     }
 }
+
+class_alias(IsUserBasedTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\Criterion\IsUserBasedTest');

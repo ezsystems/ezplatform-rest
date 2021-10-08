@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Security;
+namespace Ibexa\Tests\Rest\Server\Security;
 
 use eZ\Publish\API\Repository\Values\User\User;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzPlatformRest\Server\Security\RestAuthenticator;
+use Ibexa\Rest\Server\Security\RestAuthenticator;
 use eZ\Publish\Core\MVC\Symfony\Security\User as EzUser;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
@@ -27,8 +27,8 @@ use Symfony\Component\Security\Http\SecurityEvents;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
-use EzSystems\EzPlatformRest\Server\Exceptions\InvalidUserTypeException;
-use EzSystems\EzPlatformRest\Server\Exceptions\UserConflictException;
+use Ibexa\Rest\Server\Exceptions\InvalidUserTypeException;
+use Ibexa\Rest\Server\Exceptions\UserConflictException;
 
 class RestSessionBasedAuthenticatorTest extends TestCase
 {
@@ -569,3 +569,5 @@ class RestSessionBasedAuthenticatorTest extends TestCase
         return $this->createMock(UsernamePasswordToken::class);
     }
 }
+
+class_alias(RestSessionBasedAuthenticatorTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Security\RestSessionBasedAuthenticatorTest');

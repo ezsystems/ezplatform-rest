@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\ApiLoader;
+namespace Ibexa\Bundle\Rest\ApiLoader;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\RequestStackAware;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
 use eZ\Publish\API\Repository\Repository;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -87,3 +87,5 @@ class Factory
         );
     }
 }
+
+class_alias(Factory::class, 'EzSystems\EzPlatformRestBundle\ApiLoader\Factory');

@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
+namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
-use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
+use Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use EzSystems\EzPlatformRestBundle\EventListener\RequestListener;
+use Ibexa\Bundle\Rest\EventListener\RequestListener;
 use Symfony\Component\HttpKernel\KernelEvents;
 use PHPUnit\Framework\MockObject\MockObject;
 
@@ -131,3 +131,5 @@ class RequestListenerTest extends EventListenerTest
         return $event->getRequest();
     }
 }
+
+class_alias(RequestListenerTest::class, 'EzSystems\EzPlatformRestBundle\Tests\EventListener\RequestListenerTest');

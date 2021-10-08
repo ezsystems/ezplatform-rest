@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\FullText as FullTextCriterion;
 
 /**
@@ -35,3 +35,5 @@ class FullText extends BaseParser
         return new FullTextCriterion($data['FullTextCriterion']);
     }
 }
+
+class_alias(FullText::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\FullText');

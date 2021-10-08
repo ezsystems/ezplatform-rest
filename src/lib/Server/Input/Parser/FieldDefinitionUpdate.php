@@ -4,14 +4,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Input\ParserTools;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Input\ParserTools;
 use eZ\Publish\API\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Exceptions;
 
 /**
  * Parser for FieldDefinitionUpdate.
@@ -172,3 +172,5 @@ class FieldDefinitionUpdate extends BaseParser
         throw new Exceptions\NotFoundException("Field definition not found: '{$data['__url']}'.");
     }
 }
+
+class_alias(FieldDefinitionUpdate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate');

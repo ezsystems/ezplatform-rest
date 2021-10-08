@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Range;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 
 final class FloatRangeParser extends AbstractRangeParser
 {
@@ -21,3 +21,5 @@ final class FloatRangeParser extends AbstractRangeParser
         return (float)$value;
     }
 }
+
+class_alias(FloatRangeParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\FloatRangeParser');

@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output\Generator\Json;
+namespace Ibexa\Tests\Rest\Output\Generator\Json;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Tests\Output\Generator\FieldTypeHashGeneratorBaseTest;
+use Ibexa\Rest;
+use Ibexa\Tests\Rest\Output\Generator\FieldTypeHashGeneratorBaseTest;
 
 class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
 {
@@ -33,3 +33,5 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
         );
     }
 }
+
+class_alias(FieldTypeHashGeneratorTest::class, 'EzSystems\EzPlatformRest\Tests\Output\Generator\Json\FieldTypeHashGeneratorTest');

@@ -4,18 +4,18 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
 use eZ\Publish\API\Repository\Values\Content as ApiValues;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\LocationService;
-use EzSystems\EzPlatformRest\Server\Values\RestContent as RestContentValue;
+use Ibexa\Rest\Server\Values\RestContent as RestContentValue;
 
 /**
  * Section value object visitor.
@@ -161,3 +161,5 @@ class RestExecutedView extends ValueObjectVisitor
         $generator->endObjectElement('View');
     }
 }
+
+class_alias(RestExecutedView::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestExecutedView');

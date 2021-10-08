@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Rest\Input;
 
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Exceptions;
 
 /**
  * Input dispatcher.
@@ -124,3 +124,5 @@ class Dispatcher
         return $parameters;
     }
 }
+
+class_alias(Dispatcher::class, 'EzSystems\EzPlatformRest\Input\Dispatcher');

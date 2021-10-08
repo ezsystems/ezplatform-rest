@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\Core\Base\Exceptions\ContentFieldValidationException as CoreContentFieldValidationException;
 use eZ\Publish\Core\FieldType\ValidationError;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Exceptions;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Exceptions;
 use Symfony\Component\Translation\Translator;
 
 class ContentFieldValidationExceptionTest extends ValueObjectVisitorBaseTest
@@ -156,3 +156,5 @@ class ContentFieldValidationExceptionTest extends ValueObjectVisitorBaseTest
         return new ValueObjectVisitor\ContentFieldValidationException(false, new Translator('eng-GB'));
     }
 }
+
+class_alias(ContentFieldValidationExceptionTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\ContentFieldValidationExceptionTest');

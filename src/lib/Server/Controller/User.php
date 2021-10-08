@@ -4,14 +4,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Exceptions;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Exceptions;
+use Ibexa\Rest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\ContentTypeService;
@@ -23,8 +23,8 @@ use eZ\Publish\API\Repository\Values\User\UserRoleAssignment;
 use eZ\Publish\API\Repository\Values\User\UserGroupRoleAssignment;
 use eZ\Publish\API\Repository\Values\User\User as RepositoryUser;
 use eZ\Publish\API\Repository\Exceptions as ApiExceptions;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
-use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Contracts\Rest\Exceptions\NotFoundException;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
@@ -1062,3 +1062,5 @@ class User extends RestController
         $this->sessionController = $sessionController;
     }
 }
+
+class_alias(User::class, 'EzSystems\EzPlatformRest\Server\Controller\User');

@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values;
 
 /**
@@ -50,3 +50,5 @@ class LogicalAnd extends LogicalOperator
         return new Values\Content\Query\Criterion\LogicalAnd($criteria);
     }
 }
+
+class_alias(LogicalAnd::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LogicalAnd');

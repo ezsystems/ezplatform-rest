@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle;
+namespace Ibexa\Bundle\Rest;
 
 final class RestEvents
 {
@@ -13,3 +13,5 @@ final class RestEvents
      */
     const REST_CSRF_TOKEN_VALIDATED = 'ezpublish.rest.csrf_token_validated';
 }
+
+class_alias(RestEvents::class, 'EzSystems\EzPlatformRestBundle\RestEvents');

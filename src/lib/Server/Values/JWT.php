@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 class JWT extends RestValue
 {
@@ -20,3 +20,5 @@ class JWT extends RestValue
         $this->token = $token;
     }
 }
+
+class_alias(JWT::class, 'EzSystems\EzPlatformRest\Server\Values\JWT');

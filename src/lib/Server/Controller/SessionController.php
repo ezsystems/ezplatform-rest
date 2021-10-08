@@ -4,20 +4,20 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
-use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Controller;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions\NotFoundException;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Exceptions;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Csrf\CsrfToken;
-use EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager;
+use Ibexa\Rest\Server\Security\CsrfTokenManager;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
@@ -238,3 +238,5 @@ class SessionController extends Controller
         return $this->authenticator;
     }
 }
+
+class_alias(SessionController::class, 'EzSystems\EzPlatformRest\Server\Controller\SessionController');

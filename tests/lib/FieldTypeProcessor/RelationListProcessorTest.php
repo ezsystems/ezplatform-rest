@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\Core\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\FieldTypeProcessor\RelationListProcessor;
+use Ibexa\Rest\FieldTypeProcessor\RelationListProcessor;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -126,3 +126,5 @@ class RelationListProcessorTest extends TestCase
         return new RelationListProcessor();
     }
 }
+
+class_alias(RelationListProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\RelationListProcessorTest');

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator as QueryOperator;
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserEmail as UserEmailCriterion;
 
 class UserEmail extends BaseParser
@@ -36,3 +36,5 @@ class UserEmail extends BaseParser
         return new UserEmailCriterion($value, $operator);
     }
 }
+
+class_alias(UserEmail::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserEmail');

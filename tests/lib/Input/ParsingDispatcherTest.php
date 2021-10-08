@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input;
+namespace Ibexa\Tests\Rest\Input;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Input\Parser;
+use Ibexa\Rest;
+use Ibexa\Contracts\Rest\Input\Parser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -103,3 +103,5 @@ class ParsingDispatcherTest extends TestCase
         return $this->createMock(Parser::class);
     }
 }
+
+class_alias(ParsingDispatcherTest::class, 'EzSystems\EzPlatformRest\Tests\Input\ParsingDispatcherTest');

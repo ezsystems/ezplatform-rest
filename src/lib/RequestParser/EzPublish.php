@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\RequestParser;
+namespace Ibexa\Rest\RequestParser;
 
 /**
  * Pattern based Request parser pre-configured for eZ Publish.
@@ -96,3 +96,5 @@ class EzPublish extends Pattern
         'userSession' => '/user/sessions/{sessionId}',
     ];
 }
+
+class_alias(EzPublish::class, 'EzSystems\EzPlatformRest\RequestParser\EzPublish');

@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Security;
+namespace Ibexa\Rest\Server\Security;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -56,3 +56,5 @@ class RestLogoutHandler implements LogoutHandlerInterface
         $response->headers->clearCookie($request->getSession()->getName(), $path, $domain);
     }
 }
+
+class_alias(RestLogoutHandler::class, 'EzSystems\EzPlatformRest\Server\Security\RestLogoutHandler');

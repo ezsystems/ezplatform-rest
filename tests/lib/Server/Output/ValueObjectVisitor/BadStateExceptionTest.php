@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use eZ\Publish\API\Repository\Exceptions\BadStateException;
 
 class BadStateExceptionTest extends ExceptionTest
@@ -51,3 +51,5 @@ class BadStateExceptionTest extends ExceptionTest
         return new ValueObjectVisitor\BadStateException();
     }
 }
+
+class_alias(BadStateExceptionTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\BadStateExceptionTest');

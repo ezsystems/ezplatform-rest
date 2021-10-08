@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView;
+namespace Ibexa\Tests\Bundle\Rest\Functional\SearchView;
 
 abstract class SearchCriterionTestCase extends SearchViewTestCase
 {
@@ -43,3 +43,5 @@ abstract class SearchCriterionTestCase extends SearchViewTestCase
             JSON;
     }
 }
+
+class_alias(SearchCriterionTestCase::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\SearchCriterionTestCase');

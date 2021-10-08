@@ -4,15 +4,15 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\TrashService;
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -175,3 +175,5 @@ class Trash extends RestController
         );
     }
 }
+
+class_alias(Trash::class, 'EzSystems\EzPlatformRest\Server\Controller\Trash');
