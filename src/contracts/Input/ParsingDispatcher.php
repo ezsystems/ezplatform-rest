@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Contracts\Rest\Input;
 
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Exceptions;
 
 /**
  * Parsing dispatcher.
@@ -107,3 +107,5 @@ class ParsingDispatcher
         return [$mediaType, $version];
     }
 }
+
+class_alias(ParsingDispatcher::class, 'EzSystems\EzPlatformRest\Input\ParsingDispatcher');

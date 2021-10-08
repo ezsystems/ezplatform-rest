@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Contracts\Rest\Input;
 
 /**
  * Base class for input parser.
@@ -21,3 +21,5 @@ abstract class Parser
      */
     abstract public function parse(array $data, ParsingDispatcher $parsingDispatcher);
 }
+
+class_alias(Parser::class, 'EzSystems\EzPlatformRest\Input\Parser');

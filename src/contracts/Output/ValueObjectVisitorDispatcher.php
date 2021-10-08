@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output;
+namespace Ibexa\Contracts\Rest\Output;
 
 use Error;
 
@@ -78,3 +78,5 @@ class ValueObjectVisitorDispatcher
         throw new Exceptions\NoVisitorFoundException($checkedClassNames);
     }
 }
+
+class_alias(ValueObjectVisitorDispatcher::class, 'EzSystems\EzPlatformRest\Output\ValueObjectVisitorDispatcher');
