@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Output\Generator;
 
 use Ibexa\Tests\Rest\Output\GeneratorTest;
 use Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator;
-use Ibexa\Rest;
+use Ibexa\Rest\Output\Generator\Xml;
 
 require_once __DIR__ . '/../GeneratorTest.php';
 
@@ -263,7 +263,7 @@ class XmlTest extends GeneratorTest
     protected function getGenerator()
     {
         if (!isset($this->generator)) {
-            $this->generator = new EzPlatformRest\Output\Generator\Xml(
+            $this->generator = new Xml(
                 $this->createMock(FieldTypeHashGenerator::class)
             );
         }

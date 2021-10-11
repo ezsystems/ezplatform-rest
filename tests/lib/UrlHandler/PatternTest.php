@@ -7,7 +7,7 @@
 namespace Ibexa\Tests\Rest\UrlHandler;
 
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use Ibexa\Rest;
+use Ibexa\Rest\RequestParser\Pattern;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -23,7 +23,7 @@ class PatternTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("URL '/foo' did not match any route.");
 
-        $urlHandler = new EzPlatformRest\RequestParser\Pattern();
+        $urlHandler = new Pattern();
         $urlHandler->parse('/foo');
     }
 
@@ -35,7 +35,7 @@ class PatternTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Invalid pattern part: '{broken'.");
 
-        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
+        $urlHandler = new Pattern(
             [
                 'invalid' => '/foo/{broken',
             ]
@@ -51,7 +51,7 @@ class PatternTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("URL '/bar' did not match any route.");
 
-        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
+        $urlHandler = new Pattern(
             [
                 'pattern' => '/foo/{foo}',
             ]
@@ -67,7 +67,7 @@ class PatternTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("URL '/foo/23/bar' did not match any route.");
 
-        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
+        $urlHandler = new Pattern(
             [
                 'pattern' => '/foo/{foo}',
             ]
@@ -138,7 +138,7 @@ class PatternTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("No URL for type 'unknown' available.");
 
-        $urlHandler = new EzPlatformRest\RequestParser\Pattern();
+        $urlHandler = new Pattern();
         $urlHandler->generate('unknown', []);
     }
 
@@ -150,7 +150,7 @@ class PatternTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("No value provided for 'unknown'.");
 
-        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
+        $urlHandler = new Pattern(
             [
                 'pattern' => '/foo/{unknown}',
             ]
@@ -166,7 +166,7 @@ class PatternTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage("Unused values in values array: 'bar'.");
 
-        $urlHandler = new EzPlatformRest\RequestParser\Pattern(
+        $urlHandler = new Pattern(
             [
                 'pattern' => '/foo/{foo}',
             ]
@@ -202,7 +202,7 @@ class PatternTest extends TestCase
      */
     protected function getWorkingUrlHandler()
     {
-        return new EzPlatformRest\RequestParser\Pattern(
+        return new Pattern(
             [
                 'section' => '/content/section/{section}',
                 'objectversion' => '/content/object/{object}/{version}',

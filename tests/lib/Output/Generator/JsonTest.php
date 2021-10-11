@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Output\Generator;
 
 use Ibexa\Contracts\Rest\Output\Exceptions\OutputGeneratorException;
 use Ibexa\Tests\Rest\Output\GeneratorTest;
-use Ibexa\Rest;
+use Ibexa\Rest\Output\Generator\Json;
 use Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator;
 
 require_once __DIR__ . '/../GeneratorTest.php';
@@ -293,7 +293,7 @@ class JsonTest extends GeneratorTest
     protected function getGenerator()
     {
         if (!isset($this->generator)) {
-            $this->generator = new EzPlatformRest\Output\Generator\Json(
+            $this->generator = new Json(
                 $this->createMock(FieldTypeHashGenerator::class)
             );
         }

@@ -6,7 +6,6 @@
  */
 namespace Ibexa\Tests\Rest\Output;
 
-use Ibexa\Rest;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\Visitor;
@@ -94,7 +93,7 @@ class VisitorTest extends TestCase
             ->method('visit')
             ->with($data);
 
-        $visitor = new EzPlatformRest\Output\Visitor($generatorMock, $valueObjectDispatcherMock);
+        $visitor = new Visitor($generatorMock, $valueObjectDispatcherMock);
         $visitor->visit($data);
     }
 

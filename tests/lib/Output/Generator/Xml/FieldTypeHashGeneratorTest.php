@@ -6,7 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\Output\Generator\Xml;
 
-use Ibexa\Rest;
+use Ibexa\Rest\Output\Generator\Xml;
+use Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator;
 use Ibexa\Tests\Rest\Output\Generator\FieldTypeHashGeneratorBaseTest;
 
 class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
@@ -18,7 +19,7 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
      */
     protected function initializeFieldTypeHashGenerator()
     {
-        return new EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator();
+        return new FieldTypeHashGenerator();
     }
 
     /**
@@ -28,7 +29,7 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
      */
     protected function initializeGenerator()
     {
-        $generator = new EzPlatformRest\Output\Generator\Xml(
+        $generator = new Xml(
             $this->getFieldTypeHashGenerator()
         );
         $generator->setFormatOutput(true);

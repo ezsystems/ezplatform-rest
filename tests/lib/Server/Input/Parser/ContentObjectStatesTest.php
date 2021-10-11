@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use Ibexa\Contracts\Rest\Input\Parser;
+use Ibexa\Rest\Input\Parser;
 
 class ContentObjectStatesTest extends BaseTest
 {

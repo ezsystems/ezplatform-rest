@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest;
 
-use Ibexa\Rest;
+use Ibexa\Rest\Message;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,7 +19,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageDefaultHeaders()
     {
-        $message = new EzPlatformRest\Message();
+        $message = new Message();
 
         $this->assertSame([], $message->headers);
     }
@@ -29,7 +29,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageDefaultBody()
     {
-        $message = new EzPlatformRest\Message();
+        $message = new Message();
 
         $this->assertSame('', $message->body);
     }
@@ -39,7 +39,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageConstructorHeaders()
     {
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             $headers = [
                 'Content-Type' => 'text/xml',
             ]
@@ -53,7 +53,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageConstructorBody()
     {
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             [],
             'Hello world!'
         );

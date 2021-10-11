@@ -6,7 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\Output\Generator\Json;
 
-use Ibexa\Rest;
+use Ibexa\Rest\Output\Generator\Json;
+use Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator;
 use Ibexa\Tests\Rest\Output\Generator\FieldTypeHashGeneratorBaseTest;
 
 class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
@@ -18,7 +19,7 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
      */
     protected function initializeFieldTypeHashGenerator()
     {
-        return new EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator();
+        return new FieldTypeHashGenerator();
     }
 
     /**
@@ -28,7 +29,7 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
      */
     protected function initializeGenerator()
     {
-        return new EzPlatformRest\Output\Generator\Json(
+        return new Json(
             $this->getFieldTypeHashGenerator()
         );
     }

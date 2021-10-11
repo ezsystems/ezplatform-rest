@@ -10,7 +10,7 @@ use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
 use Ibexa\Rest\Server\Input\Parser\Criterion\DateMetadata;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 final class DateMetadataTest extends BaseTest
 {

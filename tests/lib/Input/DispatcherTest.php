@@ -6,10 +6,11 @@
  */
 namespace Ibexa\Tests\Rest\Input;
 
-use Ibexa\Rest;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Input\Handler;
+use Ibexa\Rest\Input\Dispatcher;
+use Ibexa\Rest\Message;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -26,10 +27,10 @@ class DispatcherTest extends TestCase
     {
         $this->expectException(Parser::class);
 
-        $message = new EzPlatformRest\Message();
+        $message = new Message();
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
-        $dispatcher = new EzPlatformRest\Input\Dispatcher($parsingDispatcher);
+        $dispatcher = new Dispatcher($parsingDispatcher);
 
         $dispatcher->parse($message);
     }
@@ -38,14 +39,14 @@ class DispatcherTest extends TestCase
     {
         $this->expectException(Parser::class);
 
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             [
                 'Content-Type' => 'text/html',
             ]
         );
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
-        $dispatcher = new EzPlatformRest\Input\Dispatcher($parsingDispatcher);
+        $dispatcher = new Dispatcher($parsingDispatcher);
 
         $dispatcher->parse($message);
     }
@@ -54,21 +55,21 @@ class DispatcherTest extends TestCase
     {
         $this->expectException(Parser::class);
 
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             [
                 'Content-Type' => 'text/html+unknown',
             ]
         );
 
         $parsingDispatcher = $this->getParsingDispatcherMock();
-        $dispatcher = new EzPlatformRest\Input\Dispatcher($parsingDispatcher);
+        $dispatcher = new Dispatcher($parsingDispatcher);
 
         $dispatcher->parse($message);
     }
 
     public function testParse()
     {
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             [
                 'Content-Type' => 'text/html+format',
             ],
@@ -89,7 +90,7 @@ class DispatcherTest extends TestCase
             ->with('Hello world!')
             ->willReturn([[42]]);
 
-        $dispatcher = new EzPlatformRest\Input\Dispatcher($parsingDispatcher, ['format' => $handler]);
+        $dispatcher = new Dispatcher($parsingDispatcher, ['format' => $handler]);
 
         $this->assertSame(
             23,
@@ -103,7 +104,7 @@ class DispatcherTest extends TestCase
      */
     public function testParseSpecialUrlHeader()
     {
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             [
                 'Content-Type' => 'text/html+format',
                 'Url' => '/foo/bar',
@@ -131,7 +132,7 @@ class DispatcherTest extends TestCase
                     ]
             );
 
-        $dispatcher = new EzPlatformRest\Input\Dispatcher($parsingDispatcher, ['format' => $handler]);
+        $dispatcher = new Dispatcher($parsingDispatcher, ['format' => $handler]);
 
         $this->assertSame(
             23,
@@ -141,7 +142,7 @@ class DispatcherTest extends TestCase
 
     public function testParseMediaTypeCharset()
     {
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             [
                 'Content-Type' => 'text/html+format; version=1.1; charset=UTF-8',
                 'Url' => '/foo/bar',
@@ -161,7 +162,7 @@ class DispatcherTest extends TestCase
             ->method('convert')
             ->willReturn([]);
 
-        $dispatcher = new EzPlatformRest\Input\Dispatcher($parsingDispatcher, ['format' => $handler]);
+        $dispatcher = new Dispatcher($parsingDispatcher, ['format' => $handler]);
 
         $dispatcher->parse($message);
     }

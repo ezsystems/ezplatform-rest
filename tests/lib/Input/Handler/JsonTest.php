@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Input\Handler;
 
-use Ibexa\Rest;
+use Ibexa\Rest\Input\Handler\Json;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 use PHPUnit\Framework\TestCase;
 
@@ -67,7 +67,7 @@ class JsonTest extends TestCase
 
     protected function getHandler()
     {
-        return new EzPlatformRest\Input\Handler\Json();
+        return new Json();
     }
 }
 

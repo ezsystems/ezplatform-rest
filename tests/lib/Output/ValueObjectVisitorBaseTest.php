@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Output;
 
 use Ibexa\Tests\Rest\AssertXmlTagTrait;
 use Ibexa\Tests\Rest\Server;
-use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Rest\Output\Generator;
 use Ibexa\Rest\RequestParser;
 use Ibexa\Contracts\Rest\Output\Visitor;
 use Symfony\Component\HttpFoundation\Response;

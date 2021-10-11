@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Input\Handler;
 
-use Ibexa\Rest;
+use Ibexa\Rest\Input\Handler\Xml;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 use PHPUnit\Framework\TestCase;
 
@@ -19,7 +19,7 @@ class XmlTest extends TestCase
     {
         $this->expectException(Parser::class);
 
-        $handler = new EzPlatformRest\Input\Handler\Xml();
+        $handler = new Xml();
 
         $this->assertSame(
             [
@@ -47,7 +47,7 @@ class XmlTest extends TestCase
      */
     public function testConvertXml($xml, $expectation)
     {
-        $handler = new EzPlatformRest\Input\Handler\Xml();
+        $handler = new Xml();
 
         $this->assertSame(
             $expectation,

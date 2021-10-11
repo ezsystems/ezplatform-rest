@@ -7,7 +7,7 @@
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Rest\Output\ValueObjectVisitor;
 use Ibexa\Rest\Values\ContentObjectStates;
 
 class ContentObjectStatesTest extends ValueObjectVisitorBaseTest

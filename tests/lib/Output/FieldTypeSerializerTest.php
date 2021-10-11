@@ -7,7 +7,6 @@
 namespace Ibexa\Tests\Rest\Output;
 
 use eZ\Publish\API\Repository\FieldTypeService;
-use Ibexa\Rest;
 use eZ\Publish\API\Repository\Values\Content\Field;
 use Ibexa\Contracts\Rest\Output\Generator;
 use eZ\Publish\API\Repository\FieldType as APIFieldType;
@@ -15,6 +14,7 @@ use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Rest\FieldTypeProcessorRegistry;
 use Ibexa\Contracts\Rest\FieldTypeProcessor;
+use Ibexa\Rest\Output\FieldTypeSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -374,7 +374,7 @@ class FieldTypeSerializerTest extends TestCase
 
     protected function getFieldTypeSerializer()
     {
-        return new EzPlatformRest\Output\FieldTypeSerializer(
+        return new FieldTypeSerializer(
             $this->getFieldTypeServiceMock(),
             $this->getFieldTypeProcessorRegistryMock()
         );

@@ -7,10 +7,10 @@
 namespace Ibexa\Tests\Rest\Output;
 
 use Error;
-use Ibexa\Rest;
 use Ibexa\Contracts\Rest\Output\Exceptions\InvalidTypeException;
 use Ibexa\Contracts\Rest\Output\Exceptions\NoVisitorFoundException;
 use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher;
 use Ibexa\Contracts\Rest\Output\Visitor;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use stdClass;
@@ -115,7 +115,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
      */
     private function getValueObjectDispatcher()
     {
-        $dispatcher = new EzPlatformRest\Output\ValueObjectVisitorDispatcher();
+        $dispatcher = new ValueObjectVisitorDispatcher();
         $dispatcher->setOutputGenerator($this->getOutputGeneratorMock());
         $dispatcher->setOutputVisitor($this->getOutputVisitorMock());
 
