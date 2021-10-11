@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Limitation;
 
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values;
 
 /**

@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
 use Ibexa\Rest\Server\Input\Parser\Criterion as CriterionParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\LogicalNot as LogicalNotCriterion;
 
 /**

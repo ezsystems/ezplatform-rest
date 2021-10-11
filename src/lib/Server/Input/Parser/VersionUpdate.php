@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Server\Input\Parser;
 
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\FieldTypeParser;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\ContentService;
 use Ibexa\Rest\Input\BaseParser;
 

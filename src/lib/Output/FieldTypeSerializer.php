@@ -6,6 +6,7 @@
  */
 namespace Ibexa\Rest\Output;
 
+use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Rest\FieldTypeProcessorRegistry;
 use eZ\Publish\API\Repository\FieldTypeService;
 use eZ\Publish\API\Repository\FieldType;

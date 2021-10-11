@@ -10,7 +10,7 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Parser for ViewInput Criterion.

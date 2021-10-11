@@ -11,7 +11,7 @@ use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Rest\Input\ParserTools;
 use eZ\Publish\API\Repository\ContentTypeService;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Parser for FieldDefinitionUpdate.

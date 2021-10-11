@@ -12,7 +12,7 @@ use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Sibling as SiblingCriterion;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 class Sibling extends BaseParser
 {

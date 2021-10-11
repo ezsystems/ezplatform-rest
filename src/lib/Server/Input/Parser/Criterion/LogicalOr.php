@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values;
 
 /**

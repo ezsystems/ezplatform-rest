@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\RequestParser;
 
 use Ibexa\Rest\RequestParser;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Pattern based Request parser.

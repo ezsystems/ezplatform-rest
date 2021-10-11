@@ -10,7 +10,7 @@ namespace Ibexa\Rest\Server\Input\Parser;
 
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Values\JWTInput as JWTInputValue;
 
 final class JWTInput extends BaseParser

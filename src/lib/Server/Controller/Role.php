@@ -12,7 +12,7 @@ use eZ\Publish\Core\Base\Exceptions\ForbiddenException;
 use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use Ibexa\Rest\Message;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use Ibexa\Rest\Server\Values;
 use Ibexa\Rest\Server\Controller as RestController;

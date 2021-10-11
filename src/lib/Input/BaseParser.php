@@ -6,6 +6,7 @@
  */
 namespace Ibexa\Rest\Input;
 
+use Ibexa\Contracts\Rest\Input\Parser;
 use Ibexa\Rest\RequestParser;
 
 abstract class BaseParser extends Parser

@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Input\Parser;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\ParserTools;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\ContentTypeService;
 use DateTime;
 

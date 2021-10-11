@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Server\Input\Parser;
 
 use Ibexa\Rest\Server\Input\Parser\Criterion as CriterionParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Values\RestViewInput;
 
 /**

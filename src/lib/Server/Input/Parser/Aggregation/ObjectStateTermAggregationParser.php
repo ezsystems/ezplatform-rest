@@ -11,7 +11,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\ObjectStateTermAggregation;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 final class ObjectStateTermAggregationParser extends AbstractTermAggregationParser
 {

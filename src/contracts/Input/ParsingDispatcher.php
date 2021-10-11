@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Contracts\Rest\Input;
 
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Parsing dispatcher.

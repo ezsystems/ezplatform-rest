@@ -6,8 +6,10 @@
  */
 namespace Ibexa\Rest\Input;
 
+use Ibexa\Contracts\Rest\Input\Handler;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Message;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Input dispatcher.

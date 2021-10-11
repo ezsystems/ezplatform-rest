@@ -6,6 +6,8 @@
  */
 namespace Ibexa\Rest;
 
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
+
 /**
  * FieldTypeProcessorRegistry.
  */

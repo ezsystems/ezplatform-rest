@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\Server\Input\Parser;
 
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Values\RestViewInput;
 use Ibexa\Rest\Input\BaseParser;
 

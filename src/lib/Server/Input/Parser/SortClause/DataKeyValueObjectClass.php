@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Input\Parser\SortClause;
 use eZ\Publish\API\Repository\Values\Content\Query;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 class DataKeyValueObjectClass extends BaseParser
 {

@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Input\Parser;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\FieldTypeParser;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Values\RestUserGroupUpdateStruct;
 use eZ\Publish\API\Repository\UserService;
 use eZ\Publish\API\Repository\ContentService;

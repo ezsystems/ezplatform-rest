@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\Server\Input\Parser\Limitation;
 
 use eZ\Publish\API\Repository\Values;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Generic limitation value parser.

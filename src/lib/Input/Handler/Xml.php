@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\Input\Handler;
 
 use Ibexa\Contracts\Rest\Input\Handler;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Input format handler base class.

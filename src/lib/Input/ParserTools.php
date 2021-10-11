@@ -7,7 +7,8 @@
 namespace Ibexa\Rest\Input;
 
 use eZ\Publish\API\Repository\Values;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use RuntimeException;
 
 /**

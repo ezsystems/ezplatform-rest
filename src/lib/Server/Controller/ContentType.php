@@ -10,7 +10,7 @@ use eZ\Publish\API\Repository\Values\Content\Language;
 use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use eZ\Publish\API\Repository\Exceptions\BadStateException;
 use Ibexa\Rest\Message;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Exceptions\ForbiddenException;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use eZ\Publish\API\Repository\Exceptions\ContentTypeValidationException;

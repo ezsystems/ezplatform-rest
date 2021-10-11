@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
 use Ibexa\Rest\Message;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Values;
 use Ibexa\Rest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\Values\Content\Relation;

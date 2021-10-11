@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Input\Parser;
 
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Values\RestObjectState;
 use eZ\Publish\Core\Repository\Values\ObjectState\ObjectState;
 

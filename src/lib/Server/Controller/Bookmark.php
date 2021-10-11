@@ -11,7 +11,7 @@ namespace Ibexa\Rest\Server\Controller;
 use eZ\Publish\API\Repository\BookmarkService;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use eZ\Publish\API\Repository\LocationService;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Value as RestValue;
 use Ibexa\Rest\Server\Values;
 use Ibexa\Rest\Server\Controller as RestController;

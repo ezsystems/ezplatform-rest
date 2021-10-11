@@ -10,7 +10,7 @@ use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Field as FieldCrite
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Parser for Field Criterion.

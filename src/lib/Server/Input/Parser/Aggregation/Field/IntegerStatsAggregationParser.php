@@ -12,7 +12,7 @@ use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractStatsAggr
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Field\IntegerStatsAggregation;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Server\Input\Parser\Aggregation\AbstractStatsAggregationParser;
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 final class IntegerStatsAggregationParser extends AbstractStatsAggregationParser
 {
