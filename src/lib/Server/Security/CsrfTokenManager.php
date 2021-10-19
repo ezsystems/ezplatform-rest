@@ -56,7 +56,7 @@ class CsrfTokenManager extends BaseCsrfTokenManager
      */
     private function resolveNamespace(RequestStack $requestStack = null)
     {
-        if ($requestStack !== null && ($request = $requestStack->getMasterRequest())) {
+        if ($requestStack !== null && ($request = $requestStack->getMainRequest())) {
             return $request->isSecure() ? 'https-' : '';
         }
 
