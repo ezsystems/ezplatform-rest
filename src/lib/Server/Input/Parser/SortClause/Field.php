@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\SortClause;
+namespace Ibexa\Rest\Server\Input\Parser\SortClause;
 
 use eZ\Publish\API\Repository\Values\Content\Query;
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field as FieldSortClause;
 
 class Field extends BaseParser
@@ -84,3 +84,5 @@ class Field extends BaseParser
         return $normalizedData;
     }
 }
+
+class_alias(Field::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field');

@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output\Generator;
+namespace Ibexa\Rest\Output\Generator;
 
-use EzSystems\EzPlatformRest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Generator;
 
 /**
  * Xml generator.
@@ -271,3 +271,5 @@ class Xml extends Generator
         return $boolValue ? 'true' : 'false';
     }
 }
+
+class_alias(Xml::class, 'EzSystems\EzPlatformRest\Output\Generator\Xml');

@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
+namespace Ibexa\Rest\FieldTypeProcessor;
 
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\Core\FieldType\Relation\Type;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
 use Symfony\Component\Routing\RouterInterface;
 
 abstract class BaseRelationProcessor extends FieldTypeProcessor
@@ -99,3 +99,5 @@ abstract class BaseRelationProcessor extends FieldTypeProcessor
         return $outgoingSettingsHash;
     }
 }
+
+class_alias(BaseRelationProcessor::class, 'EzSystems\EzPlatformRest\FieldTypeProcessor\BaseRelationProcessor');

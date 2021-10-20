@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput;
+use Ibexa\Rest\Server\Input\Parser\ContentTypeGroupInput;
 use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ContentTypeGroupInputTest extends BaseTest
 {
@@ -110,3 +110,5 @@ class ContentTypeGroupInputTest extends BaseTest
         ];
     }
 }
+
+class_alias(ContentTypeGroupInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentTypeGroupInputTest');

@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output\Generator\Json;
+namespace Ibexa\Rest\Output\Generator\Json;
 
 /**
  * Json object.
@@ -41,3 +41,5 @@ class JsonObject
         return $this->_ref_parent;
     }
 }
+
+class_alias(JsonObject::class, 'EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject');

@@ -4,14 +4,14 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\LocationService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate;
+use Ibexa\Rest\Server\Input\Parser\LocationUpdate;
 use eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct;
 use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Server\Values\RestLocationUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Values\RestLocationUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class LocationUpdateTest extends BaseTest
 {
@@ -162,3 +162,5 @@ class LocationUpdateTest extends BaseTest
         return $locationServiceMock;
     }
 }
+
+class_alias(LocationUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\LocationUpdateTest');

@@ -4,15 +4,15 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output;
+namespace Ibexa\Tests\Rest\Output;
 
 use Error;
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Output\Exceptions\InvalidTypeException;
-use EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Exceptions\InvalidTypeException;
+use Ibexa\Contracts\Rest\Output\Exceptions\NoVisitorFoundException;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use stdClass;
 use PHPUnit\Framework\TestCase;
 
@@ -115,7 +115,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
      */
     private function getValueObjectDispatcher()
     {
-        $dispatcher = new EzPlatformRest\Output\ValueObjectVisitorDispatcher();
+        $dispatcher = new ValueObjectVisitorDispatcher();
         $dispatcher->setOutputGenerator($this->getOutputGeneratorMock());
         $dispatcher->setOutputVisitor($this->getOutputVisitorMock());
 
@@ -154,3 +154,5 @@ class ValueObjectVisitorDispatcherTest extends TestCase
         return $this->outputGeneratorMock;
     }
 }
+
+class_alias(ValueObjectVisitorDispatcherTest::class, 'EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorDispatcherTest');

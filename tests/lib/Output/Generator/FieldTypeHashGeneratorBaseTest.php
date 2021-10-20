@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
+namespace Ibexa\Tests\Rest\Output\Generator;
 
 use PHPUnit\Framework\TestCase;
 
@@ -234,3 +234,5 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
         );
     }
 }
+
+class_alias(FieldTypeHashGeneratorBaseTest::class, 'EzSystems\EzPlatformRest\Tests\Output\Generator\FieldTypeHashGeneratorBaseTest');

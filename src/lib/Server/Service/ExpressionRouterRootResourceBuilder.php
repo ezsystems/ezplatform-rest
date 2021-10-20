@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Service;
+namespace Ibexa\Rest\Server\Service;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzPlatformRest\Values;
-use EzSystems\EzPlatformRest\Values\Root;
+use Ibexa\Rest\Values;
+use Ibexa\Rest\Values\Root;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -75,3 +75,5 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
         return new Root($resources);
     }
 }
+
+class_alias(ExpressionRouterRootResourceBuilder::class, 'EzSystems\EzPlatformRest\Server\Service\ExpressionRouterRootResourceBuilder');

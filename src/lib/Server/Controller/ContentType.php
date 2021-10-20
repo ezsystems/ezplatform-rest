@@ -4,19 +4,19 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use eZ\Publish\API\Repository\Exceptions\BadStateException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Message;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use eZ\Publish\API\Repository\Exceptions\ContentTypeValidationException;
 use eZ\Publish\API\Repository\Exceptions\ContentTypeFieldDefinitionValidationException;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Values;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Values;
 use eZ\Publish\API\Repository\ContentTypeService;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
 use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
@@ -967,3 +967,5 @@ class ContentType extends RestController
         return $contentTypes;
     }
 }
+
+class_alias(ContentType::class, 'EzSystems\EzPlatformRest\Server\Controller\ContentType');

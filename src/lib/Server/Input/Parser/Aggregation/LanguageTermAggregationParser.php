@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\LanguageTermAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 
 final class LanguageTermAggregationParser extends AbstractTermAggregationParser
 {
@@ -24,3 +24,5 @@ final class LanguageTermAggregationParser extends AbstractTermAggregationParser
         return new LanguageTermAggregation($data['name']);
     }
 }
+
+class_alias(LanguageTermAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\LanguageTermAggregationParser');

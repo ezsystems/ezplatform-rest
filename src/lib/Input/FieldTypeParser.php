@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Rest\Input;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
+use Ibexa\Rest\FieldTypeProcessorRegistry;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\ContentTypeService;
 use eZ\Publish\API\Repository\FieldTypeService;
@@ -134,3 +134,5 @@ class FieldTypeParser
         return $fieldType->validatorConfigurationFromHash($configurationHash);
     }
 }
+
+class_alias(FieldTypeParser::class, 'EzSystems\EzPlatformRest\Input\FieldTypeParser');

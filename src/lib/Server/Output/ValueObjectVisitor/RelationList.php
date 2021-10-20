@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Server\Values\RestRelation as ValuesRestRelation;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Rest\Server\Values\RestRelation as ValuesRestRelation;
 
 /**
  * RelationList value object visitor.
@@ -51,3 +51,5 @@ class RelationList extends ValueObjectVisitor
         $generator->endObjectElement('Relations');
     }
 }
+
+class_alias(RelationList::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RelationList');

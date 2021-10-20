@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Field;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Field\KeywordTermAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\AbstractTermAggregationParser;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Server\Input\Parser\Aggregation\AbstractTermAggregationParser;
+use Ibexa\Contracts\Rest\Exceptions;
 
 final class KeywordTermAggregationParser extends AbstractTermAggregationParser
 {
@@ -38,3 +38,5 @@ final class KeywordTermAggregationParser extends AbstractTermAggregationParser
         );
     }
 }
+
+class_alias(KeywordTermAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\KeywordTermAggregationParser');

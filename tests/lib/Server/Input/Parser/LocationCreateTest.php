@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\LocationService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate;
+use Ibexa\Rest\Server\Input\Parser\LocationCreate;
 use eZ\Publish\API\Repository\Values\Content\LocationCreateStruct;
 use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class LocationCreateTest extends BaseTest
 {
@@ -195,3 +195,5 @@ class LocationCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(LocationCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\LocationCreateTest');

@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\JWT;
-use EzSystems\EzPlatformRest\Server\Values\JWT as JWTValue;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor\JWT;
+use Ibexa\Rest\Server\Values\JWT as JWTValue;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class JWTTest extends ValueObjectVisitorBaseTest
 {
@@ -81,3 +81,5 @@ class JWTTest extends ValueObjectVisitorBaseTest
         return new JWT();
     }
 }
+
+class_alias(JWTTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\JWTTest');

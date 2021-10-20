@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput;
-use EzSystems\EzPlatformRest\Server\Values\SessionInput as SessionInputValue;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\SessionInput;
+use Ibexa\Rest\Server\Values\SessionInput as SessionInputValue;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class SessionInputTest extends BaseTest
 {
@@ -72,3 +72,5 @@ class SessionInputTest extends BaseTest
         return new SessionInput();
     }
 }
+
+class_alias(SessionInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SessionInputTest');

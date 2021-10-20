@@ -4,22 +4,22 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Rest\Message;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\Values\Content\Relation;
 use eZ\Publish\API\Repository\Values\Content\VersionInfo;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\ContentFieldValidationException;
 use eZ\Publish\API\Repository\Exceptions\ContentValidationException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ContentFieldValidationException as RESTContentFieldValidationException;
-use EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\ContentFieldValidationException as RESTContentFieldValidationException;
+use Ibexa\Rest\Server\Values\RestContentCreateStruct;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
@@ -852,3 +852,5 @@ class Content extends RestController
         );
     }
 }
+
+class_alias(Content::class, 'EzSystems\EzPlatformRest\Server\Controller\Content');

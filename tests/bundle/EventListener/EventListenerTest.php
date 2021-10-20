@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
+namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use EzSystems\EzPlatformRestBundle\EventListener\CsrfListener;
+use Ibexa\Bundle\Rest\EventListener\CsrfListener;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -148,3 +148,5 @@ abstract class EventListenerTest extends TestCase
      */
     abstract public function provideExpectedSubscribedEventTypes();
 }
+
+class_alias(EventListenerTest::class, 'EzSystems\EzPlatformRestBundle\Tests\EventListener\EventListenerTest');

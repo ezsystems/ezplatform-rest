@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Security;
+namespace Ibexa\Tests\Rest\Server\Security;
 
-use EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager;
+use Ibexa\Rest\Server\Security\CsrfTokenManager;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -73,3 +73,5 @@ class CsrfTokenManagerTest extends TestCase
         );
     }
 }
+
+class_alias(CsrfTokenManagerTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Security\CsrfTokenManagerTest');

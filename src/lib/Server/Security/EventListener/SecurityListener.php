@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Security\EventListener;
+namespace Ibexa\Rest\Server\Security\EventListener;
 
 use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\Core\MVC\Symfony\Security\UserInterface as EzPlatformUser;
@@ -53,3 +53,5 @@ final class SecurityListener implements EventSubscriberInterface
         }
     }
 }
+
+class_alias(SecurityListener::class, 'EzSystems\EzPlatformRest\Server\Security\EventListener\SecurityListener');

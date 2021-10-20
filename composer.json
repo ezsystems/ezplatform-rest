@@ -1,14 +1,18 @@
 {
-    "name": "ezsystems/ezplatform-rest",
-    "description": "eZ Platform REST bundle",
-    "type": "ezplatform-bundle",
+    "name": "ibexa/rest",
+    "description": "Ibexa REST bundle",
+    "type": "ibexa-bundle",
     "license": "GPL-2.0-only",
+    "replace": {
+        "ezsystems/ezplatform-rest": "*"
+    },
     "autoload": {
         "psr-4": {
             "EzSystems\\EzPlatformRestBundle\\": "src/bundle/",
             "EzSystems\\EzPlatformRest\\": "src/lib/",
             "Ibexa\\Bundle\\Rest\\": "src/bundle/",
-            "Ibexa\\Rest\\": "src/lib/"
+            "Ibexa\\Rest\\": "src/lib/",
+            "Ibexa\\Contracts\\Rest\\": "src/contracts/"
         }
     },
     "autoload-dev": {
@@ -57,7 +61,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "4.0.x-dev"
+            "dev-main": "4.0.x-dev"
         }
     }
 }

@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output;
+namespace Ibexa\Contracts\Rest\Output;
 
 use Symfony\Component\HttpFoundation\Response;
 
@@ -160,3 +160,5 @@ class Visitor
         return $this->response;
     }
 }
+
+class_alias(Visitor::class, 'EzSystems\EzPlatformRest\Output\Visitor');

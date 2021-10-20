@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\Rest\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\OutputVisitorPass;
+use Ibexa\Bundle\Rest\DependencyInjection\Compiler\OutputVisitorPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
@@ -111,3 +111,5 @@ class OutputVisitorPassTest extends AbstractCompilerPassTestCase
         }, $calls);
     }
 }
+
+class_alias(OutputVisitorPassTest::class, 'EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler\OutputVisitorPassTest');

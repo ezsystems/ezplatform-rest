@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\EventListener;
+namespace Ibexa\Bundle\Rest\EventListener;
 
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -57,3 +57,5 @@ class RequestListener implements EventSubscriberInterface
         return preg_match(self::REST_PREFIX_PATTERN, $request->getPathInfo());
     }
 }
+
+class_alias(RequestListener::class, 'EzSystems\EzPlatformRestBundle\EventListener\RequestListener');

@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\Rest\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\InputParserPass;
+use Ibexa\Bundle\Rest\DependencyInjection\Compiler\InputParserPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use PHPUnit\Framework\TestCase;
@@ -40,3 +40,5 @@ class InputParserPassTest extends TestCase
         self::assertEquals('ezpublish_rest.input.parser.unit_test', $dispatcherMethodCalls[0][1][1]->__toString(), "Failed asserting that Referenced service is 'ezpublish_rest.input.parser.unit_test'");
     }
 }
+
+class_alias(InputParserPassTest::class, 'EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler\InputParserPassTest');

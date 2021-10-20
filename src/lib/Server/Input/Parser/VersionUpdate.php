@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\ContentService;
-use EzSystems\EzPlatformRest\Input\BaseParser;
+use Ibexa\Rest\Input\BaseParser;
 
 /**
  * Parser for VersionUpdate.
@@ -98,3 +98,5 @@ class VersionUpdate extends BaseParser
         return $contentUpdateStruct;
     }
 }
+
+class_alias(VersionUpdate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\VersionUpdate');

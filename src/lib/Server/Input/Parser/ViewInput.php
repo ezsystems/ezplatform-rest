@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Values\RestViewInput;
-use EzSystems\EzPlatformRest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Server\Values\RestViewInput;
+use Ibexa\Rest\Input\BaseParser;
 
 /**
  * Parser for ViewInput.
@@ -50,3 +50,5 @@ class ViewInput extends BaseParser
         return $restViewInput;
     }
 }
+
+class_alias(ViewInput::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\ViewInput');

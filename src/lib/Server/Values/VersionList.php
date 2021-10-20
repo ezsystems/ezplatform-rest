@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * Version list view model.
@@ -39,3 +39,5 @@ class VersionList extends RestValue
         $this->path = $path;
     }
 }
+
+class_alias(VersionList::class, 'EzSystems\EzPlatformRest\Server\Values\VersionList');

@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output;
+namespace Ibexa\Contracts\Rest\Output;
 
-use EzSystems\EzPlatformRest\RequestParser;
+use Ibexa\Rest\RequestParser;
 use eZ\Publish\API\Repository\Values\User\Limitation;
 use eZ\Publish\API\Repository\Values\Content\Location;
 use Symfony\Component\Routing\RouterInterface;
@@ -201,3 +201,5 @@ abstract class ValueObjectVisitor
         throw new \RuntimeException("Unknown default sort order: '{$sortOrder}'.");
     }
 }
+
+class_alias(ValueObjectVisitor::class, 'EzSystems\EzPlatformRest\Output\ValueObjectVisitor');

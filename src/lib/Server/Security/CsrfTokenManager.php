@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Security;
+namespace Ibexa\Rest\Server\Security;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Csrf\CsrfTokenManager as BaseCsrfTokenManager;
@@ -63,3 +63,5 @@ class CsrfTokenManager extends BaseCsrfTokenManager
         return !empty($_SERVER['HTTPS']) && 'off' !== strtolower($_SERVER['HTTPS']) ? 'https-' : '';
     }
 }
+
+class_alias(CsrfTokenManager::class, 'EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager');

@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor;
+use Ibexa\Rest\FieldTypeProcessor\AuthorProcessor;
 use PHPUnit\Framework\TestCase;
 
 class AuthorProcessorTest extends TestCase
@@ -65,3 +65,5 @@ class AuthorProcessorTest extends TestCase
         return new AuthorProcessor();
     }
 }
+
+class_alias(AuthorProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\AuthorProcessorTest');

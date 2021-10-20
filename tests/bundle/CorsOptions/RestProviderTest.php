@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\CorsOptions;
+namespace Ibexa\Tests\Bundle\Rest\CorsOptions;
 
-use EzSystems\EzPlatformRestBundle\CorsOptions\RestProvider;
+use Ibexa\Bundle\Rest\CorsOptions\RestProvider;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
@@ -130,3 +130,5 @@ class RestProviderTest extends TestCase
         return $mock;
     }
 }
+
+class_alias(RestProviderTest::class, 'EzSystems\EzPlatformRestBundle\Tests\CorsOptions\RestProviderTest');

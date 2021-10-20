@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
 use eZ\Publish\API\Repository\Values\User\Role;
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * REST Role, as received by /roles/<ID>.
@@ -66,3 +66,5 @@ class RestRole extends RestValue
         return $this->innerRole->__isset($property);
     }
 }
+
+class_alias(RestRole::class, 'EzSystems\EzPlatformRest\Server\Values\RestRole');

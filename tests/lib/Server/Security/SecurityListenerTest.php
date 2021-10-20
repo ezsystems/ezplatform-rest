@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Tests\Server\Security;
+namespace Ibexa\Tests\Rest\Server\Security;
 
 use eZ\Publish\API\Repository\PermissionResolver;
 use eZ\Publish\API\Repository\Values\User\User;
 use eZ\Publish\Core\MVC\Symfony\Security\UserInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Security\Authentication\Token\JWTUserToken;
-use EzSystems\EzPlatformRest\Server\Security\EventListener\SecurityListener;
+use Ibexa\Rest\Server\Security\EventListener\SecurityListener;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
@@ -73,3 +73,5 @@ class SecurityListenerTest extends TestCase
         $securityListener->onInteractiveLogin($interactiveLoginEvent);
     }
 }
+
+class_alias(SecurityListenerTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Security\SecurityListenerTest');

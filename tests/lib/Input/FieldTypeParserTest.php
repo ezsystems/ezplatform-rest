@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input;
+namespace Ibexa\Tests\Rest\Input;
 
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use Ibexa\Rest\Input\FieldTypeParser;
 use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\ContentTypeService;
@@ -14,8 +14,8 @@ use eZ\Publish\API\Repository\FieldType;
 use eZ\Publish\API\Repository\FieldTypeService;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Rest\FieldTypeProcessorRegistry;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -361,3 +361,5 @@ class FieldTypeParserTest extends TestCase
         );
     }
 }
+
+class_alias(FieldTypeParserTest::class, 'EzSystems\EzPlatformRest\Tests\Input\FieldTypeParserTest');

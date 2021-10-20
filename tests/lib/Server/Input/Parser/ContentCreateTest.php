@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\LocationCreateStruct;
 use eZ\Publish\Core\Repository\ContentService;
@@ -13,11 +13,11 @@ use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
 use eZ\Publish\Core\Repository\Values\Content\ContentCreateStruct;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
 use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentCreate;
-use EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\ContentCreate;
+use Ibexa\Rest\Server\Input\Parser\LocationCreate;
+use Ibexa\Rest\Input\FieldTypeParser;
 use eZ\Publish\API\Repository\FieldTypeService;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ContentCreateTest extends BaseTest
 {
@@ -635,3 +635,5 @@ class ContentCreateTest extends BaseTest
         );
     }
 }
+
+class_alias(ContentCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentCreateTest');

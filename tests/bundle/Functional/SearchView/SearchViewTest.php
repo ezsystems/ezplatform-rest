@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView;
+namespace Ibexa\Tests\Bundle\Rest\Functional\SearchView;
 
 use DOMDocument;
 use DOMElement;
@@ -431,3 +431,5 @@ XML;
         return $response->getHeader('Location')[0];
     }
 }
+
+class_alias(SearchViewTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\SearchViewTest');

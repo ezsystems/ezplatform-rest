@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserId as UserIdCriterion;
 
 class UserId extends BaseParser
@@ -24,3 +24,5 @@ class UserId extends BaseParser
         return new UserIdCriterion(explode(',', $data['UserIdCriterion']));
     }
 }
+
+class_alias(UserId::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserId');

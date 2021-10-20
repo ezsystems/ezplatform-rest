@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor;
+use Ibexa\Rest\FieldTypeProcessor\TimeProcessor;
 use PHPUnit\Framework\TestCase;
 
 class TimeProcessorTest extends TestCase
@@ -65,3 +65,5 @@ class TimeProcessorTest extends TestCase
         return new TimeProcessor();
     }
 }
+
+class_alias(TimeProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\TimeProcessorTest');

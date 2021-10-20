@@ -4,16 +4,16 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\Exceptions\InvalidVariationException;
 use eZ\Publish\Core\FieldType\Image\Value as ImageValue;
 use eZ\Publish\Core\FieldType\ImageAsset\Value as ImageAssetValue;
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\SPI\Variation\VariationHandler;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Values\CachedValue;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Values\CachedValue;
 
 /**
  * Binary content controller.
@@ -120,3 +120,5 @@ class BinaryContent extends RestController
         throw new Exceptions\NotFoundException("Invalid image ID {$imageId}");
     }
 }
+
+class_alias(BinaryContent::class, 'EzSystems\EzPlatformRest\Server\Controller\BinaryContent');

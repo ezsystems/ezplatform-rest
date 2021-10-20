@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\RequestParser;
+namespace Ibexa\Tests\Bundle\Rest\RequestParser;
 
-use EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Rest\Exceptions\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use EzSystems\EzPlatformRestBundle\RequestParser\Router as RouterRequestParser;
+use Ibexa\Bundle\Rest\RequestParser\Router as RouterRequestParser;
 use Symfony\Cmf\Component\Routing\ChainRouter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
@@ -155,3 +155,5 @@ class RouterTest extends TestCase
         return $this->router;
     }
 }
+
+class_alias(RouterTest::class, 'EzSystems\EzPlatformRestBundle\Tests\RequestParser\RouterTest');

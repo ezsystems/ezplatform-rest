@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion as CriterionParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Server\Input\Parser\Criterion as CriterionParser;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion as CriterionValue;
 
 /**
@@ -130,3 +130,5 @@ abstract class Query extends CriterionParser
         return $sortClauses;
     }
 }
+
+class_alias(Query::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Query');

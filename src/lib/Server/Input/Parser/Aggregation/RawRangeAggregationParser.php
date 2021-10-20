@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\RawRangeAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 
 final class RawRangeAggregationParser extends AbstractRangeAggregationParser
 {
@@ -27,3 +27,5 @@ final class RawRangeAggregationParser extends AbstractRangeAggregationParser
         );
     }
 }
+
+class_alias(RawRangeAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawRangeAggregationParser');

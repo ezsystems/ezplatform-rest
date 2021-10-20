@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\DependencyInjection;
+namespace Ibexa\Bundle\Rest\DependencyInjection;
 
 use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\ConfigurationProcessor;
 use Symfony\Component\Config\FileLocator;
@@ -20,7 +20,7 @@ use Symfony\Component\Yaml\Yaml;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class EzPlatformRestExtension extends Extension implements PrependExtensionInterface
+class IbexaRestExtension extends Extension implements PrependExtensionInterface
 {
     /**
      * {@inheritdoc}
@@ -59,3 +59,5 @@ class EzPlatformRestExtension extends Extension implements PrependExtensionInter
         $container->prependExtensionConfig('ezpublish', $config);
     }
 }
+
+class_alias(IbexaRestExtension::class, 'EzSystems\EzPlatformRestBundle\DependencyInjection\EzPlatformRestExtension');

@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\BookmarkService;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
 use eZ\Publish\API\Repository\LocationService;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Value as RestValue;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Value as RestValue;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Controller as RestController;
 use Symfony\Component\HttpFoundation\Request;
 
 class Bookmark extends RestController
@@ -158,3 +158,5 @@ class Bookmark extends RestController
         return array_pop($pathParts);
     }
 }
+
+class_alias(Bookmark::class, 'EzSystems\EzPlatformRest\Server\Controller\Bookmark');

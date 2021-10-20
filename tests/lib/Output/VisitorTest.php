@@ -4,12 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output;
+namespace Ibexa\Tests\Rest\Output;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitorDispatcher;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 use Symfony\Component\HttpFoundation\Response;
@@ -94,7 +93,7 @@ class VisitorTest extends TestCase
             ->method('visit')
             ->with($data);
 
-        $visitor = new EzPlatformRest\Output\Visitor($generatorMock, $valueObjectDispatcherMock);
+        $visitor = new Visitor($generatorMock, $valueObjectDispatcherMock);
         $visitor->visit($data);
     }
 
@@ -243,3 +242,5 @@ class VisitorTest extends TestCase
             ->getMock();
     }
 }
+
+class_alias(VisitorTest::class, 'EzSystems\EzPlatformRest\Tests\Output\VisitorTest');

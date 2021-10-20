@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ObjectStateService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateUpdate;
+use Ibexa\Rest\Server\Input\Parser\ObjectStateUpdate;
 use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ObjectStateUpdateTest extends BaseTest
 {
@@ -129,3 +129,5 @@ class ObjectStateUpdateTest extends BaseTest
         return $objectStateServiceMock;
     }
 }
+
+class_alias(ObjectStateUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ObjectStateUpdateTest');
