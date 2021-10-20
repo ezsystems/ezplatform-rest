@@ -63,7 +63,7 @@ class CsrfTokenManagerTest extends TestCase
 
         $this->requestStack
             ->expects($this->once())
-            ->method('getMasterRequest')
+            ->method('getMainRequest')
             ->willReturn($request);
 
         return new CsrfTokenManager(
