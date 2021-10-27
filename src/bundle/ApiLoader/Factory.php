@@ -8,8 +8,11 @@ namespace Ibexa\Bundle\Rest\ApiLoader;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
 use eZ\Publish\Core\MVC\Symfony\RequestStackAware;
-use Ibexa\Contracts\Rest\FieldTypeProcessor;
 use eZ\Publish\API\Repository\Repository;
+use Ibexa\Rest\FieldTypeProcessor\BinaryProcessor;
+use Ibexa\Rest\FieldTypeProcessor\ImageAssetFieldTypeProcessor;
+use Ibexa\Rest\FieldTypeProcessor\ImageProcessor;
+use Ibexa\Rest\FieldTypeProcessor\MediaProcessor;
 use Symfony\Component\Routing\RouterInterface;
 
 class Factory
@@ -41,12 +44,12 @@ class Factory
         $request = $this->getCurrentRequest();
         $hostPrefix = isset($request) ? rtrim($request->getUriForPath('/'), '/') : '';
 
-        return new FieldTypeProcessor\BinaryProcessor(sys_get_temp_dir(), $hostPrefix);
+        return new BinaryProcessor(sys_get_temp_dir(), $hostPrefix);
     }
 
     public function getMediaFieldTypeProcessor()
     {
-        return new FieldTypeProcessor\MediaProcessor(sys_get_temp_dir());
+        return new MediaProcessor(sys_get_temp_dir());
     }
 
     /**
@@ -61,7 +64,7 @@ class Factory
         $variationsIdentifiers = array_keys($this->configResolver->getParameter('image_variations'));
         sort($variationsIdentifiers);
 
-        return new FieldTypeProcessor\ImageProcessor(
+        return new ImageProcessor(
             // Config for local temp dir
             // @todo get configuration
             sys_get_temp_dir(),
@@ -75,11 +78,11 @@ class Factory
 
     public function getImageAssetFieldTypeProcessor(
         RouterInterface $router
-    ): FieldTypeProcessor\ImageAssetFieldTypeProcessor {
+    ): ImageAssetFieldTypeProcessor {
         $variationsIdentifiers = array_keys($this->configResolver->getParameter('image_variations'));
         sort($variationsIdentifiers);
 
-        return new FieldTypeProcessor\ImageAssetFieldTypeProcessor(
+        return new ImageAssetFieldTypeProcessor(
             $router,
             $this->repository->getContentService(),
             $this->configResolver->getParameter('fieldtypes.ezimageasset.mappings'),
