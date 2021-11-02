@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * FieldDefinition list view model.
@@ -40,3 +40,5 @@ class FieldDefinitionList extends RestValue
         $this->fieldDefinitions = $fieldDefinitions;
     }
 }
+
+class_alias(FieldDefinitionList::class, 'EzSystems\EzPlatformRest\Server\Values\FieldDefinitionList');

@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\Rest\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\FieldTypeProcessorPass;
+use Ibexa\Bundle\Rest\DependencyInjection\Compiler\FieldTypeProcessorPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use PHPUnit\Framework\TestCase;
@@ -46,3 +46,5 @@ class FieldTypeProcessorPassTest extends TestCase
         yield ['ezpublish_rest.field_type_processor'];
     }
 }
+
+class_alias(FieldTypeProcessorPassTest::class, 'EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler\FieldTypeProcessorPassTest');

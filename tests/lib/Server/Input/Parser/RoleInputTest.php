@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\RoleService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\RoleInput;
+use Ibexa\Rest\Server\Input\Parser\RoleInput;
 use eZ\Publish\Core\Repository\Values\User\RoleCreateStruct;
 
 class RoleInputTest extends BaseTest
@@ -102,3 +102,5 @@ class RoleInputTest extends BaseTest
         return $roleServiceMock;
     }
 }
+
+class_alias(RoleInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\RoleInputTest');

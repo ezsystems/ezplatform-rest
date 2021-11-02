@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler;
+namespace Ibexa\Bundle\Rest\DependencyInjection\Compiler;
 
 use eZ\Publish\Core\Base\Container\Compiler\TaggedServiceIdsIterator\BackwardCompatibleIterator;
 use LogicException;
@@ -52,3 +52,5 @@ class FieldTypeProcessorPass implements CompilerPassInterface
         }
     }
 }
+
+class_alias(FieldTypeProcessorPass::class, 'EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\FieldTypeProcessorPass');

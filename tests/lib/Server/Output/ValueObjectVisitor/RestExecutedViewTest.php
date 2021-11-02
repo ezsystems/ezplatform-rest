@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\ContentService;
 use eZ\Publish\API\Repository\ContentTypeService;
@@ -13,10 +13,10 @@ use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 use eZ\Publish\API\Repository\Values\Content\Search\SearchHit;
 use eZ\Publish\API\Repository\Values\Content\Search\SearchResult;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use eZ\Publish\Core\Repository\Values\Content;
-use EzSystems\EzPlatformRest\Server\Values\RestExecutedView;
+use Ibexa\Rest\Server\Values\RestExecutedView;
 use eZ\Publish\Core\Repository\Values\Content as ApiValues;
 
 class RestExecutedViewTest extends ValueObjectVisitorBaseTest
@@ -175,3 +175,5 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
         ]);
     }
 }
+
+class_alias(RestExecutedViewTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\RestExecutedViewTest');

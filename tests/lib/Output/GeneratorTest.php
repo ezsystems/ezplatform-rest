@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output;
+namespace Ibexa\Tests\Rest\Output;
 
-use EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException;
+use Ibexa\Contracts\Rest\Output\Exceptions\OutputGeneratorException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -186,3 +186,5 @@ abstract class GeneratorTest extends TestCase
         $this->assertFalse($generator->isEmpty());
     }
 }
+
+class_alias(GeneratorTest::class, 'EzSystems\EzPlatformRest\Tests\Output\GeneratorTest');

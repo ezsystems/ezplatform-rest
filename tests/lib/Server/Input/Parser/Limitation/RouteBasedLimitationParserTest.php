@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Limitation;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\Limitation;
 
-use EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\RouteBasedLimitationParser;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use Ibexa\Rest\Server\Input\Parser\Limitation\RouteBasedLimitationParser;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 class RouteBasedLimitationParserTest extends BaseTest
 {
@@ -47,3 +47,5 @@ class RouteBasedLimitationParserTest extends BaseTest
         ];
     }
 }
+
+class_alias(RouteBasedLimitationParserTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Limitation\RouteBasedLimitationParserTest');

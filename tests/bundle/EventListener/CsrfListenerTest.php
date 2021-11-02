@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
+namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\Form\Extension\Csrf\CsrfProvider\CsrfProviderInterface;
-use EzSystems\EzPlatformRestBundle\EventListener\CsrfListener;
+use Ibexa\Bundle\Rest\EventListener\CsrfListener;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
@@ -331,3 +331,5 @@ class CsrfListenerTest extends EventListenerTest
         );
     }
 }
+
+class_alias(CsrfListenerTest::class, 'EzSystems\EzPlatformRestBundle\Tests\EventListener\CsrfListenerTest');

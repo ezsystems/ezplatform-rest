@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor;
+use Ibexa\Rest\FieldTypeProcessor\MediaProcessor;
 
 class MediaProcessorTest extends BinaryInputProcessorTest
 {
@@ -69,3 +69,5 @@ class MediaProcessorTest extends BinaryInputProcessorTest
         return new MediaProcessor($this->getTempDir());
     }
 }
+
+class_alias(MediaProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\MediaProcessorTest');

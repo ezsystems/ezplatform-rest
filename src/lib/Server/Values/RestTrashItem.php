@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
 use eZ\Publish\API\Repository\Values\Content\TrashItem;
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * RestTrashItem view model.
@@ -38,3 +38,5 @@ class RestTrashItem extends RestValue
         $this->childCount = $childCount;
     }
 }
+
+class_alias(RestTrashItem::class, 'EzSystems\EzPlatformRest\Server\Values\RestTrashItem');

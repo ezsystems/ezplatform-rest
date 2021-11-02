@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests;
+namespace Ibexa\Tests\Rest;
 
 use DOMDocument;
 use DOMXPath;
@@ -53,3 +53,5 @@ trait AssertXmlTagTrait
         self::assertGreaterThanOrEqual(1, $xpath->query($query)->length, $message);
     }
 }
+
+class_alias(AssertXmlTagTrait::class, 'EzSystems\EzPlatformRest\Tests\AssertXmlTagTrait');

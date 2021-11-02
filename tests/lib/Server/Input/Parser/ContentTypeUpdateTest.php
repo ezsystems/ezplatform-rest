@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\ContentType\ContentTypeUpdateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeUpdate;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\ContentTypeUpdate;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ContentTypeUpdateTest extends BaseTest
 {
@@ -225,3 +225,5 @@ class ContentTypeUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(ContentTypeUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentTypeUpdateTest');

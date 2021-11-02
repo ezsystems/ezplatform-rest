@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Sibling as SiblingCriterion;
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Exceptions;
 
 class Sibling extends BaseParser
 {
@@ -37,3 +37,5 @@ class Sibling extends BaseParser
         return SiblingCriterion::fromLocation($location);
     }
 }
+
+class_alias(Sibling::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Sibling');

@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParserTools;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Input\ParserTools;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\IsUserBased as IsUserBasedCriterion;
 
 class IsUserBased extends BaseParser
@@ -33,3 +33,5 @@ class IsUserBased extends BaseParser
         return new IsUserBasedCriterion($this->parserTools->parseBooleanValue($data['IsUserBasedCriterion']));
     }
 }
+
+class_alias(IsUserBased::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\IsUserBased');

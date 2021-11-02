@@ -4,15 +4,15 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server;
+namespace Ibexa\Rest\Server;
 
 use eZ\Publish\API\Repository\Repository;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\Routing\RouterInterface;
-use EzSystems\EzPlatformRest\Input\Dispatcher as InputDispatcher;
+use Ibexa\Rest\Input\Dispatcher as InputDispatcher;
 use Symfony\Component\HttpFoundation\Request;
-use EzSystems\EzPlatformRest\RequestParser;
+use Ibexa\Rest\RequestParser;
 
 abstract class Controller implements ContainerAwareInterface
 {
@@ -78,3 +78,5 @@ abstract class Controller implements ContainerAwareInterface
         return 'unknown/unknown';
     }
 }
+
+class_alias(Controller::class, 'EzSystems\EzPlatformRest\Server\Controller');

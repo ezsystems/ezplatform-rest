@@ -6,11 +6,11 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Exceptions;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\SectionIdentifier as SectionIdentifierCriterion;
 
 class SectionIdentifier extends BaseParser
@@ -24,3 +24,5 @@ class SectionIdentifier extends BaseParser
         return new SectionIdentifierCriterion(explode(',', $data['SectionIdentifierCriterion']));
     }
 }
+
+class_alias(SectionIdentifier::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\SectionIdentifier');

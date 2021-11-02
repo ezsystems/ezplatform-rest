@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\EventListener;
+namespace Ibexa\Bundle\Rest\EventListener;
 
-use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
+use Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -82,3 +82,5 @@ class ResponseListener implements EventSubscriberInterface
         $event->stopPropagation();
     }
 }
+
+class_alias(ResponseListener::class, 'EzSystems\EzPlatformRestBundle\EventListener\ResponseListener');

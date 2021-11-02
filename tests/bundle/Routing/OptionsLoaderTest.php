@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Routing;
+namespace Ibexa\Tests\Bundle\Rest\Routing;
 
-use EzSystems\EzPlatformRestBundle\Routing\OptionsLoader;
+use Ibexa\Bundle\Rest\Routing\OptionsLoader;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\RouteCollection;
@@ -84,3 +84,5 @@ class OptionsLoaderTest extends TestCase
         return $this->routeCollectionMapperMock;
     }
 }
+
+class_alias(OptionsLoaderTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Routing\OptionsLoaderTest');

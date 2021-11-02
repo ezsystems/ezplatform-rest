@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
 use eZ\Publish\API\Repository\Values\ValueObject;
 
@@ -20,3 +20,5 @@ class CreatedURLAlias extends ValueObject
      */
     public $urlAlias;
 }
+
+class_alias(CreatedURLAlias::class, 'EzSystems\EzPlatformRest\Server\Values\CreatedURLAlias');

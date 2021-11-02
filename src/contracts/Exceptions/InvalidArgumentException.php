@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Exceptions;
+namespace Ibexa\Contracts\Rest\Exceptions;
 
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException as APIInvalidArgumentException;
 
@@ -14,3 +14,5 @@ use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException as APIInvalidA
 class InvalidArgumentException extends APIInvalidArgumentException
 {
 }
+
+class_alias(InvalidArgumentException::class, 'EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException');

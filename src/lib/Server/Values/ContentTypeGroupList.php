@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * ContentTypeGroup list view model.
@@ -30,3 +30,5 @@ class ContentTypeGroupList extends RestValue
         $this->contentTypeGroups = $contentTypeGroups;
     }
 }
+
+class_alias(ContentTypeGroupList::class, 'EzSystems\EzPlatformRest\Server\Values\ContentTypeGroupList');

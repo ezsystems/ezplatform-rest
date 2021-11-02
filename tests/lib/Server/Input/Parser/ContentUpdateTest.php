@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentUpdate as ContentUpdateParser;
-use EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\InvalidArgumentException;
+use Ibexa\Rest\Server\Input\Parser\ContentUpdate as ContentUpdateParser;
+use Ibexa\Rest\Values\RestContentMetadataUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 use DateTime;
 
 class ContentUpdateTest extends BaseTest
@@ -190,3 +190,5 @@ class ContentUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(ContentUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentUpdateTest');

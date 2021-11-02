@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Exceptions;
+namespace Ibexa\Contracts\Rest\Exceptions;
 
 use InvalidArgumentException;
 
@@ -14,3 +14,5 @@ use InvalidArgumentException;
 class ForbiddenException extends InvalidArgumentException
 {
 }
+
+class_alias(ForbiddenException::class, 'EzSystems\EzPlatformRest\Exceptions\ForbiddenException');

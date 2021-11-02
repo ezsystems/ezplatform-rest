@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 class JWTInput extends RestValue
 {
@@ -24,3 +24,5 @@ class JWTInput extends RestValue
         $this->password = $password;
     }
 }
+
+class_alias(JWTInput::class, 'EzSystems\EzPlatformRest\Server\Values\JWTInput');

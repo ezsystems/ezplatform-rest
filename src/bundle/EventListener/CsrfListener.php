@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\EventListener;
+namespace Ibexa\Bundle\Rest\EventListener;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use EzSystems\EzPlatformRestBundle\RestEvents;
+use Ibexa\Bundle\Rest\RestEvents;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
@@ -179,3 +179,5 @@ class CsrfListener implements EventSubscriberInterface
         );
     }
 }
+
+class_alias(CsrfListener::class, 'EzSystems\EzPlatformRestBundle\EventListener\CsrfListener');

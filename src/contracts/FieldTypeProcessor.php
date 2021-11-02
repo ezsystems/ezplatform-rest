@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest;
+namespace Ibexa\Contracts\Rest;
 
 /**
  * FieldTypeProcessor.
@@ -137,3 +137,5 @@ abstract class FieldTypeProcessor
         return $outgoingValidatorConfigurationHash;
     }
 }
+
+class_alias(FieldTypeProcessor::class, 'EzSystems\EzPlatformRest\FieldTypeProcessor');

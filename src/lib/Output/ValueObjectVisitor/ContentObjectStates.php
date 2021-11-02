@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
 
 /**
  * ContentObjectStates value object visitor.
@@ -51,3 +51,5 @@ class ContentObjectStates extends ValueObjectVisitor
         $generator->endObjectElement('ContentObjectStates');
     }
 }
+
+class_alias(ContentObjectStates::class, 'EzSystems\EzPlatformRest\Output\ValueObjectVisitor\ContentObjectStates');

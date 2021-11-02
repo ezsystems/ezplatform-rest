@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Values\CachedValue;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\CachedValue;
 use PHPUnit\Framework\MockObject\MockObject;
 use stdClass;
 use Symfony\Component\HttpFoundation\Request;
@@ -183,3 +183,5 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
         return $mock;
     }
 }
+
+class_alias(CachedValueTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\CachedValueTest');

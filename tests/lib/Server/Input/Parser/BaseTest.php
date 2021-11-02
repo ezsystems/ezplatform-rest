@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input;
-use EzSystems\EzPlatformRest\Tests\Server\BaseTest as ParentBaseTest;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\RequestParser;
+use Ibexa\Rest\Input;
+use Ibexa\Tests\Rest\Server\BaseTest as ParentBaseTest;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\RequestParser;
 
 /**
  * Base test for input parsers.
@@ -122,3 +122,5 @@ abstract class BaseTest extends ParentBaseTest
      */
     abstract protected function internalGetParser();
 }
+
+class_alias(BaseTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest');

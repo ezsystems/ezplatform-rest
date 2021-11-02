@@ -6,9 +6,9 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 class BookmarkList extends RestValue
 {
@@ -34,3 +34,5 @@ class BookmarkList extends RestValue
         $this->items = $items;
     }
 }
+
+class_alias(BookmarkList::class, 'EzSystems\EzPlatformRest\Server\Values\BookmarkList');

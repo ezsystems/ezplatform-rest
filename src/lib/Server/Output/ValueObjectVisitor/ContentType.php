@@ -6,13 +6,13 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\DelegateValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Server\Values\RestContentType;
+use Ibexa\Rest\Output\DelegateValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Rest\Server\Values\RestContentType;
 
 final class ContentType extends ValueObjectVisitor implements DelegateValueObjectVisitor
 {
@@ -29,3 +29,5 @@ final class ContentType extends ValueObjectVisitor implements DelegateValueObjec
         );
     }
 }
+
+class_alias(ContentType::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentType');

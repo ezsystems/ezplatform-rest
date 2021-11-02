@@ -6,14 +6,14 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\Criterion;
 
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Sibling as SiblingCriterion;
 use eZ\Publish\Core\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Exceptions\Parser as ParserExpcetion;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Sibling as SiblingParser;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use Ibexa\Contracts\Rest\Exceptions\Parser as ParserExpcetion;
+use Ibexa\Rest\Server\Input\Parser\Criterion\Sibling as SiblingParser;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 final class SiblingTest extends BaseTest
 {
@@ -67,3 +67,5 @@ final class SiblingTest extends BaseTest
         return new SiblingParser($this->locationService);
     }
 }
+
+class_alias(SiblingTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion\SiblingTest');

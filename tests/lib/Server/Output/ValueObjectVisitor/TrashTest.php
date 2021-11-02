@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Values\Trash;
-use EzSystems\EzPlatformRest\Server\Values\RestTrashItem;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\Trash;
+use Ibexa\Rest\Server\Values\RestTrashItem;
 use eZ\Publish\Core\Repository\Values\Content;
 
 class TrashTest extends ValueObjectVisitorBaseTest
@@ -130,3 +130,5 @@ class TrashTest extends ValueObjectVisitorBaseTest
         return new ValueObjectVisitor\Trash();
     }
 }
+
+class_alias(TrashTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\TrashTest');

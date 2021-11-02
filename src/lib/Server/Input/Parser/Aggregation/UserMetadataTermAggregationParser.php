@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
 use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\UserMetadataTermAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Exceptions;
 
 final class UserMetadataTermAggregationParser extends AbstractTermAggregationParser
 {
@@ -53,3 +53,5 @@ final class UserMetadataTermAggregationParser extends AbstractTermAggregationPar
         }
     }
 }
+
+class_alias(UserMetadataTermAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\UserMetadataTermAggregationParser');

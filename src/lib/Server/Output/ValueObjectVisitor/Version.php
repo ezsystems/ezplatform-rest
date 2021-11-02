@@ -4,15 +4,15 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Values\Content\Thumbnail;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Output\FieldTypeSerializer;
-use EzSystems\EzPlatformRest\Server\Values\RelationList as RelationListValue;
-use EzSystems\EzPlatformRest\Server\Values\Version as VersionValue;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Rest\Output\FieldTypeSerializer;
+use Ibexa\Rest\Server\Values\RelationList as RelationListValue;
+use Ibexa\Rest\Server\Values\Version as VersionValue;
 use eZ\Publish\API\Repository\Values\ContentType\ContentType;
 use eZ\Publish\API\Repository\Values\Content\Field;
 
@@ -153,3 +153,5 @@ class Version extends ValueObjectVisitor
         $generator->endObjectElement('Thumbnail');
     }
 }
+
+class_alias(Version::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Version');

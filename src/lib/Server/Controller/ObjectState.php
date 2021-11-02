@@ -4,19 +4,19 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Values\RestObjectState;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Values\RestObjectState;
+use Ibexa\Rest\Server\Controller as RestController;
 use eZ\Publish\API\Repository\ObjectStateService;
 use eZ\Publish\API\Repository\ContentService;
-use EzSystems\EzPlatformRest\Values\ContentObjectStates;
+use Ibexa\Rest\Values\ContentObjectStates;
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -337,3 +337,5 @@ class ObjectState extends RestController
         return new ContentObjectStates($contentObjectStates);
     }
 }
+
+class_alias(ObjectState::class, 'EzSystems\EzPlatformRest\Server\Controller\ObjectState');

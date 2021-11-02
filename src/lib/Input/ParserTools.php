@@ -4,10 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Rest\Input;
 
 use eZ\Publish\API\Repository\Values;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use RuntimeException;
 
 /**
@@ -268,3 +269,5 @@ class ParserTools
         }
     }
 }
+
+class_alias(ParserTools::class, 'EzSystems\EzPlatformRest\Input\ParserTools');

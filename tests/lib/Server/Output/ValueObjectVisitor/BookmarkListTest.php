@@ -6,15 +6,15 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use DOMDocument;
 use DOMXPath;
 use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Values\BookmarkList;
-use EzSystems\EzPlatformRest\Server\Values\RestLocation;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\BookmarkList;
+use Ibexa\Rest\Server\Values\RestLocation;
 
 class BookmarkListTest extends ValueObjectVisitorBaseTest
 {
@@ -105,3 +105,5 @@ class BookmarkListTest extends ValueObjectVisitorBaseTest
         return new ValueObjectVisitor\BookmarkList();
     }
 }
+
+class_alias(BookmarkListTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\BookmarkListTest');

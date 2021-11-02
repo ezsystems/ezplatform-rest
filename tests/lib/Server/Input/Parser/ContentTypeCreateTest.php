@@ -4,15 +4,15 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\API\Repository\Values\Content\Location;
 use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
 use eZ\Publish\Core\Repository\ContentTypeService;
 use eZ\Publish\Core\Repository\Values\ContentType\ContentTypeCreateStruct;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeCreate;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
+use Ibexa\Rest\Server\Input\Parser\ContentTypeCreate;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ContentTypeCreateTest extends BaseTest
 {
@@ -340,3 +340,5 @@ class ContentTypeCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(ContentTypeCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentTypeCreateTest');

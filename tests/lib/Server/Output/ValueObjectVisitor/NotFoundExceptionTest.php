@@ -4,10 +4,10 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 class NotFoundExceptionTest extends ExceptionTest
 {
@@ -51,3 +51,5 @@ class NotFoundExceptionTest extends ExceptionTest
         return new ValueObjectVisitor\NotFoundException();
     }
 }
+
+class_alias(NotFoundExceptionTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\NotFoundExceptionTest');

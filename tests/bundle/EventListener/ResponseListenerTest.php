@@ -4,16 +4,16 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
+namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
 use Exception;
-use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
+use Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
-use EzSystems\EzPlatformRestBundle\EventListener\ResponseListener;
+use Ibexa\Bundle\Rest\EventListener\ResponseListener;
 use stdClass;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\KernelInterface;
@@ -181,3 +181,5 @@ class ResponseListenerTest extends EventListenerTest
         return $this->event;
     }
 }
+
+class_alias(ResponseListenerTest::class, 'EzSystems\EzPlatformRestBundle\Tests\EventListener\ResponseListenerTest');

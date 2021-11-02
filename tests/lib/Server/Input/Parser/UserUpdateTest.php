@@ -4,19 +4,19 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\ContentService;
 use eZ\Publish\Core\Repository\UserService;
 use eZ\Publish\API\Repository\ContentTypeService;
 use eZ\Publish\API\Repository\FieldTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\UserUpdate;
+use Ibexa\Rest\Server\Input\Parser\UserUpdate;
 use eZ\Publish\API\Repository\Values\Content\ContentMetadataUpdateStruct;
 use eZ\Publish\API\Repository\Values\User\UserUpdateStruct;
 use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Server\Values\RestUserUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Values\RestUserUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class UserUpdateTest extends BaseTest
 {
@@ -315,3 +315,5 @@ class UserUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(UserUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\UserUpdateTest');

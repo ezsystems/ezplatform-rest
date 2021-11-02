@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Input\ParserTools;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\ParserTools;
 use eZ\Publish\API\Repository\LocationService;
-use EzSystems\EzPlatformRest\Server\Values\RestLocationUpdateStruct;
+use Ibexa\Rest\Server\Values\RestLocationUpdateStruct;
 
 /**
  * Parser for LocationUpdate.
@@ -79,3 +79,5 @@ class LocationUpdate extends BaseParser
         return new RestLocationUpdateStruct($locationUpdateStruct, $hidden);
     }
 }
+
+class_alias(LocationUpdate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate');

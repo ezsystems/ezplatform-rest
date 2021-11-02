@@ -4,11 +4,11 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Visitor;
 
 /**
  * NoContent Value object visitor.
@@ -27,3 +27,5 @@ class NoContent extends ValueObjectVisitor
         $visitor->setStatus(204);
     }
 }
+
+class_alias(NoContent::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NoContent');

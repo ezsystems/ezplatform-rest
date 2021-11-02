@@ -4,7 +4,7 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
 use Nyholm\Psr7\Request as HttpRequest;
 use PHPUnit\Framework\TestCase as BaseTestCase;
@@ -422,3 +422,5 @@ XML;
         );
     }
 }
+
+class_alias(TestCase::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase');

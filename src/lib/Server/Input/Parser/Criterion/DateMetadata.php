@@ -4,13 +4,13 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Parser for ViewInput Criterion.
@@ -93,3 +93,5 @@ class DateMetadata extends BaseParser
         return self::OPERATORS[$operatorName];
     }
 }
+
+class_alias(DateMetadata::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\DateMetadata');

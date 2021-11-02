@@ -4,9 +4,9 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 use Symfony\Component\HttpFoundation\Response;
 
 class DeletedUserSession extends RestValue
@@ -25,3 +25,5 @@ class DeletedUserSession extends RestValue
         $this->response = $response;
     }
 }
+
+class_alias(DeletedUserSession::class, 'EzSystems\EzPlatformRest\Server\Values\DeletedUserSession');

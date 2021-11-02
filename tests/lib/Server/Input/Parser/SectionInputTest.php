@@ -4,12 +4,12 @@
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use eZ\Publish\Core\Repository\SectionService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput;
+use Ibexa\Rest\Server\Input\Parser\SectionInput;
 use eZ\Publish\API\Repository\Values\Content\SectionCreateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class SectionInputTest extends BaseTest
 {
@@ -93,3 +93,5 @@ class SectionInputTest extends BaseTest
         return $sectionServiceMock;
     }
 }
+
+class_alias(SectionInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SectionInputTest');
