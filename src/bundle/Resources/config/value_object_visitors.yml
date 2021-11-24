@@ -598,7 +598,9 @@ services:
         class: "%ezpublish_rest.output.value_object_visitor.Location.class%"
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Location }
-        arguments: ["@ezpublish.api.service.location"]
+        arguments:
+            - "@ezpublish.api.service.location"
+            - "@ezpublish.api.service.content"
 
     ezpublish_rest.output.value_object_visitor.LocationList:
         parent: ezpublish_rest.output.value_object_visitor.base
