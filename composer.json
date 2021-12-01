@@ -47,7 +47,7 @@
     },
     "require-dev": {
         "ibexa/ci-scripts": "^0.2@dev",
-        "ibexa/doctrine-dbal-schema": "^4.0@dev",
+        "ibexa/doctrine-schema": "^4.0@dev",
         "ibexa/code-style": "^1.0",
         "friendsofphp/php-cs-fixer": "^2.16.0",
         "phpunit/phpunit": "^8.5",
