@@ -50,7 +50,7 @@ class CsrfTokenManager extends BaseCsrfTokenManager
     /**
      * Resolves token namespace.
      *
-     * @param RequestStack $requestStack
+     * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
      *
      * @return string
      */

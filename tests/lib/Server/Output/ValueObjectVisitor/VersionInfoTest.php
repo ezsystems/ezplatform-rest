@@ -8,8 +8,8 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\Content;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 
 class VersionInfoTest extends ValueObjectVisitorBaseTest
 {
@@ -276,7 +276,7 @@ class VersionInfoTest extends ValueObjectVisitorBaseTest
     /**
      * Get the VersionInfo visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\VersionInfo
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\VersionInfo
      */
     protected function internalGetVisitor()
     {

@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\User;
+use Ibexa\Core\Repository\Values\User;
 use Ibexa\Rest\Server\Values;
 
 class RestUserGroupRoleAssignmentTest extends ValueObjectVisitorBaseTest
@@ -156,7 +156,7 @@ class RestUserGroupRoleAssignmentTest extends ValueObjectVisitorBaseTest
     /**
      * Get the RestUserGroupRoleAssignment visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUserGroupRoleAssignment
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestUserGroupRoleAssignment
      */
     protected function internalGetVisitor()
     {

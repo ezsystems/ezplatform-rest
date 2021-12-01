@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Values;
 
-use eZ\Publish\API\Repository\Values\Content\ContentMetadataUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentMetadataUpdateStruct;
 
 /**
  * Extended ContentMetadataUpdateStruct that includes section information.

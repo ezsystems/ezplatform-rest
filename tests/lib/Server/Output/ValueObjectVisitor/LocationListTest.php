@@ -85,7 +85,7 @@ class LocationListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the LocationList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\LocationList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\LocationList
      */
     protected function internalGetVisitor()
     {

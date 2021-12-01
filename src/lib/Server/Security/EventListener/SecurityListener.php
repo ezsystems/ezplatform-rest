@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Security\EventListener;
 
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface as EzPlatformUser;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface as EzPlatformUser;
 use Lexik\Bundle\JWTAuthenticationBundle\Security\Authentication\Token\JWTUserToken;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent as BaseInteractiveLoginEvent;
@@ -21,7 +21,7 @@ use Symfony\Component\Security\Http\SecurityEvents;
  */
 final class SecurityListener implements EventSubscriberInterface
 {
-    /** @var \eZ\Publish\API\Repository\PermissionResolver */
+    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver */
     private $permissionResolver;
 
     public function __construct(

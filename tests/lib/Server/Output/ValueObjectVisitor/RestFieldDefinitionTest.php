@@ -10,7 +10,7 @@ use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Output\FieldTypeSerializer;
 use Ibexa\Rest\Server;
-use eZ\Publish\Core\Repository\Values;
+use Ibexa\Core\Repository\Values;
 
 class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
 {
@@ -141,7 +141,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Content visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestFieldDefinition
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestFieldDefinition
      */
     protected function internalGetVisitor()
     {

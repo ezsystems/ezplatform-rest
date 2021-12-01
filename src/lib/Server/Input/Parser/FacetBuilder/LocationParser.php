@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Input\Parser\FacetBuilder;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\LocationFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\LocationFacetBuilder;
 
 /**
  * Parser for Location facet builder.
@@ -20,11 +20,11 @@ class LocationParser extends BaseParser
      * Parses input structure to a FacetBuilder object.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\LocationFacetBuilder
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\LocationFacetBuilder
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

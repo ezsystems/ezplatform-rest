@@ -6,10 +6,10 @@
  */
 namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\Exceptions\NotImplementedException;
-use eZ\Publish\API\Repository\SearchService;
-use eZ\Publish\API\Repository\Values\Content\Language;
-use eZ\Publish\API\Repository\Values\Content\LocationQuery;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
+use Ibexa\Contracts\Core\Repository\SearchService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationQuery;
 use Ibexa\Rest\Server\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Ibexa\Rest\Message;
@@ -21,7 +21,7 @@ use Ibexa\Rest\Server\Values;
 class Views extends Controller
 {
     /**
-     * @var \eZ\Publish\API\Repository\SearchService
+     * @var \Ibexa\Contracts\Core\Repository\SearchService
      */
     private $searchService;
 
@@ -33,7 +33,7 @@ class Views extends Controller
     /**
      * Creates and executes a content view.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestExecutedView
+     * @return \Ibexa\Rest\Server\Values\RestExecutedView
      */
     public function createView(Request $request)
     {
@@ -73,7 +73,7 @@ class Views extends Controller
     /**
      * List content views.
      *
-     * @return NotImplementedException;
+     * @return \Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
      */
     public function listView()
     {
@@ -83,7 +83,7 @@ class Views extends Controller
     /**
      * Get a content view.
      *
-     * @return NotImplementedException;
+     * @return \Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
      */
     public function getView()
     {
@@ -93,7 +93,7 @@ class Views extends Controller
     /**
      * Get a content view results.
      *
-     * @return NotImplementedException;
+     * @return \Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
      */
     public function loadViewResults()
     {

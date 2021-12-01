@@ -10,7 +10,7 @@ use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Values\RestObjectState;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\ObjectStateList;
-use eZ\Publish\Core\Repository\Values\ObjectState\ObjectState;
+use Ibexa\Core\Repository\Values\ObjectState\ObjectState;
 
 class ObjectStateListTest extends ValueObjectVisitorBaseTest
 {
@@ -122,7 +122,7 @@ class ObjectStateListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ObjectStateList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ObjectStateList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ObjectStateList
      */
     protected function internalGetVisitor()
     {

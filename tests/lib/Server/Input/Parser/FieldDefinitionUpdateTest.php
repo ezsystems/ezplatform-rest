@@ -6,13 +6,13 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionUpdateStruct;
-use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentTypeDraft;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionUpdateStruct;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\Values\ContentType\ContentTypeDraft;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use Ibexa\Rest\Server\Input\Parser\FieldDefinitionUpdate;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 
@@ -142,7 +142,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Returns the FieldDefinitionUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\FieldDefinitionUpdate
      */
     protected function internalGetParser()
     {
@@ -156,7 +156,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Get the FieldTypeParser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @return \Ibexa\Rest\Input\FieldTypeParser
      */
     protected function getFieldTypeParserMock()
     {
@@ -187,7 +187,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {

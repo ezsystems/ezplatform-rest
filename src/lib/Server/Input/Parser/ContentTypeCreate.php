@@ -10,7 +10,7 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\ParserTools;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
 use DateTime;
 
 /**
@@ -21,30 +21,30 @@ class ContentTypeCreate extends BaseParser
     /**
      * ContentType service.
      *
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
      * FieldDefinitionCreate parser.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate
+     * @var \Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate
      */
     protected $fieldDefinitionCreateParser;
 
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate $fieldDefinitionCreateParser
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\ContentTypeService $contentTypeService
+     * @param \Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate $fieldDefinitionCreateParser
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(
         ContentTypeService $contentTypeService,
@@ -60,9 +60,9 @@ class ContentTypeCreate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentTypeCreateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeCreateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

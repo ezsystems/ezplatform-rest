@@ -16,7 +16,7 @@ class VersionList extends RestValue
     /**
      * Versions.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\VersionInfo[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo[]
      */
     public $versions;
 
@@ -30,7 +30,7 @@ class VersionList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\VersionInfo[] $versions
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo[] $versions
      * @param string $path
      */
     public function __construct(array $versions, $path)

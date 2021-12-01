@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created URLWildcard.
@@ -16,7 +16,7 @@ class CreatedURLWildcard extends ValueObject
     /**
      * The created URL wildcard.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\URLWildcard
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\URLWildcard
      */
     public $urlWildcard;
 }

@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\LocationId as LocationIdCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\LocationId as LocationIdCriterion;
 
 /**
  * Parser for LocationId Criterion.
@@ -20,11 +20,11 @@ class LocationId extends BaseParser
      * Parses input structure to a Criterion object.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\LocationId
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\LocationId
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

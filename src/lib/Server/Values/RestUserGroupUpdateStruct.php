@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\User\UserGroupUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\User\UserGroupUpdateStruct;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,7 +17,7 @@ class RestUserGroupUpdateStruct extends RestValue
     /**
      * UserGroup update struct.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\UserGroupUpdateStruct
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\UserGroupUpdateStruct
      */
     public $userGroupUpdateStruct;
 
@@ -31,7 +31,7 @@ class RestUserGroupUpdateStruct extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\UserGroupUpdateStruct $userGroupUpdateStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\UserGroupUpdateStruct $userGroupUpdateStruct
      * @param mixed $sectionId
      */
     public function __construct(UserGroupUpdateStruct $userGroupUpdateStruct, $sectionId = null)

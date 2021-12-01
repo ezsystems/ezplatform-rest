@@ -10,7 +10,7 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Values\RestObjectState;
-use eZ\Publish\Core\Repository\Values\ObjectState\ObjectState;
+use Ibexa\Core\Repository\Values\ObjectState\ObjectState;
 
 /**
  * Parser for ContentObjectStates.
@@ -21,9 +21,9 @@ class ContentObjectStates extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestObjectState[]
+     * @return \Ibexa\Rest\Values\RestObjectState[]
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

@@ -6,11 +6,11 @@
  */
 namespace Ibexa\Rest\Server\Input\Parser\SortClause;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field as FieldSortClause;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Field as FieldSortClause;
 
 class Field extends BaseParser
 {
@@ -18,9 +18,9 @@ class Field extends BaseParser
      * Parse input structure for Field sort clause.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Field
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

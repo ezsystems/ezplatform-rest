@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\LocationQuery;
-use eZ\Publish\API\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationQuery;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
 use Ibexa\Rest\Server\Input\Parser\ViewInputOneDotOne;
 use Ibexa\Rest\Server\Values\RestViewInput;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
@@ -85,7 +85,7 @@ class ViewInputOneDotOneTest extends BaseTest
     /**
      * Returns the session input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ViewInput
+     * @return \Ibexa\Rest\Server\Input\Parser\ViewInput
      */
     protected function internalGetParser()
     {

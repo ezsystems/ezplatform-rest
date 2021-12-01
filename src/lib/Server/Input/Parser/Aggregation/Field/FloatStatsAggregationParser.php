@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Field;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractStatsAggregation;
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Field\FloatStatsAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractStatsAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Field\FloatStatsAggregation;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Server\Input\Parser\Aggregation\AbstractStatsAggregationParser;
 use Ibexa\Contracts\Rest\Exceptions;

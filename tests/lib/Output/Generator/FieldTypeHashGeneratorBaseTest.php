@@ -38,7 +38,7 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     /**
      * Initializes the generator.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator
+     * @return \Ibexa\Contracts\Rest\Output\Generator
      */
     abstract protected function initializeGenerator();
 

@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Security;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Rest\Server\Security\RestLogoutHandler;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;

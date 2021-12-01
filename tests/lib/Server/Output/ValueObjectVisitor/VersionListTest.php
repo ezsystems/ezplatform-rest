@@ -9,8 +9,8 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\VersionList;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Repository\Values\Content\VersionInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content\VersionInfo;
 
 class VersionListTest extends ValueObjectVisitorBaseTest
 {
@@ -136,7 +136,7 @@ class VersionListTest extends ValueObjectVisitorBaseTest
 
         $this->getVisitorMock()->expects($this->exactly(2))
             ->method('visitValueObject')
-            ->with($this->isInstanceOf(\eZ\Publish\API\Repository\Values\Content\VersionInfo::class));
+            ->with($this->isInstanceOf(\Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo::class));
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -148,7 +148,7 @@ class VersionListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the VersionList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\VersionList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\VersionList
      */
     protected function internalGetVisitor()
     {

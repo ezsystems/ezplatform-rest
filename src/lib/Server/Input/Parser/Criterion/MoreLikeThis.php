@@ -18,11 +18,11 @@ class MoreLikeThis extends BaseParser
      * Parses input structure to a Criterion object.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\MoreLikeThis
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\MoreLikeThis
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

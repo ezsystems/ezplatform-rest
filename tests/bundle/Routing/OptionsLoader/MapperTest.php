@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Route;
 
 class MapperTest extends TestCase
 {
-    /** @var Mapper */
+    /** @var \Ibexa\Bundle\Rest\Routing\OptionsLoader\Mapper */
     protected $mapper;
 
     public function setUp(): void

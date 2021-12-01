@@ -44,7 +44,7 @@ class BadRequestExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BadRequestException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\BadRequestException
      */
     protected function internalGetVisitor()
     {

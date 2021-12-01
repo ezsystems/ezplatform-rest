@@ -16,7 +16,7 @@ class RoleAssignmentList extends RestValue
     /**
      * Role assignments.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\RoleAssignment[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\RoleAssignment[]
      */
     public $roleAssignments;
 
@@ -37,7 +37,7 @@ class RoleAssignmentList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\RoleAssignment[] $roleAssignments
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\RoleAssignment[] $roleAssignments
      * @param mixed $id
      * @param bool $isGroupAssignment
      */

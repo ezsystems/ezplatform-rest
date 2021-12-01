@@ -6,11 +6,11 @@
  */
 namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\Exceptions\InvalidVariationException;
-use eZ\Publish\Core\FieldType\Image\Value as ImageValue;
-use eZ\Publish\Core\FieldType\ImageAsset\Value as ImageAssetValue;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\SPI\Variation\VariationHandler;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidVariationException;
+use Ibexa\Core\FieldType\Image\Value as ImageValue;
+use Ibexa\Core\FieldType\ImageAsset\Value as ImageAssetValue;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\Variation\VariationHandler;
 use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Controller as RestController;
 use Ibexa\Rest\Server\Values\CachedValue;
@@ -20,10 +20,10 @@ use Ibexa\Rest\Server\Values\CachedValue;
  */
 class BinaryContent extends RestController
 {
-    /** @var \eZ\Publish\SPI\Variation\VariationHandler */
+    /** @var \Ibexa\Contracts\Core\Variation\VariationHandler */
     protected $imageVariationHandler;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     private $configResolver;
 
     public function __construct(
@@ -44,9 +44,9 @@ class BinaryContent extends RestController
      *                        If the version number isn't specified, the default one is used.
      * @param string $variationIdentifier
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\SPI\Variation\Values\Variation
+     * @return \Ibexa\Contracts\Core\Variation\Values\Variation
      */
     public function getImageVariation($imageId, $variationIdentifier)
     {
@@ -104,7 +104,7 @@ class BinaryContent extends RestController
      * @return array An array with 3 keys: contentId, fieldId and versionNumber.
      *               If the versionNumber wasn't set, it is returned as null.
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException If the imageId format is invalid
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException If the imageId format is invalid
      */
     private function parseImageId($imageId)
     {

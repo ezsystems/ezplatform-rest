@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentException;
 use Ibexa\Rest\Value as RestValue;
 
 class CachedValue extends RestValue

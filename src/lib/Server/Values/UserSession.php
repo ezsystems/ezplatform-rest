@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\Server\Values;
 
 use Ibexa\Rest\Value as RestValue;
-use eZ\Publish\API\Repository\Values\User\User;
+use Ibexa\Contracts\Core\Repository\Values\User\User;
 
 /**
  * User list view model.
@@ -17,7 +17,7 @@ class UserSession extends RestValue
     /**
      * User.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\User
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\User
      */
     public $user;
 
@@ -50,7 +50,7 @@ class UserSession extends RestValue
     public $exists;
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\User\User $user
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\User $user
      * @param string $sessionName
      * @param string $sessionId
      * @param string $csrfToken

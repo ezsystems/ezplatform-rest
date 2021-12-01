@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\User\User;
+use Ibexa\Contracts\Core\Repository\Values\User\User;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values;
@@ -229,7 +229,7 @@ class UserSessionTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Session visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserSession
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\UserSession
      */
     protected function internalGetVisitor()
     {

@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
 use Ibexa\Rest\Server\Input\Parser\Query as QueryParser;
 
 /**

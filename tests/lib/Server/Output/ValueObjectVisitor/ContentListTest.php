@@ -10,7 +10,7 @@ use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\ContentList;
 use Ibexa\Rest\Server\Values\RestContent;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 
 class ContentListTest extends ValueObjectVisitorBaseTest
 {
@@ -145,7 +145,7 @@ class ContentListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ContentList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ContentList
      */
     protected function internalGetVisitor()
     {

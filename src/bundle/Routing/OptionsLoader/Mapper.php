@@ -16,7 +16,7 @@ class Mapper
     /**
      * @param $route Route REST route
      *
-     * @return Route
+     * @return \Symfony\Component\Routing\Route
      */
     public function mapRoute(Route $route)
     {
@@ -38,10 +38,10 @@ class Mapper
     /**
      * Merges the methods from $restRoute into the _method default of $optionsRoute.
      *
-     * @param Route $restRoute
-     * @param Route $optionsRoute
+     * @param \Symfony\Component\Routing\Route $restRoute
+     * @param \Symfony\Component\Routing\Route $optionsRoute
      *
-     * @return Route $optionsRoute with the methods from $restRoute in the _methods default
+     * @return \Symfony\Component\Routing\Route $optionsRoute with the methods from $restRoute in the _methods default
      */
     public function mergeMethodsDefault(Route $optionsRoute, Route $restRoute)
     {

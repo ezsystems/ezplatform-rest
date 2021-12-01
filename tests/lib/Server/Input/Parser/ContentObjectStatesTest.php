@@ -89,7 +89,7 @@ class ContentObjectStatesTest extends BaseTest
     /**
      * Gets the ContentObjectStates parser.
      *
-     * @return \EzSystems\EzPlatformRest\Input\Parser\ContentObjectStates ;
+     * @return \Ibexa\Rest\Input\Parser\ContentObjectStates ;
      */
     protected function internalGetParser()
     {

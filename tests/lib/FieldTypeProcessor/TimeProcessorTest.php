@@ -58,7 +58,7 @@ class TimeProcessorTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\TimeProcessor
      */
     protected function getProcessor()
     {

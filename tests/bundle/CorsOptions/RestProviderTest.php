@@ -88,7 +88,7 @@ class RestProviderTest extends TestCase
     /**
      * @param bool $isRestRequest wether or not to set the is_rest_request attribute
      *
-     * @return Request
+     * @return \Symfony\Component\HttpFoundation\Request
      */
     protected function createRequest($isRestRequest = true)
     {
@@ -108,7 +108,7 @@ class RestProviderTest extends TestCase
     }
 
     /**
-     * @return MockObject|RequestMatcherInterface
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\Routing\Matcher\RequestMatcherInterface
      */
     protected function getRequestMatcherMock()
     {

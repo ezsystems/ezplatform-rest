@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator as QueryOperator;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Operator as QueryOperator;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserLogin as UserLoginCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\UserLogin as UserLoginCriterion;
 
 class UserLogin extends BaseParser
 {

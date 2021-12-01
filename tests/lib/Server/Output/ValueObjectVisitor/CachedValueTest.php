@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\CachedValue;
@@ -26,7 +26,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     ];
 
     /**
-     * @var Request
+     * @var \Symfony\Component\HttpFoundation\Request
      */
     protected $request;
 
@@ -139,7 +139,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     /**
      * Must return an instance of the tested visitor object.
      *
-     * @return \EzSystems\EzPlatformRest\Output\ValueObjectVisitor
+     * @return \Ibexa\Contracts\Rest\Output\ValueObjectVisitor
      */
     protected function internalGetVisitor()
     {
@@ -156,7 +156,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @return ConfigResolverInterface|MockObject
+     * @return \Ibexa\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getConfigProviderMock()
     {

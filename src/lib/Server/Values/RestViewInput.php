@@ -16,7 +16,7 @@ class RestViewInput extends RestValue
     /**
      * The search query.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Query
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Query
      */
     public $query;
 

@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace Ibexa\Tests\Rest\Server\Security;
 
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\API\Repository\Values\User\User;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Contracts\Core\Repository\Values\User\User;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Security\Authentication\Token\JWTUserToken;
 use Ibexa\Rest\Server\Security\EventListener\SecurityListener;
 use PHPUnit\Framework\TestCase;
@@ -19,7 +19,7 @@ use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 
 class SecurityListenerTest extends TestCase
 {
-    /** @var \eZ\Publish\API\Repository\PermissionResolver|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver|\PHPUnit\Framework\MockObject\MockObject */
     private $permissionResolver;
 
     protected function setUp(): void

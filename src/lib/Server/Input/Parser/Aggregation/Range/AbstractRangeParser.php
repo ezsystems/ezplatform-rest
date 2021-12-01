@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Range;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Range;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;

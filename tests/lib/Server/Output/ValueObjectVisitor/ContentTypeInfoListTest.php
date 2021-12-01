@@ -9,7 +9,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\ContentTypeInfoList;
-use eZ\Publish\Core\Repository\Values\ContentType;
+use Ibexa\Core\Repository\Values\ContentType;
 use Ibexa\Rest\Server\Values\RestContentType;
 
 class ContentTypeInfoListTest extends ValueObjectVisitorBaseTest
@@ -123,7 +123,7 @@ class ContentTypeInfoListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ContentTypeInfoList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeInfoList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ContentTypeInfoList
      */
     protected function internalGetVisitor()
     {

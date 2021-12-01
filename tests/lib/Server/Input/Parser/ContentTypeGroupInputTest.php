@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\ContentTypeService;
 use Ibexa\Rest\Server\Input\Parser\ContentTypeGroupInput;
-use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ContentTypeGroupInputTest extends BaseTest
@@ -74,7 +74,7 @@ class ContentTypeGroupInputTest extends BaseTest
     /**
      * Returns the content type group input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput
+     * @return \Ibexa\Rest\Server\Input\Parser\ContentTypeGroupInput
      */
     protected function internalGetParser()
     {
@@ -87,7 +87,7 @@ class ContentTypeGroupInputTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {

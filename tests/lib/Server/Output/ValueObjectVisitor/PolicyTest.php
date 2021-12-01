@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\User;
+use Ibexa\Core\Repository\Values\User;
 
 class PolicyTest extends ValueObjectVisitorBaseTest
 {
@@ -24,7 +24,7 @@ class PolicyTest extends ValueObjectVisitorBaseTest
 
         $generator->startDocument(null);
 
-        $contentTypeLimitation = new \eZ\Publish\API\Repository\Values\User\Limitation\ContentTypeLimitation();
+        $contentTypeLimitation = new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ContentTypeLimitation();
         $contentTypeLimitation->limitationValues = [1, 2, 3];
 
         $policy = new User\Policy(
@@ -205,7 +205,7 @@ class PolicyTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Policy visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Policy
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Policy
      */
     protected function internalGetVisitor()
     {

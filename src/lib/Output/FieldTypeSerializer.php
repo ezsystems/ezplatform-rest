@@ -8,10 +8,10 @@ namespace Ibexa\Rest\Output;
 
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Rest\FieldTypeProcessorRegistry;
-use eZ\Publish\API\Repository\FieldTypeService;
-use eZ\Publish\API\Repository\FieldType;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use eZ\Publish\API\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\FieldType;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
 
 /**
  * Serializes FieldType related data for REST output.
@@ -21,18 +21,18 @@ class FieldTypeSerializer
     /**
      * FieldTypeService.
      *
-     * @var \eZ\Publish\API\Repository\FieldTypeService
+     * @var \Ibexa\Contracts\Core\Repository\FieldTypeService
      */
     protected $fieldTypeService;
 
     /**
-     * @var \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry
+     * @var \Ibexa\Rest\FieldTypeProcessorRegistry
      */
     protected $fieldTypeProcessorRegistry;
 
     /**
-     * @param \eZ\Publish\API\Repository\FieldTypeService $fieldTypeService
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
+     * @param \Ibexa\Contracts\Core\Repository\FieldTypeService $fieldTypeService
+     * @param \Ibexa\Rest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
      */
     public function __construct(FieldTypeService $fieldTypeService, FieldTypeProcessorRegistry $fieldTypeProcessorRegistry)
     {
@@ -43,9 +43,9 @@ class FieldTypeSerializer
     /**
      * Serializes the field value of $field through $generator.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\Values\ContentType\ContentType $contentType
-     * @param \eZ\Publish\API\Repository\Values\Content\Field $field
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType $contentType
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Field $field
      */
     public function serializeFieldValue(Generator $generator, ContentType $contentType, Field $field)
     {
@@ -62,7 +62,7 @@ class FieldTypeSerializer
     /**
      * Serializes the $defaultValue for $fieldDefIdentifier through $generator.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param string $fieldTypeIdentifier
      * @param mixed $defaultValue
      */
@@ -80,7 +80,7 @@ class FieldTypeSerializer
      * Serializes $settings as fieldSettings for $fieldDefinition using
      * $generator.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param string $fieldTypeIdentifier
      * @param mixed $settings
      */
@@ -100,7 +100,7 @@ class FieldTypeSerializer
     /**
      * Serializes $validatorConfiguration for $fieldDefinition using $generator.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param string $fieldTypeIdentifier
      * @param mixed $validatorConfiguration
      */
@@ -122,7 +122,7 @@ class FieldTypeSerializer
      *
      * @param string $fieldTypeIdentifier
      *
-     * @return \eZ\Publish\API\Repository\FieldType
+     * @return \Ibexa\Contracts\Core\Repository\FieldType
      */
     protected function getFieldType($fieldTypeIdentifier)
     {
@@ -136,8 +136,8 @@ class FieldTypeSerializer
      * $elementName.
      *
      * @param string $elementName
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\FieldType $fieldType
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\FieldType $fieldType
      * @param mixed $value
      */
     protected function serializeValue($elementName, Generator $generator, FieldType $fieldType, $value)
@@ -157,7 +157,7 @@ class FieldTypeSerializer
      * Serializes the given $hash with $generator into $elementName.
      *
      * @param string $elementName
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param mixed $hash
      */
     protected function serializeHash($elementName, Generator $generator, $hash)

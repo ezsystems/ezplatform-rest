@@ -11,7 +11,7 @@ interface RootResourceBuilderInterface
     /**
      * Build root resource.
      *
-     * @return array|\EzSystems\EzPlatformRest\Values\Root
+     * @return array|\Ibexa\Rest\Values\Root
      */
     public function buildRootResource();
 }

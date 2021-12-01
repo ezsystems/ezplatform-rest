@@ -10,7 +10,7 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\ParserTools;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\ObjectStateService;
+use Ibexa\Contracts\Core\Repository\ObjectStateService;
 
 /**
  * Parser for ObjectStateGroupCreate.
@@ -20,20 +20,20 @@ class ObjectStateGroupCreate extends BaseParser
     /**
      * Object state service.
      *
-     * @var \eZ\Publish\API\Repository\ObjectStateService
+     * @var \Ibexa\Contracts\Core\Repository\ObjectStateService
      */
     protected $objectStateService;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\ObjectStateService $objectStateService
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\ObjectStateService $objectStateService
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(ObjectStateService $objectStateService, ParserTools $parserTools)
     {
@@ -45,9 +45,9 @@ class ObjectStateGroupCreate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroupCreateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroupCreateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

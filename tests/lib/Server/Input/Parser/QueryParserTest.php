@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
 use Ibexa\Rest\Server\Input\Parser\ContentQuery as QueryParser;
 
 class QueryParserTest extends BaseTest

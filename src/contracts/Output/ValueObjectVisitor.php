@@ -7,8 +7,8 @@
 namespace Ibexa\Contracts\Rest\Output;
 
 use Ibexa\Rest\RequestParser;
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\API\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Symfony\Component\Routing\RouterInterface;
 
 /**
@@ -19,7 +19,7 @@ abstract class ValueObjectVisitor
     /**
      * URL handler for URL generation.
      *
-     * @var \EzSystems\EzPlatformRest\RequestParser
+     * @var \Ibexa\Rest\RequestParser
      */
     protected $requestParser;
 
@@ -36,8 +36,8 @@ abstract class ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param mixed $data
      */
     abstract public function visit(Visitor $visitor, Generator $generator, $data);
@@ -63,7 +63,7 @@ abstract class ValueObjectVisitor
     /**
      * Returns a string representation for the given $boolValue.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param bool $boolValue
      *
      * @return mixed
@@ -76,7 +76,7 @@ abstract class ValueObjectVisitor
     /**
      * Visits the given list of $names.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param array $names
      */
     protected function visitNamesList(Generator $generator, array $names)
@@ -87,7 +87,7 @@ abstract class ValueObjectVisitor
     /**
      * Visits the given list of $descriptions.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param array $descriptions
      */
     protected function visitDescriptionsList(Generator $generator, array $descriptions)
@@ -98,7 +98,7 @@ abstract class ValueObjectVisitor
     /**
      * Visits a list of translated elements.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
      * @param array $translatedElements
      * @param mixed $listName
      */
@@ -117,8 +117,8 @@ abstract class ValueObjectVisitor
     /**
      * Visits a limitation.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\Values\User\Limitation $limitation
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\Limitation $limitation
      */
     protected function visitLimitation(Generator $generator, Limitation $limitation)
     {

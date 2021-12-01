@@ -6,15 +6,15 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\Repository\UserService;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\FieldTypeService;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\UserService;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use Ibexa\Rest\Server\Input\Parser\UserGroupCreate;
-use eZ\Publish\Core\Repository\Values\User\UserGroupCreateStruct;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\User\UserGroupCreateStruct;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 
@@ -54,7 +54,7 @@ class UserGroupCreateTest extends BaseTest
         );
 
         $this->assertInstanceOf(
-            \eZ\Publish\API\Repository\Values\ContentType\ContentType::class,
+            \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType::class,
             $result->contentType,
             'contentType not created correctly.'
         );
@@ -294,7 +294,7 @@ class UserGroupCreateTest extends BaseTest
     /**
      * Returns the UserGroupCreate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\UserGroupCreate
      */
     protected function internalGetParser()
     {
@@ -308,7 +308,7 @@ class UserGroupCreateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
+     * @return \Ibexa\Rest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {
@@ -335,7 +335,7 @@ class UserGroupCreateTest extends BaseTest
     /**
      * Get the user service mock object.
      *
-     * @return \eZ\Publish\API\Repository\UserService
+     * @return \Ibexa\Contracts\Core\Repository\UserService
      */
     protected function getUserServiceMock()
     {
@@ -363,7 +363,7 @@ class UserGroupCreateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {
@@ -380,7 +380,7 @@ class UserGroupCreateTest extends BaseTest
     /**
      * Get the content type used in UserGroupCreate parser.
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentType
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType
      */
     protected function getContentType()
     {

@@ -12,7 +12,7 @@ use Symfony\Component\Routing\RouterInterface;
 
 class ImageProcessorTest extends BinaryInputProcessorTest
 {
-    /** @var RequestParser */
+    /** @var \Ibexa\Rest\RequestParser */
     protected $requestParser;
 
     /**
@@ -57,7 +57,7 @@ class ImageProcessorTest extends BinaryInputProcessorTest
     /**
      * Returns the processor under test.
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\ImageProcessor
      */
     protected function getProcessor()
     {

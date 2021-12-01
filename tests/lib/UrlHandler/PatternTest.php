@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\UrlHandler;
 
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
 use Ibexa\Rest\RequestParser\Pattern;
 use PHPUnit\Framework\TestCase;
 
@@ -198,7 +198,7 @@ class PatternTest extends TestCase
     /**
      * Returns the URL handler.
      *
-     * @return \EzSystems\EzPlatformRest\RequestParser\Pattern
+     * @return \Ibexa\Rest\RequestParser\Pattern
      */
     protected function getWorkingUrlHandler()
     {

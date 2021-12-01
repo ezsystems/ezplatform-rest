@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created policy.
@@ -16,7 +16,7 @@ class CreatedPolicy extends ValueObject
     /**
      * The created policy.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\Policy
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\Policy
      */
     public $policy;
 }

@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ObjectStateService;
+use Ibexa\Core\Repository\ObjectStateService;
 use Ibexa\Rest\Server\Input\Parser\ObjectStateUpdate;
-use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateUpdateStruct;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ObjectStateUpdateTest extends BaseTest
@@ -101,7 +101,7 @@ class ObjectStateUpdateTest extends BaseTest
     /**
      * Returns the ObjectStateUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\ObjectStateUpdate
      */
     protected function internalGetParser()
     {
@@ -114,7 +114,7 @@ class ObjectStateUpdateTest extends BaseTest
     /**
      * Get the object state service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ObjectStateService
+     * @return \Ibexa\Contracts\Core\Repository\ObjectStateService
      */
     protected function getObjectStateServiceMock()
     {

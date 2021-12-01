@@ -16,7 +16,7 @@ class UserGroupRefList extends RestValue
     /**
      * User groups.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[]
+     * @var \Ibexa\Rest\Server\Values\RestUserGroup[]
      */
     public $userGroups;
 
@@ -37,7 +37,7 @@ class UserGroupRefList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[] $userGroups
+     * @param \Ibexa\Rest\Server\Values\RestUserGroup[] $userGroups
      * @param string $path
      * @param mixed $userId
      */

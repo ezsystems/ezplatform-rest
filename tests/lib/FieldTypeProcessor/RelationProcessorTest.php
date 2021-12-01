@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Core\Repository\Values\Content\Location;
 use Ibexa\Rest\FieldTypeProcessor\RelationProcessor;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\RouterInterface;
@@ -128,7 +128,7 @@ class RelationProcessorTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\RelationProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\RelationProcessor
      */
     protected function getProcessor()
     {

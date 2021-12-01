@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server;
 
-use eZ\Publish\API\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\Repository;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\Routing\RouterInterface;
@@ -19,7 +19,7 @@ abstract class Controller implements ContainerAwareInterface
     use ContainerAwareTrait;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Input\Dispatcher
+     * @var \Ibexa\Rest\Input\Dispatcher
      */
     protected $inputDispatcher;
 
@@ -29,14 +29,14 @@ abstract class Controller implements ContainerAwareInterface
     protected $router;
 
     /**
-     * @var \EzSystems\EzPlatformRest\RequestParser
+     * @var \Ibexa\Rest\RequestParser
      */
     protected $requestParser;
 
     /**
      * Repository.
      *
-     * @var \eZ\Publish\API\Repository\Repository
+     * @var \Ibexa\Contracts\Core\Repository\Repository
      */
     protected $repository;
 

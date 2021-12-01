@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\ObjectState;
+use Ibexa\Core\Repository\Values\ObjectState;
 
 class ObjectStateGroupTest extends ValueObjectVisitorBaseTest
 {
@@ -238,7 +238,7 @@ class ObjectStateGroupTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ObjectStateGroup visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ObjectStateGroup
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ObjectStateGroup
      */
     protected function internalGetVisitor()
     {

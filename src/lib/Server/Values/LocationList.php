@@ -16,7 +16,7 @@ class LocationList extends RestValue
     /**
      * Locations.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestLocation[]
+     * @var \Ibexa\Rest\Server\Values\RestLocation[]
      */
     public $locations;
 
@@ -30,7 +30,7 @@ class LocationList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestLocation[] $locations
+     * @param \Ibexa\Rest\Server\Values\RestLocation[] $locations
      * @param string $path
      */
     public function __construct(array $locations, $path)

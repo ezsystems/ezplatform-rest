@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\LocationQuery as LocationQueryValueObject;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationQuery as LocationQueryValueObject;
 use Ibexa\Rest\Server\Input\Parser\Query as QueryParser;
 
 /**

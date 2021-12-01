@@ -6,12 +6,12 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Values\RestUserGroup;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 
 class RestUserGroupTest extends ValueObjectVisitorBaseTest
 {
@@ -418,7 +418,7 @@ class RestUserGroupTest extends ValueObjectVisitorBaseTest
     /**
      * Get the UserGroup visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUserGroup
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestUserGroup
      */
     protected function internalGetVisitor()
     {

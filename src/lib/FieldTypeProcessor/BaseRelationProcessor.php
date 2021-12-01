@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Rest\FieldTypeProcessor;
 
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\Core\FieldType\Relation\Type;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Core\FieldType\Relation\Type;
 use Ibexa\Contracts\Rest\FieldTypeProcessor;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -19,7 +19,7 @@ abstract class BaseRelationProcessor extends FieldTypeProcessor
     private $router;
 
     /**
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     private $locationService;
 
@@ -32,7 +32,7 @@ abstract class BaseRelationProcessor extends FieldTypeProcessor
     }
 
     /**
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
      */
     public function setLocationService(LocationService $locationService)
     {

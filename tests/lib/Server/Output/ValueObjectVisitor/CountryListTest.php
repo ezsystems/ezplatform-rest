@@ -127,7 +127,7 @@ class CountryListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the CountryList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\CountryList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\CountryList
      */
     protected function internalGetVisitor()
     {

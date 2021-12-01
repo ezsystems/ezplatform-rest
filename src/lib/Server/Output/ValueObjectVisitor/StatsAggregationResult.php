@@ -15,7 +15,7 @@ use Ibexa\Contracts\Rest\Output\Visitor;
 final class StatsAggregationResult extends ValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\StatsAggregationResult $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\StatsAggregationResult $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

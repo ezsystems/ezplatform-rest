@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created relation.
@@ -16,7 +16,7 @@ class CreatedRelation extends ValueObject
     /**
      * The created relation.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestRelation
+     * @var \Ibexa\Rest\Server\Values\RestRelation
      */
     public $relation;
 }

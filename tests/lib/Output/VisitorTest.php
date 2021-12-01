@@ -119,7 +119,7 @@ class VisitorTest extends TestCase
     /**
      * @todo This is a test for a feature that needs refactoring.
      *
-     * @see \EzSystems\EzPlatformRest\Output\Visitor::visit
+     * @see \Ibexa\Contracts\Rest\Output\Visitor::visit
      */
     public function testSetFilteredHeaders()
     {

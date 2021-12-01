@@ -208,7 +208,7 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Exception
      */
     protected function internalGetVisitor()
     {
@@ -218,7 +218,7 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Exception
      */
     protected function internalGetNonDebugVisitor(): ExceptionValueObjectVisitor
     {

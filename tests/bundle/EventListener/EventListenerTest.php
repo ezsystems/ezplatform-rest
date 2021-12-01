@@ -16,16 +16,16 @@ use PHPUnit\Framework\TestCase;
 
 abstract class EventListenerTest extends TestCase
 {
-    /** @var EventDispatcherInterface */
+    /** @var \Symfony\Component\EventDispatcher\EventDispatcherInterface */
     protected $event;
 
-    /** @var Request|MockObject */
+    /** @var \Symfony\Component\HttpFoundation\Request|\PHPUnit\Framework\MockObject\MockObject */
     protected $requestMock;
 
-    /** @var ParameterBag|MockObject */
+    /** @var \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject */
     protected $requestAttributesMock;
 
-    /** @var ParameterBag|MockObject */
+    /** @var \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject */
     protected $requestHeadersMock;
 
     protected $isRestRequest = true;
@@ -59,7 +59,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return MockObject|$class
+     * @return \PHPUnit\Framework\MockObject\MockObject|$class
      */
     protected function getEvent($class)
     {
@@ -78,7 +78,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return ParameterBag|MockObject
+     * @return \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestAttributesMock()
     {
@@ -100,7 +100,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return MockObject|Request
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\Request
      */
     protected function getRequestMock()
     {
@@ -125,7 +125,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return ParameterBag|MockObject
+     * @return \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestHeadersMock()
     {
@@ -139,7 +139,7 @@ abstract class EventListenerTest extends TestCase
     /**
      * @param bool $csrfEnabled
      *
-     * @return CsrfListener
+     * @return \Ibexa\Bundle\Rest\EventListener\CsrfListener
      */
     abstract protected function getEventListener();
 

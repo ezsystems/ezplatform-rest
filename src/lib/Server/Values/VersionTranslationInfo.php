@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\VersionInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -15,12 +15,12 @@ use Ibexa\Rest\Value as RestValue;
 class VersionTranslationInfo extends RestValue
 {
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\VersionInfo
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo
      */
     private $versionInfo;
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\VersionInfo $versionInfo
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo $versionInfo
      */
     public function __construct(VersionInfo $versionInfo)
     {
@@ -28,7 +28,7 @@ class VersionTranslationInfo extends RestValue
     }
 
     /**
-     * @return \eZ\Publish\API\Repository\Values\Content\VersionInfo
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo
      */
     public function getVersionInfo()
     {

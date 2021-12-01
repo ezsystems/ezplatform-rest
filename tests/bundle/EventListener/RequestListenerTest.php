@@ -98,7 +98,7 @@ class RequestListenerTest extends EventListenerTest
     }
 
     /**
-     * @return RequestListener
+     * @return \Ibexa\Bundle\Rest\EventListener\RequestListener
      */
     protected function getEventListener()
     {
@@ -108,7 +108,7 @@ class RequestListenerTest extends EventListenerTest
     }
 
     /**
-     * @return AcceptHeaderVisitorDispatcher|MockObject
+     * @return \Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher|\PHPUnit\Framework\MockObject\MockObject
      */
     public function getVisitorDispatcherMock()
     {
@@ -116,7 +116,7 @@ class RequestListenerTest extends EventListenerTest
     }
 
     /**
-     * @return Request
+     * @return \Symfony\Component\HttpFoundation\Request
      */
     protected function performFakeRequest($uri, $type = HttpKernelInterface::MASTER_REQUEST)
     {

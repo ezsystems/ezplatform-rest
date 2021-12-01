@@ -19,11 +19,11 @@ use Symfony\Component\Routing\Exception\MethodNotAllowedException;
  */
 class RestProvider implements ProviderInterface
 {
-    /** @var RequestMatcherInterface */
+    /** @var \Symfony\Component\Routing\Matcher\RequestMatcherInterface */
     protected $requestMatcher;
 
     /**
-     * @param RequestMatcherInterface $requestMatcher
+     * @param \Symfony\Component\Routing\Matcher\RequestMatcherInterface $requestMatcher
      */
     public function __construct(RequestMatcherInterface $requestMatcher)
     {

@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created section.
@@ -16,7 +16,7 @@ class CreatedSection extends ValueObject
     /**
      * The created section.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Section
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Section
      */
     public $section;
 }

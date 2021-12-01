@@ -10,8 +10,8 @@ use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\RestContent;
 use Ibexa\Rest\Server\Values\RestLocation;
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 
 class RestLocationTest extends ValueObjectVisitorBaseTest
 {
@@ -578,7 +578,7 @@ class RestLocationTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Location visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestLocation
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestLocation
      */
     protected function internalGetVisitor()
     {

@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\FieldTypeProcessor;
 
-use eZ\Publish\Core\FieldType\Media\Type;
+use Ibexa\Core\FieldType\Media\Type;
 
 class MediaProcessor extends BinaryInputProcessor
 {

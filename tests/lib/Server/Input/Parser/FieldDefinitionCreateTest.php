@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
-use eZ\Publish\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
+use Ibexa\Core\Repository\ContentTypeService;
 use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
 use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
@@ -172,7 +172,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Returns the FieldDefinitionCreate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate
      */
     protected function internalGetParser()
     {
@@ -186,7 +186,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Get the FieldTypeParser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @return \Ibexa\Rest\Input\FieldTypeParser
      */
     protected function getFieldTypeParserMock()
     {
@@ -217,7 +217,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {

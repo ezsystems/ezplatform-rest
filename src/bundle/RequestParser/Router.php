@@ -63,7 +63,7 @@ class Router implements RequestParser
     }
 
     /**
-     * @throws \eZ\Publish\Core\Base\Exceptions\InvalidArgumentException If $attribute wasn't found in the match
+     * @throws \Ibexa\Core\Base\Exceptions\InvalidArgumentException If $attribute wasn't found in the match
      */
     public function parseHref($href, $attribute)
     {
@@ -81,7 +81,7 @@ class Router implements RequestParser
      *
      * @param array $match Match array returned by Router::match() / Router::matchRequest()
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException if the \$match isn't valid
+     * @throws \Ibexa\Contracts\Rest\Exceptions\InvalidArgumentException if the \$match isn't valid
      *
      * @return bool
      */

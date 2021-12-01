@@ -15,7 +15,7 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
     /**
      * Initializes the field type hash generator.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator
+     * @return \Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator
      */
     protected function initializeFieldTypeHashGenerator()
     {
@@ -25,7 +25,7 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
     /**
      * Initializes the generator.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator
+     * @return \Ibexa\Contracts\Rest\Output\Generator
      */
     protected function initializeGenerator()
     {

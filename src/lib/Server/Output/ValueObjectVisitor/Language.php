@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\Content\Language as LanguageValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language as LanguageValue;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
@@ -16,7 +16,7 @@ use Ibexa\Contracts\Rest\Output\Visitor;
 final class Language extends ValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Language $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Language $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

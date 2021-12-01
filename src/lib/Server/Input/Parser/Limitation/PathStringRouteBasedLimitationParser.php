@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Input\Parser\Limitation;
 
-use eZ\Publish\API\Repository\Values;
+use Ibexa\Core\Repository\Values;
 use Ibexa\Contracts\Rest\Exceptions;
 
 /**
@@ -22,7 +22,7 @@ class PathStringRouteBasedLimitationParser extends RouteBasedLimitationParser
     /**
      * Prefixes the value parsed by the parent with a '/'.
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser if the '_href' attribute doesn't end with a slash, since 6.4
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser if the '_href' attribute doesn't end with a slash, since 6.4
      *
      * @param $limitationValue
      *

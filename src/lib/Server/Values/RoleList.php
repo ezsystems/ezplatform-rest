@@ -16,7 +16,7 @@ class RoleList extends RestValue
     /**
      * Roles.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\Role[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\Role[]
      */
     public $roles;
 
@@ -30,7 +30,7 @@ class RoleList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\Role[] $roles
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\Role[] $roles
      * @param string $path
      */
     public function __construct(array $roles, $path)

@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\Location;
-use eZ\Publish\API\Repository\Values\ContentType\ContentTypeUpdateStruct;
-use eZ\Publish\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeUpdateStruct;
+use Ibexa\Core\Repository\ContentTypeService;
 use Ibexa\Rest\Server\Input\Parser\ContentTypeUpdate;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 
@@ -152,7 +152,7 @@ class ContentTypeUpdateTest extends BaseTest
     /**
      * Returns the ContentTypeUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\ContentTypeUpdate
      */
     protected function internalGetParser()
     {
@@ -165,7 +165,7 @@ class ContentTypeUpdateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {

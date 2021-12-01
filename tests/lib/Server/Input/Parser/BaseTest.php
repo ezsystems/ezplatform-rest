@@ -17,24 +17,24 @@ use Ibexa\Rest\RequestParser;
 abstract class BaseTest extends ParentBaseTest
 {
     /**
-     * @var \EzSystems\EzPlatformRest\Input\ParsingDispatcher|\PHPUnit\Framework\MockObject\MockObject
+     * @var \Ibexa\Contracts\Rest\Input\ParsingDispatcher|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $parsingDispatcherMock;
 
     /**
-     * @var \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @var \Ibexa\Rest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $requestParserMock;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Get the parsing dispatcher.
      *
-     * @return \EzSystems\EzPlatformRest\Input\ParsingDispatcher
+     * @return \Ibexa\Contracts\Rest\Input\ParsingDispatcher
      */
     protected function getParsingDispatcherMock()
     {
@@ -61,7 +61,7 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Get the Request parser.
      *
-     * @return \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Rest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestParserMock()
     {
@@ -96,7 +96,7 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Get the parser tools.
      *
-     * @return \EzSystems\EzPlatformRest\Input\ParserTools
+     * @return \Ibexa\Rest\Input\ParserTools
      */
     protected function getParserTools()
     {
@@ -118,7 +118,7 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Must return the tested parser object.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Base
+     * @return \Ibexa\Rest\Server\Input\Parser\Base
      */
     abstract protected function internalGetParser();
 }

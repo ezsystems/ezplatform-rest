@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\TrashItem;
+use Ibexa\Contracts\Core\Repository\Values\Content\TrashItem;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,7 +17,7 @@ class RestTrashItem extends RestValue
     /**
      * A trash item.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\TrashItem
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\TrashItem
      */
     public $trashItem;
 
@@ -29,7 +29,7 @@ class RestTrashItem extends RestValue
     public $childCount;
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\TrashItem $trashItem
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\TrashItem $trashItem
      * @param int $childCount
      */
     public function __construct(TrashItem $trashItem, $childCount)

@@ -20,9 +20,9 @@ class SessionInput extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\SessionInput
+     * @return \Ibexa\Rest\Server\Values\SessionInput
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

@@ -16,7 +16,7 @@ class SectionList extends RestValue
     /**
      * Sections.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Section[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Section[]
      */
     public $sections;
 
@@ -30,7 +30,7 @@ class SectionList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\Section[] $sections
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Section[] $sections
      * @param string $path
      */
     public function __construct(array $sections, $path)

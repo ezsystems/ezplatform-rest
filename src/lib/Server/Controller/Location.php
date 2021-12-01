@@ -6,15 +6,15 @@
  */
 namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\URLAliasService;
+use Ibexa\Contracts\Core\Repository\URLAliasService;
 use Ibexa\Rest\Message;
 use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Values;
 use Ibexa\Rest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\TrashService;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\TrashService;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
 use Ibexa\Rest\Server\Exceptions\BadRequestException;
 use Ibexa\Rest\Server\Exceptions\ForbiddenException;
 use Symfony\Component\HttpFoundation\Request;
@@ -27,38 +27,38 @@ class Location extends RestController
     /**
      * Location service.
      *
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
      * Trash service.
      *
-     * @var \eZ\Publish\API\Repository\TrashService
+     * @var \Ibexa\Contracts\Core\Repository\TrashService
      */
     protected $trashService;
 
     /**
      * URLAlias Service.
      *
-     * @var \eZ\Publish\API\Repository\URLAliasService
+     * @var \Ibexa\Contracts\Core\Repository\URLAliasService
      */
     protected $urlAliasService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
-     * @param \eZ\Publish\API\Repository\TrashService $trashService
-     * @param \eZ\Publish\API\Repository\URLAliasService $urlAliasService
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
+     * @param \Ibexa\Contracts\Core\Repository\TrashService $trashService
+     * @param \Ibexa\Contracts\Core\Repository\URLAliasService $urlAliasService
      */
     public function __construct(
         LocationService $locationService,
@@ -75,9 +75,9 @@ class Location extends RestController
     /**
      * Loads the location for a given ID (x)or remote ID.
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
+     * @return \Ibexa\Rest\Server\Values\TemporaryRedirect
      */
     public function redirectLocation(Request $request)
     {
@@ -107,9 +107,9 @@ class Location extends RestController
      *
      * @param mixed $contentId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedLocation
+     * @return \Ibexa\Rest\Server\Values\CreatedLocation
      */
     public function createLocation($contentId, Request $request)
     {
@@ -136,7 +136,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestLocation
+     * @return \Ibexa\Rest\Server\Values\RestLocation
      */
     public function loadLocation($locationPath)
     {
@@ -164,7 +164,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteSubtree($locationPath)
     {
@@ -181,7 +181,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
+     * @return \Ibexa\Rest\Server\Values\ResourceCreated
      */
     public function copySubtree($locationPath, Request $request)
     {
@@ -215,9 +215,9 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException if the Destination header cannot be parsed as location or trash
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException if the Destination header cannot be parsed as location or trash
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated|\EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\ResourceCreated|\Ibexa\Rest\Server\Values\NoContent
      */
     public function moveSubtree($locationPath, Request $request)
     {
@@ -282,7 +282,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function swapLocation($locationPath, Request $request)
     {
@@ -308,7 +308,7 @@ class Location extends RestController
      *
      * @todo remove, or use in loadLocation with filter
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\LocationList
+     * @return \Ibexa\Rest\Server\Values\LocationList
      */
     public function loadLocationByRemoteId(Request $request)
     {
@@ -330,7 +330,7 @@ class Location extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\LocationList
+     * @return \Ibexa\Rest\Server\Values\LocationList
      */
     public function loadLocationsForContent($contentId, Request $request)
     {
@@ -355,7 +355,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\LocationList
+     * @return \Ibexa\Rest\Server\Values\LocationList
      */
     public function loadLocationChildren($locationPath, Request $request)
     {
@@ -401,7 +401,7 @@ class Location extends RestController
      *
      * @param string $locationPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestLocation
+     * @return \Ibexa\Rest\Server\Values\RestLocation
      */
     public function updateLocation($locationPath, Request $request)
     {

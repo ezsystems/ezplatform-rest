@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Base\Exceptions\BadStateException as CoreBadStateException;
-use eZ\Publish\Core\Helper\TranslationHelper;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Base\Exceptions\BadStateException as CoreBadStateException;
+use Ibexa\Core\Helper\TranslationHelper;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\Visitor;
@@ -19,7 +19,7 @@ use Ibexa\Rest\Server\Values\Version as VersionValue;
  */
 class RestContent extends ValueObjectVisitor
 {
-    /** @var \eZ\Publish\Core\Helper\TranslationHelper */
+    /** @var \Ibexa\Core\Helper\TranslationHelper */
     private $translationHelper;
 
     public function __construct(TranslationHelper $translationHelper)
@@ -30,9 +30,9 @@ class RestContent extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestContent $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Rest\Server\Values\RestContent $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
@@ -221,7 +221,7 @@ class RestContent extends ValueObjectVisitor
      *
      * @param int $status
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\BadStateException
+     * @throws \Ibexa\Core\Base\Exceptions\BadStateException
      *
      * @return string
      */

@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\API\Repository\Values\Content;
+use Ibexa\Core\Repository\Values\Content;
 
 class SectionTest extends ValueObjectVisitorBaseTest
 {
@@ -160,7 +160,7 @@ class SectionTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Section visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Section
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Section
      */
     protected function internalGetVisitor()
     {

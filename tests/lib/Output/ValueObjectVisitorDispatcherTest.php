@@ -123,7 +123,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzPlatformRest\Output\ValueObjectVisitor
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Rest\Output\ValueObjectVisitor
      */
     private function getValueObjectVisitorMock()
     {

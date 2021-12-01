@@ -9,7 +9,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\RelationList;
-use eZ\Publish\Core\Repository\Values\Content;
+use Ibexa\Core\Repository\Values\Content;
 use Ibexa\Rest\Server\Values\RestRelation;
 
 class RelationListTest extends ValueObjectVisitorBaseTest
@@ -125,7 +125,7 @@ class RelationListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the RelationList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RelationList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RelationList
      */
     protected function internalGetVisitor()
     {

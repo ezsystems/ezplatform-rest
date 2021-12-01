@@ -29,7 +29,7 @@ class ImageProcessor extends BinaryInputProcessor
     protected $variations;
 
     /**
-     * @var RouterInterface
+     * @var \Symfony\Component\Routing\RouterInterface
      */
     protected $router;
 

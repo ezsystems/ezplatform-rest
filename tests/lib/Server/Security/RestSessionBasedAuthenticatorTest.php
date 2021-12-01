@@ -6,10 +6,10 @@
  */
 namespace Ibexa\Tests\Rest\Server\Security;
 
-use eZ\Publish\API\Repository\Values\User\User;
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Contracts\Core\Repository\Values\User\User;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Rest\Server\Security\RestAuthenticator;
-use eZ\Publish\Core\MVC\Symfony\Security\User as EzUser;
+use Ibexa\Core\MVC\Symfony\Security\User as EzUser;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -60,7 +60,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
     private $logger;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Server\Security\RestAuthenticator
+     * @var \Ibexa\Rest\Server\Security\RestAuthenticator
      */
     private $authenticator;
 
@@ -203,7 +203,7 @@ class RestSessionBasedAuthenticatorTest extends TestCase
     /**
      * @param $userId
      *
-     * @return EzUser
+     * @return \Ibexa\Core\MVC\Symfony\Security\User
      */
     private function createUser($userId)
     {

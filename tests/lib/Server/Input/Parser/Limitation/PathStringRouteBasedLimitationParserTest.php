@@ -33,7 +33,7 @@ class PathStringRouteBasedLimitationParserTest extends BaseTest
     /**
      * Must return the tested parser object.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
+     * @return \Ibexa\Rest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
      */
     protected function internalGetParser()
     {

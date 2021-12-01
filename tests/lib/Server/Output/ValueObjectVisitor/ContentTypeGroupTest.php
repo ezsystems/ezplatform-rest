@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\ContentType;
+use Ibexa\Core\Repository\Values\ContentType;
 
 class ContentTypeGroupTest extends ValueObjectVisitorBaseTest
 {
@@ -339,7 +339,7 @@ class ContentTypeGroupTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ContentTypeGroup visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeGroup
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ContentTypeGroup
      */
     protected function internalGetVisitor()
     {

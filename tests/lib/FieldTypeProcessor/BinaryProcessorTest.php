@@ -39,7 +39,7 @@ class BinaryProcessorTest extends BinaryInputProcessorTest
     /**
      * Returns the processor under test.
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\BinaryProcessor
      */
     protected function getProcessor()
     {

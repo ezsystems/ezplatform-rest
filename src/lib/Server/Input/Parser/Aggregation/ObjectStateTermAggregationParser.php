@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\ObjectStateTermAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\ObjectStateTermAggregation;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
 

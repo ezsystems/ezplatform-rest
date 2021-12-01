@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\Visitor;
-use eZ\Publish\API\Repository\Values\Content\URLWildcard as URLWildcardValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\URLWildcard as URLWildcardValue;
 
 /**
  * URLWildcard value object visitor.
@@ -19,9 +19,9 @@ class URLWildcard extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\Values\Content\URLWildcard $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\URLWildcard $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

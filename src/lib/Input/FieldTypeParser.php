@@ -7,37 +7,37 @@
 namespace Ibexa\Rest\Input;
 
 use Ibexa\Rest\FieldTypeProcessorRegistry;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
 
 class FieldTypeParser
 {
     /**
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
-     * @var \eZ\Publish\API\Repository\FieldTypeService
+     * @var \Ibexa\Contracts\Core\Repository\FieldTypeService
      */
     protected $fieldTypeService;
 
     /**
-     * @var \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry
+     * @var \Ibexa\Rest\FieldTypeProcessorRegistry
      */
     protected $fieldTypeProcessorRegistry;
 
     /**
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
-     * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \eZ\Publish\API\Repository\FieldTypeService $fieldTypeService
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
+     * @param \Ibexa\Contracts\Core\Repository\ContentTypeService $contentTypeService
+     * @param \Ibexa\Contracts\Core\Repository\FieldTypeService $fieldTypeService
+     * @param \Ibexa\Rest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
      */
     public function __construct(
         ContentService $contentService,

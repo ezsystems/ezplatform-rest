@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created location.
@@ -16,7 +16,7 @@ class CreatedLocation extends ValueObject
     /**
      * The created location.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestLocation
+     * @var \Ibexa\Rest\Server\Values\RestLocation
      */
     public $restLocation;
 }

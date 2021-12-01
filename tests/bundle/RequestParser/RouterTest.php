@@ -129,7 +129,7 @@ class RouterTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRestBundle\RequestParser\Router
+     * @return \Ibexa\Bundle\Rest\RequestParser\Router
      */
     private function getRequestParser()
     {

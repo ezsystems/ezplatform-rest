@@ -84,7 +84,7 @@ class ContentObjectStatesTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ContentObjectStates visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentObjectStates
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ContentObjectStates
      */
     protected function internalGetVisitor()
     {

@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,7 +17,7 @@ class RestLocation extends RestValue
     /**
      * A location.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Location
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Location
      */
     public $location;
 
@@ -29,7 +29,7 @@ class RestLocation extends RestValue
     public $childCount;
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Location $location
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Location $location
      * @param int $childCount
      */
     public function __construct(Location $location, $childCount)

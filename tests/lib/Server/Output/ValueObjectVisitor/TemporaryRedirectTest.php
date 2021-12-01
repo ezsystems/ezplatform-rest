@@ -45,7 +45,7 @@ class TemporaryRedirectTest extends ValueObjectVisitorBaseTest
     /**
      * Get the TemporaryRedirect visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\TemporaryRedirect
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\TemporaryRedirect
      */
     protected function internalGetVisitor()
     {

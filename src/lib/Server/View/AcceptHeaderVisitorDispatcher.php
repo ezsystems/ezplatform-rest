@@ -28,7 +28,7 @@ class AcceptHeaderVisitorDispatcher
      * Adds view handler.
      *
      * @param string $regexp
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
      */
     public function addVisitor($regexp, OutputVisitor $visitor)
     {
@@ -41,14 +41,14 @@ class AcceptHeaderVisitorDispatcher
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param mixed $result
      *
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function dispatch(Request $request, $result)
     {
         foreach ($request->getAcceptableContentTypes() as $mimeType) {
-            /** @var \EzSystems\EzPlatformRest\Output\Visitor $visitor */
+            /** @var \Ibexa\Contracts\Rest\Output\Visitor $visitor */
             foreach ($this->mapping as $regexp => $visitor) {
                 if (preg_match($regexp, $mimeType)) {
                     return $visitor->visit($result);

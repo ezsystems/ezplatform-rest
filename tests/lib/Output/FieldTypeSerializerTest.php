@@ -6,12 +6,12 @@
  */
 namespace Ibexa\Tests\Rest\Output;
 
-use eZ\Publish\API\Repository\FieldTypeService;
-use eZ\Publish\API\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
 use Ibexa\Contracts\Rest\Output\Generator;
-use eZ\Publish\API\Repository\FieldType as APIFieldType;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Contracts\Core\Repository\FieldType as APIFieldType;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType as APIContentType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Rest\FieldTypeProcessorRegistry;
 use Ibexa\Contracts\Rest\FieldTypeProcessor;
 use Ibexa\Rest\Output\FieldTypeSerializer;

@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\RoleService;
+use Ibexa\Core\Repository\RoleService;
 use Ibexa\Rest\Server\Input\Parser\RoleInput;
-use eZ\Publish\Core\Repository\Values\User\RoleCreateStruct;
+use Ibexa\Core\Repository\Values\User\RoleCreateStruct;
 
 class RoleInputTest extends BaseTest
 {
@@ -73,7 +73,7 @@ class RoleInputTest extends BaseTest
     /**
      * Returns the role input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\RoleInput
+     * @return \Ibexa\Rest\Server\Input\Parser\RoleInput
      */
     protected function internalGetParser()
     {
@@ -86,7 +86,7 @@ class RoleInputTest extends BaseTest
     /**
      * Get the role service mock object.
      *
-     * @return \eZ\Publish\API\Repository\RoleService
+     * @return \Ibexa\Contracts\Core\Repository\RoleService
      */
     protected function getRoleServiceMock()
     {

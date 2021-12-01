@@ -10,7 +10,7 @@ use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\Trash;
 use Ibexa\Rest\Server\Values\RestTrashItem;
-use eZ\Publish\Core\Repository\Values\Content;
+use Ibexa\Core\Repository\Values\Content;
 
 class TrashTest extends ValueObjectVisitorBaseTest
 {
@@ -123,7 +123,7 @@ class TrashTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Trash visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Trash
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Trash
      */
     protected function internalGetVisitor()
     {

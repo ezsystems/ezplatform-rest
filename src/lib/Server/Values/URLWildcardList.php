@@ -16,14 +16,14 @@ class URLWildcardList extends RestValue
     /**
      * URL wildcards.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\URLWildcard[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\URLWildcard[]
      */
     public $urlWildcards;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\URLWildcard[] $urlWildcards
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\URLWildcard[] $urlWildcards
      */
     public function __construct(array $urlWildcards)
     {

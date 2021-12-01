@@ -20,14 +20,14 @@ class RoleAssignInput extends BaseParser
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(ParserTools $parserTools)
     {
@@ -38,9 +38,9 @@ class RoleAssignInput extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignment
+     * @return \Ibexa\Rest\Server\Values\RoleAssignment
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

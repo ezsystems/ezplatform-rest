@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Service;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Rest\Values;
 use Ibexa\Rest\Values\Root;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
@@ -41,7 +41,7 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
     /** @var \Symfony\Component\Routing\RouterInterface */
     protected $templateRouter;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     protected $configResolver;
 
     public function __construct(RouterInterface $router, RouterInterface $templateRouter, ConfigResolverInterface $configResolver)
@@ -54,7 +54,7 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
     /**
      * Build root resource.
      *
-     * @return array|\EzSystems\EzPlatformRest\Values\Root
+     * @return array|\Ibexa\Rest\Values\Root
      */
     public function buildRootResource(): Root
     {

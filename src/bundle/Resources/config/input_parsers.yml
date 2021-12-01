@@ -575,7 +575,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'ContentId'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\ContentId'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\ContentId'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.ContentId }
 
@@ -584,7 +584,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'ContentName'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\ContentName'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\ContentName'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.ContentName }
 
@@ -593,7 +593,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'DateModified'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\DateModified'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\DateModified'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.DateModified }
 
@@ -602,7 +602,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'DatePublished'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\DatePublished'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.DatePublished }
 
@@ -611,7 +611,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationDepth'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Depth'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Depth'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationDepth }
 
@@ -620,7 +620,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationPath'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Path'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Path'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationPath }
 
@@ -629,7 +629,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationPriority'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Priority'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Priority'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationPriority }
 
@@ -638,7 +638,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationId'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Id'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Id'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationId }
 
@@ -647,7 +647,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'SectionIdentifier'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\SectionIdentifier'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\SectionIdentifier'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.SectionIdentifier }
 
@@ -656,7 +656,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'SectionName'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\SectionName'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\SectionName'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.SectionName }
 
@@ -665,7 +665,7 @@ services:
         class: 'Ibexa\Rest\Server\Input\Parser\SortClause\DataKeyValueObjectClass'
         arguments:
             - 'Score'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Score'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Score'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.Score }
 
@@ -880,7 +880,7 @@ services:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.limitation.Subtree }
         arguments:
             - 'locationPath'
-            - 'eZ\Publish\API\Repository\Values\User\Limitation\SubtreeLimitation'
+            - 'Ibexa\Contracts\Core\Repository\Values\User\Limitation\SubtreeLimitation'
 
     ezpublish_rest.input.parser.internal.limitation.Section:
         parent: ezpublish_rest.input.parser
@@ -889,4 +889,4 @@ services:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.limitation.Section }
         arguments:
             - 'sectionId'
-            - 'eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation'
+            - 'Ibexa\Contracts\Core\Repository\Values\User\Limitation\SectionLimitation'

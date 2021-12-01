@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\FieldTypeProcessor;
 
 use Ibexa\Contracts\Rest\FieldTypeProcessor;
-use eZ\Publish\Core\FieldType\Date\Type;
+use Ibexa\Core\FieldType\Date\Type;
 
 class DateProcessor extends FieldTypeProcessor
 {

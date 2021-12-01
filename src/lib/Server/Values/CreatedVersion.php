@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created version.
@@ -16,7 +16,7 @@ class CreatedVersion extends ValueObject
     /**
      * The created version.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\Version
+     * @var \Ibexa\Rest\Server\Values\Version
      */
     public $version;
 }

@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\TermAggregationResultEntry;
+use Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\TermAggregationResultEntry;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
@@ -16,7 +16,7 @@ use Ibexa\Contracts\Rest\Output\Visitor;
 final class TermAggregationResult extends ValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\TermAggregationResult $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\TermAggregationResult $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

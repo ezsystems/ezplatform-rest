@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\ContentTypeId as ContentTypeIdCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\ContentTypeId as ContentTypeIdCriterion;
 
 /**
  * Parser for ViewInput.
@@ -20,11 +20,11 @@ class ContentTypeId extends BaseParser
      * Parses input structure to a Criterion object.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\ContentTypeId
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\ContentTypeId
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

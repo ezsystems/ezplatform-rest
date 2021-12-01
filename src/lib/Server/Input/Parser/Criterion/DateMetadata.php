@@ -8,8 +8,8 @@ namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Operator;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
 use Ibexa\Contracts\Rest\Exceptions;
 
 /**
@@ -32,7 +32,7 @@ class DateMetadata extends BaseParser
      *
      * @param string[] $data
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher): DateMetadataCriterion
     {
@@ -76,7 +76,7 @@ class DateMetadata extends BaseParser
      *
      * For the full list of supported operators:
      *
-     * @see \eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata::OPERATORS
+     * @see \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\DateMetadata::OPERATORS
      */
     private function getOperator(string $operatorName): string
     {

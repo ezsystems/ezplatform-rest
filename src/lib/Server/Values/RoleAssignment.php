@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -24,7 +24,7 @@ class RoleAssignment extends RestValue
     /**
      * Role limitation.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation
      */
     public $limitation;
 
@@ -32,7 +32,7 @@ class RoleAssignment extends RestValue
      * Construct.
      *
      * @param mixed $roleId
-     * @param \eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation $limitation
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation $limitation
      */
     public function __construct($roleId, RoleLimitation $limitation = null)
     {

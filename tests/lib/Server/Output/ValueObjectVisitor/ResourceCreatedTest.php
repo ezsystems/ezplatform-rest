@@ -47,7 +47,7 @@ class ResourceCreatedTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ResourceCreated visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ResourceCreated
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ResourceCreated
      */
     protected function internalGetVisitor()
     {

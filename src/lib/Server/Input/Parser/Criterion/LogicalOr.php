@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values;
+use Ibexa\Core\Repository\Values;
 
 /**
  * Parser for LogicalOr Criterion.
@@ -24,11 +24,11 @@ class LogicalOr extends LogicalOperator
      * Parses input structure to a LogicalOr Criterion object.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\LogicalOr
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\LogicalOr
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

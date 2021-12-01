@@ -16,7 +16,7 @@ class ObjectStateList extends RestValue
     /**
      * Object states.
      *
-     * @var \eZ\Publish\API\Repository\Values\ObjectState\ObjectState[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectState[]
      */
     public $states;
 
@@ -30,7 +30,7 @@ class ObjectStateList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\ObjectState\ObjectState[] $states
+     * @param \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectState[] $states
      * @param mixed $groupId
      */
     public function __construct(array $states, $groupId)

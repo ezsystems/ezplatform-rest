@@ -9,7 +9,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\URLAliasRefList;
-use eZ\Publish\API\Repository\Values\Content\URLAlias;
+use Ibexa\Contracts\Core\Repository\Values\Content\URLAlias;
 
 class URLAliasRefListTest extends ValueObjectVisitorBaseTest
 {
@@ -101,7 +101,7 @@ class URLAliasRefListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the URLAliasRefList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLAliasRefList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\URLAliasRefList
      */
     protected function internalGetVisitor()
     {

@@ -17,7 +17,7 @@ use Ibexa\Rest\Values\RestObjectState;
 final class ObjectState extends ValueObjectVisitor implements DelegateValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\ObjectState\ObjectState $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectState $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

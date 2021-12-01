@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created ContentTypeGroup.
@@ -16,7 +16,7 @@ class CreatedContentTypeGroup extends ValueObject
     /**
      * The created content type group.
      *
-     * @var \eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroup
+     * @var \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroup
      */
     public $contentTypeGroup;
 }

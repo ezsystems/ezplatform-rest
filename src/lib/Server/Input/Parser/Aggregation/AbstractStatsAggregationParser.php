@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractStatsAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractStatsAggregation;
 use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;

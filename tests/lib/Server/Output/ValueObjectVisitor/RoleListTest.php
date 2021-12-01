@@ -6,11 +6,11 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\User\Role;
+use Ibexa\Contracts\Core\Repository\Values\User\Role;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\RoleList;
-use eZ\Publish\Core\Repository\Values\User;
+use Ibexa\Core\Repository\Values\User;
 
 class RoleListTest extends ValueObjectVisitorBaseTest
 {
@@ -115,7 +115,7 @@ class RoleListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the RoleList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RoleList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RoleList
      */
     protected function internalGetVisitor()
     {

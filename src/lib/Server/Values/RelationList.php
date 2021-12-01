@@ -16,7 +16,7 @@ class RelationList extends RestValue
     /**
      * Relations.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Relation[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Relation[]
      */
     public $relations;
 
@@ -44,7 +44,7 @@ class RelationList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\Relation[] $relations
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Relation[] $relations
      * @param mixed $contentId
      * @param mixed $versionNo
      * @param string $path

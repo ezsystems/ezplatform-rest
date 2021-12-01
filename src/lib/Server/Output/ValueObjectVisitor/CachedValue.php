@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\RequestStackAware;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\RequestStackAware;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\Visitor;
@@ -19,7 +19,7 @@ class CachedValue extends ValueObjectVisitor
 {
     use RequestStackAware;
 
-    /** @var ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     protected $configResolver;
 
     public function __construct(ConfigResolverInterface $configResolver)
@@ -28,9 +28,9 @@ class CachedValue extends ValueObjectVisitor
     }
 
     /**
-     * @param Visitor   $visitor
-     * @param Generator $generator
-     * @param \EzSystems\EzPlatformRest\Server\Values\CachedValue $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor   $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Rest\Server\Values\CachedValue $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

@@ -59,7 +59,7 @@ class DateAndTimeProcessorTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\DateAndTimeProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\DateAndTimeProcessor
      */
     protected function getProcessor()
     {

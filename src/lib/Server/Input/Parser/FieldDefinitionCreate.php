@@ -10,7 +10,7 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Rest\Input\ParserTools;
-use eZ\Publish\API\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
 use Ibexa\Contracts\Rest\Exceptions;
 use Exception;
 
@@ -22,30 +22,30 @@ class FieldDefinitionCreate extends BaseParser
     /**
      * ContentType service.
      *
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
      * FieldType parser.
      *
-     * @var \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @var \Ibexa\Rest\Input\FieldTypeParser
      */
     protected $fieldTypeParser;
 
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \EzSystems\EzPlatformRest\Input\FieldTypeParser $fieldTypeParser
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\ContentTypeService $contentTypeService
+     * @param \Ibexa\Rest\Input\FieldTypeParser $fieldTypeParser
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(ContentTypeService $contentTypeService, FieldTypeParser $fieldTypeParser, ParserTools $parserTools)
     {
@@ -58,11 +58,11 @@ class FieldDefinitionCreate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser If an error is found while parsing
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser If an error is found while parsing
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

@@ -15,7 +15,7 @@ use Ibexa\Contracts\Rest\Output\Visitor;
 final class Range extends ValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Range $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

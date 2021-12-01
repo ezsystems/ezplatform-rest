@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Bundle\Rest\ApiLoader;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\RequestStackAware;
-use eZ\Publish\API\Repository\Repository;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\RequestStackAware;
+use Ibexa\Contracts\Core\Repository\Repository;
 use Ibexa\Rest\FieldTypeProcessor\BinaryProcessor;
 use Ibexa\Rest\FieldTypeProcessor\ImageAssetFieldTypeProcessor;
 use Ibexa\Rest\FieldTypeProcessor\ImageProcessor;
@@ -20,18 +20,18 @@ class Factory
     use RequestStackAware;
 
     /**
-     * @var \eZ\Publish\Core\MVC\ConfigResolverInterface
+     * @var \Ibexa\Core\MVC\ConfigResolverInterface
      */
     protected $configResolver;
 
     /**
-     * @var \eZ\Publish\API\Repository\Repository
+     * @var \Ibexa\Contracts\Core\Repository\Repository
      */
     protected $repository;
 
     /**
-     * @param \eZ\Publish\Core\MVC\ConfigResolverInterface $configResolver
-     * @param \eZ\Publish\API\Repository\Repository $repository
+     * @param \Ibexa\Core\MVC\ConfigResolverInterface $configResolver
+     * @param \Ibexa\Contracts\Core\Repository\Repository $repository
      */
     public function __construct(ConfigResolverInterface $configResolver, Repository $repository)
     {
@@ -57,7 +57,7 @@ class Factory
      *
      * @param \Symfony\Component\Routing\RouterInterface $router
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\ImageProcessor
      */
     public function getImageFieldTypeProcessor(RouterInterface $router)
     {

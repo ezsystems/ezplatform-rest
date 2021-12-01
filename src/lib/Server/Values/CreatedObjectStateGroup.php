@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created object state group.
@@ -16,7 +16,7 @@ class CreatedObjectStateGroup extends ValueObject
     /**
      * The created object state group.
      *
-     * @var \eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroup
+     * @var \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroup
      */
     public $objectStateGroup;
 }

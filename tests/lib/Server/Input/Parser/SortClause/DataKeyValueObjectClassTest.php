@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser\SortClause;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\DatePublished;
 use Ibexa\Rest\Server\Input\Parser\SortClause\DataKeyValueObjectClass;
 use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
@@ -84,7 +84,7 @@ class DataKeyValueObjectClassTest extends BaseTest
     /**
      * Returns the DataKeyValueObjectClass parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass
+     * @return \Ibexa\Rest\Server\Input\Parser\SortClause\DataKeyValueObjectClass
      */
     protected function internalGetParser()
     {

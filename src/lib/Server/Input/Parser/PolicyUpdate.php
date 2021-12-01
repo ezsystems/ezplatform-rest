@@ -10,7 +10,7 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\ParserTools;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\RoleService;
+use Ibexa\Contracts\Core\Repository\RoleService;
 
 /**
  * Parser for PolicyUpdate.
@@ -20,22 +20,22 @@ class PolicyUpdate extends BaseParser
     /**
      * Role service.
      *
-     * @var \eZ\Publish\API\Repository\RoleService
+     * @var \Ibexa\Contracts\Core\Repository\RoleService
      */
     protected $roleService;
 
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\RoleService $roleService
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\RoleService $roleService
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(RoleService $roleService, ParserTools $parserTools)
     {
@@ -47,9 +47,9 @@ class PolicyUpdate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\User\PolicyUpdateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\PolicyUpdateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

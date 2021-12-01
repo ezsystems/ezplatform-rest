@@ -16,12 +16,12 @@ class FieldTypeProcessorRegistry
     /**
      * Registered processors.
      *
-     * @var \EzSystems\EzPlatformRest\FieldTypeProcessor[]
+     * @var \Ibexa\Contracts\Rest\FieldTypeProcessor[]
      */
     private $processors = [];
 
     /**
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor[] $processors
+     * @param \Ibexa\Contracts\Rest\FieldTypeProcessor[] $processors
      */
     public function __construct(array $processors = [])
     {
@@ -34,7 +34,7 @@ class FieldTypeProcessorRegistry
      * Registers $processor for $fieldTypeIdentifier.
      *
      * @param string $fieldTypeIdentifier
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor $processor
+     * @param \Ibexa\Contracts\Rest\FieldTypeProcessor $processor
      */
     public function registerProcessor($fieldTypeIdentifier, FieldTypeProcessor $processor)
     {
@@ -60,7 +60,7 @@ class FieldTypeProcessorRegistry
      *
      * @throws \RuntimeException if not processor is registered for $fieldTypeIdentifier
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor
+     * @return \Ibexa\Contracts\Rest\FieldTypeProcessor
      */
     public function getProcessor($fieldTypeIdentifier)
     {

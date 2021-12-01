@@ -65,7 +65,7 @@ class SessionInputTest extends BaseTest
     /**
      * Returns the session input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput
+     * @return \Ibexa\Rest\Server\Input\Parser\SessionInput
      */
     protected function internalGetParser()
     {

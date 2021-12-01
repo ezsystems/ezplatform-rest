@@ -16,14 +16,14 @@ class ContentTypeGroupList extends RestValue
     /**
      * Content type groups.
      *
-     * @var \eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroup[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroup[]
      */
     public $contentTypeGroups;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroup[] $contentTypeGroups
+     * @param \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroup[] $contentTypeGroups
      */
     public function __construct(array $contentTypeGroups)
     {

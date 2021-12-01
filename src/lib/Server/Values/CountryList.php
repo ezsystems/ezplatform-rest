@@ -14,7 +14,7 @@ use Ibexa\Rest\Value as RestValue;
 class CountryList extends RestValue
 {
     /**
-     * @var \eZ\Publish\API\Repository\Values\ContentType\Countries[]
+     * @var \Ibexa\Core\Repository\Values\ContentType\Countries[]
      */
     public $countries;
 

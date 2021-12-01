@@ -87,7 +87,7 @@ class FieldTypeProcessorRegistryTest extends BaseTest
     /**
      * Get FieldTypeProcessor mock object.
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor
+     * @return \Ibexa\Contracts\Rest\FieldTypeProcessor
      */
     protected function getAProcessorMock()
     {

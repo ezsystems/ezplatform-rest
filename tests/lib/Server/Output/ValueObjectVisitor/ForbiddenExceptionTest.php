@@ -44,7 +44,7 @@ class ForbiddenExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ForbiddenException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ForbiddenException
      */
     protected function internalGetVisitor()
     {

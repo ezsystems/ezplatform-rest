@@ -16,7 +16,7 @@ class ContentList extends RestValue
     /**
      * Contents.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestContent[]
+     * @var \Ibexa\Rest\Server\Values\RestContent[]
      */
     public $contents;
 
@@ -30,7 +30,7 @@ class ContentList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestContent[] $contents
+     * @param \Ibexa\Rest\Server\Values\RestContent[] $contents
      * @param int $totalCount
      */
     public function __construct(array $contents, int $totalCount)

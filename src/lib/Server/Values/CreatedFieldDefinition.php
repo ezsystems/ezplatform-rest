@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created field definition.
@@ -16,7 +16,7 @@ class CreatedFieldDefinition extends ValueObject
     /**
      * The created field definition.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestFieldDefinition
+     * @var \Ibexa\Rest\Server\Values\RestFieldDefinition
      */
     public $fieldDefinition;
 }

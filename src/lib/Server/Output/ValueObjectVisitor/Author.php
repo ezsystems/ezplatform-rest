@@ -15,7 +15,7 @@ use Ibexa\Contracts\Rest\Output\Visitor;
 final class Author extends ValueObjectVisitor
 {
     /**
-     * @var \eZ\Publish\Core\FieldType\Author\Author
+     * @var \Ibexa\Core\FieldType\Author\Author
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

@@ -22,7 +22,7 @@ use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 abstract class FacetBuilderBaseTest extends BaseTest
 {
     /**
-     * @return \EzSystems\EzPlatformRest\Input\ParsingDispatcher
+     * @return \Ibexa\Contracts\Rest\Input\ParsingDispatcher
      */
     protected function getParsingDispatcher()
     {
@@ -79,7 +79,7 @@ abstract class FacetBuilderBaseTest extends BaseTest
     /**
      * Returns the query parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentQuery
+     * @return \Ibexa\Rest\Server\Input\Parser\ContentQuery
      */
     protected function internalGetParser()
     {

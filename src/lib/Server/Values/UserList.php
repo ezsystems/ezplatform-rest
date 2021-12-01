@@ -16,7 +16,7 @@ class UserList extends RestValue
     /**
      * Users.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestUser[]
+     * @var \Ibexa\Rest\Server\Values\RestUser[]
      */
     public $users;
 
@@ -30,7 +30,7 @@ class UserList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestUser[] $users
+     * @param \Ibexa\Rest\Server\Values\RestUser[] $users
      * @param string $path
      */
     public function __construct(array $users, $path)

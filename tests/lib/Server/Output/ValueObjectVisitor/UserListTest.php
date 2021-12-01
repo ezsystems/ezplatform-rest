@@ -6,14 +6,14 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\UserList;
 use Ibexa\Rest\Server\Values\RestUser;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Repository\Values\Content\Content;
-use eZ\Publish\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content\Content;
+use Ibexa\Core\Repository\Values\Content\Location;
 
 class UserListTest extends ValueObjectVisitorBaseTest
 {
@@ -138,7 +138,7 @@ class UserListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the UserList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\UserList
      */
     protected function internalGetVisitor()
     {

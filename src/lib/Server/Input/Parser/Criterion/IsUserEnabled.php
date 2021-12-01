@@ -12,11 +12,11 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Rest\Input\ParserTools;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\IsUserEnabled as IsUserEnabledCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\IsUserEnabled as IsUserEnabledCriterion;
 
 class IsUserEnabled extends BaseParser
 {
-    /** @var \EzSystems\EzPlatformRest\Input\ParserTools */
+    /** @var \Ibexa\Rest\Input\ParserTools */
     protected $parserTools;
 
     public function __construct(ParserTools $parserTools)

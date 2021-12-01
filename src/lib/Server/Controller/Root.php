@@ -16,7 +16,7 @@ use Ibexa\Rest\Server\Service\RootResourceBuilderInterface;
 class Root extends RestController
 {
     /**
-     * @var RootResourceBuilderInterface
+     * @var \Ibexa\Rest\Server\Service\RootResourceBuilderInterface
      */
     private $rootResourceBuilder;
 
@@ -28,7 +28,7 @@ class Root extends RestController
     /**
      * List the root resources of the eZ Publish installation.
      *
-     * @return \EzSystems\EzPlatformRest\Values\Root
+     * @return \Ibexa\Rest\Values\Root
      */
     public function loadRootResource()
     {
@@ -38,7 +38,7 @@ class Root extends RestController
     /**
      * Catch-all for REST requests.
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      */
     public function catchAll()
     {

@@ -8,15 +8,15 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Sibling as SiblingCriterion;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Sibling as SiblingCriterion;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
 
 class Sibling extends BaseParser
 {
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     private $locationService;
 
     public function __construct(LocationService $locationService)

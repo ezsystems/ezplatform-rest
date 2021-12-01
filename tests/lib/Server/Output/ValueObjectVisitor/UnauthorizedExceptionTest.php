@@ -7,7 +7,7 @@
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
+use Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException;
 
 class UnauthorizedExceptionTest extends ExceptionTest
 {
@@ -44,7 +44,7 @@ class UnauthorizedExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UnauthorizedException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\UnauthorizedException
      */
     protected function internalGetVisitor()
     {

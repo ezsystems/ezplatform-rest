@@ -44,7 +44,7 @@ class InvalidArgumentExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\InvalidArgumentException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\InvalidArgumentException
      */
     protected function internalGetVisitor()
     {

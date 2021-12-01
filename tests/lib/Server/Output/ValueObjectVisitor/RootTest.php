@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Service\ExpressionRouterRootResourceBuilder;
@@ -182,7 +182,7 @@ class RootTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Role visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Root
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Root
      */
     protected function internalGetVisitor()
     {

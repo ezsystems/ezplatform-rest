@@ -7,7 +7,7 @@
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\API\Repository\Exceptions\BadStateException;
+use Ibexa\Contracts\Core\Repository\Exceptions\BadStateException;
 
 class BadStateExceptionTest extends ExceptionTest
 {
@@ -44,7 +44,7 @@ class BadStateExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BadStateException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\BadStateException
      */
     protected function internalGetVisitor()
     {

@@ -10,7 +10,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use DOMDocument;
 use DOMXPath;
-use eZ\Publish\API\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\BookmarkList;
@@ -19,7 +19,7 @@ use Ibexa\Rest\Server\Values\RestLocation;
 class BookmarkListTest extends ValueObjectVisitorBaseTest
 {
     /**
-     * @var \EzSystems\EzPlatformRest\Server\Values\BookmarkList
+     * @var \Ibexa\Rest\Server\Values\BookmarkList
      */
     private $data;
 

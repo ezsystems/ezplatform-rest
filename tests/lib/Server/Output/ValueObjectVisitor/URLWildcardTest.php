@@ -8,7 +8,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\API\Repository\Values\Content;
+use Ibexa\Core\Repository\Values\Content;
 
 class URLWildcardTest extends ValueObjectVisitorBaseTest
 {
@@ -162,7 +162,7 @@ class URLWildcardTest extends ValueObjectVisitorBaseTest
     /**
      * Get the URLWildcard visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLWildcard
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\URLWildcard
      */
     protected function internalGetVisitor()
     {

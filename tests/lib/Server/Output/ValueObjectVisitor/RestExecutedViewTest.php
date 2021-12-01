@@ -6,18 +6,18 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\Content\Search\SearchHit;
-use eZ\Publish\API\Repository\Values\Content\Search\SearchResult;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\Search\SearchHit;
+use Ibexa\Contracts\Core\Repository\Values\Content\Search\SearchResult;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\Content;
+use Ibexa\Core\Repository\Values\Content;
 use Ibexa\Rest\Server\Values\RestExecutedView;
-use eZ\Publish\Core\Repository\Values\Content as ApiValues;
+use Ibexa\Core\Repository\Values\Content as ApiValues;
 
 class RestExecutedViewTest extends ValueObjectVisitorBaseTest
 {
@@ -107,7 +107,7 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Relation visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestExecutedView
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestExecutedView
      */
     protected function internalGetVisitor()
     {
@@ -118,7 +118,7 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @return \eZ\Publish\API\Repository\LocationService|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Contracts\Core\Repository\LocationService|\PHPUnit\Framework\MockObject\MockObject
      */
     public function getLocationServiceMock()
     {
@@ -126,7 +126,7 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @return \eZ\Publish\API\Repository\ContentService|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Contracts\Core\Repository\ContentService|\PHPUnit\Framework\MockObject\MockObject
      */
     public function getContentServiceMock()
     {
@@ -137,7 +137,7 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @return \eZ\Publish\API\Repository\ContentTypeService|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService|\PHPUnit\Framework\MockObject\MockObject
      */
     public function getContentTypeServiceMock()
     {
@@ -145,7 +145,7 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @return \eZ\Publish\API\Repository\Values\Content\Search\SearchHit
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Search\SearchHit
      */
     protected function buildContentSearchHit()
     {
@@ -164,7 +164,7 @@ class RestExecutedViewTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @return \eZ\Publish\API\Repository\Values\Content\Search\SearchHit
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Search\SearchHit
      */
     protected function buildLocationSearchHit()
     {

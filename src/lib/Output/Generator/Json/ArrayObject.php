@@ -19,7 +19,7 @@ class ArrayObject extends NativeArrayObject
     /**
      * Reference to the parent node.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
+     * @var \Ibexa\Rest\Output\Generator\Json\JsonObject
      */
     protected $_ref_parent;
 
@@ -36,7 +36,7 @@ class ArrayObject extends NativeArrayObject
     /**
      * Get Parent of current node.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
+     * @return \Ibexa\Rest\Output\Generator\Json\JsonObject
      */
     public function getParent()
     {

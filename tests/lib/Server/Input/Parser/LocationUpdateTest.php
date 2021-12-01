@@ -6,10 +6,10 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\LocationService;
+use Ibexa\Core\Repository\LocationService;
 use Ibexa\Rest\Server\Input\Parser\LocationUpdate;
-use eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct;
-use eZ\Publish\API\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\Rest\Server\Values\RestLocationUpdateStruct;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
 
@@ -134,7 +134,7 @@ class LocationUpdateTest extends BaseTest
     /**
      * Returns the LocationUpdateStruct parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\LocationUpdate
      */
     protected function internalGetParser()
     {
@@ -147,7 +147,7 @@ class LocationUpdateTest extends BaseTest
     /**
      * Get the location service mock object.
      *
-     * @return \eZ\Publish\API\Repository\LocationService
+     * @return \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected function getLocationServiceMock()
     {

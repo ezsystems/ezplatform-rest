@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\Visitor;
-use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation;
 
 /**
  * RestUserRoleAssignment value object visitor.
@@ -19,9 +19,9 @@ class RestUserRoleAssignment extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestUserRoleAssignment $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Rest\Server\Values\RestUserRoleAssignment $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

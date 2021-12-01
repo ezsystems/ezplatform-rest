@@ -8,7 +8,7 @@ namespace Ibexa\Rest\Server\Input\Parser;
 
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Server\Input\Parser\Criterion as CriterionParser;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion as CriterionValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion as CriterionValue;
 
 /**
  * Content/Location Query Parser.
@@ -19,11 +19,11 @@ abstract class Query extends CriterionParser
      * Parses input structure to a Query.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -82,15 +82,15 @@ abstract class Query extends CriterionParser
     /**
      * Builds and returns the Query (Location or Content object).
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query
      */
     abstract protected function buildQuery();
 
     /**
      * @param array $criteriaArray
-     * @param ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return CriterionValue|null A criterion, or a LogicalAnd with a set of Criterion, or null if an empty array was given
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion|null A criterion, or a LogicalAnd with a set of Criterion, or null if an empty array was given
      */
     private function processCriteriaArray(array $criteriaArray, ParsingDispatcher $parsingDispatcher)
     {
@@ -110,7 +110,7 @@ abstract class Query extends CriterionParser
      * Handles SortClause data.
      *
      * @param array $sortClausesArray
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return array
      */

@@ -17,7 +17,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Tests the ContentUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct
+     * @return \Ibexa\Rest\Values\RestContentMetadataUpdateStruct
      */
     public function testParseValid()
     {
@@ -40,7 +40,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Test for valid owner ID value in result.
      *
-     * @param \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct $result
+     * @param \Ibexa\Rest\Values\RestContentMetadataUpdateStruct $result
      *
      * @depends testParseValid
      */
@@ -130,7 +130,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Returns the ContentUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\ContentUpdate
      */
     protected function internalGetParser()
     {
@@ -140,7 +140,7 @@ class ContentUpdateTest extends BaseTest
     /**
      * Returns a valid RestContentMetadataUpdateStruct that matches the structure from getValidInputData().
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct
+     * @return \Ibexa\Rest\Values\RestContentMetadataUpdateStruct
      */
     protected function getContentUpdateStruct()
     {

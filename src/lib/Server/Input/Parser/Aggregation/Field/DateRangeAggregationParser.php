@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Field;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Field\DateRangeAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Field\DateRangeAggregation;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Server\Input\Parser\Aggregation\AbstractRangeAggregationParser;
 use Ibexa\Contracts\Rest\Exceptions;

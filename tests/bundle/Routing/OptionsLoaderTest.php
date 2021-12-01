@@ -55,7 +55,7 @@ class OptionsLoaderTest extends TestCase
     /**
      * Returns a partially mocked OptionsLoader, with the import method mocked.
      *
-     * @return OptionsLoader|MockObject
+     * @return \Ibexa\Bundle\Rest\Routing\OptionsLoader|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getOptionsLoader()
     {
@@ -73,7 +73,7 @@ class OptionsLoaderTest extends TestCase
     }
 
     /**
-     * @return MockObject
+     * @return \PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRouteCollectionMapperMock()
     {

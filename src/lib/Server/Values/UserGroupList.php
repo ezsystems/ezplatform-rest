@@ -16,7 +16,7 @@ class UserGroupList extends RestValue
     /**
      * User groups.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[]
+     * @var \Ibexa\Rest\Server\Values\RestUserGroup[]
      */
     public $userGroups;
 
@@ -30,7 +30,7 @@ class UserGroupList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[] $userGroups
+     * @param \Ibexa\Rest\Server\Values\RestUserGroup[] $userGroups
      * @param string $path
      */
     public function __construct(array $userGroups, $path)

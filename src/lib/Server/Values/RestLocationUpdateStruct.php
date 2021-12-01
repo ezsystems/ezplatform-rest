@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,7 +17,7 @@ class RestLocationUpdateStruct extends RestValue
     /**
      * Location update struct.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct
      */
     public $locationUpdateStruct;
 
@@ -31,7 +31,7 @@ class RestLocationUpdateStruct extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct $locationUpdateStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct $locationUpdateStruct
      * @param bool $hidden
      */
     public function __construct(LocationUpdateStruct $locationUpdateStruct, $hidden = null)

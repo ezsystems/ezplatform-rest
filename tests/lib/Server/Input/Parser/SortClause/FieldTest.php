@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser\SortClause;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Field;
 use Ibexa\Rest\Server\Input\Parser\SortClause\Field as FieldParser;
 use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
@@ -72,7 +72,7 @@ class FieldTest extends BaseTest
     /**
      * Returns the Field parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field
+     * @return \Ibexa\Rest\Server\Input\Parser\SortClause\Field
      */
     protected function internalGetParser()
     {

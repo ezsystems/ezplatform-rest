@@ -62,7 +62,7 @@ class MediaProcessorTest extends BinaryInputProcessorTest
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\MediaProcessor
      */
     protected function getProcessor()
     {

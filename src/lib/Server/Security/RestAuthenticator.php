@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Rest\Server\Security;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface as EzUser;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface as EzUser;
 use Ibexa\Rest\Server\Exceptions\InvalidUserTypeException;
 use Ibexa\Rest\Server\Exceptions\UserConflictException;
 use Psr\Log\LoggerInterface;
@@ -63,7 +63,7 @@ class RestAuthenticator implements AuthenticatorInterface
     private $dispatcher;
 
     /**
-     * @var \eZ\Publish\Core\MVC\ConfigResolverInterface
+     * @var \Ibexa\Core\MVC\ConfigResolverInterface
      */
     private $configResolver;
 
@@ -183,8 +183,8 @@ class RestAuthenticator implements AuthenticatorInterface
     /**
      * Checks if newly matched user is conflicting with previously non-anonymous logged in user, if any.
      *
-     * @param EzUser $user
-     * @param TokenInterface $previousToken
+     * @param \Ibexa\Core\MVC\Symfony\Security\UserInterface $user
+     * @param \Symfony\Component\Security\Core\Authentication\Token\TokenInterface $previousToken
      *
      * @return bool
      */

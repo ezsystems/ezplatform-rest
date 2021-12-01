@@ -6,18 +6,18 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Values\RestContent;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values;
-use eZ\Publish\Core\Helper\TranslationHelper;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values;
+use Ibexa\Core\Helper\TranslationHelper;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 use Ibexa\Rest\Server\Values\Version;
 
 class RestContentTest extends ValueObjectVisitorBaseTest
 {
-    /** @var \eZ\Publish\Core\Helper\TranslationHelper|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\Helper\TranslationHelper|\PHPUnit\Framework\MockObject\MockObject */
     private $translationHelper;
 
     protected function setUp(): void
@@ -515,7 +515,7 @@ class RestContentTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Content visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestContent
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestContent
      */
     protected function internalGetVisitor()
     {

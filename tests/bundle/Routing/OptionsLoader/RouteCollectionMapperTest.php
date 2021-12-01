@@ -17,7 +17,7 @@ use Symfony\Component\Routing\RouteCollection;
  */
 class RouteCollectionMapperTest extends TestCase
 {
-    /** @var RouteCollectionMapper */
+    /** @var \Ibexa\Bundle\Rest\Routing\OptionsLoader\RouteCollectionMapper */
     protected $collectionMapper;
 
     public function setUp(): void
@@ -66,7 +66,7 @@ class RouteCollectionMapperTest extends TestCase
      * @param string $path
      * @param array $methods
      *
-     * @return Route
+     * @return \Symfony\Component\Routing\Route
      */
     private function createRoute($path, array $methods)
     {

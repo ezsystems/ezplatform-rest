@@ -58,7 +58,7 @@ class AuthorProcessorTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\AuthorProcessor
      */
     protected function getProcessor()
     {

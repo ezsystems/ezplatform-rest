@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser\Criterion;
 
-use eZ\Publish\API\Repository\Values\Content;
+use Ibexa\Core\Repository\Values\Content;
 use Ibexa\Contracts\Rest\Exceptions\Parser as ParserException;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Server\Input\Parser;
@@ -66,7 +66,7 @@ class LogicalOrTest extends BaseTest
 
         $criterionMock = $this->createMock(Content\Query\Criterion::class, [], [], '', false);
 
-        $parserMock = $this->createMock(\EzSystems\EzPlatformRest\Input\Parser::class);
+        $parserMock = $this->createMock(\Ibexa\Contracts\Rest\Input\Parser::class);
         $parserMock->method('parse')->willReturn($criterionMock);
 
         $result = $this->internalGetParser()->parse($logicalOrParsedFromXml, new ParsingDispatcher([

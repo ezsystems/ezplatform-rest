@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\FieldTypeProcessor;
 
 use Ibexa\Contracts\Rest\FieldTypeProcessor;
-use eZ\Publish\Core\FieldType\Author\Type;
+use Ibexa\Core\FieldType\Author\Type;
 
 class AuthorProcessor extends FieldTypeProcessor
 {

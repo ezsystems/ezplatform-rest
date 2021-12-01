@@ -16,7 +16,7 @@ class Trash extends RestValue
     /**
      * Trash items.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestTrashItem[]
+     * @var \Ibexa\Rest\Server\Values\RestTrashItem[]
      */
     public $trashItems;
 
@@ -30,7 +30,7 @@ class Trash extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestTrashItem[] $trashItems
+     * @param \Ibexa\Rest\Server\Values\RestTrashItem[] $trashItems
      * @param string $path
      */
     public function __construct(array $trashItems, $path)

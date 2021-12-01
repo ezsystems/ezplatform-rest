@@ -28,7 +28,7 @@ class OptionsLoader extends Loader
      * @param mixed $resource
      * @param string $type
      *
-     * @return RouteCollection
+     * @return \Symfony\Component\Routing\RouteCollection
      */
     public function load($resource, $type = null)
     {

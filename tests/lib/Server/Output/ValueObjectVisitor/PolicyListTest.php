@@ -6,11 +6,11 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\User\Policy;
+use Ibexa\Contracts\Core\Repository\Values\User\Policy;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\PolicyList;
-use eZ\Publish\Core\Repository\Values\User;
+use Ibexa\Core\Repository\Values\User;
 
 class PolicyListTest extends ValueObjectVisitorBaseTest
 {
@@ -115,7 +115,7 @@ class PolicyListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the PolicyList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\PolicyList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\PolicyList
      */
     protected function internalGetVisitor()
     {

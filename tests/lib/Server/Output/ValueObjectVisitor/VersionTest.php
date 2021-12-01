@@ -6,14 +6,14 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values;
+use Ibexa\Core\Repository\Values;
 use Ibexa\Rest\Server\Values\Version;
-use eZ\Publish\API\Repository\Values\Content\Field;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 use Ibexa\Rest\Output\FieldTypeSerializer;
 
 class VersionTest extends ValueObjectVisitorBaseTest
@@ -174,7 +174,7 @@ class VersionTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Version visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Version
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Version
      */
     protected function internalGetVisitor()
     {

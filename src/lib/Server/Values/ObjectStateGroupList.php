@@ -16,14 +16,14 @@ class ObjectStateGroupList extends RestValue
     /**
      * Object state groups.
      *
-     * @var \eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroup[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroup[]
      */
     public $groups;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroup[] $groups
+     * @param \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroup[] $groups
      */
     public function __construct(array $groups)
     {

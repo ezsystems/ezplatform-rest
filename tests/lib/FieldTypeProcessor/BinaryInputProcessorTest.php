@@ -86,7 +86,7 @@ abstract class BinaryInputProcessorTest extends TestCase
     /**
      * Returns the processor under test.
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryInputProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\BinaryInputProcessor
      */
     abstract protected function getProcessor();
 }

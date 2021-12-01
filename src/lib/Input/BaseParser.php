@@ -14,7 +14,7 @@ abstract class BaseParser extends Parser
     /**
      * URL handler.
      *
-     * @var \EzSystems\EzPlatformRest\RequestParser
+     * @var \Ibexa\Rest\RequestParser
      */
     protected $requestParser;
 

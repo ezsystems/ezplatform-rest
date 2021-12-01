@@ -24,11 +24,11 @@ class ContentUpdate extends BaseParser
      * @todo use url handler instead of hardcoded URL matching
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct
+     * @return \Ibexa\Rest\Values\RestContentMetadataUpdateStruct
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser if $data is invalid
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser if $data is invalid
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

@@ -17,7 +17,7 @@ use Ibexa\Rest\Server\Values\RestContentType;
 final class ContentType extends ValueObjectVisitor implements DelegateValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\ContentType\ContentType $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

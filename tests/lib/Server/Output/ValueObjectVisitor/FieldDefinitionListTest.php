@@ -9,7 +9,7 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server;
-use eZ\Publish\Core\Repository\Values;
+use Ibexa\Core\Repository\Values;
 
 /**
  * @todo coverage add unit test for a content type draft
@@ -102,7 +102,7 @@ class FieldDefinitionListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Content visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\FieldDefinitionList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\FieldDefinitionList
      */
     protected function internalGetVisitor()
     {

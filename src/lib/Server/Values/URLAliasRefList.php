@@ -16,7 +16,7 @@ class URLAliasRefList extends RestValue
     /**
      * URL aliases.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\URLAlias[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias[]
      */
     public $urlAliases;
 
@@ -30,7 +30,7 @@ class URLAliasRefList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\URLAlias[] $urlAliases
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias[] $urlAliases
      * @param string $path
      */
     public function __construct(array $urlAliases, $path)

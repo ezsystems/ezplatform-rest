@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\RangeAggregationResultEntry;
+use Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\RangeAggregationResultEntry;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
@@ -16,7 +16,7 @@ use Ibexa\Contracts\Rest\Output\Visitor;
 final class RangeAggregationResult extends ValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\RangeAggregationResult $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\RangeAggregationResult $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {
@@ -44,7 +44,7 @@ final class RangeAggregationResult extends ValueObjectVisitor
     }
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range $key
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Range $key
      */
     private function visitKey(Visitor $visitor, Generator $generator, $key): void
     {

@@ -6,8 +6,8 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\SectionLimitation;
 use Ibexa\Rest\Server\Input\Parser\RoleAssignInput;
 use Ibexa\Rest\Server\Values\RoleAssignment;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
@@ -155,7 +155,7 @@ class RoleAssignInputTest extends BaseTest
     /**
      * Returns the role assign input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput
+     * @return \Ibexa\Rest\Server\Input\Parser\RoleAssignInput
      */
     protected function internalGetParser()
     {

@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Exceptions\NotImplementedException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 class NotImplementedExceptionTest extends ExceptionTest
@@ -44,7 +44,7 @@ class NotImplementedExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NotImplementedException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\NotImplementedException
      */
     protected function internalGetVisitor()
     {

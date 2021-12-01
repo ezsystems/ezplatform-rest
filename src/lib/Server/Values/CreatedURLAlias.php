@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created URLAlias.
@@ -16,7 +16,7 @@ class CreatedURLAlias extends ValueObject
     /**
      * The created URL alias.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\URLAlias
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias
      */
     public $urlAlias;
 }

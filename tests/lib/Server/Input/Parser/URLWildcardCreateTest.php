@@ -87,7 +87,7 @@ class URLWildcardCreateTest extends BaseTest
     /**
      * Returns the URLWildcard input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\URLWildcardCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\URLWildcardCreate
      */
     protected function internalGetParser()
     {

@@ -11,7 +11,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\UserId as UserIdCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\UserId as UserIdCriterion;
 
 class UserId extends BaseParser
 {

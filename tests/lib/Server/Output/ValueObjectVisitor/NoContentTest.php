@@ -42,7 +42,7 @@ class NoContentTest extends ValueObjectVisitorBaseTest
     /**
      * Get the NoContent visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NoContent
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\NoContent
      */
     protected function internalGetVisitor()
     {

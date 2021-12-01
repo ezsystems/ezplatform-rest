@@ -63,7 +63,7 @@ class RelationCreateTest extends BaseTest
     /**
      * Returns the RelationCreate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\RelationCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\RelationCreate
      */
     protected function internalGetParser()
     {

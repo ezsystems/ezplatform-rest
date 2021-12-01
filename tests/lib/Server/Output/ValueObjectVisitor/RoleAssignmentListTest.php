@@ -10,7 +10,7 @@ use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\RestUserRoleAssignment;
 use Ibexa\Rest\Server\Values\RoleAssignmentList;
-use eZ\Publish\Core\Repository\Values\User;
+use Ibexa\Core\Repository\Values\User;
 
 class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
 {
@@ -179,7 +179,7 @@ class RoleAssignmentListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the RoleAssignmentList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RoleAssignmentList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RoleAssignmentList
      */
     protected function internalGetVisitor()
     {

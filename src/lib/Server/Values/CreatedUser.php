@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created User.
@@ -16,7 +16,7 @@ class CreatedUser extends ValueObject
     /**
      * The created user.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestUser
+     * @var \Ibexa\Rest\Server\Values\RestUser
      */
     public $user;
 }

@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 class ResponseListener implements EventSubscriberInterface
 {
     /**
-     * @var AcceptHeaderVisitorDispatcher
+     * @var \Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher
      */
     private $viewDispatcher;
 

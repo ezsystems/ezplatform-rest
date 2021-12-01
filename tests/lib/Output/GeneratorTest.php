@@ -15,12 +15,12 @@ use PHPUnit\Framework\TestCase;
 abstract class GeneratorTest extends TestCase
 {
     /**
-     * @var \EzSystems\EzPlatformRest\Output\Generator
+     * @var \Ibexa\Contracts\Rest\Output\Generator
      */
     protected $generator;
 
     /**
-     * @return \EzSystems\EzPlatformRest\Output\Generator
+     * @return \Ibexa\Contracts\Rest\Output\Generator
      */
     abstract protected function getGenerator();
 

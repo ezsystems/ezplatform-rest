@@ -15,9 +15,9 @@ abstract class Parser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\ValueObject
+     * @return \Ibexa\Contracts\Core\Repository\Values\ValueObject
      */
     abstract public function parse(array $data, ParsingDispatcher $parsingDispatcher);
 }

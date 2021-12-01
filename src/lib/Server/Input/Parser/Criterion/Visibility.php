@@ -9,7 +9,7 @@ namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Visibility as VisibilityCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Visibility as VisibilityCriterion;
 
 /**
  * Parser for Visibility Criterion.
@@ -20,11 +20,11 @@ class Visibility extends BaseParser
      * Parses input structure to a Visibility Criterion object.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\Visibility
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Visibility
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

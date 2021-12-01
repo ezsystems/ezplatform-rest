@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 class NotFoundExceptionTest extends ExceptionTest
@@ -44,7 +44,7 @@ class NotFoundExceptionTest extends ExceptionTest
     /**
      * Get the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NotFoundException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\NotFoundException
      */
     protected function internalGetVisitor()
     {

@@ -16,7 +16,7 @@ class PolicyList extends RestValue
     /**
      * Policies.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\Policy[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\Policy[]
      */
     public $policies;
 
@@ -30,7 +30,7 @@ class PolicyList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\Policy[] $policies
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\Policy[] $policies
      * @param string $path
      */
     public function __construct(array $policies, $path)

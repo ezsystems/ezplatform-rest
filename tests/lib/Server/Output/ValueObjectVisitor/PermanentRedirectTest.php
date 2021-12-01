@@ -45,7 +45,7 @@ class PermanentRedirectTest extends ValueObjectVisitorBaseTest
     /**
      * Get the PermanentRedirect visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\PermanentRedirect
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\PermanentRedirect
      */
     protected function internalGetVisitor()
     {

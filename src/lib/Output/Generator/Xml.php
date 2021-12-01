@@ -23,7 +23,7 @@ class Xml extends Generator
     /**
      * Generator for field type hash values.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator
+     * @var \Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator
      */
     protected $hashGenerator;
 
@@ -42,7 +42,7 @@ class Xml extends Generator
     protected $vendor;
 
     /**
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator $hashGenerator
+     * @param \Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator $hashGenerator
      * @param string $vendor
      */
     public function __construct(Xml\FieldTypeHashGenerator $hashGenerator, $vendor = 'vnd.ez.api')

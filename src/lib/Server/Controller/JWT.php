@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
 use Ibexa\Rest\Message;
 use Ibexa\Rest\Server\Controller as RestController;
 use Ibexa\Rest\Server\Values;
@@ -26,7 +26,7 @@ final class JWT extends RestController
     /** @var \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface */
     private $tokenManager;
 
-    /** @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
+    /** @var \Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
     private $authenticator;
 
     public function __construct(
@@ -39,7 +39,7 @@ final class JWT extends RestController
 
     public function createToken(Request $request): Values\JWT
     {
-        /** @var \EzSystems\EzPlatformRest\Server\Values\JWTInput $jwtTokenInput */
+        /** @var \Ibexa\Rest\Server\Values\JWTInput $jwtTokenInput */
         $jwtTokenInput = $this->inputDispatcher->parse(
             new Message(
                 ['Content-Type' => $request->headers->get('Content-Type')],

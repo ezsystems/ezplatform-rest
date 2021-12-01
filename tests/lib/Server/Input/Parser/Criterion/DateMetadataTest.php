@@ -7,8 +7,8 @@
 namespace Ibexa\Tests\Rest\Server\Input\Parser\Criterion;
 
 use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Operator;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
 use Ibexa\Rest\Server\Input\Parser\Criterion\DateMetadata;
 use Ibexa\Contracts\Rest\Exceptions;
 

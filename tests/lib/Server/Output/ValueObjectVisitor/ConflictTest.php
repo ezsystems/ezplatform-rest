@@ -42,7 +42,7 @@ class ConflictTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Conflict visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Conflict
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Conflict
      */
     protected function internalGetVisitor()
     {

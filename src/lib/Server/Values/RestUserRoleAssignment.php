@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\User\UserRoleAssignment;
+use Ibexa\Contracts\Core\Repository\Values\User\UserRoleAssignment;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,7 +17,7 @@ class RestUserRoleAssignment extends RestValue
     /**
      * Role assignment.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\UserRoleAssignment
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\UserRoleAssignment
      */
     public $roleAssignment;
 
@@ -31,7 +31,7 @@ class RestUserRoleAssignment extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\UserRoleAssignment $roleAssignment
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\UserRoleAssignment $roleAssignment
      * @param mixed $id
      */
     public function __construct(UserRoleAssignment $roleAssignment, $id)

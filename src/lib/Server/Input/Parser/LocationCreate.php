@@ -10,7 +10,7 @@ use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\ParserTools;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\LocationService;
 
 /**
  * Parser for LocationCreate.
@@ -20,22 +20,22 @@ class LocationCreate extends BaseParser
     /**
      * Location service.
      *
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(LocationService $locationService, ParserTools $parserTools)
     {
@@ -47,9 +47,9 @@ class LocationCreate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\LocationCreateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\LocationCreateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

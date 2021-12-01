@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created ContentType.
@@ -16,7 +16,7 @@ class CreatedContentType extends ValueObject
     /**
      * The created content type.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestContentType
+     * @var \Ibexa\Rest\Server\Values\RestContentType
      */
     public $contentType;
 }

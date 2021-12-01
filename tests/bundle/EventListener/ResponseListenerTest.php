@@ -21,26 +21,26 @@ use Symfony\Contracts\EventDispatcher\Event;
 
 class ResponseListenerTest extends EventListenerTest
 {
-    /** @var AcceptHeaderVisitorDispatcher|MockObject */
+    /** @var \Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher|\PHPUnit\Framework\MockObject\MockObject */
     protected $visitorDispatcherMock;
 
     /** @var \stdClass */
     protected $eventValue;
 
-    /** @var Exception */
+    /** @var \Exception */
     protected $exceptionEventValue;
 
     protected $dispatcherMessage;
 
     protected $controllerResult;
 
-    /** @var Response */
+    /** @var \Symfony\Component\HttpFoundation\Response */
     protected $response;
 
-    /** @var Event */
+    /** @var \Symfony\Contracts\EventDispatcher\Event */
     protected $event;
 
-    /** @var KernelInterface|MockObject */
+    /** @var \Symfony\Component\HttpKernel\KernelInterface|\PHPUnit\Framework\MockObject\MockObject */
     protected $kernelMock;
 
     public function setUp(): void
@@ -114,7 +114,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return AcceptHeaderVisitorDispatcher|MockObject
+     * @return \Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher|\PHPUnit\Framework\MockObject\MockObject
      */
     public function getVisitorDispatcherMock()
     {
@@ -126,7 +126,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return ResponseListener
+     * @return \Ibexa\Bundle\Rest\EventListener\ResponseListener
      */
     protected function getEventListener()
     {
@@ -136,7 +136,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return ViewEvent
+     * @return \Symfony\Component\HttpKernel\Event\ViewEvent
      */
     protected function getControllerResultEvent(): ViewEvent
     {
@@ -153,7 +153,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|KernelInterface
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpKernel\KernelInterface
      */
     protected function getKernelMock(): KernelInterface
     {
@@ -165,7 +165,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return ExceptionEvent
+     * @return \Symfony\Component\HttpKernel\Event\ExceptionEvent
      */
     protected function getExceptionEvent(): ExceptionEvent
     {

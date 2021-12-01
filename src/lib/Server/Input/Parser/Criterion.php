@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
@@ -30,11 +30,11 @@ abstract class Criterion extends BaseParser
      *
      * @param string $criterionName
      * @param mixed $criterionData
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion
      */
     public function dispatchCriterion($criterionName, $criterionData, ParsingDispatcher $parsingDispatcher)
     {
@@ -51,11 +51,11 @@ abstract class Criterion extends BaseParser
      *
      * @param string $facetBuilderName
      * @param mixed $facetBuilderData
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\ValueObject
+     * @return \Ibexa\Contracts\Core\Repository\Values\ValueObject
      */
     public function dispatchFacetBuilder($facetBuilderName, $facetBuilderData, ParsingDispatcher $parsingDispatcher)
     {
@@ -71,7 +71,7 @@ abstract class Criterion extends BaseParser
     /**
      * Dispatches parsing of a aggregation name + data to its own parser.
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Aggregation
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation
      */
     public function dispatchAggregation(
         string $aggregationName,
@@ -91,11 +91,11 @@ abstract class Criterion extends BaseParser
      *
      * @param string $sortClauseName
      * @param string $direction
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion
      */
     public function dispatchSortClause($sortClauseName, $direction, ParsingDispatcher $parsingDispatcher)
     {

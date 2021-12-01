@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created object state.
@@ -16,7 +16,7 @@ class CreatedObjectState extends ValueObject
     /**
      * The created object state.
      *
-     * @var \EzSystems\EzPlatformRest\Values\RestObjectState
+     * @var \Ibexa\Rest\Values\RestObjectState
      */
     public $objectState;
 }

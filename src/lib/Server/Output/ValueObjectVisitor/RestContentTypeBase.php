@@ -7,7 +7,7 @@
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
-use eZ\Publish\API\Repository\Values;
+use Ibexa\Core\Repository\Values;
 
 /**
  * Base for RestContentType related value object visitors.
