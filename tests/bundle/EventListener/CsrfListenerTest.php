@@ -1,29 +1,26 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
+use Ibexa\Bundle\Rest\EventListener\CsrfListener;
 use Ibexa\Core\Base\Exceptions\UnauthorizedException;
-use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\Form\Extension\Csrf\CsrfProvider\CsrfProviderInterface;
-use Ibexa\Bundle\Rest\EventListener\CsrfListener;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
 class CsrfListenerTest extends EventListenerTest
 {
-    const VALID_TOKEN = 'valid';
-    const INVALID_TOKEN = 'invalid';
-    const INTENTION = 'rest';
+    public const VALID_TOKEN = 'valid';
+    public const INVALID_TOKEN = 'invalid';
+    public const INTENTION = 'rest';
 
     /** @var \Symfony\Component\EventDispatcher\EventDispatcherInterface */
     protected $eventDispatcherMock;
@@ -182,7 +179,7 @@ class CsrfListenerTest extends EventListenerTest
         $provider->expects($this->any())
             ->method('isTokenValid')
             ->willReturnCallback(
-                function (CsrfToken $token) {
+                static function (CsrfToken $token) {
                     if ($token == new CsrfToken(self::INTENTION, self::VALID_TOKEN)) {
                         return true;
                     }

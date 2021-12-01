@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
@@ -12,9 +12,9 @@ use Ibexa\Contracts\Core\Repository\BookmarkService;
 use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
 use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\Contracts\Rest\Exceptions;
-use Ibexa\Rest\Value as RestValue;
-use Ibexa\Rest\Server\Values;
 use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Value as RestValue;
 use Symfony\Component\HttpFoundation\Request;
 
 class Bookmark extends RestController

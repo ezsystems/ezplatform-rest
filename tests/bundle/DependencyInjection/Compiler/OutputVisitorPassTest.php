@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Bundle\Rest\DependencyInjection\Compiler;
 
 use Ibexa\Bundle\Rest\DependencyInjection\Compiler\OutputVisitorPass;
+use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use Matthias\SymfonyDependencyInjectionTest\PhpUnit\AbstractCompilerPassTestCase;
 use Symfony\Component\DependencyInjection\Reference;
 
 class OutputVisitorPassTest extends AbstractCompilerPassTestCase
@@ -106,7 +106,7 @@ class OutputVisitorPassTest extends AbstractCompilerPassTestCase
     {
         $calls = $this->container->getDefinition('ezpublish_rest.output.visitor.dispatcher')->getMethodCalls();
 
-        return array_map(function ($call) {
+        return array_map(static function ($call) {
             return (string) $call[1][1];
         }, $calls);
     }

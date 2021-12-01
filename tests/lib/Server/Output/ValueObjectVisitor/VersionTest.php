@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Contracts\Rest\Output\Generator;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Core\Repository\Values;
-use Ibexa\Rest\Server\Values\Version;
-use Ibexa\Contracts\Core\Repository\Values\Content\Field;
-use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
 use Ibexa\Rest\Output\FieldTypeSerializer;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\Version;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class VersionTest extends ValueObjectVisitorBaseTest
 {

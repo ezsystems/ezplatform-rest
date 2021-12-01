@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Controller;
 
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\ObjectStateService;
 use Ibexa\Contracts\Core\Repository\Values\Content\Language;
 use Ibexa\Rest\Message;
-use Ibexa\Rest\Server\Values;
-use Ibexa\Rest\Values\RestObjectState;
 use Ibexa\Rest\Server\Controller as RestController;
-use Ibexa\Contracts\Core\Repository\ObjectStateService;
-use Ibexa\Contracts\Core\Repository\ContentService;
-use Ibexa\Rest\Values\ContentObjectStates;
-use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
-use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
 use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Values\ContentObjectStates;
+use Ibexa\Rest\Values\RestObjectState;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

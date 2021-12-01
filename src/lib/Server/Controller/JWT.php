@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
@@ -12,8 +12,8 @@ use Ibexa\Core\Base\Exceptions\UnauthorizedException;
 use Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
 use Ibexa\Rest\Message;
 use Ibexa\Rest\Server\Controller as RestController;
-use Ibexa\Rest\Server\Values;
 use Ibexa\Rest\Server\Security\JWTUser;
+use Ibexa\Rest\Server\Values;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;

@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use Ibexa\Core\Repository\ContentTypeService;
-use Ibexa\Core\Repository\UserService;
 use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Core\Repository\FieldTypeService;
-use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use Ibexa\Rest\Server\Input\Parser\UserGroupCreate;
-use Ibexa\Core\Repository\Values\User\UserGroupCreateStruct;
-use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Ibexa\Core\Repository\Values\ContentType\ContentType;
-use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\UserService;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
+use Ibexa\Core\Repository\Values\User\UserGroupCreateStruct;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\UserGroupCreate;
 
 class UserGroupCreateTest extends BaseTest
 {
@@ -349,7 +349,7 @@ class UserGroupCreateTest extends BaseTest
                 $this->equalTo($contentType)
             )
             ->willReturn(
-                    new UserGroupCreateStruct(
+                new UserGroupCreateStruct(
                         [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',

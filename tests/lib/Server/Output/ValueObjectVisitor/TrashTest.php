@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use Ibexa\Rest\Server\Values\Trash;
-use Ibexa\Rest\Server\Values\RestTrashItem;
 use Ibexa\Core\Repository\Values\Content;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\RestTrashItem;
+use Ibexa\Rest\Server\Values\Trash;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class TrashTest extends ValueObjectVisitorBaseTest
 {

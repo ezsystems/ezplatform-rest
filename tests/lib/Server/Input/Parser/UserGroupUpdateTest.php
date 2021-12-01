@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentMetadataUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\User\UserGroupUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 use Ibexa\Core\Repository\ContentService;
 use Ibexa\Core\Repository\ContentTypeService;
 use Ibexa\Core\Repository\FieldTypeService;
 use Ibexa\Core\Repository\LocationService;
 use Ibexa\Core\Repository\UserService;
-use Ibexa\Rest\Server\Input\Parser\UserGroupUpdate;
-use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
-use Ibexa\Core\Repository\Values\Content\Location;
-use Ibexa\Contracts\Core\Repository\Values\Content\ContentMetadataUpdateStruct;
-use Ibexa\Contracts\Core\Repository\Values\User\UserGroupUpdateStruct;
 use Ibexa\Core\Repository\Values\Content\ContentUpdateStruct;
+use Ibexa\Core\Repository\Values\Content\Location;
 use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\UserGroupUpdate;
 use Ibexa\Rest\Server\Values\RestUserGroupUpdateStruct;
-use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class UserGroupUpdateTest extends BaseTest
 {
@@ -267,7 +267,7 @@ class UserGroupUpdateTest extends BaseTest
             ->method('loadLocation')
             ->with($this->equalTo(5))
             ->willReturn(
-                    new Location(
+                new Location(
                         [
                             'contentInfo' => new ContentInfo(
                                 [

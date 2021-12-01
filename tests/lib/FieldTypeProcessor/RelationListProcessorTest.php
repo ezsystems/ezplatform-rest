@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\FieldTypeProcessor;
@@ -22,7 +22,7 @@ class RelationListProcessorTest extends TestCase
     public function fieldSettingsHashes()
     {
         return array_map(
-            function ($constantName) {
+            static function ($constantName) {
                 return [
                     ['selectionMethod' => $constantName],
                     ['selectionMethod' => constant("eZ\\Publish\\Core\\FieldType\\RelationList\\Type::{$constantName}")],

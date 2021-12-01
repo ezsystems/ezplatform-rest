@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
-use Ibexa\Contracts\Rest\Output\Generator;
-use Ibexa\Contracts\Rest\Output\Visitor;
-use Ibexa\Rest\Server\Values\VersionTranslationInfo as VersionTranslationInfoValue;
-use Ibexa\Core\Repository\Values;
 use Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo as VersionInfoValue;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Core\Repository\Values;
+use Ibexa\Rest\Server\Values\VersionTranslationInfo as VersionTranslationInfoValue;
 use RuntimeException;
 
 /**
@@ -79,8 +79,10 @@ class VersionInfo extends ValueObjectVisitor
         $generator->startObjectElement('Creator', 'User');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadUser',
-                ['userId' => $versionInfo->creatorId])
+            $this->router->generate(
+                'ezpublish_rest_loadUser',
+                ['userId' => $versionInfo->creatorId]
+            )
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Creator');

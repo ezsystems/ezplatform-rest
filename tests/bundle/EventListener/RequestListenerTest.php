@@ -1,23 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
+use Ibexa\Bundle\Rest\EventListener\RequestListener;
 use Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Ibexa\Bundle\Rest\EventListener\RequestListener;
 use Symfony\Component\HttpKernel\KernelEvents;
-use PHPUnit\Framework\MockObject\MockObject;
 
 class RequestListenerTest extends EventListenerTest
 {
-    const REST_ROUTE = '/api/ezp/v2/rest-route';
-    const NON_REST_ROUTE = '/non-rest-route';
+    public const REST_ROUTE = '/api/ezp/v2/rest-route';
+    public const NON_REST_ROUTE = '/non-rest-route';
 
     public function provideExpectedSubscribedEventTypes()
     {

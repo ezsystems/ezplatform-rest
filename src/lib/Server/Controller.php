@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server;
 
 use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Rest\Input\Dispatcher as InputDispatcher;
+use Ibexa\Rest\RequestParser;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-use Symfony\Component\Routing\RouterInterface;
-use Ibexa\Rest\Input\Dispatcher as InputDispatcher;
 use Symfony\Component\HttpFoundation\Request;
-use Ibexa\Rest\RequestParser;
+use Symfony\Component\Routing\RouterInterface;
 
 abstract class Controller implements ContainerAwareInterface
 {

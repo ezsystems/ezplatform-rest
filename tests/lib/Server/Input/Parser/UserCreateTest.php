@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use Ibexa\Core\Repository\ContentTypeService;
-use Ibexa\Core\Repository\UserService;
 use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Core\Repository\FieldTypeService;
-use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use Ibexa\Rest\Server\Input\Parser\UserCreate;
-use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\UserService;
 use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
 use Ibexa\Core\Repository\Values\User\UserCreateStruct;
 use Ibexa\Rest\Input\FieldTypeParser;
-use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\UserCreate;
 
 class UserCreateTest extends BaseTest
 {
@@ -484,7 +484,7 @@ class UserCreateTest extends BaseTest
                 $this->equalTo($contentType)
             )
             ->willReturn(
-                    new UserCreateStruct(
+                new UserCreateStruct(
                         [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',

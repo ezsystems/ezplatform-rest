@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use Ibexa\Core\Repository\ObjectStateService;
-use Ibexa\Rest\Server\Input\Parser\ObjectStateGroupUpdate;
 use Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroupUpdateStruct;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ObjectStateService;
+use Ibexa\Rest\Server\Input\Parser\ObjectStateGroupUpdate;
 
 class ObjectStateGroupUpdateTest extends BaseTest
 {

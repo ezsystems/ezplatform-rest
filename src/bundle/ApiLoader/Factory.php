@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Bundle\Rest\ApiLoader;
 
+use Ibexa\Contracts\Core\Repository\Repository;
 use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Core\MVC\Symfony\RequestStackAware;
-use Ibexa\Contracts\Core\Repository\Repository;
 use Ibexa\Rest\FieldTypeProcessor\BinaryProcessor;
 use Ibexa\Rest\FieldTypeProcessor\ImageAssetFieldTypeProcessor;
 use Ibexa\Rest\FieldTypeProcessor\ImageProcessor;

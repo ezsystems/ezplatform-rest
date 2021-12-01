@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 use Ibexa\Core\Repository\ContentTypeService;
 use Ibexa\Core\Repository\Values\ContentType\ContentTypeCreateStruct;
-use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
 use Ibexa\Rest\Server\Input\Parser\ContentTypeCreate;
-use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
 
 class ContentTypeCreateTest extends BaseTest
 {
@@ -275,7 +275,7 @@ class ContentTypeCreateTest extends BaseTest
             ->method('newContentTypeCreateStruct')
             ->with($this->equalTo('new_content_type'))
             ->willReturn(
-                    new ContentTypeCreateStruct(
+                new ContentTypeCreateStruct(
                         [
                             'identifier' => 'new_content_type',
                         ]

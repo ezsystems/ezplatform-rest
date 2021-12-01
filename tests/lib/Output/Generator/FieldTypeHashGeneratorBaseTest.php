@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Output\Generator;
@@ -223,7 +223,7 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
 
     private function getRelativeClassIdentifier()
     {
-        $fqClassName = get_called_class();
+        $fqClassName = static::class;
 
         return strtr(
             substr(

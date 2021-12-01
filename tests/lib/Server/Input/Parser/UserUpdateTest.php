@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use Ibexa\Core\Repository\ContentService;
-use Ibexa\Core\Repository\UserService;
 use Ibexa\Contracts\Core\Repository\ContentTypeService;
 use Ibexa\Contracts\Core\Repository\FieldTypeService;
-use Ibexa\Rest\Server\Input\Parser\UserUpdate;
 use Ibexa\Contracts\Core\Repository\Values\Content\ContentMetadataUpdateStruct;
 use Ibexa\Contracts\Core\Repository\Values\User\UserUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentService;
+use Ibexa\Core\Repository\UserService;
 use Ibexa\Core\Repository\Values\Content\ContentUpdateStruct;
 use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\UserUpdate;
 use Ibexa\Rest\Server\Values\RestUserUpdateStruct;
-use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class UserUpdateTest extends BaseTest
 {

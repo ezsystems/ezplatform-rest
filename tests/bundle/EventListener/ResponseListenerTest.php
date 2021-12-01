@@ -1,23 +1,21 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
 use Exception;
+use Ibexa\Bundle\Rest\EventListener\ResponseListener;
 use Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher;
-use PHPUnit\Framework\MockObject\MockObject;
+use stdClass;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
-use Symfony\Component\HttpKernel\Event\ExceptionEvent;
-use Ibexa\Bundle\Rest\EventListener\ResponseListener;
-use stdClass;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Contracts\EventDispatcher\Event;
 
 class ResponseListenerTest extends EventListenerTest
 {

@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
 use Ibexa\Contracts\Core\Repository\Values\Content\LocationCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 use Ibexa\Core\Repository\ContentService;
 use Ibexa\Core\Repository\ContentTypeService;
-use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\Content\ContentCreateStruct;
 use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
 use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
+use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Rest\Server\Input\Parser\ContentCreate;
 use Ibexa\Rest\Server\Input\Parser\LocationCreate;
-use Ibexa\Rest\Input\FieldTypeParser;
-use Ibexa\Contracts\Core\Repository\FieldTypeService;
-use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ContentCreateTest extends BaseTest
 {
@@ -567,7 +567,7 @@ class ContentCreateTest extends BaseTest
                 $this->equalTo('eng-US')
             )
             ->willReturn(
-                    new ContentCreateStruct(
+                new ContentCreateStruct(
                         [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',

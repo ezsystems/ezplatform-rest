@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Controller;
 
 use Ibexa\Contracts\Core\Repository\Exceptions\InvalidVariationException;
+use Ibexa\Contracts\Core\Variation\VariationHandler;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Core\FieldType\Image\Value as ImageValue;
 use Ibexa\Core\FieldType\ImageAsset\Value as ImageAssetValue;
 use Ibexa\Core\MVC\ConfigResolverInterface;
-use Ibexa\Contracts\Core\Variation\VariationHandler;
-use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Controller as RestController;
 use Ibexa\Rest\Server\Values\CachedValue;
 

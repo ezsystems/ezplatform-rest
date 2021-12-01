@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
@@ -11,10 +11,10 @@ namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 use DOMDocument;
 use DOMXPath;
 use Ibexa\Contracts\Core\Repository\Values\Content\Location;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\BookmarkList;
 use Ibexa\Rest\Server\Values\RestLocation;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class BookmarkListTest extends ValueObjectVisitorBaseTest
 {

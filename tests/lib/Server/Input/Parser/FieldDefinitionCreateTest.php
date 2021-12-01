@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
-use Ibexa\Core\Repository\ContentTypeService;
-use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
-use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -227,7 +227,7 @@ class FieldDefinitionCreateTest extends BaseTest
             ->method('newFieldDefinitionCreateStruct')
             ->with($this->equalTo('title'), $this->equalTo('ezstring'))
             ->willReturn(
-                    new FieldDefinitionCreateStruct(
+                new FieldDefinitionCreateStruct(
                         [
                             'identifier' => 'title',
                             'fieldTypeIdentifier' => 'ezstring',

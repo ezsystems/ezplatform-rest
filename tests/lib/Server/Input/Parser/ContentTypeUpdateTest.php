@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use Ibexa\Contracts\Core\Repository\Values\Content\Location;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
 use Ibexa\Core\Repository\ContentTypeService;
 use Ibexa\Rest\Server\Input\Parser\ContentTypeUpdate;
-use Ibexa\Contracts\Rest\Exceptions\Parser;
 
 class ContentTypeUpdateTest extends BaseTest
 {

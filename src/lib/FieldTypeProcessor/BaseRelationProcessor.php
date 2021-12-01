@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\FieldTypeProcessor;
 
 use Ibexa\Contracts\Core\Repository\LocationService;
-use Ibexa\Core\FieldType\Relation\Type;
 use Ibexa\Contracts\Rest\FieldTypeProcessor;
+use Ibexa\Core\FieldType\Relation\Type;
 use Symfony\Component\Routing\RouterInterface;
 
 abstract class BaseRelationProcessor extends FieldTypeProcessor

@@ -1,15 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Security;
 
 use Ibexa\Contracts\Core\Repository\Values\User\User;
 use Ibexa\Core\MVC\ConfigResolverInterface;
-use Ibexa\Rest\Server\Security\RestAuthenticator;
 use Ibexa\Core\MVC\Symfony\Security\User as EzUser;
+use Ibexa\Rest\Server\Exceptions\InvalidUserTypeException;
+use Ibexa\Rest\Server\Exceptions\UserConflictException;
+use Ibexa\Rest\Server\Security\RestAuthenticator;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -17,22 +19,20 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\Storage\MockArraySessionStorage;
+use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Component\Security\Http\Logout\LogoutHandlerInterface;
 use Symfony\Component\Security\Http\Logout\SessionLogoutHandler;
 use Symfony\Component\Security\Http\SecurityEvents;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
-use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
-use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
-use Ibexa\Rest\Server\Exceptions\InvalidUserTypeException;
-use Ibexa\Rest\Server\Exceptions\UserConflictException;
 
 class RestSessionBasedAuthenticatorTest extends TestCase
 {
-    const PROVIDER_KEY = 'test_key';
+    public const PROVIDER_KEY = 'test_key';
 
     /**
      * @var \PHPUnit\Framework\MockObject\MockObject

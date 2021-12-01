@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Controller;
@@ -10,16 +10,15 @@ use Ibexa\Contracts\Core\Repository\PermissionResolver;
 use Ibexa\Contracts\Core\Repository\UserService;
 use Ibexa\Core\Base\Exceptions\UnauthorizedException;
 use Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
-use Ibexa\Contracts\Rest\Exceptions\NotFoundException;
 use Ibexa\Rest\Message;
 use Ibexa\Rest\Server\Controller;
-use Ibexa\Rest\Server\Values;
 use Ibexa\Rest\Server\Exceptions;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Csrf\CsrfToken;
 use Ibexa\Rest\Server\Security\CsrfTokenManager;
+use Ibexa\Rest\Server\Values;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 
 class SessionController extends Controller

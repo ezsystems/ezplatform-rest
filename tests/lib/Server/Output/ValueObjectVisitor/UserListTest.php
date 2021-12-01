@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use Ibexa\Rest\Server\Values\UserList;
-use Ibexa\Rest\Server\Values\RestUser;
 use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Core\Repository\Values\Content\Content;
 use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\RestUser;
+use Ibexa\Rest\Server\Values\UserList;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class UserListTest extends ValueObjectVisitorBaseTest
 {

@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
 use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionUpdateStruct;
-use Ibexa\Core\Repository\ContentTypeService;
-use Ibexa\Core\Repository\Values\ContentType\ContentTypeDraft;
-use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use Ibexa\Rest\Server\Input\Parser\FieldDefinitionUpdate;
-use Ibexa\Core\Repository\Values\ContentType\ContentType;
-use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
-use Ibexa\Rest\Input\FieldTypeParser;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\ContentTypeDraft;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionUpdate;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -196,14 +196,14 @@ class FieldDefinitionUpdateTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('newFieldDefinitionUpdateStruct')
             ->willReturn(
-                    new FieldDefinitionUpdateStruct()
+                new FieldDefinitionUpdateStruct()
             );
 
         $contentTypeServiceMock->expects($this->any())
             ->method('loadContentTypeDraft')
             ->with($this->equalTo(42))
             ->willReturn(
-                    new ContentTypeDraft(
+                new ContentTypeDraft(
                         [
                             'innerContentType' => new ContentType([
                                 'fieldDefinitions' => new FieldDefinitionCollection([

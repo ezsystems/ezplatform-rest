@@ -1,15 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\View;
 
-use Symfony\Component\HttpFoundation\Request;
 use Ibexa\Contracts\Rest\Output\Visitor as OutputVisitor;
-use Symfony\Component\HttpFoundation\Response;
 use RuntimeException;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Dispatcher for various visitors depending on the mime-type accept header.

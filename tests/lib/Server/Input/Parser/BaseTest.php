@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use Ibexa\Rest\Input;
-use Ibexa\Tests\Rest\Server\BaseTest as ParentBaseTest;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input;
 use Ibexa\Rest\RequestParser;
+use Ibexa\Tests\Rest\Server\BaseTest as ParentBaseTest;
 
 /**
  * Base test for input parsers.
@@ -68,7 +68,7 @@ abstract class BaseTest extends ParentBaseTest
         if (!isset($this->requestParserMock)) {
             $that = &$this;
 
-            $callback = function ($href, $attribute) use ($that) {
+            $callback = static function ($href, $attribute) use ($that) {
                 foreach ($that->getParseHrefExpectationsMap() as $map) {
                     if ($map[0] == $href && $map[1] == $attribute) {
                         if ($map[2] instanceof \Exception) {

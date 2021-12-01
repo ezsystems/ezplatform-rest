@@ -1,26 +1,26 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Controller;
 
-use Ibexa\Contracts\Core\Repository\Values\Content\Language;
-use Ibexa\Rest\Server\Exceptions\BadRequestException;
-use Ibexa\Contracts\Core\Repository\Exceptions\BadStateException;
-use Ibexa\Rest\Message;
-use Ibexa\Contracts\Rest\Exceptions;
-use Ibexa\Rest\Server\Exceptions\ForbiddenException;
-use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
-use Ibexa\Contracts\Core\Repository\Exceptions\ContentTypeValidationException;
-use Ibexa\Contracts\Core\Repository\Exceptions\ContentTypeFieldDefinitionValidationException;
-use Ibexa\Rest\Server\Controller as RestController;
-use Ibexa\Rest\Server\Values;
 use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Exceptions\BadStateException;
+use Ibexa\Contracts\Core\Repository\Exceptions\ContentTypeFieldDefinitionValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\ContentTypeValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType as APIContentType;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
 use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -905,14 +905,14 @@ class ContentType extends RestController
                 if ($sort === 'asc' || $sort === null) {
                     usort(
                         $contentTypes,
-                        function (APIContentType $contentType1, APIContentType $contentType2) {
+                        static function (APIContentType $contentType1, APIContentType $contentType2) {
                             return strcasecmp($contentType1->identifier, $contentType2->identifier);
                         }
                     );
                 } elseif ($sort === 'desc') {
                     usort(
                         $contentTypes,
-                        function (APIContentType $contentType1, APIContentType $contentType2) {
+                        static function (APIContentType $contentType1, APIContentType $contentType2) {
                             return strcasecmp($contentType1->identifier, $contentType2->identifier) * -1;
                         }
                     );
@@ -924,7 +924,7 @@ class ContentType extends RestController
                 if ($sort === 'asc' || $sort === null) {
                     usort(
                         $contentTypes,
-                        function ($timeObj3, $timeObj4) {
+                        static function ($timeObj3, $timeObj4) {
                             $timeObj3 = strtotime($timeObj3->modificationDate->format('Y-m-d H:i:s'));
                             $timeObj4 = strtotime($timeObj4->modificationDate->format('Y-m-d H:i:s'));
 
@@ -934,7 +934,7 @@ class ContentType extends RestController
                 } elseif ($sort === 'desc') {
                     usort(
                         $contentTypes,
-                        function ($timeObj3, $timeObj4) {
+                        static function ($timeObj3, $timeObj4) {
                             $timeObj3 = strtotime($timeObj3->modificationDate->format('Y-m-d H:i:s'));
                             $timeObj4 = strtotime($timeObj4->modificationDate->format('Y-m-d H:i:s'));
 

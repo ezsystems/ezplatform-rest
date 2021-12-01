@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Bundle\Rest\RequestParser;
 
+use Ibexa\Bundle\Rest\RequestParser\Router as RouterRequestParser;
 use Ibexa\Contracts\Rest\Exceptions\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use Ibexa\Bundle\Rest\RequestParser\Router as RouterRequestParser;
 use Symfony\Cmf\Component\Routing\ChainRouter;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
