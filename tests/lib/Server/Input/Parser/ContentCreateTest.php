@@ -568,11 +568,11 @@ class ContentCreateTest extends BaseTest
             )
             ->willReturn(
                 new ContentCreateStruct(
-                        [
+                    [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',
                         ]
-                    )
+                )
             );
 
         return $contentServiceMock;

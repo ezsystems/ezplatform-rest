@@ -276,10 +276,10 @@ class ContentTypeCreateTest extends BaseTest
             ->with($this->equalTo('new_content_type'))
             ->willReturn(
                 new ContentTypeCreateStruct(
-                        [
+                    [
                             'identifier' => 'new_content_type',
                         ]
-                    )
+                )
             );
 
         return $contentTypeServiceMock;

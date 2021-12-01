@@ -350,11 +350,11 @@ class UserGroupCreateTest extends BaseTest
             )
             ->willReturn(
                 new UserGroupCreateStruct(
-                        [
+                    [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',
                         ]
-                    )
+                )
             );
 
         return $userServiceMock;

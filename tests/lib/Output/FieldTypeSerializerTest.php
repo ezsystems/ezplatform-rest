@@ -101,10 +101,10 @@ class FieldTypeSerializerTest extends TestCase
                 $this->equalTo('some-field')
             )->willReturn(
                 new FieldDefinition(
-                        [
+                    [
                             'fieldTypeIdentifier' => 'myFancyFieldType',
                         ]
-                    )
+                )
             );
 
         $processorMock = $this->getFieldTypeProcessorMock();

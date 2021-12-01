@@ -228,11 +228,11 @@ class FieldDefinitionCreateTest extends BaseTest
             ->with($this->equalTo('title'), $this->equalTo('ezstring'))
             ->willReturn(
                 new FieldDefinitionCreateStruct(
-                        [
+                    [
                             'identifier' => 'title',
                             'fieldTypeIdentifier' => 'ezstring',
                         ]
-                    )
+                )
             );
 
         return $contentTypeServiceMock;

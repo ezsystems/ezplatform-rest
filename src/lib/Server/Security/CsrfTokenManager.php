@@ -28,8 +28,7 @@ class CsrfTokenManager extends BaseCsrfTokenManager
         TokenGeneratorInterface $generator = null,
         TokenStorageInterface $storage = null,
         RequestStack $requestStack = null
-    )
-    {
+    ) {
         $this->storage = $storage ?: new NativeSessionTokenStorage();
         $this->namespace = $this->resolveNamespace($requestStack);
 

@@ -204,7 +204,7 @@ class FieldDefinitionUpdateTest extends BaseTest
             ->with($this->equalTo(42))
             ->willReturn(
                 new ContentTypeDraft(
-                        [
+                    [
                             'innerContentType' => new ContentType([
                                 'fieldDefinitions' => new FieldDefinitionCollection([
                                     new FieldDefinition(
@@ -216,7 +216,7 @@ class FieldDefinitionUpdateTest extends BaseTest
                                 ]),
                             ]),
                         ]
-                    )
+                )
             );
 
         return $contentTypeServiceMock;

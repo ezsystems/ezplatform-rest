@@ -268,14 +268,14 @@ class UserGroupUpdateTest extends BaseTest
             ->with($this->equalTo(5))
             ->willReturn(
                 new Location(
-                        [
+                    [
                             'contentInfo' => new ContentInfo(
                                 [
                                     'id' => 4,
                                 ]
                             ),
                         ]
-                    )
+                )
             );
 
         return $userServiceMock;
