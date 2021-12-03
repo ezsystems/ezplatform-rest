@@ -13,7 +13,7 @@ class Configuration extends SiteAccessConfiguration
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('ez_publish_rest');
+        $treeBuilder = new TreeBuilder(IbexaRestExtension::EXTENSION_NAME);
 
         $this->addRestRootResourcesSection($treeBuilder->getRootNode());
 

@@ -22,6 +22,13 @@ use Symfony\Component\Yaml\Yaml;
  */
 class IbexaRestExtension extends Extension implements PrependExtensionInterface
 {
+    public const EXTENSION_NAME = 'ibexa_rest';
+
+    public function getAlias(): string
+    {
+        return self::EXTENSION_NAME;
+    }
+
     /**
      * {@inheritdoc}
      */
