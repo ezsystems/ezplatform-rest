@@ -56,22 +56,22 @@ class RestSessionBasedFactory extends FormLoginFactory
         return $listenerId;
     }
 
-    protected function getListenerId()
+    protected function getListenerId(): string
     {
         return 'ezpublish_rest.security.authentication.listener.session';
     }
 
-    public function getPosition()
+    public function getPosition(): string
     {
         return 'http';
     }
 
-    public function getKey()
+    public function getKey(): string
     {
         return 'ezpublish_rest_session';
     }
 
-    protected function createEntryPoint($container, $id, $config, $defaultEntryPoint)
+    protected function createEntryPoint($container, $id, $config, $defaultEntryPoint): ?string
     {
         return $defaultEntryPoint;
     }
