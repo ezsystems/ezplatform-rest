@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\Relation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Relation;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,7 +17,7 @@ class RestRelation extends RestValue
     /**
      * A relation.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Relation
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Relation
      */
     public $relation;
 
@@ -36,7 +36,7 @@ class RestRelation extends RestValue
     public $versionNo;
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Relation $relation
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Relation $relation
      * @param mixed $contentId
      * @param mixed $versionNo
      */

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Core\Repository\Values\Content;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\URLWildcardList;
-use eZ\Publish\API\Repository\Values\Content;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class URLWildcardListTest extends ValueObjectVisitorBaseTest
 {
@@ -119,7 +119,7 @@ class URLWildcardListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the URLWildcardList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\URLWildcardList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\URLWildcardList
      */
     protected function internalGetVisitor()
     {

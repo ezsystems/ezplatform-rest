@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\IsUserEnabled as IsUserEnabledCriterion;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\BaseParser;
 use Ibexa\Rest\Input\ParserTools;
-use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\IsUserEnabled as IsUserEnabledCriterion;
 
 class IsUserEnabled extends BaseParser
 {
-    /** @var \EzSystems\EzPlatformRest\Input\ParserTools */
+    /** @var \Ibexa\Rest\Input\ParserTools */
     protected $parserTools;
 
     public function __construct(ParserTools $parserTools)

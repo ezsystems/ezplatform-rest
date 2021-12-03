@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Input\Parser;
 
-use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\ContentService;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Input\FieldTypeParser;
 
 /**
  * Parser for VersionUpdate.
@@ -20,22 +20,22 @@ class VersionUpdate extends BaseParser
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
      * FieldType parser.
      *
-     * @var \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @var \Ibexa\Rest\Input\FieldTypeParser
      */
     protected $fieldTypeParser;
 
     /**
      * Construct from content service.
      *
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
-     * @param \EzSystems\EzPlatformRest\Input\FieldTypeParser $fieldTypeParser
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
+     * @param \Ibexa\Rest\Input\FieldTypeParser $fieldTypeParser
      */
     public function __construct(ContentService $contentService, FieldTypeParser $fieldTypeParser)
     {
@@ -47,9 +47,9 @@ class VersionUpdate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\ContentUpdateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\ContentUpdateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

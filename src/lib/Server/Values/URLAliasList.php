@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Values;
@@ -16,7 +16,7 @@ class URLAliasList extends RestValue
     /**
      * URL aliases.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\URLAlias[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias[]
      */
     public $urlAliases;
 
@@ -30,7 +30,7 @@ class URLAliasList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\URLAlias[] $urlAliases
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias[] $urlAliases
      * @param string $path
      */
     public function __construct(array $urlAliases, $path)

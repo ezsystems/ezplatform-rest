@@ -32,6 +32,6 @@ services:
 
     Ibexa\Rest\Server\Security\EventListener\SecurityListener:
         arguments:
-            - '@eZ\Publish\API\Repository\PermissionResolver'
+            - '@Ibexa\Contracts\Core\Repository\PermissionResolver'
         tags:
             - { name: kernel.event_subscriber }

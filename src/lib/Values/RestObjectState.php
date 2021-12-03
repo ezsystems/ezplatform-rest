@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Values;
 
-use eZ\Publish\API\Repository\Values\ObjectState\ObjectState;
+use Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectState;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,7 +17,7 @@ class RestObjectState extends RestValue
     /**
      * Wrapped object state.
      *
-     * @var \eZ\Publish\API\Repository\Values\ObjectState\ObjectState
+     * @var \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectState
      */
     public $objectState;
 
@@ -31,7 +31,7 @@ class RestObjectState extends RestValue
     /**
      * Constructor.
      *
-     * @param \eZ\Publish\API\Repository\Values\ObjectState\ObjectState $objectState
+     * @param \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectState $objectState
      * @param mixed $groupId
      */
     public function __construct(ObjectState $objectState, $groupId)

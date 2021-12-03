@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Core\Repository\Values\ObjectState\ObjectState;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\ObjectState\ObjectState;
 use Ibexa\Rest\Values;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RestObjectStateTest extends ValueObjectVisitorBaseTest
 {
@@ -304,7 +304,7 @@ class RestObjectStateTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ObjectState visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestObjectState
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestObjectState
      */
     protected function internalGetVisitor()
     {

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Input\Parser;
 
-use Ibexa\Rest\Input\BaseParser;
-use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Rest\Input\ParserTools;
 use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Input\ParserTools;
 use Ibexa\Rest\Server\Values\RoleAssignment;
 
 /**
@@ -20,14 +20,14 @@ class RoleAssignInput extends BaseParser
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(ParserTools $parserTools)
     {
@@ -38,9 +38,9 @@ class RoleAssignInput extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignment
+     * @return \Ibexa\Rest\Server\Values\RoleAssignment
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

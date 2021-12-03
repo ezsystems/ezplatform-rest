@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\FieldTypeProcessor;
@@ -10,7 +10,7 @@ use Ibexa\Rest\FieldTypeProcessor\BinaryProcessor;
 
 class BinaryProcessorTest extends BinaryInputProcessorTest
 {
-    const TEMPLATE_URL = 'http://ez.no/subdir/var/rest_test/storage/original/{path}';
+    public const TEMPLATE_URL = 'http://ez.no/subdir/var/rest_test/storage/original/{path}';
 
     /**
      * @covers \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor::postProcessValueHash
@@ -39,7 +39,7 @@ class BinaryProcessorTest extends BinaryInputProcessorTest
     /**
      * Returns the processor under test.
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\BinaryProcessor
      */
     protected function getProcessor()
     {

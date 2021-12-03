@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Core\Repository\Values\User;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\User;
 use Ibexa\Rest\Server\Values;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RestUserRoleAssignmentTest extends ValueObjectVisitorBaseTest
 {
@@ -157,7 +157,7 @@ class RestUserRoleAssignmentTest extends ValueObjectVisitorBaseTest
     /**
      * Get the UserRoleAssignment visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUserRoleAssignment
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestUserRoleAssignment
      */
     protected function internalGetVisitor()
     {

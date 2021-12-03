@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\FieldTypeProcessor;
@@ -29,7 +29,7 @@ class ImageProcessor extends BinaryInputProcessor
     protected $variations;
 
     /**
-     * @var RouterInterface
+     * @var \Symfony\Component\Routing\RouterInterface
      */
     protected $router;
 

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\FieldTypeProcessor;
@@ -20,7 +20,7 @@ class DateAndTimeProcessorTest extends TestCase
     public function fieldSettingsHashes()
     {
         return array_map(
-            function ($constantName) {
+            static function ($constantName) {
                 return [
                     ['defaultType' => $constantName],
                     ['defaultType' => constant("eZ\\Publish\\Core\\FieldType\\DateAndTime\\Type::{$constantName}")],
@@ -59,7 +59,7 @@ class DateAndTimeProcessorTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\DateAndTimeProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\DateAndTimeProcessor
      */
     protected function getProcessor()
     {

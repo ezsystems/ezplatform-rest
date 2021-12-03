@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\LocationQuery as LocationQueryValueObject;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationQuery as LocationQueryValueObject;
 use Ibexa\Rest\Server\Input\Parser\Query as QueryParser;
 
 /**

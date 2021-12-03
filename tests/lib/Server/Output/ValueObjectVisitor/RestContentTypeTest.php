@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Core\Repository\Values;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values;
 use Ibexa\Rest\Server\Values\FieldDefinitionList;
 use Ibexa\Rest\Server\Values\RestContentType;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 /**
  * @todo coverage add unit test for testVisitDraftType
@@ -381,7 +381,7 @@ class RestContentTypeTest extends ValueObjectVisitorBaseTest
     /**
      * Get the RestContentType visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestContentType
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestContentType
      */
     protected function internalGetVisitor()
     {

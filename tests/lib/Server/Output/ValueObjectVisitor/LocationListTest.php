@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\LocationList;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class LocationListTest extends ValueObjectVisitorBaseTest
 {
@@ -85,7 +85,7 @@ class LocationListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the LocationList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\LocationList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\LocationList
      */
     protected function internalGetVisitor()
     {

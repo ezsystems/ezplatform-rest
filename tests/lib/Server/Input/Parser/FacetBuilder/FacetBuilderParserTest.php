@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser\FacetBuilder;
 
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\ContentTypeFacetBuilder;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\CriterionFacetBuilder;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\FieldFacetBuilder;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\LocationFacetBuilder;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\SectionFacetBuilder;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\TermFacetBuilder;
-use eZ\Publish\API\Repository\Values\Content\Query\FacetBuilder\UserFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\ContentTypeFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\CriterionFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\FieldFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\LocationFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\SectionFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\TermFacetBuilder;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\FacetBuilder\UserFacetBuilder;
+use Ibexa\Core\Repository\Values\Content\Location;
 use Ibexa\Rest\Server\Input\Parser\Criterion\LocationId;
 
 class FacetBuilderParserTest extends FacetBuilderBaseTest

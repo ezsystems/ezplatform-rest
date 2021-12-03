@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\LocationService;
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location as LocationValue;
 use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
 use Ibexa\Rest\Server\Values\RestContent as RestContentValue;
-use eZ\Publish\API\Repository\Values\Content\Location as LocationValue;
 
 /**
  * Location value object visitor.
@@ -19,7 +19,7 @@ use eZ\Publish\API\Repository\Values\Content\Location as LocationValue;
 class Location extends ValueObjectVisitor
 {
     /**
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     private $locationService;
 
@@ -31,9 +31,9 @@ class Location extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\Values\Content\Location $location
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Location $location
      */
     public function visit(Visitor $visitor, Generator $generator, $location)
     {

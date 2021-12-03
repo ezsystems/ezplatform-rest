@@ -214,7 +214,7 @@ services:
             - "@ezpublish.api.service.location"
             - "@ezpublish.api.service.section"
             - "@ezpublish.api.repository"
-            - '@eZ\Publish\API\Repository\PermissionResolver'
+            - '@Ibexa\Contracts\Core\Repository\PermissionResolver'
         tags: [controller.service_arguments]
 
     ezpublish_rest.controller.url_wildcard:
@@ -244,7 +244,7 @@ services:
         parent: ezpublish_rest.controller.base
         arguments:
             - "%ezpublish_rest.csrf_token_intention%"
-            - '@eZ\Publish\API\Repository\PermissionResolver'
+            - '@Ibexa\Contracts\Core\Repository\PermissionResolver'
             - '@ezpublish.api.service.user'
             - "@?ezpublish_rest.session_authenticator"
             - "@?ezpublish_rest.security.csrf.token_manager"
@@ -428,7 +428,7 @@ services:
     ezpublish_rest.output.value_object_visitor.Exception.InvalidArgumentException:
         class: "%ezpublish_rest.output.value_object_visitor.Exception.InvalidArgumentException.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException }
 
     ezpublish_rest.input.dispatcher:
         class: "%ezpublish_rest.input.dispatcher.class%"
@@ -450,7 +450,7 @@ services:
             - { name: ezpublish_rest.input.handler, format: xml }
 
     ezpublish_rest.templated_router:
-        class: eZ\Bundle\EzPublishCoreBundle\Routing\DefaultRouter
+        class: Ibexa\Bundle\Core\Routing\DefaultRouter
         parent: hautelook.router.template
         calls:
             - [ setOption, [ strict_requirements, ~ ] ]

@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Input\Parser;
 
-use Ibexa\Rest\Server\Input\Parser\Criterion as CriterionParser;
-use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Server\Input\Parser\Criterion as CriterionParser;
 use Ibexa\Rest\Server\Values\RestViewInput;
 
 /**
@@ -20,11 +20,11 @@ class ViewInputOneDotOne extends CriterionParser
      * Parses input structure to a RestViewInput struct.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestViewInput
+     * @return \Ibexa\Rest\Server\Values\RestViewInput
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

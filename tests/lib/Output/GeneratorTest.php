@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Output;
@@ -15,12 +15,12 @@ use PHPUnit\Framework\TestCase;
 abstract class GeneratorTest extends TestCase
 {
     /**
-     * @var \EzSystems\EzPlatformRest\Output\Generator
+     * @var \Ibexa\Contracts\Rest\Output\Generator
      */
     protected $generator;
 
     /**
-     * @return \EzSystems\EzPlatformRest\Output\Generator
+     * @return \Ibexa\Contracts\Rest\Output\Generator
      */
     abstract protected function getGenerator();
 

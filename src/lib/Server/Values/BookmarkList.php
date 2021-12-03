@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
@@ -18,7 +18,7 @@ class BookmarkList extends RestValue
     public $totalCount = 0;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestLocation[]
+     * @var \Ibexa\Rest\Server\Values\RestLocation[]
      */
     public $items = [];
 
@@ -26,7 +26,7 @@ class BookmarkList extends RestValue
      * BookmarkList constructor.
      *
      * @param int $totalCount
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestLocation[] $items
+     * @param \Ibexa\Rest\Server\Values\RestLocation[] $items
      */
     public function __construct(int $totalCount, array $items)
     {

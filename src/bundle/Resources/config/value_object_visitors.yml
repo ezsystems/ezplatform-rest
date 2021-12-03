@@ -140,28 +140,28 @@ services:
         class: "%ezpublish_rest.output.value_object_visitor.InvalidArgumentException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Exceptions\InvalidArgumentException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException }
 
     ezpublish_rest.output.value_object_visitor.NotFoundException:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.NotFoundException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Exceptions\NotFoundException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException }
 
     ezpublish_rest.output.value_object_visitor.UnauthorizedException:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.UnauthorizedException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Exceptions\UnauthorizedException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException }
 
     ezpublish_rest.output.value_object_visitor.BadStateException:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.BadStateException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Exceptions\BadStateException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Exceptions\BadStateException }
 
     ezpublish_rest.output.value_object_visitor.BadRequestException:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -190,7 +190,7 @@ services:
         class: "%ezpublish_rest.output.value_object_visitor.NotImplementedException.class%"
         arguments: [ "%kernel.debug%", "@translator" ]
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Exceptions\NotImplementedException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException }
 
     ezpublish_rest.output.value_object_visitor.Exception:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -210,7 +210,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\Language
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Language }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Language }
 
     # Section
     ezpublish_rest.output.value_object_visitor.SectionList:
@@ -229,7 +229,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Section.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Section }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Section }
 
     # URLWildcard
     ezpublish_rest.output.value_object_visitor.URLWildcardList:
@@ -242,7 +242,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.URLWildcard.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\URLWildcard }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\URLWildcard }
 
     ezpublish_rest.output.value_object_visitor.CreatedURLWildcard:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -267,7 +267,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.URLAlias.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\URLAlias }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\URLAlias }
 
     ezpublish_rest.output.value_object_visitor.CreatedURLAlias:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -280,7 +280,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\Author
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\Core\FieldType\Author\Author }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Core\FieldType\Author\Author }
 
     ezpublish_rest.output.value_object_visitor.ContentList:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -319,13 +319,13 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.VersionInfo.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\VersionInfo }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo }
 
     ezpublish_rest.output.value_object_visitor.ImageVariation:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ImageVariation.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\SPI\Variation\Values\ImageVariation }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Variation\Values\ImageVariation }
 
     ezpublish_rest.output.value_object_visitor.Version:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -347,7 +347,7 @@ services:
         arguments:
             $contentService: '@ezpublish.api.service.content'
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\UserGroup }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\User\UserGroup }
 
     ezpublish_rest.output.value_object_visitor.RestUserGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -398,7 +398,7 @@ services:
         arguments:
             $contentService: '@ezpublish.api.service.content'
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\User }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\User\User }
 
     ezpublish_rest.output.value_object_visitor.RestUser:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -428,7 +428,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\ContentType
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\ContentType\ContentType }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType }
 
     ezpublish_rest.output.value_object_visitor.RestContentType:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -458,7 +458,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ContentTypeGroup.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroup }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroup }
 
     ezpublish_rest.output.value_object_visitor.CreatedContentTypeGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -540,15 +540,15 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Role.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\Role }
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\RoleDraft }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\User\Role }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\User\RoleDraft }
 
     ezpublish_rest.output.value_object_visitor.Policy:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Policy.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\Policy }
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\User\PolicyDraft }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\User\Policy }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\User\PolicyDraft }
 
     ezpublish_rest.output.value_object_visitor.CreatedPolicy:
         parent: ezpublish_rest.output.value_object_visitor.base
@@ -597,7 +597,7 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.Location.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Location }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Location }
         arguments: ["@ezpublish.api.service.location"]
 
     ezpublish_rest.output.value_object_visitor.LocationList:
@@ -633,38 +633,38 @@ services:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\Range
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Range }
 
     ezpublish_rest.output.value_object_visitor.RangeAggregationResult:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\RangeAggregationResult
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\RangeAggregationResult }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\RangeAggregationResult }
 
     ezpublish_rest.output.value_object_visitor.StatsAggregationResult:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\StatsAggregationResult
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\StatsAggregationResult }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\StatsAggregationResult }
 
     ezpublish_rest.output.value_object_visitor.TermAggregationResult:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\TermAggregationResult
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\TermAggregationResult }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\TermAggregationResult }
 
     # Object state
     ezpublish_rest.output.value_object_visitor.ObjectState:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: Ibexa\Rest\Server\Output\ValueObjectVisitor\ObjectState
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\ObjectState\ObjectState }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectState }
 
     ezpublish_rest.output.value_object_visitor.ObjectStateGroup:
         parent: ezpublish_rest.output.value_object_visitor.base
         class: "%ezpublish_rest.output.value_object_visitor.ObjectStateGroup.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroup }
+            - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroup }
 
     ezpublish_rest.output.value_object_visitor.CreatedObjectStateGroup:
         parent: ezpublish_rest.output.value_object_visitor.base

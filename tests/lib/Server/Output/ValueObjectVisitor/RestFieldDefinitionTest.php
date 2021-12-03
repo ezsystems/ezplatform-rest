@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Core\Repository\Values;
 use Ibexa\Rest\Output\FieldTypeSerializer;
 use Ibexa\Rest\Server;
-use eZ\Publish\Core\Repository\Values;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
 {
@@ -119,7 +119,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
         ];
 
         return array_map(
-            function ($xpath) {
+            static function ($xpath) {
                 return [$xpath];
             },
             $xpathAssertions
@@ -141,7 +141,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Content visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestFieldDefinition
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestFieldDefinition
      */
     protected function internalGetVisitor()
     {

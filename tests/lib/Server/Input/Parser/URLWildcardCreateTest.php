@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use Ibexa\Rest\Server\Input\Parser\URLWildcardCreate;
 use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\URLWildcardCreate;
 
 class URLWildcardCreateTest extends BaseTest
 {
@@ -87,7 +87,7 @@ class URLWildcardCreateTest extends BaseTest
     /**
      * Returns the URLWildcard input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\URLWildcardCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\URLWildcardCreate
      */
     protected function internalGetParser()
     {

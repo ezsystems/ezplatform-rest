@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentTypeGroup;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\ContentTypeGroup;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\ContentTypeGroupRefList;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class ContentTypeGroupRefListTest extends ValueObjectVisitorBaseTest
 {
@@ -204,7 +204,7 @@ class ContentTypeGroupRefListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the ContentTypeGroupRefList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ContentTypeGroupRefList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ContentTypeGroupRefList
      */
     protected function internalGetVisitor()
     {

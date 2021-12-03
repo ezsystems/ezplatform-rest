@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Input;
@@ -17,7 +17,7 @@ class ParsingDispatcherTest extends TestCase
 {
     public function testParseMissingContentType()
     {
-        $this->expectException(\EzSystems\EzPlatformRest\Exceptions\Parser::class);
+        $this->expectException(\Ibexa\Contracts\Rest\Exceptions\Parser::class);
 
         $dispatcher = new ParsingDispatcher();
 
@@ -96,7 +96,7 @@ class ParsingDispatcherTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\Input\Parser|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Contracts\Rest\Input\Parser|\PHPUnit\Framework\MockObject\MockObject
      */
     private function createParserMock()
     {

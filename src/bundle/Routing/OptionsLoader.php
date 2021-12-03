@@ -1,14 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Bundle\Rest\Routing;
 
-use Symfony\Component\Config\Loader\Loader;
 use Ibexa\Bundle\Rest\Routing\OptionsLoader\RouteCollectionMapper;
-use Symfony\Component\Routing\RouteCollection;
+use Symfony\Component\Config\Loader\Loader;
 
 /**
  * Goes through all REST routes, and registers new routes for all routes
@@ -28,7 +27,7 @@ class OptionsLoader extends Loader
      * @param mixed $resource
      * @param string $type
      *
-     * @return RouteCollection
+     * @return \Symfony\Component\Routing\RouteCollection
      */
     public function load($resource, $type = null)
     {

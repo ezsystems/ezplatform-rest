@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Output\Generator;
 
 use Ibexa\Contracts\Rest\Output\Exceptions\OutputGeneratorException;
-use Ibexa\Tests\Rest\Output\GeneratorTest;
 use Ibexa\Rest\Output\Generator\Json;
 use Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator;
+use Ibexa\Tests\Rest\Output\GeneratorTest;
 
 require_once __DIR__ . '/../GeneratorTest.php';
 

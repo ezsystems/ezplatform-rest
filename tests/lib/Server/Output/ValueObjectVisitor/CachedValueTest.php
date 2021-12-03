@@ -1,16 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\CachedValue;
-use PHPUnit\Framework\MockObject\MockObject;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use stdClass;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -26,7 +25,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     ];
 
     /**
-     * @var Request
+     * @var \Symfony\Component\HttpFoundation\Request
      */
     protected $request;
 
@@ -139,7 +138,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     /**
      * Must return an instance of the tested visitor object.
      *
-     * @return \EzSystems\EzPlatformRest\Output\ValueObjectVisitor
+     * @return \Ibexa\Contracts\Rest\Output\ValueObjectVisitor
      */
     protected function internalGetVisitor()
     {
@@ -156,7 +155,7 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @return ConfigResolverInterface|MockObject
+     * @return \Ibexa\Core\MVC\ConfigResolverInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getConfigProviderMock()
     {
@@ -167,17 +166,17 @@ class CachedValueTest extends ValueObjectVisitorBaseTest
             ->expects($this->any())
             ->method('hasParameter')
             ->willReturnCallback(
-                    function ($parameterName) use ($options) {
-                        return isset($options[$parameterName]);
-                    }
+                static function ($parameterName) use ($options) {
+                    return isset($options[$parameterName]);
+                }
             );
         $mock
             ->expects($this->any())
             ->method('getParameter')
             ->willReturnCallback(
-                    function ($parameterName, $defaultValue) use ($options) {
-                        return isset($options[$parameterName]) ? $options[$parameterName] : $defaultValue;
-                    }
+                static function ($parameterName, $defaultValue) use ($options) {
+                    return isset($options[$parameterName]) ? $options[$parameterName] : $defaultValue;
+                }
             );
 
         return $mock;

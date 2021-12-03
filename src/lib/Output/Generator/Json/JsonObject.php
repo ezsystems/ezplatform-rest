@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Output\Generator\Json;
@@ -17,7 +17,7 @@ class JsonObject
     /**
      * Reference to the parent node.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
+     * @var \Ibexa\Rest\Output\Generator\Json\JsonObject
      */
     protected $_ref_parent;
 
@@ -34,7 +34,7 @@ class JsonObject
     /**
      * Get Parent of current node.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
+     * @return \Ibexa\Rest\Output\Generator\Json\JsonObject
      */
     public function getParent()
     {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
@@ -19,9 +19,9 @@ class PublishedRole extends Role
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \EzSystems\EzPlatformRest\Server\Values\PublishedRole $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Rest\Server\Values\PublishedRole $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content\Location;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\RestContent;
 use Ibexa\Rest\Server\Values\RestLocation;
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
 
 class RestLocationRootNodeTest extends RestLocationTest
 {
@@ -248,7 +248,7 @@ class RestLocationRootNodeTest extends RestLocationTest
     /**
      * Get the Location visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestLocation
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestLocation
      */
     protected function internalGetVisitor()
     {

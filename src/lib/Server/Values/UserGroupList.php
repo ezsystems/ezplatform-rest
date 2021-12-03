@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Values;
@@ -16,7 +16,7 @@ class UserGroupList extends RestValue
     /**
      * User groups.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[]
+     * @var \Ibexa\Rest\Server\Values\RestUserGroup[]
      */
     public $userGroups;
 
@@ -30,7 +30,7 @@ class UserGroupList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[] $userGroups
+     * @param \Ibexa\Rest\Server\Values\RestUserGroup[] $userGroups
      * @param string $path
      */
     public function __construct(array $userGroups, $path)

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\Content\Content;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use eZ\Publish\API\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -20,27 +20,27 @@ use Ibexa\Rest\Value as RestValue;
 class RestContent extends RestValue
 {
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\ContentInfo
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo
      */
     public $contentInfo;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\Location
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Location
      */
     public $mainLocation;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\Content
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Content
      */
     public $currentVersion;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\ContentType\ContentType
+     * @var \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType
      */
     public $contentType;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\Relation[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Relation[]
      */
     public $relations;
 
@@ -54,11 +54,11 @@ class RestContent extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\ContentInfo $contentInfo
-     * @param \eZ\Publish\API\Repository\Values\Content\Location|null $mainLocation
-     * @param \eZ\Publish\API\Repository\Values\Content\Content|null $currentVersion
-     * @param \eZ\Publish\API\Repository\Values\ContentType\ContentType|null $contentType Can only be null if $currentVersion is
-     * @param \eZ\Publish\API\Repository\Values\Content\Relation[]|null $relations Can only be null if $currentVersion is
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo $contentInfo
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Location|null $mainLocation
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Content|null $currentVersion
+     * @param \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType|null $contentType Can only be null if $currentVersion is
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Relation[]|null $relations Can only be null if $currentVersion is
      * @param string $path
      */
     public function __construct(

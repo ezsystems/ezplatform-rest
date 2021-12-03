@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use eZ\Publish\Core\Repository\Values\User\User;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Core\Repository\Values\User\User;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use Ibexa\Rest\Server\Values\UserRefList;
 use Ibexa\Rest\Server\Values\RestUser;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Repository\Values\Content\Location;
+use Ibexa\Rest\Server\Values\UserRefList;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class UserRefListTest extends ValueObjectVisitorBaseTest
 {
@@ -111,7 +111,7 @@ class UserRefListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the UserRefList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserRefList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\UserRefList
      */
     protected function internalGetVisitor()
     {

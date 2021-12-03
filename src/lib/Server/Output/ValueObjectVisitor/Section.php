@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Core\Repository\Values\Content\Section as SectionValue;
 use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
-use eZ\Publish\API\Repository\Values\Content\Section as SectionValue;
 
 /**
  * Section value object visitor.
@@ -19,9 +19,9 @@ class Section extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\Values\Content\Section $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Section $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {

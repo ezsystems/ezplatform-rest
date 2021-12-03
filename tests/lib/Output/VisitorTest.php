@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Output;
 
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher;
 use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher;
 use Ibexa\Contracts\Rest\Output\Visitor;
 use PHPUnit\Framework\TestCase;
 use stdClass;
@@ -84,7 +84,7 @@ class VisitorTest extends TestCase
     {
         $data = new stdClass();
 
-        /** @var \PHPUnit\Framework\MockObject\MockObject|Common\Output\Generator $generatorMock */
+        /** @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Rest\Output\Generator $generatorMock */
         $generatorMock = $this->getGeneratorMock();
 
         $valueObjectDispatcherMock = $this->getValueObjectDispatcherMock();
@@ -119,7 +119,7 @@ class VisitorTest extends TestCase
     /**
      * @todo This is a test for a feature that needs refactoring.
      *
-     * @see \EzSystems\EzPlatformRest\Output\Visitor::visit
+     * @see \Ibexa\Contracts\Rest\Output\Visitor::visit
      */
     public function testSetFilteredHeaders()
     {
@@ -217,7 +217,7 @@ class VisitorTest extends TestCase
     }
 
     /**
-     * @return Common\Output\ValueObjectVisitorDispatcher|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher|\PHPUnit\Framework\MockObject\MockObject
      */
     public function getValueObjectDispatcherMock()
     {

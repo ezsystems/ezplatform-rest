@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\User\User;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Contracts\Core\Repository\Values\User\User;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class UserSessionTest extends ValueObjectVisitorBaseTest
 {
@@ -229,7 +229,7 @@ class UserSessionTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Session visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\UserSession
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\UserSession
      */
     protected function internalGetVisitor()
     {

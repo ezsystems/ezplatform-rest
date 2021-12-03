@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content\TrashItem;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\RestContent;
 use Ibexa\Rest\Server\Values\RestTrashItem;
-use eZ\Publish\Core\Repository\Values\Content\TrashItem;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RestTrashItemTest extends ValueObjectVisitorBaseTest
 {
@@ -468,7 +468,7 @@ class RestTrashItemTest extends ValueObjectVisitorBaseTest
     /**
      * Get the TrashItem visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestTrashItem
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestTrashItem
      */
     protected function internalGetVisitor()
     {

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Input\Parser\SortClause;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
-use Ibexa\Rest\Input\BaseParser;
-use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Field as FieldSortClause;
 use Ibexa\Contracts\Rest\Exceptions;
-use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field as FieldSortClause;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
 
 class Field extends BaseParser
 {
@@ -18,9 +18,9 @@ class Field extends BaseParser
      * Parse input structure for Field sort clause.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Field
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {

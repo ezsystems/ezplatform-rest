@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Bundle\Rest\DependencyInjection;
 
-use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\ConfigurationProcessor;
+use Ibexa\Bundle\Core\DependencyInjection\Configuration\SiteAccessAware\ConfigurationProcessor;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -63,7 +63,7 @@ class IbexaRestExtension extends Extension implements PrependExtensionInterface
     private function prependRouterConfiguration(ContainerBuilder $container)
     {
         $config = ['router' => ['default_router' => ['non_siteaccess_aware_routes' => ['ezpublish_rest_']]]];
-        $container->prependExtensionConfig('ezpublish', $config);
+        $container->prependExtensionConfig('ibexa', $config);
     }
 }
 

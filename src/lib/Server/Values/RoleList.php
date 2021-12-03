@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Values;
@@ -16,7 +16,7 @@ class RoleList extends RestValue
     /**
      * Roles.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\Role[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\Role[]
      */
     public $roles;
 
@@ -30,7 +30,7 @@ class RoleList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\Role[] $roles
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\Role[] $roles
      * @param string $path
      */
     public function __construct(array $roles, $path)

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
+use Ibexa\Core\MVC\ConfigResolverInterface;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Service\ExpressionRouterRootResourceBuilder;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RootTest extends ValueObjectVisitorBaseTest
 {
@@ -182,7 +182,7 @@ class RootTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Role visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Root
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Root
      */
     protected function internalGetVisitor()
     {

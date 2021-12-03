@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\User\Role;
+use Ibexa\Contracts\Core\Repository\Values\User\Role;
 use Ibexa\Rest\Value as RestValue;
 
 /**
@@ -17,14 +17,14 @@ class RestRole extends RestValue
     /**
      * Holds internal role object.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\Role
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\Role
      */
     protected $innerRole;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\Role $role
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\Role $role
      */
     public function __construct(Role $role)
     {

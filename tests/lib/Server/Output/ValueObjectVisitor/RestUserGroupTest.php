@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
-use Ibexa\Rest\Server\Values\RestUserGroup;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Rest\Server\Values\RestUserGroup;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RestUserGroupTest extends ValueObjectVisitorBaseTest
 {
@@ -418,7 +418,7 @@ class RestUserGroupTest extends ValueObjectVisitorBaseTest
     /**
      * Get the UserGroup visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestUserGroup
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestUserGroup
      */
     protected function internalGetVisitor()
     {

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Tests\Rest\Output;
@@ -10,11 +10,11 @@ use Error;
 use Ibexa\Contracts\Rest\Output\Exceptions\InvalidTypeException;
 use Ibexa\Contracts\Rest\Output\Exceptions\NoVisitorFoundException;
 use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher;
 use Ibexa\Contracts\Rest\Output\Visitor;
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
-use stdClass;
 use PHPUnit\Framework\TestCase;
+use stdClass;
 
 /**
  * Visitor test.
@@ -22,12 +22,12 @@ use PHPUnit\Framework\TestCase;
 class ValueObjectVisitorDispatcherTest extends TestCase
 {
     /**
-     * @var \PHPUnit\Framework\MockObject\MockObject|Common\Output\Visitor
+     * @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Rest\Output\Visitor
      */
     private $outputVisitorMock;
 
     /**
-     * @var \PHPUnit\Framework\MockObject\MockObject|Common\Output\Generator
+     * @var \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Rest\Output\Generator
      */
     private $outputGeneratorMock;
 
@@ -111,7 +111,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @return Common\Output\ValueObjectVisitorDispatcher
+     * @return \Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher
      */
     private function getValueObjectDispatcher()
     {
@@ -123,7 +123,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|\EzSystems\EzPlatformRest\Output\ValueObjectVisitor
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Rest\Output\ValueObjectVisitor
      */
     private function getValueObjectVisitorMock()
     {
@@ -131,7 +131,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|Common\Output\Visitor
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Rest\Output\Visitor
      */
     private function getOutputVisitorMock()
     {
@@ -143,7 +143,7 @@ class ValueObjectVisitorDispatcherTest extends TestCase
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject|Common\Output\Generator
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Ibexa\Contracts\Rest\Output\Generator
      */
     private function getOutputGeneratorMock()
     {

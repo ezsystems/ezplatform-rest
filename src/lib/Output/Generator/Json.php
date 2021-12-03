@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Output\Generator;
@@ -23,7 +23,7 @@ class Json extends Generator
     /**
      * Generator for field type hash values.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator
+     * @var \Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator
      */
     protected $fieldTypeHashGenerator;
 
@@ -42,7 +42,7 @@ class Json extends Generator
     protected $vendor;
 
     /**
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator $fieldTypeHashGenerator
+     * @param \Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator $fieldTypeHashGenerator
      * @param string $vendor
      */
     public function __construct(Json\FieldTypeHashGenerator $fieldTypeHashGenerator, $vendor = 'vnd.ez.api')

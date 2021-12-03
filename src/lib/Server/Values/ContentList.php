@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Values;
@@ -16,7 +16,7 @@ class ContentList extends RestValue
     /**
      * Contents.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestContent[]
+     * @var \Ibexa\Rest\Server\Values\RestContent[]
      */
     public $contents;
 
@@ -30,7 +30,7 @@ class ContentList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestContent[] $contents
+     * @param \Ibexa\Rest\Server\Values\RestContent[] $contents
      * @param int $totalCount
      */
     public function __construct(array $contents, int $totalCount)

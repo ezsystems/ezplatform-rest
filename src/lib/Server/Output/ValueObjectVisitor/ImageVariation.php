@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Core\Variation\Values\ImageVariation as ImageVariationValue;
 use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
-use eZ\Publish\SPI\Variation\Values\ImageVariation as ImageVariationValue;
 
 class ImageVariation extends ValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\SPI\Variation\Values\ImageVariation $data
+     * @param \Ibexa\Contracts\Core\Variation\Values\ImageVariation $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
