@@ -6,11 +6,11 @@
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
+use Ibexa\Contracts\Core\Repository\Values;
 use Ibexa\Contracts\Core\Repository\Values\Content\URLAlias as URLAliasValue;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
-use Ibexa\Core\Repository\Values;
 
 /**
  * URLAlias value object visitor.

@@ -8,6 +8,7 @@ namespace Ibexa\Rest\Server\Controller;
 
 use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Exceptions as ApiExceptions;
 use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\Contracts\Core\Repository\PermissionResolver;
 use Ibexa\Contracts\Core\Repository\Repository;
@@ -20,7 +21,6 @@ use Ibexa\Contracts\Core\Repository\Values\User\UserGroupRoleAssignment;
 use Ibexa\Contracts\Core\Repository\Values\User\UserRoleAssignment;
 use Ibexa\Contracts\Rest\Exceptions\NotFoundException;
 use Ibexa\Core\Base\Exceptions\UnauthorizedException;
-use Ibexa\Core\Repository\Exceptions as ApiExceptions;
 use Ibexa\Rest\Message;
 use Ibexa\Rest\Server\Controller as RestController;
 use Ibexa\Rest\Server\Exceptions;

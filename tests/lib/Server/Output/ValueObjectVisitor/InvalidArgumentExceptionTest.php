@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 class InvalidArgumentExceptionTest extends ExceptionTest

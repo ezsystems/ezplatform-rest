@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Rest\Input;
 
+use Ibexa\Contracts\Core\Repository\Values;
 use Ibexa\Contracts\Rest\Exceptions;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Core\Repository\Values;
 use RuntimeException;
 
 /**
@@ -250,7 +250,7 @@ class ParserTools
                 return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\SectionLimitation();
 
             case Values\User\Limitation::SITEACCESS:
-                return new \Ibexa\Core\Repository\Values\User\Limitation\SiteaccessLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\SiteaccessLimitation();
 
             case Values\User\Limitation::STATE:
                 return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ObjectStateLimitation();
