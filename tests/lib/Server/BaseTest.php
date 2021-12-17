@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server;
+namespace Ibexa\Tests\Rest\Server;
 
 use PHPUnit\Framework\TestCase;
 
@@ -14,3 +14,5 @@ use PHPUnit\Framework\TestCase;
 abstract class BaseTest extends TestCase
 {
 }
+
+class_alias(BaseTest::class, 'EzSystems\EzPlatformRest\Tests\Server\BaseTest');

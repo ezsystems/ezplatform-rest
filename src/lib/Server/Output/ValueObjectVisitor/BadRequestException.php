@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 /**
  * BadRequestException value object visitor.
@@ -21,3 +21,5 @@ class BadRequestException extends Exception
         return 400;
     }
 }
+
+class_alias(BadRequestException::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BadRequestException');

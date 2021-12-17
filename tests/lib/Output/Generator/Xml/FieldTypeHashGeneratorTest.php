@@ -1,34 +1,35 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output\Generator\Xml;
+namespace Ibexa\Tests\Rest\Output\Generator\Xml;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Tests\Output\Generator\FieldTypeHashGeneratorBaseTest;
+use Ibexa\Rest\Output\Generator\Xml;
+use Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator;
+use Ibexa\Tests\Rest\Output\Generator\FieldTypeHashGeneratorBaseTest;
 
 class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
 {
     /**
      * Initializes the field type hash generator.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator
+     * @return \Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator
      */
     protected function initializeFieldTypeHashGenerator()
     {
-        return new EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator();
+        return new FieldTypeHashGenerator();
     }
 
     /**
      * Initializes the generator.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator
+     * @return \Ibexa\Contracts\Rest\Output\Generator
      */
     protected function initializeGenerator()
     {
-        $generator = new EzPlatformRest\Output\Generator\Xml(
+        $generator = new Xml(
             $this->getFieldTypeHashGenerator()
         );
         $generator->setFormatOutput(true);
@@ -36,3 +37,5 @@ class FieldTypeHashGeneratorTest extends FieldTypeHashGeneratorBaseTest
         return $generator;
     }
 }
+
+class_alias(FieldTypeHashGeneratorTest::class, 'EzSystems\EzPlatformRest\Tests\Output\Generator\Xml\FieldTypeHashGeneratorTest');

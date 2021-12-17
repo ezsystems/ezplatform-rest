@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use eZ\Publish\API\Repository\SectionService;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Core\Repository\SectionService;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
 
 /**
  * Parser for SectionInput.
@@ -19,14 +19,14 @@ class SectionInput extends BaseParser
     /**
      * Section service.
      *
-     * @var \eZ\Publish\API\Repository\SectionService
+     * @var \Ibexa\Contracts\Core\Repository\SectionService
      */
     protected $sectionService;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\SectionService $sectionService
+     * @param \Ibexa\Contracts\Core\Repository\SectionService $sectionService
      */
     public function __construct(SectionService $sectionService)
     {
@@ -37,9 +37,9 @@ class SectionInput extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\SectionCreateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\SectionCreateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -62,3 +62,5 @@ class SectionInput extends BaseParser
         return $sectionCreate;
     }
 }
+
+class_alias(SectionInput::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput');

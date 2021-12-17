@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output;
+namespace Ibexa\Tests\Rest\Output;
 
-use EzSystems\EzPlatformRest\Tests\AssertXmlTagTrait;
-use EzSystems\EzPlatformRest\Tests\Server;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\RequestParser;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Rest\Output\Generator;
+use Ibexa\Rest\RequestParser;
+use Ibexa\Tests\Rest\AssertXmlTagTrait;
+use Ibexa\Tests\Rest\Server;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -21,19 +21,19 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
     /**
      * Visitor mock.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Visitor
+     * @var \Ibexa\Contracts\Rest\Output\Visitor
      */
     protected $visitorMock;
 
     /**
      * Output generator.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Generator\Xml
+     * @var \Ibexa\Rest\Output\Generator\Xml
      */
     protected $generator;
 
     /**
-     * @var \EzSystems\EzPlatformRest\RequestParser
+     * @var \Ibexa\Rest\RequestParser
      */
     protected $requestParser;
 
@@ -56,7 +56,7 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
     /**
      * Gets the visitor mock.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Visitor|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Contracts\Rest\Output\Visitor|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getVisitorMock()
     {
@@ -88,7 +88,7 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
     /**
      * Gets the output generator.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Xml
+     * @return \Ibexa\Rest\Output\Generator\Xml
      */
     protected function getGenerator()
     {
@@ -137,7 +137,7 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Rest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestParser()
     {
@@ -222,7 +222,9 @@ abstract class ValueObjectVisitorBaseTest extends Server\BaseTest
     /**
      * Must return an instance of the tested visitor object.
      *
-     * @return \EzSystems\EzPlatformRest\Output\ValueObjectVisitor
+     * @return \Ibexa\Contracts\Rest\Output\ValueObjectVisitor
      */
     abstract protected function internalGetVisitor();
 }
+
+class_alias(ValueObjectVisitorBaseTest::class, 'EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest');

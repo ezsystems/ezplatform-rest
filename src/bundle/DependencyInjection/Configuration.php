@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\DependencyInjection;
+namespace Ibexa\Bundle\Rest\DependencyInjection;
 
-use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\Configuration as SiteAccessConfiguration;
+use Ibexa\Bundle\Core\DependencyInjection\Configuration\SiteAccessAware\Configuration as SiteAccessConfiguration;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 
 class Configuration extends SiteAccessConfiguration
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder('ez_publish_rest');
+        $treeBuilder = new TreeBuilder(IbexaRestExtension::EXTENSION_NAME);
 
         $this->addRestRootResourcesSection($treeBuilder->getRootNode());
 
@@ -34,3 +34,5 @@ class Configuration extends SiteAccessConfiguration
             ->end();
     }
 }
+
+class_alias(Configuration::class, 'EzSystems\EzPlatformRestBundle\DependencyInjection\Configuration');

@@ -1,28 +1,28 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\FacetBuilder;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\FacetBuilder;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentQuery as QueryParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\ContentTypeParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\CriterionParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\DateRangeParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\FieldParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\FieldRangeParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\LocationParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\SectionParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\TermParser;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\UserParser;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Server\Input\Parser\ContentQuery as QueryParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\ContentTypeParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\CriterionParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\DateRangeParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\FieldParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\FieldRangeParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\LocationParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\SectionParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\TermParser;
+use Ibexa\Rest\Server\Input\Parser\FacetBuilder\UserParser;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 abstract class FacetBuilderBaseTest extends BaseTest
 {
     /**
-     * @return \EzSystems\EzPlatformRest\Input\ParsingDispatcher
+     * @return \Ibexa\Contracts\Rest\Input\ParsingDispatcher
      */
     protected function getParsingDispatcher()
     {
@@ -79,10 +79,12 @@ abstract class FacetBuilderBaseTest extends BaseTest
     /**
      * Returns the query parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentQuery
+     * @return \Ibexa\Rest\Server\Input\Parser\ContentQuery
      */
     protected function internalGetParser()
     {
         return new QueryParser();
     }
 }
+
+class_alias(FacetBuilderBaseTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\FacetBuilder\FacetBuilderBaseTest');

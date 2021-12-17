@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Limitation;
+namespace Ibexa\Rest\Server\Input\Parser\Limitation;
 
-use eZ\Publish\API\Repository\Values;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Core\Repository\Values;
 
 /**
  * Generic limitation value parser.
@@ -22,7 +22,7 @@ class PathStringRouteBasedLimitationParser extends RouteBasedLimitationParser
     /**
      * Prefixes the value parsed by the parent with a '/'.
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser if the '_href' attribute doesn't end with a slash, since 6.4
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser if the '_href' attribute doesn't end with a slash, since 6.4
      *
      * @param $limitationValue
      *
@@ -37,3 +37,5 @@ class PathStringRouteBasedLimitationParser extends RouteBasedLimitationParser
         return '/' . ltrim(parent::parseIdFromHref($limitationValue), '/');
     }
 }
+
+class_alias(PathStringRouteBasedLimitationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser');

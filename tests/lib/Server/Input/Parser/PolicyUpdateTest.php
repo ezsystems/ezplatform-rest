@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation;
-use eZ\Publish\Core\Repository\RoleService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\PolicyUpdate;
-use eZ\Publish\Core\Repository\Values\User\PolicyUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\RoleService;
+use Ibexa\Core\Repository\Values\User\PolicyUpdateStruct;
+use Ibexa\Rest\Server\Input\Parser\PolicyUpdate;
 
 class PolicyUpdateTest extends BaseTest
 {
@@ -137,7 +137,7 @@ class PolicyUpdateTest extends BaseTest
     /**
      * Returns the PolicyUpdateStruct parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\PolicyUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\PolicyUpdate
      */
     protected function internalGetParser()
     {
@@ -150,7 +150,7 @@ class PolicyUpdateTest extends BaseTest
     /**
      * Get the role service mock object.
      *
-     * @return \eZ\Publish\API\Repository\RoleService
+     * @return \Ibexa\Contracts\Core\Repository\RoleService
      */
     protected function getRoleServiceMock()
     {
@@ -165,3 +165,5 @@ class PolicyUpdateTest extends BaseTest
         return $roleServiceMock;
     }
 }
+
+class_alias(PolicyUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\PolicyUpdateTest');

@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\SortClause;
+namespace Ibexa\Rest\Server\Input\Parser\SortClause;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
 
 class DataKeyValueObjectClass extends BaseParser
 {
@@ -45,9 +45,9 @@ class DataKeyValueObjectClass extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\ValueObject
+     * @return \Ibexa\Contracts\Core\Repository\Values\ValueObject
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -68,3 +68,5 @@ class DataKeyValueObjectClass extends BaseParser
         return new $this->valueObjectClass($direction);
     }
 }
+
+class_alias(DataKeyValueObjectClass::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass');

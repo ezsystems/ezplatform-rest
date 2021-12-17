@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * URLAlias list view model.
@@ -16,7 +16,7 @@ class URLAliasList extends RestValue
     /**
      * URL aliases.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\URLAlias[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias[]
      */
     public $urlAliases;
 
@@ -30,7 +30,7 @@ class URLAliasList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\URLAlias[] $urlAliases
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias[] $urlAliases
      * @param string $path
      */
     public function __construct(array $urlAliases, $path)
@@ -39,3 +39,5 @@ class URLAliasList extends RestValue
         $this->path = $path;
     }
 }
+
+class_alias(URLAliasList::class, 'EzSystems\EzPlatformRest\Server\Values\URLAliasList');

@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\Content;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * REST User, as received by /user/users/<ID>.
@@ -18,37 +18,37 @@ use EzSystems\EzPlatformRest\Value as RestValue;
 class RestUser extends RestValue
 {
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\Content
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Content
      */
     public $content;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\ContentType\ContentType
+     * @var \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType
      */
     public $contentType;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\ContentInfo
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo
      */
     public $contentInfo;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\Relation[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Relation[]
      */
     public $relations;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\Location
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Location
      */
     public $mainLocation;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\Content $content
-     * @param \eZ\Publish\API\Repository\Values\Content\ContentInfo $contentInfo
-     * @param \eZ\Publish\API\Repository\Values\Content\Location $mainLocation
-     * @param \eZ\Publish\API\Repository\Values\Content\Relation[] $relations
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Content $content
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo $contentInfo
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Location $mainLocation
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Relation[] $relations
      */
     public function __construct(Content $content, ContentType $contentType, ContentInfo $contentInfo, Location $mainLocation, array $relations)
     {
@@ -59,3 +59,5 @@ class RestUser extends RestValue
         $this->relations = $relations;
     }
 }
+
+class_alias(RestUser::class, 'EzSystems\EzPlatformRest\Server\Values\RestUser');

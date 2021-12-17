@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SortClause;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\SortClause;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\SortClause\Field;
-use EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field as FieldParser;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Field;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\SortClause\Field as FieldParser;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 class FieldTest extends BaseTest
 {
@@ -72,10 +72,12 @@ class FieldTest extends BaseTest
     /**
      * Returns the Field parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field
+     * @return \Ibexa\Rest\Server\Input\Parser\SortClause\Field
      */
     protected function internalGetParser()
     {
         return new FieldParser();
     }
 }
+
+class_alias(FieldTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SortClause\FieldTest');

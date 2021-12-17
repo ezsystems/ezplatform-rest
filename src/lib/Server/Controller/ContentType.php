@@ -1,26 +1,26 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
-use eZ\Publish\API\Repository\Exceptions\BadStateException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use eZ\Publish\API\Repository\Exceptions\ContentTypeValidationException;
-use eZ\Publish\API\Repository\Exceptions\ContentTypeFieldDefinitionValidationException;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Values;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
-use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
-use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupUpdateStruct;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Exceptions\BadStateException;
+use Ibexa\Contracts\Core\Repository\Exceptions\ContentTypeFieldDefinitionValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\ContentTypeValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType as APIContentType;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -31,14 +31,14 @@ class ContentType extends RestController
     /**
      * Content type service.
      *
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
+     * @param \Ibexa\Contracts\Core\Repository\ContentTypeService $contentTypeService
      */
     public function __construct(ContentTypeService $contentTypeService)
     {
@@ -48,9 +48,9 @@ class ContentType extends RestController
     /**
      * Creates a new content type group.
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedContentTypeGroup
+     * @return \Ibexa\Rest\Server\Values\CreatedContentTypeGroup
      */
     public function createContentTypeGroup(Request $request)
     {
@@ -77,9 +77,9 @@ class ContentType extends RestController
      *
      * @param $contentTypeGroupId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroup
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroup
      */
     public function updateContentTypeGroup($contentTypeGroupId, Request $request)
     {
@@ -107,7 +107,7 @@ class ContentType extends RestController
      *
      * @param string $contentTypeGroupId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ContentTypeList|\EzSystems\EzPlatformRest\Server\Values\ContentTypeInfoList
+     * @return \Ibexa\Rest\Server\Values\ContentTypeList|\Ibexa\Rest\Server\Values\ContentTypeInfoList
      */
     public function listContentTypesForGroup($contentTypeGroupId, Request $request)
     {
@@ -128,9 +128,9 @@ class ContentType extends RestController
      *
      * @param mixed $contentTypeGroupId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteContentTypeGroup($contentTypeGroupId)
     {
@@ -149,7 +149,7 @@ class ContentType extends RestController
     /**
      * Returns a list of all content type groups.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ContentTypeGroupList
+     * @return \Ibexa\Rest\Server\Values\ContentTypeGroupList
      */
     public function loadContentTypeGroupList(Request $request)
     {
@@ -178,7 +178,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeGroupId
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroup
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroup
      */
     public function loadContentTypeGroup($contentTypeGroupId)
     {
@@ -190,7 +190,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestContentType
+     * @return \Ibexa\Rest\Server\Values\RestContentType
      */
     public function loadContentType($contentTypeId)
     {
@@ -205,7 +205,7 @@ class ContentType extends RestController
     /**
      * Returns a list of content types.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ContentTypeList|\EzSystems\EzPlatformRest\Server\Values\ContentTypeInfoList
+     * @return \Ibexa\Rest\Server\Values\ContentTypeList|\Ibexa\Rest\Server\Values\ContentTypeInfoList
      */
     public function listContentTypes(Request $request)
     {
@@ -251,7 +251,7 @@ class ContentType extends RestController
     /**
      * Loads a content type by its identifier.
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentType
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType
      */
     public function loadContentTypeByIdentifier(Request $request)
     {
@@ -264,7 +264,7 @@ class ContentType extends RestController
     /**
      * Loads a content type by its remote ID.
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentType
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType
      */
     public function loadContentTypeByRemoteId(Request $request)
     {
@@ -279,10 +279,10 @@ class ContentType extends RestController
      *
      * @param $contentTypeGroupId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedContentType
+     * @return \Ibexa\Rest\Server\Values\CreatedContentType
      */
     public function createContentType($contentTypeGroupId, Request $request)
     {
@@ -344,7 +344,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
+     * @return \Ibexa\Rest\Server\Values\ResourceCreated
      */
     public function copyContentType($contentTypeId)
     {
@@ -365,9 +365,9 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedContentType
+     * @return \Ibexa\Rest\Server\Values\CreatedContentType
      */
     public function createContentTypeDraft($contentTypeId, Request $request)
     {
@@ -416,7 +416,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestContentType
+     * @return \Ibexa\Rest\Server\Values\RestContentType
      */
     public function loadContentTypeDraft($contentTypeId)
     {
@@ -433,9 +433,9 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestContentType
+     * @return \Ibexa\Rest\Server\Values\RestContentType
      */
     public function updateContentTypeDraft($contentTypeId, Request $request)
     {
@@ -471,10 +471,10 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedFieldDefinition
+     * @return \Ibexa\Rest\Server\Values\CreatedFieldDefinition
      */
     public function addContentTypeDraftFieldDefinition($contentTypeId, Request $request)
     {
@@ -520,7 +520,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\FieldDefinitionList
+     * @return \Ibexa\Rest\Server\Values\FieldDefinitionList
      *
      * @todo Check why this isn't in the specs
      */
@@ -540,9 +540,9 @@ class ContentType extends RestController
      * @param $contentTypeId
      * @param $fieldDefinitionId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestFieldDefinition
+     * @return \Ibexa\Rest\Server\Values\RestFieldDefinition
      */
     public function loadContentTypeFieldDefinition($contentTypeId, $fieldDefinitionId, Request $request)
     {
@@ -565,7 +565,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\FieldDefinitionList
+     * @return \Ibexa\Rest\Server\Values\FieldDefinitionList
      */
     public function loadContentTypeDraftFieldDefinitionList($contentTypeId)
     {
@@ -583,9 +583,9 @@ class ContentType extends RestController
      * @param $contentTypeId
      * @param $fieldDefinitionId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestFieldDefinition
+     * @return \Ibexa\Rest\Server\Values\RestFieldDefinition
      */
     public function loadContentTypeDraftFieldDefinition($contentTypeId, $fieldDefinitionId, Request $request)
     {
@@ -609,10 +609,10 @@ class ContentType extends RestController
      * @param $contentTypeId
      * @param $fieldDefinitionId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\FieldDefinitionList
+     * @return \Ibexa\Rest\Server\Values\FieldDefinitionList
      */
     public function updateContentTypeDraftFieldDefinition($contentTypeId, $fieldDefinitionId, Request $request)
     {
@@ -665,9 +665,9 @@ class ContentType extends RestController
      * @param $contentTypeId
      * @param $fieldDefinitionId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function removeContentTypeDraftFieldDefinition($contentTypeId, $fieldDefinitionId, Request $request)
     {
@@ -697,9 +697,9 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestContentType
+     * @return \Ibexa\Rest\Server\Values\RestContentType
      */
     public function publishContentTypeDraft($contentTypeId)
     {
@@ -725,9 +725,9 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteContentType($contentTypeId)
     {
@@ -747,7 +747,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteContentTypeDraft($contentTypeId)
     {
@@ -762,7 +762,7 @@ class ContentType extends RestController
      *
      * @param $contentTypeId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ContentTypeGroupRefList
+     * @return \Ibexa\Rest\Server\Values\ContentTypeGroupRefList
      */
     public function loadGroupsOfContentType($contentTypeId)
     {
@@ -779,10 +779,10 @@ class ContentType extends RestController
      *
      * @param mixed $contentTypeId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ContentTypeGroupRefList
+     * @return \Ibexa\Rest\Server\Values\ContentTypeGroupRefList
      */
     public function linkContentTypeToGroup($contentTypeId, Request $request)
     {
@@ -832,10 +832,10 @@ class ContentType extends RestController
      * @param $contentTypeId
      * @param $contentTypeGroupId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ContentTypeGroupRefList
+     * @return \Ibexa\Rest\Server\Values\ContentTypeGroupRefList
      */
     public function unlinkContentTypeFromGroup($contentTypeId, $contentTypeGroupId)
     {
@@ -875,9 +875,9 @@ class ContentType extends RestController
     /**
      * Converts the provided ContentTypeGroupCreateStruct to ContentTypeGroupUpdateStruct.
      *
-     * @param \eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct $createStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupCreateStruct $createStruct
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupUpdateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupUpdateStruct
      */
     private function mapToGroupUpdateStruct(ContentTypeGroupCreateStruct $createStruct)
     {
@@ -896,7 +896,7 @@ class ContentType extends RestController
      *
      * @return mixed
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException
      */
     protected function sortContentTypeList(array &$contentTypes, $orderby, $sort = 'asc')
     {
@@ -905,14 +905,14 @@ class ContentType extends RestController
                 if ($sort === 'asc' || $sort === null) {
                     usort(
                         $contentTypes,
-                        function (APIContentType $contentType1, APIContentType $contentType2) {
+                        static function (APIContentType $contentType1, APIContentType $contentType2) {
                             return strcasecmp($contentType1->identifier, $contentType2->identifier);
                         }
                     );
                 } elseif ($sort === 'desc') {
                     usort(
                         $contentTypes,
-                        function (APIContentType $contentType1, APIContentType $contentType2) {
+                        static function (APIContentType $contentType1, APIContentType $contentType2) {
                             return strcasecmp($contentType1->identifier, $contentType2->identifier) * -1;
                         }
                     );
@@ -924,7 +924,7 @@ class ContentType extends RestController
                 if ($sort === 'asc' || $sort === null) {
                     usort(
                         $contentTypes,
-                        function ($timeObj3, $timeObj4) {
+                        static function ($timeObj3, $timeObj4) {
                             $timeObj3 = strtotime($timeObj3->modificationDate->format('Y-m-d H:i:s'));
                             $timeObj4 = strtotime($timeObj4->modificationDate->format('Y-m-d H:i:s'));
 
@@ -934,7 +934,7 @@ class ContentType extends RestController
                 } elseif ($sort === 'desc') {
                     usort(
                         $contentTypes,
-                        function ($timeObj3, $timeObj4) {
+                        static function ($timeObj3, $timeObj4) {
                             $timeObj3 = strtotime($timeObj3->modificationDate->format('Y-m-d H:i:s'));
                             $timeObj4 = strtotime($timeObj4->modificationDate->format('Y-m-d H:i:s'));
 
@@ -967,3 +967,5 @@ class ContentType extends RestController
         return $contentTypes;
     }
 }
+
+class_alias(ContentType::class, 'EzSystems\EzPlatformRest\Server\Controller\ContentType');

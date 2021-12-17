@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
-use eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation;
-use EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput;
-use EzSystems\EzPlatformRest\Server\Values\RoleAssignment;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\SectionLimitation;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\RoleAssignInput;
+use Ibexa\Rest\Server\Values\RoleAssignment;
 
 class RoleAssignInputTest extends BaseTest
 {
@@ -155,7 +155,7 @@ class RoleAssignInputTest extends BaseTest
     /**
      * Returns the role assign input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput
+     * @return \Ibexa\Rest\Server\Input\Parser\RoleAssignInput
      */
     protected function internalGetParser()
     {
@@ -171,3 +171,5 @@ class RoleAssignInputTest extends BaseTest
         ];
     }
 }
+
+class_alias(RoleAssignInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\RoleAssignInputTest');

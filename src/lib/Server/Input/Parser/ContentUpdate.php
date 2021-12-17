@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct;
 use DateTime;
 use Exception;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Values\RestContentMetadataUpdateStruct;
 
 /**
  * Parser for ContentUpdate.
@@ -24,11 +24,11 @@ class ContentUpdate extends BaseParser
      * @todo use url handler instead of hardcoded URL matching
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestContentMetadataUpdateStruct
+     * @return \Ibexa\Rest\Values\RestContentMetadataUpdateStruct
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser if $data is invalid
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser if $data is invalid
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -99,3 +99,5 @@ class ContentUpdate extends BaseParser
         return new RestContentMetadataUpdateStruct($parsedData);
     }
 }
+
+class_alias(ContentUpdate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\ContentUpdate');

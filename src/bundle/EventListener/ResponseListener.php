@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\EventListener;
+namespace Ibexa\Bundle\Rest\EventListener;
 
-use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
-use Symfony\Component\HttpKernel\Event\ViewEvent;
-use Symfony\Component\HttpKernel\KernelEvents;
+use Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\Event\ViewEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * REST Response Listener.
@@ -20,7 +20,7 @@ use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 class ResponseListener implements EventSubscriberInterface
 {
     /**
-     * @var AcceptHeaderVisitorDispatcher
+     * @var \Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher
      */
     private $viewDispatcher;
 
@@ -82,3 +82,5 @@ class ResponseListener implements EventSubscriberInterface
         $event->stopPropagation();
     }
 }
+
+class_alias(ResponseListener::class, 'EzSystems\EzPlatformRestBundle\EventListener\ResponseListener');

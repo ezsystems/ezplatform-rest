@@ -1,43 +1,43 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Rest\Input;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Rest\FieldTypeProcessorRegistry;
 
 class FieldTypeParser
 {
     /**
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
-     * @var \eZ\Publish\API\Repository\FieldTypeService
+     * @var \Ibexa\Contracts\Core\Repository\FieldTypeService
      */
     protected $fieldTypeService;
 
     /**
-     * @var \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry
+     * @var \Ibexa\Rest\FieldTypeProcessorRegistry
      */
     protected $fieldTypeProcessorRegistry;
 
     /**
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
-     * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \eZ\Publish\API\Repository\FieldTypeService $fieldTypeService
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
+     * @param \Ibexa\Contracts\Core\Repository\ContentTypeService $contentTypeService
+     * @param \Ibexa\Contracts\Core\Repository\FieldTypeService $fieldTypeService
+     * @param \Ibexa\Rest\FieldTypeProcessorRegistry $fieldTypeProcessorRegistry
      */
     public function __construct(
         ContentService $contentService,
@@ -134,3 +134,5 @@ class FieldTypeParser
         return $fieldType->validatorConfigurationFromHash($configurationHash);
     }
 }
+
+class_alias(FieldTypeParser::class, 'EzSystems\EzPlatformRest\Input\FieldTypeParser');

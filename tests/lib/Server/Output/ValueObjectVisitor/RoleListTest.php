@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\User\Role;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Values\RoleList;
-use eZ\Publish\Core\Repository\Values\User;
+use Ibexa\Contracts\Core\Repository\Values\User\Role;
+use Ibexa\Core\Repository\Values\User;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\RoleList;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RoleListTest extends ValueObjectVisitorBaseTest
 {
@@ -115,10 +115,12 @@ class RoleListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the RoleList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RoleList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RoleList
      */
     protected function internalGetVisitor()
     {
         return new ValueObjectVisitor\RoleList();
     }
 }
+
+class_alias(RoleListTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\RoleListTest');

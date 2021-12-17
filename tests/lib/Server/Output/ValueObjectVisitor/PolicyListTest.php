@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\User\Policy;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Values\PolicyList;
-use eZ\Publish\Core\Repository\Values\User;
+use Ibexa\Contracts\Core\Repository\Values\User\Policy;
+use Ibexa\Core\Repository\Values\User;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\PolicyList;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class PolicyListTest extends ValueObjectVisitorBaseTest
 {
@@ -115,10 +115,12 @@ class PolicyListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the PolicyList visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\PolicyList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\PolicyList
      */
     protected function internalGetVisitor()
     {
         return new ValueObjectVisitor\PolicyList();
     }
 }
+
+class_alias(PolicyListTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\PolicyListTest');

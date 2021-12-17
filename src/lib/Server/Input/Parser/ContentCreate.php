@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Input\ParserTools;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct;
 use DateTime;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Input\ParserTools;
+use Ibexa\Rest\Server\Values\RestContentCreateStruct;
 
 /**
  * Parser for ContentCreate.
@@ -24,46 +24,46 @@ class ContentCreate extends BaseParser
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
      * ContentType service.
      *
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
      * FieldType parser.
      *
-     * @var \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @var \Ibexa\Rest\Input\FieldTypeParser
      */
     protected $fieldTypeParser;
 
     /**
      * LocationCreate parser.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate
+     * @var \Ibexa\Rest\Server\Input\Parser\LocationCreate
      */
     protected $locationCreateParser;
 
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
-     * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \EzSystems\EzPlatformRest\Input\FieldTypeParser $fieldTypeParser
-     * @param \EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate $locationCreateParser
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
+     * @param \Ibexa\Contracts\Core\Repository\ContentTypeService $contentTypeService
+     * @param \Ibexa\Rest\Input\FieldTypeParser $fieldTypeParser
+     * @param \Ibexa\Rest\Server\Input\Parser\LocationCreate $locationCreateParser
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(
         ContentService $contentService,
@@ -83,9 +83,9 @@ class ContentCreate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct
+     * @return \Ibexa\Rest\Server\Values\RestContentCreateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -161,8 +161,10 @@ class ContentCreate extends BaseParser
                 throw new Exceptions\Parser("Missing 'fieldValue' element for the '{$fieldData['fieldDefinitionIdentifier']}' identifier in ContentCreate.");
             }
 
-            $fieldValue = $this->fieldTypeParser->parseValue($fieldDefinition->fieldTypeIdentifier,
-                $fieldData['fieldValue']);
+            $fieldValue = $this->fieldTypeParser->parseValue(
+                $fieldDefinition->fieldTypeIdentifier,
+                $fieldData['fieldValue']
+            );
 
             $languageCode = null;
             if (array_key_exists('languageCode', $fieldData)) {
@@ -175,3 +177,5 @@ class ContentCreate extends BaseParser
         return new RestContentCreateStruct($contentCreateStruct, $locationCreateStruct);
     }
 }
+
+class_alias(ContentCreate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\ContentCreate');

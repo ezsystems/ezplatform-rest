@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\TrashService;
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\TrashService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
 use InvalidArgumentException;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -24,22 +24,22 @@ class Trash extends RestController
     /**
      * Trash service.
      *
-     * @var \eZ\Publish\API\Repository\TrashService
+     * @var \Ibexa\Contracts\Core\Repository\TrashService
      */
     protected $trashService;
 
     /**
      * Location service.
      *
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\TrashService $trashService
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
+     * @param \Ibexa\Contracts\Core\Repository\TrashService $trashService
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
      */
     public function __construct(TrashService $trashService, LocationService $locationService)
     {
@@ -50,7 +50,7 @@ class Trash extends RestController
     /**
      * Returns a list of all trash items.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\Trash
+     * @return \Ibexa\Rest\Server\Values\Trash
      */
     public function loadTrashItems(Request $request)
     {
@@ -81,7 +81,7 @@ class Trash extends RestController
      *
      * @param $trashItemId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestTrashItem
+     * @return \Ibexa\Rest\Server\Values\RestTrashItem
      */
     public function loadTrashItem($trashItemId)
     {
@@ -94,7 +94,7 @@ class Trash extends RestController
     /**
      * Empties the trash.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function emptyTrash()
     {
@@ -108,7 +108,7 @@ class Trash extends RestController
      *
      * @param $trashItemId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteTrashItem($trashItemId)
     {
@@ -124,9 +124,9 @@ class Trash extends RestController
      *
      * @param $trashItemId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
+     * @return \Ibexa\Rest\Server\Values\ResourceCreated
      */
     public function restoreTrashItem($trashItemId, Request $request)
     {
@@ -175,3 +175,5 @@ class Trash extends RestController
         );
     }
 }
+
+class_alias(Trash::class, 'EzSystems\EzPlatformRest\Server\Controller\Trash');

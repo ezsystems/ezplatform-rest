@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\LocationService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate;
-use eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct;
-use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Server\Values\RestLocationUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\LocationService;
+use Ibexa\Rest\Server\Input\Parser\LocationUpdate;
+use Ibexa\Rest\Server\Values\RestLocationUpdateStruct;
 
 class LocationUpdateTest extends BaseTest
 {
@@ -134,7 +134,7 @@ class LocationUpdateTest extends BaseTest
     /**
      * Returns the LocationUpdateStruct parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\LocationUpdate
      */
     protected function internalGetParser()
     {
@@ -147,7 +147,7 @@ class LocationUpdateTest extends BaseTest
     /**
      * Get the location service mock object.
      *
-     * @return \eZ\Publish\API\Repository\LocationService
+     * @return \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected function getLocationServiceMock()
     {
@@ -162,3 +162,5 @@ class LocationUpdateTest extends BaseTest
         return $locationServiceMock;
     }
 }
+
+class_alias(LocationUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\LocationUpdateTest');

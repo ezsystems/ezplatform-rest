@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Values;
+namespace Ibexa\Rest\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * This class represents a resource.
@@ -48,3 +48,5 @@ class Resource extends RestValue
         $this->href = $href;
     }
 }
+
+class_alias(Resource::class, 'EzSystems\EzPlatformRest\Values\Resource');

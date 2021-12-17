@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ContentService;
-use eZ\Publish\Core\Repository\UserService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\FieldTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\UserUpdate;
-use eZ\Publish\API\Repository\Values\Content\ContentMetadataUpdateStruct;
-use eZ\Publish\API\Repository\Values\User\UserUpdateStruct;
-use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Server\Values\RestUserUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentMetadataUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\User\UserUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentService;
+use Ibexa\Core\Repository\UserService;
+use Ibexa\Core\Repository\Values\Content\ContentUpdateStruct;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\UserUpdate;
+use Ibexa\Rest\Server\Values\RestUserUpdateStruct;
 
 class UserUpdateTest extends BaseTest
 {
@@ -226,7 +226,7 @@ class UserUpdateTest extends BaseTest
     /**
      * Returns the UserUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\UserUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\UserUpdate
      */
     protected function internalGetParser()
     {
@@ -241,7 +241,7 @@ class UserUpdateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
+     * @return \Ibexa\Rest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {
@@ -268,7 +268,7 @@ class UserUpdateTest extends BaseTest
     /**
      * Get the user service mock object.
      *
-     * @return \eZ\Publish\API\Repository\UserService
+     * @return \Ibexa\Contracts\Core\Repository\UserService
      */
     protected function getUserServiceMock()
     {
@@ -286,7 +286,7 @@ class UserUpdateTest extends BaseTest
     /**
      * Get the Content service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentService
+     * @return \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected function getContentServiceMock()
     {
@@ -315,3 +315,5 @@ class UserUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(UserUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\UserUpdateTest');

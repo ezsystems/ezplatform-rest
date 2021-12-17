@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Values\RestObjectState;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\ObjectStateService;
-use eZ\Publish\API\Repository\ContentService;
-use EzSystems\EzPlatformRest\Values\ContentObjectStates;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\ObjectStateService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Values\ContentObjectStates;
+use Ibexa\Rest\Values\RestObjectState;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -27,22 +27,22 @@ class ObjectState extends RestController
     /**
      * ObjectState service.
      *
-     * @var \eZ\Publish\API\Repository\ObjectStateService
+     * @var \Ibexa\Contracts\Core\Repository\ObjectStateService
      */
     protected $objectStateService;
 
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\ObjectStateService $objectStateService
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
+     * @param \Ibexa\Contracts\Core\Repository\ObjectStateService $objectStateService
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
      */
     public function __construct(ObjectStateService $objectStateService, ContentService $contentService)
     {
@@ -53,9 +53,9 @@ class ObjectState extends RestController
     /**
      * Creates a new object state group.
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedObjectStateGroup
+     * @return \Ibexa\Rest\Server\Values\CreatedObjectStateGroup
      */
     public function createObjectStateGroup(Request $request)
     {
@@ -84,9 +84,9 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedObjectState
+     * @return \Ibexa\Rest\Server\Values\CreatedObjectState
      */
     public function createObjectState($objectStateGroupId, Request $request)
     {
@@ -121,7 +121,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @return \eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroup
+     * @return \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroup
      */
     public function loadObjectStateGroup($objectStateGroupId)
     {
@@ -134,7 +134,7 @@ class ObjectState extends RestController
      * @param $objectStateGroupId
      * @param $objectStateId
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestObjectState
+     * @return \Ibexa\Rest\Values\RestObjectState
      */
     public function loadObjectState($objectStateGroupId, $objectStateId)
     {
@@ -147,7 +147,7 @@ class ObjectState extends RestController
     /**
      * Returns a list of all object state groups.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ObjectStateGroupList
+     * @return \Ibexa\Rest\Server\Values\ObjectStateGroupList
      */
     public function loadObjectStateGroups()
     {
@@ -161,7 +161,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ObjectStateList
+     * @return \Ibexa\Rest\Server\Values\ObjectStateList
      */
     public function loadObjectStates($objectStateGroupId)
     {
@@ -178,7 +178,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteObjectStateGroup($objectStateGroupId)
     {
@@ -194,7 +194,7 @@ class ObjectState extends RestController
      *
      * @param $objectStateId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteObjectState($objectStateId)
     {
@@ -210,9 +210,9 @@ class ObjectState extends RestController
      *
      * @param $objectStateGroupId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\API\Repository\Values\ObjectState\ObjectStateGroup
+     * @return \Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateGroup
      */
     public function updateObjectStateGroup($objectStateGroupId, Request $request)
     {
@@ -240,9 +240,9 @@ class ObjectState extends RestController
      * @param $objectStateGroupId
      * @param $objectStateId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestObjectState
+     * @return \Ibexa\Rest\Values\RestObjectState
      */
     public function updateObjectState($objectStateGroupId, $objectStateId, Request $request)
     {
@@ -269,7 +269,7 @@ class ObjectState extends RestController
      *
      * @param $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Values\ContentObjectStates
+     * @return \Ibexa\Rest\Values\ContentObjectStates
      */
     public function getObjectStatesForContent($contentId)
     {
@@ -296,9 +296,9 @@ class ObjectState extends RestController
      *
      * @param $contentId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Values\ContentObjectStates
+     * @return \Ibexa\Rest\Values\ContentObjectStates
      */
     public function setObjectStatesForContent($contentId, Request $request)
     {
@@ -337,3 +337,5 @@ class ObjectState extends RestController
         return new ContentObjectStates($contentObjectStates);
     }
 }
+
+class_alias(ObjectState::class, 'EzSystems\EzPlatformRest\Server\Controller\ObjectState');

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output;
+namespace Ibexa\Contracts\Rest\Output;
 
 use Symfony\Component\HttpFoundation\Response;
 
@@ -14,21 +14,21 @@ use Symfony\Component\HttpFoundation\Response;
 class Visitor
 {
     /**
-     * @var \EzSystems\EzPlatformRest\Output\ValueObjectVisitorDispatcher
+     * @var \Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher
      */
     protected $valueObjectVisitorDispatcher = [];
 
     /**
      * Generator.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Generator
+     * @var \Ibexa\Contracts\Rest\Output\Generator
      */
     protected $generator;
 
     /**
      * HTTP Response Object.
      *
-     * @var Response
+     * @var \Symfony\Component\HttpFoundation\Response
      */
     protected $response;
 
@@ -42,8 +42,8 @@ class Visitor
     /**
      * Construct from Generator and an array of concrete view model visitors.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \EzSystems\EzPlatformRest\Output\ValueObjectVisitorDispatcher $valueObjectVisitorDispatcher
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher $valueObjectVisitorDispatcher
      *
      * @internal param array $visitors
      */
@@ -143,7 +143,7 @@ class Visitor
      *
      * @param string $type
      *
-     * @see \EzSystems\EzPlatformRest\Generator::getMediaType()
+     * @see \Ibexa\Rest\Generator::getMediaType()
      *
      * @return string
      */
@@ -153,10 +153,12 @@ class Visitor
     }
 
     /**
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function getResponse()
     {
         return $this->response;
     }
 }
+
+class_alias(Visitor::class, 'EzSystems\EzPlatformRest\Output\Visitor');

@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\Content\Location;
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
-use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentTypeCreateStruct;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeCreate;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\Values\ContentType\ContentTypeCreateStruct;
+use Ibexa\Rest\Server\Input\Parser\ContentTypeCreate;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
 
 class ContentTypeCreateTest extends BaseTest
 {
@@ -234,7 +234,7 @@ class ContentTypeCreateTest extends BaseTest
     /**
      * Returns the ContentTypeCreate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\ContentTypeCreate
      */
     protected function internalGetParser()
     {
@@ -248,7 +248,7 @@ class ContentTypeCreateTest extends BaseTest
     /**
      * Returns the FieldDefinitionCreate parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate
      */
     private function getFieldDefinitionCreateParserMock()
     {
@@ -265,7 +265,7 @@ class ContentTypeCreateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {
@@ -275,11 +275,11 @@ class ContentTypeCreateTest extends BaseTest
             ->method('newContentTypeCreateStruct')
             ->with($this->equalTo('new_content_type'))
             ->willReturn(
-                    new ContentTypeCreateStruct(
-                        [
+                new ContentTypeCreateStruct(
+                    [
                             'identifier' => 'new_content_type',
                         ]
-                    )
+                )
             );
 
         return $contentTypeServiceMock;
@@ -340,3 +340,5 @@ class ContentTypeCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(ContentTypeCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentTypeCreateTest');

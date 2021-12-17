@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output\Generator;
+namespace Ibexa\Rest\Output\Generator;
 
-use EzSystems\EzPlatformRest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\Generator;
 
 /**
  * Xml generator.
@@ -23,7 +23,7 @@ class Xml extends Generator
     /**
      * Generator for field type hash values.
      *
-     * @var \EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator
+     * @var \Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator
      */
     protected $hashGenerator;
 
@@ -42,7 +42,7 @@ class Xml extends Generator
     protected $vendor;
 
     /**
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator $hashGenerator
+     * @param \Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator $hashGenerator
      * @param string $vendor
      */
     public function __construct(Xml\FieldTypeHashGenerator $hashGenerator, $vendor = 'vnd.ez.api')
@@ -271,3 +271,5 @@ class Xml extends Generator
         return $boolValue ? 'true' : 'false';
     }
 }
+
+class_alias(Xml::class, 'EzSystems\EzPlatformRest\Output\Generator\Xml');

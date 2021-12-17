@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input;
+namespace Ibexa\Tests\Rest\Input;
 
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\FieldType;
-use eZ\Publish\API\Repository\FieldTypeService;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\FieldType;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Rest\FieldTypeProcessorRegistry;
+use Ibexa\Rest\Input\FieldTypeParser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -65,7 +65,7 @@ class FieldTypeParserTest extends TestCase
             ->with('42')
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($contentTypeMock) {
+                static function () use ($contentTypeMock) {
                     return $contentTypeMock;
                 }
             );
@@ -92,7 +92,7 @@ class FieldTypeParserTest extends TestCase
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -127,7 +127,7 @@ class FieldTypeParserTest extends TestCase
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -160,7 +160,7 @@ class FieldTypeParserTest extends TestCase
             ->method('getProcessor')
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
-                function () use ($processor) {
+                static function () use ($processor) {
                     return $processor;
                 }
             );
@@ -176,7 +176,7 @@ class FieldTypeParserTest extends TestCase
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -205,7 +205,7 @@ class FieldTypeParserTest extends TestCase
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -238,7 +238,7 @@ class FieldTypeParserTest extends TestCase
             ->method('getProcessor')
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
-                function () use ($processor) {
+                static function () use ($processor) {
                     return $processor;
                 }
             );
@@ -254,7 +254,7 @@ class FieldTypeParserTest extends TestCase
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -283,7 +283,7 @@ class FieldTypeParserTest extends TestCase
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -316,7 +316,7 @@ class FieldTypeParserTest extends TestCase
             ->method('getProcessor')
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
-                function () use ($processor) {
+                static function () use ($processor) {
                     return $processor;
                 }
             );
@@ -332,7 +332,7 @@ class FieldTypeParserTest extends TestCase
             ->with($this->equalTo('some-fancy-field-type'))
             ->willReturnCallback(
                 // Avoid PHPUnit cloning
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -361,3 +361,5 @@ class FieldTypeParserTest extends TestCase
         );
     }
 }
+
+class_alias(FieldTypeParserTest::class, 'EzSystems\EzPlatformRest\Tests\Input\FieldTypeParserTest');

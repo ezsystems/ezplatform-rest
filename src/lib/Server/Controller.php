@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server;
+namespace Ibexa\Rest\Server;
 
-use eZ\Publish\API\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Rest\Input\Dispatcher as InputDispatcher;
+use Ibexa\Rest\RequestParser;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-use Symfony\Component\Routing\RouterInterface;
-use EzSystems\EzPlatformRest\Input\Dispatcher as InputDispatcher;
 use Symfony\Component\HttpFoundation\Request;
-use EzSystems\EzPlatformRest\RequestParser;
+use Symfony\Component\Routing\RouterInterface;
 
 abstract class Controller implements ContainerAwareInterface
 {
     use ContainerAwareTrait;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Input\Dispatcher
+     * @var \Ibexa\Rest\Input\Dispatcher
      */
     protected $inputDispatcher;
 
@@ -29,14 +29,14 @@ abstract class Controller implements ContainerAwareInterface
     protected $router;
 
     /**
-     * @var \EzSystems\EzPlatformRest\RequestParser
+     * @var \Ibexa\Rest\RequestParser
      */
     protected $requestParser;
 
     /**
      * Repository.
      *
-     * @var \eZ\Publish\API\Repository\Repository
+     * @var \Ibexa\Contracts\Core\Repository\Repository
      */
     protected $repository;
 
@@ -78,3 +78,5 @@ abstract class Controller implements ContainerAwareInterface
         return 'unknown/unknown';
     }
 }
+
+class_alias(Controller::class, 'EzSystems\EzPlatformRest\Server\Controller');

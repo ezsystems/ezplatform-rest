@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
+namespace Ibexa\Tests\Rest\Output\Generator;
 
-use EzSystems\EzPlatformRest\Output\Exceptions\OutputGeneratorException;
-use EzSystems\EzPlatformRest\Tests\Output\GeneratorTest;
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator;
+use Ibexa\Contracts\Rest\Output\Exceptions\OutputGeneratorException;
+use Ibexa\Rest\Output\Generator\Json;
+use Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator;
+use Ibexa\Tests\Rest\Output\GeneratorTest;
 
 require_once __DIR__ . '/../GeneratorTest.php';
 
@@ -293,7 +293,7 @@ class JsonTest extends GeneratorTest
     protected function getGenerator()
     {
         if (!isset($this->generator)) {
-            $this->generator = new EzPlatformRest\Output\Generator\Json(
+            $this->generator = new Json(
                 $this->createMock(FieldTypeHashGenerator::class)
             );
         }
@@ -301,3 +301,5 @@ class JsonTest extends GeneratorTest
         return $this->generator;
     }
 }
+
+class_alias(JsonTest::class, 'EzSystems\EzPlatformRest\Tests\Output\Generator\JsonTest');

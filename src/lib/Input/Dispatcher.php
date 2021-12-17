@@ -1,13 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Rest\Input;
 
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\Handler;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Message;
 
 /**
  * Input dispatcher.
@@ -26,20 +28,20 @@ class Dispatcher
      *  )
      * </code>
      *
-     * @var \EzSystems\EzPlatformRest\Input\Handler[]
+     * @var \Ibexa\Contracts\Rest\Input\Handler[]
      */
     protected $handlers = [];
 
     /**
-     * @var \EzSystems\EzPlatformRest\Input\ParsingDispatcher
+     * @var \Ibexa\Contracts\Rest\Input\ParsingDispatcher
      */
     protected $parsingDispatcher;
 
     /**
      * Construct from optional parsers array.
      *
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
-     * @param \EzSystems\EzPlatformRest\Input\Handler[] $handlers
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\Handler[] $handlers
      */
     public function __construct(ParsingDispatcher $parsingDispatcher, array $handlers = [])
     {
@@ -53,7 +55,7 @@ class Dispatcher
      * Adds another handler for the given Content Type.
      *
      * @param string $type
-     * @param \EzSystems\EzPlatformRest\Input\Handler $handler
+     * @param \Ibexa\Contracts\Rest\Input\Handler $handler
      */
     public function addHandler($type, Handler $handler)
     {
@@ -63,7 +65,7 @@ class Dispatcher
     /**
      * Parse provided request.
      *
-     * @param \EzSystems\EzPlatformRest\Message $message
+     * @param \Ibexa\Rest\Message $message
      *
      * @return mixed
      */
@@ -124,3 +126,5 @@ class Dispatcher
         return $parameters;
     }
 }
+
+class_alias(Dispatcher::class, 'EzSystems\EzPlatformRest\Input\Dispatcher');

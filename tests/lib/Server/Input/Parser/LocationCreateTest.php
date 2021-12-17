@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\LocationService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate;
-use eZ\Publish\API\Repository\Values\Content\LocationCreateStruct;
-use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\LocationService;
+use Ibexa\Rest\Server\Input\Parser\LocationCreate;
 
 class LocationCreateTest extends BaseTest
 {
@@ -159,7 +159,7 @@ class LocationCreateTest extends BaseTest
     /**
      * Returns the LocationCreateStruct parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\LocationCreate
      */
     protected function internalGetParser()
     {
@@ -172,7 +172,7 @@ class LocationCreateTest extends BaseTest
     /**
      * Get the location service mock object.
      *
-     * @return \eZ\Publish\API\Repository\LocationService
+     * @return \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected function getLocationServiceMock()
     {
@@ -195,3 +195,5 @@ class LocationCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(LocationCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\LocationCreateTest');

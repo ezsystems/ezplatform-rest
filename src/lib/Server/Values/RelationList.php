@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * Relation list view model.
@@ -16,7 +16,7 @@ class RelationList extends RestValue
     /**
      * Relations.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Relation[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Relation[]
      */
     public $relations;
 
@@ -44,7 +44,7 @@ class RelationList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\Relation[] $relations
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Relation[] $relations
      * @param mixed $contentId
      * @param mixed $versionNo
      * @param string $path
@@ -57,3 +57,5 @@ class RelationList extends RestValue
         $this->path = $path;
     }
 }
+
+class_alias(RelationList::class, 'EzSystems\EzPlatformRest\Server\Values\RelationList');

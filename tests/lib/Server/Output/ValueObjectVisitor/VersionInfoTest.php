@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values\Content;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Core\Repository\Values\Content;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class VersionInfoTest extends ValueObjectVisitorBaseTest
 {
@@ -276,10 +276,12 @@ class VersionInfoTest extends ValueObjectVisitorBaseTest
     /**
      * Get the VersionInfo visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\VersionInfo
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\VersionInfo
      */
     protected function internalGetVisitor()
     {
         return new ValueObjectVisitor\VersionInfo();
     }
 }
+
+class_alias(VersionInfoTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\VersionInfoTest');

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Server\Values;
+use Ibexa\Rest\Server\Values;
 
 class UserSessionCreatedTest extends UserSessionTest
 {
@@ -65,3 +65,5 @@ class UserSessionCreatedTest extends UserSessionTest
         return $result;
     }
 }
+
+class_alias(UserSessionCreatedTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\UserSessionCreatedTest');

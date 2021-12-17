@@ -1,46 +1,44 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
+namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
 use Exception;
-use EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher;
-use PHPUnit\Framework\MockObject\MockObject;
+use Ibexa\Bundle\Rest\EventListener\ResponseListener;
+use Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher;
+use stdClass;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
-use Symfony\Component\HttpKernel\Event\ExceptionEvent;
-use EzSystems\EzPlatformRestBundle\EventListener\ResponseListener;
-use stdClass;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\KernelInterface;
-use Symfony\Contracts\EventDispatcher\Event;
 
 class ResponseListenerTest extends EventListenerTest
 {
-    /** @var AcceptHeaderVisitorDispatcher|MockObject */
+    /** @var \Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher|\PHPUnit\Framework\MockObject\MockObject */
     protected $visitorDispatcherMock;
 
     /** @var \stdClass */
     protected $eventValue;
 
-    /** @var Exception */
+    /** @var \Exception */
     protected $exceptionEventValue;
 
     protected $dispatcherMessage;
 
     protected $controllerResult;
 
-    /** @var Response */
+    /** @var \Symfony\Component\HttpFoundation\Response */
     protected $response;
 
-    /** @var Event */
+    /** @var \Symfony\Contracts\EventDispatcher\Event */
     protected $event;
 
-    /** @var KernelInterface|MockObject */
+    /** @var \Symfony\Component\HttpKernel\KernelInterface|\PHPUnit\Framework\MockObject\MockObject */
     protected $kernelMock;
 
     public function setUp(): void
@@ -114,7 +112,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return AcceptHeaderVisitorDispatcher|MockObject
+     * @return \Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher|\PHPUnit\Framework\MockObject\MockObject
      */
     public function getVisitorDispatcherMock()
     {
@@ -126,7 +124,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return ResponseListener
+     * @return \Ibexa\Bundle\Rest\EventListener\ResponseListener
      */
     protected function getEventListener()
     {
@@ -136,7 +134,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return ViewEvent
+     * @return \Symfony\Component\HttpKernel\Event\ViewEvent
      */
     protected function getControllerResultEvent(): ViewEvent
     {
@@ -153,7 +151,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|KernelInterface
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpKernel\KernelInterface
      */
     protected function getKernelMock(): KernelInterface
     {
@@ -165,7 +163,7 @@ class ResponseListenerTest extends EventListenerTest
     }
 
     /**
-     * @return ExceptionEvent
+     * @return \Symfony\Component\HttpKernel\Event\ExceptionEvent
      */
     protected function getExceptionEvent(): ExceptionEvent
     {
@@ -181,3 +179,5 @@ class ResponseListenerTest extends EventListenerTest
         return $this->event;
     }
 }
+
+class_alias(ResponseListenerTest::class, 'EzSystems\EzPlatformRestBundle\Tests\EventListener\ResponseListenerTest');

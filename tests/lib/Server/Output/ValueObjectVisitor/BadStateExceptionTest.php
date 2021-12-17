@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\API\Repository\Exceptions\BadStateException;
+use Ibexa\Contracts\Core\Repository\Exceptions\BadStateException;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 class BadStateExceptionTest extends ExceptionTest
 {
@@ -44,10 +44,12 @@ class BadStateExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\BadStateException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\BadStateException
      */
     protected function internalGetVisitor()
     {
         return new ValueObjectVisitor\BadStateException();
     }
 }
+
+class_alias(BadStateExceptionTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\BadStateExceptionTest');

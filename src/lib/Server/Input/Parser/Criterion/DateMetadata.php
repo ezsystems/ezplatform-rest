@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Operator;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\DateMetadata as DateMetadataCriterion;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Operator;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
 
 /**
  * Parser for ViewInput Criterion.
@@ -32,7 +32,7 @@ class DateMetadata extends BaseParser
      *
      * @param string[] $data
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher): DateMetadataCriterion
     {
@@ -76,7 +76,7 @@ class DateMetadata extends BaseParser
      *
      * For the full list of supported operators:
      *
-     * @see \eZ\Publish\API\Repository\Values\Content\Query\Criterion\DateMetadata::OPERATORS
+     * @see \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\DateMetadata::OPERATORS
      */
     private function getOperator(string $operatorName): string
     {
@@ -93,3 +93,5 @@ class DateMetadata extends BaseParser
         return self::OPERATORS[$operatorName];
     }
 }
+
+class_alias(DateMetadata::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\DateMetadata');

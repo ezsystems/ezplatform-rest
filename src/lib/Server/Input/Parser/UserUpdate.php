@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Input\ParserTools;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Values\RestUserUpdateStruct;
-use eZ\Publish\API\Repository\UserService;
-use eZ\Publish\API\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\UserService;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Input\ParserTools;
+use Ibexa\Rest\Server\Values\RestUserUpdateStruct;
 
 /**
  * Parser for UserUpdate.
@@ -23,38 +23,38 @@ class UserUpdate extends BaseParser
     /**
      * User service.
      *
-     * @var \eZ\Publish\API\Repository\UserService
+     * @var \Ibexa\Contracts\Core\Repository\UserService
      */
     protected $userService;
 
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
      * FieldType parser.
      *
-     * @var \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @var \Ibexa\Rest\Input\FieldTypeParser
      */
     protected $fieldTypeParser;
 
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\UserService $userService
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
-     * @param \EzSystems\EzPlatformRest\Input\FieldTypeParser $fieldTypeParser
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\UserService $userService
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
+     * @param \Ibexa\Rest\Input\FieldTypeParser $fieldTypeParser
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(UserService $userService, ContentService $contentService, FieldTypeParser $fieldTypeParser, ParserTools $parserTools)
     {
@@ -68,9 +68,9 @@ class UserUpdate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserUpdateStruct
+     * @return \Ibexa\Rest\Server\Values\RestUserUpdateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -183,3 +183,5 @@ class UserUpdate extends BaseParser
         );
     }
 }
+
+class_alias(UserUpdate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\UserUpdate');

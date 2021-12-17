@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput;
-use eZ\Publish\API\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentTypeGroupCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Rest\Server\Input\Parser\ContentTypeGroupInput;
 
 class ContentTypeGroupInputTest extends BaseTest
 {
@@ -74,7 +74,7 @@ class ContentTypeGroupInputTest extends BaseTest
     /**
      * Returns the content type group input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput
+     * @return \Ibexa\Rest\Server\Input\Parser\ContentTypeGroupInput
      */
     protected function internalGetParser()
     {
@@ -87,7 +87,7 @@ class ContentTypeGroupInputTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {
@@ -110,3 +110,5 @@ class ContentTypeGroupInputTest extends BaseTest
         ];
     }
 }
+
+class_alias(ContentTypeGroupInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentTypeGroupInputTest');

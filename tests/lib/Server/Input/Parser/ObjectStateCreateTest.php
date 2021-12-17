@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ObjectStateService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateCreate;
-use eZ\Publish\API\Repository\Values\ObjectState\ObjectStateCreateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\ObjectState\ObjectStateCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ObjectStateService;
+use Ibexa\Rest\Server\Input\Parser\ObjectStateCreate;
 
 class ObjectStateCreateTest extends BaseTest
 {
@@ -230,7 +230,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Returns the ObjectStateCreate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\ObjectStateCreate
      */
     protected function internalGetParser()
     {
@@ -243,7 +243,7 @@ class ObjectStateCreateTest extends BaseTest
     /**
      * Get the object state service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ObjectStateService
+     * @return \Ibexa\Contracts\Core\Repository\ObjectStateService
      */
     protected function getObjectStateServiceMock()
     {
@@ -259,3 +259,5 @@ class ObjectStateCreateTest extends BaseTest
         return $objectStateServiceMock;
     }
 }
+
+class_alias(ObjectStateCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ObjectStateCreateTest');

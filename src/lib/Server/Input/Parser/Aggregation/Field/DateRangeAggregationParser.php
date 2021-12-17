@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Field;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Field\DateRangeAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\AbstractRangeAggregationParser;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Field\DateRangeAggregation;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Server\Input\Parser\Aggregation\AbstractRangeAggregationParser;
 
 final class DateRangeAggregationParser extends AbstractRangeAggregationParser
 {
@@ -43,3 +43,5 @@ final class DateRangeAggregationParser extends AbstractRangeAggregationParser
         );
     }
 }
+
+class_alias(DateRangeAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\DateRangeAggregationParser');

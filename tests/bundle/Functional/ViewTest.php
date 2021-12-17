@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
 class ViewTest extends TestCase
 {
@@ -89,3 +89,5 @@ XML;
         self::assertEquals(1, $responseData['View']['Result']['count']);
     }
 }
+
+class_alias(ViewTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\ViewTest');

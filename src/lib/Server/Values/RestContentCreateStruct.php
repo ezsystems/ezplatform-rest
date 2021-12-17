@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\ContentCreateStruct;
-use eZ\Publish\API\Repository\Values\Content\LocationCreateStruct;
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentCreateStruct;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationCreateStruct;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * RestContentCreateStruct view model.
@@ -16,20 +16,20 @@ use eZ\Publish\API\Repository\Values\ValueObject;
 class RestContentCreateStruct extends ValueObject
 {
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\ContentCreateStruct
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\ContentCreateStruct
      */
     public $contentCreateStruct;
 
     /**
-     * @var \eZ\Publish\API\Repository\Values\Content\LocationCreateStruct
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\LocationCreateStruct
      */
     public $locationCreateStruct;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\ContentCreateStruct $contentCreateStruct
-     * @param \eZ\Publish\API\Repository\Values\Content\LocationCreateStruct $locationCreateStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\ContentCreateStruct $contentCreateStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\LocationCreateStruct $locationCreateStruct
      */
     public function __construct(ContentCreateStruct $contentCreateStruct, LocationCreateStruct $locationCreateStruct)
     {
@@ -37,3 +37,5 @@ class RestContentCreateStruct extends ValueObject
         $this->locationCreateStruct = $locationCreateStruct;
     }
 }
+
+class_alias(RestContentCreateStruct::class, 'EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct');

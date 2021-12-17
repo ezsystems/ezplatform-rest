@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\URLWildcardService;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\URLWildcardService;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -22,14 +22,14 @@ class URLWildcard extends RestController
     /**
      * URLWildcard service.
      *
-     * @var \eZ\Publish\API\Repository\URLWildcardService
+     * @var \Ibexa\Contracts\Core\Repository\URLWildcardService
      */
     protected $urlWildcardService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\URLWildcardService $urlWildcardService
+     * @param \Ibexa\Contracts\Core\Repository\URLWildcardService $urlWildcardService
      */
     public function __construct(URLWildcardService $urlWildcardService)
     {
@@ -41,7 +41,7 @@ class URLWildcard extends RestController
      *
      * @param $urlWildcardId
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\URLWildcard
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\URLWildcard
      */
     public function loadURLWildcard($urlWildcardId)
     {
@@ -51,7 +51,7 @@ class URLWildcard extends RestController
     /**
      * Returns the list of URL wildcards.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\URLWildcardList
+     * @return \Ibexa\Rest\Server\Values\URLWildcardList
      */
     public function listURLWildcards()
     {
@@ -63,9 +63,9 @@ class URLWildcard extends RestController
     /**
      * Creates a new URL wildcard.
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedURLWildcard
+     * @return \Ibexa\Rest\Server\Values\CreatedURLWildcard
      */
     public function createURLWildcard(Request $request)
     {
@@ -98,7 +98,7 @@ class URLWildcard extends RestController
      *
      * @param $urlWildcardId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteURLWildcard($urlWildcardId)
     {
@@ -109,3 +109,5 @@ class URLWildcard extends RestController
         return new Values\NoContent();
     }
 }
+
+class_alias(URLWildcard::class, 'EzSystems\EzPlatformRest\Server\Controller\URLWildcard');

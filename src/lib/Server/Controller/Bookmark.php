@@ -1,39 +1,39 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\BookmarkService;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use eZ\Publish\API\Repository\LocationService;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Value as RestValue;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use Ibexa\Contracts\Core\Repository\BookmarkService;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Value as RestValue;
 use Symfony\Component\HttpFoundation\Request;
 
 class Bookmark extends RestController
 {
     /**
-     * @var \eZ\Publish\API\Repository\BookmarkService
+     * @var \Ibexa\Contracts\Core\Repository\BookmarkService
      */
     protected $bookmarkService;
 
     /**
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Bookmark constructor.
      *
-     * @param \eZ\Publish\API\Repository\BookmarkService $bookmarkService
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
+     * @param \Ibexa\Contracts\Core\Repository\BookmarkService $bookmarkService
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
      */
     public function __construct(BookmarkService $bookmarkService, LocationService $locationService)
     {
@@ -47,10 +47,10 @@ class Bookmark extends RestController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param int $locationId
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      *
-     * @return \EzSystems\EzPlatformRest\Value
+     * @return \Ibexa\Rest\Value
      */
     public function createBookmark(Request $request, int $locationId): RestValue
     {
@@ -78,10 +78,10 @@ class Bookmark extends RestController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param int $locationId
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      *
-     * @return \EzSystems\EzPlatformRest\Value
+     * @return \Ibexa\Rest\Value
      */
     public function deleteBookmark(Request $request, int $locationId): RestValue
     {
@@ -102,10 +102,10 @@ class Bookmark extends RestController
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param int $locationId
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\OK
+     * @return \Ibexa\Rest\Server\Values\OK
      */
     public function isBookmarked(Request $request, int $locationId): Values\OK
     {
@@ -123,9 +123,9 @@ class Bookmark extends RestController
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
      *
-     * @return \EzSystems\EzPlatformRest\Value
+     * @return \Ibexa\Rest\Value
      */
     public function loadBookmarks(Request $request): RestValue
     {
@@ -158,3 +158,5 @@ class Bookmark extends RestController
         return array_pop($pathParts);
     }
 }
+
+class_alias(Bookmark::class, 'EzSystems\EzPlatformRest\Server\Controller\Bookmark');

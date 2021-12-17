@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\Generator\Xml;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
 use DOMDocument;
 use DOMXPath;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception as ExceptionValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Rest\Output\Generator\Xml;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor\Exception as ExceptionValueObjectVisitor;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ExceptionTest extends ValueObjectVisitorBaseTest
@@ -208,7 +208,7 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Exception
      */
     protected function internalGetVisitor()
     {
@@ -218,7 +218,7 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Exception
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\Exception
      */
     protected function internalGetNonDebugVisitor(): ExceptionValueObjectVisitor
     {
@@ -260,3 +260,5 @@ class ExceptionTest extends ValueObjectVisitorBaseTest
         return $generator->endDocument(null);
     }
 }
+
+class_alias(ExceptionTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\ExceptionTest');

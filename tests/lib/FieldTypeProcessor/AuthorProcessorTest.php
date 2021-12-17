@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor;
+use Ibexa\Rest\FieldTypeProcessor\AuthorProcessor;
 use PHPUnit\Framework\TestCase;
 
 class AuthorProcessorTest extends TestCase
@@ -19,7 +19,7 @@ class AuthorProcessorTest extends TestCase
     public function fieldSettingsHashes()
     {
         return array_map(
-            function ($constantName) {
+            static function ($constantName) {
                 return [
                     ['defaultAuthor' => $constantName],
                     ['defaultAuthor' => constant("eZ\\Publish\\Core\\FieldType\\Author\\Type::{$constantName}")],
@@ -58,10 +58,12 @@ class AuthorProcessorTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\AuthorProcessor
      */
     protected function getProcessor()
     {
         return new AuthorProcessor();
     }
 }
+
+class_alias(AuthorProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\AuthorProcessorTest');

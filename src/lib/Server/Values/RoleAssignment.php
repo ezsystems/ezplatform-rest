@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation;
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * RoleAssignment view model.
@@ -24,7 +24,7 @@ class RoleAssignment extends RestValue
     /**
      * Role limitation.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation
      */
     public $limitation;
 
@@ -32,7 +32,7 @@ class RoleAssignment extends RestValue
      * Construct.
      *
      * @param mixed $roleId
-     * @param \eZ\Publish\API\Repository\Values\User\Limitation\RoleLimitation $limitation
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\Limitation\RoleLimitation $limitation
      */
     public function __construct($roleId, RoleLimitation $limitation = null)
     {
@@ -40,3 +40,5 @@ class RoleAssignment extends RestValue
         $this->limitation = $limitation;
     }
 }
+
+class_alias(RoleAssignment::class, 'EzSystems\EzPlatformRest\Server\Values\RoleAssignment');

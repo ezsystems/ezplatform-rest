@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput;
-use EzSystems\EzPlatformRest\Server\Values\SessionInput as SessionInputValue;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\SessionInput;
+use Ibexa\Rest\Server\Values\SessionInput as SessionInputValue;
 
 class SessionInputTest extends BaseTest
 {
@@ -65,10 +65,12 @@ class SessionInputTest extends BaseTest
     /**
      * Returns the session input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput
+     * @return \Ibexa\Rest\Server\Input\Parser\SessionInput
      */
     protected function internalGetParser()
     {
         return new SessionInput();
     }
 }
+
+class_alias(SessionInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SessionInputTest');

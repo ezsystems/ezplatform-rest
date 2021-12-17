@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input;
-use EzSystems\EzPlatformRest\Tests\Server\BaseTest as ParentBaseTest;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\RequestParser;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input;
+use Ibexa\Rest\RequestParser;
+use Ibexa\Tests\Rest\Server\BaseTest as ParentBaseTest;
 
 /**
  * Base test for input parsers.
@@ -17,24 +17,24 @@ use EzSystems\EzPlatformRest\RequestParser;
 abstract class BaseTest extends ParentBaseTest
 {
     /**
-     * @var \EzSystems\EzPlatformRest\Input\ParsingDispatcher|\PHPUnit\Framework\MockObject\MockObject
+     * @var \Ibexa\Contracts\Rest\Input\ParsingDispatcher|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $parsingDispatcherMock;
 
     /**
-     * @var \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @var \Ibexa\Rest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected $requestParserMock;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Get the parsing dispatcher.
      *
-     * @return \EzSystems\EzPlatformRest\Input\ParsingDispatcher
+     * @return \Ibexa\Contracts\Rest\Input\ParsingDispatcher
      */
     protected function getParsingDispatcherMock()
     {
@@ -61,14 +61,14 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Get the Request parser.
      *
-     * @return \EzSystems\EzPlatformRest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
+     * @return \Ibexa\Rest\RequestParser|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestParserMock()
     {
         if (!isset($this->requestParserMock)) {
             $that = &$this;
 
-            $callback = function ($href, $attribute) use ($that) {
+            $callback = static function ($href, $attribute) use ($that) {
                 foreach ($that->getParseHrefExpectationsMap() as $map) {
                     if ($map[0] == $href && $map[1] == $attribute) {
                         if ($map[2] instanceof \Exception) {
@@ -96,7 +96,7 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Get the parser tools.
      *
-     * @return \EzSystems\EzPlatformRest\Input\ParserTools
+     * @return \Ibexa\Rest\Input\ParserTools
      */
     protected function getParserTools()
     {
@@ -118,7 +118,9 @@ abstract class BaseTest extends ParentBaseTest
     /**
      * Must return the tested parser object.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Base
+     * @return \Ibexa\Rest\Server\Input\Parser\Base
      */
     abstract protected function internalGetParser();
 }
+
+class_alias(BaseTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest');

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * SessionInput view model.
@@ -23,3 +23,5 @@ class SessionInput extends ValueObject
      */
     public $password;
 }
+
+class_alias(SessionInput::class, 'EzSystems\EzPlatformRest\Server\Values\SessionInput');

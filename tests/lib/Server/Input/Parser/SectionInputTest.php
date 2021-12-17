@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\SectionService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput;
-use eZ\Publish\API\Repository\Values\Content\SectionCreateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\Content\SectionCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\SectionService;
+use Ibexa\Rest\Server\Input\Parser\SectionInput;
 
 class SectionInputTest extends BaseTest
 {
@@ -66,7 +66,7 @@ class SectionInputTest extends BaseTest
     /**
      * Returns the section input parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput
+     * @return \Ibexa\Rest\Server\Input\Parser\SectionInput
      */
     protected function internalGetParser()
     {
@@ -78,7 +78,7 @@ class SectionInputTest extends BaseTest
     /**
      * Get the section service mock object.
      *
-     * @return \eZ\Publish\API\Repository\SectionService
+     * @return \Ibexa\Contracts\Core\Repository\SectionService
      */
     protected function getSectionServiceMock()
     {
@@ -93,3 +93,5 @@ class SectionInputTest extends BaseTest
         return $sectionServiceMock;
     }
 }
+
+class_alias(SectionInputTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SectionInputTest');

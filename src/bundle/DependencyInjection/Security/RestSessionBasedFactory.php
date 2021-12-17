@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\DependencyInjection\Security;
+namespace Ibexa\Bundle\Rest\DependencyInjection\Security;
 
 use Symfony\Bundle\SecurityBundle\DependencyInjection\Security\Factory\FormLoginFactory;
 use Symfony\Component\DependencyInjection\ChildDefinition;
@@ -76,3 +76,5 @@ class RestSessionBasedFactory extends FormLoginFactory
         return $defaultEntryPoint;
     }
 }
+
+class_alias(RestSessionBasedFactory::class, 'EzSystems\EzPlatformRestBundle\DependencyInjection\Security\RestSessionBasedFactory');

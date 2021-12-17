@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
-use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
+use Ibexa\Tests\Bundle\Rest\Functional\TestCase as RESTFunctionalTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 class BookmarkTest extends RESTFunctionalTestCase
@@ -22,7 +22,8 @@ class BookmarkTest extends RESTFunctionalTestCase
         $locationId = (int) array_pop($locationPathParts);
 
         $request = $this->createHttpRequest(
-            'POST', '/api/ezp/v2/bookmark/' . $locationId
+            'POST',
+            '/api/ezp/v2/bookmark/' . $locationId
         );
 
         $response = $this->sendHttpRequest($request);
@@ -38,7 +39,8 @@ class BookmarkTest extends RESTFunctionalTestCase
     public function testCreateBookmarkIfAlreadyExists(int $locationId): void
     {
         $request = $this->createHttpRequest(
-            'POST', '/api/ezp/v2/bookmark/' . $locationId
+            'POST',
+            '/api/ezp/v2/bookmark/' . $locationId
         );
 
         $response = $this->sendHttpRequest($request);
@@ -52,7 +54,8 @@ class BookmarkTest extends RESTFunctionalTestCase
     public function testIsBookmarked(int $locationId): void
     {
         $request = $this->createHttpRequest(
-            'HEAD', '/api/ezp/v2/bookmark/' . $locationId
+            'HEAD',
+            '/api/ezp/v2/bookmark/' . $locationId
         );
 
         $response = $this->sendHttpRequest($request);
@@ -65,7 +68,8 @@ class BookmarkTest extends RESTFunctionalTestCase
         $locationId = 43;
 
         $request = $this->createHttpRequest(
-            'HEAD', '/api/ezp/v2/bookmark/' . $locationId
+            'HEAD',
+            '/api/ezp/v2/bookmark/' . $locationId
         );
 
         $response = $this->sendHttpRequest($request);
@@ -79,7 +83,8 @@ class BookmarkTest extends RESTFunctionalTestCase
     public function testDeleteBookmark(int $locationId): void
     {
         $request = $this->createHttpRequest(
-            'DELETE', '/api/ezp/v2/bookmark/' . $locationId
+            'DELETE',
+            '/api/ezp/v2/bookmark/' . $locationId
         );
 
         $response = $this->sendHttpRequest($request);
@@ -106,7 +111,8 @@ class BookmarkTest extends RESTFunctionalTestCase
         $locationId = 43;
 
         $request = $this->createHttpRequest(
-            'DELETE', '/api/ezp/v2/bookmark/' . $locationId
+            'DELETE',
+            '/api/ezp/v2/bookmark/' . $locationId
         );
 
         $response = $this->sendHttpRequest($request);
@@ -114,3 +120,5 @@ class BookmarkTest extends RESTFunctionalTestCase
         self::assertHttpResponseCodeEquals($response, Response::HTTP_NOT_FOUND);
     }
 }
+
+class_alias(BookmarkTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\BookmarkTest');

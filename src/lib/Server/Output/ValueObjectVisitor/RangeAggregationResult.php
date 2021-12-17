@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\RangeAggregationResultEntry;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Visitor;
+use Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\RangeAggregationResultEntry;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
 
 final class RangeAggregationResult extends ValueObjectVisitor
 {
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Search\AggregationResult\RangeAggregationResult $data
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Search\AggregationResult\RangeAggregationResult $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {
@@ -44,7 +44,7 @@ final class RangeAggregationResult extends ValueObjectVisitor
     }
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range $key
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Range $key
      */
     private function visitKey(Visitor $visitor, Generator $generator, $key): void
     {
@@ -62,3 +62,5 @@ final class RangeAggregationResult extends ValueObjectVisitor
         $generator->valueElement('count', $count);
     }
 }
+
+class_alias(RangeAggregationResult::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RangeAggregationResult');

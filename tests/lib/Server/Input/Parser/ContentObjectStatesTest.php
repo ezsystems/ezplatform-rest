@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\Parser;
+use Ibexa\Rest\Input\Parser;
 
 class ContentObjectStatesTest extends BaseTest
 {
@@ -89,10 +89,12 @@ class ContentObjectStatesTest extends BaseTest
     /**
      * Gets the ContentObjectStates parser.
      *
-     * @return \EzSystems\EzPlatformRest\Input\Parser\ContentObjectStates ;
+     * @return \Ibexa\Rest\Input\Parser\ContentObjectStates ;
      */
     protected function internalGetParser()
     {
         return new Parser\ContentObjectStates();
     }
 }
+
+class_alias(ContentObjectStatesTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\ContentObjectStatesTest');

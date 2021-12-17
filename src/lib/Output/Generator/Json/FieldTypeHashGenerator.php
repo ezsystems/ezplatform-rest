@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output\Generator\Json;
+namespace Ibexa\Rest\Output\Generator\Json;
 
 class FieldTypeHashGenerator
 {
@@ -12,7 +12,7 @@ class FieldTypeHashGenerator
      * Generates the field type value $hashValue as a child of the given Object
      * using $hashElementName as the property name.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Json\ArrayObject|\EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject $parent
+     * @param \Ibexa\Rest\Output\Generator\Json\ArrayObject|\Ibexa\Rest\Output\Generator\Json\JsonObject $parent
      * @param string $hashElementName
      * @param mixed $hashValue
      */
@@ -25,7 +25,7 @@ class FieldTypeHashGenerator
      * Generates and returns a value based on $hashValue type, with $parent (
      * if the type of $hashValue supports it).
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Json\ArrayObject|\EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject $parent
+     * @param \Ibexa\Rest\Output\Generator\Json\ArrayObject|\Ibexa\Rest\Output\Generator\Json\JsonObject $parent
      * @param mixed $value
      *
      * @return mixed
@@ -59,10 +59,10 @@ class FieldTypeHashGenerator
      * If $type only contains numeric keys, the resulting structure will be an
      * JSON array, otherwise a JSON object
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Json\ArrayObject|\EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject $parent
+     * @param \Ibexa\Rest\Output\Generator\Json\ArrayObject|\Ibexa\Rest\Output\Generator\Json\JsonObject $parent
      * @param array $value
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Json\ArrayObject|\EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
+     * @return \Ibexa\Rest\Output\Generator\Json\ArrayObject|\Ibexa\Rest\Output\Generator\Json\JsonObject
      */
     protected function generateArrayValue($parent, array $value)
     {
@@ -76,10 +76,10 @@ class FieldTypeHashGenerator
     /**
      * Generates a JSON array from the given $hashArray with $parent.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Json\ArrayObject|\EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject $parent
+     * @param \Ibexa\Rest\Output\Generator\Json\ArrayObject|\Ibexa\Rest\Output\Generator\Json\JsonObject $parent
      * @param array $listArray
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Json\ArrayObject
+     * @return \Ibexa\Rest\Output\Generator\Json\ArrayObject
      */
     protected function generateListArray($parent, array $listArray)
     {
@@ -94,10 +94,10 @@ class FieldTypeHashGenerator
     /**
      * Generates a JSON object from the given $hashArray with $parent.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator\Json\ArrayObject|\EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject $parent
+     * @param \Ibexa\Rest\Output\Generator\Json\ArrayObject|\Ibexa\Rest\Output\Generator\Json\JsonObject $parent
      * @param array $hashArray
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator\Json\JsonObject
+     * @return \Ibexa\Rest\Output\Generator\Json\JsonObject
      */
     protected function generateHashArray($parent, array $hashArray)
     {
@@ -127,3 +127,5 @@ class FieldTypeHashGenerator
         return true;
     }
 }
+
+class_alias(FieldTypeHashGenerator::class, 'EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator');

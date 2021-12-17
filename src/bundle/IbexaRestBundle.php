@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle;
+namespace Ibexa\Bundle\Rest;
 
-use EzSystems\EzPlatformRestBundle\DependencyInjection\Security\RestSessionBasedFactory;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Ibexa\Bundle\Rest\DependencyInjection\Compiler;
+use Ibexa\Bundle\Rest\DependencyInjection\Security\RestSessionBasedFactory;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class EzPlatformRestBundle extends Bundle
+class IbexaRestBundle extends Bundle
 {
     public function build(ContainerBuilder $container)
     {
@@ -27,3 +27,5 @@ class EzPlatformRestBundle extends Bundle
         $securityExtension->addSecurityListenerFactory(new RestSessionBasedFactory());
     }
 }
+
+class_alias(IbexaRestBundle::class, 'EzSystems\EzPlatformRestBundle\EzPlatformRestBundle');

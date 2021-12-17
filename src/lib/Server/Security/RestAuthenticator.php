@@ -1,26 +1,26 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Security;
+namespace Ibexa\Rest\Server\Security;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface as EzUser;
-use EzSystems\EzPlatformRest\Server\Exceptions\InvalidUserTypeException;
-use EzSystems\EzPlatformRest\Server\Exceptions\UserConflictException;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface as EzUser;
+use Ibexa\Rest\Server\Exceptions\InvalidUserTypeException;
+use Ibexa\Rest\Server\Exceptions\UserConflictException;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 use Symfony\Component\Security\Core\Exception\TokenNotFoundException;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Component\Security\Http\Logout\LogoutHandlerInterface;
 use Symfony\Component\Security\Http\Logout\SessionLogoutHandler;
@@ -47,6 +47,7 @@ class RestAuthenticator implements AuthenticatorInterface
      * @var \Symfony\Component\Security\Core\Authentication\AuthenticationManagerInterface
      */
     private $authenticationManager;
+
     /**
      * @var string
      */
@@ -63,7 +64,7 @@ class RestAuthenticator implements AuthenticatorInterface
     private $dispatcher;
 
     /**
-     * @var \eZ\Publish\Core\MVC\ConfigResolverInterface
+     * @var \Ibexa\Core\MVC\ConfigResolverInterface
      */
     private $configResolver;
 
@@ -183,8 +184,8 @@ class RestAuthenticator implements AuthenticatorInterface
     /**
      * Checks if newly matched user is conflicting with previously non-anonymous logged in user, if any.
      *
-     * @param EzUser $user
-     * @param TokenInterface $previousToken
+     * @param \Ibexa\Core\MVC\Symfony\Security\UserInterface $user
+     * @param \Symfony\Component\Security\Core\Authentication\Token\TokenInterface $previousToken
      *
      * @return bool
      */
@@ -234,3 +235,5 @@ class RestAuthenticator implements AuthenticatorInterface
         return $response;
     }
 }
+
+class_alias(RestAuthenticator::class, 'EzSystems\EzPlatformRest\Server\Security\RestAuthenticator');

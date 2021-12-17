@@ -1,18 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor;
-use EzSystems\EzPlatformRest\RequestParser;
+use Ibexa\Rest\FieldTypeProcessor\ImageProcessor;
 use Symfony\Component\Routing\RouterInterface;
 
 class ImageProcessorTest extends BinaryInputProcessorTest
 {
-    /** @var RequestParser */
+    /** @var \Ibexa\Rest\RequestParser */
     protected $requestParser;
 
     /**
@@ -57,7 +56,7 @@ class ImageProcessorTest extends BinaryInputProcessorTest
     /**
      * Returns the processor under test.
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\ImageProcessor
      */
     protected function getProcessor()
     {
@@ -85,3 +84,5 @@ class ImageProcessorTest extends BinaryInputProcessorTest
         return ['small', 'medium', 'large'];
     }
 }
+
+class_alias(ImageProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\ImageProcessorTest');

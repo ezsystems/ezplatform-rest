@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
+namespace Ibexa\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
 
 class FloatProcessor extends FieldTypeProcessor
 {
@@ -22,3 +22,5 @@ class FloatProcessor extends FieldTypeProcessor
         return $incomingValueHash;
     }
 }
+
+class_alias(FloatProcessor::class, 'EzSystems\EzPlatformRest\FieldTypeProcessor\FloatProcessor');

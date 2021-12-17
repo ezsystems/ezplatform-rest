@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Tests\Server\Security;
+namespace Ibexa\Tests\Rest\Server\Security;
 
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\API\Repository\Values\User\User;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Contracts\Core\Repository\Values\User\User;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface;
+use Ibexa\Rest\Server\Security\EventListener\SecurityListener;
 use Lexik\Bundle\JWTAuthenticationBundle\Security\Authentication\Token\JWTUserToken;
-use EzSystems\EzPlatformRest\Server\Security\EventListener\SecurityListener;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 
 class SecurityListenerTest extends TestCase
 {
-    /** @var \eZ\Publish\API\Repository\PermissionResolver|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver|\PHPUnit\Framework\MockObject\MockObject */
     private $permissionResolver;
 
     protected function setUp(): void
@@ -73,3 +73,5 @@ class SecurityListenerTest extends TestCase
         $securityListener->onInteractiveLogin($interactiveLoginEvent);
     }
 }
+
+class_alias(SecurityListenerTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Security\SecurityListenerTest');

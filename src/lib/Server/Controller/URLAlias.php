@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\URLAliasService;
-use eZ\Publish\API\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\URLAliasService;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -23,22 +23,22 @@ class URLAlias extends RestController
     /**
      * URLAlias service.
      *
-     * @var \eZ\Publish\API\Repository\URLAliasService
+     * @var \Ibexa\Contracts\Core\Repository\URLAliasService
      */
     protected $urlAliasService;
 
     /**
      * Location service.
      *
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\URLAliasService $urlAliasService
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
+     * @param \Ibexa\Contracts\Core\Repository\URLAliasService $urlAliasService
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
      */
     public function __construct(URLAliasService $urlAliasService, LocationService $locationService)
     {
@@ -51,7 +51,7 @@ class URLAlias extends RestController
      *
      * @param $urlAliasId
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\URLAlias
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\URLAlias
      */
     public function loadURLAlias($urlAliasId)
     {
@@ -61,7 +61,7 @@ class URLAlias extends RestController
     /**
      * Returns the list of global URL aliases.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\URLAliasRefList
+     * @return \Ibexa\Rest\Server\Values\URLAliasRefList
      */
     public function listGlobalURLAliases()
     {
@@ -76,7 +76,7 @@ class URLAlias extends RestController
      *
      * @param $locationPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\URLAliasRefList
+     * @return \Ibexa\Rest\Server\Values\URLAliasRefList
      */
     public function listLocationURLAliases($locationPath, Request $request)
     {
@@ -100,9 +100,9 @@ class URLAlias extends RestController
     /**
      * Creates a new URL alias.
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedURLAlias
+     * @return \Ibexa\Rest\Server\Values\CreatedURLAlias
      */
     public function createURLAlias(Request $request)
     {
@@ -160,7 +160,7 @@ class URLAlias extends RestController
      *
      * @param $urlAliasId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteURLAlias($urlAliasId)
     {
@@ -173,3 +173,5 @@ class URLAlias extends RestController
         return new Values\NoContent();
     }
 }
+
+class_alias(URLAlias::class, 'EzSystems\EzPlatformRest\Server\Controller\URLAlias');

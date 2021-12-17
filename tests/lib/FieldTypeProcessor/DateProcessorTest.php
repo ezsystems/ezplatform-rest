@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\DateProcessor;
+use Ibexa\Rest\FieldTypeProcessor\DateProcessor;
 use PHPUnit\Framework\TestCase;
 
 class DateProcessorTest extends TestCase
@@ -19,7 +19,7 @@ class DateProcessorTest extends TestCase
     public function fieldSettingsHashes()
     {
         return array_map(
-            function ($constantName) {
+            static function ($constantName) {
                 return [
                     ['defaultType' => $constantName],
                     ['defaultType' => constant("eZ\\Publish\\Core\\FieldType\\Date\\Type::{$constantName}")],
@@ -58,10 +58,12 @@ class DateProcessorTest extends TestCase
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\DateProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\DateProcessor
      */
     protected function getProcessor()
     {
         return new DateProcessor();
     }
 }
+
+class_alias(DateProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\DateProcessorTest');

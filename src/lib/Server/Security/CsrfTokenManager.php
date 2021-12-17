@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Security;
+namespace Ibexa\Rest\Server\Security;
 
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Csrf\CsrfTokenManager as BaseCsrfTokenManager;
@@ -27,8 +27,8 @@ class CsrfTokenManager extends BaseCsrfTokenManager
     public function __construct(
         TokenGeneratorInterface $generator = null,
         TokenStorageInterface $storage = null,
-        RequestStack $requestStack = null)
-    {
+        RequestStack $requestStack = null
+    ) {
         $this->storage = $storage ?: new NativeSessionTokenStorage();
         $this->namespace = $this->resolveNamespace($requestStack);
 
@@ -50,7 +50,7 @@ class CsrfTokenManager extends BaseCsrfTokenManager
     /**
      * Resolves token namespace.
      *
-     * @param RequestStack $requestStack
+     * @param \Symfony\Component\HttpFoundation\RequestStack $requestStack
      *
      * @return string
      */
@@ -63,3 +63,5 @@ class CsrfTokenManager extends BaseCsrfTokenManager
         return !empty($_SERVER['HTTPS']) && 'off' !== strtolower($_SERVER['HTTPS']) ? 'https-' : '';
     }
 }
+
+class_alias(CsrfTokenManager::class, 'EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager');

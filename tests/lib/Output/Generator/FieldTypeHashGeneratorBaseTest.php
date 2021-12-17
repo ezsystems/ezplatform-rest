@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output\Generator;
+namespace Ibexa\Tests\Rest\Output\Generator;
 
 use PHPUnit\Framework\TestCase;
 
@@ -38,7 +38,7 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
     /**
      * Initializes the generator.
      *
-     * @return \EzSystems\EzPlatformRest\Output\Generator
+     * @return \Ibexa\Contracts\Rest\Output\Generator
      */
     abstract protected function initializeGenerator();
 
@@ -223,7 +223,7 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
 
     private function getRelativeClassIdentifier()
     {
-        $fqClassName = get_called_class();
+        $fqClassName = static::class;
 
         return strtr(
             substr(
@@ -234,3 +234,5 @@ abstract class FieldTypeHashGeneratorBaseTest extends TestCase
         );
     }
 }
+
+class_alias(FieldTypeHashGeneratorBaseTest::class, 'EzSystems\EzPlatformRest\Tests\Output\Generator\FieldTypeHashGeneratorBaseTest');

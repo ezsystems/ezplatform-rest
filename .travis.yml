@@ -23,7 +23,7 @@ env:
   global:
     # For functional and acceptance tests
     - COMPOSE_FILE="doc/docker/base-dev.yml:doc/docker/selenium.yml"
-    - PROJECT_VERSION=^3.3.x-dev
+    - PROJECT_VERSION=^4.0.x-dev
 
 matrix:
   fast_finish: true

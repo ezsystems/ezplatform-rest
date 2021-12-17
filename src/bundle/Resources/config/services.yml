@@ -1,59 +1,59 @@
 parameters:
-    ezpublish_rest.routing.options_loader.class: EzSystems\EzPlatformRestBundle\Routing\OptionsLoader
-    ezpublish_rest.routing.options_loader.route_collection_mapper.class: EzSystems\EzPlatformRestBundle\Routing\OptionsLoader\RouteCollectionMapper
-    ezpublish_rest.routing.options_loader.mapper.class: EzSystems\EzPlatformRestBundle\Routing\OptionsLoader\Mapper
+    ezpublish_rest.routing.options_loader.class: Ibexa\Bundle\Rest\Routing\OptionsLoader
+    ezpublish_rest.routing.options_loader.route_collection_mapper.class: Ibexa\Bundle\Rest\Routing\OptionsLoader\RouteCollectionMapper
+    ezpublish_rest.routing.options_loader.mapper.class: Ibexa\Bundle\Rest\Routing\OptionsLoader\Mapper
 
-    ezpublish_rest.cors_options_provider.class: EzSystems\EzPlatformRestBundle\CorsOptions\RestProvider
+    ezpublish_rest.cors_options_provider.class: Ibexa\Bundle\Rest\CorsOptions\RestProvider
 
-    ezpublish_rest.root_resource_builder.class: EzSystems\EzPlatformRest\Server\Service\ExpressionRouterRootResourceBuilder
+    ezpublish_rest.root_resource_builder.class: Ibexa\Rest\Server\Service\ExpressionRouterRootResourceBuilder
 
-    ezpublish_rest.controller.base.class: EzSystems\EzPlatformRest\Server\Controller
-    ezpublish_rest.controller.binary_content.class: EzSystems\EzPlatformRest\Server\Controller\BinaryContent
-    ezpublish_rest.controller.content.class: EzSystems\EzPlatformRest\Server\Controller\Content
-    ezpublish_rest.controller.content_type.class: EzSystems\EzPlatformRest\Server\Controller\ContentType
-    ezpublish_rest.controller.location.class: EzSystems\EzPlatformRest\Server\Controller\Location
-    ezpublish_rest.controller.object_state.class: EzSystems\EzPlatformRest\Server\Controller\ObjectState
-    ezpublish_rest.controller.role.class: EzSystems\EzPlatformRest\Server\Controller\Role
-    ezpublish_rest.controller.root.class: EzSystems\EzPlatformRest\Server\Controller\Root
-    ezpublish_rest.controller.section.class: EzSystems\EzPlatformRest\Server\Controller\Section
-    ezpublish_rest.controller.trash.class: EzSystems\EzPlatformRest\Server\Controller\Trash
-    ezpublish_rest.controller.user.class: EzSystems\EzPlatformRest\Server\Controller\User
-    ezpublish_rest.controller.url_wildcard.class: EzSystems\EzPlatformRest\Server\Controller\URLWildcard
-    ezpublish_rest.controller.url_alias.class: EzSystems\EzPlatformRest\Server\Controller\URLAlias
-    ezpublish_rest.controller.options.class: EzSystems\EzPlatformRest\Server\Controller\Options
-    ezpublish_rest.controller.services.class: EzSystems\EzPlatformRest\Server\Controller\Services
-    ezpublish_rest.controller.views.class: EzSystems\EzPlatformRest\Server\Controller\Views
+    ezpublish_rest.controller.base.class: Ibexa\Rest\Server\Controller
+    ezpublish_rest.controller.binary_content.class: Ibexa\Rest\Server\Controller\BinaryContent
+    ezpublish_rest.controller.content.class: Ibexa\Rest\Server\Controller\Content
+    ezpublish_rest.controller.content_type.class: Ibexa\Rest\Server\Controller\ContentType
+    ezpublish_rest.controller.location.class: Ibexa\Rest\Server\Controller\Location
+    ezpublish_rest.controller.object_state.class: Ibexa\Rest\Server\Controller\ObjectState
+    ezpublish_rest.controller.role.class: Ibexa\Rest\Server\Controller\Role
+    ezpublish_rest.controller.root.class: Ibexa\Rest\Server\Controller\Root
+    ezpublish_rest.controller.section.class: Ibexa\Rest\Server\Controller\Section
+    ezpublish_rest.controller.trash.class: Ibexa\Rest\Server\Controller\Trash
+    ezpublish_rest.controller.user.class: Ibexa\Rest\Server\Controller\User
+    ezpublish_rest.controller.url_wildcard.class: Ibexa\Rest\Server\Controller\URLWildcard
+    ezpublish_rest.controller.url_alias.class: Ibexa\Rest\Server\Controller\URLAlias
+    ezpublish_rest.controller.options.class: Ibexa\Rest\Server\Controller\Options
+    ezpublish_rest.controller.services.class: Ibexa\Rest\Server\Controller\Services
+    ezpublish_rest.controller.views.class: Ibexa\Rest\Server\Controller\Views
 
-    ezpublish_rest.factory.class: EzSystems\EzPlatformRestBundle\ApiLoader\Factory
-    ezpublish_rest.request_parser.class: EzSystems\EzPlatformRestBundle\RequestParser\Router
-    ezpublish_rest.parser_tools.class: EzSystems\EzPlatformRest\Input\ParserTools
-    ezpublish_rest.field_type_parser.class: EzSystems\EzPlatformRest\Input\FieldTypeParser
-    ezpublish_rest.field_type_serializer.class: EzSystems\EzPlatformRest\Output\FieldTypeSerializer
+    ezpublish_rest.factory.class: Ibexa\Bundle\Rest\ApiLoader\Factory
+    ezpublish_rest.request_parser.class: Ibexa\Bundle\Rest\RequestParser\Router
+    ezpublish_rest.parser_tools.class: Ibexa\Rest\Input\ParserTools
+    ezpublish_rest.field_type_parser.class: Ibexa\Rest\Input\FieldTypeParser
+    ezpublish_rest.field_type_serializer.class: Ibexa\Rest\Output\FieldTypeSerializer
 
-    ezpublish_rest.request_listener.class: EzSystems\EzPlatformRestBundle\EventListener\RequestListener
-    ezpublish_rest.csrf_listener.class: EzSystems\EzPlatformRestBundle\EventListener\CsrfListener
-    ezpublish_rest.response_listener.class: EzSystems\EzPlatformRestBundle\EventListener\ResponseListener
+    ezpublish_rest.request_listener.class: Ibexa\Bundle\Rest\EventListener\RequestListener
+    ezpublish_rest.csrf_listener.class: Ibexa\Bundle\Rest\EventListener\CsrfListener
+    ezpublish_rest.response_listener.class: Ibexa\Bundle\Rest\EventListener\ResponseListener
 
-    ezpublish_rest.field_type_processor.ezauthor.class: EzSystems\EzPlatformRest\FieldTypeProcessor\AuthorProcessor
-    ezpublish_rest.field_type_processor_registry.class: EzSystems\EzPlatformRest\FieldTypeProcessorRegistry
-    ezpublish_rest.field_type_processor.ezimage.class: EzSystems\EzPlatformRest\FieldTypeProcessor\ImageProcessor
-    ezpublish_rest.field_type_processor.ezdatetime.class: EzSystems\EzPlatformRest\FieldTypeProcessor\DateAndTimeProcessor
-    ezpublish_rest.field_type_processor.ezdate.class: EzSystems\EzPlatformRest\FieldTypeProcessor\DateProcessor
-    ezpublish_rest.field_type_processor.ezmedia.class: EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor
-    ezpublish_rest.field_type_processor.ezobjectrelationlist.class: EzSystems\EzPlatformRest\FieldTypeProcessor\RelationListProcessor
-    ezpublish_rest.field_type_processor.ezobjectrelation.class: EzSystems\EzPlatformRest\FieldTypeProcessor\RelationProcessor
-    ezpublish_rest.field_type_processor.eztime.class: EzSystems\EzPlatformRest\FieldTypeProcessor\TimeProcessor
-    ezpublish_rest.field_type_processor.ezbinaryfile.class: EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor
-    ezpublish_rest.field_type_processor.ezfloat.class: EzSystems\EzPlatformRest\FieldTypeProcessor\FloatProcessor
-    ezpublish_rest.field_type_processor.ezstring.class: EzSystems\EzPlatformRest\FieldTypeProcessor\StringProcessor
-    ezpublish_rest.field_type_processor.ezuser.class: EzSystems\EzPlatformRest\FieldTypeProcessor\UserProcessor
+    ezpublish_rest.field_type_processor.ezauthor.class: Ibexa\Rest\FieldTypeProcessor\AuthorProcessor
+    ezpublish_rest.field_type_processor_registry.class: Ibexa\Rest\FieldTypeProcessorRegistry
+    ezpublish_rest.field_type_processor.ezimage.class: Ibexa\Rest\FieldTypeProcessor\ImageProcessor
+    ezpublish_rest.field_type_processor.ezdatetime.class: Ibexa\Rest\FieldTypeProcessor\DateAndTimeProcessor
+    ezpublish_rest.field_type_processor.ezdate.class: Ibexa\Rest\FieldTypeProcessor\DateProcessor
+    ezpublish_rest.field_type_processor.ezmedia.class: Ibexa\Rest\FieldTypeProcessor\MediaProcessor
+    ezpublish_rest.field_type_processor.ezobjectrelationlist.class: Ibexa\Rest\FieldTypeProcessor\RelationListProcessor
+    ezpublish_rest.field_type_processor.ezobjectrelation.class: Ibexa\Rest\FieldTypeProcessor\RelationProcessor
+    ezpublish_rest.field_type_processor.eztime.class: Ibexa\Rest\FieldTypeProcessor\TimeProcessor
+    ezpublish_rest.field_type_processor.ezbinaryfile.class: Ibexa\Rest\FieldTypeProcessor\BinaryProcessor
+    ezpublish_rest.field_type_processor.ezfloat.class: Ibexa\Rest\FieldTypeProcessor\FloatProcessor
+    ezpublish_rest.field_type_processor.ezstring.class: Ibexa\Rest\FieldTypeProcessor\StringProcessor
+    ezpublish_rest.field_type_processor.ezuser.class: Ibexa\Rest\FieldTypeProcessor\UserProcessor
 
-    ezpublish_rest.output.visitor.dispatcher.class: EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher
-    ezpublish_rest.output.visitor.class: EzSystems\EzPlatformRest\Output\Visitor
-    ezpublish_rest.output.generator.json.class: EzSystems\EzPlatformRest\Output\Generator\Json
-    ezpublish_rest.output.generator.json.field_type_hash_generator.class: EzSystems\EzPlatformRest\Output\Generator\Json\FieldTypeHashGenerator
-    ezpublish_rest.output.generator.xml.class: EzSystems\EzPlatformRest\Output\Generator\Xml
-    ezpublish_rest.output.generator.xml.field_type_hash_generator.class: EzSystems\EzPlatformRest\Output\Generator\Xml\FieldTypeHashGenerator
+    ezpublish_rest.output.visitor.dispatcher.class: Ibexa\Rest\Server\View\AcceptHeaderVisitorDispatcher
+    ezpublish_rest.output.visitor.class: Ibexa\Contracts\Rest\Output\Visitor
+    ezpublish_rest.output.generator.json.class: Ibexa\Rest\Output\Generator\Json
+    ezpublish_rest.output.generator.json.field_type_hash_generator.class: Ibexa\Rest\Output\Generator\Json\FieldTypeHashGenerator
+    ezpublish_rest.output.generator.xml.class: Ibexa\Rest\Output\Generator\Xml
+    ezpublish_rest.output.generator.xml.field_type_hash_generator.class: Ibexa\Rest\Output\Generator\Xml\FieldTypeHashGenerator
     ezpublish_rest.output.visitor.json.regexps:
         - '(^application/vnd\.ez\.api\.[A-Za-z]+\+json$)'
         - '(^application/json$)'
@@ -62,14 +62,14 @@ parameters:
         - '(^application/xml$)'
         - '(^.*/.*$)'
 
-    ezpublish_rest.output.value_object_visitor.dispatcher.class: EzSystems\EzPlatformRest\Output\ValueObjectVisitorDispatcher
-    ezpublish_rest.output.value_object_visitor.Exception.InvalidArgumentException.class: EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\InvalidArgumentException
+    ezpublish_rest.output.value_object_visitor.dispatcher.class: Ibexa\Contracts\Rest\Output\ValueObjectVisitorDispatcher
+    ezpublish_rest.output.value_object_visitor.Exception.InvalidArgumentException.class: Ibexa\Rest\Server\Output\ValueObjectVisitor\InvalidArgumentException
 
-    ezpublish_rest.input.dispatcher.class: EzSystems\EzPlatformRest\Input\Dispatcher
-    ezpublish_rest.input.parsing_dispatcher.class: EzSystems\EzPlatformRest\Input\ParsingDispatcher
+    ezpublish_rest.input.dispatcher.class: Ibexa\Rest\Input\Dispatcher
+    ezpublish_rest.input.parsing_dispatcher.class: Ibexa\Contracts\Rest\Input\ParsingDispatcher
 
-    ezpublish_rest.input.handler.json.class: EzSystems\EzPlatformRest\Input\Handler\Json
-    ezpublish_rest.input.handler.xml.class: EzSystems\EzPlatformRest\Input\Handler\Xml
+    ezpublish_rest.input.handler.json.class: Ibexa\Rest\Input\Handler\Json
+    ezpublish_rest.input.handler.xml.class: Ibexa\Rest\Input\Handler\Xml
 
 services:
     ezpublish_rest.routing.options_loader:
@@ -214,7 +214,7 @@ services:
             - "@ezpublish.api.service.location"
             - "@ezpublish.api.service.section"
             - "@ezpublish.api.repository"
-            - '@eZ\Publish\API\Repository\PermissionResolver'
+            - '@Ibexa\Contracts\Core\Repository\PermissionResolver'
         tags: [controller.service_arguments]
 
     ezpublish_rest.controller.url_wildcard:
@@ -240,25 +240,25 @@ services:
         tags: [controller.service_arguments]
 
     ezpublish_rest.controller.session:
-        class: EzSystems\EzPlatformRest\Server\Controller\SessionController
+        class: Ibexa\Rest\Server\Controller\SessionController
         parent: ezpublish_rest.controller.base
         arguments:
             - "%ezpublish_rest.csrf_token_intention%"
-            - '@eZ\Publish\API\Repository\PermissionResolver'
+            - '@Ibexa\Contracts\Core\Repository\PermissionResolver'
             - '@ezpublish.api.service.user'
             - "@?ezpublish_rest.session_authenticator"
             - "@?ezpublish_rest.security.csrf.token_manager"
         tags: [controller.service_arguments]
 
     ezpublish_rest.controller.bookmark:
-        class: EzSystems\EzPlatformRest\Server\Controller\Bookmark
+        class: Ibexa\Rest\Server\Controller\Bookmark
         parent: ezpublish_rest.controller.base
         arguments:
             - '@ezpublish.api.service.bookmark'
             - '@ezpublish.api.service.location'
         tags: [controller.service_arguments]
 
-    EzSystems\EzPlatformRest\Server\Controller\JWT:
+    Ibexa\Rest\Server\Controller\JWT:
         parent: ezpublish_rest.controller.base
         arguments:
             - '@Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface'
@@ -309,7 +309,7 @@ services:
         tags:
             - { name: ibexa.rest.field_type.processor, alias: ezimage }
 
-    EzSystems\EzPlatformRest\FieldTypeProcessor\ImageAssetFieldTypeProcessor:
+    Ibexa\Rest\FieldTypeProcessor\ImageAssetFieldTypeProcessor:
         factory: ["@ezpublish_rest.factory", getImageAssetFieldTypeProcessor]
         arguments:
             - "@router"
@@ -428,7 +428,7 @@ services:
     ezpublish_rest.output.value_object_visitor.Exception.InvalidArgumentException:
         class: "%ezpublish_rest.output.value_object_visitor.Exception.InvalidArgumentException.class%"
         tags:
-            - { name: ezpublish_rest.output.value_object_visitor, type: \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException }
+            - { name: ezpublish_rest.output.value_object_visitor, type: \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException }
 
     ezpublish_rest.input.dispatcher:
         class: "%ezpublish_rest.input.dispatcher.class%"
@@ -450,7 +450,7 @@ services:
             - { name: ezpublish_rest.input.handler, format: xml }
 
     ezpublish_rest.templated_router:
-        class: eZ\Bundle\EzPublishCoreBundle\Routing\DefaultRouter
+        class: Ibexa\Bundle\Core\Routing\DefaultRouter
         parent: hautelook.router.template
         calls:
             - [ setOption, [ strict_requirements, ~ ] ]

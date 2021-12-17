@@ -1,11 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest;
+namespace Ibexa\Rest;
 
 abstract class Value
 {
 }
+
+class_alias(Value::class, 'EzSystems\EzPlatformRest\Value');
