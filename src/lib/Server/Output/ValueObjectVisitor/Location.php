@@ -6,7 +6,6 @@
  */
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
 use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\ContentService;
@@ -21,14 +20,10 @@ use eZ\Publish\API\Repository\Values\Content\Location as LocationValue;
  */
 class Location extends ValueObjectVisitor
 {
-    /**
-     * @var \eZ\Publish\API\Repository\LocationService
-     */
+    /** @var \eZ\Publish\API\Repository\LocationService */
     private $locationService;
 
-    /**
-     * @var \eZ\Publish\API\Repository\ContentService
-     */
+    /** @var \eZ\Publish\API\Repository\ContentService */
     private $contentService;
 
     public function __construct(LocationService $locationService, ContentService $contentService)
@@ -164,7 +159,7 @@ class Location extends ValueObjectVisitor
             $mainLocation = $contentInfo->mainLocationId === $location->id
                 ? $location
                 : $this->locationService->loadLocation($contentInfo->mainLocationId);
-        } catch (NotFoundException | UnauthorizedException $e) {
+        } catch (UnauthorizedException $e) {
             $mainLocation = null;
         }
 
