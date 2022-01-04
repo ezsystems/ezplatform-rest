@@ -76,21 +76,21 @@ XML;
 
     public function testLocationsByIdQueryContainsCurrentVersionObject(): void
     {
-        $body = <<< JSON
-{
-    "ViewInput": {
-        "identifier": "locations-by-id",
-        "public": "false",
-        "LocationQuery": {
-            "Filter": {
-                "LocationIdCriterion": "2"
-            },
-            "limit": "10",
-            "offset": "0"
+        $body = <<<JSON
+        {
+            "ViewInput": {
+                "identifier": "locations-by-id",
+                "public": "false",
+                "LocationQuery": {
+                    "Filter": {
+                        "LocationIdCriterion": "2"
+                    },
+                    "limit": "10",
+                    "offset": "0"
+                }
+            }
         }
-    }
-}
-JSON;
+        JSON;
 
         $request = $this->createHttpRequest(
             'POST',
@@ -101,11 +101,11 @@ JSON;
         );
 
         $response = $this->sendHttpRequest($request);
-        $jsonResponse = json_decode($response->getBody()->getContents());
+        $jsonResponse = json_decode($response->getBody()->getContents(), true);
 
-        $content = $jsonResponse->View->Result->searchHits->searchHit[0]->value->Location->ContentInfo->Content;
+        $content = $jsonResponse['View']['Result']['searchHits']['searchHit'][0]['value']['Location']['ContentInfo']['Content'];
 
-        self::assertIsObject($content->CurrentVersion->Version);
+        self::assertTrue(isset($content['CurrentVersion']['Version']));
     }
 
     /**
