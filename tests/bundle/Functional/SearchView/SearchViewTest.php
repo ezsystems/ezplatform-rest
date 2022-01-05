@@ -101,11 +101,11 @@ XML;
         );
 
         $response = $this->sendHttpRequest($request);
-        $jsonResponse = json_decode($response->getBody()->getContents(), true);
+        $jsonResponse = json_decode($response->getBody()->getContents());
 
-        $content = $jsonResponse['View']['Result']['searchHits']['searchHit'][0]['value']['Location']['ContentInfo']['Content'];
+        $content = $jsonResponse->View->Result->searchHits->searchHit[0]->value->Location->ContentInfo->Content;
 
-        self::assertTrue(isset($content['CurrentVersion']['Version']));
+        self::assertIsObject($content->CurrentVersion->Version);
     }
 
     /**
