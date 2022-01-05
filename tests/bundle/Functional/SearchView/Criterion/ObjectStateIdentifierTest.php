@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\Criterion;
+namespace Ibexa\Tests\Bundle\Rest\Functional\SearchView\Criterion;
 
-use EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\SearchCriterionTestCase;
+use Ibexa\Tests\Bundle\Rest\Functional\SearchView\SearchCriterionTestCase;
 
 final class ObjectStateIdentifierTest extends SearchCriterionTestCase
 {
@@ -28,3 +28,5 @@ final class ObjectStateIdentifierTest extends SearchCriterionTestCase
         ];
     }
 }
+
+class_alias(ObjectStateIdentifierTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\SearchView\Criterion\ObjectStateIdentifierTest');

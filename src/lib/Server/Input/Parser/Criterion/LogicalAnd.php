@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Criterion;
+namespace Ibexa\Rest\Server\Input\Parser\Criterion;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
-use eZ\Publish\API\Repository\Values;
+use Ibexa\Contracts\Core\Repository\Values;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 
 /**
  * Parser for LogicalAnd Criterion.
@@ -18,17 +18,17 @@ class LogicalAnd extends LogicalOperator
     /**
      * @var string
      */
-    const TAG_NAME = 'AND';
+    public const TAG_NAME = 'AND';
 
     /**
      * Parses input structure to a LogicalAnd Criterion object.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\Parser
+     * @throws \Ibexa\Contracts\Rest\Exceptions\Parser
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Criterion\LogicalAnd
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\LogicalAnd
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -50,3 +50,5 @@ class LogicalAnd extends LogicalOperator
         return new Values\Content\Query\Criterion\LogicalAnd($criteria);
     }
 }
+
+class_alias(LogicalAnd::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LogicalAnd');

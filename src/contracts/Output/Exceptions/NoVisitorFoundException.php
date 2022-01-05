@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output\Exceptions;
+namespace Ibexa\Contracts\Rest\Output\Exceptions;
 
 use RuntimeException;
 
@@ -28,3 +28,5 @@ class NoVisitorFoundException extends RuntimeException
         );
     }
 }
+
+class_alias(NoVisitorFoundException::class, 'EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException');

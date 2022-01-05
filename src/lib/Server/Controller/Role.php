@@ -1,27 +1,27 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\Exceptions\LimitationValidationException;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\Core\Base\Exceptions\ForbiddenException;
-use eZ\Publish\Core\Base\Exceptions\InvalidArgumentException;
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\RoleService;
-use eZ\Publish\API\Repository\UserService;
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\Values\User\RoleCreateStruct;
-use eZ\Publish\API\Repository\Values\User\RoleUpdateStruct;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException as APINotFoundException;
+use Ibexa\Contracts\Core\Repository\Exceptions\LimitationValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException as APINotFoundException;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\RoleService;
+use Ibexa\Contracts\Core\Repository\UserService;
+use Ibexa\Contracts\Core\Repository\Values\User\RoleCreateStruct;
+use Ibexa\Contracts\Core\Repository\Values\User\RoleUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Core\Base\Exceptions\ForbiddenException;
+use Ibexa\Core\Base\Exceptions\InvalidArgumentException;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -32,30 +32,30 @@ class Role extends RestController
     /**
      * Role service.
      *
-     * @var \eZ\Publish\API\Repository\RoleService
+     * @var \Ibexa\Contracts\Core\Repository\RoleService
      */
     protected $roleService;
 
     /**
      * User service.
      *
-     * @var \eZ\Publish\API\Repository\UserService
+     * @var \Ibexa\Contracts\Core\Repository\UserService
      */
     protected $userService;
 
     /**
      * Location service.
      *
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\RoleService $roleService
-     * @param \eZ\Publish\API\Repository\UserService $userService
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
+     * @param \Ibexa\Contracts\Core\Repository\RoleService $roleService
+     * @param \Ibexa\Contracts\Core\Repository\UserService $userService
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
      */
     public function __construct(
         RoleService $roleService,
@@ -72,7 +72,7 @@ class Role extends RestController
      *
      * Defaults to publishing the role, but you can create a draft instead by setting the POST parameter publish=false
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedRole
+     * @return \Ibexa\Rest\Server\Values\CreatedRole
      */
     public function createRole(Request $request)
     {
@@ -126,11 +126,11 @@ class Role extends RestController
      *
      * @since 6.2
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\ForbiddenException if the Role already has a Role Draft that will need to be removed first,
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\ForbiddenException if the Role already has a Role Draft that will need to be removed first,
      *                                                                  or if the authenticated user is not allowed to create a role
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException if a policy limitation in the $roleCreateStruct is not valid
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException if a policy limitation in the $roleCreateStruct is not valid
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedRole
+     * @return \Ibexa\Rest\Server\Values\CreatedRole
      */
     public function createRoleDraft($roleId, Request $request)
     {
@@ -154,7 +154,7 @@ class Role extends RestController
     /**
      * Loads list of roles.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleList
+     * @return \Ibexa\Rest\Server\Values\RoleList
      */
     public function listRoles(Request $request)
     {
@@ -185,7 +185,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \eZ\Publish\API\Repository\Values\User\Role
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\Role
      */
     public function loadRole($roleId)
     {
@@ -197,7 +197,7 @@ class Role extends RestController
      *
      * @param mixed $roleId Original role ID, or ID of the role draft itself
      *
-     * @return \eZ\Publish\API\Repository\Values\User\RoleDraft
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\RoleDraft
      */
     public function loadRoleDraft($roleId)
     {
@@ -216,7 +216,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \eZ\Publish\API\Repository\Values\User\Role
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\Role
      */
     public function updateRole($roleId, Request $request)
     {
@@ -244,7 +244,7 @@ class Role extends RestController
      *
      * @param mixed $roleId Original role ID, or ID of the role draft itself
      *
-     * @return \eZ\Publish\API\Repository\Values\User\RoleDraft
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\RoleDraft
      */
     public function updateRoleDraft($roleId, Request $request)
     {
@@ -272,7 +272,7 @@ class Role extends RestController
      *
      * @param mixed $roleId Original role ID, or ID of the role draft itself
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\PublishedRole
+     * @return \Ibexa\Rest\Server\Values\PublishedRole
      */
     public function publishRoleDraft($roleId)
     {
@@ -297,7 +297,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteRole($roleId)
     {
@@ -315,7 +315,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteRoleDraft($roleId)
     {
@@ -331,7 +331,7 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\PolicyList
+     * @return \Ibexa\Rest\Server\Values\PolicyList
      */
     public function loadPolicies($roleId, Request $request)
     {
@@ -345,13 +345,13 @@ class Role extends RestController
      *
      * @param $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deletePolicies($roleId)
     {
         $loadedRole = $this->roleService->loadRole($roleId);
         $roleDraft = $this->roleService->createRoleDraft($loadedRole);
-        /** @var \eZ\Publish\API\Repository\Values\User\PolicyDraft $policyDraft */
+        /** @var \Ibexa\Contracts\Core\Repository\Values\User\PolicyDraft $policyDraft */
         foreach ($roleDraft->getPolicies() as $policyDraft) {
             $this->roleService->removePolicyByRoleDraft($roleDraft, $policyDraft);
         }
@@ -366,9 +366,9 @@ class Role extends RestController
      * @param $roleId
      * @param $policyId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\API\Repository\Values\User\Policy
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\Policy
      */
     public function loadPolicy($roleId, $policyId, Request $request)
     {
@@ -387,7 +387,7 @@ class Role extends RestController
      *
      * @param int $roleId ID of a role draft
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedPolicy
+     * @return \Ibexa\Rest\Server\Values\CreatedPolicy
      */
     public function addPolicy($roleId, Request $request)
     {
@@ -434,7 +434,7 @@ class Role extends RestController
      *
      * @param $role \eZ\Publish\API\Repository\Values\User\Role
      *
-     * @return \eZ\Publish\API\Repository\Values\User\Policy
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\Policy
      */
     private function getLastAddedPolicy($role)
     {
@@ -456,9 +456,9 @@ class Role extends RestController
      * @param int $roleId ID of a role draft
      * @param int $policyId ID of a policy
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\API\Repository\Values\User\Policy
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\Policy
      */
     public function updatePolicy($roleId, $policyId, Request $request)
     {
@@ -521,9 +521,9 @@ class Role extends RestController
      * @param int $roleId ID of a role draft
      * @param int $policyId ID of a policy
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deletePolicy($roleId, $policyId, Request $request)
     {
@@ -569,7 +569,7 @@ class Role extends RestController
      *
      * @param $userId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
+     * @return \Ibexa\Rest\Server\Values\RoleAssignmentList
      */
     public function assignRoleToUser($userId, Request $request)
     {
@@ -599,7 +599,7 @@ class Role extends RestController
      *
      * @param $groupPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
+     * @return \Ibexa\Rest\Server\Values\RoleAssignmentList
      */
     public function assignRoleToUserGroup($groupPath, Request $request)
     {
@@ -633,7 +633,7 @@ class Role extends RestController
      * @param $userId
      * @param $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
+     * @return \Ibexa\Rest\Server\Values\RoleAssignmentList
      */
     public function unassignRoleFromUser($userId, $roleId)
     {
@@ -656,7 +656,7 @@ class Role extends RestController
      * @param $groupPath
      * @param $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
+     * @return \Ibexa\Rest\Server\Values\RoleAssignmentList
      */
     public function unassignRoleFromUserGroup($groupPath, $roleId)
     {
@@ -680,7 +680,7 @@ class Role extends RestController
      *
      * @param $userId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
+     * @return \Ibexa\Rest\Server\Values\RoleAssignmentList
      */
     public function loadRoleAssignmentsForUser($userId)
     {
@@ -696,7 +696,7 @@ class Role extends RestController
      *
      * @param $groupPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList
+     * @return \Ibexa\Rest\Server\Values\RoleAssignmentList
      */
     public function loadRoleAssignmentsForUserGroup($groupPath)
     {
@@ -715,9 +715,9 @@ class Role extends RestController
      * @param $userId
      * @param $roleId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserRoleAssignment
+     * @return \Ibexa\Rest\Server\Values\RestUserRoleAssignment
      */
     public function loadRoleAssignmentForUser($userId, $roleId, Request $request)
     {
@@ -739,9 +739,9 @@ class Role extends RestController
      * @param $groupPath
      * @param $roleId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroupRoleAssignment
+     * @return \Ibexa\Rest\Server\Values\RestUserGroupRoleAssignment
      */
     public function loadRoleAssignmentForUserGroup($groupPath, $roleId, Request $request)
     {
@@ -762,7 +762,7 @@ class Role extends RestController
     /**
      * Search all policies which are applied to a given user.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\PolicyList
+     * @return \Ibexa\Rest\Server\Values\PolicyList
      */
     public function listPoliciesForUser(Request $request)
     {
@@ -785,9 +785,9 @@ class Role extends RestController
      *
      * Needed since both structs are encoded into the same media type on input.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\RoleCreateStruct $createStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\RoleCreateStruct $createStruct
      *
-     * @return \eZ\Publish\API\Repository\Values\User\RoleUpdateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\RoleUpdateStruct
      */
     protected function mapToUpdateStruct(RoleCreateStruct $createStruct)
     {
@@ -798,3 +798,5 @@ class Role extends RestController
         );
     }
 }
+
+class_alias(Role::class, 'EzSystems\EzPlatformRest\Server\Controller\Role');

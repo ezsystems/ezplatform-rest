@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Contracts\Rest\Input;
 
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Rest\Exceptions;
 
 /**
  * Parsing dispatcher.
@@ -27,7 +27,7 @@ class ParsingDispatcher
      *  )
      * </code>
      *
-     * @var \EzSystems\EzPlatformRest\Input\Parser[]
+     * @var \Ibexa\Contracts\Rest\Input\Parser[]
      */
     protected $parsers = [];
 
@@ -47,7 +47,7 @@ class ParsingDispatcher
      * Adds another parser for the given Content Type.
      *
      * @param string $mediaType
-     * @param \EzSystems\EzPlatformRest\Input\Parser $parser
+     * @param \Ibexa\Contracts\Rest\Input\Parser $parser
      */
     public function addParser($mediaType, Parser $parser)
     {
@@ -61,7 +61,7 @@ class ParsingDispatcher
      * @param array $data
      * @param string $mediaType
      *
-     * @return \eZ\Publish\API\Repository\Values\ValueObject
+     * @return \Ibexa\Contracts\Core\Repository\Values\ValueObject
      */
     public function parse(array $data, $mediaType)
     {
@@ -107,3 +107,5 @@ class ParsingDispatcher
         return [$mediaType, $version];
     }
 }
+
+class_alias(ParsingDispatcher::class, 'EzSystems\EzPlatformRest\Input\ParsingDispatcher');

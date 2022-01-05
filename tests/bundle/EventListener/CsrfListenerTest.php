@@ -1,31 +1,28 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
+namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use PHPUnit\Framework\MockObject\MockObject;
+use Ibexa\Bundle\Rest\EventListener\CsrfListener;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\Form\Extension\Csrf\CsrfProvider\CsrfProviderInterface;
-use EzSystems\EzPlatformRestBundle\EventListener\CsrfListener;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 
 class CsrfListenerTest extends EventListenerTest
 {
-    const VALID_TOKEN = 'valid';
-    const INVALID_TOKEN = 'invalid';
-    const INTENTION = 'rest';
+    public const VALID_TOKEN = 'valid';
+    public const INVALID_TOKEN = 'invalid';
+    public const INTENTION = 'rest';
 
-    /** @var EventDispatcherInterface */
+    /** @var \Symfony\Component\EventDispatcher\EventDispatcherInterface */
     protected $eventDispatcherMock;
 
     /**
@@ -174,7 +171,7 @@ class CsrfListenerTest extends EventListenerTest
     }
 
     /**
-     * @return CsrfProviderInterface|MockObject
+     * @return \Symfony\Component\Form\Extension\Csrf\CsrfProvider\CsrfProviderInterface|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getCsrfProviderMock()
     {
@@ -182,7 +179,7 @@ class CsrfListenerTest extends EventListenerTest
         $provider->expects($this->any())
             ->method('isTokenValid')
             ->willReturnCallback(
-                function (CsrfToken $token) {
+                static function (CsrfToken $token) {
                     if ($token == new CsrfToken(self::INTENTION, self::VALID_TOKEN)) {
                         return true;
                     }
@@ -195,7 +192,7 @@ class CsrfListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|RequestEvent
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpKernel\Event\RequestEvent
      */
     protected function getEvent($class = null)
     {
@@ -228,7 +225,7 @@ class CsrfListenerTest extends EventListenerTest
     }
 
     /**
-     * @return ParameterBag|MockObject
+     * @return \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestHeadersMock()
     {
@@ -262,7 +259,7 @@ class CsrfListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|Request
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\Request
      */
     protected function getRequestMock()
     {
@@ -297,7 +294,7 @@ class CsrfListenerTest extends EventListenerTest
     }
 
     /**
-     * @return MockObject|EventDispatcherInterface
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\EventDispatcher\EventDispatcherInterface
      */
     protected function getEventDispatcherMock()
     {
@@ -311,7 +308,7 @@ class CsrfListenerTest extends EventListenerTest
     /**
      * @param bool $csrfEnabled
      *
-     * @return CsrfListener
+     * @return \Ibexa\Bundle\Rest\EventListener\CsrfListener
      */
     protected function getEventListener($csrfEnabled = true)
     {
@@ -331,3 +328,5 @@ class CsrfListenerTest extends EventListenerTest
         );
     }
 }
+
+class_alias(CsrfListenerTest::class, 'EzSystems\EzPlatformRestBundle\Tests\EventListener\CsrfListenerTest');

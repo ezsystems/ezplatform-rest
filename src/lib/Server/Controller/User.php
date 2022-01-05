@@ -1,31 +1,31 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Exceptions;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\UserService;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\RoleService;
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\SectionService;
-use eZ\Publish\API\Repository\Repository;
-use eZ\Publish\API\Repository\Values\User\UserRoleAssignment;
-use eZ\Publish\API\Repository\Values\User\UserGroupRoleAssignment;
-use eZ\Publish\API\Repository\Values\User\User as RepositoryUser;
-use eZ\Publish\API\Repository\Exceptions as ApiExceptions;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
-use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\Exceptions as ApiExceptions;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Contracts\Core\Repository\Repository;
+use Ibexa\Contracts\Core\Repository\RoleService;
+use Ibexa\Contracts\Core\Repository\SectionService;
+use Ibexa\Contracts\Core\Repository\UserService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
+use Ibexa\Contracts\Core\Repository\Values\User\User as RepositoryUser;
+use Ibexa\Contracts\Core\Repository\Values\User\UserGroupRoleAssignment;
+use Ibexa\Contracts\Core\Repository\Values\User\UserRoleAssignment;
+use Ibexa\Contracts\Rest\Exceptions\NotFoundException;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 
@@ -37,49 +37,49 @@ class User extends RestController
     /**
      * User service.
      *
-     * @var \eZ\Publish\API\Repository\UserService
+     * @var \Ibexa\Contracts\Core\Repository\UserService
      */
     protected $userService;
 
     /**
      * Role service.
      *
-     * @var \eZ\Publish\API\Repository\RoleService
+     * @var \Ibexa\Contracts\Core\Repository\RoleService
      */
     protected $roleService;
 
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
      * Location service.
      *
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Section service.
      *
-     * @var \eZ\Publish\API\Repository\SectionService
+     * @var \Ibexa\Contracts\Core\Repository\SectionService
      */
     protected $sectionService;
 
     /**
      * Repository.
      *
-     * @var \eZ\Publish\API\Repository\Repository
+     * @var \Ibexa\Contracts\Core\Repository\Repository
      */
     protected $repository;
 
@@ -91,13 +91,13 @@ class User extends RestController
     private $csrfTokenStorage;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Server\Controller\SessionController
+     * @var \Ibexa\Rest\Server\Controller\SessionController
      *
      * @deprecated This property is added for backward compatibility. It is deprecated, and will be removed in 7.0.
      */
     private $sessionController;
 
-    /** @var \eZ\Publish\API\Repository\PermissionResolver */
+    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver */
     private $permissionResolver;
 
     public function __construct(
@@ -123,7 +123,7 @@ class User extends RestController
     /**
      * Redirects to the root user group.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\PermanentRedirect
+     * @return \Ibexa\Rest\Server\Values\PermanentRedirect
      */
     public function loadRootUserGroup()
     {
@@ -138,7 +138,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup
+     * @return \Ibexa\Rest\Server\Values\RestUserGroup
      */
     public function loadUserGroup($groupPath)
     {
@@ -176,7 +176,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUser
+     * @return \Ibexa\Rest\Server\Values\RestUser
      */
     public function loadUser($userId)
     {
@@ -221,9 +221,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedUserGroup
+     * @return \Ibexa\Rest\Server\Values\CreatedUserGroup
      */
     public function createUserGroup($groupPath, Request $request)
     {
@@ -265,9 +265,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedUser
+     * @return \Ibexa\Rest\Server\Values\CreatedUser
      */
     public function createUser($groupPath, Request $request)
     {
@@ -311,7 +311,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup
+     * @return \Ibexa\Rest\Server\Values\RestUserGroup
      */
     public function updateUserGroup($groupPath, Request $request)
     {
@@ -361,7 +361,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUser
+     * @return \Ibexa\Rest\Server\Values\RestUser
      */
     public function updateUser($userId, Request $request)
     {
@@ -405,9 +405,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteUserGroup($groupPath)
     {
@@ -435,9 +435,9 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteUser($userId)
     {
@@ -455,7 +455,7 @@ class User extends RestController
     /**
      * Loads users.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserList|\EzSystems\EzPlatformRest\Server\Values\UserRefList
+     * @return \Ibexa\Rest\Server\Values\UserList|\Ibexa\Rest\Server\Values\UserRefList
      */
     public function loadUsers(Request $request)
     {
@@ -514,7 +514,7 @@ class User extends RestController
      *
      * @param mixed $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUser[]
+     * @return \Ibexa\Rest\Server\Values\RestUser[]
      */
     public function loadUsersAssignedToRole($roleId)
     {
@@ -549,7 +549,7 @@ class User extends RestController
     /**
      * Loads user groups.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupList|\EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
+     * @return \Ibexa\Rest\Server\Values\UserGroupList|\Ibexa\Rest\Server\Values\UserGroupRefList
      */
     public function loadUserGroups(Request $request)
     {
@@ -587,7 +587,7 @@ class User extends RestController
     /**
      * Loads a user group by its remote ID.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup
+     * @return \Ibexa\Rest\Server\Values\RestUserGroup
      */
     public function loadUserGroupByRemoteId(Request $request)
     {
@@ -610,7 +610,7 @@ class User extends RestController
      *
      * @param mixed $roleId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[]
+     * @return \Ibexa\Rest\Server\Values\RestUserGroup[]
      */
     public function loadUserGroupsAssignedToRole($roleId)
     {
@@ -644,7 +644,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\VersionList
+     * @return \Ibexa\Rest\Server\Values\VersionList
      */
     public function loadUserDrafts($userId, Request $request)
     {
@@ -660,9 +660,9 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
+     * @return \Ibexa\Rest\Server\Values\ResourceCreated
      */
     public function moveUserGroup($groupPath, Request $request)
     {
@@ -710,7 +710,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupList|\EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
+     * @return \Ibexa\Rest\Server\Values\UserGroupList|\Ibexa\Rest\Server\Values\UserGroupRefList
      */
     public function loadSubUserGroups($groupPath, Request $request)
     {
@@ -767,7 +767,7 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
+     * @return \Ibexa\Rest\Server\Values\UserGroupRefList
      */
     public function loadUserGroupsOfUser($userId, Request $request)
     {
@@ -808,7 +808,7 @@ class User extends RestController
      *
      * @param $groupPath
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserList|\EzSystems\EzPlatformRest\Server\Values\UserRefList
+     * @return \Ibexa\Rest\Server\Values\UserList|\Ibexa\Rest\Server\Values\UserRefList
      */
     public function loadUsersFromGroup($groupPath, Request $request)
     {
@@ -864,9 +864,9 @@ class User extends RestController
      * @param $userId
      * @param $groupPath
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
+     * @return \Ibexa\Rest\Server\Values\UserGroupRefList
      */
     public function unassignUserFromUserGroup($userId, $groupPath)
     {
@@ -915,9 +915,9 @@ class User extends RestController
      *
      * @param $userId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserGroupRefList
+     * @return \Ibexa\Rest\Server\Values\UserGroupRefList
      */
     public function assignUserToUserGroup($userId, Request $request)
     {
@@ -974,7 +974,7 @@ class User extends RestController
     /**
      * Creates a new session based on the credentials provided as POST parameters.
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException If the login or password are incorrect or invalid CSRF
+     * @throws \Ibexa\Core\Base\Exceptions\UnauthorizedException If the login or password are incorrect or invalid CSRF
      *
      * @return Values\UserSession|Values\Conflict
      *
@@ -995,9 +995,9 @@ class User extends RestController
      *
      * @param string $sessionId
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException if the CSRF token is missing or invalid
+     * @throws \Ibexa\Core\Base\Exceptions\UnauthorizedException if the CSRF token is missing or invalid
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserSession
+     * @return \Ibexa\Rest\Server\Values\UserSession
      *
      * @deprecated Deprecated since 6.5. Use SessionController::refreshSessionAction().
      */
@@ -1018,7 +1018,7 @@ class User extends RestController
      *
      * @return Values\DeletedUserSession|\Symfony\Component\HttpFoundation\Response
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException if the CSRF token is missing or invalid
+     * @throws \Ibexa\Core\Base\Exceptions\UnauthorizedException if the CSRF token is missing or invalid
      * @throws RestNotFoundException
      *
      * @deprecated Deprecated since 6.5. Use SessionController::refreshSessionAction().
@@ -1062,3 +1062,5 @@ class User extends RestController
         $this->sessionController = $sessionController;
     }
 }
+
+class_alias(User::class, 'EzSystems\EzPlatformRest\Server\Controller\User');

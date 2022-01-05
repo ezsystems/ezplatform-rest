@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * User group list view model.
@@ -16,7 +16,7 @@ class UserGroupRefList extends RestValue
     /**
      * User groups.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[]
+     * @var \Ibexa\Rest\Server\Values\RestUserGroup[]
      */
     public $userGroups;
 
@@ -37,7 +37,7 @@ class UserGroupRefList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestUserGroup[] $userGroups
+     * @param \Ibexa\Rest\Server\Values\RestUserGroup[] $userGroups
      * @param string $path
      * @param mixed $userId
      */
@@ -48,3 +48,5 @@ class UserGroupRefList extends RestValue
         $this->userId = $userId;
     }
 }
+
+class_alias(UserGroupRefList::class, 'EzSystems\EzPlatformRest\Server\Values\UserGroupRefList');

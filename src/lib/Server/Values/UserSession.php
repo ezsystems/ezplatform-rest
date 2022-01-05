@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
-use eZ\Publish\API\Repository\Values\User\User;
+use Ibexa\Contracts\Core\Repository\Values\User\User;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * User list view model.
@@ -17,7 +17,7 @@ class UserSession extends RestValue
     /**
      * User.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\User
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\User
      */
     public $user;
 
@@ -50,7 +50,7 @@ class UserSession extends RestValue
     public $exists;
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\User\User $user
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\User $user
      * @param string $sessionName
      * @param string $sessionId
      * @param string $csrfToken
@@ -64,3 +64,5 @@ class UserSession extends RestValue
         $this->created = $created;
     }
 }
+
+class_alias(UserSession::class, 'EzSystems\EzPlatformRest\Server\Values\UserSession');

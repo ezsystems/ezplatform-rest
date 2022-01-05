@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
+namespace Ibexa\Rest\FieldTypeProcessor;
 
 class BinaryProcessor extends BinaryInputProcessor
 {
@@ -62,3 +62,5 @@ class BinaryProcessor extends BinaryInputProcessor
         return $url;
     }
 }
+
+class_alias(BinaryProcessor::class, 'EzSystems\EzPlatformRest\FieldTypeProcessor\BinaryProcessor');

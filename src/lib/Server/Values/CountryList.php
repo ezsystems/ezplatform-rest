@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * Country list view model.
@@ -14,7 +14,7 @@ use EzSystems\EzPlatformRest\Value as RestValue;
 class CountryList extends RestValue
 {
     /**
-     * @var \eZ\Publish\API\Repository\Values\ContentType\Countries[]
+     * @var \Ibexa\Core\Repository\Values\ContentType\Countries[]
      */
     public $countries;
 
@@ -26,3 +26,5 @@ class CountryList extends RestValue
         $this->countries = $countries;
     }
 }
+
+class_alias(CountryList::class, 'EzSystems\EzPlatformRest\Server\Values\CountryList');

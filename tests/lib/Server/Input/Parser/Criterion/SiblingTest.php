@@ -1,26 +1,26 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\Criterion;
 
-use eZ\Publish\API\Repository\LocationService;
-use eZ\Publish\API\Repository\Values\Content\Query\Criterion\Sibling as SiblingCriterion;
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Exceptions\Parser as ParserExpcetion;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Sibling as SiblingParser;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Criterion\Sibling as SiblingCriterion;
+use Ibexa\Contracts\Rest\Exceptions\Parser as ParserExpcetion;
+use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Rest\Server\Input\Parser\Criterion\Sibling as SiblingParser;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 final class SiblingTest extends BaseTest
 {
     private const EXAMPLE_LOCATION_ID = 54;
     private const EXAMPLE_PARENT_LOCATION_ID = 2;
 
-    /** @var \eZ\Publish\API\Repository\LocationService */
+    /** @var \Ibexa\Contracts\Core\Repository\LocationService */
     private $locationService;
 
     protected function setUp(): void
@@ -67,3 +67,5 @@ final class SiblingTest extends BaseTest
         return new SiblingParser($this->locationService);
     }
 }
+
+class_alias(SiblingTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion\SiblingTest');

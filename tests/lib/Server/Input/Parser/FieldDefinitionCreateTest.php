@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionCreateStruct;
-use eZ\Publish\Core\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionCreateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -172,7 +172,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Returns the FieldDefinitionCreate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate
      */
     protected function internalGetParser()
     {
@@ -186,7 +186,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Get the FieldTypeParser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @return \Ibexa\Rest\Input\FieldTypeParser
      */
     protected function getFieldTypeParserMock()
     {
@@ -217,7 +217,7 @@ class FieldDefinitionCreateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {
@@ -227,12 +227,12 @@ class FieldDefinitionCreateTest extends BaseTest
             ->method('newFieldDefinitionCreateStruct')
             ->with($this->equalTo('title'), $this->equalTo('ezstring'))
             ->willReturn(
-                    new FieldDefinitionCreateStruct(
-                        [
+                new FieldDefinitionCreateStruct(
+                    [
                             'identifier' => 'title',
                             'fieldTypeIdentifier' => 'ezstring',
                         ]
-                    )
+                )
             );
 
         return $contentTypeServiceMock;
@@ -284,3 +284,5 @@ class FieldDefinitionCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(FieldDefinitionCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\FieldDefinitionCreateTest');

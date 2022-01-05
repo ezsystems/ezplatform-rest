@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * Trash view model.
@@ -16,7 +16,7 @@ class Trash extends RestValue
     /**
      * Trash items.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestTrashItem[]
+     * @var \Ibexa\Rest\Server\Values\RestTrashItem[]
      */
     public $trashItems;
 
@@ -30,7 +30,7 @@ class Trash extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestTrashItem[] $trashItems
+     * @param \Ibexa\Rest\Server\Values\RestTrashItem[] $trashItems
      * @param string $path
      */
     public function __construct(array $trashItems, $path)
@@ -39,3 +39,5 @@ class Trash extends RestValue
         $this->path = $path;
     }
 }
+
+class_alias(Trash::class, 'EzSystems\EzPlatformRest\Server\Values\Trash');

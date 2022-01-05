@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\RawTermAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractTermAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\RawTermAggregation;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 
 final class RawTermAggregationParser extends AbstractTermAggregationParser
 {
@@ -27,3 +27,5 @@ final class RawTermAggregationParser extends AbstractTermAggregationParser
         );
     }
 }
+
+class_alias(RawTermAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawTermAggregationParser');

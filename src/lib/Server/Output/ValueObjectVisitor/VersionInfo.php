@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Server\Values\VersionTranslationInfo as VersionTranslationInfoValue;
-use eZ\Publish\API\Repository\Values;
-use eZ\Publish\API\Repository\Values\Content\VersionInfo as VersionInfoValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo as VersionInfoValue;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Core\Repository\Values;
+use Ibexa\Rest\Server\Values\VersionTranslationInfo as VersionTranslationInfoValue;
 use RuntimeException;
 
 /**
@@ -22,9 +22,9 @@ class VersionInfo extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\Values\Content\VersionInfo $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
@@ -79,8 +79,10 @@ class VersionInfo extends ValueObjectVisitor
         $generator->startObjectElement('Creator', 'User');
         $generator->startAttribute(
             'href',
-            $this->router->generate('ezpublish_rest_loadUser',
-                ['userId' => $versionInfo->creatorId])
+            $this->router->generate(
+                'ezpublish_rest_loadUser',
+                ['userId' => $versionInfo->creatorId]
+            )
         );
         $generator->endAttribute('href');
         $generator->endObjectElement('Creator');
@@ -116,3 +118,5 @@ class VersionInfo extends ValueObjectVisitor
         $generator->endObjectElement('Content');
     }
 }
+
+class_alias(VersionInfo::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\VersionInfo');

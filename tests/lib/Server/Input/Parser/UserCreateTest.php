@@ -1,22 +1,22 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\Repository\UserService;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\FieldTypeService;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use EzSystems\EzPlatformRest\Server\Input\Parser\UserCreate;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
-use eZ\Publish\Core\Repository\Values\User\UserCreateStruct;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\UserService;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
+use Ibexa\Core\Repository\Values\User\UserCreateStruct;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\UserCreate;
 
 class UserCreateTest extends BaseTest
 {
@@ -425,7 +425,7 @@ class UserCreateTest extends BaseTest
     /**
      * Returns the UserCreate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\UserCreate
+     * @return \Ibexa\Rest\Server\Input\Parser\UserCreate
      */
     protected function internalGetParser()
     {
@@ -440,7 +440,7 @@ class UserCreateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
+     * @return \Ibexa\Rest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {
@@ -467,7 +467,7 @@ class UserCreateTest extends BaseTest
     /**
      * Get the user service mock object.
      *
-     * @return \eZ\Publish\API\Repository\UserService
+     * @return \Ibexa\Contracts\Core\Repository\UserService
      */
     protected function getUserServiceMock()
     {
@@ -484,12 +484,12 @@ class UserCreateTest extends BaseTest
                 $this->equalTo($contentType)
             )
             ->willReturn(
-                    new UserCreateStruct(
-                        [
+                new UserCreateStruct(
+                    [
                             'contentType' => $contentType,
                             'mainLanguageCode' => 'eng-US',
                         ]
-                    )
+                )
             );
 
         return $userServiceMock;
@@ -498,7 +498,7 @@ class UserCreateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {
@@ -515,7 +515,7 @@ class UserCreateTest extends BaseTest
     /**
      * Get the content type used in UserCreate parser.
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\ContentType
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType
      */
     protected function getContentType()
     {
@@ -544,3 +544,5 @@ class UserCreateTest extends BaseTest
         ];
     }
 }
+
+class_alias(UserCreateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\UserCreateTest');

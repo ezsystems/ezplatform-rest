@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Exceptions;
+use Ibexa\Rest\Server\Exceptions;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 class ForbiddenExceptionTest extends ExceptionTest
 {
@@ -44,10 +44,12 @@ class ForbiddenExceptionTest extends ExceptionTest
     /**
      * Gets the exception visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ForbiddenException
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\ForbiddenException
      */
     protected function internalGetVisitor()
     {
         return new ValueObjectVisitor\ForbiddenException();
     }
 }
+
+class_alias(ForbiddenExceptionTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\ForbiddenExceptionTest');

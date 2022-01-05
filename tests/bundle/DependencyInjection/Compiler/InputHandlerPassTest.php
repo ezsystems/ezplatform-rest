@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler;
+namespace Ibexa\Tests\Bundle\Rest\DependencyInjection\Compiler;
 
-use EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\InputHandlerPass;
+use Ibexa\Bundle\Rest\DependencyInjection\Compiler\InputHandlerPass;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\Reference;
 
 class InputHandlerPassTest extends TestCase
@@ -40,3 +40,5 @@ class InputHandlerPassTest extends TestCase
         self::assertEquals('ezpublish_rest.input.handler.test', $dispatcherMethodCalls[0][1][1]->__toString(), "Failed asserting that Referenced service is 'ezpublish_rest.input.handler.test'");
     }
 }
+
+class_alias(InputHandlerPassTest::class, 'EzSystems\EzPlatformRestBundle\Tests\DependencyInjection\Compiler\InputHandlerPassTest');

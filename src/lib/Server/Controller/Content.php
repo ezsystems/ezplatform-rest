@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\Values\Content\Language;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\Values\Content\Relation;
-use eZ\Publish\API\Repository\Values\Content\VersionInfo;
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\API\Repository\Exceptions\ContentFieldValidationException;
-use eZ\Publish\API\Repository\Exceptions\ContentValidationException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
-use EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ContentFieldValidationException as RESTContentFieldValidationException;
-use EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct;
+use Ibexa\Contracts\Core\Repository\Exceptions\ContentFieldValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\ContentValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
+use Ibexa\Contracts\Core\Repository\Values\Content\Relation;
+use Ibexa\Contracts\Core\Repository\Values\Content\VersionInfo;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\BadRequestException;
+use Ibexa\Rest\Server\Exceptions\ContentFieldValidationException as RESTContentFieldValidationException;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Values\RestContentCreateStruct;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
@@ -31,9 +31,9 @@ class Content extends RestController
     /**
      * Loads a content info by remote ID.
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
+     * @return \Ibexa\Rest\Server\Values\TemporaryRedirect
      */
     public function redirectContent(Request $request)
     {
@@ -61,7 +61,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestContent
+     * @return \Ibexa\Rest\Server\Values\RestContent
      */
     public function loadContent($contentId, Request $request)
     {
@@ -110,7 +110,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestContent
+     * @return \Ibexa\Rest\Server\Values\RestContent
      */
     public function updateContentMetadata($contentId, Request $request)
     {
@@ -160,7 +160,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
+     * @return \Ibexa\Rest\Server\Values\TemporaryRedirect
      */
     public function redirectCurrentVersion($contentId)
     {
@@ -183,7 +183,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param int $versionNumber
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\Version
+     * @return \Ibexa\Rest\Server\Values\Version
      */
     public function loadContentInVersion($contentId, $versionNumber, Request $request)
     {
@@ -229,7 +229,7 @@ class Content extends RestController
      *
      * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedContent
+     * @return \Ibexa\Rest\Server\Values\CreatedContent
      */
     public function createContent(Request $request)
     {
@@ -244,7 +244,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteContent($contentId)
     {
@@ -260,7 +260,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\ResourceCreated
+     * @return \Ibexa\Rest\Server\Values\ResourceCreated
      */
     public function copyContent($contentId, Request $request)
     {
@@ -288,7 +288,7 @@ class Content extends RestController
      * @param int $contentId
      * @param string $languageCode
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      *
      * @throws \Exception
      */
@@ -319,7 +319,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\VersionList
+     * @return \Ibexa\Rest\Server\Values\VersionList
      */
     public function loadContentVersions($contentId, Request $request)
     {
@@ -337,9 +337,9 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteContentVersion($contentId, $versionNumber)
     {
@@ -366,9 +366,9 @@ class Content extends RestController
      * @param int $versionNumber
      * @param string $languageCode
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      */
     public function deleteTranslationFromDraft($contentId, $versionNumber, $languageCode)
     {
@@ -390,7 +390,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedVersion
+     * @return \Ibexa\Rest\Server\Values\CreatedVersion
      */
     public function createDraftFromVersion($contentId, $versionNumber)
     {
@@ -417,9 +417,9 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @throws ForbiddenException if the current version is already a draft
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException if the current version is already a draft
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedVersion
+     * @return \Ibexa\Rest\Server\Values\CreatedVersion
      */
     public function createDraftFromCurrentVersion($contentId)
     {
@@ -452,10 +452,10 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\BadRequestException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\BadRequestException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\Version
+     * @return \Ibexa\Rest\Server\Values\Version
      */
     public function updateVersion($contentId, $versionNumber, Request $request)
     {
@@ -521,9 +521,9 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @throws ForbiddenException if version $versionNumber isn't a draft
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException if version $versionNumber isn't a draft
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function publishVersion($contentId, $versionNumber)
     {
@@ -548,7 +548,7 @@ class Content extends RestController
      *
      * @param mixed $contentId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\TemporaryRedirect
+     * @return \Ibexa\Rest\Server\Values\TemporaryRedirect
      */
     public function redirectCurrentVersionRelations($contentId)
     {
@@ -571,7 +571,7 @@ class Content extends RestController
      * @param mixed $contentId
      * @param mixed $versionNumber
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RelationList
+     * @return \Ibexa\Rest\Server\Values\RelationList
      */
     public function loadVersionRelations($contentId, $versionNumber, Request $request)
     {
@@ -613,9 +613,9 @@ class Content extends RestController
      * @param int $versionNumber
      * @param mixed $relationId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestRelation
+     * @return \Ibexa\Rest\Server\Values\RestRelation
      */
     public function loadVersionRelation($contentId, $versionNumber, $relationId, Request $request)
     {
@@ -649,10 +649,10 @@ class Content extends RestController
      * @param int   $versionNumber
      * @param mixed $relationId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function removeRelation($contentId, $versionNumber, $relationId, Request $request)
     {
@@ -687,10 +687,10 @@ class Content extends RestController
      * @param mixed $contentId
      * @param int $versionNumber
      *
-     * @throws ForbiddenException if version $versionNumber isn't a draft
-     * @throws ForbiddenException if a relation to the same content already exists
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException if version $versionNumber isn't a draft
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException if a relation to the same content already exists
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedRelation
+     * @return \Ibexa\Rest\Server\Values\CreatedRelation
      */
     public function createRelation($contentId, $versionNumber, Request $request)
     {
@@ -730,8 +730,8 @@ class Content extends RestController
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function hideContent(int $contentId): Values\NoContent
     {
@@ -743,8 +743,8 @@ class Content extends RestController
     }
 
     /**
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      */
     public function revealContent(int $contentId): Values\NoContent
     {
@@ -760,7 +760,7 @@ class Content extends RestController
      *
      * @deprecated Since platform 1.0. Forwards the request to the new /views location, but returns a 301.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestExecutedView
+     * @return \Ibexa\Rest\Server\Values\RestExecutedView
      */
     public function createView()
     {
@@ -803,13 +803,13 @@ class Content extends RestController
 
     /**
      * @param \Symfony\Component\HttpFoundation\Request $request
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestContentCreateStruct $contentCreate
+     * @param \Ibexa\Rest\Server\Values\RestContentCreateStruct $contentCreate
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
-     * @throws \eZ\Publish\API\Repository\Exceptions\InvalidArgumentException
-     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedContent
+     * @return \Ibexa\Rest\Server\Values\CreatedContent
      */
     protected function doCreateContent(Request $request, RestContentCreateStruct $contentCreate)
     {
@@ -852,3 +852,5 @@ class Content extends RestController
         );
     }
 }
+
+class_alias(Content::class, 'EzSystems\EzPlatformRest\Server\Controller\Content');

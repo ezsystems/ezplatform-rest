@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server\Values;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -53,3 +53,5 @@ class DeletedUserSessionTest extends ValueObjectVisitorBaseTest
         return new ValueObjectVisitor\DeletedUserSession();
     }
 }
+
+class_alias(DeletedUserSessionTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\DeletedUserSessionTest');

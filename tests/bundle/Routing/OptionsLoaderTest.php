@@ -1,13 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Routing;
+namespace Ibexa\Tests\Bundle\Rest\Routing;
 
-use EzSystems\EzPlatformRestBundle\Routing\OptionsLoader;
-use PHPUnit\Framework\MockObject\MockObject;
+use Ibexa\Bundle\Rest\Routing\OptionsLoader;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Routing\RouteCollection;
 
@@ -55,7 +54,7 @@ class OptionsLoaderTest extends TestCase
     /**
      * Returns a partially mocked OptionsLoader, with the import method mocked.
      *
-     * @return OptionsLoader|MockObject
+     * @return \Ibexa\Bundle\Rest\Routing\OptionsLoader|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getOptionsLoader()
     {
@@ -73,7 +72,7 @@ class OptionsLoaderTest extends TestCase
     }
 
     /**
-     * @return MockObject
+     * @return \PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRouteCollectionMapperMock()
     {
@@ -84,3 +83,5 @@ class OptionsLoaderTest extends TestCase
         return $this->routeCollectionMapperMock;
     }
 }
+
+class_alias(OptionsLoaderTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Routing\OptionsLoaderTest');

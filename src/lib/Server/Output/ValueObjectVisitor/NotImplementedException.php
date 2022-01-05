@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 /**
  * NotImplementedException value object visitor.
@@ -21,3 +21,5 @@ class NotImplementedException extends Exception
         return 501;
     }
 }
+
+class_alias(NotImplementedException::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\NotImplementedException');

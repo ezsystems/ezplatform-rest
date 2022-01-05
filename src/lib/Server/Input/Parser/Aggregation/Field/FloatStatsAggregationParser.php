@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Field;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractStatsAggregation;
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Field\FloatStatsAggregation;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\AbstractStatsAggregationParser;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractStatsAggregation;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Field\FloatStatsAggregation;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Server\Input\Parser\Aggregation\AbstractStatsAggregationParser;
 
 final class FloatStatsAggregationParser extends AbstractStatsAggregationParser
 {
@@ -38,3 +38,5 @@ final class FloatStatsAggregationParser extends AbstractStatsAggregationParser
         );
     }
 }
+
+class_alias(FloatStatsAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\FloatStatsAggregationParser');

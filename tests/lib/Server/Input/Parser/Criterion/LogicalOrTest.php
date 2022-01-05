@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\Criterion;
 
-use eZ\Publish\API\Repository\Values\Content;
-use EzSystems\EzPlatformRest\Exceptions\Parser as ParserException;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Server\Input\Parser;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use Ibexa\Contracts\Rest\Exceptions\Parser as ParserException;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Core\Repository\Values\Content;
+use Ibexa\Rest\Server\Input\Parser;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 class LogicalOrTest extends BaseTest
 {
@@ -66,7 +66,7 @@ class LogicalOrTest extends BaseTest
 
         $criterionMock = $this->createMock(Content\Query\Criterion::class, [], [], '', false);
 
-        $parserMock = $this->createMock(\EzSystems\EzPlatformRest\Input\Parser::class);
+        $parserMock = $this->createMock(\Ibexa\Contracts\Rest\Input\Parser::class);
         $parserMock->method('parse')->willReturn($criterionMock);
 
         $result = $this->internalGetParser()->parse($logicalOrParsedFromXml, new ParsingDispatcher([
@@ -92,3 +92,5 @@ class LogicalOrTest extends BaseTest
         return new Parser\Criterion\LogicalOr();
     }
 }
+
+class_alias(LogicalOrTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Criterion\LogicalOrTest');

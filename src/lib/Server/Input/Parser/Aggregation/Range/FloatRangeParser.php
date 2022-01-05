@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation\Range;
 
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 
 final class FloatRangeParser extends AbstractRangeParser
 {
@@ -21,3 +21,5 @@ final class FloatRangeParser extends AbstractRangeParser
         return (float)$value;
     }
 }
+
+class_alias(FloatRangeParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\FloatRangeParser');

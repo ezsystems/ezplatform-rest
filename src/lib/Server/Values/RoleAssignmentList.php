@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * RoleAssignment list view model.
@@ -16,7 +16,7 @@ class RoleAssignmentList extends RestValue
     /**
      * Role assignments.
      *
-     * @var \eZ\Publish\API\Repository\Values\User\RoleAssignment[]
+     * @var \Ibexa\Contracts\Core\Repository\Values\User\RoleAssignment[]
      */
     public $roleAssignments;
 
@@ -37,7 +37,7 @@ class RoleAssignmentList extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\User\RoleAssignment[] $roleAssignments
+     * @param \Ibexa\Contracts\Core\Repository\Values\User\RoleAssignment[] $roleAssignments
      * @param mixed $id
      * @param bool $isGroupAssignment
      */
@@ -48,3 +48,5 @@ class RoleAssignmentList extends RestValue
         $this->isGroupAssignment = $isGroupAssignment;
     }
 }
+
+class_alias(RoleAssignmentList::class, 'EzSystems\EzPlatformRest\Server\Values\RoleAssignmentList');

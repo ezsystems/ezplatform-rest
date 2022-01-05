@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler;
+namespace Ibexa\Bundle\Rest\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
+use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * Compiler pass for the ezpublish_rest.output.visitor tag.
@@ -64,7 +64,8 @@ class OutputVisitorPass implements CompilerPassInterface
         foreach ($visitors as $visitor) {
             foreach ($visitor['regexps'] as $regexp) {
                 $definition->addMethodCall(
-                    'addVisitor', [
+                    'addVisitor',
+                    [
                         $regexp,
                         $visitor['reference'],
                     ]
@@ -73,3 +74,5 @@ class OutputVisitorPass implements CompilerPassInterface
         }
     }
 }
+
+class_alias(OutputVisitorPass::class, 'EzSystems\EzPlatformRestBundle\DependencyInjection\Compiler\OutputVisitorPass');

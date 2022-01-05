@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
 use DOMDocument;
 use DOMXPath;
@@ -194,3 +194,5 @@ class SessionTest extends TestCase
         self::assertStringStartsWith("{$session->name}=deleted;", $response->getHeader('set-cookie')[0]);
     }
 }
+
+class_alias(SessionTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\SessionTest');

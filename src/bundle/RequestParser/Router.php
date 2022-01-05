@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\RequestParser;
+namespace Ibexa\Bundle\Rest\RequestParser;
 
-use EzSystems\EzPlatformRest\RequestParser;
+use Ibexa\Contracts\Rest\Exceptions\InvalidArgumentException;
+use Ibexa\Rest\RequestParser;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\RouterInterface;
-use EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException;
 
 /**
  * Router based request parser.
@@ -63,7 +63,7 @@ class Router implements RequestParser
     }
 
     /**
-     * @throws \eZ\Publish\Core\Base\Exceptions\InvalidArgumentException If $attribute wasn't found in the match
+     * @throws \Ibexa\Core\Base\Exceptions\InvalidArgumentException If $attribute wasn't found in the match
      */
     public function parseHref($href, $attribute)
     {
@@ -81,7 +81,7 @@ class Router implements RequestParser
      *
      * @param array $match Match array returned by Router::match() / Router::matchRequest()
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\InvalidArgumentException if the \$match isn't valid
+     * @throws \Ibexa\Contracts\Rest\Exceptions\InvalidArgumentException if the \$match isn't valid
      *
      * @return bool
      */
@@ -94,3 +94,5 @@ class Router implements RequestParser
         return strpos($match['_route'], 'ezpublish_rest_') === 0;
     }
 }
+
+class_alias(Router::class, 'EzSystems\EzPlatformRestBundle\RequestParser\Router');

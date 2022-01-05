@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest;
+namespace Ibexa\Rest;
+
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
 
 /**
  * FieldTypeProcessorRegistry.
@@ -14,12 +16,12 @@ class FieldTypeProcessorRegistry
     /**
      * Registered processors.
      *
-     * @var \EzSystems\EzPlatformRest\FieldTypeProcessor[]
+     * @var \Ibexa\Contracts\Rest\FieldTypeProcessor[]
      */
     private $processors = [];
 
     /**
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor[] $processors
+     * @param \Ibexa\Contracts\Rest\FieldTypeProcessor[] $processors
      */
     public function __construct(array $processors = [])
     {
@@ -32,7 +34,7 @@ class FieldTypeProcessorRegistry
      * Registers $processor for $fieldTypeIdentifier.
      *
      * @param string $fieldTypeIdentifier
-     * @param \EzSystems\EzPlatformRest\FieldTypeProcessor $processor
+     * @param \Ibexa\Contracts\Rest\FieldTypeProcessor $processor
      */
     public function registerProcessor($fieldTypeIdentifier, FieldTypeProcessor $processor)
     {
@@ -58,7 +60,7 @@ class FieldTypeProcessorRegistry
      *
      * @throws \RuntimeException if not processor is registered for $fieldTypeIdentifier
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor
+     * @return \Ibexa\Contracts\Rest\FieldTypeProcessor
      */
     public function getProcessor($fieldTypeIdentifier)
     {
@@ -71,3 +73,5 @@ class FieldTypeProcessorRegistry
         return $this->processors[$fieldTypeIdentifier];
     }
 }
+
+class_alias(FieldTypeProcessorRegistry::class, 'EzSystems\EzPlatformRest\FieldTypeProcessorRegistry');

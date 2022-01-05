@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Base\Exceptions\BadStateException as CoreBadStateException;
-use eZ\Publish\Core\Helper\TranslationHelper;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Server\Values\Version as VersionValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Core\Base\Exceptions\BadStateException as CoreBadStateException;
+use Ibexa\Core\Helper\TranslationHelper;
+use Ibexa\Rest\Server\Values\Version as VersionValue;
 
 /**
  * RestContent value object visitor.
  */
 class RestContent extends ValueObjectVisitor
 {
-    /** @var \eZ\Publish\Core\Helper\TranslationHelper */
+    /** @var \Ibexa\Core\Helper\TranslationHelper */
     private $translationHelper;
 
     public function __construct(TranslationHelper $translationHelper)
@@ -30,9 +30,9 @@ class RestContent extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestContent $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Rest\Server\Values\RestContent $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
@@ -221,7 +221,7 @@ class RestContent extends ValueObjectVisitor
      *
      * @param int $status
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\BadStateException
+     * @throws \Ibexa\Core\Base\Exceptions\BadStateException
      *
      * @return string
      */
@@ -241,3 +241,5 @@ class RestContent extends ValueObjectVisitor
         throw new CoreBadStateException('status', $status);
     }
 }
+
+class_alias(RestContent::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestContent');

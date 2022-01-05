@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Input\Parser;
+namespace Ibexa\Rest\Server\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Input\ParserTools;
-use eZ\Publish\API\Repository\ContentTypeService;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Input\ParserTools;
 
 /**
  * Parser for FieldDefinitionUpdate.
@@ -21,29 +21,29 @@ class FieldDefinitionUpdate extends BaseParser
     /**
      * ContentType service.
      *
-     * @var \eZ\Publish\API\Repository\ContentTypeService
+     * @var \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected $contentTypeService;
 
     /**
      * FieldType parser.
      *
-     * @var \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @var \Ibexa\Rest\Input\FieldTypeParser
      */
     protected $fieldTypeParser;
 
     /**
      * Parser tools.
      *
-     * @var \EzSystems\EzPlatformRest\Input\ParserTools
+     * @var \Ibexa\Rest\Input\ParserTools
      */
     protected $parserTools;
 
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\ContentTypeService $contentTypeService
-     * @param \EzSystems\EzPlatformRest\Input\ParserTools $parserTools
+     * @param \Ibexa\Contracts\Core\Repository\ContentTypeService $contentTypeService
+     * @param \Ibexa\Rest\Input\ParserTools $parserTools
      */
     public function __construct(ContentTypeService $contentTypeService, FieldTypeParser $fieldTypeParser, ParserTools $parserTools)
     {
@@ -56,9 +56,9 @@ class FieldDefinitionUpdate extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionUpdateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionUpdateStruct
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -150,13 +150,13 @@ class FieldDefinitionUpdate extends BaseParser
      *
      * @todo depends on temporary solution to give parser access to the URL
      *
-     * @see \EzSystems\EzPlatformRest\Server\Controller\ContentType::updateFieldDefinition
+     * @see \Ibexa\Rest\Server\Controller\ContentType::updateFieldDefinition
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
      *
      * @param array $data
      *
-     * @return \eZ\Publish\API\Repository\Values\ContentType\FieldDefinition
+     * @return \Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinition
      */
     protected function getFieldDefinition(array $data)
     {
@@ -172,3 +172,5 @@ class FieldDefinitionUpdate extends BaseParser
         throw new Exceptions\NotFoundException("Field definition not found: '{$data['__url']}'.");
     }
 }
+
+class_alias(FieldDefinitionUpdate::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate');

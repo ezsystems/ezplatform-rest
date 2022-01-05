@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Exceptions\NotFoundException;
-use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
-use eZ\Publish\API\Repository\Values\Content as ApiValues;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use eZ\Publish\API\Repository\ContentService;
-use eZ\Publish\API\Repository\LocationService;
-use EzSystems\EzPlatformRest\Server\Values\RestContent as RestContentValue;
+use Ibexa\Contracts\Core\Repository\ContentService;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException;
+use Ibexa\Contracts\Core\Repository\Exceptions\UnauthorizedException;
+use Ibexa\Contracts\Core\Repository\LocationService;
+use Ibexa\Contracts\Core\Repository\Values\Content as ApiValues;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Rest\Server\Values\RestContent as RestContentValue;
 
 /**
  * Section value object visitor.
@@ -25,20 +25,20 @@ class RestExecutedView extends ValueObjectVisitor
     /**
      * Location service.
      *
-     * @var \eZ\Publish\API\Repository\LocationService
+     * @var \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected $locationService;
 
     /**
      * Content service.
      *
-     * @var \eZ\Publish\API\Repository\ContentService
+     * @var \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected $contentService;
 
     /**
-     * @param \eZ\Publish\API\Repository\LocationService $locationService
-     * @param \eZ\Publish\API\Repository\ContentService $contentService
+     * @param \Ibexa\Contracts\Core\Repository\LocationService $locationService
+     * @param \Ibexa\Contracts\Core\Repository\ContentService $contentService
      */
     public function __construct(
         LocationService $locationService,
@@ -51,9 +51,9 @@ class RestExecutedView extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestExecutedView $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Rest\Server\Values\RestExecutedView $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
@@ -113,7 +113,7 @@ class RestExecutedView extends ValueObjectVisitor
 
             // @todo Refactor
             if ($searchHit->valueObject instanceof ApiValues\Content) {
-                /** @var \eZ\Publish\API\Repository\Values\Content\Content $searchHit->valueObject */
+                /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Content $searchHit->valueObject */
                 $contentInfo = $searchHit->valueObject->contentInfo;
 
                 try {
@@ -161,3 +161,5 @@ class RestExecutedView extends ValueObjectVisitor
         $generator->endObjectElement('View');
     }
 }
+
+class_alias(RestExecutedView::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestExecutedView');

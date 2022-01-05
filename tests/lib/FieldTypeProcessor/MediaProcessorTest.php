@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\FieldTypeProcessor;
+namespace Ibexa\Tests\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor;
+use Ibexa\Rest\FieldTypeProcessor\MediaProcessor;
 
 class MediaProcessorTest extends BinaryInputProcessorTest
 {
@@ -23,7 +23,7 @@ class MediaProcessorTest extends BinaryInputProcessorTest
     public function fieldSettingsHashes()
     {
         return array_map(
-            function ($constantName) {
+            static function ($constantName) {
                 return [
                     ['mediaType' => $constantName],
                     ['mediaType' => constant("eZ\\Publish\\Core\\FieldType\\Media\\Type::{$constantName}")],
@@ -62,10 +62,12 @@ class MediaProcessorTest extends BinaryInputProcessorTest
     }
 
     /**
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor\MediaProcessor
+     * @return \Ibexa\Rest\FieldTypeProcessor\MediaProcessor
      */
     protected function getProcessor()
     {
         return new MediaProcessor($this->getTempDir());
     }
 }
+
+class_alias(MediaProcessorTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessor\MediaProcessorTest');

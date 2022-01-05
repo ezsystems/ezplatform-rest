@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 /**
  * ForbiddenException value object visitor.
@@ -21,3 +21,5 @@ class ForbiddenException extends Exception
         return 403;
     }
 }
+
+class_alias(ForbiddenException::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\ForbiddenException');

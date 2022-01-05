@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input;
+namespace Ibexa\Tests\Rest\Input;
 
-use EzSystems\EzPlatformRest\Input\ParserTools;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\ParserTools;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
@@ -108,3 +108,5 @@ class ParserToolsTest extends TestCase
         return new ParserTools();
     }
 }
+
+class_alias(ParserToolsTest::class, 'EzSystems\EzPlatformRest\Tests\Input\ParserToolsTest');

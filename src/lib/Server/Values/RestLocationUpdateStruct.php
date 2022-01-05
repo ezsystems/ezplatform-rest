@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct;
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * RestLocationUpdateStruct view model.
@@ -17,7 +17,7 @@ class RestLocationUpdateStruct extends RestValue
     /**
      * Location update struct.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct
      */
     public $locationUpdateStruct;
 
@@ -31,7 +31,7 @@ class RestLocationUpdateStruct extends RestValue
     /**
      * Construct.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\LocationUpdateStruct $locationUpdateStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\LocationUpdateStruct $locationUpdateStruct
      * @param bool $hidden
      */
     public function __construct(LocationUpdateStruct $locationUpdateStruct, $hidden = null)
@@ -40,3 +40,5 @@ class RestLocationUpdateStruct extends RestValue
         $this->hidden = $hidden;
     }
 }
+
+class_alias(RestLocationUpdateStruct::class, 'EzSystems\EzPlatformRest\Server\Values\RestLocationUpdateStruct');

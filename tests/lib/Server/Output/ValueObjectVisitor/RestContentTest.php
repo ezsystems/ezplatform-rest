@@ -1,23 +1,23 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Values\RestContent;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use eZ\Publish\Core\Repository\Values;
-use eZ\Publish\Core\Helper\TranslationHelper;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use EzSystems\EzPlatformRest\Server\Values\Version;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Helper\TranslationHelper;
+use Ibexa\Core\Repository\Values;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Rest\Server\Values\RestContent;
+use Ibexa\Rest\Server\Values\Version;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 class RestContentTest extends ValueObjectVisitorBaseTest
 {
-    /** @var \eZ\Publish\Core\Helper\TranslationHelper|\PHPUnit\Framework\MockObject\MockObject */
+    /** @var \Ibexa\Core\Helper\TranslationHelper|\PHPUnit\Framework\MockObject\MockObject */
     private $translationHelper;
 
     protected function setUp(): void
@@ -25,7 +25,7 @@ class RestContentTest extends ValueObjectVisitorBaseTest
         $this->translationHelper = $this->createMock(TranslationHelper::class);
         $this->translationHelper
             ->method('getTranslatedContentNameByContentInfo')
-            ->willReturnCallback(function (ContentInfo $content) {
+            ->willReturnCallback(static function (ContentInfo $content) {
                 return $content->name . ' (Translated)';
             });
     }
@@ -515,7 +515,7 @@ class RestContentTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Content visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestContent
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\RestContent
      */
     protected function internalGetVisitor()
     {
@@ -524,3 +524,5 @@ class RestContentTest extends ValueObjectVisitorBaseTest
         );
     }
 }
+
+class_alias(RestContentTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\RestContentTest');

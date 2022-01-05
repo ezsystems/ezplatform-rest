@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use eZ\Publish\API\Repository\SectionService;
-use eZ\Publish\API\Repository\Values\Content\SectionCreateStruct;
-use eZ\Publish\API\Repository\Values\Content\SectionUpdateStruct;
-use EzSystems\EzPlatformRest\Server\Values\NoContent;
-use eZ\Publish\API\Repository\Exceptions\InvalidArgumentException;
-use EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException;
+use Ibexa\Contracts\Core\Repository\Exceptions\InvalidArgumentException;
+use Ibexa\Contracts\Core\Repository\SectionService;
+use Ibexa\Contracts\Core\Repository\Values\Content\SectionCreateStruct;
+use Ibexa\Contracts\Core\Repository\Values\Content\SectionUpdateStruct;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
+use Ibexa\Rest\Server\Exceptions\ForbiddenException;
+use Ibexa\Rest\Server\Values;
+use Ibexa\Rest\Server\Values\NoContent;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -25,14 +25,14 @@ class Section extends RestController
     /**
      * Section service.
      *
-     * @var \eZ\Publish\API\Repository\SectionService
+     * @var \Ibexa\Contracts\Core\Repository\SectionService
      */
     protected $sectionService;
 
     /**
      * Construct controller.
      *
-     * @param \eZ\Publish\API\Repository\SectionService $sectionService
+     * @param \Ibexa\Contracts\Core\Repository\SectionService $sectionService
      */
     public function __construct(SectionService $sectionService)
     {
@@ -42,7 +42,7 @@ class Section extends RestController
     /**
      * List sections.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\SectionList
+     * @return \Ibexa\Rest\Server\Values\SectionList
      */
     public function listSections(Request $request)
     {
@@ -60,7 +60,7 @@ class Section extends RestController
     /**
      * Loads section by identifier.
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Section
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Section
      */
     public function loadSectionByIdentifier(Request $request)
     {
@@ -73,9 +73,9 @@ class Section extends RestController
     /**
      * Create new section.
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\CreatedSection
+     * @return \Ibexa\Rest\Server\Values\CreatedSection
      */
     public function createSection(Request $request)
     {
@@ -104,7 +104,7 @@ class Section extends RestController
      *
      * @param $sectionId
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Section
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Section
      */
     public function loadSection($sectionId)
     {
@@ -116,9 +116,9 @@ class Section extends RestController
      *
      * @param $sectionId
      *
-     * @throws \EzSystems\EzPlatformRest\Server\Exceptions\ForbiddenException
+     * @throws \Ibexa\Rest\Server\Exceptions\ForbiddenException
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\Section
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Section
      */
     public function updateSection($sectionId, Request $request)
     {
@@ -144,7 +144,7 @@ class Section extends RestController
      *
      * @param $sectionId
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\NoContent
+     * @return \Ibexa\Rest\Server\Values\NoContent
      */
     public function deleteSection($sectionId)
     {
@@ -160,9 +160,9 @@ class Section extends RestController
      *
      * Needed since both structs are encoded into the same media type on input.
      *
-     * @param \eZ\Publish\API\Repository\Values\Content\SectionCreateStruct $createStruct
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\SectionCreateStruct $createStruct
      *
-     * @return \eZ\Publish\API\Repository\Values\Content\SectionUpdateStruct
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\SectionUpdateStruct
      */
     protected function mapToUpdateStruct(SectionCreateStruct $createStruct)
     {
@@ -174,3 +174,5 @@ class Section extends RestController
         );
     }
 }
+
+class_alias(Section::class, 'EzSystems\EzPlatformRest\Server\Controller\Section');

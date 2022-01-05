@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use EzSystems\EzPlatformRest\Tests\Output\ValueObjectVisitorBaseTest;
-use EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Server;
-use eZ\Publish\Core\Repository\Values;
+use Ibexa\Core\Repository\Values;
+use Ibexa\Rest\Server;
+use Ibexa\Rest\Server\Output\ValueObjectVisitor;
+use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
 
 /**
  * @todo coverage add unit test for a content type draft
@@ -102,10 +102,12 @@ class FieldDefinitionListTest extends ValueObjectVisitorBaseTest
     /**
      * Get the Content visitor.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\FieldDefinitionList
+     * @return \Ibexa\Rest\Server\Output\ValueObjectVisitor\FieldDefinitionList
      */
     protected function internalGetVisitor()
     {
         return new ValueObjectVisitor\FieldDefinitionList();
     }
 }
+
+class_alias(FieldDefinitionListTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Output\ValueObjectVisitor\FieldDefinitionListTest');

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Routing\OptionsLoader;
+namespace Ibexa\Bundle\Rest\Routing\OptionsLoader;
 
 use Symfony\Component\Routing\Route;
 
@@ -16,7 +16,7 @@ class Mapper
     /**
      * @param $route Route REST route
      *
-     * @return Route
+     * @return \Symfony\Component\Routing\Route
      */
     public function mapRoute(Route $route)
     {
@@ -38,10 +38,10 @@ class Mapper
     /**
      * Merges the methods from $restRoute into the _method default of $optionsRoute.
      *
-     * @param Route $restRoute
-     * @param Route $optionsRoute
+     * @param \Symfony\Component\Routing\Route $restRoute
+     * @param \Symfony\Component\Routing\Route $optionsRoute
      *
-     * @return Route $optionsRoute with the methods from $restRoute in the _methods default
+     * @return \Symfony\Component\Routing\Route $optionsRoute with the methods from $restRoute in the _methods default
      */
     public function mergeMethodsDefault(Route $optionsRoute, Route $restRoute)
     {
@@ -76,3 +76,5 @@ class Mapper
         return 'ezpublish_rest_options_' . trim($name, '_');
     }
 }
+
+class_alias(Mapper::class, 'EzSystems\EzPlatformRestBundle\Routing\OptionsLoader\Mapper');

@@ -1,13 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input;
+namespace Ibexa\Rest\Input;
 
-use eZ\Publish\API\Repository\Values;
-use EzSystems\EzPlatformRest\Exceptions;
+use Ibexa\Contracts\Core\Repository\Values;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
 use RuntimeException;
 
 /**
@@ -19,7 +20,7 @@ class ParserTools
      * Parses the given $objectElement, if it contains embedded data.
      *
      * @param array $objectElement
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
      * @return mixed
      */
@@ -182,7 +183,7 @@ class ParserTools
      *
      * @param array $limitation
      *
-     * @return \eZ\Publish\API\Repository\Values\User\Limitation
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\Limitation
      */
     public function parseLimitation(array $limitation)
     {
@@ -215,9 +216,9 @@ class ParserTools
      *
      * @param string $identifier
      *
-     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Core\Repository\Exceptions\NotFoundException
      *
-     * @return \eZ\Publish\API\Repository\Values\User\Limitation
+     * @return \Ibexa\Contracts\Core\Repository\Values\User\Limitation
      *
      * @todo Use dependency injection system
      */
@@ -225,46 +226,48 @@ class ParserTools
     {
         switch ($identifier) {
             case Values\User\Limitation::CONTENTTYPE:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\ContentTypeLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ContentTypeLimitation();
 
             case Values\User\Limitation::LANGUAGE:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\LanguageLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\LanguageLimitation();
 
             case Values\User\Limitation::LOCATION:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\LocationLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\LocationLimitation();
 
             case Values\User\Limitation::OWNER:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\OwnerLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\OwnerLimitation();
 
             case Values\User\Limitation::PARENTOWNER:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\ParentOwnerLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ParentOwnerLimitation();
 
             case Values\User\Limitation::PARENTCONTENTTYPE:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\ParentContentTypeLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ParentContentTypeLimitation();
 
             case Values\User\Limitation::PARENTDEPTH:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\ParentDepthLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ParentDepthLimitation();
 
             case Values\User\Limitation::SECTION:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\SectionLimitation();
 
             case Values\User\Limitation::SITEACCESS:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\SiteaccessLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\SiteaccessLimitation();
 
             case Values\User\Limitation::STATE:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\ObjectStateLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ObjectStateLimitation();
 
             case Values\User\Limitation::SUBTREE:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\SubtreeLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\SubtreeLimitation();
 
             case Values\User\Limitation::USERGROUP:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\UserGroupLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\UserGroupLimitation();
 
             case Values\User\Limitation::PARENTUSERGROUP:
-                return new \eZ\Publish\API\Repository\Values\User\Limitation\ParentUserGroupLimitation();
+                return new \Ibexa\Contracts\Core\Repository\Values\User\Limitation\ParentUserGroupLimitation();
 
             default:
-                throw new \eZ\Publish\Core\Base\Exceptions\NotFoundException('Limitation', $identifier);
+                throw new \Ibexa\Core\Base\Exceptions\NotFoundException('Limitation', $identifier);
         }
     }
 }
+
+class_alias(ParserTools::class, 'EzSystems\EzPlatformRest\Input\ParserTools');

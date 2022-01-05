@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests;
+namespace Ibexa\Tests\Rest;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
-use EzSystems\EzPlatformRest\Tests\Server\BaseTest;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
+use Ibexa\Rest\FieldTypeProcessorRegistry;
+use Ibexa\Tests\Rest\Server\BaseTest;
 use RuntimeException;
 
 class FieldTypeProcessorRegistryTest extends BaseTest
@@ -87,10 +87,12 @@ class FieldTypeProcessorRegistryTest extends BaseTest
     /**
      * Get FieldTypeProcessor mock object.
      *
-     * @return \EzSystems\EzPlatformRest\FieldTypeProcessor
+     * @return \Ibexa\Contracts\Rest\FieldTypeProcessor
      */
     protected function getAProcessorMock()
     {
         return $this->createMock(FieldTypeProcessor::class);
     }
 }
+
+class_alias(FieldTypeProcessorRegistryTest::class, 'EzSystems\EzPlatformRest\Tests\FieldTypeProcessorRegistryTest');

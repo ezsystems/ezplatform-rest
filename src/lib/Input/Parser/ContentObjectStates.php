@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Input\Parser;
+namespace Ibexa\Rest\Input\Parser;
 
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Values\RestObjectState;
-use eZ\Publish\Core\Repository\Values\ObjectState\ObjectState;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Core\Repository\Values\ObjectState\ObjectState;
+use Ibexa\Rest\Input\BaseParser;
+use Ibexa\Rest\Values\RestObjectState;
 
 /**
  * Parser for ContentObjectStates.
@@ -21,9 +21,9 @@ class ContentObjectStates extends BaseParser
      * Parse input structure.
      *
      * @param array $data
-     * @param \EzSystems\EzPlatformRest\Input\ParsingDispatcher $parsingDispatcher
+     * @param \Ibexa\Contracts\Rest\Input\ParsingDispatcher $parsingDispatcher
      *
-     * @return \EzSystems\EzPlatformRest\Values\RestObjectState[]
+     * @return \Ibexa\Rest\Values\RestObjectState[]
      */
     public function parse(array $data, ParsingDispatcher $parsingDispatcher)
     {
@@ -52,3 +52,5 @@ class ContentObjectStates extends BaseParser
         return $states;
     }
 }
+
+class_alias(ContentObjectStates::class, 'EzSystems\EzPlatformRest\Input\Parser\ContentObjectStates');

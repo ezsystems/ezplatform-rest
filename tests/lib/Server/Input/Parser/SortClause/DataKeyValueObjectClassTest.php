@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SortClause;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\SortClause;
 
-use eZ\Publish\API\Repository\Values\Content\Query;
-use eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished;
-use EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\DatePublished;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Server\Input\Parser\SortClause\DataKeyValueObjectClass;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 class DataKeyValueObjectClassTest extends BaseTest
 {
@@ -84,7 +84,7 @@ class DataKeyValueObjectClassTest extends BaseTest
     /**
      * Returns the DataKeyValueObjectClass parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass
+     * @return \Ibexa\Rest\Server\Input\Parser\SortClause\DataKeyValueObjectClass
      */
     protected function internalGetParser()
     {
@@ -94,3 +94,5 @@ class DataKeyValueObjectClassTest extends BaseTest
         );
     }
 }
+
+class_alias(DataKeyValueObjectClassTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\SortClause\DataKeyValueObjectClassTest');

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
 /**
  * Test sending OPTIONS header for REST routes.
@@ -121,3 +121,5 @@ class HttpOptionsTest extends TestCase
         ];
     }
 }
+
+class_alias(HttpOptionsTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\HttpOptionsTest');

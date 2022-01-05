@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\Exceptions\NotImplementedException;
-use eZ\Publish\API\Repository\SearchService;
-use eZ\Publish\API\Repository\Values\Content\Language;
-use eZ\Publish\API\Repository\Values\Content\LocationQuery;
-use EzSystems\EzPlatformRest\Server\Controller;
+use Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
+use Ibexa\Contracts\Core\Repository\SearchService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Language;
+use Ibexa\Contracts\Core\Repository\Values\Content\LocationQuery;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Values;
 
 /**
  * Controller for Repository Views (Search, mostly).
@@ -21,7 +21,7 @@ use EzSystems\EzPlatformRest\Server\Values;
 class Views extends Controller
 {
     /**
-     * @var \eZ\Publish\API\Repository\SearchService
+     * @var \Ibexa\Contracts\Core\Repository\SearchService
      */
     private $searchService;
 
@@ -33,7 +33,7 @@ class Views extends Controller
     /**
      * Creates and executes a content view.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\RestExecutedView
+     * @return \Ibexa\Rest\Server\Values\RestExecutedView
      */
     public function createView(Request $request)
     {
@@ -73,7 +73,7 @@ class Views extends Controller
     /**
      * List content views.
      *
-     * @return NotImplementedException;
+     * @return \Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
      */
     public function listView()
     {
@@ -83,7 +83,7 @@ class Views extends Controller
     /**
      * Get a content view.
      *
-     * @return NotImplementedException;
+     * @return \Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
      */
     public function getView()
     {
@@ -93,10 +93,12 @@ class Views extends Controller
     /**
      * Get a content view results.
      *
-     * @return NotImplementedException;
+     * @return \Ibexa\Contracts\Core\Repository\Exceptions\NotImplementedException;
      */
     public function loadViewResults()
     {
         return new NotImplementedException('ezpublish_rest.controller.content:loadViewResults');
     }
 }
+
+class_alias(Views::class, 'EzSystems\EzPlatformRest\Server\Controller\Views');

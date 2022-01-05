@@ -1,8 +1,8 @@
 parameters:
-    ezpublish_rest.security.authentication.listener.session.class: EzSystems\EzPlatformRest\Server\Security\RestAuthenticator
-    ezpublish_rest.security.authentication.logout_handler.class: EzSystems\EzPlatformRest\Server\Security\RestLogoutHandler
+    ezpublish_rest.security.authentication.listener.session.class: Ibexa\Rest\Server\Security\RestAuthenticator
+    ezpublish_rest.security.authentication.logout_handler.class: Ibexa\Rest\Server\Security\RestLogoutHandler
 
-    ezpublish_rest.security.csrf.token_manager.class: EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager
+    ezpublish_rest.security.csrf.token_manager.class: Ibexa\Rest\Server\Security\CsrfTokenManager
 services:
     # Following service will be aliased at compile time to "ezpublish_rest.session_authenticator" by the Security factory.
     ezpublish_rest.security.authentication.listener.session:
@@ -30,8 +30,8 @@ services:
             - '@?security.csrf.token_storage'
             - '@?request_stack'
 
-    EzSystems\EzPlatformRest\Server\Security\EventListener\SecurityListener:
+    Ibexa\Rest\Server\Security\EventListener\SecurityListener:
         arguments:
-            - '@eZ\Publish\API\Repository\PermissionResolver'
+            - '@Ibexa\Contracts\Core\Repository\PermissionResolver'
         tags:
             - { name: kernel.event_subscriber }

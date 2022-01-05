@@ -1,19 +1,19 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Values;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller as RestController;
 use Ibexa\Rest\Server\Security\JWTUser;
+use Ibexa\Rest\Server\Values;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
@@ -26,7 +26,7 @@ final class JWT extends RestController
     /** @var \Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface */
     private $tokenManager;
 
-    /** @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
+    /** @var \Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
     private $authenticator;
 
     public function __construct(
@@ -39,7 +39,7 @@ final class JWT extends RestController
 
     public function createToken(Request $request): Values\JWT
     {
-        /** @var \EzSystems\EzPlatformRest\Server\Values\JWTInput $jwtTokenInput */
+        /** @var \Ibexa\Rest\Server\Values\JWTInput $jwtTokenInput */
         $jwtTokenInput = $this->inputDispatcher->parse(
             new Message(
                 ['Content-Type' => $request->headers->get('Content-Type')],
@@ -78,3 +78,5 @@ final class JWT extends RestController
         return $this->authenticator;
     }
 }
+
+class_alias(JWT::class, 'EzSystems\EzPlatformRest\Server\Controller\JWT');

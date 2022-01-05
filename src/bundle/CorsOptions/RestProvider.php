@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\CorsOptions;
+namespace Ibexa\Bundle\Rest\CorsOptions;
 
 use Nelmio\CorsBundle\Options\ProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
-use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Exception\MethodNotAllowedException;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\Routing\Matcher\RequestMatcherInterface;
 
 /**
  * REST Cors Options provider.
@@ -19,11 +19,11 @@ use Symfony\Component\Routing\Exception\MethodNotAllowedException;
  */
 class RestProvider implements ProviderInterface
 {
-    /** @var RequestMatcherInterface */
+    /** @var \Symfony\Component\Routing\Matcher\RequestMatcherInterface */
     protected $requestMatcher;
 
     /**
-     * @param RequestMatcherInterface $requestMatcher
+     * @param \Symfony\Component\Routing\Matcher\RequestMatcherInterface $requestMatcher
      */
     public function __construct(RequestMatcherInterface $requestMatcher)
     {
@@ -65,3 +65,5 @@ class RestProvider implements ProviderInterface
         return [];
     }
 }
+
+class_alias(RestProvider::class, 'EzSystems\EzPlatformRestBundle\CorsOptions\RestProvider');

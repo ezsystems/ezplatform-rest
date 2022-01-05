@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input\Handler;
+namespace Ibexa\Tests\Rest\Input\Handler;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Input\Handler\Json;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -67,6 +67,8 @@ class JsonTest extends TestCase
 
     protected function getHandler()
     {
-        return new EzPlatformRest\Input\Handler\Json();
+        return new Json();
     }
 }
+
+class_alias(JsonTest::class, 'EzSystems\EzPlatformRest\Tests\Input\Handler\JsonTest');

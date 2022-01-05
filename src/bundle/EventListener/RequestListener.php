@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\EventListener;
+namespace Ibexa\Bundle\Rest\EventListener;
 
-use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Event\RequestEvent;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * REST request listener.
@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class RequestListener implements EventSubscriberInterface
 {
-    const REST_PREFIX_PATTERN = '/^\/api\/[a-zA-Z0-9-_]+\/v\d+(\.\d+)?\//';
+    public const REST_PREFIX_PATTERN = '/^\/api\/[a-zA-Z0-9-_]+\/v\d+(\.\d+)?\//';
 
     /**
      * @return array
@@ -57,3 +57,5 @@ class RequestListener implements EventSubscriberInterface
         return preg_match(self::REST_PREFIX_PATTERN, $request->getPathInfo());
     }
 }
+
+class_alias(RequestListener::class, 'EzSystems\EzPlatformRestBundle\EventListener\RequestListener');

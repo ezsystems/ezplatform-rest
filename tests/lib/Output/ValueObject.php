@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output;
+namespace Ibexa\Tests\Rest\Output;
 
 use stdClass;
 
@@ -14,3 +14,5 @@ use stdClass;
 class ValueObject extends stdClass
 {
 }
+
+class_alias(ValueObject::class, 'EzSystems\EzPlatformRest\Tests\Output\ValueObject');

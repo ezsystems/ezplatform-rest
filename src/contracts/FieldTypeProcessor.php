@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest;
+namespace Ibexa\Contracts\Rest;
 
 /**
  * FieldTypeProcessor.
@@ -21,7 +21,7 @@ abstract class FieldTypeProcessor
      * apply to hashes accepted by fromHash(). The return value of this method
      * replaces the $incomingValueHash.
      *
-     * @see \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @see \Ibexa\Rest\Input\FieldTypeParser
      *
      * @param mixed $incomingValueHash
      *
@@ -42,7 +42,7 @@ abstract class FieldTypeProcessor
      * $outgoingValueHash and must obey to the same rules as the original
      * $outgoingValueHash.
      *
-     * @see \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
+     * @see \Ibexa\Rest\Output\FieldTypeSerializer
      *
      * @param mixed $outgoingValueHash
      *
@@ -63,7 +63,7 @@ abstract class FieldTypeProcessor
      * need to apply to hashes accepted by fieldSettingsFromHash(). The return
      * value of this method replaces the $incomingSettingsHash.
      *
-     * @see \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @see \Ibexa\Rest\Input\FieldTypeParser
      *
      * @param mixed $incomingSettingsHash
      *
@@ -84,7 +84,7 @@ abstract class FieldTypeProcessor
      * $outgoingSettingsHash and must obey to the same rules as the original
      * $outgoingSettingsHash.
      *
-     * @see \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
+     * @see \Ibexa\Rest\Output\FieldTypeSerializer
      *
      * @param mixed $outgoingSettingsHash
      *
@@ -105,7 +105,7 @@ abstract class FieldTypeProcessor
      * rules that need to apply to hashes accepted by validatorConfigurationFromHash().
      * The return value of this method replaces the $incomingValidatorConfigurationHash.
      *
-     * @see \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @see \Ibexa\Rest\Input\FieldTypeParser
      *
      * @param mixed $incomingValidatorConfigurationHash
      *
@@ -126,7 +126,7 @@ abstract class FieldTypeProcessor
      * $outgoingValidatorConfigurationHash and must obey to the same rules as the original
      * $outgoingValidatorConfigurationHash.
      *
-     * @see \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
+     * @see \Ibexa\Rest\Output\FieldTypeSerializer
      *
      * @param mixed $outgoingValidatorConfigurationHash
      *
@@ -137,3 +137,5 @@ abstract class FieldTypeProcessor
         return $outgoingValidatorConfigurationHash;
     }
 }
+
+class_alias(FieldTypeProcessor::class, 'EzSystems\EzPlatformRest\FieldTypeProcessor');

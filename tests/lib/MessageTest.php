@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests;
+namespace Ibexa\Tests\Rest;
 
-use EzSystems\EzPlatformRest;
+use Ibexa\Rest\Message;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,7 +19,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageDefaultHeaders()
     {
-        $message = new EzPlatformRest\Message();
+        $message = new Message();
 
         $this->assertSame([], $message->headers);
     }
@@ -29,7 +29,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageDefaultBody()
     {
-        $message = new EzPlatformRest\Message();
+        $message = new Message();
 
         $this->assertSame('', $message->body);
     }
@@ -39,7 +39,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageConstructorHeaders()
     {
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             $headers = [
                 'Content-Type' => 'text/xml',
             ]
@@ -53,7 +53,7 @@ class MessageTest extends TestCase
      */
     public function testCreateMessageConstructorBody()
     {
-        $message = new EzPlatformRest\Message(
+        $message = new Message(
             [],
             'Hello world!'
         );
@@ -61,3 +61,5 @@ class MessageTest extends TestCase
         $this->assertSame('Hello world!', $message->body);
     }
 }
+
+class_alias(MessageTest::class, 'EzSystems\EzPlatformRest\Tests\MessageTest');

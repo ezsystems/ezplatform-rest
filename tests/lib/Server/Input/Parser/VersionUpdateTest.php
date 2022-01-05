@@ -1,18 +1,18 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ContentService;
-use eZ\Publish\API\Repository\ContentTypeService;
-use eZ\Publish\API\Repository\FieldTypeService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\VersionUpdate;
-use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\ContentTypeService;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentService;
+use Ibexa\Core\Repository\Values\Content\ContentUpdateStruct;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\VersionUpdate;
 
 class VersionUpdateTest extends BaseTest
 {
@@ -124,7 +124,7 @@ class VersionUpdateTest extends BaseTest
     /**
      * Returns the VersionUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\VersionUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\VersionUpdate
      */
     protected function internalGetParser()
     {
@@ -137,7 +137,7 @@ class VersionUpdateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
+     * @return \Ibexa\Rest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {
@@ -164,7 +164,7 @@ class VersionUpdateTest extends BaseTest
     /**
      * Get the Content service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentService
+     * @return \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected function getContentServiceMock()
     {
@@ -186,3 +186,5 @@ class VersionUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(VersionUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\VersionUpdateTest');

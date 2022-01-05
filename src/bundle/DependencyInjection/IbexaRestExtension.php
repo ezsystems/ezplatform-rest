@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\DependencyInjection;
+namespace Ibexa\Bundle\Rest\DependencyInjection;
 
-use eZ\Bundle\EzPublishCoreBundle\DependencyInjection\Configuration\SiteAccessAware\ConfigurationProcessor;
+use Ibexa\Bundle\Core\DependencyInjection\Configuration\SiteAccessAware\ConfigurationProcessor;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -20,8 +20,15 @@ use Symfony\Component\Yaml\Yaml;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class EzPlatformRestExtension extends Extension implements PrependExtensionInterface
+class IbexaRestExtension extends Extension implements PrependExtensionInterface
 {
+    public const EXTENSION_NAME = 'ibexa_rest';
+
+    public function getAlias(): string
+    {
+        return self::EXTENSION_NAME;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -56,6 +63,8 @@ class EzPlatformRestExtension extends Extension implements PrependExtensionInter
     private function prependRouterConfiguration(ContainerBuilder $container)
     {
         $config = ['router' => ['default_router' => ['non_siteaccess_aware_routes' => ['ezpublish_rest_']]]];
-        $container->prependExtensionConfig('ezpublish', $config);
+        $container->prependExtensionConfig('ibexa', $config);
     }
 }
+
+class_alias(IbexaRestExtension::class, 'EzSystems\EzPlatformRestBundle\DependencyInjection\EzPlatformRestExtension');

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Limitation;
+namespace Ibexa\Tests\Rest\Server\Input\Parser\Limitation;
 
-use EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser;
-use EzSystems\EzPlatformRest\Tests\Server\Input\Parser\BaseTest;
+use Ibexa\Rest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser;
+use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 
 class PathStringRouteBasedLimitationParserTest extends BaseTest
 {
@@ -33,7 +33,7 @@ class PathStringRouteBasedLimitationParserTest extends BaseTest
     /**
      * Must return the tested parser object.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
+     * @return \Ibexa\Rest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
      */
     protected function internalGetParser()
     {
@@ -47,3 +47,5 @@ class PathStringRouteBasedLimitationParserTest extends BaseTest
         ];
     }
 }
+
+class_alias(PathStringRouteBasedLimitationParserTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParserTest');

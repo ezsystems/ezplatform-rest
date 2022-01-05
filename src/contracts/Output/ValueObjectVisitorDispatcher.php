@@ -1,10 +1,10 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Output;
+namespace Ibexa\Contracts\Rest\Output;
 
 use Error;
 
@@ -19,12 +19,12 @@ class ValueObjectVisitorDispatcher
     private $visitors;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Output\Visitor
+     * @var \Ibexa\Contracts\Rest\Output\Visitor
      */
     private $outputVisitor;
 
     /**
-     * @var \EzSystems\EzPlatformRest\Output\Generator
+     * @var \Ibexa\Contracts\Rest\Output\Generator
      */
     private $outputGenerator;
 
@@ -40,7 +40,7 @@ class ValueObjectVisitorDispatcher
 
     /**
      * @param string $visitedClassName The FQN of the visited class
-     * @param \EzSystems\EzPlatformRest\Output\ValueObjectVisitor $visitor The visitor object
+     * @param \Ibexa\Contracts\Rest\Output\ValueObjectVisitor $visitor The visitor object
      */
     public function addVisitor($visitedClassName, ValueObjectVisitor $visitor)
     {
@@ -50,8 +50,8 @@ class ValueObjectVisitorDispatcher
     /**
      * @param object $data The visited object
      *
-     * @throws \EzSystems\EzPlatformRest\Output\Exceptions\NoVisitorFoundException
-     * @throws \EzSystems\EzPlatformRest\Output\Exceptions\InvalidTypeException
+     * @throws \Ibexa\Contracts\Rest\Output\Exceptions\NoVisitorFoundException
+     * @throws \Ibexa\Contracts\Rest\Output\Exceptions\InvalidTypeException
      *
      * @return mixed
      */
@@ -78,3 +78,5 @@ class ValueObjectVisitorDispatcher
         throw new Exceptions\NoVisitorFoundException($checkedClassNames);
     }
 }
+
+class_alias(ValueObjectVisitorDispatcher::class, 'EzSystems\EzPlatformRest\Output\ValueObjectVisitorDispatcher');

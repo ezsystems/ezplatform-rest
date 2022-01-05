@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\ValueObject;
+use Ibexa\Contracts\Core\Repository\Values\ValueObject;
 
 /**
  * Struct representing a freshly created section.
@@ -16,7 +16,9 @@ class CreatedSection extends ValueObject
     /**
      * The created section.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Section
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Section
      */
     public $section;
 }
+
+class_alias(CreatedSection::class, 'EzSystems\EzPlatformRest\Server\Values\CreatedSection');

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use eZ\Publish\API\Repository\Values\Content\Location;
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Contracts\Core\Repository\Values\Content\Location;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * RestLocation view model.
@@ -17,7 +17,7 @@ class RestLocation extends RestValue
     /**
      * A location.
      *
-     * @var \eZ\Publish\API\Repository\Values\Content\Location
+     * @var \Ibexa\Contracts\Core\Repository\Values\Content\Location
      */
     public $location;
 
@@ -29,7 +29,7 @@ class RestLocation extends RestValue
     public $childCount;
 
     /**
-     * @param \eZ\Publish\API\Repository\Values\Content\Location $location
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Location $location
      * @param int $childCount
      */
     public function __construct(Location $location, $childCount)
@@ -38,3 +38,5 @@ class RestLocation extends RestValue
         $this->childCount = $childCount;
     }
 }
+
+class_alias(RestLocation::class, 'EzSystems\EzPlatformRest\Server\Values\RestLocation');

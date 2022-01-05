@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Security\EventListener;
+namespace Ibexa\Rest\Server\Security\EventListener;
 
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\Core\MVC\Symfony\Security\UserInterface as EzPlatformUser;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Core\MVC\Symfony\Security\UserInterface as EzPlatformUser;
 use Lexik\Bundle\JWTAuthenticationBundle\Security\Authentication\Token\JWTUserToken;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Security\Http\Event\InteractiveLoginEvent as BaseInteractiveLoginEvent;
@@ -21,7 +21,7 @@ use Symfony\Component\Security\Http\SecurityEvents;
  */
 final class SecurityListener implements EventSubscriberInterface
 {
-    /** @var \eZ\Publish\API\Repository\PermissionResolver */
+    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver */
     private $permissionResolver;
 
     public function __construct(
@@ -53,3 +53,5 @@ final class SecurityListener implements EventSubscriberInterface
         }
     }
 }
+
+class_alias(SecurityListener::class, 'EzSystems\EzPlatformRest\Server\Security\EventListener\SecurityListener');

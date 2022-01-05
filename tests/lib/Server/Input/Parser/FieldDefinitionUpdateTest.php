@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\API\Repository\Values\ContentType\FieldDefinitionUpdateStruct;
-use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentTypeDraft;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinitionCollection;
-use EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate;
-use eZ\Publish\Core\Repository\Values\ContentType\ContentType;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\FieldDefinitionUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Core\Repository\Values\ContentType\ContentTypeDraft;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinitionCollection;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\FieldDefinitionUpdate;
 
 /**
  * @todo Test with fieldSettings and validatorConfiguration when specified
@@ -142,7 +142,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Returns the FieldDefinitionUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\FieldDefinitionUpdate
      */
     protected function internalGetParser()
     {
@@ -156,7 +156,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Get the FieldTypeParser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser
+     * @return \Ibexa\Rest\Input\FieldTypeParser
      */
     protected function getFieldTypeParserMock()
     {
@@ -187,7 +187,7 @@ class FieldDefinitionUpdateTest extends BaseTest
     /**
      * Get the content type service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentTypeService
+     * @return \Ibexa\Contracts\Core\Repository\ContentTypeService
      */
     protected function getContentTypeServiceMock()
     {
@@ -196,15 +196,15 @@ class FieldDefinitionUpdateTest extends BaseTest
         $contentTypeServiceMock->expects($this->any())
             ->method('newFieldDefinitionUpdateStruct')
             ->willReturn(
-                    new FieldDefinitionUpdateStruct()
+                new FieldDefinitionUpdateStruct()
             );
 
         $contentTypeServiceMock->expects($this->any())
             ->method('loadContentTypeDraft')
             ->with($this->equalTo(42))
             ->willReturn(
-                    new ContentTypeDraft(
-                        [
+                new ContentTypeDraft(
+                    [
                             'innerContentType' => new ContentType([
                                 'fieldDefinitions' => new FieldDefinitionCollection([
                                     new FieldDefinition(
@@ -216,7 +216,7 @@ class FieldDefinitionUpdateTest extends BaseTest
                                 ]),
                             ]),
                         ]
-                    )
+                )
             );
 
         return $contentTypeServiceMock;
@@ -275,3 +275,5 @@ class FieldDefinitionUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(FieldDefinitionUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\FieldDefinitionUpdateTest');

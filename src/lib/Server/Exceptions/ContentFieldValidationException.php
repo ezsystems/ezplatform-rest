@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Exceptions;
+namespace Ibexa\Rest\Server\Exceptions;
 
-use eZ\Publish\API\Repository\Exceptions\ContentFieldValidationException as APIContentFieldValidationException;
+use Ibexa\Contracts\Core\Repository\Exceptions\ContentFieldValidationException as APIContentFieldValidationException;
 
 /**
  * Exception thrown if one or more content fields did not validate.
@@ -16,9 +16,9 @@ class ContentFieldValidationException extends BadRequestException
     /**
      * Contains an array of field ValidationError objects indexed with FieldDefinition id and language code.
      *
-     * @see eZ\Publish\Core\Base\Exceptions\ContentFieldValidationException
+     * @see \Ibexa\Core\Base\Exceptions\ContentFieldValidationException
      *
-     * @var \eZ\Publish\Core\FieldType\ValidationError[]
+     * @var \Ibexa\Core\FieldType\ValidationError[]
      */
     protected $errors;
 
@@ -32,10 +32,12 @@ class ContentFieldValidationException extends BadRequestException
     /**
      * Returns an array of field validation error messages.
      *
-     * @return \eZ\Publish\Core\FieldType\ValidationError[]
+     * @return \Ibexa\Core\FieldType\ValidationError[]
      */
     public function getFieldErrors()
     {
         return $this->errors;
     }
 }
+
+class_alias(ContentFieldValidationException::class, 'EzSystems\EzPlatformRest\Server\Exceptions\ContentFieldValidationException');

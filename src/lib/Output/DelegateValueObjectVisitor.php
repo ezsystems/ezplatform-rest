@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Output;
+namespace Ibexa\Rest\Output;
 
 /**
  * Marker interface for ValueObjectVisitor implementations which doesn't generate output by them self
@@ -15,3 +15,5 @@ namespace EzSystems\EzPlatformRest\Output;
 interface DelegateValueObjectVisitor
 {
 }
+
+class_alias(DelegateValueObjectVisitor::class, 'EzSystems\EzPlatformRest\Output\DelegateValueObjectVisitor');

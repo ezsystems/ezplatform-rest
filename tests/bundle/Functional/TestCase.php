@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
 use Nyholm\Psr7\Request as HttpRequest;
-use PHPUnit\Framework\TestCase as BaseTestCase;
 use PHPUnit\Framework\ExpectationFailedException;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
@@ -18,7 +18,7 @@ use Symfony\Component\HttpClient\Psr18Client;
 
 class TestCase extends BaseTestCase
 {
-    const X_HTTP_METHOD_OVERRIDE_MAP = [
+    public const X_HTTP_METHOD_OVERRIDE_MAP = [
         'PUBLISH' => 'POST',
         'MOVE' => 'POST',
         'PATCH' => 'PATCH',
@@ -265,7 +265,7 @@ EOF;
     protected function addCreatedElement($href)
     {
         $testCase = $this;
-        self::$createdContent[$href] = function () use ($href, $testCase) {
+        self::$createdContent[$href] = static function () use ($href, $testCase) {
             $testCase->sendHttpRequest(
                 $testCase->createHttpRequest('DELETE', $href)
             );
@@ -422,3 +422,5 @@ XML;
         );
     }
 }
+
+class_alias(TestCase::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase');

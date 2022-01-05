@@ -1,25 +1,25 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Server\Input\Parser;
+namespace Ibexa\Tests\Rest\Server\Input\Parser;
 
-use eZ\Publish\Core\Repository\ContentService;
-use eZ\Publish\Core\Repository\ContentTypeService;
-use eZ\Publish\Core\Repository\FieldTypeService;
-use eZ\Publish\Core\Repository\LocationService;
-use eZ\Publish\Core\Repository\UserService;
-use EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupUpdate;
-use eZ\Publish\API\Repository\Values\Content\ContentInfo;
-use eZ\Publish\Core\Repository\Values\Content\Location;
-use eZ\Publish\API\Repository\Values\Content\ContentMetadataUpdateStruct;
-use eZ\Publish\API\Repository\Values\User\UserGroupUpdateStruct;
-use eZ\Publish\Core\Repository\Values\Content\ContentUpdateStruct;
-use EzSystems\EzPlatformRest\Input\FieldTypeParser;
-use EzSystems\EzPlatformRest\Server\Values\RestUserGroupUpdateStruct;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentInfo;
+use Ibexa\Contracts\Core\Repository\Values\Content\ContentMetadataUpdateStruct;
+use Ibexa\Contracts\Core\Repository\Values\User\UserGroupUpdateStruct;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Core\Repository\ContentService;
+use Ibexa\Core\Repository\ContentTypeService;
+use Ibexa\Core\Repository\FieldTypeService;
+use Ibexa\Core\Repository\LocationService;
+use Ibexa\Core\Repository\UserService;
+use Ibexa\Core\Repository\Values\Content\ContentUpdateStruct;
+use Ibexa\Core\Repository\Values\Content\Location;
+use Ibexa\Rest\Input\FieldTypeParser;
+use Ibexa\Rest\Server\Input\Parser\UserGroupUpdate;
+use Ibexa\Rest\Server\Values\RestUserGroupUpdateStruct;
 
 class UserGroupUpdateTest extends BaseTest
 {
@@ -197,7 +197,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Returns the UserGroupUpdate parser.
      *
-     * @return \EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupUpdate
+     * @return \Ibexa\Rest\Server\Input\Parser\UserGroupUpdate
      */
     protected function internalGetParser()
     {
@@ -212,7 +212,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Get the field type parser mock object.
      *
-     * @return \EzSystems\EzPlatformRest\Input\FieldTypeParser ;
+     * @return \Ibexa\Rest\Input\FieldTypeParser ;
      */
     private function getFieldTypeParserMock()
     {
@@ -239,7 +239,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Get the user service mock object.
      *
-     * @return \eZ\Publish\API\Repository\UserService
+     * @return \Ibexa\Contracts\Core\Repository\UserService
      */
     protected function getUserServiceMock()
     {
@@ -257,7 +257,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Get the location service mock object.
      *
-     * @return \eZ\Publish\API\Repository\LocationService
+     * @return \Ibexa\Contracts\Core\Repository\LocationService
      */
     protected function getLocationServiceMock()
     {
@@ -267,15 +267,15 @@ class UserGroupUpdateTest extends BaseTest
             ->method('loadLocation')
             ->with($this->equalTo(5))
             ->willReturn(
-                    new Location(
-                        [
+                new Location(
+                    [
                             'contentInfo' => new ContentInfo(
                                 [
                                     'id' => 4,
                                 ]
                             ),
                         ]
-                    )
+                )
             );
 
         return $userServiceMock;
@@ -284,7 +284,7 @@ class UserGroupUpdateTest extends BaseTest
     /**
      * Get the content service mock object.
      *
-     * @return \eZ\Publish\API\Repository\ContentService
+     * @return \Ibexa\Contracts\Core\Repository\ContentService
      */
     protected function getContentServiceMock()
     {
@@ -313,3 +313,5 @@ class UserGroupUpdateTest extends BaseTest
         ];
     }
 }
+
+class_alias(UserGroupUpdateTest::class, 'EzSystems\EzPlatformRest\Tests\Server\Input\Parser\UserGroupUpdateTest');

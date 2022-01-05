@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * Location list view model.
@@ -16,7 +16,7 @@ class LocationList extends RestValue
     /**
      * Locations.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestLocation[]
+     * @var \Ibexa\Rest\Server\Values\RestLocation[]
      */
     public $locations;
 
@@ -30,7 +30,7 @@ class LocationList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestLocation[] $locations
+     * @param \Ibexa\Rest\Server\Values\RestLocation[] $locations
      * @param string $path
      */
     public function __construct(array $locations, $path)
@@ -39,3 +39,5 @@ class LocationList extends RestValue
         $this->path = $path;
     }
 }
+
+class_alias(LocationList::class, 'EzSystems\EzPlatformRest\Server\Values\LocationList');

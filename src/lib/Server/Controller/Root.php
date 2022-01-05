@@ -1,14 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Service\RootResourceBuilderInterface;
+use Ibexa\Contracts\Rest\Exceptions\NotFoundException;
+use Ibexa\Rest\Server\Controller as RestController;
 
 /**
  * Root controller.
@@ -16,7 +15,7 @@ use EzSystems\EzPlatformRest\Server\Service\RootResourceBuilderInterface;
 class Root extends RestController
 {
     /**
-     * @var RootResourceBuilderInterface
+     * @var \Ibexa\Rest\Server\Service\RootResourceBuilderInterface
      */
     private $rootResourceBuilder;
 
@@ -28,7 +27,7 @@ class Root extends RestController
     /**
      * List the root resources of the eZ Publish installation.
      *
-     * @return \EzSystems\EzPlatformRest\Values\Root
+     * @return \Ibexa\Rest\Values\Root
      */
     public function loadRootResource()
     {
@@ -38,10 +37,12 @@ class Root extends RestController
     /**
      * Catch-all for REST requests.
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      */
     public function catchAll()
     {
         throw new NotFoundException('No such route');
     }
 }
+
+class_alias(Root::class, 'EzSystems\EzPlatformRest\Server\Controller\Root');

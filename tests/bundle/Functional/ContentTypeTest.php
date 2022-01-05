@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
+namespace Ibexa\Tests\Bundle\Rest\Functional;
 
-use EzSystems\EzPlatformRestBundle\Tests\Functional\TestCase as RESTFunctionalTestCase;
+use Ibexa\Tests\Bundle\Rest\Functional\TestCase as RESTFunctionalTestCase;
 
 class ContentTypeTest extends RESTFunctionalTestCase
 {
@@ -590,3 +590,5 @@ XML;
         self::assertHttpResponseCodeEquals($response, 403);
     }
 }
+
+class_alias(ContentTypeTest::class, 'EzSystems\EzPlatformRestBundle\Tests\Functional\ContentTypeTest');

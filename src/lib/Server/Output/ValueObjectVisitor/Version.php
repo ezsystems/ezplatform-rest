@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
-use eZ\Publish\API\Repository\Values\Content\Thumbnail;
-use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
-use EzSystems\EzPlatformRest\Output\Generator;
-use EzSystems\EzPlatformRest\Output\Visitor;
-use EzSystems\EzPlatformRest\Output\FieldTypeSerializer;
-use EzSystems\EzPlatformRest\Server\Values\RelationList as RelationListValue;
-use EzSystems\EzPlatformRest\Server\Values\Version as VersionValue;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType;
-use eZ\Publish\API\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\Values\Content\Thumbnail;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
+use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Rest\Output\FieldTypeSerializer;
+use Ibexa\Rest\Server\Values\RelationList as RelationListValue;
+use Ibexa\Rest\Server\Values\Version as VersionValue;
 
 /**
  * Version value object visitor.
@@ -22,12 +22,12 @@ use eZ\Publish\API\Repository\Values\Content\Field;
 class Version extends ValueObjectVisitor
 {
     /**
-     * @var \EzSystems\EzPlatformRest\Output\FieldTypeSerializer
+     * @var \Ibexa\Rest\Output\FieldTypeSerializer
      */
     protected $fieldTypeSerializer;
 
     /**
-     * @param \EzSystems\EzPlatformRest\Output\FieldTypeSerializer $fieldTypeSerializer
+     * @param \Ibexa\Rest\Output\FieldTypeSerializer $fieldTypeSerializer
      */
     public function __construct(FieldTypeSerializer $fieldTypeSerializer)
     {
@@ -37,13 +37,13 @@ class Version extends ValueObjectVisitor
     /**
      * Visit struct returned by controllers.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \EzSystems\EzPlatformRest\Server\Values\Version $data
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Rest\Server\Values\Version $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
-        /** @var \eZ\Publish\API\Repository\Values\Content\Content $content */
+        /** @var \Ibexa\Contracts\Core\Repository\Values\Content\Content $content */
         $content = $data->content;
 
         $generator->startObjectElement('Version');
@@ -60,9 +60,9 @@ class Version extends ValueObjectVisitor
     /**
      * Visits a single content field and generates its content.
      *
-     * @param \EzSystems\EzPlatformRest\Output\Generator $generator
-     * @param \eZ\Publish\API\Repository\Values\ContentType\ContentType $contentType
-     * @param \eZ\Publish\API\Repository\Values\Content\Field $field
+     * @param \Ibexa\Contracts\Rest\Output\Generator $generator
+     * @param \Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType $contentType
+     * @param \Ibexa\Contracts\Core\Repository\Values\Content\Field $field
      */
     public function visitField(Generator $generator, ContentType $contentType, Field $field)
     {
@@ -153,3 +153,5 @@ class Version extends ValueObjectVisitor
         $generator->endObjectElement('Thumbnail');
     }
 }
+
+class_alias(Version::class, 'EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\Version');

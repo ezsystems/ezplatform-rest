@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation;
+namespace Ibexa\Rest\Server\Input\Parser\Aggregation;
 
-use eZ\Publish\API\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
-use EzSystems\EzPlatformRest\Exceptions;
-use EzSystems\EzPlatformRest\Input\BaseParser;
-use EzSystems\EzPlatformRest\Input\ParsingDispatcher;
+use Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\AbstractRangeAggregation;
+use Ibexa\Contracts\Rest\Exceptions;
+use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
+use Ibexa\Rest\Input\BaseParser;
 
 abstract class AbstractRangeAggregationParser extends BaseParser
 {
@@ -43,7 +43,7 @@ abstract class AbstractRangeAggregationParser extends BaseParser
     ): AbstractRangeAggregation;
 
     /**
-     * @return \eZ\Publish\API\Repository\Values\Content\Query\Aggregation\Range[]
+     * @return \Ibexa\Contracts\Core\Repository\Values\Content\Query\Aggregation\Range[]
      */
     protected function dispatchRanges(ParsingDispatcher $dispatcher, array $data, string $mediaType): array
     {
@@ -55,3 +55,5 @@ abstract class AbstractRangeAggregationParser extends BaseParser
         return $ranges;
     }
 }
+
+class_alias(AbstractRangeAggregationParser::class, 'EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\AbstractRangeAggregationParser');

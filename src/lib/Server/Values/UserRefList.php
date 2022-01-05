@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Values;
+namespace Ibexa\Rest\Server\Values;
 
-use EzSystems\EzPlatformRest\Value as RestValue;
+use Ibexa\Rest\Value as RestValue;
 
 /**
  * User list view model.
@@ -16,7 +16,7 @@ class UserRefList extends RestValue
     /**
      * Users.
      *
-     * @var \EzSystems\EzPlatformRest\Server\Values\RestUser[]
+     * @var \Ibexa\Rest\Server\Values\RestUser[]
      */
     public $users;
 
@@ -30,7 +30,7 @@ class UserRefList extends RestValue
     /**
      * Construct.
      *
-     * @param \EzSystems\EzPlatformRest\Server\Values\RestUser[] $users
+     * @param \Ibexa\Rest\Server\Values\RestUser[] $users
      * @param string $path
      */
     public function __construct(array $users, $path)
@@ -39,3 +39,5 @@ class UserRefList extends RestValue
         $this->path = $path;
     }
 }
+
+class_alias(UserRefList::class, 'EzSystems\EzPlatformRest\Server\Values\UserRefList');

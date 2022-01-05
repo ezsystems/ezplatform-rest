@@ -1,82 +1,82 @@
 parameters:
-    ezpublish_rest.input.parser.class: EzSystems\EzPlatformRest\Server\Common\Parser
-    ezpublish_rest.input.parser.ContentObjectStates.class: EzSystems\EzPlatformRest\Input\Parser\ContentObjectStates
+    ezpublish_rest.input.parser.class: Ibexa\Rest\Server\Common\Parser
+    ezpublish_rest.input.parser.ContentObjectStates.class: Ibexa\Rest\Input\Parser\ContentObjectStates
 
     # REST server
-    ezpublish_rest.input.parser.ContentCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ContentCreate
-    ezpublish_rest.input.parser.ContentUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ContentUpdate
-    ezpublish_rest.input.parser.ContentTypeGroupInput.class: EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeGroupInput
-    ezpublish_rest.input.parser.ContentTypeCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeCreate
-    ezpublish_rest.input.parser.ContentTypeUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ContentTypeUpdate
-    ezpublish_rest.input.parser.FieldDefinitionCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionCreate
-    ezpublish_rest.input.parser.FieldDefinitionUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\FieldDefinitionUpdate
-    ezpublish_rest.input.parser.LocationCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\LocationCreate
-    ezpublish_rest.input.parser.LocationUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\LocationUpdate
-    ezpublish_rest.input.parser.ObjectStateCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateCreate
-    ezpublish_rest.input.parser.ObjectStateGroupCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateGroupCreate
-    ezpublish_rest.input.parser.ObjectStateGroupUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateGroupUpdate
-    ezpublish_rest.input.parser.ObjectStateUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\ObjectStateUpdate
-    ezpublish_rest.input.parser.PolicyCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\PolicyCreate
-    ezpublish_rest.input.parser.PolicyUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\PolicyUpdate
-    ezpublish_rest.input.parser.RelationCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\RelationCreate
-    ezpublish_rest.input.parser.RoleAssignInput.class: EzSystems\EzPlatformRest\Server\Input\Parser\RoleAssignInput
-    ezpublish_rest.input.parser.RoleInput.class: EzSystems\EzPlatformRest\Server\Input\Parser\RoleInput
-    ezpublish_rest.input.parser.SectionInput.class: EzSystems\EzPlatformRest\Server\Input\Parser\SectionInput
-    ezpublish_rest.input.parser.UserGroupUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupUpdate
-    ezpublish_rest.input.parser.UserUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\UserUpdate
-    ezpublish_rest.input.parser.UrlWildcardCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\URLWildcardCreate
-    ezpublish_rest.input.parser.URLAliasCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\URLAliasCreate
-    ezpublish_rest.input.parser.UserCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\UserCreate
-    ezpublish_rest.input.parser.UserGroupCreate.class: EzSystems\EzPlatformRest\Server\Input\Parser\UserGroupCreate
-    ezpublish_rest.input.parser.SessionInput.class: EzSystems\EzPlatformRest\Server\Input\Parser\SessionInput
-    ezpublish_rest.input.parser.VersionUpdate.class: EzSystems\EzPlatformRest\Server\Input\Parser\VersionUpdate
-    ezpublish_rest.input.parser.ViewInput.class: EzSystems\EzPlatformRest\Server\Input\Parser\ViewInput
-    ezpublish_rest.input.parser.ViewInputOneDotOne.class: EzSystems\EzPlatformRest\Server\Input\Parser\ViewInputOneDotOne
+    ezpublish_rest.input.parser.ContentCreate.class: Ibexa\Rest\Server\Input\Parser\ContentCreate
+    ezpublish_rest.input.parser.ContentUpdate.class: Ibexa\Rest\Server\Input\Parser\ContentUpdate
+    ezpublish_rest.input.parser.ContentTypeGroupInput.class: Ibexa\Rest\Server\Input\Parser\ContentTypeGroupInput
+    ezpublish_rest.input.parser.ContentTypeCreate.class: Ibexa\Rest\Server\Input\Parser\ContentTypeCreate
+    ezpublish_rest.input.parser.ContentTypeUpdate.class: Ibexa\Rest\Server\Input\Parser\ContentTypeUpdate
+    ezpublish_rest.input.parser.FieldDefinitionCreate.class: Ibexa\Rest\Server\Input\Parser\FieldDefinitionCreate
+    ezpublish_rest.input.parser.FieldDefinitionUpdate.class: Ibexa\Rest\Server\Input\Parser\FieldDefinitionUpdate
+    ezpublish_rest.input.parser.LocationCreate.class: Ibexa\Rest\Server\Input\Parser\LocationCreate
+    ezpublish_rest.input.parser.LocationUpdate.class: Ibexa\Rest\Server\Input\Parser\LocationUpdate
+    ezpublish_rest.input.parser.ObjectStateCreate.class: Ibexa\Rest\Server\Input\Parser\ObjectStateCreate
+    ezpublish_rest.input.parser.ObjectStateGroupCreate.class: Ibexa\Rest\Server\Input\Parser\ObjectStateGroupCreate
+    ezpublish_rest.input.parser.ObjectStateGroupUpdate.class: Ibexa\Rest\Server\Input\Parser\ObjectStateGroupUpdate
+    ezpublish_rest.input.parser.ObjectStateUpdate.class: Ibexa\Rest\Server\Input\Parser\ObjectStateUpdate
+    ezpublish_rest.input.parser.PolicyCreate.class: Ibexa\Rest\Server\Input\Parser\PolicyCreate
+    ezpublish_rest.input.parser.PolicyUpdate.class: Ibexa\Rest\Server\Input\Parser\PolicyUpdate
+    ezpublish_rest.input.parser.RelationCreate.class: Ibexa\Rest\Server\Input\Parser\RelationCreate
+    ezpublish_rest.input.parser.RoleAssignInput.class: Ibexa\Rest\Server\Input\Parser\RoleAssignInput
+    ezpublish_rest.input.parser.RoleInput.class: Ibexa\Rest\Server\Input\Parser\RoleInput
+    ezpublish_rest.input.parser.SectionInput.class: Ibexa\Rest\Server\Input\Parser\SectionInput
+    ezpublish_rest.input.parser.UserGroupUpdate.class: Ibexa\Rest\Server\Input\Parser\UserGroupUpdate
+    ezpublish_rest.input.parser.UserUpdate.class: Ibexa\Rest\Server\Input\Parser\UserUpdate
+    ezpublish_rest.input.parser.UrlWildcardCreate.class: Ibexa\Rest\Server\Input\Parser\URLWildcardCreate
+    ezpublish_rest.input.parser.URLAliasCreate.class: Ibexa\Rest\Server\Input\Parser\URLAliasCreate
+    ezpublish_rest.input.parser.UserCreate.class: Ibexa\Rest\Server\Input\Parser\UserCreate
+    ezpublish_rest.input.parser.UserGroupCreate.class: Ibexa\Rest\Server\Input\Parser\UserGroupCreate
+    ezpublish_rest.input.parser.SessionInput.class: Ibexa\Rest\Server\Input\Parser\SessionInput
+    ezpublish_rest.input.parser.VersionUpdate.class: Ibexa\Rest\Server\Input\Parser\VersionUpdate
+    ezpublish_rest.input.parser.ViewInput.class: Ibexa\Rest\Server\Input\Parser\ViewInput
+    ezpublish_rest.input.parser.ViewInputOneDotOne.class: Ibexa\Rest\Server\Input\Parser\ViewInputOneDotOne
 
-    ezpublish_rest.input.parser.internal.ContentQuery.class: EzSystems\EzPlatformRest\Server\Input\Parser\ContentQuery
-    ezpublish_rest.input.parser.internal.LocationQuery.class: EzSystems\EzPlatformRest\Server\Input\Parser\LocationQuery
-    ezpublish_rest.input.parser.internal.criterion.Ancestor.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Ancestor
-    ezpublish_rest.input.parser.internal.criterion.ContentId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ContentId
-    ezpublish_rest.input.parser.internal.criterion.ContentRemoteId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ContentRemoteId
-    ezpublish_rest.input.parser.internal.criterion.ContentTypeGroupId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ContentTypeGroupId
-    ezpublish_rest.input.parser.internal.criterion.ContentTypeId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ContentTypeId
-    ezpublish_rest.input.parser.internal.criterion.ContentTypeIdentifier.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ContentTypeIdentifier
-    ezpublish_rest.input.parser.internal.criterion.DateMetadata.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\DateMetadata
-    ezpublish_rest.input.parser.internal.criterion.Field.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Field
-    ezpublish_rest.input.parser.internal.criterion.FullText.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\FullText
-    ezpublish_rest.input.parser.internal.criterion.LanguageCode.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LanguageCode
-    ezpublish_rest.input.parser.internal.criterion.LocationId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LocationId
-    ezpublish_rest.input.parser.internal.criterion.LocationRemoteId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LocationRemoteId
-    ezpublish_rest.input.parser.internal.criterion.LogicalAnd.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LogicalAnd
-    ezpublish_rest.input.parser.internal.criterion.LogicalNot.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LogicalNot
-    ezpublish_rest.input.parser.internal.criterion.LogicalOperator.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LogicalOperator
-    ezpublish_rest.input.parser.internal.criterion.LogicalOr.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LogicalOr
-    ezpublish_rest.input.parser.internal.criterion.MoreLikeThis.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\MoreLikeThis
-    ezpublish_rest.input.parser.internal.criterion.ObjectStateId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ObjectStateId
-    ezpublish_rest.input.parser.internal.criterion.Operator.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Operator
-    ezpublish_rest.input.parser.internal.criterion.ParentLocationId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ParentLocationId
-    ezpublish_rest.input.parser.internal.criterion.ParentLocationRemoteId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ParentLocationRemoteId
-    ezpublish_rest.input.parser.internal.criterion.SectionIdentifier.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\SectionIdentifier
-    ezpublish_rest.input.parser.internal.criterion.SectionId.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\SectionId
-    ezpublish_rest.input.parser.internal.criterion.Subtree.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Subtree
-    ezpublish_rest.input.parser.internal.criterion.UserMetadata.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserMetadata
-    ezpublish_rest.input.parser.internal.criterion.Visibility.class: EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Visibility
+    ezpublish_rest.input.parser.internal.ContentQuery.class: Ibexa\Rest\Server\Input\Parser\ContentQuery
+    ezpublish_rest.input.parser.internal.LocationQuery.class: Ibexa\Rest\Server\Input\Parser\LocationQuery
+    ezpublish_rest.input.parser.internal.criterion.Ancestor.class: Ibexa\Rest\Server\Input\Parser\Criterion\Ancestor
+    ezpublish_rest.input.parser.internal.criterion.ContentId.class: Ibexa\Rest\Server\Input\Parser\Criterion\ContentId
+    ezpublish_rest.input.parser.internal.criterion.ContentRemoteId.class: Ibexa\Rest\Server\Input\Parser\Criterion\ContentRemoteId
+    ezpublish_rest.input.parser.internal.criterion.ContentTypeGroupId.class: Ibexa\Rest\Server\Input\Parser\Criterion\ContentTypeGroupId
+    ezpublish_rest.input.parser.internal.criterion.ContentTypeId.class: Ibexa\Rest\Server\Input\Parser\Criterion\ContentTypeId
+    ezpublish_rest.input.parser.internal.criterion.ContentTypeIdentifier.class: Ibexa\Rest\Server\Input\Parser\Criterion\ContentTypeIdentifier
+    ezpublish_rest.input.parser.internal.criterion.DateMetadata.class: Ibexa\Rest\Server\Input\Parser\Criterion\DateMetadata
+    ezpublish_rest.input.parser.internal.criterion.Field.class: Ibexa\Rest\Server\Input\Parser\Criterion\Field
+    ezpublish_rest.input.parser.internal.criterion.FullText.class: Ibexa\Rest\Server\Input\Parser\Criterion\FullText
+    ezpublish_rest.input.parser.internal.criterion.LanguageCode.class: Ibexa\Rest\Server\Input\Parser\Criterion\LanguageCode
+    ezpublish_rest.input.parser.internal.criterion.LocationId.class: Ibexa\Rest\Server\Input\Parser\Criterion\LocationId
+    ezpublish_rest.input.parser.internal.criterion.LocationRemoteId.class: Ibexa\Rest\Server\Input\Parser\Criterion\LocationRemoteId
+    ezpublish_rest.input.parser.internal.criterion.LogicalAnd.class: Ibexa\Rest\Server\Input\Parser\Criterion\LogicalAnd
+    ezpublish_rest.input.parser.internal.criterion.LogicalNot.class: Ibexa\Rest\Server\Input\Parser\Criterion\LogicalNot
+    ezpublish_rest.input.parser.internal.criterion.LogicalOperator.class: Ibexa\Rest\Server\Input\Parser\Criterion\LogicalOperator
+    ezpublish_rest.input.parser.internal.criterion.LogicalOr.class: Ibexa\Rest\Server\Input\Parser\Criterion\LogicalOr
+    ezpublish_rest.input.parser.internal.criterion.MoreLikeThis.class: Ibexa\Rest\Server\Input\Parser\Criterion\MoreLikeThis
+    ezpublish_rest.input.parser.internal.criterion.ObjectStateId.class: Ibexa\Rest\Server\Input\Parser\Criterion\ObjectStateId
+    ezpublish_rest.input.parser.internal.criterion.Operator.class: Ibexa\Rest\Server\Input\Parser\Criterion\Operator
+    ezpublish_rest.input.parser.internal.criterion.ParentLocationId.class: Ibexa\Rest\Server\Input\Parser\Criterion\ParentLocationId
+    ezpublish_rest.input.parser.internal.criterion.ParentLocationRemoteId.class: Ibexa\Rest\Server\Input\Parser\Criterion\ParentLocationRemoteId
+    ezpublish_rest.input.parser.internal.criterion.SectionIdentifier.class: Ibexa\Rest\Server\Input\Parser\Criterion\SectionIdentifier
+    ezpublish_rest.input.parser.internal.criterion.SectionId.class: Ibexa\Rest\Server\Input\Parser\Criterion\SectionId
+    ezpublish_rest.input.parser.internal.criterion.Subtree.class: Ibexa\Rest\Server\Input\Parser\Criterion\Subtree
+    ezpublish_rest.input.parser.internal.criterion.UserMetadata.class: Ibexa\Rest\Server\Input\Parser\Criterion\UserMetadata
+    ezpublish_rest.input.parser.internal.criterion.Visibility.class: Ibexa\Rest\Server\Input\Parser\Criterion\Visibility
 
-    ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class: EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass
-    ezpublish_rest.input.parser.internal.sortclause.field.class: EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\Field
+    ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class: Ibexa\Rest\Server\Input\Parser\SortClause\DataKeyValueObjectClass
+    ezpublish_rest.input.parser.internal.sortclause.field.class: Ibexa\Rest\Server\Input\Parser\SortClause\Field
 
-    ezpublish_rest.input.parser.internal.facetbuilder.content_type.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\ContentTypeParser
-    ezpublish_rest.input.parser.internal.facetbuilder.criterion.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\CriterionParser
-    ezpublish_rest.input.parser.internal.facetbuilder.date_range.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\DateRangeParser
-    ezpublish_rest.input.parser.internal.facetbuilder.field.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\FieldParser
-    ezpublish_rest.input.parser.internal.facetbuilder.field_range.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\FieldRangeParser
-    ezpublish_rest.input.parser.internal.facetbuilder.location.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\LocationParser
-    ezpublish_rest.input.parser.internal.facetbuilder.section.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\SectionParser
-    ezpublish_rest.input.parser.internal.facetbuilder.term.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\TermParser
-    ezpublish_rest.input.parser.internal.facetbuilder.user.class: EzSystems\EzPlatformRest\Server\Input\Parser\FacetBuilder\UserParser
+    ezpublish_rest.input.parser.internal.facetbuilder.content_type.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\ContentTypeParser
+    ezpublish_rest.input.parser.internal.facetbuilder.criterion.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\CriterionParser
+    ezpublish_rest.input.parser.internal.facetbuilder.date_range.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\DateRangeParser
+    ezpublish_rest.input.parser.internal.facetbuilder.field.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\FieldParser
+    ezpublish_rest.input.parser.internal.facetbuilder.field_range.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\FieldRangeParser
+    ezpublish_rest.input.parser.internal.facetbuilder.location.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\LocationParser
+    ezpublish_rest.input.parser.internal.facetbuilder.section.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\SectionParser
+    ezpublish_rest.input.parser.internal.facetbuilder.term.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\TermParser
+    ezpublish_rest.input.parser.internal.facetbuilder.user.class: Ibexa\Rest\Server\Input\Parser\FacetBuilder\UserParser
 
-    ezpublish_rest.input.parser.internal.route_based_limitation.class: EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
-    ezpublish_rest.input.parser.internal.path_string_route_based_limitation.class: EzSystems\EzPlatformRest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser
+    ezpublish_rest.input.parser.internal.route_based_limitation.class: Ibexa\Rest\Server\Input\Parser\Limitation\RouteBasedLimitationParser
+    ezpublish_rest.input.parser.internal.path_string_route_based_limitation.class: Ibexa\Rest\Server\Input\Parser\Limitation\PathStringRouteBasedLimitationParser
 
 services:
     ezpublish_rest.input.parser:
@@ -159,7 +159,7 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.FieldDefinitionUpdate }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\JWTInput:
+    Ibexa\Rest\Server\Input\Parser\JWTInput:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.JWTInput }
@@ -517,31 +517,31 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserMetadata }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\IsUserBased:
+    Ibexa\Rest\Server\Input\Parser\Criterion\IsUserBased:
         parent: ezpublish_rest.input.parser
         arguments:
             $parserTools: '@ezpublish_rest.parser_tools'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.IsUserBased }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\IsUserEnabled:
+    Ibexa\Rest\Server\Input\Parser\Criterion\IsUserEnabled:
         parent: ezpublish_rest.input.parser
         arguments:
             $parserTools: '@ezpublish_rest.parser_tools'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.IsUserEnabled }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserId:
+    Ibexa\Rest\Server\Input\Parser\Criterion\UserId:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserId }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserLogin:
+    Ibexa\Rest\Server\Input\Parser\Criterion\UserLogin:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserLogin }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\UserEmail:
+    Ibexa\Rest\Server\Input\Parser\Criterion\UserEmail:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.UserEmail }
@@ -552,7 +552,7 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.ObjectStateId }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\ObjectStateIdentifier:
+    Ibexa\Rest\Server\Input\Parser\Criterion\ObjectStateIdentifier:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.ObjectStateIdentifier }
@@ -563,7 +563,7 @@ services:
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.criterion.Visibility }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\Sibling:
+    Ibexa\Rest\Server\Input\Parser\Criterion\Sibling:
         parent: ezpublish_rest.input.parser
         arguments:
             $locationService: "@ezpublish.api.service.location"
@@ -575,7 +575,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'ContentId'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\ContentId'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\ContentId'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.ContentId }
 
@@ -584,7 +584,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'ContentName'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\ContentName'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\ContentName'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.ContentName }
 
@@ -593,7 +593,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'DateModified'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\DateModified'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\DateModified'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.DateModified }
 
@@ -602,7 +602,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'DatePublished'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\DatePublished'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\DatePublished'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.DatePublished }
 
@@ -611,7 +611,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationDepth'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Depth'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Depth'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationDepth }
 
@@ -620,7 +620,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationPath'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Path'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Path'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationPath }
 
@@ -629,7 +629,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationPriority'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Priority'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Priority'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationPriority }
 
@@ -638,7 +638,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'LocationId'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Location\Id'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Location\Id'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.LocationId }
 
@@ -647,7 +647,7 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'SectionIdentifier'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\SectionIdentifier'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\SectionIdentifier'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.SectionIdentifier }
 
@@ -656,16 +656,16 @@ services:
         class: '%ezpublish_rest.input.parser.internal.sortclause.data_key_value_object.class%'
         arguments:
             - 'SectionName'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\SectionName'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\SectionName'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.SectionName }
 
     ezpublish_rest.input.parser.internal.sortclause.score:
         parent: ezpublish_rest.input.parser
-        class: 'EzSystems\EzPlatformRest\Server\Input\Parser\SortClause\DataKeyValueObjectClass'
+        class: 'Ibexa\Rest\Server\Input\Parser\SortClause\DataKeyValueObjectClass'
         arguments:
             - 'Score'
-            - 'eZ\Publish\API\Repository\Values\Content\Query\SortClause\Score'
+            - 'Ibexa\Contracts\Core\Repository\Values\Content\Query\SortClause\Score'
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.sortclause.Score }
 
@@ -731,142 +731,142 @@ services:
 
     # aggregation parsers
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\DateTimeRangeParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Range\DateTimeRangeParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.range.DateTimeRange }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\FloatRangeParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Range\FloatRangeParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation..range.FloatRange }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Range\IntRangeParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Range\IntRangeParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.range.IntRange }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\ContentTypeGroupTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\ContentTypeGroupTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.ContentTypeGroupTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\ContentTypeTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\ContentTypeTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.ContentTypeTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\DateMetadataRangeAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\DateMetadataRangeAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.DateMetadataRangeAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\AuthorTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\AuthorTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.AuthorTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\CheckboxTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\CheckboxTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.CheckboxTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\CountryTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\CountryTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.CountryTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\DateRangeAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\DateRangeAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.DateRangeAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\DateTimeRangeAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\DateTimeRangeAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.DateTimeRangeAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\FloatRangeAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\FloatRangeAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.FloatRangeAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\FloatStatsAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\FloatStatsAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.FloatStatsAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\IntegerRangeAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\IntegerRangeAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.IntegerRangeAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\IntegerStatsAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\IntegerStatsAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.IntegerStatsAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\KeywordTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\KeywordTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.KeywordTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\SelectionTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\SelectionTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.SelectionTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Field\TimeRangeAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Field\TimeRangeAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.TimeRangeAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\LanguageTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\LanguageTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.LanguageTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\ObjectStateTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\ObjectStateTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.ObjectStateTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawRangeAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\RawRangeAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.RawRangeAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawStatsAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\RawStatsAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.RawStatsAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\RawTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\RawTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.RawTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\SectionTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\SectionTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.SectionTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Location\SubtreeTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Location\SubtreeTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.SubtreeTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\Location\LocationChildrenTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\Location\LocationChildrenTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.LocationChildrenTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\UserMetadataTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\UserMetadataTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.UserMetadataTermAggregation }
 
-    EzSystems\EzPlatformRest\Server\Input\Parser\Aggregation\VisibilityTermAggregationParser:
+    Ibexa\Rest\Server\Input\Parser\Aggregation\VisibilityTermAggregationParser:
         parent: ezpublish_rest.input.parser
         tags:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.aggregation.VisibilityTermAggregation }
@@ -880,7 +880,7 @@ services:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.limitation.Subtree }
         arguments:
             - 'locationPath'
-            - 'eZ\Publish\API\Repository\Values\User\Limitation\SubtreeLimitation'
+            - 'Ibexa\Contracts\Core\Repository\Values\User\Limitation\SubtreeLimitation'
 
     ezpublish_rest.input.parser.internal.limitation.Section:
         parent: ezpublish_rest.input.parser
@@ -889,4 +889,4 @@ services:
             - { name: ezpublish_rest.input.parser, mediaType: application/vnd.ez.api.internal.limitation.Section }
         arguments:
             - 'sectionId'
-            - 'eZ\Publish\API\Repository\Values\User\Limitation\SectionLimitation'
+            - 'Ibexa\Contracts\Core\Repository\Values\User\Limitation\SectionLimitation'

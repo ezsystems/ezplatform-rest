@@ -1,20 +1,20 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Output;
+namespace Ibexa\Tests\Rest\Output;
 
-use eZ\Publish\API\Repository\FieldTypeService;
-use EzSystems\EzPlatformRest;
-use eZ\Publish\API\Repository\Values\Content\Field;
-use EzSystems\EzPlatformRest\Output\Generator;
-use eZ\Publish\API\Repository\FieldType as APIFieldType;
-use eZ\Publish\API\Repository\Values\ContentType\ContentType as APIContentType;
-use eZ\Publish\Core\Repository\Values\ContentType\FieldDefinition;
-use EzSystems\EzPlatformRest\FieldTypeProcessorRegistry;
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
+use Ibexa\Contracts\Core\Repository\FieldType as APIFieldType;
+use Ibexa\Contracts\Core\Repository\FieldTypeService;
+use Ibexa\Contracts\Core\Repository\Values\Content\Field;
+use Ibexa\Contracts\Core\Repository\Values\ContentType\ContentType as APIContentType;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
+use Ibexa\Contracts\Rest\Output\Generator;
+use Ibexa\Core\Repository\Values\ContentType\FieldDefinition;
+use Ibexa\Rest\FieldTypeProcessorRegistry;
+use Ibexa\Rest\Output\FieldTypeSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -62,7 +62,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -100,11 +100,11 @@ class FieldTypeSerializerTest extends TestCase
             ->with(
                 $this->equalTo('some-field')
             )->willReturn(
-                    new FieldDefinition(
-                        [
+                new FieldDefinition(
+                    [
                             'fieldTypeIdentifier' => 'myFancyFieldType',
                         ]
-                    )
+                )
             );
 
         $processorMock = $this->getFieldTypeProcessorMock();
@@ -118,7 +118,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getProcessor')
             ->with('myFancyFieldType')
             ->willReturnCallback(
-                function () use ($processorMock) {
+                static function () use ($processorMock) {
                     return $processorMock;
                 }
             );
@@ -132,7 +132,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -173,7 +173,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -206,7 +206,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -239,7 +239,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getProcessor')
             ->with('myFancyFieldType')
             ->willReturnCallback(
-                function () use ($processorMock) {
+                static function () use ($processorMock) {
                     return $processorMock;
                 }
             );
@@ -259,7 +259,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -292,7 +292,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -325,7 +325,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getProcessor')
             ->with('myFancyFieldType')
             ->willReturnCallback(
-                function () use ($processorMock) {
+                static function () use ($processorMock) {
                     return $processorMock;
                 }
             );
@@ -339,7 +339,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -355,7 +355,7 @@ class FieldTypeSerializerTest extends TestCase
             ->method('getFieldType')
             ->with($this->equalTo('myFancyFieldType'))
             ->willReturnCallback(
-                function () use ($fieldTypeMock) {
+                static function () use ($fieldTypeMock) {
                     return $fieldTypeMock;
                 }
             );
@@ -374,7 +374,7 @@ class FieldTypeSerializerTest extends TestCase
 
     protected function getFieldTypeSerializer()
     {
-        return new EzPlatformRest\Output\FieldTypeSerializer(
+        return new FieldTypeSerializer(
             $this->getFieldTypeServiceMock(),
             $this->getFieldTypeProcessorRegistryMock()
         );
@@ -434,3 +434,5 @@ class FieldTypeSerializerTest extends TestCase
         return $this->generatorMock;
     }
 }
+
+class_alias(FieldTypeSerializerTest::class, 'EzSystems\EzPlatformRest\Tests\Output\FieldTypeSerializerTest');

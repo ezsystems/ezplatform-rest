@@ -1,15 +1,14 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\View;
+namespace Ibexa\Rest\Server\View;
 
-use Symfony\Component\HttpFoundation\Request;
-use EzSystems\EzPlatformRest\Output\Visitor as OutputVisitor;
-use Symfony\Component\HttpFoundation\Response;
+use Ibexa\Contracts\Rest\Output\Visitor as OutputVisitor;
 use RuntimeException;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Dispatcher for various visitors depending on the mime-type accept header.
@@ -28,7 +27,7 @@ class AcceptHeaderVisitorDispatcher
      * Adds view handler.
      *
      * @param string $regexp
-     * @param \EzSystems\EzPlatformRest\Output\Visitor $visitor
+     * @param \Ibexa\Contracts\Rest\Output\Visitor $visitor
      */
     public function addVisitor($regexp, OutputVisitor $visitor)
     {
@@ -41,14 +40,14 @@ class AcceptHeaderVisitorDispatcher
      * @param \Symfony\Component\HttpFoundation\Request $request
      * @param mixed $result
      *
-     * @throws RuntimeException
+     * @throws \RuntimeException
      *
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function dispatch(Request $request, $result)
     {
         foreach ($request->getAcceptableContentTypes() as $mimeType) {
-            /** @var \EzSystems\EzPlatformRest\Output\Visitor $visitor */
+            /** @var \Ibexa\Contracts\Rest\Output\Visitor $visitor */
             foreach ($this->mapping as $regexp => $visitor) {
                 if (preg_match($regexp, $mimeType)) {
                     return $visitor->visit($result);
@@ -59,3 +58,5 @@ class AcceptHeaderVisitorDispatcher
         throw new RuntimeException('No view mapping found.');
     }
 }
+
+class_alias(AcceptHeaderVisitorDispatcher::class, 'EzSystems\EzPlatformRest\Server\View\AcceptHeaderVisitorDispatcher');

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\FieldTypeProcessor;
+namespace Ibexa\Rest\FieldTypeProcessor;
 
-use EzSystems\EzPlatformRest\FieldTypeProcessor;
-use eZ\Publish\Core\FieldType\DateAndTime\Type;
+use Ibexa\Contracts\Rest\FieldTypeProcessor;
+use Ibexa\Core\FieldType\DateAndTime\Type;
 
 class DateAndTimeProcessor extends FieldTypeProcessor
 {
@@ -53,3 +53,5 @@ class DateAndTimeProcessor extends FieldTypeProcessor
         return $outgoingSettingsHash;
     }
 }
+
+class_alias(DateAndTimeProcessor::class, 'EzSystems\EzPlatformRest\FieldTypeProcessor\DateAndTimeProcessor');

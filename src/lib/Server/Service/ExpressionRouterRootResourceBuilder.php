@@ -1,16 +1,16 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Service;
+namespace Ibexa\Rest\Server\Service;
 
-use eZ\Publish\Core\MVC\ConfigResolverInterface;
-use EzSystems\EzPlatformRest\Values;
-use EzSystems\EzPlatformRest\Values\Root;
+use Ibexa\Core\MVC\ConfigResolverInterface;
+use Ibexa\Rest\Values;
+use Ibexa\Rest\Values\Root;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 use Symfony\Component\Routing\RouterInterface;
 
@@ -41,7 +41,7 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
     /** @var \Symfony\Component\Routing\RouterInterface */
     protected $templateRouter;
 
-    /** @var \eZ\Publish\Core\MVC\ConfigResolverInterface */
+    /** @var \Ibexa\Core\MVC\ConfigResolverInterface */
     protected $configResolver;
 
     public function __construct(RouterInterface $router, RouterInterface $templateRouter, ConfigResolverInterface $configResolver)
@@ -54,7 +54,7 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
     /**
      * Build root resource.
      *
-     * @return array|\EzSystems\EzPlatformRest\Values\Root
+     * @return array|\Ibexa\Rest\Values\Root
      */
     public function buildRootResource(): Root
     {
@@ -75,3 +75,5 @@ class ExpressionRouterRootResourceBuilder implements RootResourceBuilderInterfac
         return new Root($resources);
     }
 }
+
+class_alias(ExpressionRouterRootResourceBuilder::class, 'EzSystems\EzPlatformRest\Server\Service\ExpressionRouterRootResourceBuilder');

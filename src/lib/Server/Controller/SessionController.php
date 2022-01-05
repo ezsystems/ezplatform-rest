@@ -1,42 +1,41 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
-use eZ\Publish\API\Repository\PermissionResolver;
-use eZ\Publish\API\Repository\UserService;
-use eZ\Publish\Core\Base\Exceptions\UnauthorizedException;
-use eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
-use EzSystems\EzPlatformRest\Exceptions\NotFoundException;
-use EzSystems\EzPlatformRest\Message;
-use EzSystems\EzPlatformRest\Server\Controller;
-use EzSystems\EzPlatformRest\Server\Values;
-use EzSystems\EzPlatformRest\Server\Exceptions;
+use Ibexa\Contracts\Core\Repository\PermissionResolver;
+use Ibexa\Contracts\Core\Repository\UserService;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
+use Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface;
+use Ibexa\Rest\Message;
+use Ibexa\Rest\Server\Controller;
+use Ibexa\Rest\Server\Exceptions;
+use Ibexa\Rest\Server\Security\CsrfTokenManager;
+use Ibexa\Rest\Server\Values;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Csrf\CsrfToken;
-use EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface;
 
 class SessionController extends Controller
 {
-    /** @var \eZ\Publish\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
+    /** @var \Ibexa\Core\MVC\Symfony\Security\Authentication\AuthenticatorInterface|null */
     private $authenticator;
 
-    /** @var \EzSystems\EzPlatformRest\Server\Security\CsrfTokenManager */
+    /** @var \Ibexa\Rest\Server\Security\CsrfTokenManager */
     private $csrfTokenManager;
 
     /** @var string */
     private $csrfTokenIntention;
 
-    /** @var \eZ\Publish\API\Repository\PermissionResolver */
+    /** @var \Ibexa\Contracts\Core\Repository\PermissionResolver */
     private $permissionResolver;
 
-    /** @var \eZ\Publish\API\Repository\UserService */
+    /** @var \Ibexa\Contracts\Core\Repository\UserService */
     private $userService;
 
     /** @var \Symfony\Component\Security\Csrf\TokenStorage\TokenStorageInterface */
@@ -61,7 +60,7 @@ class SessionController extends Controller
     /**
      * Creates a new session based on the credentials provided as POST parameters.
      *
-     * @throws \eZ\Publish\Core\Base\Exceptions\UnauthorizedException If the login or password are incorrect or invalid CSRF
+     * @throws \Ibexa\Core\Base\Exceptions\UnauthorizedException If the login or password are incorrect or invalid CSRF
      *
      * @return Values\UserSession|Values\Conflict
      */
@@ -110,9 +109,9 @@ class SessionController extends Controller
      *
      * @param string $sessionId
      *
-     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      *
-     * @return \EzSystems\EzPlatformRest\Server\Values\UserSession
+     * @return \Ibexa\Rest\Server\Values\UserSession
      */
     public function refreshSessionAction($sessionId, Request $request)
     {
@@ -146,7 +145,7 @@ class SessionController extends Controller
      *
      * @return Values\DeletedUserSession
      *
-     * @throws NotFoundException
+     * @throws \Ibexa\Contracts\Rest\Exceptions\NotFoundException
      */
     public function deleteSessionAction($sessionId, Request $request)
     {
@@ -181,9 +180,9 @@ class SessionController extends Controller
     /**
      * Checks the presence / validity of the CSRF token.
      *
-     * @param Request $request
+     * @param \Symfony\Component\HttpFoundation\Request $request
      *
-     * @throws UnauthorizedException if the token is missing or invalid
+     * @throws \Ibexa\Core\Base\Exceptions\UnauthorizedException if the token is missing or invalid
      */
     private function checkCsrfToken(Request $request)
     {
@@ -238,3 +237,5 @@ class SessionController extends Controller
         return $this->authenticator;
     }
 }
+
+class_alias(SessionController::class, 'EzSystems\EzPlatformRest\Server\Controller\SessionController');

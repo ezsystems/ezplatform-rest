@@ -1,13 +1,13 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRest\Tests\Input\Handler;
+namespace Ibexa\Tests\Rest\Input\Handler;
 
-use EzSystems\EzPlatformRest;
-use EzSystems\EzPlatformRest\Exceptions\Parser;
+use Ibexa\Contracts\Rest\Exceptions\Parser;
+use Ibexa\Rest\Input\Handler\Xml;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -19,7 +19,7 @@ class XmlTest extends TestCase
     {
         $this->expectException(Parser::class);
 
-        $handler = new EzPlatformRest\Input\Handler\Xml();
+        $handler = new Xml();
 
         $this->assertSame(
             [
@@ -47,7 +47,7 @@ class XmlTest extends TestCase
      */
     public function testConvertXml($xml, $expectation)
     {
-        $handler = new EzPlatformRest\Input\Handler\Xml();
+        $handler = new Xml();
 
         $this->assertSame(
             $expectation,
@@ -55,3 +55,5 @@ class XmlTest extends TestCase
         );
     }
 }
+
+class_alias(XmlTest::class, 'EzSystems\EzPlatformRest\Tests\Input\Handler\XmlTest');

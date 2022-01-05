@@ -1,31 +1,28 @@
 <?php
 
 /**
- * @copyright Copyright (C) eZ Systems AS. All rights reserved.
+ * @copyright Copyright (C) Ibexa AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
-namespace EzSystems\EzPlatformRestBundle\Tests\EventListener;
+namespace Ibexa\Tests\Bundle\Rest\EventListener;
 
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use EzSystems\EzPlatformRestBundle\EventListener\CsrfListener;
-use PHPUnit\Framework\MockObject\MockObject;
-use PHPUnit\Framework\TestCase;
 
 abstract class EventListenerTest extends TestCase
 {
-    /** @var EventDispatcherInterface */
+    /** @var \Symfony\Component\EventDispatcher\EventDispatcherInterface */
     protected $event;
 
-    /** @var Request|MockObject */
+    /** @var \Symfony\Component\HttpFoundation\Request|\PHPUnit\Framework\MockObject\MockObject */
     protected $requestMock;
 
-    /** @var ParameterBag|MockObject */
+    /** @var \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject */
     protected $requestAttributesMock;
 
-    /** @var ParameterBag|MockObject */
+    /** @var \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject */
     protected $requestHeadersMock;
 
     protected $isRestRequest = true;
@@ -59,7 +56,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return MockObject|$class
+     * @return \PHPUnit\Framework\MockObject\MockObject|$class
      */
     protected function getEvent($class)
     {
@@ -78,7 +75,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return ParameterBag|MockObject
+     * @return \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestAttributesMock()
     {
@@ -100,7 +97,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return MockObject|Request
+     * @return \PHPUnit\Framework\MockObject\MockObject|\Symfony\Component\HttpFoundation\Request
      */
     protected function getRequestMock()
     {
@@ -125,7 +122,7 @@ abstract class EventListenerTest extends TestCase
     }
 
     /**
-     * @return ParameterBag|MockObject
+     * @return \Symfony\Component\HttpFoundation\ParameterBag|\PHPUnit\Framework\MockObject\MockObject
      */
     protected function getRequestHeadersMock()
     {
@@ -139,7 +136,7 @@ abstract class EventListenerTest extends TestCase
     /**
      * @param bool $csrfEnabled
      *
-     * @return CsrfListener
+     * @return \Ibexa\Bundle\Rest\EventListener\CsrfListener
      */
     abstract protected function getEventListener();
 
@@ -148,3 +145,5 @@ abstract class EventListenerTest extends TestCase
      */
     abstract public function provideExpectedSubscribedEventTypes();
 }
+
+class_alias(EventListenerTest::class, 'EzSystems\EzPlatformRestBundle\Tests\EventListener\EventListenerTest');
