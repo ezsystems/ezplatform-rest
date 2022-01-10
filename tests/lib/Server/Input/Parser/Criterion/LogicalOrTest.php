@@ -6,9 +6,9 @@
  */
 namespace Ibexa\Tests\Rest\Server\Input\Parser\Criterion;
 
+use Ibexa\Contracts\Core\Repository\Values\Content;
 use Ibexa\Contracts\Rest\Exceptions\Parser as ParserException;
 use Ibexa\Contracts\Rest\Input\ParsingDispatcher;
-use Ibexa\Core\Repository\Values\Content;
 use Ibexa\Rest\Server\Input\Parser;
 use Ibexa\Tests\Rest\Server\Input\Parser\BaseTest;
 

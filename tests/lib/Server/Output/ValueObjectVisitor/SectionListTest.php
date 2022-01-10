@@ -6,7 +6,7 @@
  */
 namespace Ibexa\Tests\Rest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Core\Repository\Values\Content;
+use Ibexa\Contracts\Core\Repository\Values\Content;
 use Ibexa\Rest\Server\Output\ValueObjectVisitor;
 use Ibexa\Rest\Server\Values\SectionList;
 use Ibexa\Tests\Rest\Output\ValueObjectVisitorBaseTest;
