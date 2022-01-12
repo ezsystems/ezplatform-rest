@@ -6,7 +6,9 @@
  */
 namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
+use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
 use eZ\Publish\API\Repository\LocationService;
+use eZ\Publish\API\Repository\ContentService;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\Visitor;
@@ -18,14 +20,16 @@ use eZ\Publish\API\Repository\Values\Content\Location as LocationValue;
  */
 class Location extends ValueObjectVisitor
 {
-    /**
-     * @var \eZ\Publish\API\Repository\LocationService
-     */
+    /** @var \eZ\Publish\API\Repository\LocationService */
     private $locationService;
 
-    public function __construct(LocationService $locationService)
+    /** @var \eZ\Publish\API\Repository\ContentService */
+    private $contentService;
+
+    public function __construct(LocationService $locationService, ContentService $contentService)
     {
         $this->locationService = $locationService;
+        $this->contentService = $contentService;
     }
 
     /**
@@ -147,7 +151,27 @@ class Location extends ValueObjectVisitor
             )
         );
         $generator->endAttribute('href');
-        $visitor->visitValueObject(new RestContentValue($location->contentInfo));
+
+        $content = $location->getContent();
+        $contentInfo = $location->contentInfo;
+
+        try {
+            $mainLocation = $contentInfo->mainLocationId === $location->id
+                ? $location
+                : $this->locationService->loadLocation($contentInfo->mainLocationId);
+        } catch (UnauthorizedException $e) {
+            $mainLocation = null;
+        }
+
+        $visitor->visitValueObject(new RestContentValue(
+                $contentInfo,
+                $mainLocation,
+                $content,
+                $content->getContentType(),
+                $this->contentService->loadRelations($content->getVersionInfo())
+            )
+        );
+
         $generator->endObjectElement('ContentInfo');
     }
 }
