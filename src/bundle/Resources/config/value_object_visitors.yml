@@ -598,7 +598,9 @@ services:
         class: "%ezpublish_rest.output.value_object_visitor.Location.class%"
         tags:
             - { name: ezpublish_rest.output.value_object_visitor, type: Ibexa\Contracts\Core\Repository\Values\Content\Location }
-        arguments: ["@ezpublish.api.service.location"]
+        arguments:
+            $locationService: '@ezpublish.api.service.location'
+            $contentService: '@ezpublish.api.service.content'
 
     ezpublish_rest.output.value_object_visitor.LocationList:
         parent: ezpublish_rest.output.value_object_visitor.base

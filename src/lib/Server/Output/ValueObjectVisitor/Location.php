@@ -6,11 +6,13 @@
  */
 namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
+use Ibexa\Contracts\Core\Repository\ContentService;
 use Ibexa\Contracts\Core\Repository\LocationService;
 use Ibexa\Contracts\Core\Repository\Values\Content\Location as LocationValue;
 use Ibexa\Contracts\Rest\Output\Generator;
 use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
 use Ibexa\Contracts\Rest\Output\Visitor;
+use Ibexa\Core\Base\Exceptions\UnauthorizedException;
 use Ibexa\Rest\Server\Values\RestContent as RestContentValue;
 
 /**
@@ -23,9 +25,13 @@ class Location extends ValueObjectVisitor
      */
     private $locationService;
 
-    public function __construct(LocationService $locationService)
+    /** @var \Ibexa\Contracts\Core\Repository\ContentService */
+    private $contentService;
+
+    public function __construct(LocationService $locationService, ContentService $contentService)
     {
         $this->locationService = $locationService;
+        $this->contentService = $contentService;
     }
 
     /**
@@ -147,7 +153,28 @@ class Location extends ValueObjectVisitor
             )
         );
         $generator->endAttribute('href');
-        $visitor->visitValueObject(new RestContentValue($location->contentInfo));
+
+        $content = $location->getContent();
+        $contentInfo = $location->contentInfo;
+
+        try {
+            $mainLocation = $contentInfo->mainLocationId === $location->id
+                ? $location
+                : $this->locationService->loadLocation($contentInfo->mainLocationId);
+        } catch (UnauthorizedException $e) {
+            $mainLocation = null;
+        }
+
+        $visitor->visitValueObject(
+            new RestContentValue(
+                $contentInfo,
+                $mainLocation,
+                $content,
+                $content->getContentType(),
+                $this->contentService->loadRelations($content->getVersionInfo())
+            )
+        );
+
         $generator->endObjectElement('ContentInfo');
     }
 }

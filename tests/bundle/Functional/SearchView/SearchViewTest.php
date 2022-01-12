@@ -74,6 +74,40 @@ XML;
         self::assertEquals($expectedCount, $this->getQueryResultsCount('xml', $body));
     }
 
+    public function testLocationsByIdQueryContainsCurrentVersionObject(): void
+    {
+        $body = <<<JSON
+        {
+            "ViewInput": {
+                "identifier": "locations-by-id",
+                "public": "false",
+                "LocationQuery": {
+                    "Filter": {
+                        "LocationIdCriterion": "2"
+                    },
+                    "limit": "10",
+                    "offset": "0"
+                }
+            }
+        }
+        JSON;
+
+        $request = $this->createHttpRequest(
+            'POST',
+            '/api/ezp/v2/views',
+            'ViewInput+json; version=1.1',
+            'View+json',
+            $body
+        );
+
+        $response = $this->sendHttpRequest($request);
+        $jsonResponse = json_decode($response->getBody()->getContents());
+
+        $content = $jsonResponse->View->Result->searchHits->searchHit[0]->value->Location->ContentInfo->Content;
+
+        self::assertIsObject($content->CurrentVersion->Version);
+    }
+
     /**
      * Covers POST with LocationQuery Logic on /api/ezp/v2/views using payload in the JSON format.
      *
