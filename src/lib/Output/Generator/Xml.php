@@ -173,7 +173,7 @@ class Xml extends Generator
             $this->xmlWriter->endAttribute();
         }
 
-        $this->xmlWriter->text($value);
+        $this->xmlWriter->text((string)$value);
     }
 
     /**
@@ -219,7 +219,7 @@ class Xml extends Generator
         $this->checkStartAttribute($name);
 
         $this->xmlWriter->startAttribute($name);
-        $this->xmlWriter->text($value);
+        $this->xmlWriter->text((string)$value);
     }
 
     /**
