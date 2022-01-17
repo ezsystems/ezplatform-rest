@@ -19,7 +19,7 @@ use EzSystems\EzPlatformRest\Server\Input\Parser\Criterion\LocationId;
 
 class FacetBuilderParserTest extends FacetBuilderBaseTest
 {
-    public function testGenericFacetBuilder()
+    public function testGenericFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -53,7 +53,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryContentTypeFacetBuilder()
+    public function testQueryContentTypeFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -75,7 +75,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryCriterionFacetBuilder()
+    public function testQueryCriterionFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -101,7 +101,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryFieldFacetBuilder()
+    public function testQueryFieldFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -135,7 +135,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryLocationFacetBuilder()
+    public function testQueryLocationFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -161,7 +161,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQuerySectionFacetBuilder()
+    public function testQuerySectionFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -183,7 +183,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryTermFacetBuilder()
+    public function testQueryTermFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -205,7 +205,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryUserFacetBuilder()
+    public function testQueryUserFacetBuilder(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -231,7 +231,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryNoFacetBuilders()
+    public function testQueryNoFacetBuilders(): void
     {
         $inputArray = [
             'Filter' => [],
@@ -249,7 +249,7 @@ class FacetBuilderParserTest extends FacetBuilderBaseTest
         $this->assertEquals($expectedQuery, $result);
     }
 
-    public function testQueryMultipleFacetBuilders()
+    public function testQueryMultipleFacetBuilders(): void
     {
         $inputArray = [
             'Filter' => [],

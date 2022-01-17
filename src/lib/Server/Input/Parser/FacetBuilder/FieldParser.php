@@ -42,7 +42,7 @@ class FieldParser extends BaseParser
         if (isset($data['Field']['sort'])) {
             $type = $data['Field']['sort'];
 
-            if (!in_array($type, $sortType)) {
+            if (!array_key_exists($type, $sortType)) {
                 throw new Exceptions\Parser('<Field> unknown sort type (supported: ' . implode(', ', array_keys($sortType)) . ')');
             }
 
