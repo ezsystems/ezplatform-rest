@@ -136,7 +136,7 @@ class Version extends ValueObjectVisitor
     ): void {
         $generator->startObjectElement('Thumbnail');
 
-        if (!empty($thumbnail)) {
+        if (!empty($thumbnail->resource)) {
             $generator->startValueElement('resource', $thumbnail->resource);
             $generator->endValueElement('resource');
 
