@@ -1,0 +1,50 @@
+on:
+    workflow_call: ~
+
+env:
+    APP_ENV: dev
+    APP_DEBUG: 1
+    PHP_INI_ENV_memory_limit: 512M
+    COMPOSER_CACHE_DIR: ~/.composer/cache
+    PROJECT_VERSION: ^3.3.x-dev
+    PROJECT_EDITION: oss
+    SETUP: "doc/docker/base-dev.yml:doc/docker/selenium.yml"
+    WEB_HOST: web
+
+jobs:
+    integration-tests-rest:
+        runs-on: ubuntu-latest
+        timeout-minutes: 15
+
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Setup PHP Action
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 7.4
+                  coverage: none
+
+            - name: Cache dependencies
+              uses: actions/cache@v2
+              with:
+                  path: ${{ env.COMPOSER_CACHE_DIR }}
+                  key: ${{ env.PROJECT_EDITION }}-${{ env.PROJECT_VERSION }}-${{ github.sha }}
+                  restore-keys: |
+                    ${{ env.PROJECT_EDITION }}-${{ env.PROJECT_VERSION }}
+
+            - name: Set up whole project using the tested dependency
+              run: |
+                curl -L "https://raw.githubusercontent.com/ibexa/ci-scripts/main/bin/${{ env.PROJECT_VERSION }}/prepare_project_edition.sh" > prepare_project_edition.sh
+                chmod +x prepare_project_edition.sh
+                ./prepare_project_edition.sh ${{ env.PROJECT_EDITION }} ${{ env.PROJECT_VERSION }} ${{ env.SETUP }}
+
+            - name: Run setup command
+              run: |
+                cd "$HOME/build/project"
+                docker-compose --env-file=.env exec -T --user www-data app sh -c "APP_ENV=behat php bin/console ibexa:behat:create-language 'pol-PL' 'Polish (polski)'"
+
+            - name: Run tests
+              run: |
+                cd "$HOME/build/project"
+                docker-compose --env-file=.env exec -T --user www-data app sh -c "cd vendor/ezsystems/ezplatform-rest && composer update && composer integration"
