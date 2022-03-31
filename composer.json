@@ -60,7 +60,8 @@
     "scripts": {
         "fix-cs": "php-cs-fixer fix -v --show-progress=estimating",
         "check-cs": "@fix-cs --dry-run",
-        "test": "phpunit -c phpunit.xml"
+        "test": "phpunit -c phpunit.xml",
+        "integration": "phpunit -c phpunit-integration-rest.xml"
     },
     "extra": {
         "branch-alias": {
