@@ -55,7 +55,8 @@
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true
-        }
+        },
+        "process-timeout": 600
     },
     "scripts": {
         "fix-cs": "php-cs-fixer fix -v --show-progress=estimating",
