@@ -51,7 +51,7 @@ class ContentFieldValidationExceptionTest extends ValueObjectVisitorBaseTest
      */
     public function testResultContainsErrorDescription($result)
     {
-        $this->assertXMLTag(
+        self::assertXMLTag(
             [
                 'tag' => 'errorDescription',
                 'content' => $this->getExpectedDescription(),
@@ -70,7 +70,7 @@ class ContentFieldValidationExceptionTest extends ValueObjectVisitorBaseTest
      */
     public function testResultContainsErrorDetails($result)
     {
-        $this->assertXMLTag(
+        self::assertXMLTag(
             [
                 'tag' => 'errorDetails',
             ],
@@ -78,7 +78,7 @@ class ContentFieldValidationExceptionTest extends ValueObjectVisitorBaseTest
             'Missing <errorDetails> element.'
         );
 
-        $this->assertXMLTag(
+        self::assertXMLTag(
             [
                 'tag' => 'field',
             ],
@@ -114,7 +114,7 @@ class ContentFieldValidationExceptionTest extends ValueObjectVisitorBaseTest
      */
     protected function getExpectedDescription()
     {
-        return 'Content Fields did not validate';
+        return 'Content fields did not validate';
     }
 
     /**
