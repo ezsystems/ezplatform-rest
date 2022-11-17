@@ -156,12 +156,12 @@ class RestContentType extends RestContentTypeBase
 
         $imageFields = $contentType->getFieldDefinitions()->filterByType('ezimage');
         $generator->startHashElement('imageFields');
-        $generator->startList('field');
+        $generator->startList('identifier');
         foreach ($imageFields as $imageField) {
-            $generator->startValueElement('identifier', $imageField->identifier);
-            $generator->endValueElement('identifier');
+            $generator->startValueElement('value', $imageField->identifier);
+            $generator->endValueElement('value');
         }
-        $generator->endList('field');
+        $generator->endList('identifier');
         $generator->endHashElement('imageFields');
 
         $generator->endObjectElement($mediaType);
