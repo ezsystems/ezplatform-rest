@@ -154,6 +154,16 @@ class RestContentType extends RestContentTypeBase
             );
         }
 
+        $imageFields = $contentType->getFieldDefinitions()->filterByType('ezimage');
+        $generator->startHashElement('imageFields');
+        $generator->startList('field');
+        foreach ($imageFields as $imageField) {
+            $generator->startValueElement('identifier', $imageField->identifier);
+            $generator->endValueElement('identifier');
+        }
+        $generator->endList('field');
+        $generator->endHashElement('imageFields');
+
         $generator->endObjectElement($mediaType);
     }
 }

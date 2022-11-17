@@ -101,7 +101,7 @@ class RestContentTypeTest extends ValueObjectVisitorBaseTest
                     'descriptions' => ['eng-GB' => 'Sindelfingen', 'eng-US' => 'Bielefeld'],
 
                     // "Mock"
-                    'fieldDefinitions' => [],
+                    'fieldDefinitions' => new Values\ContentType\FieldDefinitionCollection(),
                 ]
             ),
             []
@@ -376,6 +376,16 @@ class RestContentTypeTest extends ValueObjectVisitorBaseTest
     public function testDefaultSortOrder(\DOMDocument $dom)
     {
         $this->assertXPath($dom, '/ContentType/defaultSortOrder[text()="DESC"]');
+    }
+
+    /**
+     * @param \DOMDocument $dom
+     *
+     * @depends testVisitDefinedType
+     */
+    public function testImageFields(\DOMDocument $dom)
+    {
+        $this->assertXPath($dom, '/ContentType/imageFields');
     }
 
     /**
