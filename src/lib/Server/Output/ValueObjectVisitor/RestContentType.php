@@ -158,8 +158,7 @@ class RestContentType extends RestContentTypeBase
         $generator->startHashElement('imageFields');
         $generator->startList('identifier');
         foreach ($imageFields as $imageField) {
-            $generator->startValueElement('value', $imageField->identifier);
-            $generator->endValueElement('value');
+            $generator->valueElement('value', $imageField->identifier);
         }
         $generator->endList('identifier');
         $generator->endHashElement('imageFields');
