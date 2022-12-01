@@ -30,14 +30,16 @@ class RestFieldDefinition extends RestValue
     public $fieldDefinition;
 
     /**
-     * Construct.
+     * Path which was used to fetch the list of field definition.
      *
-     * @param \eZ\Publish\API\Repository\Values\ContentType\ContentType $contentType
-     * @param \eZ\Publish\API\Repository\Values\ContentType\FieldDefinition $fieldDefinition
+     * @var string|null
      */
-    public function __construct(ContentType $contentType, FieldDefinition $fieldDefinition)
+    public $path;
+
+    public function __construct(ContentType $contentType, FieldDefinition $fieldDefinition, ?string $path = null)
     {
         $this->contentType = $contentType;
         $this->fieldDefinition = $fieldDefinition;
+        $this->path = $path;
     }
 }

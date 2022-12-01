@@ -561,6 +561,35 @@ class ContentType extends RestController
     }
 
     /**
+     * @throws \EzSystems\EzPlatformRest\Exceptions\NotFoundException
+     */
+    public function loadContentTypeFieldDefinitionByIdentifier(
+        int $contentTypeId,
+        string $fieldDefinitionIdentifier,
+        Request $request
+    ): Values\RestFieldDefinition {
+        $contentType = $this->contentTypeService->loadContentType($contentTypeId, Language::ALL);
+        $fieldDefinition = $contentType->getFieldDefinition($fieldDefinitionIdentifier);
+        $path = $this->router->generate(
+            'ezpublish_rest_loadContentTypeFieldDefinitionByIdentifier',
+            [
+                'contentTypeId' => $contentType->id,
+                'fieldDefinitionIdentifier' => $fieldDefinitionIdentifier,
+            ]
+        );
+
+        if ($fieldDefinition !== null) {
+            return new Values\RestFieldDefinition(
+                $contentType,
+                $fieldDefinition,
+                $path
+            );
+        }
+
+        throw new Exceptions\NotFoundException("Field definition not found: '{$request->getPathInfo()}'.");
+    }
+
+    /**
      * Loads field definitions for a given content type draft.
      *
      * @param $contentTypeId

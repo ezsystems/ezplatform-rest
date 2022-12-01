@@ -583,6 +583,15 @@ ezpublish_rest_loadContentTypeFieldDefinition:
     requirements:
         contentTypeId: \d+
         fieldDefinitionId: \d+
+        
+ezpublish_rest_loadContentTypeFieldDefinitionByIdentifier:
+    path: /content/types/{contentTypeId}/fieldDefinition/{fieldDefinitionIdentifier}
+    defaults:
+        _controller: ezpublish_rest.controller.content_type:loadContentTypeFieldDefinitionByIdentifier
+    methods: [GET]
+    requirements:
+        contentTypeId: \d+
+        fieldDefinitionIdentifier: \w+
 
 ezpublish_rest_loadContentTypeDraft:
     path: /content/types/{contentTypeId}/draft

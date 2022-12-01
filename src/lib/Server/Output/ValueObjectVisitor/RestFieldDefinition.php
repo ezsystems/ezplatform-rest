@@ -53,16 +53,21 @@ class RestFieldDefinition extends RestContentTypeBase
             $visitor->setHeader('Accept-Patch', $generator->getMediaType('FieldDefinitionUpdate'));
         }
 
-        $generator->startAttribute(
-            'href',
-            $this->router->generate(
-                "ezpublish_rest_loadContentType{$urlTypeSuffix}FieldDefinition",
-                [
-                    'contentTypeId' => $contentType->id,
-                    'fieldDefinitionId' => $fieldDefinition->id,
-                ]
-            )
-        );
+        if ($data->path === null) {
+            $generator->startAttribute(
+                'href',
+                $this->router->generate(
+                    "ezpublish_rest_loadContentType{$urlTypeSuffix}FieldDefinition",
+                    [
+                        'contentTypeId' => $contentType->id,
+                        'fieldDefinitionId' => $fieldDefinition->id,
+                    ]
+                )
+            );
+        } else {
+            $generator->startAttribute('href', $data->path);
+        }
+
         $generator->endAttribute('href');
 
         $generator->startValueElement('id', $fieldDefinition->id);
