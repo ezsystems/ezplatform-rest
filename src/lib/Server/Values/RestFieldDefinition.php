@@ -30,7 +30,7 @@ class RestFieldDefinition extends RestValue
     public $fieldDefinition;
 
     /**
-     * Path which was used to fetch the list of field definition.
+     * Path which is used to fetch the list of field definitions.
      *
      * @var string|null
      */
