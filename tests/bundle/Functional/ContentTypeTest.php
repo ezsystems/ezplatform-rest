@@ -447,6 +447,30 @@ XML;
     }
 
     /**
+     * @depends testCreateContentType
+     * Covers GET /content/types/{contentTypeId}/fieldDefinition/{fieldDefinitionIdentifier}
+     *
+     * @param string $fieldDefinitionHref
+     *
+     * @throws \Psr\Http\Client\ClientException
+     */
+    public function testLoadContentTypeFieldDefinitionByIdentifier(string $contentTypeHref): void
+    {
+        $url = sprintf('%s/fieldDefinition/title', $contentTypeHref);
+
+        $response = $this->sendHttpRequest(
+            $this->createHttpRequest('GET', $url, '', 'FieldDefinition+json')
+        );
+
+        self::assertHttpResponseCodeEquals($response, 200);
+
+        $data = json_decode($response->getBody(), true);
+
+        self::assertEquals($url, $data['FieldDefinition']['_href']);
+        self::assertEquals('title', $data['FieldDefinition']['identifier']);
+    }
+
+    /**
      * @depends testAddContentTypeDraftFieldDefinition
      * Covers PATCH /content/types/<contentTypeId>/fieldDefinitions/<fieldDefinitionId>
      *
