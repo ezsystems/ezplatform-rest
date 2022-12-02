@@ -572,7 +572,7 @@ class ContentType extends RestController
         $contentType = $this->contentTypeService->loadContentType($contentTypeId);
         $fieldDefinition = $contentType->getFieldDefinition($fieldDefinitionIdentifier);
         $path = $this->router->generate(
-            'ezpublish_rest_loadContentTypeFieldDefinitionByIdentifier',
+            'ibexa.rest.load_content_type_field_definition_by_identifier',
             [
                 'contentTypeId' => $contentType->id,
                 'fieldDefinitionIdentifier' => $fieldDefinitionIdentifier,
