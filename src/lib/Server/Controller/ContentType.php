@@ -580,7 +580,9 @@ class ContentType extends RestController
         );
 
         if ($fieldDefinition === null) {
-            throw new Exceptions\NotFoundException(sprintf("Field definition not found: '%s'.", $request->getPathInfo()));
+            throw new Exceptions\NotFoundException(
+                sprintf("Field definition not found: '%s'.", $request->getPathInfo())
+            );
         }
 
         return new Values\RestFieldDefinition(
