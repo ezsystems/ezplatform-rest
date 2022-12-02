@@ -115,7 +115,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
         $xpathAssertions[] = '/FieldDefinition[@href="/content/types/contentTypeId/fieldDefinitions/fieldDefinitionId_23"]';
 
         return array_map(
-            function (array $xpath): array {
+            function (string $xpath): array {
                 return [$xpath];
             },
             $xpathAssertions
@@ -128,7 +128,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
         $xpathAssertions[] = '/FieldDefinition[@href="/content/types/contentTypeId/fieldDefinition/title"]';
 
         return array_map(
-            function (array $xpath): array {
+            function (string $xpath): array {
                 return [$xpath];
             },
             $xpathAssertions
