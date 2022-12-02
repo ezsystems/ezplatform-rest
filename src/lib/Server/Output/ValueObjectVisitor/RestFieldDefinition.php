@@ -65,8 +65,7 @@ class RestFieldDefinition extends RestContentTypeBase
             $href = $data->path;
         }
 
-        $generator->startAttribute('href', $href);
-        $generator->endAttribute('href');
+        $generator->attribute('href', $href);
 
         $generator->startValueElement('id', $fieldDefinition->id);
         $generator->endValueElement('id');
