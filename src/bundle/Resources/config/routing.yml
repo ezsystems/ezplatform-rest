@@ -383,6 +383,18 @@ ezpublish_rest_setObjectStatesForContent:
         contentId: \d+
 
 
+# Languages
+
+ibexa.rest.languages.list:
+    path: /languages
+    methods: [GET]
+    controller: Ibexa\Rest\Server\Controller\Language::listLanguages
+
+ibexa.rest.languages.view:
+    path: /languages/{languageCode}
+    methods: [GET]
+    controller: Ibexa\Rest\Server\Controller\Language::loadLanguage
+
 # Locations
 
 

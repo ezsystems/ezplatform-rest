@@ -177,6 +177,10 @@ services:
             - "@ezpublish.api.service.location"
         tags: [controller.service_arguments]
 
+    Ibexa\Rest\Server\Controller\Language:
+        autowire: true
+        tags: [ controller.service_arguments ]
+
     ezpublish_rest.controller.location:
         class: "%ezpublish_rest.controller.location.class%"
         parent: ezpublish_rest.controller.base

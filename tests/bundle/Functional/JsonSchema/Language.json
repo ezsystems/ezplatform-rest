@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "Language": {
+      "type": "object",
+      "properties": {
+        "_media-type": {
+          "type": "string"
+        },
+        "_href": {
+          "type": "string"
+        },
+        "languageId": {
+          "type": "integer"
+        },
+        "languageCode": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[[:alnum:]_]+"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_media-type",
+        "_href",
+        "languageId",
+        "languageCode",
+        "name"
+      ]
+    }
+  },
+  "required": [
+    "Language"
+  ]
+}
