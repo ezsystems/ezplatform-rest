@@ -128,7 +128,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
     protected function prepareXPathAssertions(array $xpathAssertions): array
     {
         return array_map(
-            function (string $xpath): array {
+            static function (string $xpath): array {
                 return [$xpath];
             },
             $xpathAssertions

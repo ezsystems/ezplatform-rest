@@ -447,10 +447,9 @@ XML;
     }
 
     /**
-     * @depends testCreateContentType
-     * Covers GET /content/types/{contentTypeId}/fieldDefinition/{fieldDefinitionIdentifier}
+     * Covers GET /content/types/{contentTypeId}/fieldDefinition/{fieldDefinitionIdentifier}.
      *
-     * @param string $fieldDefinitionHref
+     * @depends testCreateContentType
      *
      * @throws \Psr\Http\Client\ClientException
      */
