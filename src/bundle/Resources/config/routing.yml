@@ -583,6 +583,14 @@ ezpublish_rest_loadContentTypeFieldDefinition:
     requirements:
         contentTypeId: \d+
         fieldDefinitionId: \d+
+        
+ibexa.rest.load_content_type_field_definition_by_identifier:
+    path: /content/types/{contentTypeId}/fieldDefinition/{fieldDefinitionIdentifier}
+    controller: ezpublish_rest.controller.content_type:loadContentTypeFieldDefinitionByIdentifier
+    methods: [GET]
+    requirements:
+        contentTypeId: \d+
+        fieldDefinitionIdentifier: \w+
 
 ezpublish_rest_loadContentTypeDraft:
     path: /content/types/{contentTypeId}/draft

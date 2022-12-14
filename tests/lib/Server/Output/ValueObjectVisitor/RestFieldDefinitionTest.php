@@ -21,17 +21,24 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
         $this->fieldTypeSerializerMock = $this->createMock(FieldTypeSerializer::class);
     }
 
-    /**
-     * @return \DOMDocument
-     */
-    public function testVisitRestFieldDefinition()
+    public function testVisitRestFieldDefinition(): \DOMDocument
+    {
+        return $this->generateDomDocument();
+    }
+
+    public function testVisitRestFieldDefinitionWithPath(): \DOMDocument
+    {
+        return $this->generateDomDocument('/content/types/contentTypeId/fieldDefinition/title');
+    }
+
+    protected function generateDomDocument(?string $path = null): \DOMDocument
     {
         $visitor = $this->getVisitor();
         $generator = $this->getGenerator();
 
         $generator->startDocument(null);
 
-        $restFieldDefinition = $this->getBasicRestFieldDefinition();
+        $restFieldDefinition = $this->getBasicRestFieldDefinition($path);
 
         $this->fieldTypeSerializerMock->expects($this->once())
             ->method('serializeFieldDefaultValue')
@@ -43,14 +50,16 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
                 )
             );
 
-        $this->addRouteExpectation(
-            'ezpublish_rest_loadContentTypeFieldDefinition',
-            [
-                'contentTypeId' => $restFieldDefinition->contentType->id,
-                'fieldDefinitionId' => $restFieldDefinition->fieldDefinition->id,
-            ],
-            "/content/types/{$restFieldDefinition->contentType->id}/fieldDefinitions/{$restFieldDefinition->fieldDefinition->id}"
-        );
+        if ($path === null) {
+            $this->addRouteExpectation(
+                'ezpublish_rest_loadContentTypeFieldDefinition',
+                [
+                    'contentTypeId' => $restFieldDefinition->contentType->id,
+                    'fieldDefinitionId' => $restFieldDefinition->fieldDefinition->id,
+                ],
+                "/content/types/{$restFieldDefinition->contentType->id}/fieldDefinitions/{$restFieldDefinition->fieldDefinition->id}"
+            );
+        }
 
         $visitor->visit(
             $this->getVisitorMock(),
@@ -68,7 +77,7 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
         return $dom;
     }
 
-    protected function getBasicRestFieldDefinition()
+    protected function getBasicRestFieldDefinition(?string $path = null): Server\Values\RestFieldDefinition
     {
         return new Server\Values\RestFieldDefinition(
             new Values\ContentType\ContentType(
@@ -95,14 +104,40 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
                     'names' => ['eng-US' => 'Sindelfingen'],
                     'descriptions' => ['eng-GB' => 'Bielefeld'],
                 ]
-            )
+            ),
+            $path
         );
     }
 
-    public function provideXpathAssertions()
+    public function provideXpathAssertions(): array
     {
-        $xpathAssertions = [
-            '/FieldDefinition[@href="/content/types/contentTypeId/fieldDefinitions/fieldDefinitionId_23"]',
+        $xpathAssertions = $this->getXpathAssertions();
+        $xpathAssertions[] = '/FieldDefinition[@href="/content/types/contentTypeId/fieldDefinitions/fieldDefinitionId_23"]';
+
+        return $this->prepareXPathAssertions($xpathAssertions);
+    }
+
+    public function provideXpathAssertionsPath(): array
+    {
+        $xpathAssertions = $this->getXpathAssertions();
+        $xpathAssertions[] = '/FieldDefinition[@href="/content/types/contentTypeId/fieldDefinition/title"]';
+
+        return $this->prepareXPathAssertions($xpathAssertions);
+    }
+
+    protected function prepareXPathAssertions(array $xpathAssertions): array
+    {
+        return array_map(
+            static function (string $xpath): array {
+                return [$xpath];
+            },
+            $xpathAssertions
+        );
+    }
+
+    protected function getXpathAssertions(): array
+    {
+        return [
             '/FieldDefinition[@media-type="application/vnd.ez.api.FieldDefinition+xml"]',
             '/FieldDefinition/id[text()="fieldDefinitionId_23"]',
             '/FieldDefinition/identifier[text()="title"]',
@@ -117,33 +152,30 @@ class RestFieldDefinitionTest extends ValueObjectVisitorBaseTest
             '/FieldDefinition/names/value[@languageCode="eng-US" and text()="Sindelfingen"]',
             '/FieldDefinition/descriptions/value[@languageCode="eng-GB" and text()="Bielefeld"]',
         ];
-
-        return array_map(
-            function ($xpath) {
-                return [$xpath];
-            },
-            $xpathAssertions
-        );
     }
 
     /**
-     * @param string $xpath
-     * @param \DOMDocument $dom
-     *
      * @depends testVisitRestFieldDefinition
      * @dataProvider provideXpathAssertions
      */
-    public function testGeneratedXml($xpath, \DOMDocument $dom)
+    public function testGeneratedXml(string $xpath, \DOMDocument $dom): void
+    {
+        $this->assertXPath($dom, $xpath);
+    }
+
+    /**
+     * @depends testVisitRestFieldDefinitionWithPath
+     * @dataProvider provideXpathAssertionsPath
+     */
+    public function testGeneratedXmlPath(string $xpath, \DOMDocument $dom): void
     {
         $this->assertXPath($dom, $xpath);
     }
 
     /**
      * Get the Content visitor.
-     *
-     * @return \EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\RestFieldDefinition
      */
-    protected function internalGetVisitor()
+    protected function internalGetVisitor(): ValueObjectVisitor\RestFieldDefinition
     {
         return new ValueObjectVisitor\RestFieldDefinition($this->fieldTypeSerializerMock);
     }
