@@ -54,7 +54,8 @@
     },
     "config": {
         "allow-plugins": {
-            "composer/package-versions-deprecated": true
+            "composer/package-versions-deprecated": true,
+            "*": false
         },
         "process-timeout": 600
     },
