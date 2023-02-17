@@ -9,11 +9,11 @@ namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 use eZ\Publish\API\Repository\Exceptions\UnauthorizedException;
 use eZ\Publish\API\Repository\LocationService;
 use eZ\Publish\API\Repository\ContentService;
+use eZ\Publish\API\Repository\Values\Content;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\Visitor;
 use EzSystems\EzPlatformRest\Server\Values\RestContent as RestContentValue;
-use eZ\Publish\API\Repository\Values\Content\Location as LocationValue;
 
 /**
  * Location value object visitor.
@@ -48,8 +48,15 @@ class Location extends ValueObjectVisitor
         $generator->endObjectElement('Location');
     }
 
-    protected function visitLocationAttributes(Visitor $visitor, Generator $generator, LocationValue $location)
-    {
+    /**
+     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
+     * @throws \eZ\Publish\API\Repository\Exceptions\UnauthorizedException
+     */
+    protected function visitLocationAttributes(
+        Visitor $visitor,
+        Generator $generator,
+        Content\Location $location
+    ) {
         $generator->startAttribute(
             'href',
             $this->router->generate(
@@ -154,14 +161,7 @@ class Location extends ValueObjectVisitor
 
         $content = $location->getContent();
         $contentInfo = $location->contentInfo;
-
-        try {
-            $mainLocation = $contentInfo->mainLocationId === $location->id
-                ? $location
-                : $this->locationService->loadLocation($contentInfo->mainLocationId);
-        } catch (UnauthorizedException $e) {
-            $mainLocation = null;
-        }
+        $mainLocation = $this->resolveMainLocation($contentInfo, $location);
 
         $visitor->visitValueObject(new RestContentValue(
                 $contentInfo,
@@ -173,5 +173,28 @@ class Location extends ValueObjectVisitor
         );
 
         $generator->endObjectElement('ContentInfo');
+    }
+
+    /**
+     * @throws \eZ\Publish\API\Repository\Exceptions\NotFoundException
+     */
+    private function resolveMainLocation(
+        Content\ContentInfo $contentInfo,
+        Content\Location $location
+    ): ?Content\Location {
+        $mainLocationId = $contentInfo->mainLocationId;
+        if ($mainLocationId === null) {
+            return null;
+        }
+
+        if ($mainLocationId === $location->id) {
+            return $location;
+        }
+
+        try {
+            return $this->locationService->loadLocation($mainLocationId);
+        } catch (UnauthorizedException $e) {
+            return null;
+        }
     }
 }
