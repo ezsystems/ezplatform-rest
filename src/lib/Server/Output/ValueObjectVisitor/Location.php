@@ -14,22 +14,32 @@ use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\Visitor;
 use EzSystems\EzPlatformRest\Server\Values\RestContent as RestContentValue;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 
 /**
  * Location value object visitor.
  */
-class Location extends ValueObjectVisitor
+class Location extends ValueObjectVisitor implements LoggerAwareInterface
 {
+    use LoggerAwareTrait;
+
     /** @var \eZ\Publish\API\Repository\LocationService */
     private $locationService;
 
     /** @var \eZ\Publish\API\Repository\ContentService */
     private $contentService;
 
-    public function __construct(LocationService $locationService, ContentService $contentService)
-    {
+    public function __construct(
+        LocationService $locationService,
+        ContentService $contentService,
+        ?LoggerInterface $logger = null
+    ) {
         $this->locationService = $locationService;
         $this->contentService = $contentService;
+        $this->logger = $logger ?? new NullLogger();
     }
 
     /**
@@ -184,6 +194,10 @@ class Location extends ValueObjectVisitor
     ): ?Content\Location {
         $mainLocationId = $contentInfo->mainLocationId;
         if ($mainLocationId === null) {
+            $this->logger->warning(
+                sprintf('Main location for content of ID = %d doesn\'t exist.', $contentInfo->id)
+            );
+
             return null;
         }
 
