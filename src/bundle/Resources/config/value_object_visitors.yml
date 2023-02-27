@@ -601,8 +601,6 @@ services:
         arguments:
             $locationService: '@ezpublish.api.service.location'
             $contentService: '@ezpublish.api.service.content'
-        calls:
-            - [setLogger, ['@?logger']]
 
     ezpublish_rest.output.value_object_visitor.LocationList:
         parent: ezpublish_rest.output.value_object_visitor.base
