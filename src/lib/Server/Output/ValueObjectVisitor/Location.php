@@ -162,7 +162,7 @@ class Location extends ValueObjectVisitor
         $generator->endAttribute('href');
 
         $content = $location->getContent();
-        $contentInfo = $location->contentInfo;
+        $contentInfo = $location->getContentInfo();
         $mainLocation = $this->resolveMainLocation($contentInfo, $location);
 
         $visitor->visitValueObject(new RestContentValue(
@@ -184,7 +184,7 @@ class Location extends ValueObjectVisitor
         Content\ContentInfo $contentInfo,
         Content\Location $location
     ): ?Content\Location {
-        $mainLocationId = $contentInfo->mainLocationId;
+        $mainLocationId = $contentInfo->getMainLocationId();
         if ($mainLocationId === null) {
             return null;
         }
