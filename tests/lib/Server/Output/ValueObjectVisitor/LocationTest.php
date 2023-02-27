@@ -44,9 +44,9 @@ final class LocationTest extends ValueObjectVisitorBaseTest
     }
 
     /**
-     * @dataProvider providerForMainLocationId
+     * @dataProvider getDataForTestVisitLocationAttributesResolvesMainLocation
      */
-    public function testVisitLocationWithDifferentContentMainLocations(
+    public function testVisitLocationAttributesResolvesMainLocation(
         ?int $mainLocationId,
         int $locationId
     ): void {
@@ -96,18 +96,10 @@ final class LocationTest extends ValueObjectVisitorBaseTest
         $this->assertXMLTag(
             [
                 'tag' => 'Location',
-            ],
-            $result,
-            'Invalid <Location> element.',
-        );
-
-        $this->assertXMLTag(
-            [
-                'tag' => 'Location',
                 'content' => $location->id . 1 . 'false' . 'false',
             ],
             $result,
-            'Invalid <Location> attributes.',
+            'Invalid <Location> element.',
         );
     }
 
@@ -136,7 +128,7 @@ final class LocationTest extends ValueObjectVisitorBaseTest
         }
     }
 
-    public function providerForMainLocationId(): iterable
+    public function getDataForTestVisitLocationAttributesResolvesMainLocation(): iterable
     {
         yield 'same' => [self::MAIN_LOCATION_ID, self::MAIN_LOCATION_ID];
 
