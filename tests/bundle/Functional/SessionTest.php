@@ -113,6 +113,7 @@ class SessionTest extends TestCase
         self::assertGreaterThan(0, $csrfDomElements->length);
         $csrfTokenValue = $csrfDomElements->item(0)->nodeValue;
 
+        $browser->followRedirects(false);
         $browser->submitForm(
             'Login',
             [
