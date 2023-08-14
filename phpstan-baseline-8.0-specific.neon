@@ -1,0 +1,6 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#2 \\$value of function ini_set expects string, int given\\.$#"
+			count: 2
+			path: tests/lib/Output/Generator/FieldTypeHashGeneratorBaseTest.php
