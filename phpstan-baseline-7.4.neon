@@ -1,0 +1,56 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$file of function file_put_contents expects string, string\\|false given\\.$#"
+			count: 1
+			path: src/lib/FieldTypeProcessor/BinaryInputProcessor.php
+
+		-
+			message: "#^Parameter \\#1 \\$input of function array_slice expects array, iterable\\<eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\Content\\\\Relation\\> given\\.$#"
+			count: 1
+			path: src/lib/Server/Controller/Content.php
+
+		-
+			message: "#^Parameter \\#2 \\$str of function explode expects string, string\\|null given\\.$#"
+			count: 1
+			path: src/lib/Server/Controller/Content.php
+
+		-
+			message: "#^Parameter \\#2 \\.\\.\\.\\$args of function array_merge expects array, iterable\\<eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\ContentType\\\\ContentType\\> given\\.$#"
+			count: 1
+			path: src/lib/Server/Controller/ContentType.php
+
+		-
+			message: "#^Parameter \\#1 \\$arr1 of function array_merge expects array, iterable\\<eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\User\\\\Policy\\> given\\.$#"
+			count: 1
+			path: src/lib/Server/Controller/Role.php
+
+		-
+			message: "#^Parameter \\#1 \\$input of function array_slice expects array, iterable\\<eZ\\\\Publish\\\\API\\\\Repository\\\\Values\\\\User\\\\Role\\> given\\.$#"
+			count: 1
+			path: src/lib/Server/Controller/Role.php
+
+		-
+			message: "#^Parameter \\#2 \\$error_type of function trigger_error expects int, string given\\.$#"
+			count: 4
+			path: src/lib/Server/Controller/User.php
+
+		-
+			message: "#^Parameter \\#1 \\$message of method Psr\\\\Log\\\\LoggerInterface\\:\\:error\\(\\) expects string, Symfony\\\\Component\\\\Security\\\\Core\\\\User\\\\UserInterface\\|null given\\.$#"
+			count: 1
+			path: src/lib/Server/Security/RestAuthenticator.php
+
+		-
+			message: "#^Parameter \\#1 \\$str of function base64_encode expects string, string\\|false given\\.$#"
+			count: 1
+			path: tests/bundle/Functional/BinaryContentTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$pathname of function mkdir expects string, string\\|false given\\.$#"
+			count: 1
+			path: tests/lib/FieldTypeProcessor/BinaryInputProcessorTest.php
+
+		-
+			message: "#^Parameter \\#2 \\$newvalue of function ini_set expects string, int given\\.$#"
+			count: 2
+			path: tests/lib/Output/Generator/FieldTypeHashGeneratorBaseTest.php
