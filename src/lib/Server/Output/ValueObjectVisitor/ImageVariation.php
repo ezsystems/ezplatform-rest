@@ -59,5 +59,7 @@ class ImageVariation extends ValueObjectVisitor
             $generator->startValueElement('fileSize', $data->fileSize);
             $generator->endValueElement('fileSize');
         }
+
+        $visitor->setHeader('Content-Type', $generator->getMediaType('ContentImageVariation'));
     }
 }
