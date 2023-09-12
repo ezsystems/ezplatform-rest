@@ -18,6 +18,7 @@ class ImageVariation extends ValueObjectVisitor
      */
     public function visit(Visitor $visitor, Generator $generator, $data)
     {
+        $visitor->setHeader('Content-Type', $generator->getMediaType('ContentImageVariation'));
         $generator->startObjectElement('ContentImageVariation');
         $this->visitImageVariationAttributes($visitor, $generator, $data);
         $generator->endObjectElement('ContentImageVariation');
@@ -59,7 +60,5 @@ class ImageVariation extends ValueObjectVisitor
             $generator->startValueElement('fileSize', $data->fileSize);
             $generator->endValueElement('fileSize');
         }
-
-        $visitor->setHeader('Content-Type', $generator->getMediaType('ContentImageVariation'));
     }
 }
