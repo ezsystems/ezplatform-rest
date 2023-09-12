@@ -87,7 +87,7 @@ class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        $this->httpHost = getenv('EZP_TEST_REST_HOST') ?: '127.0.0.1:8000';
+        $this->httpHost = getenv('EZP_TEST_REST_HOST') ?: 'localhost';
         $this->httpScheme = getenv('EZP_TEST_REST_SCHEME') ?: 'http';
         $this->httpAuth = getenv('EZP_TEST_REST_AUTH') ?: 'admin:publish';
         [$this->loginUsername, $this->loginPassword] = explode(':', $this->httpAuth);
