@@ -64,7 +64,7 @@ abstract class Criterion extends BaseParser
         try {
             return $parsingDispatcher->parse([$facetBuilderName => $facetBuilderData], $mediaType);
         } catch (Exceptions\Parser $e) {
-            throw new Exceptions\Parser("Invalid FacetBuilder id <${facetBuilderName}>", 0, $e);
+            throw new Exceptions\Parser("Invalid FacetBuilder id <{$facetBuilderName}>", 0, $e);
         }
     }
 
