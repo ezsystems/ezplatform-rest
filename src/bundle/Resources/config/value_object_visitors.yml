@@ -206,10 +206,10 @@ services:
             - { name: ezpublish_rest.output.value_object_visitor, type: Symfony\Component\HttpKernel\Exception\HttpException }
 
     # Language
-    Ibexa\Rest\Server\Output\ValueObjectVisitor\LanguageList:
-        parent: Ibexa\Contracts\Rest\Output\ValueObjectVisitor
+    EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\LanguageList:
+        parent: ezpublish_rest.output.value_object_visitor.base
         tags:
-            - { name: ibexa.rest.output.value_object.visitor, type: Ibexa\Rest\Server\Values\LanguageList }
+            - { name: ibexa.rest.output.value_object.visitor, type: EzSystems\EzPlatformRest\Server\Values\LanguageList }
 
     ezpublish_rest.output.value_object_visitor.Language:
         parent: ezpublish_rest.output.value_object_visitor.base
