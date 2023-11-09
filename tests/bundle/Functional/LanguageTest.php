@@ -18,7 +18,7 @@ final class LanguageTest extends RESTFunctionalTestCase
 
     public function testLanguageListJson(): void
     {
-        $request = $this->createHttpRequest('GET', '/api/ibexa/v2/languages', '', 'LanguageList+json');
+        $request = $this->createHttpRequest('GET', '/api/ezp/v2/languages', '', 'LanguageList+json');
         $response = $this->sendHttpRequest($request);
 
         self::assertHttpResponseCodeEquals($response, 200);
@@ -31,7 +31,7 @@ final class LanguageTest extends RESTFunctionalTestCase
 
     public function testLanguageListXml(): void
     {
-        $request = $this->createHttpRequest('GET', '/api/ibexa/v2/languages');
+        $request = $this->createHttpRequest('GET', '/api/ezp/v2/languages');
         $response = $this->sendHttpRequest($request);
 
         self::assertHttpResponseCodeEquals($response, 200);
@@ -41,7 +41,7 @@ final class LanguageTest extends RESTFunctionalTestCase
 
     public function testLanguageViewJson(): void
     {
-        $request = $this->createHttpRequest('GET', '/api/ibexa/v2/languages/eng-GB', '', 'LanguageList+json');
+        $request = $this->createHttpRequest('GET', '/api/ezp/v2/languages/eng-GB', '', 'LanguageList+json');
         $response = $this->sendHttpRequest($request);
 
         self::assertHttpResponseCodeEquals($response, 200);
@@ -54,7 +54,7 @@ final class LanguageTest extends RESTFunctionalTestCase
 
     public function testLanguageViewXml(): void
     {
-        $request = $this->createHttpRequest('GET', '/api/ibexa/v2/languages/eng-GB');
+        $request = $this->createHttpRequest('GET', '/api/ezp/v2/languages/eng-GB');
         $response = $this->sendHttpRequest($request);
 
         self::assertHttpResponseCodeEquals($response, 200);
