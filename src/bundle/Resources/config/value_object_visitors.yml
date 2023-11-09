@@ -209,7 +209,7 @@ services:
     EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor\LanguageList:
         parent: ezpublish_rest.output.value_object_visitor.base
         tags:
-            - { name: ibexa.rest.output.value_object.visitor, type: EzSystems\EzPlatformRest\Server\Values\LanguageList }
+            - { name: ezpublish_rest.output.value_object_visitor, type: EzSystems\EzPlatformRest\Server\Values\LanguageList }
 
     ezpublish_rest.output.value_object_visitor.Language:
         parent: ezpublish_rest.output.value_object_visitor.base
