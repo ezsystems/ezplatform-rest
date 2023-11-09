@@ -9,12 +9,6 @@
                 "languageId": 2,
                 "languageCode": "eng-GB",
                 "name": "English (United Kingdom)"
-            }, {
-                "_href": "/api/ezp/v2/languages/pol-PL",
-                "_media-type": "application/vnd.ez.api.Language+json",
-                "languageCode": "pol-PL",
-                "languageId": 4,
-                "name": "Polish (polski)"
             }
         ]
     }

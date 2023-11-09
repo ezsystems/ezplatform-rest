@@ -5,9 +5,4 @@
   <languageCode>eng-GB</languageCode>
   <name>English (United Kingdom)</name>
  </Language>
- <Language href="/api/ezp/v2/languages/pol-PL" media-type="application/vnd.ez.api.Language+xml">
-  <languageId>4</languageId>
-  <languageCode>pol-PL</languageCode>
-  <name>Polish (polski)</name>
- </Language>
 </LanguageList>
