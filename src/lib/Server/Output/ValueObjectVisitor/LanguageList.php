@@ -1,21 +1,21 @@
 <?php
 
 /**
- * @copyright Copyright (C) Ibexa AS. All rights reserved.
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
+namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
 
-use Ibexa\Contracts\Rest\Output\Generator;
-use Ibexa\Contracts\Rest\Output\ValueObjectVisitor;
-use Ibexa\Contracts\Rest\Output\Visitor;
+use EzSystems\EzPlatformRest\Output\Generator;
+use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
+use EzSystems\EzPlatformRest\Output\Visitor;
 
 final class LanguageList extends ValueObjectVisitor
 {
     /**
-     * @param \Ibexa\Rest\Server\Values\LanguageList $data
+     * @param \EzSystems\EzPlatformRest\Server\Values\LanguageList $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {

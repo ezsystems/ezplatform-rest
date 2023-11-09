@@ -1,22 +1,23 @@
 <?php
 
 /**
- * @copyright Copyright (C) Ibexa AS. All rights reserved.
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
 namespace Ibexa\Rest\Server\Controller;
 
-use Ibexa\Contracts\Core\Repository\LanguageService;
-use Ibexa\Contracts\Core\Repository\Values\Content\Language as ApiLanguage;
-use Ibexa\Rest\Server\Controller as RestController;
-use Ibexa\Rest\Server\Values\LanguageList;
+use eZ\Publish\API\Repository\LanguageService;
+use eZ\Publish\API\Repository\Values\Content\Language as ApiLanguage;
+use EzSystems\EzPlatformRest\Server\Controller as RestController;
+use EzSystems\EzPlatformRest\Server\Values\LanguageList;
 use Traversable;
 
 final class Language extends RestController
 {
-    private LanguageService $languageService;
+    /** @var \eZ\Publish\API\Repository\LanguageService */
+    private $languageService;
 
     public function __construct(LanguageService $languageService)
     {

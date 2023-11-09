@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @copyright Copyright (C) Ibexa AS. All rights reserved.
+ * @copyright Copyright (C) eZ Systems AS. All rights reserved.
  * @license For full copyright and license information view LICENSE file distributed with this source code.
  */
 declare(strict_types=1);
 
-namespace Ibexa\Tests\Bundle\Rest\Functional;
+namespace EzSystems\EzPlatformRestBundle\Tests\Functional;
 
 use JsonSchema\Validator;
 
@@ -30,7 +30,7 @@ trait ResourceAssertionsTrait
         ?string $type = null,
         ?string $file = null
     ): void {
-        $file ??= self::getDefaultSnapshotFileLocation($type);
+        $file = $file !== null ? $file : self::getDefaultSnapshotFileLocation($type);
 
         self::checkSnapshotFileExistence($file, $content);
 
