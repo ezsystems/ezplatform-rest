@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace Ibexa\Bundle\Rest\Server\Controller;
+namespace Ibexa\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\LanguageService;
 use eZ\Publish\API\Repository\Values\Content\Language as ApiLanguage;
