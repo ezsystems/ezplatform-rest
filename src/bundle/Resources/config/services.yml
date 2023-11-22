@@ -177,7 +177,7 @@ services:
             - "@ezpublish.api.service.location"
         tags: [controller.service_arguments]
 
-    EzSystems\EzPlatformRest\Server\Controller\Language:
+    Ibexa\Bundle\Rest\Server\Controller\Language:
         autowire: true
         tags: [ controller.service_arguments ]
 

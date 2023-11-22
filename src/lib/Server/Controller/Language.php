@@ -6,12 +6,12 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Controller;
+namespace Ibexa\Bundle\Rest\Server\Controller;
 
 use eZ\Publish\API\Repository\LanguageService;
 use eZ\Publish\API\Repository\Values\Content\Language as ApiLanguage;
 use EzSystems\EzPlatformRest\Server\Controller as RestController;
-use EzSystems\EzPlatformRest\Server\Values\LanguageList;
+use Ibexa\Rest\Server\Values\LanguageList;
 use Traversable;
 
 final class Language extends RestController

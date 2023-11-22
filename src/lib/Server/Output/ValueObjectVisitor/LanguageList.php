@@ -6,7 +6,7 @@
  */
 declare(strict_types=1);
 
-namespace EzSystems\EzPlatformRest\Server\Output\ValueObjectVisitor;
+namespace Ibexa\Rest\Server\Output\ValueObjectVisitor;
 
 use EzSystems\EzPlatformRest\Output\Generator;
 use EzSystems\EzPlatformRest\Output\ValueObjectVisitor;
@@ -15,7 +15,7 @@ use EzSystems\EzPlatformRest\Output\Visitor;
 final class LanguageList extends ValueObjectVisitor
 {
     /**
-     * @param \EzSystems\EzPlatformRest\Server\Values\LanguageList $data
+     * @param \Ibexa\Rest\Server\Values\LanguageList $data
      */
     public function visit(Visitor $visitor, Generator $generator, $data): void
     {
