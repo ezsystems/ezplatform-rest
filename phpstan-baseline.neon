@@ -437,7 +437,7 @@ parameters:
 
 		-
 			message: "#^Cannot access offset mixed on EzSystems\\\\EzPlatformRest\\\\Input\\\\Parser\\.$#"
-			count: 2
+			count: 1
 			path: src/lib/Input/ParsingDispatcher.php
 
 		-

@@ -1,0 +1,15 @@
+{
+    "LanguageList": {
+        "_media-type": "application\/vnd.ez.api.LanguageList+json",
+        "_href": "\/api\/ezp\/v2\/languages",
+        "Language": [
+            {
+                "_media-type": "application\/vnd.ez.api.Language+json",
+                "_href": "\/api\/ezp\/v2\/languages\/eng-GB",
+                "languageId": 2,
+                "languageCode": "eng-GB",
+                "name": "English (United Kingdom)"
+            }
+        ]
+    }
+}

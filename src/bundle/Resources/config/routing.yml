@@ -383,6 +383,17 @@ ezpublish_rest_setObjectStatesForContent:
         contentId: \d+
 
 
+# Languages
+ibexa.rest.languages.list:
+    path: /languages
+    methods: [GET]
+    controller: Ibexa\Rest\Server\Controller\Language::listLanguages
+
+ibexa.rest.languages.view:
+    path: /languages/{languageCode}
+    methods: [GET]
+    controller: Ibexa\Rest\Server\Controller\Language::loadLanguage
+
 # Locations
 
 
@@ -583,7 +594,7 @@ ezpublish_rest_loadContentTypeFieldDefinition:
     requirements:
         contentTypeId: \d+
         fieldDefinitionId: \d+
-        
+
 ibexa.rest.load_content_type_field_definition_by_identifier:
     path: /content/types/{contentTypeId}/fieldDefinition/{fieldDefinitionIdentifier}
     controller: ezpublish_rest.controller.content_type:loadContentTypeFieldDefinitionByIdentifier

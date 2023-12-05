@@ -11,6 +11,7 @@
   <php>
     <env name="EZP_TEST_REST_HOST" value="localhost"/>
     <env name="EZP_TEST_REST_AUTH" value="admin:publish"/>
+    <env name="IBEXA_REST_GENERATE_SNAPSHOTS" value="0"/>
   </php>
   <testsuites>
     <testsuite name="eZ Publish REST Functional Tests">
